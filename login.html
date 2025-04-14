@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEED IT Login</title>
+    <!-- Updated CSP header to allow Cloudflare resources -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://seedit.tech https://i.ibb.co https://*.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' https://seedit.tech https://*.cloudflareinsights.com https://static.cloudflareinsights.com; connect-src 'self' https://seedit.tech https://*.cloudflareinsights.com;">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .login-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+        }
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .error {
+            color: #dc3545;
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            background-color: rgba(220, 53, 69, 0.1);
+            display: none;
+        }
+        #result {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            display: none;
+        }
+        .user-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .user-info p {
+            margin: 0.5rem 0;
+            color: #495057;
+        }
+        .user-info h3 {
+            color: #28a745;
+            margin-top: 0;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <img src="https://i.ibb.co/xq80RrBW/SEED-Logo.webp" alt="SEED IT Logo">
+        </div>
+        <h2 style="text-align: center; margin-bottom: 2rem; color: #333;">Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required 
+                    placeholder="Enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    placeholder="Enter your password"
+                    autocomplete="current-password">
+            </div>
+            <button type="submit" id="submitBtn">Login</button>
+        </form>
+        <div id="loading" class="loading"></div>
+        <div id="error" class="error"></div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Handle Cloudflare RUM errors
+        window.addEventListener('error', function(e) {
+            if (e.filename && (e.filename.includes('cdn-cgi/rum') || e.filename.includes('cdn-cgi/speculation'))) {
+                // Prevent the error from showing in console
+                e.preventDefault();
+                return;
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+            const resultDiv = document.getElementById('result');
+            const loadingDiv = document.getElementById('loading');
+            const submitBtn = document.getElementById('submitBtn');
+
+            // Reset UI
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            loadingDiv.style.display = 'block';
+            submitBtn.disabled = true;
+
+            try {
+                // Try with CORS proxy first
+                const corsProxy = 'https://api.allorigins.win/raw?url=';
+                const targetUrl = encodeURIComponent('https://seedit.tech/SEEDDB/colleges/SEED-IT/profiles.json');
+                
+                let response;
+                try {
+                    // Try direct fetch first
+                    response = await fetch('https://seedit.tech/SEEDDB/colleges/SEED-IT/profiles.json', {
+                        method: 'GET',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Cache-Control': 'no-cache'
+                        }
+                    });
+                } catch (directError) {
+                    // If direct fetch fails, try with CORS proxy
+                    console.log('Direct fetch failed, trying CORS proxy...');
+                    response = await fetch(corsProxy + targetUrl);
+                }
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                
+                // Find user in the data
+                const user = data.find(user => 
+                    user.Email === username && 
+                    user.Password === password
+                );
+
+                if (user) {
+                    // Login successful
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML = `
+                        <div class="user-info">
+                            <h3>Login Successful!</h3>
+                            <p><strong>Name:</strong> ${user.Name}</p>
+                            <p><strong>College:</strong> ${user.College}</p>
+                            <p><strong>Department:</strong> ${user.Department}</p>
+                            <p><strong>Year:</strong> ${user.Year}</p>
+                            <p><strong>Roll Number:</strong> ${user['Roll Number']}</p>
+                            <p><strong>Role:</strong> ${user.Role}</p>
+                            <p><strong>Hackerrank ID:</strong> ${user['Hackerrank ID']}</p>
+                        </div>
+                    `;
+
+                    // Store user data securely
+                    sessionStorage.setItem('currentUser', JSON.stringify({
+                        name: user.Name,
+                        email: user.Email,
+                        role: user.Role,
+                        college: user.College
+                    }));
+
+                    // Redirect after 2 seconds
+                    setTimeout(() => {
+                        const redirectPath = user.Role.toLowerCase() === 'student' 
+                            ? '/student/dashboard' 
+                            : '/staff/dashboard';
+                        window.location.href = redirectPath;
+                    }, 2000);
+                } else {
+                    errorDiv.textContent = 'Invalid username or password';
+                    errorDiv.style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                errorDiv.textContent = 'Unable to connect to the server. Please try again later.';
+                errorDiv.style.display = 'block';
+            } finally {
+                loadingDiv.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html> 

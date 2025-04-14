@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year - SEED Institute</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #1e3c72, #2a5298, #34495e);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo img {
+            width: 200px;
+            height: auto;
+            margin-bottom: 40px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 10px 0;
+            color: #ffd700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 165, 0, 0.7);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin: 15px 0;
+            color: #00d4ff;
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.8), 0 0 10px rgba(0, 255, 200, 0.6);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .message {
+            font-size: 1.3rem;
+            margin: 20px 0;
+            line-height: 1.6;
+            color: #e6e6e6;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .learn-more {
+            margin-top: 20px;
+        }
+
+        .learn-more a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .learn-more a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 126, 95, 0.7);
+        }
+
+        .footer {
+            margin-top: auto;
+            font-size: 1rem;
+            opacity: 0.9;
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Fireworks Canvas */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.6);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 165, 0, 0.8);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/d7ed13af5f61a1713ce723df1d4686f6185d0faa/Plugins/SEED_Logo.webp" alt="SEED Logo">
+        </div>
+        <h1>🎆 Happy New Year 2025! 🎆</h1>
+        <h2>A Spectacular Start Awaits!</h2>
+        <p class="message">
+            As the clock resets, we embrace new beginnings with optimism and energy. <br>
+            Here's to a fantastic 2025 filled with success, joy, and endless opportunities! <br>
+            From all of us at SEED Institute of Training, Happy New Year!
+        </p>
+        <div class="learn-more">
+            <a href="https://www.seedit.rf.gd" target="_blank">Goto our Page</a>
+        </div>
+    </div>
+    <canvas class="fireworks"></canvas>
+    <div class="footer">
+        <p>© 2025 SEED Institute of Training. All Rights Reserved.</p>
+    </div>
+
+    <script>
+        // Fireworks animation script
+        const canvas = document.querySelector('.fireworks');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function createParticle(x, y) {
+            return {
+                x: x,
+                y: y,
+                dx: random(-3, 3),
+                dy: random(-3, 3),
+                size: random(2, 4),
+                alpha: 1,
+                color: `rgba(${random(150, 255)}, ${random(50, 200)}, ${random(50, 200)},`
+            };
+        }
+
+        const particles = [];
+        setInterval(() => {
+            const x = random(0, canvas.width);
+            const y = random(0, canvas.height / 2);
+            for (let i = 0; i < 50; i++) {
+                particles.push(createParticle(x, y));
+            }
+        }, 400);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((particle, i) => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = `${particle.color} ${particle.alpha})`;
+                ctx.fill();
+
+                particle.x += particle.dx;
+                particle.y += particle.dy;
+                particle.alpha -= 0.02;
+
+                if (particle.alpha <= 0) {
+                    particles.splice(i, 1);
+                }
+            });
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>

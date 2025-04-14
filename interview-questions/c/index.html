@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Interview Questions - Complete</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" type="image/webp">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question h2 {
+            font-size: 1.2rem;
+            color: #35424a;
+        }
+        .question pre {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="SEED Logo">
+        <h1>C Programming Interview Questions - Complete</h1>
+    </header>
+
+    <div class="container">
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>1. What is C?</h2>
+            <p>C is a general-purpose programming language that provides low-level access to memory and simple constructs, making it suitable for system programming and application development.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>2. Explain the difference between C and C++.</h2>
+            <p>C is procedural, while C++ is object-oriented and supports additional features like classes and inheritance.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>3. What are the basic data types in C?</h2>
+            <ul>
+                <li><code>int</code>: Integer</li>
+                <li><code>float</code>: Floating-point numbers</li>
+                <li><code>char</code>: Characters</li>
+                <li><code>double</code>: Double-precision floating-point numbers</li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>4. What is a pointer in C?</h2>
+            <p>A pointer is a variable that stores the memory address of another variable.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>5. Explain the difference between <code>malloc()</code> and <code>calloc()</code>.</h2>
+            <p><code>malloc()</code> allocates uninitialized memory, while <code>calloc()</code> allocates memory and initializes it to zero.</p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>6. What is a NULL pointer?</h2>
+            <p>A pointer that doesn’t point to any memory location is a NULL pointer.</p>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>7. What are static variables in C?</h2>
+            <p>Static variables retain their value between function calls and have a lifetime equal to the program's lifetime.</p>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>8. What is recursion?</h2>
+            <p>A function calling itself is recursion. Example: Calculating factorial.</p>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>9. What is a function prototype?</h2>
+            <p>A function prototype declares the function signature to the compiler before it is defined.</p>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>10. What is the difference between <code>struct</code> and <code>union</code>?</h2>
+            <p><code>struct</code>: Each member has a unique memory location.</p>
+            <p><code>union</code>: All members share the same memory location.</p>
+        </div>
+
+        <!-- Question 11 -->
+<div class="question">
+    <h2>11. What is the use of the 'volatile' keyword in C?</h2>
+    <p>The 'volatile' keyword is used to tell the compiler that a variable can be changed at any time, outside the program's control, such as by hardware or an interrupt.</p>
+</div>
+
+<!-- Question 12 -->
+<div class="question">
+    <h2>12. What is the difference between 'break' and 'continue' statements?</h2>
+    <p>'break' exits the current loop or switch statement entirely, while 'continue' skips the rest of the current loop iteration and proceeds with the next iteration.</p>
+</div>
+
+<!-- Question 13 -->
+<div class="question">
+    <h2>13. What is the sizeof() operator?</h2>
+    <p>The 'sizeof()' operator returns the size of a data type or variable in bytes.</p>
+</div>
+
+<!-- Question 14 -->
+<div class="question">
+    <h2>14. What is a preprocessor directive in C?</h2>
+    <p>Preprocessor directives are instructions given to the compiler to preprocess the source code before compilation. Examples include #define, #include, #ifdef, etc.</p>
+</div>
+
+<!-- Question 15 -->
+<div class="question">
+    <h2>15. What is the difference between 'pass by value' and 'pass by reference'?</h2>
+    <p>'Pass by value' copies the value of a variable, while 'pass by reference' passes the address, allowing modifications to the original variable.</p>
+</div>
+
+<!-- Question 16 -->
+<div class="question">
+    <h2>16. What is a segmentation fault?</h2>
+    <p>A segmentation fault occurs when a program tries to access a memory location it is not allowed to, such as dereferencing an invalid pointer.</p>
+</div>
+
+<!-- Question 17 -->
+<div class="question">
+    <h2>17. Explain the use of dynamic memory allocation in C.</h2>
+    <p>Dynamic memory allocation allows the program to allocate memory at runtime using functions like malloc(), calloc(), realloc(), and free().</p>
+</div>
+
+<!-- Question 18 -->
+<div class="question">
+    <h2>18. What is a dangling pointer?</h2>
+    <p>A dangling pointer points to a memory location that has already been deallocated, leading to undefined behavior if accessed.</p>
+</div>
+
+<!-- Question 19 -->
+<div class="question">
+    <h2>19. What is a macro in C?</h2>
+    <p>A macro is a preprocessor directive used to define a constant or a block of code that gets replaced during preprocessing.</p>
+</div>
+
+<!-- Question 20 -->
+<div class="question">
+    <h2>20. What is a 'static' function?</h2>
+    <p>A 'static' function is only accessible within the file where it is defined, providing file-level scope.</p>
+</div>
+
+<!-- Question 21 -->
+<div class="question">
+    <h2>21. What is the difference between a 'for' loop and a 'while' loop?</h2>
+    <p>A 'for' loop is typically used when the number of iterations is known beforehand, while a 'while' loop is used when the number of iterations is not known and the loop continues as long as a condition is true.</p>
+</div>
+
+<!-- Question 22 -->
+<div class="question">
+    <h2>22. What is the purpose of the 'goto' statement?</h2>
+    <p>The 'goto' statement is used to transfer control to another part of the program. It is considered harmful and should generally be avoided due to poor readability and maintainability of the code.</p>
+</div>
+
+<!-- Question 23 -->
+<div class="question">
+    <h2>23. What is the difference between a stack and a queue?</h2>
+    <p>A stack follows the Last In, First Out (LIFO) principle, while a queue follows the First In, First Out (FIFO) principle.</p>
+</div>
+
+<!-- Question 24 -->
+<div class="question">
+    <h2>24. What is a linked list?</h2>
+    <p>A linked list is a data structure where each element (node) contains data and a reference (or link) to the next node in the sequence.</p>
+</div>
+
+<!-- Question 25 -->
+<div class="question">
+    <h2>25. What is the difference between a singly linked list and a doubly linked list?</h2>
+    <p>A singly linked list has nodes that point to the next node, while a doubly linked list has nodes that point to both the next and previous nodes.</p>
+</div>
+
+<!-- Question 26 -->
+<div class="question">
+    <h2>26. What is the purpose of the 'return' statement in C?</h2>
+    <p>The 'return' statement is used to exit a function and optionally pass a value back to the calling function.</p>
+</div>
+
+<!-- Question 27 -->
+<div class="question">
+    <h2>27. What is the difference between '==' and '=' in C?</h2>
+    <p>'==' is the equality operator, used to compare two values. '=' is the assignment operator, used to assign a value to a variable.</p>
+</div>
+
+<!-- Question 28 -->
+<div class="question">
+    <h2>28. What is a file pointer?</h2>
+    <p>A file pointer is used to point to a location in a file, allowing the program to read or write data to it.</p>
+</div>
+
+<!-- Question 29 -->
+<div class="question">
+    <h2>29. What is the purpose of the <code>fopen()</code> function?</h2>
+    <p>The <code>fopen()</code> function is used to open a file in C, returning a file pointer that can be used to perform read/write operations.</p>
+</div>
+
+<!-- Question 30 -->
+<div class="question">
+    <h2>30. What are the different file modes in C?</h2>
+    <p>Common file modes include <code>r</code> (read), <code>w</code> (write), <code>a</code> (append), and <code>rb</code> (read binary), among others.</p>
+</div>
+
+<!-- Question 31 -->
+<div class="question">
+    <h2>31. What is the difference between <code>fgets()</code> and <code>gets()</code>?</h2>
+    <p><code>fgets()</code> reads a line from a file or standard input with a specified maximum length, while <code>gets()</code> reads input without bounds, which can lead to buffer overflow.</p>
+</div>
+
+<!-- Question 32 -->
+<div class="question">
+    <h2>32. What is the use of <code>fclose()</code> function?</h2>
+    <p>The <code>fclose()</code> function is used to close a file that was opened using <code>fopen()</code>, ensuring that any buffered data is written and releasing the file pointer.</p>
+</div>
+
+<!-- Question 33 -->
+<div class="question">
+    <h2>33. What is a memory leak?</h2>
+    <p>A memory leak occurs when dynamically allocated memory is not freed, leading to wastage of memory resources.</p>
+</div>
+
+<!-- Question 34 -->
+<div class="question">
+    <h2>34. What is the difference between <code>free()</code> and <code>delete</code>?</h2>
+    <p><code>free()</code> is used to deallocate memory allocated using <code>malloc()</code>, <code>calloc()</code>, or <code>realloc()</code>, while <code>delete</code> is used in C++ to deallocate memory allocated using <code>new</code>.</p>
+</div>
+
+<!-- Question 35 -->
+<div class="question">
+    <h2>35. What is the purpose of <code>realloc()</code> in C?</h2>
+    <p>The <code>realloc()</code> function is used to resize a previously allocated block of memory, adjusting the size as required.</p>
+</div>
+
+<!-- Question 36 -->
+<div class="question">
+    <h2>36. What is the difference between a function call by value and function call by reference?</h2>
+    <p>In function call by value, a copy of the variable's value is passed, whereas in function call by reference, the memory address of the variable is passed, allowing the function to modify the original value.</p>
+</div>
+
+<!-- Question 37 -->
+<div class="question">
+    <h2>37. What is an array?</h2>
+    <p>An array is a collection of elements of the same data type, stored in contiguous memory locations and accessed via an index.</p>
+</div>
+
+<!-- Question 38 -->
+<div class="question">
+    <h2>38. What is the difference between an array and a pointer in C?</h2>
+    <p>An array is a collection of elements of the same type, while a pointer is a variable that stores the memory address of another variable. An array name is often treated as a constant pointer to its first element.</p>
+</div>
+
+<!-- Question 39 -->
+<div class="question">
+    <h2>39. What is a buffer overflow?</h2>
+    <p>A buffer overflow occurs when more data is written to a buffer than it can hold, potentially overwriting adjacent memory and causing undefined behavior.</p>
+</div>
+
+<!-- Question 40 -->
+<div class="question">
+    <h2>40. What is a memory model in C?</h2>
+    <p>A memory model defines how memory is allocated and accessed in a C program, including the stack, heap, and static memory segments.</p>
+</div>
+
+<!-- Question 41 -->
+<div class="question">
+    <h2>41. What is a function pointer in C?</h2>
+    <p>A function pointer is a pointer that points to the address of a function, allowing the function to be called indirectly.</p>
+</div>
+
+<!-- Question 42 -->
+<div class="question">
+    <h2>42. What is the difference between a macro and a function?</h2>
+    <p>A macro is a preprocessor directive that performs text substitution before compilation, while a function is a block of code that is executed when called during runtime.</p>
+</div>
+
+<!-- Question 43 -->
+<div class="question">
+    <h2>43. What is the use of <code>#include</code> preprocessor directive?</h2>
+    <p>The <code>#include</code> directive is used to include header files in a C program, allowing access to functions, macros, and other resources.</p>
+</div>
+
+<!-- Question 44 -->
+<div class="question">
+    <h2>44. What are the different types of memory in C?</h2>
+    <p>C has several types of memory, including stack memory (for local variables), heap memory (for dynamic memory allocation), and static memory (for global and static variables).</p>
+</div>
+
+<!-- Question 45 -->
+<div class="question">
+    <h2>45. What is a segmentation fault in C?</h2>
+    <p>A segmentation fault occurs when a program tries to access a memory location it is not allowed to, such as dereferencing a NULL or invalid pointer.</p>
+</div>
+
+<!-- Question 46 -->
+<div class="question">
+    <h2>46. What is the difference between <code>++i</code> and <code>i++</code>?</h2>
+    <p><code>++i</code> increments the value of <code>i</code> before it is used in an expression, while <code>i++</code> increments the value of <code>i</code> after it is used in the expression.</p>
+</div>
+
+<!-- Question 47 -->
+<div class="question">
+    <h2>47. What is the difference between <code>++i</code> and <code>i++</code>?</h2>
+    <p><code>++i</code> increments the value of <code>i</code> before it is used in an expression, while <code>i++</code> increments the value of <code>i</code> after it is used in the expression.</p>
+</div>
+
+<!-- Question 48 -->
+<div class="question">
+    <h2>48. What is 'dereferencing' a pointer?</h2>
+    <p>Dereferencing a pointer means accessing the value stored at the memory address that the pointer is pointing to using the dereference operator <code>*</code>.</p>
+</div>
+
+<!-- Question 49 -->
+<div class="question">
+    <h2>49. What is the difference between static and dynamic memory allocation?</h2>
+    <p>Static memory allocation is done at compile time, while dynamic memory allocation is done at runtime using functions like <code>malloc()</code> and <code>free()</code>.</p>
+</div>
+
+<!-- Question 50 -->
+<div class="question">
+    <h2>50. What is the purpose of the <code>assert()</code> function?</h2>
+    <p>The <code>assert()</code> function is used for debugging. It tests an expression, and if the expression evaluates to false, the program terminates with an error message.</p>
+</div>
+
+<!-- Question 51 -->
+<div class="question">
+    <h2>51. What is the difference between <code>++i</code> and <code>i++</code> in C?</h2>
+    <p><code>++i</code> increments the value of <code>i</code> before using it, while <code>i++</code> increments the value of <code>i</code> after using it.</p>
+</div>
+
+<!-- Question 52 -->
+<div class="question">
+    <h2>52. What is a memory leak in C?</h2>
+    <p>A memory leak occurs when dynamically allocated memory is not properly freed, leading to a loss of memory resources over time.</p>
+</div>
+
+<!-- Question 53 -->
+<div class="question">
+    <h2>53. What are macros in C?</h2>
+    <p>Macros in C are preprocessor directives that define constants or functions to be replaced by the preprocessor before compilation.</p>
+</div>
+
+<!-- Question 54 -->
+<div class="question">
+    <h2>54. What is the purpose of the <code>#include</code> directive in C?</h2>
+    <p>The <code>#include</code> directive is used to include the contents of a file or library into the program, typically header files.</p>
+</div>
+
+<!-- Question 55 -->
+<div class="question">
+    <h2>55. What is the use of the <code>typedef</code> keyword in C?</h2>
+    <p>The <code>typedef</code> keyword is used to create a new name (alias) for an existing data type, making the code more readable.</p>
+</div>
+
+<!-- Question 56 -->
+<div class="question">
+    <h2>56. How do you prevent a variable from being modified in C?</h2>
+    <p>You can use the <code>const</code> keyword to declare a variable as constant, preventing its value from being changed.</p>
+</div>
+
+<!-- Question 57 -->
+<div class="question">
+    <h2>57. What is the difference between <code>fopen()</code> and <code>freopen()</code> in C?</h2>
+    <p><code>fopen()</code> opens a file, while <code>freopen()</code> closes the current file and reopens it with a new file or mode.</p>
+</div>
+
+<!-- Question 58 -->
+<div class="question">
+    <h2>58. What is a function pointer in C?</h2>
+    <p>A function pointer is a variable that stores the address of a function, allowing dynamic function calls.</p>
+</div>
+
+<!-- Question 59 -->
+<div class="question">
+    <h2>59. What is the difference between a for loop and a while loop in C?</h2>
+    <p>A <code>for</code> loop is used when the number of iterations is known beforehand, while a <code>while</code> loop is used when the number of iterations is uncertain and depends on a condition.</p>
+</div>
+
+<!-- Question 60 -->
+<div class="question">
+    <h2>60. What is the difference between <code>strcmp()</code> and <code>strcpy()</code>?</h2>
+    <p><code>strcmp()</code> compares two strings, while <code>strcpy()</code> copies one string to another.</p>
+</div>
+
+<!-- Question 61 -->
+<div class="question">
+    <h2>61. What is the use of the <code>return</code> statement in C?</h2>
+    <p>The <code>return</code> statement is used to exit a function and optionally return a value to the caller.</p>
+</div>
+
+<!-- Question 62 -->
+<div class="question">
+    <h2>62. What is a compiler in C?</h2>
+    <p>A compiler translates the source code written in a high-level programming language into machine code or an intermediate form.</p>
+</div>
+
+<!-- Question 63 -->
+<div class="question">
+    <h2>63. What is the purpose of the <code>void</code> pointer in C?</h2>
+    <p>A <code>void</code> pointer is a generic pointer that can point to any data type without specifying the type.</p>
+</div>
+
+<!-- Question 64 -->
+<div class="question">
+    <h2>64. What is the difference between <code>char</code> and <code>unsigned char</code>?</h2>
+    <p><code>char</code> can be signed or unsigned, depending on the implementation, while <code>unsigned char</code> is always treated as unsigned.</p>
+</div>
+
+<!-- Question 65 -->
+<div class="question">
+    <h2>65. How can you handle errors in C?</h2>
+    <p>Error handling in C can be done using error codes, <code>errno</code>, or <code>setjmp()</code> and <code>longjmp()</code> for non-local jumps.</p>
+</div>
+
+<!-- Question 66 -->
+<div class="question">
+    <h2>66. What is the use of the <code>assert()</code> function in C?</h2>
+    <p>The <code>assert()</code> function is used to verify assumptions in the program by checking a condition and terminating the program if the condition is false.</p>
+</div>
+
+<!-- Question 67 -->
+<div class="question">
+    <h2>67. What are the different types of memory used in C?</h2>
+    <p>C uses different types of memory, such as stack memory for local variables, heap memory for dynamically allocated memory, and static memory for global/static variables.</p>
+</div>
+
+<!-- Question 68 -->
+<div class="question">
+    <h2>68. What is a header file in C?</h2>
+    <p>A header file is a file containing function prototypes, macros, and type definitions that are shared between multiple source files.</p>
+</div>
+
+<!-- Question 69 -->
+<div class="question">
+    <h2>69. How do you read a character from a file in C?</h2>
+    <p>You can use the <code>fgetc()</code> function to read a character from a file in C.</p>
+</div>
+
+<!-- Question 70 -->
+<div class="question">
+    <h2>70. What is a function inlining in C?</h2>
+    <p>Function inlining replaces the function call with the actual code of the function, improving performance by eliminating the overhead of function calls.</p>
+</div>
+
+<!-- Question 71 -->
+<div class="question">
+    <h2>71. What is the difference between <code>fseek()</code> and <code>rewind()</code> in C?</h2>
+    <p><code>fseek()</code> moves the file pointer to a specified location, while <code>rewind()</code> resets the file pointer to the beginning of the file.</p>
+</div>
+
+<!-- Question 72 -->
+<div class="question">
+    <h2>72. What is the <code>const</code> keyword in C?</h2>
+    <p>The <code>const</code> keyword in C is used to declare a variable as constant, preventing modification of its value after initialization.</p>
+</div>
+
+<!-- Question 73 -->
+<div class="question">
+    <h2>73. What is a union in C?</h2>
+    <p>A union is a data structure that allows different types of data to be stored in the same memory location, but only one member can hold a value at a time.</p>
+</div>
+
+<!-- Question 74 -->
+<div class="question">
+    <h2>74. What is the difference between <code>++i</code> and <code>i++</code> in a loop?</h2>
+    <p><code>++i</code> increments the value first, while <code>i++</code> increments the value after the current iteration, but the difference is usually negligible in a loop.</p>
+</div>
+
+<!-- Question 75 -->
+<div class="question">
+    <h2>75. What is the purpose of <code>strtok()</code> in C?</h2>
+    <p>The <code>strtok()</code> function is used to split a string into tokens based on a delimiter.</p>
+</div>
+
+<!-- Question 76 -->
+<div class="question">
+    <h2>76. How do you dynamically allocate memory for an array of pointers in C?</h2>
+    <p>You can dynamically allocate memory using <code>malloc()</code> or <code>calloc()</code> to create an array of pointers, where each pointer can point to different dynamically allocated memory.</p>
+</div>
+
+<!-- Question 77 -->
+<div class="question">
+    <h2>77. What is an array of structures in C?</h2>
+    <p>An array of structures is a collection of multiple structure variables stored in contiguous memory locations, accessed using an index.</p>
+</div>
+
+<!-- Question 78 -->
+<div class="question">
+    <h2>78. What is a linked list in C?</h2>
+    <p>A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence.</p>
+</div>
+
+<!-- Question 79 -->
+<div class="question">
+    <h2>79. What is a binary tree in C?</h2>
+    <p>A binary tree is a hierarchical data structure where each node has at most two children, often referred to as the left and right child.</p>
+</div>
+
+<!-- Question 80 -->
+<div class="question">
+    <h2>80. What is a circular linked list?</h2>
+    <p>A circular linked list is a linked list where the last node points back to the first node, forming a circular structure.</p>
+</div>
+
+<!-- Question 81 -->
+<div class="question">
+    <h2>81. What is the use of the <code>exit()</code> function in C?</h2>
+    <p>The <code>exit()</code> function terminates the program and returns a status code to the operating system.</p>
+</div>
+
+<!-- Question 82 -->
+<div class="question">
+    <h2>82. What is the difference between <code>fscanf()</code> and <code>scanf()</code> in C?</h2>
+    <p><code>fscanf()</code> reads input from a file, while <code>scanf()</code> reads input from the standard input (keyboard).</p>
+</div>
+
+<!-- Question 83 -->
+<div class="question">
+    <h2>83. What is an enum in C?</h2>
+    <p>An enum is a user-defined data type that consists of a set of named integer constants, making the code more readable.</p>
+</div>
+
+<!-- Question 84 -->
+<div class="question">
+    <h2>84. How can you compare two strings in C?</h2>
+    <p>You can use the <code>strcmp()</code> function to compare two strings in C.</p>
+</div>
+
+<!-- Question 85 -->
+<div class="question">
+    <h2>85. How can you reverse a string in C?</h2>
+    <p>You can reverse a string in C by swapping characters from the start and end of the string, iterating towards the middle.</p>
+</div>
+
+<!-- Question 86 -->
+<div class="question">
+    <h2>86. What is a bitwise operator in C?</h2>
+    <p>Bitwise operators perform operations on the individual bits of data, such as AND, OR, XOR, NOT, and bit shifts.</p>
+</div>
+
+<!-- Question 87 -->
+<div class="question">
+    <h2>87. What is the <code>sizeof</code> operator in C?</h2>
+    <p>The <code>sizeof</code> operator is used to determine the size of a data type or variable in bytes.</p>
+</div>
+
+<!-- Question 88 -->
+<div class="question">
+    <h2>88. What is the use of the <code>__attribute__((packed))</code> in C?</h2>
+    <p>The <code>__attribute__((packed))</code> directive is used to specify that the structure members should be packed with no padding between them.</p>
+</div>
+
+<!-- Question 89 -->
+<div class="question">
+    <h2>89. How do you declare a constant in C?</h2>
+    <p>You can declare a constant using the <code>#define</code> preprocessor directive or the <code>const</code> keyword.</p>
+</div>
+
+<!-- Question 90 -->
+<div class="question">
+    <h2>90. What is the difference between <code>malloc()</code> and <code>calloc()</code>?</h2>
+    <p><code>malloc()</code> allocates a specified number of bytes of memory, while <code>calloc()</code> allocates memory and initializes all bytes to zero.</p>
+</div>
+
+<!-- Question 91 -->
+<div class="question">
+    <h2>91. How can you copy a string in C?</h2>
+    <p>You can copy a string in C using the <code>strcpy()</code> function.</p>
+</div>
+
+<!-- Question 92 -->
+<div class="question">
+    <h2>92. What is the difference between <code>memcpy()</code> and <code>memmove()</code>?</h2>
+    <p><code>memcpy()</code> copies data from one memory location to another, while <code>memmove()</code> handles overlapping memory regions safely.</p>
+</div>
+
+<!-- Question 93 -->
+<div class="question">
+    <h2>93. What is a static variable in C?</h2>
+    <p>A static variable in C retains its value between function calls and is initialized only once during the program execution.</p>
+</div>
+
+<!-- Question 94 -->
+<div class="question">
+    <h2>94. How do you implement a stack in C?</h2>
+    <p>A stack can be implemented using an array or a linked list, with operations such as push, pop, and peek.</p>
+</div>
+
+<!-- Question 95 -->
+<div class="question">
+    <h2>95. What is a queue in C?</h2>
+    <p>A queue is a linear data structure that follows the FIFO (First In First Out) principle, where elements are added at the rear and removed from the front.</p>
+</div>
+
+<!-- Question 96 -->
+<div class="question">
+    <h2>96. What is the difference between <code>malloc()</code> and <code>realloc()</code>?</h2>
+    <p><code>malloc()</code> allocates a specified amount of memory, while <code>realloc()</code> changes the size of previously allocated memory.</p>
+</div>
+
+<!-- Question 97 -->
+<div class="question">
+    <h2>97. How do you initialize a 2D array in C?</h2>
+    <p>A 2D array can be initialized using curly braces, with each row enclosed in its own set of braces:</p>
+    <pre>int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};</pre>
+</div>
+
+<!-- Question 98 -->
+<div class="question">
+    <h2>98. What is a dynamic array in C?</h2>
+    <p>A dynamic array is an array whose size is determined during runtime using <code>malloc()</code> or <code>calloc()</code> and can be resized with <code>realloc()</code>.</p>
+</div>
+
+<!-- Question 99 -->
+<div class="question">
+    <h2>99. What is a segmentation fault in C?</h2>
+    <p>A segmentation fault occurs when a program attempts to access memory that it is not allowed to access, often due to invalid memory references.</p>
+</div>
+
+
+        <!-- Example: -->
+        <!-- Question 100 -->
+        <div class="question">
+            <h2>100. What is the output of this code?</h2>
+            <pre>
+#include <stdio.h>
+int main() {
+    int x = 10;
+    printf("%d %d %d", x++, x++, ++x);
+    return 0;
+}
+            </pre>
+            <p>Answer: The output is undefined due to sequence point issues.</p>
+        </div>
+
+   
+
+    <!-- Question 100 -->
+<div class="question">
+    <h2>100. What is the difference between a stack and a heap in C?</h2>
+    <p>A stack is a region of memory that grows and shrinks automatically, whereas a heap is a region of memory that requires manual memory management using <code>malloc()</code>, <code>free()</code>, etc. The stack is used for function calls and local variables, while the heap is used for dynamic memory allocation.</p>
+</div>
+
+<!-- Question 101 -->
+<div class="question">
+    <h2>101. Explain the concept of memory leakage in C and how can it be avoided?</h2>
+    <p>Memory leakage occurs when dynamically allocated memory is not properly deallocated. It can be avoided by always freeing allocated memory using <code>free()</code> when it is no longer needed.</p>
+    <pre>int* ptr = malloc(sizeof(int) * 5); 
+free(ptr);</pre>
+</div>
+
+<!-- Question 102 -->
+<div class="question">
+    <h2>102. What is the difference between a pointer to a function and a function pointer in C?</h2>
+    <p>A pointer to a function holds the address of a function, while a function pointer is a function that returns a pointer.</p>
+    <pre>void (*func_ptr)() = &function_name;</pre>
+</div>
+
+<!-- Question 103 -->
+<div class="question">
+    <h2>103. What is a NULL pointer in C?</h2>
+    <p>A NULL pointer is a pointer that does not point to any valid memory location. It is often used to indicate an uninitialized or invalid pointer.</p>
+</div>
+
+<!-- Question 104 -->
+<div class="question">
+    <h2>104. How do you define and use a linked list in C?</h2>
+    <p>A linked list is a data structure consisting of nodes, each containing data and a pointer to the next node. Here's an example of defining a simple linked list node:</p>
+    <pre>struct Node {
+    int data;
+    struct Node* next;
+};</pre>
+</div>
+
+<!-- Question 105 -->
+<div class="question">
+    <h2>105. What is a deep copy and a shallow copy in C?</h2>
+    <p>A shallow copy copies only the top-level data, while a deep copy duplicates all nested data structures. In C, a deep copy requires manually allocating memory and copying the values.</p>
+</div>
+
+<!-- Question 106 -->
+<div class="question">
+    <h2>106. How do you implement a circular queue in C?</h2>
+    <p>A circular queue can be implemented using an array or linked list, where the rear of the queue wraps around to the front once it reaches the end.</p>
+    <pre>int queue[MAX];
+int front = -1, rear = -1;
+
+void enqueue(int val) {
+    if ((rear + 1) % MAX == front)
+        printf("Queue is full");
+    else {
+        if (front == -1) front = 0;
+        rear = (rear + 1) % MAX;
+        queue[rear] = val;
+    }
+}
+</pre>
+</div>
+
+<!-- Question 107 -->
+<div class="question">
+    <h2>107. What is a function pointer in C and how can it be used?</h2>
+    <p>A function pointer is a pointer that points to a function instead of a variable. It is used to call functions dynamically during runtime.</p>
+    <pre>int add(int x, int y) {
+    return x + y;
+}
+
+int (*func_ptr)(int, int) = &add;
+int result = func_ptr(5, 10);</pre>
+</div>
+
+<!-- Question 108 -->
+<div class="question">
+    <h2>108. How do you implement a binary tree in C?</h2>
+    <p>A binary tree can be implemented by creating a tree structure with nodes that contain data and pointers to the left and right children.</p>
+    <pre>struct TreeNode {
+    int data;
+    struct TreeNode* left;
+    struct TreeNode* right;
+};</pre>
+</div>
+
+<!-- Question 109 -->
+<div class="question">
+    <h2>109. What is the difference between <code>==</code> and <code>strcmp()</code> in C?</h2>
+    <p><code>==</code> compares pointers or values directly, while <code>strcmp()</code> compares two strings lexicographically.</p>
+    <pre>if (strcmp(str1, str2) == 0) { 
+    printf("Strings are equal"); 
+}</pre>
+</div>
+
+<!-- Question 110 -->
+<div class="question">
+    <h2>110. How do you implement a binary search algorithm in C?</h2>
+    <p>A binary search algorithm can be implemented by repeatedly dividing the search interval in half. If the value is less than the middle element, search the left half; otherwise, search the right half.</p>
+    <pre>int binary_search(int arr[], int size, int key) {
+    int left = 0, right = size - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == key) return mid;
+        if (arr[mid] < key) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}</pre>
+</div>
+
+<!-- Question 111 -->
+<div class="question">
+    <h2>111. What is a bitwise operation in C? Give an example.</h2>
+    <p>Bitwise operations manipulate data at the bit level. The common bitwise operations are <code>&</code> (AND), <code>|</code> (OR), <code>^</code> (XOR), and <code>~</code> (NOT).</p>
+    <pre>int a = 5, b = 3;
+int result = a & b; // Bitwise AND</pre>
+</div>
+
+<!-- Question 112 -->
+<div class="question">
+    <h2>112. How do you implement a merge sort in C?</h2>
+    <p>Merge sort is a divide-and-conquer algorithm that divides the array into halves and merges them back in sorted order.</p>
+    <pre>void merge(int arr[], int left, int mid, int right) {
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    int L[n1], R[n2];
+    
+    for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+    for (int i = 0; i < n2; i++) R[i] = arr[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) arr[k++] = L[i++];
+        else arr[k++] = R[j++];
+    }
+
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
+}</pre>
+</div>
+
+<!-- Question 113 -->
+<div class="question">
+    <h2>113. What is the difference between a constant pointer and a pointer to a constant in C?</h2>
+    <p>A constant pointer cannot change the address it points to, while a pointer to a constant cannot modify the data it points to.</p>
+</div>
+
+<!-- Question 114 -->
+<div class="question">
+    <h2>114. How do you implement a depth-first search (DFS) in C?</h2>
+    <p>DFS can be implemented using recursion or a stack. Here's an example using recursion:</p>
+    <pre>void DFS(struct TreeNode* node) {
+    if (node == NULL) return;
+    printf("%d ", node->data);
+    DFS(node->left);
+    DFS(node->right);
+}</pre>
+</div>
+
+<!-- Question 115 -->
+<div class="question">
+    <h2>115. What is the purpose of the <code>static</code> keyword in C?</h2>
+    <p>The <code>static</code> keyword in C is used to retain the value of a variable across function calls and limit its scope to the file or function it is defined in.</p>
+</div>
+
+<!-- Question 116 -->
+<div class="question">
+    <h2>116. How do you implement a quick sort algorithm in C?</h2>
+    <p>Quick sort is a divide-and-conquer algorithm that picks a pivot element and partitions the array around the pivot.</p>
+    <pre>int partition(int arr[], int low, int high) {
+    int pivot = arr[high], i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+    int temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
+    return i + 1;
+}
+
+void quick_sort(int arr[], int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quick_sort(arr, low, pi - 1);
+        quick_sort(arr, pi + 1, high);
+    }
+}</pre>
+</div>
+
+<!-- Question 117 -->
+<div class="question">
+    <h2>117. What is the use of <code>typedef</code> in C?</h2>
+    <p><code>typedef</code> is used to create a new name (alias) for an existing type, making the code more readable and easier to maintain.</p>
+    <pre>typedef unsigned int uint;</pre>
+</div>
+
+<!-- Question 118 -->
+<div class="question">
+    <h2>118. What is the difference between <code>fopen()</code> and <code>freopen()</code> in C?</h2>
+    <p><code>fopen()</code> is used to open a file, while <code>freopen()</code> is used to redirect an existing file stream to a new file.</p>
+</div>
+
+<!-- Question 119 -->
+<div class="question">
+    <h2>119. How do you implement a binary search tree in C?</h2>
+    <p>A binary search tree can be implemented with nodes that store data and pointers to the left and right children, maintaining the property that the left child is smaller and the right child is larger than the parent node.</p>
+    <pre>struct BSTNode {
+    int data;
+    struct BSTNode* left;
+    struct BSTNode* right;
+};</pre>
+</div>
+
+<!-- Question 120 -->
+<div class="question">
+    <h2>120. How can you handle memory allocation failure in C?</h2>
+    <p>You can handle memory allocation failure by checking if the returned pointer is NULL. If NULL is returned, the memory allocation has failed.</p>
+    <pre>int* ptr = malloc(sizeof(int) * 5);
+if (ptr == NULL) {
+    printf("Memory allocation failed");
+}</pre>
+</div>
+
+
+<!-- Question 121 -->
+<div class="question">
+    <h2>121. What is the difference between a preprocessor directive and a macro in C?</h2>
+    <p>A preprocessor directive is a command that tells the preprocessor to perform a specific action before the compilation begins. A macro is a preprocessor directive that defines a name for a code snippet to be substituted in the program.</p>
+    <pre>#define PI 3.14</pre>
+</div>
+
+<!-- Question 122 -->
+<div class="question">
+    <h2>122. What are volatile variables in C? Why are they used?</h2>
+    <p>The <code>volatile</code> keyword is used to indicate that a variable may be modified by an external entity (e.g., hardware or interrupt service routine). It tells the compiler not to optimize the access to the variable.</p>
+</div>
+
+<!-- Question 123 -->
+<div class="question">
+    <h2>123. How does the <code>const</code> keyword work in C?</h2>
+    <p>The <code>const</code> keyword is used to declare variables whose values cannot be changed after initialization. It can be used with pointers as well.</p>
+    <pre>const int x = 10;</pre>
+</div>
+
+<!-- Question 124 -->
+<div class="question">
+    <h2>124. What is the use of <code>goto</code> in C?</h2>
+    <p>The <code>goto</code> statement is used to transfer control to a labeled statement in the program. It is generally discouraged due to the possibility of creating unreadable code.</p>
+    <pre>goto label;
+label: printf("This is a label");</pre>
+</div>
+
+<!-- Question 125 -->
+<div class="question">
+    <h2>125. How do you handle errors in C programs?</h2>
+    <p>Errors in C can be handled using return codes, <code>errno</code>, or <code>setjmp()</code> and <code>longjmp()</code> functions for non-local jumps.</p>
+</div>
+
+<!-- Question 126 -->
+<div class="question">
+    <h2>126. What is the purpose of the <code>extern</code> keyword in C?</h2>
+    <p>The <code>extern</code> keyword is used to declare a variable or function in another file or outside the current function, allowing access to it from different parts of the program.</p>
+</div>
+
+<!-- Question 127 -->
+<div class="question">
+    <h2>127. Explain the difference between <code>sizeof</code> and <code>strlen()</code> in C.</h2>
+    <p><code>sizeof</code> returns the size of a data type or variable in bytes, while <code>strlen()</code> returns the length of a string (not including the null-terminator).</p>
+    <pre>int length = strlen(str);</pre>
+</div>
+
+<!-- Question 128 -->
+<div class="question">
+    <h2>128. How can you prevent a function from modifying the argument passed to it?</h2>
+    <p>You can prevent a function from modifying the argument by passing a <code>const</code> pointer to the function.</p>
+    <pre>void printString(const char* str) {
+    printf("%s", str);
+}</pre>
+</div>
+
+<!-- Question 129 -->
+<div class="question">
+    <h2>129. What is an anonymous union in C?</h2>
+    <p>An anonymous union is a union without a name. It allows you to access the members of the union directly without referencing the union's name.</p>
+    <pre>union {
+    int x;
+    float y;
+}; u;</pre>
+</div>
+
+<!-- Question 130 -->
+<div class="question">
+    <h2>130. How do you prevent a buffer overflow in C?</h2>
+    <p>A buffer overflow can be prevented by always ensuring that the buffer has enough space for the data being copied. Functions like <code>strncpy()</code>, <code>snprintf()</code>, and <code>memcpy()</code> can be used to prevent overflows by specifying a size limit.</p>
+</div>
+
+<!-- Question 131 -->
+<div class="question">
+    <h2>131. What is a segmentation fault in C, and how can it be avoided?</h2>
+    <p>A segmentation fault occurs when a program tries to access restricted or invalid memory. It can be avoided by checking pointer values before dereferencing and using proper bounds checking for arrays.</p>
+</div>
+
+<!-- Question 132 -->
+<div class="question">
+    <h2>132. What is a stack overflow in C, and how can it be avoided?</h2>
+    <p>A stack overflow occurs when the call stack exceeds its limit, usually due to infinite recursion or excessive memory usage. It can be avoided by limiting recursion depth and using heap memory for large data.</p>
+</div>
+
+<!-- Question 133 -->
+<div class="question">
+    <h2>133. What is the difference between a function and a function pointer in C?</h2>
+    <p>A function is a block of code that performs a specific task, while a function pointer stores the address of a function, allowing the function to be called indirectly.</p>
+</div>
+
+<!-- Question 134 -->
+<div class="question">
+    <h2>134. How do you implement an LRU cache in C?</h2>
+    <p>An LRU (Least Recently Used) cache can be implemented using a linked list or a hash map along with a doubly linked list to maintain the order of access.</p>
+    <pre>struct LRU {
+    int key;
+    int value;
+    struct LRU* next;
+    struct LRU* prev;
+};</pre>
+</div>
+
+<!-- Question 135 -->
+<div class="question">
+    <h2>135. What is the use of <code>memset()</code> in C?</h2>
+    <p><code>memset()</code> is used to fill a block of memory with a particular value, commonly used to initialize memory to zero.</p>
+    <pre>memset(arr, 0, sizeof(arr));</pre>
+</div>
+
+<!-- Question 136 -->
+<div class="question">
+    <h2>136. What is a memory leak, and how can it be avoided in C?</h2>
+    <p>A memory leak occurs when memory is allocated dynamically but not freed. It can be avoided by ensuring that every <code>malloc()</code> or <code>calloc()</code> is paired with a <code>free()</code>.</p>
+</div>
+
+<!-- Question 137 -->
+<div class="question">
+    <h2>137. What is a race condition in C, and how can it be avoided?</h2>
+    <p>A race condition occurs when multiple threads access shared data simultaneously in an unpredictable way. It can be avoided using synchronization mechanisms like mutexes and semaphores.</p>
+</div>
+
+<!-- Question 138 -->
+<div class="question">
+    <h2>138. How can you prevent infinite recursion in C?</h2>
+    <p>Infinite recursion can be prevented by adding a base case to the recursive function and ensuring the function terminates properly after meeting the base case.</p>
+</div>
+
+<!-- Question 139 -->
+<div class="question">
+    <h2>139. What are inline functions in C, and how do they differ from macros?</h2>
+    <p>Inline functions are functions that the compiler attempts to insert directly into the code rather than making a function call. They are safer than macros, as they respect data types.</p>
+    <pre>inline int square(int x) {
+    return x * x;
+}</pre>
+</div>
+
+<!-- Question 140 -->
+<div class="question">
+    <h2>140. How do you implement a depth-first search (DFS) on a graph in C?</h2>
+    <p>DFS on a graph can be implemented using either recursion or an explicit stack. Here's an example using recursion:</p>
+    <pre>void DFS(int graph[][MAX], int visited[], int node) {
+    visited[node] = 1;
+    printf("%d ", node);
+    for (int i = 0; i < MAX; i++) {
+        if (graph[node][i] && !visited[i]) {
+            DFS(graph, visited, i);
+        }
+    }
+}</pre>
+</div>
+
+<!-- Question 141 -->
+<div class="question">
+    <h2>141. What is a race condition, and how can it be handled in C?</h2>
+    <p>A race condition occurs when two or more processes or threads attempt to modify shared data concurrently. It can be handled by using synchronization mechanisms like locks and semaphores.</p>
+</div>
+
+<!-- Question 142 -->
+<div class="question">
+    <h2>142. What is a memory map file in C?</h2>
+    <p>A memory-mapped file is a mechanism that allows file contents to be mapped into memory. It can be used for efficient file access, especially for large files.</p>
+</div>
+
+<!-- Question 143 -->
+<div class="question">
+    <h2>143. How do you implement a queue in C using two stacks?</h2>
+    <p>A queue can be implemented using two stacks by pushing elements onto the first stack and popping from the second stack. When the second stack is empty, the elements of the first stack are transferred to the second stack.</p>
+    <pre>void enqueue(int val) {
+    if (stack1.top == -1) {
+        stack1.push(val);
+    } else {
+        stack2.push(val);
+    }
+}</pre>
+</div>
+
+<!-- Question 144 -->
+<div class="question">
+    <h2>144. What is tail recursion in C?</h2>
+    <p>Tail recursion occurs when a recursive function's last action is to call itself. It can optimize space by eliminating the need to maintain the call stack.</p>
+</div>
+
+<!-- Question 145 -->
+<div class="question">
+    <h2>145. How do you implement a Fibonacci sequence in C using both recursion and iteration?</h2>
+    <p>Fibonacci sequence can be implemented using recursion or iteration. Here's both methods:</p>
+    <pre>int fibonacci_recursion(int n) {
+    if (n <= 1) return n;
+    return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2);
+}
+
+int fibonacci_iteration(int n) {
+    int a = 0, b = 1, c;
+    for (int i = 2; i <= n; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+    }
+    return b;
+}</pre>
+</div>
+
+<!-- Question 146 -->
+<div class="question">
+    <h2>146. How do you check if a string is a palindrome in C?</h2>
+    <p>A palindrome is a string that reads the same forward and backward. Here's how to check it:</p>
+    <pre>int is_palindrome(char* str) {
+    int start = 0, end = strlen(str) - 1;
+    while (start < end) {
+        if (str[start] != str[end]) return 0;
+        start++;
+        end--;
+    }
+    return 1;
+}</pre>
+</div>
+
+<!-- Question 147 -->
+<div class="question">
+    <h2>147. What are function-like macros in C?</h2>
+    <p>Function-like macros are macros that take arguments and can be used as functions. They are replaced with their corresponding code during preprocessing.</p>
+    <pre>#define SQUARE(x) ((x) * (x))</pre>
+</div>
+
+<!-- Question 148 -->
+<div class="question">
+    <h2>148. What is the difference between a macro and an inline function?</h2>
+    <p>A macro performs text substitution during preprocessing, while an inline function provides type safety and can be debugged.</p>
+</div>
+
+<!-- Question 149 -->
+<div class="question">
+    <h2>149. How do you implement a doubly linked list in C?</h2>
+    <p>A doubly linked list can be implemented with nodes that have pointers to both the next and previous nodes:</p>
+    <pre>struct Node {
+    int data;
+    struct Node* next;
+    struct Node* prev;
+};</pre>
+</div>
+
+<!-- Question 150 -->
+<div class="question">
+    <h2>150. How do you sort an array of strings in C?</h2>
+    <p>You can sort an array of strings using the <code>qsort()</code> function. Here's how:</p>
+    <pre>int compare(const void* a, const void* b) {
+    return strcmp(*(const char**)a, *(const char**)b);
+}
+
+char* arr[] = {"apple", "orange", "banana"};
+qsort(arr, 3, sizeof(char*), compare);</pre>
+</div>
+
+
+<!-- Question 151 -->
+<div class="question">
+    <h2>151. Explain the concept of <code>volatile</code> in C with an example.</h2>
+    <p><code>volatile</code> is used to indicate that a variable's value can be changed by external factors, like hardware or a different thread, and should not be optimized by the compiler.</p>
+    <pre>volatile int flag = 0;
+while (!flag) {
+    // Do something
+}
+</pre>
+</div>
+
+<!-- Question 152 -->
+<div class="question">
+    <h2>152. What is the difference between <code>memcpy()</code> and <code>memmove()</code> in C?</h2>
+    <p><code>memcpy()</code> is used to copy memory from one location to another, but it does not handle overlapping memory areas correctly. <code>memmove()</code> safely handles overlapping memory areas.</p>
+</div>
+
+<!-- Question 153 -->
+<div class="question">
+    <h2>153. What are the benefits and limitations of using a linked list over an array?</h2>
+    <p>Linked lists provide dynamic memory allocation, allow efficient insertion/deletion, and do not require contiguous memory. However, they incur overhead due to pointer management and are slower for random access compared to arrays.</p>
+</div>
+
+<!-- Question 154 -->
+<div class="question">
+    <h2>154. How would you implement a hash table in C?</h2>
+    <p>A hash table can be implemented using an array of linked lists (buckets) to resolve collisions. Here’s an example:</p>
+    <pre>struct HashTable {
+    struct Node* table[SIZE];
+};
+
+struct Node {
+    int key;
+    int value;
+    struct Node* next;
+};</pre>
+</div>
+
+<!-- Question 155 -->
+<div class="question">
+    <h2>155. How do you detect a memory leak in C programs?</h2>
+    <p>Memory leaks can be detected using tools like <code>Valgrind</code> or by manually tracking memory allocations with <code>malloc()</code> and ensuring that each allocation is paired with a corresponding <code>free()</code>.</p>
+</div>
+
+<!-- Question 156 -->
+<div class="question">
+    <h2>156. Explain the concept of double pointers in C and give an example.</h2>
+    <p>A double pointer is a pointer that stores the address of another pointer. It is used for dynamically allocating arrays of pointers and modifying the original pointer.</p>
+    <pre>int x = 10;
+int* ptr = &x;
+int** double_ptr = &ptr;</pre>
+</div>
+
+<!-- Question 157 -->
+<div class="question">
+    <h2>157. What is a function pointer in C? Provide an example of its use.</h2>
+    <p>A function pointer in C is a pointer that points to a function instead of a variable. It allows dynamic function calling.</p>
+    <pre>int add(int a, int b) {
+    return a + b;
+}
+
+int (*func_ptr)(int, int) = add;
+printf("%d", func_ptr(3, 4));</pre>
+</div>
+
+<!-- Question 158 -->
+<div class="question">
+    <h2>158. How do you implement a circular linked list in C?</h2>
+    <p>A circular linked list can be implemented by having the last node point to the first node instead of <code>NULL</code>.</p>
+    <pre>struct Node {
+    int data;
+    struct Node* next;
+};
+
+void createCircularList(struct Node* head) {
+    struct Node* temp = head;
+    while (temp->next != NULL) {
+        temp = temp->next;
+    }
+    temp->next = head;
+}</pre>
+</div>
+
+<!-- Question 159 -->
+<div class="question">
+    <h2>159. Explain the difference between <code>struct</code> and <code>union</code> in C.</h2>
+    <p>A <code>struct</code> allows multiple members to have their own memory, whereas a <code>union</code> shares memory among its members, with only one member holding a value at a time.</p>
+</div>
+
+<!-- Question 160 -->
+<div class="question">
+    <h2>160. What is the use of the <code>restrict</code> keyword in C?</h2>
+    <p>The <code>restrict</code> keyword is used to indicate that a pointer is the only way to access the memory it points to, allowing optimizations by the compiler.</p>
+</div>
+
+<!-- Question 161 -->
+<div class="question">
+    <h2>161. How do you implement depth-first search (DFS) on a graph using recursion in C?</h2>
+    <p>DFS can be implemented recursively by visiting each node and then recursively visiting its neighbors.</p>
+    <pre>void DFS(int graph[][MAX], int visited[], int node) {
+    visited[node] = 1;
+    printf("%d ", node);
+    for (int i = 0; i < MAX; i++) {
+        if (graph[node][i] && !visited[i]) {
+            DFS(graph, visited, i);
+        }
+    }
+}</pre>
+</div>
+
+<!-- Question 162 -->
+<div class="question">
+    <h2>162. What is the difference between <code>strcmp()</code> and <code>strncmp()</code> in C?</h2>
+    <p><code>strcmp()</code> compares two strings entirely, while <code>strncmp()</code> compares the first <code>n</code> characters of two strings.</p>
+</div>
+
+<!-- Question 163 -->
+<div class="question">
+    <h2>163. How would you handle large files in C?</h2>
+    <p>Large files can be handled using buffered I/O functions such as <code>fread()</code> and <code>fwrite()</code> for efficient reading and writing, and by processing the file in chunks.</p>
+</div>
+
+<!-- Question 164 -->
+<div class="question">
+    <h2>164. How would you reverse a string in C without using any library functions?</h2>
+    <p>A string can be reversed by swapping the characters in place:</p>
+    <pre>void reverse(char* str) {
+    int length = strlen(str);
+    for (int i = 0; i < length / 2; i++) {
+        char temp = str[i];
+        str[i] = str[length - i - 1];
+        str[length - i - 1] = temp;
+    }
+}</pre>
+</div>
+
+<!-- Question 165 -->
+<div class="question">
+    <h2>165. What is an LRU cache and how do you implement it in C?</h2>
+    <p>An LRU (Least Recently Used) cache stores a fixed number of items and removes the least recently used item when the cache is full. It can be implemented using a hash map and a doubly linked list.</p>
+</div>
+
+<!-- Question 166 -->
+<div class="question">
+    <h2>166. How do you implement a doubly linked list in C?</h2>
+    <p>A doubly linked list has nodes that contain data and pointers to both the next and previous nodes. Here's an implementation:</p>
+    <pre>struct Node {
+    int data;
+    struct Node* next;
+    struct Node* prev;
+};</pre>
+</div>
+
+<!-- Question 167 -->
+<div class="question">
+    <h2>167. What is the difference between <code>malloc()</code> and <code>calloc()</code>?</h2>
+    <p><code>malloc()</code> allocates a block of memory, but does not initialize it. <code>calloc()</code> allocates memory and initializes it to zero.</p>
+</div>
+
+<!-- Question 168 -->
+<div class="question">
+    <h2>168. How do you implement a binary search tree in C?</h2>
+    <p>A binary search tree can be implemented by creating nodes with left and right child pointers. Here's a basic implementation:</p>
+    <pre>struct Node {
+    int data;
+    struct Node* left;
+    struct Node* right;
+};
+
+struct Node* insert(struct Node* root, int value) {
+    if (root == NULL) {
+        root = (struct Node*)malloc(sizeof(struct Node));
+        root->data = value;
+        root->left = root->right = NULL;
+    } else if (value < root->data) {
+        root->left = insert(root->left, value);
+    } else {
+        root->right = insert(root->right, value);
+    }
+    return root;
+}</pre>
+</div>
+
+<!-- Question 169 -->
+<div class="question">
+    <h2>169. What is a deadlock and how do you prevent it in C?</h2>
+    <p>A deadlock occurs when two or more threads are blocked forever, waiting for each other. It can be prevented by using proper synchronization mechanisms and avoiding circular dependencies.</p>
+</div>
+
+<!-- Question 170 -->
+<div class="question">
+    <h2>170. How do you implement an AVL tree in C?</h2>
+    <p>An AVL tree is a self-balancing binary search tree. Insertion and deletion operations must include balancing the tree using rotations.</p>
+</div>
+
+<!-- Question 171 -->
+<div class="question">
+    <h2>171. What is the purpose of the <code>setjmp()</code> and <code>longjmp()</code> functions in C?</h2>
+    <p><code>setjmp()</code> saves the current stack context, and <code>longjmp()</code> restores it, allowing non-local jumps, typically used for error handling and escaping deep recursion.</p>
+</div>
+
+<!-- Question 172 -->
+<div class="question">
+    <h2>172. What are mutexes and semaphores in C, and how do they work?</h2>
+    <p>Mutexes and semaphores are synchronization primitives used to manage access to shared resources in concurrent programming. Mutexes allow only one thread to access a resource at a time, while semaphores control the access to a limited number of resources.</p>
+</div>
+
+<!-- Question 173 -->
+<div class="question">
+    <h2>173. How do you implement a stack using an array in C?</h2>
+    <p>A stack can be implemented using an array and a variable to track the top of the stack. Here's an example:</p>
+    <pre>int stack[SIZE];
+int top = -1;
+
+void push(int value) {
+    if (top < SIZE - 1) {
+        stack[++top] = value;
+    }
+}
+
+int pop() {
+    if (top >= 0) {
+        return stack[top--];
+    }
+    return -1;
+}</pre>
+</div>
+
+<!-- Question 174 -->
+<div class="question">
+    <h2>174. How do you implement a queue using two stacks in C?</h2>
+    <p>A queue can be implemented using two stacks by pushing elements onto the first stack and popping from the second stack. Here's an example:</p>
+    <pre>void enqueue(int value) {
+    if (stack1.top == -1) {
+        stack1.push(value);
+    } else {
+        stack2.push(value);
+    }
+}</pre>
+</div>
+
+<!-- Question 175 -->
+<div class="question">
+    <h2>175. How do you implement a priority queue in C?</h2>
+    <p>A priority queue can be implemented using a heap, typically a binary heap, where the highest or lowest priority element is at the root.</p>
+</div>
+
+<!-- Question 176 -->
+<div class="question">
+    <h2>176. What is the purpose of the <code>exit()</code> function in C?</h2>
+    <p>The <code>exit()</code> function is used to terminate a program and return a status code to the operating system.</p>
+</div>
+
+<!-- Question 177 -->
+<div class="question">
+    <h2>177. How do you implement a Fibonacci sequence using dynamic programming in C?</h2>
+    <p>The Fibonacci sequence can be computed efficiently using dynamic programming by storing previously computed values.</p>
+    <pre>int fibonacci(int n) {
+    int dp[n + 1];
+    dp[0] = 0;
+    dp[1] = 1;
+    for (int i = 2; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+    return dp[n];
+}</pre>
+</div>
+
+<!-- Question 178 -->
+<div class="question">
+    <h2>178. What is the difference between <code>fopen()</code> and <code>freopen()</code> in C?</h2>
+    <p><code>fopen()</code> is used to open a file for reading, writing, or appending. <code>freopen()</code> is used to reopen an already opened file, usually for redirecting input or output.</p>
+</div>
+
+<!-- Question 179 -->
+<div class="question">
+    <h2>179. What is a race condition in C and how can it be avoided?</h2>
+    <p>A race condition occurs when two or more threads access shared resources concurrently and at least one thread modifies the resource. It can be avoided by using synchronization primitives such as mutexes.</p>
+</div>
+
+<!-- Question 180 -->
+<div class="question">
+    <h2>180. How would you implement a shell program in C?</h2>
+    <p>A simple shell can be implemented by reading user commands, using <code>fork()</code> to create a new process, and <code>exec()</code> to execute the command.</p>
+</div>
+<!-- Question 181 -->
+<div class="question">
+    <h2>181. What will be the output of the following code?</h2>
+    <pre>int i = 10;
+    printf("%d", i++ + ++i);</pre>
+    <p>The output of this code will depend on the compiler's order of evaluation, as the result of the expression involves both pre-increment and post-increment operators. It is generally undefined behavior.</p>
+</div>
+
+<!-- Question 182 -->
+<div class="question">
+    <h2>182. What is the output of this code? Explain.</h2>
+    <pre>int x = 5;
+    int y = ++x + x++ + x;
+    printf("%d", y);</pre>
+    <p>This is an example of undefined behavior because the variable <code>x</code> is modified more than once without an intervening sequence point. The result may vary across compilers.</p>
+</div>
+
+<!-- Question 183 -->
+<div class="question">
+    <h2>183. Can you explain the difference between <code>NULL</code>, <code>0</code>, and <code>nullptr</code> in C/C++?</h2>
+    <p><code>NULL</code> is a macro representing a null pointer in C. In C++, <code>nullptr</code> is a type-safe keyword introduced in C++11 to represent a null pointer constant. <code>0</code> is an integer that can be implicitly converted to a null pointer in both C and C++.</p>
+</div>
+
+<!-- Question 184 -->
+<div class="question">
+    <h2>184. What will be the result of this code?</h2>
+    <pre>int i = 0;
+    printf("%d", i++ + i++ + ++i);</pre>
+    <p>This code has undefined behavior due to multiple modifications of <code>i</code> without an intervening sequence point. The result can vary depending on the compiler.</p>
+</div>
+
+<!-- Question 185 -->
+<div class="question">
+    <h2>185. What happens if you return a local pointer from a function in C?</h2>
+    <p>If you return a pointer to a local variable (which is stored on the stack) from a function, it leads to undefined behavior because the local variable goes out of scope when the function returns.</p>
+</div>
+
+<!-- Question 186 -->
+<div class="question">
+    <h2>186. Can you dereference a NULL pointer in C? What happens?</h2>
+    <p>Dereferencing a NULL pointer causes undefined behavior, and typically results in a segmentation fault or memory access violation.</p>
+</div>
+
+<!-- Question 187 -->
+<div class="question">
+    <h2>187. What will happen if you use a pointer that points to freed memory?</h2>
+    <p>Using a pointer that points to freed memory is a "dangling pointer." It leads to undefined behavior, and it may cause crashes, data corruption, or memory leaks if accessed.</p>
+</div>
+
+<!-- Question 188 -->
+<div class="question">
+    <h2>188. What is the value of <code>5 / 2</code> in C when both operands are integers?</h2>
+    <p>The value of <code>5 / 2</code> will be <code>2</</code> because C performs integer division when both operands are integers, truncating the decimal part.</p>
+</div>
+
+<!-- Question 189 -->
+<div class="question">
+    <h2>189. Why should you avoid using <code>gets()</code> in C?</h2>
+    <p>The <code>gets()</code> function is unsafe because it does not check the buffer size, which can lead to buffer overflow, allowing for potential security vulnerabilities.</p>
+</div>
+
+<!-- Question 190 -->
+<div class="question">
+    <h2>190. What happens when you try to assign a string literal to a non-const char pointer?</h2>
+    <p>Assigning a string literal to a non-const <code>char*</code> pointer causes undefined behavior because string literals are stored in read-only memory. Attempting to modify them results in a segmentation fault.</p>
+</div>
+
+<!-- Question 191 -->
+<div class="question">
+    <h2>191. What happens when you have a "Memory leak" in C, and how do you fix it?</h2>
+    <p>A memory leak occurs when dynamically allocated memory is not freed, causing your program to run out of memory. To fix it, you should ensure that every <code>malloc()</code> or <code>calloc()</code> is paired with a corresponding <code>free()</code>.</p>
+</div>
+
+<!-- Question 192 -->
+<div class="question">
+    <h2>192. How would you define an array of strings in C?</h2>
+    <pre>char arr[3][20] = {"First", "Second", "Third"};</pre>
+    <p>This is an example of a 2D array that stores multiple strings, with each string having a maximum length of 19 characters plus the null terminator.</p>
+</div>
+
+<!-- Question 193 -->
+<div class="question">
+    <h2>193. What is the difference between a stack and a heap in memory management?</h2>
+    <p>The stack is used for local variables and function calls, and memory is automatically managed. The heap is used for dynamically allocated memory, which requires explicit allocation (<code>malloc()</code>, <code>calloc()</code>) and deallocation (<code>free()</code>).</p>
+</div>
+
+<!-- Question 194 -->
+<div class="question">
+    <h2>194. What happens when you use a pointer to an array of pointers in C?</h2>
+    <p>When you use a pointer to an array of pointers, you can access the elements of the array indirectly. You must use the pointer correctly to avoid memory errors.</p>
+    <pre>int *arr[] = {&x, &y};</pre>
+</div>
+
+<!-- Question 195 -->
+<div class="question">
+    <h2>195. What happens if you forget to <code>free()</code> dynamically allocated memory?</h2>
+    <p>Forgetting to <code>free()</code> dynamically allocated memory leads to a memory leak, where memory is not released back to the system, potentially causing performance issues or running out of memory.</p>
+</div>
+
+<!-- Question 196 -->
+<div class="question">
+    <h2>196. What will the following code output?</h2>
+    <pre>int x = 5;
+    printf("%d", x++ * ++x);</pre>
+    <p>This code contains undefined behavior due to modifying <code>x</code> multiple times between sequence points.</p>
+</div>
+
+<!-- Question 197 -->
+<div class="question">
+    <h2>197. What is the output of this program?</h2>
+    <pre>int i = 10;
+    int j = i + 10;
+    printf("%d", i + j);</pre>
+    <p>The output will be <code>30</code>, because <code>j</code> is the sum of <code>i + 10</code>, and <code>i</code> is 10.</p>
+</div>
+
+<!-- Question 198 -->
+<div class="question">
+    <h2>198. What is the value of an uninitialized local variable in C?</h2>
+    <p>The value of an uninitialized local variable in C is indeterminate and can cause unpredictable behavior or crashes if accessed.</p>
+</div>
+
+<!-- Question 199 -->
+<div class="question">
+    <h2>199. Can you write a program that prints the size of a struct in C?</h2>
+    <pre>struct myStruct {
+    int a;
+    char b;
+    };
+    printf("%zu", sizeof(struct myStruct));</pre>
+    <p>The size of the struct may vary based on the platform, but it will likely be padded for alignment.</p>
+</div>
+
+<!-- Question 200 -->
+<div class="question">
+    <h2>200. What is the difference between <code>static</code> and <code>extern</code> in C?</h2>
+    <p><code>static</code> limits the scope of a variable or function to the current file, while <code>extern</code> is used to declare variables and functions that are defined in another file.</p>
+</div>
+
+<!-- Question 201 -->
+<div class="question">
+    <h2>201. What will be the output of the following code?</h2>
+    <pre>int a = 3, b = 5;
+    printf("%d", a + b + a++ + ++b);</pre>
+    <p>This code involves both pre-increment and post-increment operators, and the output depends on the order of evaluation. In most cases, the result will be <code>3 + 5 + 3 + 6 = 17</code>, but the actual output may vary across compilers due to undefined behavior.</p>
+</div>
+
+<!-- Question 202 -->
+<div class="question">
+    <h2>202. What will be the output of the following code?</h2>
+    <pre>int x = 10, y = 20;
+    int result = x++ * --y;
+    printf("%d", result);</pre>
+    <p>The output will be <code>10 * 19 = 190</code> because the post-increment operator applies after <code>x</code> is used in the expression and the pre-decrement operator applies before <code>y</code> is used.</p>
+</div>
+
+<!-- Question 203 -->
+<div class="question">
+    <h2>203. What is the output of this program?</h2>
+    <pre>int i = 10;
+    int j = ++i + ++i;
+    printf("%d", j);</pre>
+    <p>This code results in undefined behavior because <code>i</code> is modified multiple times within the same expression without an intervening sequence point.</p>
+</div>
+
+<!-- Question 204 -->
+<div class="question">
+    <h2>204. What is the result of the following expression in C?</h2>
+    <pre>int a = 5, b = 10;
+    printf("%d", a + b == 15 ? 1 : 0);</pre>
+    <p>This will print <code>1</code> because the condition <code>a + b == 15</code> is true, and the ternary operator will select the first branch.</p>
+</div>
+
+<!-- Question 205 -->
+<div class="question">
+    <h2>205. What is the output of this code?</h2>
+    <pre>int x = 10, y = 5;
+    printf("%d", x == y ? x++ : ++y);</pre>
+    <p>The output will be <code>6</code> because the ternary operator evaluates <code>++y</code> since <code>x == y</code> is false, incrementing <code>y</code>.</p>
+</div>
+
+<!-- Question 206 -->
+<div class="question">
+    <h2>206. What will be the output of this code snippet?</h2>
+    <pre>int a = 5, b = 3;
+    a = a++ + ++b;
+    printf("%d", a);</pre>
+    <p>The output will be <code>9</code> because the post-increment operator applies to <code>a</code> after its value is used, and <code>b</code> is incremented before it is used.</p>
+</div>
+
+<!-- Question 207 -->
+<div class="question">
+    <h2>207. What will be the output of this program?</h2>
+    <pre>int x = 2, y = 3;
+    printf("%d", x == 2 && y == 3 ? x : y);</pre>
+    <p>The output will be <code>2</code> because the condition in the ternary operator evaluates as true and thus selects <code>x</code>.</p>
+</div>
+
+<!-- Question 208 -->
+<div class="question">
+    <h2>208. What will happen if you try to access an array element out of bounds in C?</h2>
+    <pre>int arr[5] = {1, 2, 3, 4, 5};
+    printf("%d", arr[10]);</pre>
+    <p>Accessing an out-of-bounds array element leads to undefined behavior, and the result may be unpredictable, such as a segmentation fault or garbage value.</p>
+</div>
+
+<!-- Question 209 -->
+<div class="question">
+    <h2>209. What will be the output of the following code?</h2>
+    <pre>int a = 5;
+    int *p = &a;
+    printf("%d %d", *p, p);</pre>
+    <p>The output will be the value of <code>a</code> followed by the memory address of <code>a</code> stored in <code>p</>.</p>
+</div>
+
+<!-- Question 210 -->
+<div class="question">
+    <h2>210. What will happen if you try to assign a string literal to a non-const char pointer?</h2>
+    <pre>char *str = "Hello World!";
+    str[0] = 'h';</pre>
+    <p>Attempting to modify a string literal will result in undefined behavior because string literals are stored in read-only memory. It could cause a segmentation fault.</p>
+</div>
+
+<!-- Question 211 -->
+<div class="question">
+    <h2>211. What will the following code output?</h2>
+    <pre>int x = 0;
+    if(x == 0) printf("True");
+    else printf("False");</pre>
+    <p>The output will be <code>True</code> because <code>x == 0</code> evaluates to true.</p>
+</div>
+
+<!-- Question 212 -->
+<div class="question">
+    <h2>212. What is the output of this code?</h2>
+    <pre>int x = 10, y = 5;
+    printf("%d", x && y);</pre>
+    <p>The output will be <code>1</code> because both <code>x</code> and <code>y</code> are non-zero, and in a logical AND operation, non-zero values evaluate to true.</p>
+</div>
+
+<!-- Question 213 -->
+<div class="question">
+    <h2>213. What will happen if you dereference a NULL pointer in C?</h2>
+    <pre>int *ptr = NULL;
+    printf("%d", *ptr);</pre>
+    <p>Dereferencing a NULL pointer causes undefined behavior, usually resulting in a segmentation fault.</p>
+</div>
+
+<!-- Question 214 -->
+<div class="question">
+    <h2>214. What will be the result of this code?</h2>
+    <pre>int a = 1, b = 2, c = 3;
+    printf("%d", a + b * c);</pre>
+    <p>The result will be <code>7</code> because multiplication has higher precedence than addition, so <code>b * c</code> is calculated first.</p>
+</div>
+
+<!-- Question 215 -->
+<div class="question">
+    <h2>215. What is the output of this code?</h2>
+    <pre>int a = 2;
+    a = ++a + a++;
+    printf("%d", a);</pre>
+    <p>The output will be <code>5</code> because <code>++a</code> increments <code>a</code> first, and <code>a++</code> uses the value of <code>a</code> and increments it after.</p>
+</div>
+
+<!-- Question 216 -->
+<div class="question">
+    <h2>216. How can you prevent buffer overflow in C?</h2>
+    <p>You can prevent buffer overflow by ensuring that the data written to an array or buffer does not exceed its size. This can be done by using safe functions such as <code>fgets()</code> instead of <code>gets()</code>, and by properly validating input lengths.</p>
+</div>
+
+<!-- Question 217 -->
+<div class="question">
+    <h2>217. What is the result of the following expression in C?</h2>
+    <pre>int a = 5, b = 3;
+    printf("%d", (a > b) ? a : b);</pre>
+    <p>The output will be <code>5</code> because the condition <code>a > b</code> is true, so the ternary operator returns <code>a</code>.</p>
+</div>
+
+<!-- Question 218 -->
+<div class="question">
+    <h2>218. What is the output of this code?</h2>
+    <pre>int a = 5;
+    a = --a * a++;
+    printf("%d", a);</pre>
+    <p>The result will be <code>24</code> because <code>--a</code> evaluates to <code>4</code>, and <code>a++</code> evaluates to <code>4</code> before being incremented.</p>
+</div>
+
+<!-- Question 219 -->
+<div class="question">
+    <h2>219. What will the following code print?</h2>
+    <pre>int a = 2;
+    printf("%d", a++ + a++);</pre>
+    <p>The output will be <code>4</code> because <code>a++</code> increments <code>a</code> after it is used, so the result is <code>2 + 2 = 4</code>.</p>
+</div>
+
+<!-- Question 220 -->
+<div class="question">
+    <h2>220. What is the result of this code?</h2>
+    <pre>int x = 3, y = 4;
+    printf("%d", (x == y) ? x : y);</pre>
+    <p>The output will be <code>4</code> because the condition <code>x == y</code> is false, so the ternary operator returns <code>y</code>.</p>
+</div>
+
+<!-- Question 221 -->
+<div class="question">
+    <h2>221. What is the output of this code?</h2>
+    <pre>int a = 10;
+    printf("%d", a * ++a);</pre>
+    <p>This results in undefined behavior because the variable <code>a</code> is modified more than once between sequence points.</p>
+</div>
+
+<!-- Question 222 -->
+<div class="question">
+    <h2>222. What will be the output of the following code?</h2>
+    <pre>int a = 1, b = 2;
+    printf("%d", ++a * ++b);</pre>
+    <p>The output will be <code>6</code> because both <code>a</code> and <code>b</code> are pre-incremented before multiplication.</p>
+</div>
+
+<!-- Question 223 -->
+<div class="question">
+    <h2>223. What will happen when you declare a pointer to a function?</h2>
+    <p>Declaring a pointer to a function allows you to indirectly call the function via the pointer. This is useful for dynamic function calls and implementing function callbacks.</p>
+</div>
+
+<!-- Question 224 -->
+<div class="question">
+    <h2>224. What happens if you access a local variable after its scope has ended in C?</h2>
+    <p>Accessing a local variable after its scope has ended (such as accessing a local variable outside of its function) results in undefined behavior, as the memory for the variable may have been released or overwritten.</p>
+</div>
+
+<!-- Question 225 -->
+<div class="question">
+    <h2>225. What is the output of the following code?</h2>
+    <pre>int x = 4;
+    printf("%d", x * x++);</pre>
+    <p>The output will be <code>16</code> because <code>x</code> is used in the multiplication first and then incremented.</p>
+</div>
+
+<!-- Question 226 -->
+<div class="question">
+    <h2>226. What happens if you pass a pointer to a function by value?</h2>
+    <p>Passing a pointer by value allows the function to access and modify the object it points to. However, changes made to the pointer itself (like pointing to a new memory address) will not affect the original pointer in the calling function.</p>
+</div>
+
+<!-- Question 227 -->
+<div class="question">
+    <h2>227. What will be the output of the following code?</h2>
+    <pre>int a = 5;
+    int *ptr = &a;
+    printf("%d", *ptr++);</pre>
+    <p>The output will be <code>5</code> because the post-increment operator increments the pointer after dereferencing, so the value 5 is printed before the pointer moves.</p>
+</div>
+
+<!-- Question 228 -->
+<div class="question">
+    <h2>228. What happens if you use an uninitialized pointer in C?</h2>
+    <p>Using an uninitialized pointer leads to undefined behavior, and the result may vary depending on the memory address the pointer contains. It may cause crashes or corrupt data.</p>
+</div>
+
+<!-- Question 229 -->
+<div class="question">
+    <h2>229. What is the output of this program?</h2>
+    <pre>int a = 10;
+    printf("%d", a > 5 ? a : 0);</pre>
+    <p>The output will be <code>10</code> because the condition <code>a > 5</code> is true, so <code>a</code> is printed.</p>
+</div>
+
+<!-- Question 230 -->
+<div class="question">
+    <h2>230. What is the result of this code?</h2>
+    <pre>int x = 5;
+    printf("%d", x++ - --x);</pre>
+    <p>The result will be <code>0</code> because the post-increment and pre-decrement operators effectively cancel each other out.</p>
+</div>
+
+
+<!-- Question 231 -->
+<div class="question">
+    <h2>231. What is the output of the following code?</h2>
+    <pre>int x = 5;
+    if (x == 5) { 
+        x = 10; 
+    } 
+    else { 
+        x = 20; 
+    }
+    printf("%d", x);</pre>
+    <p>The output will be <code>10</code> because the value of <code>x</code> is updated inside the if condition.</p>
+</div>
+
+<!-- Question 232 -->
+<div class="question">
+    <h2>232. What happens when you use a variable before it is initialized in C?</h2>
+    <pre>int a;
+    printf("%d", a);</pre>
+    <p>This results in undefined behavior because accessing an uninitialized variable leads to unpredictable values being used.</p>
+</div>
+
+<!-- Question 233 -->
+<div class="question">
+    <h2>233. What is the output of the following code?</h2>
+    <pre>char *str = "Hello";
+    str[0] = 'h';
+    printf("%s", str);</pre>
+    <p>This will cause undefined behavior because string literals are stored in read-only memory, and attempting to modify them leads to a runtime error.</p>
+</div>
+
+<!-- Question 234 -->
+<div class="question">
+    <h2>234. What will happen if you try to return a local pointer to a function?</h2>
+    <pre>int* getPointer() {
+        int x = 10;
+        return &x;
+    }
+    printf("%d", *getPointer());</pre>
+    <p>Returning a pointer to a local variable results in undefined behavior because the local variable's memory is released once the function scope ends. Dereferencing it causes an invalid memory access.</p>
+</div>
+
+<!-- Question 235 -->
+<div class="question">
+    <h2>235. What will be the output of the following code?</h2>
+    <pre>int arr[5] = {1, 2, 3, 4, 5};
+    printf("%d", arr[10]);</pre>
+    <p>Accessing an element outside the bounds of the array causes undefined behavior. It may result in a segmentation fault or printing garbage values.</p>
+</div>
+
+<!-- Question 236 -->
+<div class="question">
+    <h2>236. What is the output of the following code?</h2>
+    <pre>int a = 10;
+    if (a > 5) {
+        a = 20;
+    }
+    printf("%d", a);</pre>
+    <p>The output will be <code>20</code> because the condition <code>a > 5</code> is true, and <code>a</code> is set to 20.</p>
+</div>
+
+<!-- Question 237 -->
+<div class="question">
+    <h2>237. What is the result of the following code?</h2>
+    <pre>int a = 3;
+    if (a == 3) {
+        printf("Hello");
+    }
+    else if (a == 4) {
+        printf("World");
+    }
+    else {
+        printf("Goodbye");
+    }</pre>
+    <p>The output will be <code>Hello</code> because <code>a == 3</code> evaluates to true.</p>
+</div>
+
+<!-- Question 238 -->
+<div class="question">
+    <h2>238. What is the output of the following code?</h2>
+    <pre>int x = 5;
+    int y = 10;
+    printf("%d", (x > y) ? x : y);</pre>
+    <p>The output will be <code>10</code> because the condition <code>x > y</code> is false, so <code>y</code> is selected by the ternary operator.</p>
+</div>
+
+<!-- Question 239 -->
+<div class="question">
+    <h2>239. What happens when you dereference a NULL pointer in C?</h2>
+    <pre>int* ptr = NULL;
+    printf("%d", *ptr);</pre>
+    <p>Dereferencing a NULL pointer leads to undefined behavior and typically results in a segmentation fault.</p>
+</div>
+
+<!-- Question 240 -->
+<div class="question">
+    <h2>240. What will the following code output?</h2>
+    <pre>int a = 10, b = 20;
+    printf("%d", (a + b) == 30 ? 1 : 0);</pre>
+    <p>The output will be <code>1</code> because the condition <code>(a + b) == 30</code> is true.</p>
+</div>
+
+<!-- Question 241 -->
+<div class="question">
+    <h2>241. What will happen if you declare an array with a negative size?</h2>
+    <pre>int arr[-5];</pre>
+    <p>Declaring an array with a negative size is a compile-time error because array sizes cannot be negative.</p>
+</div>
+
+<!-- Question 242 -->
+<div class="question">
+    <h2>242. What will happen if you try to access a pointer that has not been allocated memory in C?</h2>
+    <pre>int *ptr;
+    printf("%d", *ptr);</pre>
+    <p>Accessing a pointer that has not been allocated memory results in undefined behavior, often leading to a segmentation fault.</p>
+</div>
+
+<!-- Question 243 -->
+<div class="question">
+    <h2>243. What will be the result of the following code?</h2>
+    <pre>int x = 5, y = 3;
+    printf("%d", (x == y) ? 5 : 10);</pre>
+    <p>The output will be <code>10</code> because the condition <code>x == y</code> is false, so <code>10</code> is selected by the ternary operator.</p>
+</div>
+
+<!-- Question 244 -->
+<div class="question">
+    <h2>244. What is the output of the following code?</h2>
+    <pre>int a = 10;
+    int b = 5;
+    if (a == 10) {
+        b = 20;
+    }
+    printf("%d", b);</pre>
+    <p>The output will be <code>20</code> because the condition <code>a == 10</code> is true, and <code>b</code> is set to 20.</p>
+</div>
+
+<!-- Question 245 -->
+<div class="question">
+    <h2>245. What will happen if you pass a string to a function that expects a char pointer?</h2>
+    <pre>void printCharPointer(char *str) {
+        printf("%s", str);
+    }
+    printCharPointer("Hello World!");</pre>
+    <p>The function can print the string correctly because a string literal can be passed to a function that expects a <code>char*</code>.</p>
+</div>
+
+<!-- Question 246 -->
+<div class="question">
+    <h2>246. What is the output of this code?</h2>
+    <pre>int arr[3] = {1, 2, 3};
+    int *ptr = arr;
+    printf("%d", *ptr);</pre>
+    <p>The output will be <code>1</code> because the pointer <code>ptr</code> points to the first element of the array, which is <code>1</code>.</p>
+</div>
+
+<!-- Question 247 -->
+<div class="question">
+    <h2>247. What is the result of using a local variable outside its scope?</h2>
+    <pre>int x = 10;
+    if (x == 10) {
+        int y = 5;
+    }
+    printf("%d", y);</pre>
+    <p>Using <code>y</code> outside its scope results in a compile-time error because the variable is only valid within the if block.</p>
+</div>
+
+<!-- Question 248 -->
+<div class="question">
+    <h2>248. What is the result of dividing by zero in C?</h2>
+    <pre>int x = 5, y = 0;
+    printf("%d", x / y);</pre>
+    <p>Dividing by zero leads to undefined behavior, and most systems will throw a runtime error or crash the program.</p>
+</div>
+
+<!-- Question 249 -->
+<div class="question">
+    <h2>249. What will happen if you call a function with an argument of the wrong type?</h2>
+    <pre>void func(int x) {
+        printf("%d", x);
+    }
+    func(3.14);</pre>
+    <p>Passing an argument of the wrong type (like a floating-point value to an integer argument) will cause a compilation error due to type mismatch.</p>
+</div>
+
+<!-- Question 250 -->
+<div class="question">
+    <h2>250. What is the output of this program?</h2>
+    <pre>char *ptr = "Hello";
+    ptr[0] = 'h';
+    printf("%s", ptr);</pre>
+    <p>Modifying a string literal is undefined behavior in C. The program may crash or print incorrect results depending on how the compiler handles the read-only memory for string literals.</p>
+</div>
+ </div>
+
+    <footer>
+        © 2025 SEED. All Rights Reserved.
+    </footer>
+</body>
+</html>

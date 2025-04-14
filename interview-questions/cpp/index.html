@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Interview Questions - Complete</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" type="image/webp">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        .question h2 {
+            font-size: 1.2rem;
+            color: #35424a;
+        }
+        .question pre {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="SEED Logo">
+        <h1>C++ Interview Questions - Complete</h1>
+    </header>
+
+    <div class="container">
+        <!-- Question 1 -->
+        <div class="question">
+            <h2>1. What is C++?</h2>
+            <p>C++ is a high-level, general-purpose programming language that supports both procedural and object-oriented programming, enabling efficient system and application development.</p>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <h2>2. What is the difference between C++ and C?</h2>
+            <p>C++ is an extension of C that adds object-oriented features like classes and inheritance. C is procedural and does not support these features.</p>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <h2>3. What are the basic data types in C++?</h2>
+            <ul>
+                <li><code>int</code>: Integer</li>
+                <li><code>float</code>: Floating-point numbers</li>
+                <li><code>char</code>: Characters</li>
+                <li><code>double</code>: Double-precision floating-point numbers</li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <h2>4. What is a constructor in C++?</h2>
+            <p>A constructor is a special member function of a class that is executed when an object of the class is created. It initializes the object's data members.</p>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <h2>5. What is a destructor in C++?</h2>
+            <p>A destructor is a special member function of a class that is executed when an object of the class is destroyed. It is used to release resources allocated by the constructor.</p>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <h2>6. What is the difference between a class and a structure in C++?</h2>
+            <p>In C++, classes default to private access, whereas structures default to public access. Both can have functions and data members.</p>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <h2>7. What is polymorphism in C++?</h2>
+            <p>Polymorphism allows objects of different classes to be treated as objects of a common base class. It can be implemented through function overloading and operator overloading.</p>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <h2>8. What is inheritance in C++?</h2>
+            <p>Inheritance is a mechanism where one class (derived class) inherits properties and behaviors from another class (base class).</p>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <h2>9. What is encapsulation in C++?</h2>
+            <p>Encapsulation is the bundling of data and methods that operate on that data within one unit, typically a class. It restricts direct access to some of the object's components.</p>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <h2>10. What is the difference between static and dynamic memory allocation in C++?</h2>
+            <p>Static memory allocation occurs at compile time, while dynamic memory allocation occurs at runtime using functions like <code>new</code> and <code>delete</code>.</p>
+        </div>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <h2>11. What is a virtual function in C++?</h2>
+            <p>A virtual function is a function in a base class that is overridden in a derived class. It supports dynamic polymorphism.</p>
+        </div>
+
+        <!-- Question 12 -->
+        <div class="question">
+            <h2>12. What is the 'this' pointer in C++?</h2>
+            <p>The <code>this</code> pointer is an implicit pointer available inside all non-static member functions of a class. It points to the current object of the class.</p>
+        </div>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <h2>13. What is operator overloading in C++?</h2>
+            <p>Operator overloading allows you to define custom behavior for operators when they are used with user-defined types (classes).</p>
+        </div>
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h2>14. What is function overloading in C++?</h2>
+            <p>Function overloading allows multiple functions to have the same name but different parameters, enabling the same function to perform different tasks.</p>
+        </div>
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h2>15. What is the purpose of the 'new' and 'delete' operators in C++?</h2>
+            <p>The <code>new</code> operator is used to dynamically allocate memory on the heap, while the <code>delete</code> operator is used to free that memory.</p>
+        </div>
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h2>16. What is the difference between <code>malloc()</code> and <code>new</code> in C++?</h2>
+            <p><code>malloc()</code> is used for memory allocation in C, while <code>new</code> is used in C++ for dynamic memory allocation and also calls the constructor.</p>
+        </div>
+
+        <!-- Question 17 -->
+        <div class="question">
+            <h2>17. What is the use of the 'explicit' keyword in C++?</h2>
+            <p>The <code>explicit</code> keyword is used to prevent implicit conversions for constructors and conversion operators.</p>
+        </div>
+
+        <!-- Question 18 -->
+        <div class="question">
+            <h2>18. What is a friend function in C++?</h2>
+            <p>A friend function is a function that is not a member of a class but can access its private and protected members.</p>
+        </div>
+
+        <!-- Question 19 -->
+        <div class="question">
+            <h2>19. What is an abstract class in C++?</h2>
+            <p>An abstract class is a class that cannot be instantiated and is used to define a base class for derived classes. It contains at least one pure virtual function.</p>
+        </div>
+
+        <!-- Question 20 -->
+        <div class="question">
+            <h2>20. What is a pure virtual function in C++?</h2>
+            <p>A pure virtual function is a function that is declared in a base class but has no implementation. It forces derived classes to provide an implementation.</p>
+        </div>
+
+
+    <!-- Question 21 -->
+    <div class="question">
+        <h2>21. What is a union in C?</h2>
+        <p>A union is a data structure where all members share the same memory location. A union can hold only one member's value at a time, unlike a structure.</p>
+    </div>
+
+    <!-- Question 22 -->
+    <div class="question">
+        <h2>22. What is the difference between '==' and '=' in C?</h2>
+        <p>'==' is the equality operator, used to compare two values, while '=' is the assignment operator, used to assign a value to a variable.</p>
+    </div>
+
+    <!-- Question 23 -->
+    <div class="question">
+        <h2>23. What are the storage classes in C?</h2>
+        <p>The storage classes in C are:
+            <ul>
+                <li><code>auto</code>: Default storage class for local variables.</li>
+                <li><code>register</code>: Requests that the variable be stored in a CPU register.</li>
+                <li><code>static</code>: Retains the variable's value between function calls.</li>
+                <li><code>extern</code>: Refers to a global variable defined in another file.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 24 -->
+    <div class="question">
+        <h2>24. What is an array in C?</h2>
+        <p>An array is a collection of elements of the same type, stored in contiguous memory locations. Arrays are accessed using an index.</p>
+    </div>
+
+    <!-- Question 25 -->
+    <div class="question">
+        <h2>25. What is the difference between a character array and a string in C?</h2>
+        <p>A character array is an array of characters, while a string in C is an array of characters terminated by a null character ('\0').</p>
+    </div>
+
+    <!-- Question 26 -->
+    <div class="question">
+        <h2>26. What is the use of <code>sizeof</code> operator?</h2>
+        <p>The <code>sizeof</code> operator returns the size of a data type or variable in bytes.</p>
+    </div>
+
+    <!-- Question 27 -->
+    <div class="question">
+        <h2>27. Explain 'call by value' and 'call by reference'.</h2>
+        <p>'Call by value' passes a copy of the argument, and changes made inside the function do not affect the original variable. 'Call by reference' passes the address of the argument, so changes inside the function affect the original variable.</p>
+    </div>
+
+    <!-- Question 28 -->
+    <div class="question">
+        <h2>28. What is the purpose of <code>extern</code> keyword in C?</h2>
+        <p>The <code>extern</code> keyword is used to declare a variable or function in another file or scope, allowing it to be accessed from a different source file.</p>
+    </div>
+
+    <!-- Question 29 -->
+    <div class="question">
+        <h2>29. What is a function pointer in C?</h2>
+        <p>A function pointer is a pointer that points to a function instead of a data value, allowing functions to be passed as arguments or returned from other functions.</p>
+    </div>
+
+    <!-- Question 30 -->
+    <div class="question">
+        <h2>30. What is a bitwise operator in C?</h2>
+        <p>Bitwise operators perform operations on individual bits of data, such as AND, OR, XOR, NOT, shift left, and shift right. They operate on binary representations of numbers.</p>
+    </div>
+
+    <!-- Question 31 -->
+    <div class="question">
+        <h2>31. What is a stack and queue?</h2>
+        <p>A stack is a data structure that follows the Last-In-First-Out (LIFO) principle, while a queue follows the First-In-First-Out (FIFO) principle.</p>
+    </div>
+
+    <!-- Question 32 -->
+    <div class="question">
+        <h2>32. What is a linked list?</h2>
+        <p>A linked list is a linear data structure in which elements are stored in nodes, with each node containing data and a pointer to the next node.</p>
+    </div>
+
+    <!-- Question 33 -->
+    <div class="question">
+        <h2>33. What are the types of linked lists?</h2>
+        <p>The types of linked lists are:
+            <ul>
+                <li>Single Linked List: Each node points to the next node.</li>
+                <li>Doubly Linked List: Each node points to both the next and previous node.</li>
+                <li>Circular Linked List: The last node points back to the first node.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 34 -->
+    <div class="question">
+        <h2>34. What is the difference between <code>malloc()</code> and <code>calloc()</code>?</h2>
+        <p><code>malloc()</code> allocates uninitialized memory, while <code>calloc()</code> allocates memory and initializes it to zero.</p>
+    </div>
+
+    <!-- Question 35 -->
+    <div class="question">
+        <h2>35. What is the difference between <code>struct</code> and <code>union</code>?</h2>
+        <p><code>struct</code>: Each member has a unique memory location.</p>
+        <p><code>union</code>: All members share the same memory location.</p>
+    </div>
+
+    <!-- Question 36 -->
+    <div class="question">
+        <h2>36. What is dynamic memory allocation?</h2>
+        <p>Dynamic memory allocation is the process of allocating memory at runtime using functions like <code>malloc()</code>, <code>calloc()</code>, <code>realloc()</code>, and <code>free()</code>.</p>
+    </div>
+
+    <!-- Question 37 -->
+    <div class="question">
+        <h2>37. What is the difference between <code>new</code> and <code>malloc()</code>?</h2>
+        <p><code>malloc()</code> allocates raw memory and returns a pointer, while <code>new</code> initializes the memory and calls the constructor for objects in C++.</p>
+    </div>
+
+    <!-- Question 38 -->
+    <div class="question">
+        <h2>38. What are the advantages of using pointers?</h2>
+        <p>Pointers allow direct memory access, passing large structures or arrays efficiently, and dynamic memory allocation.</p>
+    </div>
+
+    <!-- Question 39 -->
+    <div class="question">
+        <h2>39. How do you free dynamically allocated memory in C?</h2>
+        <p>Use the <code>free()</code> function to release dynamically allocated memory.</p>
+    </div>
+
+    <!-- Question 40 -->
+    <div class="question">
+        <h2>40. What are the different types of operators in C?</h2>
+        <p>Types of operators in C include:
+            <ul>
+                <li>Arithmetic Operators</li>
+                <li>Relational Operators</li>
+                <li>Logical Operators</li>
+                <li>Bitwise Operators</li>
+                <li>Assignment Operators</li>
+                <li>Increment/Decrement Operators</li>
+                <li>Conditional (Ternary) Operator</li>
+                <li>Pointer Operators</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 41 -->
+    <div class="question">
+        <h2>41. What is a dangling pointer?</h2>
+        <p>A dangling pointer is a pointer that points to memory that has been deallocated or freed, leading to undefined behavior if accessed.</p>
+    </div>
+
+    <!-- Question 42 -->
+    <div class="question">
+        <h2>42. What is the purpose of the <code>const</code> keyword in C?</h2>
+        <p>The <code>const</code> keyword is used to define constants that cannot be changed after their initialization.</p>
+    </div>
+
+    <!-- Question 43 -->
+    <div class="question">
+        <h2>43. What is a function declaration in C?</h2>
+        <p>A function declaration specifies the function's return type, name, and parameters without providing the function's definition. It allows the compiler to recognize the function.</p>
+    </div>
+
+    <!-- Question 44 -->
+    <div class="question">
+        <h2>44. What is the difference between <code>++i</code> and <code>i++</code>?</h2>
+        <p><code>++i</code> is a pre-increment operator, which increments the value of <code>i</code> before its use, while <code>i++</code> is a post-increment operator, which increments the value of <code>i</code> after its use.</p>
+    </div>
+
+    <!-- Question 45 -->
+    <div class="question">
+        <h2>45. What is the role of the <code>volatile</code> keyword?</h2>
+        <p>The <code>volatile</code> keyword informs the compiler that a variable can be modified outside the program (such as through hardware or interrupts), preventing it from optimizing the variable.</p>
+    </div>
+
+    <!-- Question 46 -->
+    <div class="question">
+        <h2>46. What is the output of this program?</h2>
+        <pre>
+#include <stdio.h>
+int main() {
+    int x = 5;
+    printf("%d", ++x);
+    return 0;
+}
+        </pre>
+        <p>Output: 6</p>
+    </div>
+
+    <!-- Question 47 -->
+    <div class="question">
+        <h2>47. What is the difference between a while loop and a do-while loop?</h2>
+        <p>A <code>while</code> loop checks the condition before executing the loop, while a <code>do-while</code> loop guarantees at least one execution because it checks the condition after the loop.</p>
+    </div>
+
+    <!-- Question 48 -->
+    <div class="question">
+        <h2>48. What is the use of the <code>break</code> statement?</h2>
+        <p>The <code>break</code> statement is used to exit a loop or a switch case prematurely.</p>
+    </div>
+
+    <!-- Question 49 -->
+    <div class="question">
+        <h2>49. What is the difference between a local and a global variable?</h2>
+        <p>A local variable is declared inside a function or block and is accessible only within that function or block. A global variable is declared outside all functions and is accessible throughout the program.</p>
+    </div>
+
+    <!-- Question 50 -->
+    <div class="question">
+        <h2>50. What is the purpose of the <code>continue</code> statement?</h2>
+        <p>The <code>continue</code> statement skips the remaining part of the current iteration in a loop and proceeds to the next iteration.</p>
+    </div>
+
+    <!-- Question 51 -->
+    <div class="question">
+        <h2>51. What will be the output of the following code?</h2>
+        <pre>
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 5, b = 10;
+    if (a = b) {
+        cout << "True";
+    } else {
+        cout << "False";
+    }
+    return 0;
+}
+        </pre>
+        <p>Output: True (because 'a = b' assigns the value of 'b' to 'a' and returns true.)</p>
+    </div>
+
+    <!-- Question 52 -->
+    <div class="question">
+        <h2>52. Can you define a constructor inside a class declaration in C++?</h2>
+        <p>Yes, constructors can be defined inside the class declaration. This is called an inline constructor.</p>
+    </div>
+
+    <!-- Question 53 -->
+    <div class="question">
+        <h2>53. What will happen if you try to delete a pointer that has already been deleted in C++?</h2>
+        <p>It will cause undefined behavior. Deleting a pointer multiple times without resetting it can lead to memory corruption.</p>
+    </div>
+
+    <!-- Question 54 -->
+    <div class="question">
+        <h2>54. What is the difference between a reference and a pointer in C++?</h2>
+        <p>A pointer can be reassigned to point to different memory locations, while a reference cannot be changed once it is initialized to a variable. A pointer can be NULL, but a reference cannot.</p>
+    </div>
+
+    <!-- Question 55 -->
+    <div class="question">
+        <h2>55. What will happen if you initialize a reference with NULL in C++?</h2>
+        <p>References in C++ cannot be initialized with NULL. Doing so will lead to undefined behavior.</p>
+    </div>
+
+    <!-- Question 56 -->
+    <div class="question">
+        <h2>56. What is the 'virtual' keyword used for in C++?</h2>
+        <p>The 'virtual' keyword is used to declare a virtual function, enabling runtime polymorphism. It ensures that the correct function is called for an object, even when using a base class pointer or reference.</p>
+    </div>
+
+    <!-- Question 57 -->
+    <div class="question">
+        <h2>57. Can constructors be virtual in C++?</h2>
+        <p>No, constructors cannot be virtual in C++ because they are not inherited. Virtual functions only make sense for functions that are inherited.</p>
+    </div>
+
+    <!-- Question 58 -->
+    <div class="question">
+        <h2>58. What is the difference between 'new' and 'malloc' in C++?</h2>
+        <p>'new' in C++ not only allocates memory but also calls the constructor of the object. 'malloc' only allocates memory and does not call any constructor.</p>
+    </div>
+
+    <!-- Question 59 -->
+    <div class="question">
+        <h2>59. What is the difference between 'delete' and 'delete[]' in C++?</h2>
+        <p>'delete' is used to deallocate memory allocated for a single object, while 'delete[]' is used to deallocate memory allocated for an array of objects.</p>
+    </div>
+
+    <!-- Question 60 -->
+    <div class="question">
+        <h2>60. What is the use of the 'explicit' keyword in C++?</h2>
+        <p>The 'explicit' keyword is used to prevent implicit conversions and copy initialization of objects, avoiding unexpected behavior in some cases.</p>
+    </div>
+
+    <!-- Question 61 -->
+    <div class="question">
+        <h2>61. Can a class have more than one constructor in C++?</h2>
+        <p>Yes, a class can have multiple constructors with different parameter lists. This is known as constructor overloading.</p>
+    </div>
+
+    <!-- Question 62 -->
+    <div class="question">
+        <h2>62. Can we have a constructor in a structure in C++?</h2>
+        <p>Yes, structures in C++ can have constructors, unlike in C where structures can't have constructors.</p>
+    </div>
+
+    <!-- Question 63 -->
+    <div class="question">
+        <h2>63. What is the purpose of the 'this' pointer in C++?</h2>
+        <p>The 'this' pointer is an implicit pointer available inside non-static member functions, referring to the current instance of the class.</p>
+    </div>
+
+    <!-- Question 64 -->
+    <div class="question">
+        <h2>64. What is the difference between shallow copy and deep copy in C++?</h2>
+        <p>Shallow copy copies the values of the data members, while deep copy copies the actual data by creating a new instance for complex data members (like dynamically allocated memory).</p>
+    </div>
+
+    <!-- Question 65 -->
+    <div class="question">
+        <h2>65. What will happen if a base class constructor throws an exception in C++?</h2>
+        <p>If a base class constructor throws an exception, the derived class constructor will not be called, and the object will not be created properly.</p>
+    </div>
+
+    <!-- Question 66 -->
+    <div class="question">
+        <h2>66. Can a class be inherited multiple times in C++?</h2>
+        <p>Yes, a class can be inherited multiple times, either directly or through multiple levels of inheritance.</p>
+    </div>
+
+    <!-- Question 67 -->
+    <div class="question">
+        <h2>67. What is the difference between static and dynamic polymorphism in C++?</h2>
+        <p>Static polymorphism is resolved at compile-time (function overloading, operator overloading), while dynamic polymorphism is resolved at runtime using virtual functions and inheritance.</p>
+    </div>
+
+    <!-- Question 68 -->
+    <div class="question">
+        <h2>68. Can you overload a constructor in C++?</h2>
+        <p>Yes, constructors can be overloaded in C++ by defining multiple constructors with different parameter lists.</p>
+    </div>
+
+    <!-- Question 69 -->
+    <div class="question">
+        <h2>69. What is the significance of the 'friend' keyword in C++?</h2>
+        <p>The 'friend' keyword allows a non-member function or another class to access the private and protected members of a class.</p>
+    </div>
+
+    <!-- Question 70 -->
+    <div class="question">
+        <h2>70. What is the difference between a class and a structure in C++?</h2>
+        <p>In C++, the main difference is that members of a class are private by default, while members of a structure are public by default. Apart from that, they are functionally the same.</p>
+    </div>
+
+    <!-- Question 71 -->
+    <div class="question">
+        <h2>71. What happens when you use the 'return' statement in a constructor in C++?</h2>
+        <p>You cannot return any value from a constructor. Using 'return' in a constructor is illegal and will cause a compilation error.</p>
+    </div>
+
+    <!-- Question 72 -->
+    <div class="question">
+        <h2>72. What is the purpose of the 'mutable' keyword in C++?</h2>
+        <p>The 'mutable' keyword allows a member of a class to be modified even if the object is const, which is usually not allowed.</p>
+    </div>
+
+    <!-- Question 73 -->
+    <div class="question">
+        <h2>73. Can we declare a static member function in C++?</h2>
+        <p>Yes, static member functions can be declared in C++. These functions can only access static members of the class.</p>
+    </div>
+
+    <!-- Question 74 -->
+    <div class="question">
+        <h2>74. What is the difference between 'new' and 'malloc()' in C++?</h2>
+        <p>'new' allocates memory and calls the constructor, while 'malloc()' only allocates memory and does not call the constructor of an object.</p>
+    </div>
+
+    <!-- Question 75 -->
+    <div class="question">
+        <h2>75. How can you prevent a class from being inherited in C++?</h2>
+        <p>You can prevent a class from being inherited by declaring it as 'final'. This will disallow any further inheritance from that class.</p>
+    </div>
+
+    <!-- Question 76 -->
+    <div class="question">
+        <h2>76. What is the difference between a 'constructor' and a 'destructor' in C++?</h2>
+        <p>A constructor is a special function that is called when an object is created, and it initializes the object. A destructor is a special function called when an object is destroyed, and it frees up resources.</p>
+    </div>
+
+    <!-- Question 77 -->
+    <div class="question">
+        <h2>77. Can a constructor be called explicitly in C++?</h2>
+        <p>No, a constructor is implicitly called when an object is created. However, you can use the 'new' operator to allocate an object dynamically, which will also call the constructor.</p>
+    </div>
+
+    <!-- Question 78 -->
+    <div class="question">
+        <h2>78. What is the difference between '==' and 'equals()' in C++?</h2>
+        <p>'==' is the equality operator used to compare basic data types, while 'equals()' is usually used in classes to compare the contents of objects and needs to be explicitly defined.</p>
+    </div>
+
+    <!-- Question 79 -->
+    <div class="question">
+        <h2>79. What are the benefits of using 'virtual' functions in C++?</h2>
+        <p>'Virtual' functions allow for dynamic polymorphism, where the function that gets called is determined at runtime based on the type of the object being referenced, not the type of the pointer.</p>
+    </div>
+
+    <!-- Question 80 -->
+    <div class="question">
+        <h2>80. Can we use an abstract class in C++?</h2>
+        <p>Yes, an abstract class in C++ is a class that has at least one pure virtual function. It cannot be instantiated directly but can be inherited by other classes.</p>
+    </div>
+
+    <!-- Question 81 -->
+    <div class="question">
+        <h2>81. What will happen if you declare a variable as 'const' and then try to modify it?</h2>
+        <p>If a variable is declared as 'const', it cannot be modified. Trying to modify it will result in a compilation error.</p>
+    </div>
+
+    <!-- Question 82 -->
+    <div class="question">
+        <h2>82. How can we use 'private' inheritance in C++?</h2>
+        <p>'Private' inheritance means that the base class's public and protected members become private members in the derived class.</p>
+    </div>
+
+    <!-- Question 83 -->
+    <div class="question">
+        <h2>83. Can we access the members of a base class through a derived class object in C++?</h2>
+        <p>Yes, you can access the base class's members from the derived class, but only if those members are not private.</p>
+    </div>
+
+    <!-- Question 84 -->
+    <div class="question">
+        <h2>84. What is the use of the 'namespace' in C++?</h2>
+        <p>'Namespace' is used to group related classes, functions, and variables together, preventing naming conflicts in large projects.</p>
+    </div>
+
+    <!-- Question 85 -->
+    <div class="question">
+        <h2>85. How can you implement a singleton pattern in C++?</h2>
+        <p>You can implement a singleton pattern in C++ by making the constructor private and providing a static method that returns a reference to the single instance of the class.</p>
+    </div>
+
+    <!-- Question 86 -->
+    <div class="question">
+        <h2>86. What is the purpose of the 'mutable' keyword in C++?</h2>
+        <p>The 'mutable' keyword allows a member of a class to be modified even if the object is const, which is normally not allowed for const objects.</p>
+    </div>
+
+    <!-- Question 87 -->
+    <div class="question">
+        <h2>87. Can we have multiple constructors with the same parameter types in C++?</h2>
+        <p>No, you cannot have multiple constructors with the exact same parameter types. The compiler cannot distinguish between them. You must vary the parameters to overload constructors.</p>
+    </div>
+
+    <!-- Question 88 -->
+    <div class="question">
+        <h2>88. What are 'static' and 'dynamic' bindings in C++?</h2>
+        <p>'Static binding' is done at compile time, typically for non-virtual functions. 'Dynamic binding' is done at runtime for virtual functions.</p>
+    </div>
+
+    <!-- Question 89 -->
+    <div class="question">
+        <h2>89. What is the significance of the 'explicit' keyword in C++ constructors?</h2>
+        <p>The 'explicit' keyword is used to avoid implicit type conversions that could lead to unexpected behavior.</p>
+    </div>
+
+    <!-- Question 90 -->
+    <div class="question">
+        <h2>90. Can you use 'new' with arrays in C++?</h2>
+        <p>Yes, you can use 'new[]' to allocate an array dynamically in C++. However, you must use 'delete[]' to deallocate the memory.</p>
+    </div>
+
+    <!-- Question 91 -->
+    <div class="question">
+        <h2>91. Can we have a constructor in a structure in C++?</h2>
+        <p>Yes, structures can have constructors in C++, unlike in C where structures do not have constructors.</p>
+    </div>
+
+    <!-- Question 92 -->
+    <div class="question">
+        <h2>92. What is a 'pure virtual function' in C++?</h2>
+        <p>A pure virtual function is a virtual function that has no implementation in the base class and must be implemented in the derived class.</p>
+    </div>
+
+    <!-- Question 93 -->
+    <div class="question">
+        <h2>93. What happens if a base class constructor throws an exception in C++?</h2>
+        <p>If the base class constructor throws an exception, the derived class constructor will not be called, and the object will not be fully constructed.</p>
+    </div>
+
+    <!-- Question 94 -->
+    <div class="question">
+        <h2>94. What are 'friend' functions in C++?</h2>
+        <p>'Friend' functions are functions that are not members of a class but have access to its private and protected members. They are declared using the 'friend' keyword.</p>
+    </div>
+
+    <!-- Question 95 -->
+    <div class="question">
+        <h2>95. Can you declare a class inside a function in C++?</h2>
+        <p>Yes, you can declare a class inside a function, but it is generally not a good practice unless necessary. The class would be local to that function.</p>
+    </div>
+
+    <!-- Question 96 -->
+    <div class="question">
+        <h2>96. What is 'RAII' in C++?</h2>
+        <p>RAII (Resource Acquisition Is Initialization) is a programming idiom where resources are acquired during object initialization and released when the object is destroyed.</p>
+    </div>
+
+    <!-- Question 97 -->
+    <div class="question">
+        <h2>97. Can you call a constructor explicitly in C++?</h2>
+        <p>No, you cannot directly call a constructor. It is invoked automatically when an object is created, but you can use placement new to call a constructor on pre-allocated memory.</p>
+    </div>
+
+    <!-- Question 98 -->
+    <div class="question">
+        <h2>98. What is a virtual destructor in C++?</h2>
+        <p>A virtual destructor ensures that the correct destructor is called when a derived class object is deleted through a base class pointer.</p>
+    </div>
+
+    <!-- Question 99 -->
+    <div class="question">
+        <h2>99. What is a 'static data member' in C++?</h2>
+        <p>A static data member is shared among all instances of a class. It is not tied to a particular object but to the class itself.</p>
+    </div>
+
+    <!-- Question 100 -->
+    <div class="question">
+        <h2>100. What is the difference between 'static' and 'dynamic' polymorphism in C++?</h2>
+        <p>'Static polymorphism' is resolved at compile-time (e.g., function overloading), while 'dynamic polymorphism' is resolved at runtime (e.g., using virtual functions).</p>
+    </div>
+
+
+    <!-- Question 101 -->
+    <div class="question">
+        <h2>101. What is the purpose of 'explicit' keyword in C++?</h2>
+        <p>'explicit' prevents implicit conversions and copy-initialization. It is used to avoid unwanted automatic conversions of a constructor argument.</p>
+    </div>
+
+    <!-- Question 102 -->
+    <div class="question">
+        <h2>102. What are the differences between static_cast, dynamic_cast, reinterpret_cast, and const_cast in C++?</h2>
+        <p>These are different types of casts:
+            <ul>
+                <li><b>static_cast</b>: Used for safe type conversions, such as from int to float.</li>
+                <li><b>dynamic_cast</b>: Used for safe downcasting in polymorphic classes, can return nullptr for invalid casts.</li>
+                <li><b>reinterpret_cast</b>: Used for low-level casting, can convert any pointer type to any other pointer type.</li>
+                <li><b>const_cast</b>: Used to remove or add const qualifier to a variable.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 103 -->
+    <div class="question">
+        <h2>103. What are the advantages and disadvantages of multiple inheritance in C++?</h2>
+        <p>Advantages: 
+            <ul>
+                <li>It allows a class to inherit features from multiple base classes, enabling more flexible designs.</li>
+                <li>Reduces code duplication when multiple classes share common functionality.</li>
+            </ul>
+            Disadvantages:
+            <ul>
+                <li>Complexity increases as the number of base classes grows.</li>
+                <li>It may lead to ambiguity issues, such as the diamond problem, where a class inherits from two classes that share a common base class.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 104 -->
+    <div class="question">
+        <h2>104. How does the 'volatile' keyword work in C++?</h2>
+        <p>The 'volatile' keyword tells the compiler not to optimize access to the variable, as it may be modified outside of the program (e.g., by hardware or an interrupt). This ensures that the program always reads the actual value of the variable.</p>
+    </div>
+
+    <!-- Question 105 -->
+    <div class="question">
+        <h2>105. What is 'SFINAE' (Substitution Failure Is Not An Error) in C++?</h2>
+        <p>SFINAE is a feature of C++ templates that allows the compiler to remove invalid template instantiations from overload resolution without causing a compile-time error.</p>
+    </div>
+
+    <!-- Question 106 -->
+    <div class="question">
+        <h2>106. What is the difference between a 'deep copy' and a 'shallow copy' in C++?</h2>
+        <p>A shallow copy copies the values of data members directly, which can cause issues with pointers (it copies the address, not the actual data). A deep copy, on the other hand, copies the objects or data at the pointed-to memory as well, ensuring that the original and copied objects do not share the same memory.</p>
+    </div>
+
+    <!-- Question 107 -->
+    <div class="question">
+        <h2>107. How can you prevent a class from being inherited in C++?</h2>
+        <p>In C++, you can prevent a class from being inherited by declaring its destructor or constructor as 'private' or by using the 'final' keyword in C++11 and beyond.</p>
+    </div>
+
+    <!-- Question 108 -->
+    <div class="question">
+        <h2>108. What is 'move semantics' and why is it important in C++?</h2>
+        <p>Move semantics in C++ allows resources to be moved instead of copied, which improves performance by avoiding unnecessary deep copies. It is achieved using rvalue references and the 'std::move' function.</p>
+    </div>
+
+    <!-- Question 109 -->
+    <div class="question">
+        <h2>109. Explain the concept of 'nullptr' in C++.</h2>
+        <p>'nullptr' is a keyword introduced in C++11 that represents a pointer that points to no object or function. It is type-safe compared to the older 'NULL' macro.</p>
+    </div>
+
+    <!-- Question 110 -->
+    <div class="question">
+        <h2>110. What is the purpose of 'std::function' in C++?</h2>
+        <p>'std::function' is a template class in C++ that encapsulates function pointers, lambdas, or any callable object. It provides a type-safe way of working with function pointers and enables higher-level abstractions.</p>
+    </div>
+
+    <!-- Question 111 -->
+    <div class="question">
+        <h2>111. What are 'rvalue references' and why are they used?</h2>
+        <p>Rvalue references, introduced in C++11, allow the binding of temporary objects (rvalues) to references. They are used in conjunction with move semantics to enable efficient resource management without unnecessary copying.</p>
+    </div>
+
+    <!-- Question 112 -->
+    <div class="question">
+        <h2>112. What is the 'diamond problem' in C++ and how is it solved?</h2>
+        <p>The diamond problem arises when a class inherits from two classes that share a common base class, leading to ambiguity. It is solved in C++ using virtual inheritance, ensuring that only one instance of the base class is inherited.</p>
+    </div>
+
+    <!-- Question 113 -->
+    <div class="question">
+        <h2>113. How does the 'friend' keyword work in C++?</h2>
+        <p>The 'friend' keyword allows non-member functions or other classes to access the private and protected members of a class. It is used for functions that need special access to a class's internals, such as operator overloading.</p>
+    </div>
+
+    <!-- Question 114 -->
+    <div class="question">
+        <h2>114. What is the difference between 'inline' functions and 'macro' functions in C++?</h2>
+        <p>Both 'inline' functions and macros aim to eliminate function call overhead, but inline functions are type-safe and evaluated at compile-time, while macros are text-based and can lead to errors due to lack of type checking.</p>
+    </div>
+
+    <!-- Question 115 -->
+    <div class="question">
+        <h2>115. What is the 'new' and 'delete' operators in C++?</h2>
+        <p>'new' is used to dynamically allocate memory for an object, while 'delete' is used to free the memory allocated by 'new'. The correct usage ensures proper memory management and avoids memory leaks.</p>
+    </div>
+
+    <!-- Question 116 -->
+    <div class="question">
+        <h2>116. What are 'move constructors' and 'move assignment operators' in C++?</h2>
+        <p>Move constructors and move assignment operators are special member functions that transfer ownership of resources from one object to another without performing a deep copy. They are crucial for implementing efficient move semantics in C++.</p>
+    </div>
+
+    <!-- Question 117 -->
+    <div class="question">
+        <h2>117. What is 'polymorphism' in C++?</h2>
+        <p>Polymorphism is the ability of a class to provide different implementations of the same interface. It allows objects of different classes to be treated as objects of a common base class.</p>
+    </div>
+
+    <!-- Question 118 -->
+    <div class="question">
+        <h2>118. What is the difference between 'static' and 'dynamic' polymorphism?</h2>
+        <p>Static polymorphism is resolved at compile-time (e.g., function overloading), while dynamic polymorphism is resolved at runtime (e.g., function overriding using virtual functions).</p>
+    </div>
+
+    <!-- Question 119 -->
+    <div class="question">
+        <h2>119. What is 'std::bind' in C++?</h2>
+        <p>'std::bind' is a function template in C++ that allows binding arguments to a function or callable object, resulting in a new callable object with some arguments already set.</p>
+    </div>
+
+    <!-- Question 120 -->
+    <div class="question">
+        <h2>120. How does C++ handle exception handling, and what are the key features?</h2>
+        <p>C++ uses 'try', 'catch', and 'throw' for exception handling. Key features include the ability to catch specific types of exceptions, the propagation of exceptions, and the use of RAII to ensure proper resource management even when an exception occurs.</p>
+    </div>
+
+
+    <!-- Question 121 -->
+    <div class="question">
+        <h2>121. What is the difference between 'std::vector' and 'std::array' in C++?</h2>
+        <p>'std::vector' is a dynamic array that can grow or shrink in size, while 'std::array' is a fixed-size container that is allocated on the stack and does not resize.</p>
+    </div>
+
+    <!-- Question 122 -->
+    <div class="question">
+        <h2>122. How do you implement custom memory management in C++?</h2>
+        <p>Custom memory management can be implemented using operators 'new' and 'delete' along with techniques like memory pools, smart pointers, and custom allocators to manage the allocation and deallocation of memory efficiently.</p>
+    </div>
+
+    <!-- Question 123 -->
+    <div class="question">
+        <h2>123. What is the 'RAII' (Resource Acquisition Is Initialization) paradigm in C++?</h2>
+        <p>RAII is a C++ programming paradigm where resources (memory, file handles, etc.) are acquired and released by objects during their lifetime. This ensures automatic resource cleanup through destructors when objects go out of scope.</p>
+    </div>
+
+    <!-- Question 124 -->
+    <div class="question">
+        <h2>124. What are lambda expressions in C++?</h2>
+        <p>Lambda expressions are anonymous functions that can be defined inline. They allow you to define function objects on the fly, enabling functional programming techniques and simplifying code.</p>
+    </div>
+
+    <!-- Question 125 -->
+    <div class="question">
+        <h2>125. What is the 'move assignment operator' in C++?</h2>
+        <p>The move assignment operator transfers resources from one object to another, avoiding deep copy, and is defined using rvalue references. It is used when an object is assigned to another object of the same type, and the source object is in a valid but unspecified state after the operation.</p>
+    </div>
+
+    <!-- Question 126 -->
+    <div class="question">
+        <h2>126. What is 'std::unique_ptr' in C++?</h2>
+        <p>'std::unique_ptr' is a smart pointer that owns a dynamically allocated object and ensures that there is only one owner at a time. It automatically frees the memory when it goes out of scope.</p>
+    </div>
+
+    <!-- Question 127 -->
+    <div class="question">
+        <h2>127. How does 'std::shared_ptr' differ from 'std::unique_ptr'?</h2>
+        <p>'std::shared_ptr' allows multiple shared ownerships of an object, while 'std::unique_ptr' ensures single ownership. The memory is freed when the last 'shared_ptr' is destroyed.</p>
+    </div>
+
+    <!-- Question 128 -->
+    <div class="question">
+        <h2>128. What is 'std::weak_ptr' in C++?</h2>
+        <p>'std::weak_ptr' is a smart pointer that holds a non-owning reference to an object managed by a 'std::shared_ptr'. It does not affect the reference count and can be used to prevent circular references.</p>
+    </div>
+
+    <!-- Question 129 -->
+    <div class="question">
+        <h2>129. What is the purpose of 'std::atomic' in C++?</h2>
+        <p>'std::atomic' provides support for atomic operations on data types, enabling safe manipulation of shared data in concurrent environments without the need for locks or mutexes.</p>
+    </div>
+
+    <!-- Question 130 -->
+    <div class="question">
+        <h2>130. What are 'constexpr' functions in C++?</h2>
+        <p>'constexpr' functions are evaluated at compile-time, making them suitable for use in constant expressions. They allow you to perform computations during compilation instead of runtime.</p>
+    </div>
+
+    <!-- Question 131 -->
+    <div class="question">
+        <h2>131. How do you prevent object slicing in C++?</h2>
+        <p>Object slicing occurs when a derived object is assigned to a base object, losing the derived class information. To prevent slicing, use pointers or references to base class objects, ensuring polymorphic behavior.</p>
+    </div>
+
+    <!-- Question 132 -->
+    <div class="question">
+        <h2>132. What is the difference between 'virtual' and 'pure virtual' functions in C++?</h2>
+        <p>'virtual' functions allow derived classes to override them, while 'pure virtual' functions must be overridden by any derived class, making the base class abstract and incapable of instantiation.</p>
+    </div>
+
+    <!-- Question 133 -->
+    <div class="question">
+        <h2>133. What is 'type traits' in C++?</h2>
+        <p>'type_traits' is a header in C++ that provides compile-time type information and facilitates template metaprogramming by allowing operations based on the type properties, such as 'std::is_integral', 'std::is_floating_point', etc.</p>
+    </div>
+
+    <!-- Question 134 -->
+    <div class="question">
+        <h2>134. What is 'CRTP' (Curiously Recurring Template Pattern) in C++?</h2>
+        <p>CRTP is a technique where a class derives from a template instantiation of itself. It enables static polymorphism and allows you to write more efficient and reusable code, avoiding the overhead of dynamic polymorphism.</p>
+    </div>
+
+    <!-- Question 135 -->
+    <div class="question">
+        <h2>135. What are the 'std::thread' and 'std::mutex' used for in C++?</h2>
+        <p>'std::thread' is used to manage threads, enabling concurrent execution in C++, while 'std::mutex' is used to prevent data races by providing mutual exclusion when accessing shared resources in multithreaded environments.</p>
+    </div>
+
+    <!-- Question 136 -->
+    <div class="question">
+        <h2>136. What is 'std::future' and 'std::promise' in C++?</h2>
+        <p>'std::future' is used to retrieve the result of an asynchronous operation, while 'std::promise' allows you to set a value or exception that the future will later retrieve.</p>
+    </div>
+
+    <!-- Question 137 -->
+    <div class="question">
+        <h2>137. What is 'type erasure' in C++?</h2>
+        <p>Type erasure allows you to store and use objects of different types through a common interface, hiding the concrete type behind an abstraction. It is commonly used in 'std::function' and other polymorphic templates.</p>
+    </div>
+
+    <!-- Question 138 -->
+    <div class="question">
+        <h2>138. What is the difference between 'new' and 'malloc' in C++?</h2>
+        <p>'new' initializes the allocated memory and calls the constructor, while 'malloc' only allocates raw memory and does not initialize the object. 'new' returns a pointer to the allocated object, whereas 'malloc' returns a void pointer.</p>
+    </div>
+
+    <!-- Question 139 -->
+    <div class="question">
+        <h2>139. How do you avoid memory leaks in C++?</h2>
+        <p>Memory leaks can be avoided by ensuring proper memory deallocation using 'delete' or 'delete[]' for dynamic memory, using smart pointers like 'std::unique_ptr' and 'std::shared_ptr', and following RAII principles.</p>
+    </div>
+
+    <!-- Question 140 -->
+    <div class="question">
+        <h2>140. What is the 'explicit' constructor in C++?</h2>
+        <p>The 'explicit' keyword is used to mark constructors that should not be implicitly invoked during type conversions. It prevents unwanted automatic conversions from happening in situations like assignment or function argument passing.</p>
+    </div>
+
+    <!-- Question 141 -->
+    <div class="question">
+        <h2>141. How can you implement a thread-safe singleton in C++?</h2>
+        <p>A thread-safe singleton in C++ can be implemented using static local variables in a function or with the 'std::mutex' to ensure mutual exclusion during object creation.</p>
+    </div>
+
+    <!-- Question 142 -->
+    <div class="question">
+        <h2>142. What are 'static variables' in C++ and how are they used?</h2>
+        <p>'Static variables' maintain their value between function calls, and their lifetime extends throughout the program execution. They are used when a variable needs to persist its state across multiple function calls without being reinitialized.</p>
+    </div>
+
+    <!-- Question 143 -->
+    <div class="question">
+        <h2>143. What is the difference between 'public', 'protected', and 'private' inheritance in C++?</h2>
+        <p>In 'public' inheritance, the public and protected members of the base class remain accessible. In 'protected' inheritance, only protected members are accessible, and in 'private' inheritance, neither public nor protected members are accessible outside the class.</p>
+    </div>
+
+    <!-- Question 144 -->
+    <div class="question">
+        <h2>144. What is 'std::move' in C++?</h2>
+        <p>'std::move' is a cast that allows an object to be moved instead of copied. It is used to transfer ownership of resources from one object to another, enabling more efficient memory management.</p>
+    </div>
+
+    <!-- Question 145 -->
+    <div class="question">
+        <h2>145. What is the purpose of 'std::is_same' in C++?</h2>
+        <p>'std::is_same' is a type trait used to compare two types at compile-time. It evaluates to 'true' if the types are the same, and 'false' otherwise.</p>
+    </div>
+
+    <!-- Question 146 -->
+    <div class="question">
+        <h2>146. What are 'smart pointers' in C++ and why are they used?</h2>
+        <p>Smart pointers are wrappers around raw pointers that automatically manage memory allocation and deallocation, preventing memory leaks and dangling pointers. Examples include 'std::unique_ptr', 'std::shared_ptr', and 'std::weak_ptr'.</p>
+    </div>
+
+    <!-- Question 147 -->
+    <div class="question">
+        <h2>147. How do you implement operator overloading in C++?</h2>
+        <p>Operator overloading in C++ allows you to define custom behavior for operators when applied to user-defined types. You can overload operators using member functions or non-member functions.</p>
+    </div>
+
+    <!-- Question 148 -->
+    <div class="question">
+        <h2>148. What are 'std::deque' and 'std::list' in C++?</h2>
+        <p>'std::deque' is a double-ended queue that allows fast insertions and deletions at both ends, while 'std::list' is a doubly linked list that allows fast insertions and deletions anywhere in the container.</p>
+    </div>
+
+    <!-- Question 149 -->
+    <div class="question">
+        <h2>149. What is 'std::set' and how does it differ from 'std::map' in C++?</h2>
+        <p>'std::set' is a collection of unique elements stored in sorted order, while 'std::map' is a collection of key-value pairs, where keys are unique and associated with values.</p>
+    </div>
+
+    <!-- Question 150 -->
+    <div class="question">
+        <h2>150. How do you handle exceptions in C++ using 'try-catch' blocks?</h2>
+        <p>Exceptions in C++ can be caught using a 'try-catch' block. The 'try' block contains code that may throw an exception, while the 'catch' block handles the exception. Multiple 'catch' blocks can be used to handle different exception types.</p>
+    </div>
+
+
+    <!-- Question 151 -->
+    <div class="question">
+        <h2>151. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class A {
+public:
+    virtual void show() { cout << "A "; }
+};
+
+class B : public A {
+public:
+    void show() override { cout << "B "; }
+};
+
+int main() {
+    A *ptr = new A();
+    B *bptr = dynamic_cast<B*>(ptr);
+    if(bptr) bptr->show();
+    else cout << "Null ";
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Null</strong></p>
+        <p>Explanation: Since ptr points to an object of type A, and dynamic_cast fails when converting from A to B, the output is "Null".</p>
+    </div>
+
+    <!-- Question 152 -->
+    <div class="question">
+        <h2>152. What is the result of the following code and why?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+void func(int &a) { a = a + 10; }
+void func(int *a) { *a = *a + 10; }
+
+int main() {
+    int x = 5;
+    func(x); // Which version will be called?
+    cout << x;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>15</strong></p>
+        <p>Explanation: The first version of 'func' will be called because the argument is passed by reference. The value of 'x' is modified directly.</p>
+    </div>
+
+    <!-- Question 153 -->
+    <div class="question">
+        <h2>153. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    const int a = 10;
+    int *ptr = const_cast<int*>(&a);
+    *ptr = 20;
+    cout << a;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>20</strong> or undefined behavior</p>
+        <p>Explanation: 'const_cast' is used to remove the const qualifier, but modifying a constant object invokes undefined behavior. Some compilers may still output 20, but it's not guaranteed.</p>
+    </div>
+
+    <!-- Question 154 -->
+    <div class="question">
+        <h2>154. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+template <typename T>
+void func(T a) { cout << "Generic "; }
+
+template <>
+void func<int>(int a) { cout << "Specialized "; }
+
+int main() {
+    func(5.5); // Which version will be called?
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Generic</strong></p>
+        <p>Explanation: The generic template version will be called because the argument is a double and there's no specialized template for double.</p>
+    </div>
+
+    <!-- Question 155 -->
+    <div class="question">
+        <h2>155. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    const int a = 10;
+    int b = 20;
+    int* ptr = reinterpret_cast<int*>(&a);
+    *ptr = 30;
+    cout << b;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>20</strong></p>
+        <p>Explanation: 'reinterpret_cast' allows you to cast between any pointer types, but it does not change the actual value of 'b' unless it was directly accessed. In this case, only 'a' is affected.</p>
+    </div>
+
+    <!-- Question 156 -->
+    <div class="question">
+        <h2>156. What will the following code print and why?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class A {
+public:
+    virtual void show() { cout << "A "; }
+};
+
+class B : public A {
+public:
+    void show() override { cout << "B "; }
+};
+
+int main() {
+    A *ptr = new B();
+    ptr->show();
+    delete ptr;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>B</strong></p>
+        <p>Explanation: Since 'ptr' points to an object of class B and calls a virtual function, the derived class's 'show' method is invoked. The 'delete' operator correctly deallocates the memory of the derived class object.</p>
+    </div>
+
+    <!-- Question 157 -->
+    <div class="question">
+        <h2>157. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void display() { cout << "Base "; }
+};
+
+class Derived : public Base {
+public:
+    void display() override { cout << "Derived "; }
+};
+
+int main() {
+    Base *ptr = nullptr;
+    ptr->display();
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Segmentation Fault</strong></p>
+        <p>Explanation: Dereferencing a null pointer causes undefined behavior, which in this case results in a segmentation fault.</p>
+    </div>
+
+    <!-- Question 158 -->
+    <div class="question">
+        <h2>158. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int add(int a, int b) { return a + b; }
+int add(double a, double b) { return a + b; }
+
+int main() {
+    cout << add(1, 2) << " " << add(1.1, 2.2);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>3 3.3</strong></p>
+        <p>Explanation: The correct overloaded function is chosen based on the argument types. The first call uses the integer version, and the second call uses the double version.</p>
+    </div>
+
+    <!-- Question 159 -->
+    <div class="question">
+        <h2>159. What will the following code output?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() { cout << "Constructor "; }
+    ~MyClass() { cout << "Destructor "; }
+};
+
+int main() {
+    MyClass obj;
+    throw 1;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Constructor Destructor</strong></p>
+        <p>Explanation: The constructor is called when the object is created. When the exception is thrown, the destructor is still called before exiting the scope.</p>
+    </div>
+
+    <!-- Question 160 -->
+    <div class="question">
+        <h2>160. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    const int x = 10;
+    const int *ptr = &x;
+    ptr++;
+    cout << *ptr;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Undefined Behavior</strong></p>
+        <p>Explanation: You cannot increment a pointer to a constant value as it may go beyond the valid memory range, resulting in undefined behavior.</p>
+    </div>
+
+    <!-- Question 161 -->
+    <div class="question">
+        <h2>161. What is the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class Test {
+public:
+    Test() { cout << "Constructor "; }
+    ~Test() { cout << "Destructor "; }
+};
+
+int main() {
+    Test t;
+    try {
+        throw 10;
+    } catch (int e) {
+        cout << "Exception caught ";
+    }
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Constructor Exception caught Destructor</strong></p>
+        <p>Explanation: The constructor is called when the object is created, the exception is caught in the catch block, and the destructor is called after the scope ends.</p>
+    </div>
+
+    <!-- Question 162 -->
+    <div class="question">
+        <h2>162. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+template <typename T>
+void print(T&& arg) {
+    cout << arg << " ";
+}
+
+int main() {
+    int x = 10;
+    print(x);
+    print(20);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>10 20</strong></p>
+        <p>Explanation: The function 'print' accepts both lvalues and rvalues, and the values are printed accordingly.</p>
+    </div>
+
+    <!-- Question 163 -->
+    <div class="question">
+        <h2>163. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+void func(int& a) { cout << "Lvalue reference "; }
+void func(int&& a) { cout << "Rvalue reference "; }
+
+int main() {
+    int x = 10;
+    func(x);
+    func(20);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Lvalue reference Rvalue reference</strong></p>
+        <p>Explanation: The first function call uses an lvalue reference, while the second call uses an rvalue reference.</p>
+    </div>
+
+    <!-- Question 164 -->
+    <div class="question">
+        <h2>164. What is the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 10;
+    int* ptr = &x;
+    cout << *ptr++ << " " << *ptr;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>10 10</strong></p>
+        <p>Explanation: The post-increment operator returns the value before incrementing, and the pointer moves to the next address afterward, but the value remains the same for 'x'.</p>
+    </div>
+
+    <!-- Question 165 -->
+    <div class="question">
+        <h2>165. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int func(int* ptr) { return *ptr + 10; }
+
+int main() {
+    int x = 5;
+    cout << func(&x);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>15</strong></p>
+        <p>Explanation: The pointer 'ptr' points to 'x', and the value of 'x' is dereferenced and incremented by 10, resulting in 15.</p>
+    </div>
+
+    <!-- Question 166 -->
+    <div class="question">
+        <h2>166. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    MyClass() { cout << "Constructor "; }
+    ~MyClass() { cout << "Destructor "; }
+};
+
+int main() {
+    try {
+        MyClass obj;
+        throw 1;
+    } catch (...) {
+        cout << "Exception caught ";
+    }
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Constructor Exception caught Destructor</strong></p>
+        <p>Explanation: The constructor is called when the object is created, the exception is thrown, and the destructor is called after the exception is caught in the catch block.</p>
+    </div>
+
+    <!-- Question 167 -->
+    <div class="question">
+        <h2>167. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 10;
+    const int* ptr = &x;
+    cout << *ptr;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>10</strong></p>
+        <p>Explanation: The pointer 'ptr' points to a constant value of 'x', but it can still dereference the value.</p>
+    </div>
+
+    <!-- Question 168 -->
+    <div class="question">
+        <h2>168. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int* ptr = nullptr;
+    cout << *ptr;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Segmentation Fault</strong></p>
+        <p>Explanation: Dereferencing a null pointer causes undefined behavior, resulting in a segmentation fault.</p>
+    </div>
+
+    <!-- Question 169 -->
+    <div class="question">
+        <h2>169. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class Test {
+public:
+    Test() { cout << "Constructor "; }
+    ~Test() { cout << "Destructor "; }
+};
+
+int main() {
+    Test* obj = new Test();
+    delete obj;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Constructor Destructor</strong></p>
+        <p>Explanation: The constructor is called when the object is created dynamically using 'new', and the destructor is called when 'delete' is used to free the object.</p>
+    </div>
+
+    <!-- Question 170 -->
+    <div class="question">
+        <h2>170. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int* ptr = arr;
+    cout << *(ptr + 3);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>4</strong></p>
+        <p>Explanation: The pointer 'ptr' points to the first element of the array, and by adding 3 to the pointer, we access the fourth element, which is 4.</p>
+    </div>
+
+    <!-- Question 171 -->
+    <div class="question">
+        <h2>171. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    Base() { cout << "Base Constructor "; }
+    virtual ~Base() { cout << "Base Destructor "; }
+};
+
+class Derived : public Base {
+public:
+    Derived() { cout << "Derived Constructor "; }
+    ~Derived() { cout << "Derived Destructor "; }
+};
+
+int main() {
+    Base *b = new Derived();
+    delete b;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Base Constructor Derived Constructor Derived Destructor Base Destructor</strong></p>
+        <p>Explanation: The constructor for both base and derived class is called in order. The destructor calls the derived destructor followed by the base destructor due to virtual destructor.</p>
+    </div>
+
+    <!-- Question 172 -->
+    <div class="question">
+        <h2>172. What is the significance of the "explicit" keyword in C++?</h2>
+        <p>Explanation: The "explicit" keyword is used to prevent implicit conversions for constructors or conversion operators. It ensures that a constructor is only called when an argument is explicitly passed to it, avoiding unintentional type conversions.</p>
+    </div>
+
+    <!-- Question 173 -->
+    <div class="question">
+        <h2>173. What is the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class A {
+public:
+    A() { cout << "A "; }
+};
+
+class B : public A {
+public:
+    B() { cout << "B "; }
+};
+
+int main() {
+    B b;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>A B</strong></p>
+        <p>Explanation: The base class constructor is called before the derived class constructor when an object of the derived class is created.</p>
+    </div>
+
+    <!-- Question 174 -->
+    <div class="question">
+        <h2>174. What is the result of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+template <typename T>
+void func(T a) { cout << "Generic "; }
+
+template <>
+void func<int>(int a) { cout << "Specialized "; }
+
+int main() {
+    func(10);
+    func(3.14);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Specialized Generic</strong></p>
+        <p>Explanation: The specialized template for <code>int</code> is invoked when the argument is an integer, and the generic template is invoked for a floating-point number.</p>
+    </div>
+
+    <!-- Question 175 -->
+    <div class="question">
+        <h2>175. What is the difference between shallow copy and deep copy in C++?</h2>
+        <p>Explanation: A shallow copy copies the values of the original object (e.g., pointers), which may result in shared references. A deep copy copies the actual data, ensuring that the copied object has its own copy of data, without sharing references.</p>
+    </div>
+
+    <!-- Question 176 -->
+    <div class="question">
+        <h2>176. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int add(int a, int b) { return a + b; }
+double add(double a, double b) { return a + b; }
+
+int main() {
+    cout << add(5, 3) << " " << add(2.5, 3.5);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>8 6</strong></p>
+        <p>Explanation: Function overloading allows calling different versions of the same function based on argument types (int and double).</p>
+    </div>
+
+    <!-- Question 177 -->
+    <div class="question">
+        <h2>177. What is the result of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    const int *ptr = nullptr;
+    *ptr = 10; // Will this compile or cause an error?
+    return 0;
+}
+</code></pre>
+        <p>Answer: <strong>Compilation Error</strong></p>
+        <p>Explanation: 'ptr' is a pointer to a constant integer, and attempting to modify the value it points to results in a compilation error.</p>
+    </div>
+
+    <!-- Question 178 -->
+    <div class="question">
+        <h2>178. What is the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    void operator()(int a) { cout << a; }
+};
+
+int main() {
+    MyClass obj;
+    obj(10);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>10</strong></p>
+        <p>Explanation: This is an example of a function object (functor). The operator <code>()</code> is overloaded to act as a function call.</p>
+    </div>
+
+    <!-- Question 179 -->
+    <div class="question">
+        <h2>179. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 0;
+    try {
+        if(x == 0) throw "Zero";
+    }
+    catch (const char* msg) {
+        cout << msg;
+    }
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>Zero</strong></p>
+        <p>Explanation: The exception is thrown with a string literal when x is zero and caught by the catch block.</p>
+    </div>
+
+    <!-- Question 180 -->
+    <div class="question">
+        <h2>180. What is the difference between "new" and "malloc" in C++?</h2>
+        <p>Explanation: "new" is an operator in C++ that allocates memory and calls constructors for objects. "malloc" is a C library function that allocates raw memory without invoking constructors or destructors.</p>
+    </div>
+
+    <!-- Question 181 -->
+    <div class="question">
+        <h2>181. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    int* ptr = arr + 2;
+    cout << *(ptr - 1);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>2</strong></p>
+        <p>Explanation: The pointer <code>ptr</code> points to the third element (index 2) of the array, and moving one position back gives us the second element (index 1), which is 2.</p>
+    </div>
+
+    <!-- Question 182 -->
+    <div class="question">
+        <h2>182. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int x;
+    MyClass() : x(0) {}
+    MyClass(int val) : x(val) {}
+};
+
+int main() {
+    MyClass obj1;
+    MyClass obj2(5);
+    cout << obj1.x << " " << obj2.x;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>0 5</strong></p>
+        <p>Explanation: obj1 uses the default constructor, and obj2 is initialized with the value 5.</p>
+    </div>
+
+    <!-- Question 183 -->
+    <div class="question">
+        <h2>183. What is a virtual function in C++?</h2>
+        <p>Explanation: A virtual function in C++ is a member function in the base class that is overridden in the derived class. It allows the program to decide at runtime which function to call based on the object type (runtime polymorphism).</p>
+    </div>
+
+    <!-- Question 184 -->
+    <div class="question">
+        <h2>184. What is the difference between "public", "private", and "protected" access specifiers in C++?</h2>
+        <p>Explanation: 
+            <ul>
+                <li><strong>Public:</strong> Members are accessible from any part of the program.</li>
+                <li><strong>Private:</strong> Members are only accessible within the class or by its friends.</li>
+                <li><strong>Protected:</strong> Members are accessible within the class and by derived classes, but not outside of them.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 185 -->
+    <div class="question">
+        <h2>185. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5;
+    int b = 10;
+    cout << (a > b ? a : b);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>10</strong></p>
+        <p>Explanation: The ternary operator checks the condition <code>a > b</code>, which is false. Hence, the value of <code>b</code> (10) is printed.</p>
+    </div>
+
+    <!-- Question 186 -->
+    <div class="question">
+        <h2>186. What is a static variable in C++?</h2>
+        <p>Explanation: A static variable in C++ is a variable that retains its value between function calls. It is initialized only once and its value persists throughout the program’s execution, unlike automatic variables.</p>
+    </div>
+
+    <!-- Question 187 -->
+    <div class="question">
+        <h2>187. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5;
+    a++;
+    cout << a;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>6</strong></p>
+        <p>Explanation: The post-increment operator increments the value of <code>a</code> after it is used in the expression.</p>
+    </div>
+
+    <!-- Question 188 -->
+    <div class="question">
+        <h2>188. What will happen if you try to use a reference to a non-existent object in C++?</h2>
+        <p>Explanation: Using a reference to a non-existent object will result in undefined behavior, often leading to program crashes or memory corruption.</p>
+    </div>
+
+    <!-- Question 189 -->
+    <div class="question">
+        <h2>189. What is the "this" pointer in C++?</h2>
+        <p>Explanation: The "this" pointer is an implicit pointer that refers to the current object in a member function. It allows access to the calling object’s members and is automatically passed to non-static member functions.</p>
+    </div>
+
+    <!-- Question 190 -->
+    <div class="question">
+        <h2>190. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+class A {
+public:
+    virtual void display() { cout << "A"; }
+};
+
+class B : public A {
+public:
+    void display() { cout << "B"; }
+};
+
+int main() {
+    A *ptr = new B();
+    ptr->display();
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>B</strong></p>
+        <p>Explanation: Due to the virtual function mechanism, the derived class function is called at runtime, even though the base class pointer is used.</p>
+    </div>
+
+    <!-- Question 191 -->
+    <div class="question">
+        <h2>191. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << sizeof(arr);
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>20</strong></p>
+        <p>Explanation: The array has 5 elements of size 4 bytes each, so the total size is 5 * 4 = 20 bytes.</p>
+    </div>
+
+    <!-- Question 192 -->
+    <div class="question">
+        <h2>192. What is the difference between "std::vector" and "std::array" in C++?</h2>
+        <p>Explanation: 
+            <ul>
+                <li><strong>std::vector:</strong> Dynamic array, size can be changed during runtime.</li>
+                <li><strong>std::array:</strong> Static array, size is fixed at compile-time.</li>
+            </ul>
+        </p>
+    </div>
+
+    <!-- Question 193 -->
+    <div class="question">
+        <h2>193. What will be the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    const char* str = "Hello, World!";
+    cout << str[7];
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>W</strong></p>
+        <p>Explanation: The character at index 7 of the string "Hello, World!" is 'W'.</p>
+    </div>
+
+    <!-- Question 194 -->
+    <div class="question">
+        <h2>194. What is a nullptr in C++?</h2>
+        <p>Explanation: nullptr is a keyword in C++11 and later that represents a pointer to nothing. It is used to initialize pointers to a null value, unlike NULL which was traditionally used in C.</p>
+    </div>
+
+    <!-- Question 195 -->
+    <div class="question">
+        <h2>195. What is the output of the following code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    bool x = true;
+    cout << !x;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>0</strong></p>
+        <p>Explanation: The logical negation operator (!) changes true to false (0).</p>
+    </div>
+
+    <!-- Question 196 -->
+    <div class="question">
+        <h2>196. What is the purpose of a destructor in C++?</h2>
+        <p>Explanation: A destructor is called when an object goes out of scope or is explicitly deleted. It is used to release resources acquired by the object during its lifetime, such as dynamic memory allocation or file handles.</p>
+    </div>
+
+    <!-- Question 197 -->
+    <div class="question">
+        <h2>197. What will happen if you forget to call delete for a dynamically allocated memory in C++?</h2>
+        <p>Explanation: Forgetting to call delete on dynamically allocated memory causes a memory leak, where memory is not freed, leading to inefficient memory usage and potential program crashes.</p>
+    </div>
+
+    <!-- Question 198 -->
+    <div class="question">
+        <h2>198. What is the purpose of the "friend" keyword in C++?</h2>
+        <p>Explanation: The "friend" keyword allows a non-member function or another class to access the private and protected members of the class, which is typically restricted.</p>
+    </div>
+
+    <!-- Question 199 -->
+    <div class="question">
+        <h2>199. What will be the output of this code?</h2>
+        <pre><code>#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10;
+    cout << ++a;
+    return 0;
+}
+</code></pre>
+        <p>Output: <strong>11</strong></p>
+        <p>Explanation: The pre-increment operator increments the value of <code>a</code> before using it, so it prints 11.</p>
+    </div>
+
+    <!-- Question 200 -->
+    <div class="question">
+        <h2>200. What is an exception in C++?</h2>
+        <p>Explanation: An exception is an event that disrupts the normal flow of a program’s execution. C++ provides exception handling mechanisms (try, catch, throw) to handle runtime errors and recover from them gracefully.</p>
+    </div>
+
+        
+
+
+ </div>
+
+    <footer>
+        © 2023-2025 SEED Institute Of Training. All Rights Reserved.
+    </footer>
+</body>
+</html>

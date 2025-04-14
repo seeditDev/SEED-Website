@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard</title>
+
+  <link rel="icon" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" type="image/webp">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="SEED Logo" class="logo">
+      <h1>Staff Dashboard</h1>
+    </div>
+	<div class="header-right"><h1>SEED-IT-SDE   </h1><div>
+	
+    <div class="header-right">
+      <span id="clock"></span>
+      <button class="btn" id="downloadBtn">Download for Windows</button>
+      <button class="btn" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="user-filter-container">
+        <div class="user-info">
+            <h2>Welcome, <span id="userName">Loading...</span></h2>
+            <p>Role: <span id="userRole">Loading...</span></p>
+            <p>College: <span id="userCollege">Loading...</span></p>
+        </div>
+
+        <div class="filter-card">
+            <h4>Filter Students</h4> 
+			<div class="dropdown">
+  <button class="btn" id="exportButton">Export</button>
+  <div class="dropdown-content">
+    <a href="#" id="exportExcel">Excel</a>
+  </div>
+</div>
+            <label for="departmentSelect">Department:</label>
+            <select id="departmentSelect">
+                <option value="">All Departments</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="CSBS">CSBS</option>
+				<option value="AIDS">AIDS</option>
+				<option value="AIML">AIML</option>
+				<option value="ECE">ECE</option>
+				<option value="EEE">EEE</option>
+				<option value="MECH">MECH</option>
+				<option value="AERO">AERO</option>
+				<option value="MECHATRONICS">MECHATRONICS</option>
+            </select>
+            
+            <label for="yearSelect">Year:</label>
+            <select id="yearSelect">
+                <option value="">Select Year</option>
+                <option value="2K25">2K25</option>
+                <option value="2K26">2K26</option>
+                <option value="2K27">2K27</option>
+                <option value="2K28">2K28</option>
+				<option value="2K29">2K29</option>
+				<option value="2K30">2K30</option>
+            </select>
+            
+			<div class="button-container">
+            <button id="filterButton">Filter</button>
+            <button id="resetButton">Reset</button>
+			<!-- Dropdown for Export -->
+
+
+			</div>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Roll Number</th>
+                    <th>Department</th>
+                    <th>Year</th>
+                    <th>Basic Data Types Score</th>
+                    <th>Conditional Statements Score</th>
+                    <th>Looping Score</th>
+                    <th>Patterns Score</th>
+                    <th>Number Crunching Score</th>
+                    <th>Number Problems Score</th>
+                    <th>Arrays Score</th>
+                    <th>Strings Score</th>
+                    <th>Functions Score</th>
+                    <th>Structures Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data rows will go here -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer>
+  &copy; 2023-2025 SEED Institute of Training. All rights reserved.
+</footer>
+
+
+<script src="script.js"></script>
+
+
+
+
+</body>
+</html>

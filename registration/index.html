@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEED-IT SDE Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+     <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="SEEDIT Logo" class="logo">
+            <h1>SEED-IT Registration</h1>
+        </div>
+        <p class="welcome-msg">Join us and start your coding journey today!</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Welcome Section -->
+        <div id="welcomeSection" class="welcome-container">
+            <div class="box">
+                <h3>🚀 Welcome to SEED IT!</h3>
+                <p>SEED IT helps you learn, practice, and track your coding journey.</p>
+            </div>
+            <div class="box">
+                <h3>🔎 Skill Search</h3>
+                <p>Find trending tech skills and resources to upskill yourself.</p>
+            </div>
+            <div class="box">
+                <h3>📘 SEED Tracker</h3>
+                <p>Log your daily learning progress and maintain your streak.</p>
+            </div>
+            <div class="box">
+                <h3>💻 Online Code Editor</h3>
+                <p>Write, test, and debug code in real-time.</p>
+            </div>
+            <div class="box">
+                <h3>🏆 Challenge Mode</h3>
+                <p>Compete with peers and solve coding challenges.</p>
+            </div>
+            <div class="box">
+                <h3>📊 Top Searched Skills</h3>
+                <ul>
+                    <li>1️⃣ Data Structures & Algorithms</li>
+                    <li>2️⃣ SQL Query Optimization</li>
+                    <li>3️⃣ Python for AI & ML</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Registration Form Section -->
+        <div class="form-container">
+            <h2>Register Here</h2>
+            <div class="input-container">
+                <div class="input-box">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Eg: SEED IT in Caps" required>
+                </div>
+                <div class="input-box">
+                    <label for="rollNumber">Roll Number</label>
+                    <input type="text" id="rollNumber" placeholder="Enter your roll number" required>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Eg: seedit@seedit.com" required>
+                </div>
+                <div class="input-box">
+                    <label for="college">College</label>
+                    <select id="college" required>
+                        <option value="" disabled selected>Select College</option>
+                        <option value="KPRIET">KPRIET</option>
+                        <option value="PSG Tech">PSG Tech</option>
+                        <option value="Anna University">Anna University</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="CSBS">CSBS</option>
+                        <option value="CSE">CSE</option>
+                        <option value="IT">IT</option>
+                        <option value="AIDS">AIDS</option>
+                        <option value="AIML">AIML</option>
+                        <option value="CT">CT</option>
+                        <option value="IS">IS</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="ETC">ETC</option>
+                        <option value="CSD">CSD</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="year">Year</label>
+                    <select id="year" required>
+                        <option value="" disabled selected>Select Year</option>
+                        <option value="2K24">2026</option>
+                        <option value="2K25">2027</option>
+                        <option value="2K26">2028</option>
+                        <option value="2K26">2029</option>
+                        <option value="2K26">2030</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <label for="hackerrankEmail">HackerRank Mail</label>
+                    <input type="email" id="hackerrankEmail" placeholder="Enter your HackerRank email" required>
+                </div>
+                <div class="input-box">
+                    <label for="hackerrankID">HackerRank ID</label>
+                    <input type="text" id="hackerrankID" placeholder="Enter your HackerRank ID" required>
+                </div>
+            </div>
+            <button class="register-btn" id="registerBtn">Register</button>
+        </div>
+
+        
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023-2025 SEED Institute of Training. All rights Reserved.</p>
+    </footer>
+
+
+<script>
+    document.getElementById("name").addEventListener("input", function () {
+    this.value = this.value.toUpperCase(); // Convert input to uppercase
+});
+
+document.getElementById("registerBtn").addEventListener("click", function () {
+    const name = document.getElementById("name").value.trim();
+    const rollNumber = document.getElementById("rollNumber").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const college = document.getElementById("college").value;
+    const department = document.getElementById("department").value;
+    const year = document.getElementById("year").value;
+    const hackerrankEmail = document.getElementById("hackerrankEmail").value.trim();
+    const hackerrankID = document.getElementById("hackerrankID").value.trim();
+
+    // 🔹 Check if all fields are filled
+    if (!name || !rollNumber || !email || !college || !department || !year || !hackerrankEmail || !hackerrankID) {
+        alert("⚠️ All fields are required!");
+        return;
+    }
+
+    // 🔹 Name validation (only uppercase letters and spaces allowed)
+    if (!/^[A-Z\s]+$/.test(name)) {
+        alert("⚠️ Name should contain only uppercase letters and spaces!");
+        return;
+    }
+
+    // 🔹 Email validation
+    if (!email.match(/^\S+@\S+\.\S+$/)) {
+        alert("⚠️ Please enter a valid email address!");
+        return;
+    }
+
+    // 🔹 HackerRank ID validation (no '@' symbol)
+    if (hackerrankID.includes('@')) {
+        alert("⚠️ Do not use '@' in HackerRank ID. Enter only your username.");
+        return;
+    }
+
+    // 🔹 Send data to Google Apps Script
+    const data = {
+        name,
+        rollNumber,
+        email,
+        college,
+        department,
+        year,
+        hackerrankEmail,
+        hackerrankID
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbx7ehG0Kpz2Aq5WIjnC5HSuZHBD_oPgfzlro-xSwi-PDPjdJBnHgJExsYzV4NS8bJsk/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Failed to register!");
+    });
+
+    // ✅ Get the form container element
+    const formContainer = document.querySelector(".form-container");
+
+    // Show loading animation
+    formContainer.innerHTML = `
+        <div class="loading-container">
+            <div class="loading-spinner"></div>
+            <h2>🔄 Registering...</h2>
+        </div>
+    `;
+
+    // Generate a random delay between 3-7 seconds
+    const delay = Math.floor(Math.random() * (7000 - 3000 + 1)) + 3000;
+
+    setTimeout(() => {
+        // Replace loading animation with success message
+        formContainer.innerHTML = `
+            <div class="success-message">
+                <h2>✅ Registered Successfully!</h2>
+                <p>You will receive a confirmation email shortly.</p>
+                <button id="newRegistrationBtn" class="register-btn">Click here for new registration</button>
+            </div>
+        `;
+
+        // Reset form when clicking "New Registration"
+        document.getElementById("newRegistrationBtn").addEventListener("click", function () {
+            location.reload(); // Refreshes the page to reset the form
+        });
+
+    }, delay);
+});
+
+</script>
+
+
+    </body>
+</html>

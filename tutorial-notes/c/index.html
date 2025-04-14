@@ -1,0 +1,3286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Notes</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" type="image/webp">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header img {
+            width: 50px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .section h2 {
+            color: #35424a;
+        }
+        .section code {
+            background-color: #f8f8f8;
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        .example {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #35424a;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="Logo">
+        <h1>C Programming Notes</h1>
+    </header>
+
+    <div class="container">
+        <!-- Introduction to Programming -->
+        <div class="section" id="intro-to-programming">
+    <h2>Introduction to Programming</h2>
+    <p>Programming is the process of creating a set of instructions that tell the computer how to perform a task. It involves designing algorithms, using programming languages like C to translate these algorithms into code, and running the code to produce the desired outcome.</p>
+
+    <h3>What is Programming?</h3>
+    <p>Programming, often referred to as coding, is the art of writing instructions that the computer can understand and execute. A program is a collection of these instructions, written in a specific programming language.</p>
+
+    <h3>Why C Programming?</h3>
+    <p>C is a powerful, efficient, and flexible programming language. It is often used for system programming, embedded systems, operating systems, and applications that require high performance. The C language is known for its simple syntax and control over system resources, making it one of the most widely-used languages in the world.</p>
+
+    <h3>Basic Structure of a C Program</h3>
+    <p>A basic C program has the following structure:</p>
+    <pre>
+#include <stdio.h>  // Preprocessor directive to include standard input-output header file
+
+int main() {  // Main function - execution starts here
+    // Code statements go here
+    return 0;  // Indicate successful program termination
+}
+    </pre>
+    
+    <h3>Components of a C Program:</h3>
+    <ul>
+        <li><b>Preprocessor Directives:</b> Lines that begin with a `#`, used to include external files or define constants.</li>
+        <li><b>Functions:</b> Blocks of code that perform specific tasks. A C program must have at least one function, the `main()` function, which is the entry point of the program.</li>
+        <li><b>Statements:</b> Instructions that the program follows. They can include variable declarations, calculations, and input/output operations.</li>
+        <li><b>Comments:</b> These are ignored by the compiler and are used to explain the code for humans.</li>
+    </ul>
+    
+    <h3>Compiling a C Program:</h3>
+    <p>In order to execute a C program, it needs to be compiled into machine code that the computer can understand. This process involves:</p>
+    <ul>
+        <li>Writing the C code in a text editor.</li>
+        <li>Using a compiler to convert the code into an executable file.</li>
+        <li>Running the executable to see the output.</li>
+    </ul>
+
+    <h3>Basic Data Types in C:</h3>
+    <p>C supports several data types that define the type of data a variable can hold. Common data types include:</p>
+    <ul>
+        <li><code>int</code>: Integer numbers (e.g., 5, -10, 100)</li>
+        <li><code>float</code>: Floating-point numbers (e.g., 3.14, -0.001, 100.5)</li>
+        <li><code>double</code>: Double precision floating-point numbers for larger values.</li>
+        <li><code>char</code>: Single characters (e.g., 'a', '1', '%').</li>
+    </ul>
+
+    <h3>Comments in C:</h3>
+    <p>Comments are essential for explaining the code to others or for future reference. In C, there are two types of comments:</p>
+    <ul>
+        <li>Single-line comment: <code>// This is a comment</code></li>
+        <li>Multi-line comment: <code>/* This is a multi-line comment */</code></li>
+    </ul>
+
+    <h3>Example of a Simple C Program:</h3>
+    <p>Here’s a simple C program that asks for the user’s name and prints a greeting:</p>
+    <pre>
+#include <stdio.h>
+
+int main() {
+    char name[50];  // Declare a variable to store the user's name
+
+    printf("Enter your name: ");  // Ask the user for their name
+    scanf("%s", name);  // Read the user's input and store it in the 'name' variable
+
+    printf("Hello, %s!\n", name);  // Print the greeting with the user's name
+
+    return 0;
+}
+    </pre>
+
+    <h3>Key Concepts Students Need to Know:</h3>
+    <ul>
+        <li><b>Variables:</b> Named storage locations for holding data. You can store different types of data in variables, such as integers or characters.</li>
+        <li><b>Control Structures:</b> Instructions that control the flow of execution (e.g., if-else statements, loops).</li>
+        <li><b>Functions:</b> Functions allow you to organize your program into smaller, reusable blocks of code.</li>
+        <li><b>Input and Output:</b> Using functions like <code>printf()</code> and <code>scanf()</code> to display information to the user and gather input from them.</li>
+        <li><b>Debugging:</b> The process of identifying and fixing errors or bugs in the code. Common debugging methods include using print statements and debuggers.</li>
+    </ul>
+
+    <h3>Conclusion:</h3>
+    <p>Programming is a skill that requires practice and patience. In C, once you understand the basics like variables, functions, and control structures, you can start solving complex problems. The best way to learn programming is by writing lots of code and solving problems through practice.</p>
+</div>
+
+
+        <!-- Header Files -->
+        <div class="section">
+            <h2>Header Files</h2>
+            <p>Header files in C are used to include standard or user-defined functions, constants, and macros. They are included in programs using the <code>#include</code> directive. Common header files include <code>stdio.h</code>, <code>stdlib.h</code>, and <code>math.h</code>.</p>
+        </div>
+
+<div class="section" id="common-header-files">
+    <h2>Commonly Used Header Files in C</h2>
+    <p>C provides a variety of header files that offer pre-written functions to perform common tasks like input/output, string handling, mathematical operations, and more. Understanding each header file and its functionality is essential for efficient C programming. Below are some of the most commonly used header files:</p>
+
+    <h3>1. <code>stdio.h</code> - Standard Input/Output</h3>
+    <p>The <code>stdio.h</code> header file defines functions for performing input and output operations. It is one of the most frequently used header files in C programming. It provides functions to read data from the user, display output on the screen, and manage files.</p>
+    <h4>Functions Provided by <code>stdio.h</code>:</h4>
+    <ul>
+        <li><code>printf()</code>: Used to print formatted output to the console.</li>
+        <li><code>scanf()</code>: Reads formatted input from the user.</li>
+        <li><code>getchar()</code>: Reads a single character from standard input.</li>
+        <li><code>putchar()</code>: Prints a single character to standard output.</li>
+        <li><code>fgets()</code>: Reads a string from a file or standard input.</li>
+        <li><code>fputs()</code>: Writes a string to a file or standard output.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);  // Input from user
+    printf("You entered: %d", num);  // Output to console
+    return 0;
+}
+    </pre>
+
+    <h3>2. <code>stdlib.h</code> - Standard Library</h3>
+    <p>The <code>stdlib.h</code> header file provides functions for memory allocation, process control, conversions, and other general-purpose functions. It is essential for working with dynamic memory and managing program flow.</p>
+    <h4>Functions Provided by <code>stdlib.h</code>:</h4>
+    <ul>
+        <li><code>malloc()</code>: Allocates memory dynamically.</li>
+        <li><code>free()</code>: Frees previously allocated memory.</li>
+        <li><code>exit()</code>: Exits from the program.</li>
+        <li><code>atoi()</code>: Converts a string to an integer.</li>
+        <li><code>atof()</code>: Converts a string to a floating-point number.</li>
+        <li><code>rand()</code>: Generates a random number.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *arr;
+    arr = (int *)malloc(5 * sizeof(int));  // Dynamically allocate memory for an array
+    if (arr == NULL) {
+        printf("Memory allocation failed");
+        return 1;
+    }
+    free(arr);  // Free the allocated memory
+    return 0;
+}
+    </pre>
+
+    <h3>3. <code>string.h</code> - String Handling</h3>
+    <p>The <code>string.h</code> header file contains functions for manipulating strings and arrays of characters. It is crucial for tasks like copying, comparing, and concatenating strings.</p>
+    <h4>Functions Provided by <code>string.h</code>:</h4>
+    <ul>
+        <li><code>strcpy()</code>: Copies a string to another.</li>
+        <li><code>strcat()</code>: Concatenates two strings.</li>
+        <li><code>strlen()</code>: Returns the length of a string.</li>
+        <li><code>strcmp()</code>: Compares two strings.</li>
+        <li><code>strchr()</code>: Finds the first occurrence of a character in a string.</li>
+        <li><code>strstr()</code>: Finds the first occurrence of a substring in a string.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[20] = "Hello, ";
+    char str2[] = "World!";
+    strcat(str1, str2);  // Concatenate str2 to str1
+    printf("Resulting string: %s", str1);
+    return 0;
+}
+    </pre>
+
+    <h3>4. <code>math.h</code> - Mathematical Functions</h3>
+    <p>The <code>math.h</code> header file provides various mathematical functions for performing common operations such as exponentiation, square root, trigonometry, and logarithms.</p>
+    <h4>Functions Provided by <code>math.h</code>:</h4>
+    <ul>
+        <li><code>sqrt()</code>: Computes the square root of a number.</li>
+        <li><code>pow()</code>: Computes the power of a number.</li>
+        <li><code>sin()</code>: Computes the sine of an angle.</li>
+        <li><code>cos()</code>: Computes the cosine of an angle.</li>
+        <li><code>log()</code>: Computes the natural logarithm of a number.</li>
+        <li><code>fabs()</code>: Computes the absolute value of a floating-point number.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double num = 9;
+    printf("Square root of %.2f is %.2f", num, sqrt(num));
+    return 0;
+}
+    </pre>
+
+    <h3>5. <code>time.h</code> - Time and Date Functions</h3>
+    <p>The <code>time.h</code> header file contains functions for manipulating date and time. It is helpful for handling time-related tasks in a program.</p>
+    <h4>Functions Provided by <code>time.h</code>:</h4>
+    <ul>
+        <li><code>time()</code>: Returns the current time as a <code>time_t</code> value.</li>
+        <li><code>localtime()</code>: Converts a <code>time_t</code> value to a local time structure.</li>
+        <li><code>strftime()</code>: Formats date and time in a specified format.</li>
+        <li><code>difftime()</code>: Computes the difference between two times.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t currentTime;
+    currentTime = time(NULL);  // Get current time
+    printf("Current time is: %s", ctime(&currentTime));  // Display current time
+    return 0;
+}
+    </pre>
+
+    <h3>6. <code>conio.h</code> - Console Input/Output (Obsolete)</h3>
+    <p>The <code>conio.h</code> header file is used for console input/output operations. It is mainly used in old compilers like Turbo C++. Many modern compilers no longer support it.</p>
+    <h4>Functions Provided by <code>conio.h</code>:</h4>
+    <ul>
+        <li><code>getch()</code>: Reads a character from the console without echoing it.</li>
+        <li><code>getche()</code>: Reads a character from the console and echoes it.</li>
+        <li><code>clrscr()</code>: Clears the screen.</li>
+        <li><code>gotoxy()</code>: Moves the cursor to a specified position on the screen.</li>
+    </ul>
+    <h4>Example:</h4>
+    <pre>
+#include <conio.h>
+
+int main() {
+    char ch;
+    printf("Press any key: ");
+    ch = getch();  // Wait for user input
+    printf("You pressed: %c", ch);
+    return 0;
+}
+    </pre>
+
+    <h3>Conclusion</h3>
+    <p>These are some of the most commonly used header files in C. They provide essential functions for handling input/output, performing mathematical operations, working with strings, and more. Understanding these header files and their functions will significantly improve your efficiency in C programming. Always include the appropriate header files to access these functionalities in your program.</p>
+</div>
+
+
+
+        <!-- Main Function -->
+        <div class="section">
+            <h2>Main Function</h2>
+            <p>The <code>main()</code> function is the entry point of every C program. Execution of the program begins from here.</p>
+            <div class="example">
+                <pre>
+#include <stdio.h>
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+                </pre>
+            </div>
+        </div>
+
+<div class="section" id="main-function">
+    <h2>Main Function in C</h2>
+    <p>The <code>main()</code> function is the entry point of every C program. It is where program execution begins. Without the <code>main()</code> function, a C program cannot run. The structure and behavior of the <code>main()</code> function are essential for understanding how C programs are executed.</p>
+
+    <h3>1. Purpose of the <code>main()</code> Function</h3>
+    <p>The primary purpose of the <code>main()</code> function is to signal where the program starts its execution. It acts as the entry point for the program's execution and is required in every C program. The program execution starts from the first statement inside the <code>main()</code> function and continues until the function ends.</p>
+
+    <h3>2. Syntax of <code>main()</code> Function</h3>
+    <p>The syntax of the <code>main()</code> function can vary slightly based on whether you are passing arguments or not. Here are the common formats:</p>
+
+    <h4>Basic Syntax:</h4>
+    <pre>
+#include <stdio.h>
+
+int main() {
+    // Code execution starts here
+    return 0;
+}
+    </pre>
+    <p>This is the simplest form of the <code>main()</code> function. It does not accept any arguments and returns an integer value.</p>
+
+    <h4>Syntax with Command-Line Arguments:</h4>
+    <pre>
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    // Code execution starts here
+    return 0;
+}
+    </pre>
+    <p>This version of <code>main()</code> allows the program to accept command-line arguments. The parameters <code>argc</code> (argument count) and <code>argv</code> (argument vector) help capture the arguments passed when the program is executed.</p>
+
+    <h3>3. Explanation of Parameters</h3>
+    <p>When command-line arguments are used, the <code>main()</code> function typically has two parameters:</p>
+
+    <h4>1. <code>int argc</code> - Argument Count</h4>
+    <p><code>argc</code> is an integer that contains the number of command-line arguments passed to the program, including the program name itself. This allows the program to determine how many arguments have been passed and handle them accordingly.</p>
+
+    <h4>2. <code>char *argv[]</code> - Argument Vector</h4>
+    <p><code>argv</code> is an array of strings (character arrays) that holds the actual arguments passed to the program. Each element of <code>argv</code> contains one argument as a string. The first element of <code>argv[0]</code> is always the program name, and the remaining elements contain the user-supplied arguments.</p>
+
+    <h3>4. Return Type of the <code>main()</code> Function</h3>
+    <p>The return type of the <code>main()</code> function is typically <code>int</code>, and it returns an integer value that indicates the program’s execution status:</p>
+    <ul>
+        <li><code>return 0;</code> indicates that the program has executed successfully.</li>
+        <li><code>return 1;</code> (or any non-zero value) indicates that an error occurred during execution.</li>
+    </ul>
+    <p>In modern C, returning 0 from <code>main()</code> is the standard practice, but some compilers may allow you to omit the return statement. If omitted, the default return value is considered as 0 in most systems.</p>
+
+    <h3>5. Example 1: Basic Main Function</h3>
+    <pre>
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");  // Output to the console
+    return 0;  // Return 0 indicates successful execution
+}
+    </pre>
+    <p>This simple program uses the <code>printf()</code> function to print "Hello, World!" to the console. After executing the main code, it returns 0 to indicate successful completion.</p>
+
+    <h3>6. Example 2: Main Function with Command-Line Arguments</h3>
+    <pre>
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    printf("Total number of arguments: %d\n", argc);  // Print the number of arguments
+    printf("Program name: %s\n", argv[0]);  // Print the program name
+    for (int i = 1; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);  // Print each argument passed
+    }
+    return 0;
+}
+    </pre>
+    <p>This program accepts command-line arguments. It prints the number of arguments passed, the program name, and each argument provided by the user when running the program. For example, running the program with the command:</p>
+    <pre>
+    ./program arg1 arg2 arg3
+    </pre>
+    <p>Would produce the output:</p>
+    <pre>
+    Total number of arguments: 4
+    Program name: ./program
+    Argument 1: arg1
+    Argument 2: arg2
+    Argument 3: arg3
+    </pre>
+
+    <h3>7. Special Considerations for <code>main()</code></h3>
+    <p>While the <code>main()</code> function is straightforward, there are a few things to remember:</p>
+    <ul>
+        <li>The <code>main()</code> function must be declared with a return type of <code>int</code>.</li>
+        <li>Arguments to <code>main()</code> are optional, and you can write a program without them if you do not need to handle command-line arguments.</li>
+        <li>It is a good practice to return a value from <code>main()</code> to indicate whether the program ran successfully or encountered an error.</li>
+        <li>The <code>main()</code> function is the only function that is automatically called when a program starts. All other functions are called explicitly from within <code>main()</code> or other functions.</li>
+    </ul>
+
+    <h3>8. Conclusion</h3>
+    <p>The <code>main()</code> function is essential for every C program. It serves as the entry point for program execution, and understanding its structure and functionality is crucial for writing and running C programs. Knowing how to handle command-line arguments and return values from <code>main()</code> will allow you to write more flexible and robust programs.</p>
+</div>
+
+
+       <div class="section" id="variables">
+    <h2>Variables in C</h2>
+    <p>In C programming, a <strong>variable</strong> is a name given to a memory location that stores data. Variables allow you to store and manipulate data during program execution. Understanding how variables work is crucial for writing efficient and correct C programs.</p>
+
+    <h3>1. What is a Variable?</h3>
+    <p>A <strong>variable</strong> is a storage location in memory with a name, which holds a value that can be modified during the execution of the program. It is used to store information like numbers, characters, or other data types. The value of a variable can change as the program runs.</p>
+
+    <h3>2. Declaring Variables</h3>
+    <p>In C, variables must be declared before they are used. The declaration specifies the variable's name and data type. The general syntax for declaring a variable is:</p>
+    <pre><code>data_type variable_name;</code></pre>
+    <p>For example:</p>
+    <pre><code>int x;</code></pre>
+    <p>This declares an integer variable named <code>x</code>.</p>
+
+    <h3>3. Initializing Variables</h3>
+    <p>Variables in C can be initialized at the time of declaration. Initialization assigns a value to the variable when it is created. The syntax for initialization is:</p>
+    <pre><code>data_type variable_name = value;</code></pre>
+    <p>For example:</p>
+    <pre><code>int x = 10;</code></pre>
+    <p>This declares an integer variable <code>x</code> and initializes it with the value 10.</p>
+
+    <h3>4. Types of Variables</h3>
+    <p>Variables in C can be classified into different types based on their data types. Here are some common types of variables:</p>
+    <ul>
+        <li><strong>Local Variables</strong>: Variables that are declared inside a function and are only accessible within that function.</li>
+        <li><strong>Global Variables</strong>: Variables that are declared outside of all functions and are accessible throughout the program.</li>
+        <li><strong>Static Variables</strong>: Variables that retain their value between function calls. They are declared using the <code>static</code> keyword.</li>
+        <li><strong>External Variables</strong>: Variables that are declared in another file but are referenced using the <code>extern</code> keyword.</li>
+    </ul>
+
+    <h3>5. Variable Naming Rules</h3>
+    <p>When naming a variable in C, there are some rules and guidelines to follow:</p>
+    <ul>
+        <li>The name must begin with a letter (a-z, A-Z) or an underscore (_).</li>
+        <li>Subsequent characters may be letters, digits (0-9), or underscores.</li>
+        <li>Variable names are case-sensitive, so <code>x</code> and <code>X</code> are considered different variables.</li>
+        <li>A variable name cannot be a C keyword (such as <code>int</code>, <code>return</code>, etc.).</li>
+        <li>The variable name must not exceed the system-defined limit (commonly 31 characters).</li>
+    </ul>
+
+    <h3>6. Example 1: Variable Declaration and Initialization</h3>
+    <pre><code>#include <stdio.h>
+
+int main() {
+    int a = 5;   // Declare and initialize an integer variable
+    float b = 3.14;  // Declare and initialize a float variable
+    char c = 'A';  // Declare and initialize a char variable
+    
+    printf("Integer: %d\n", a);
+    printf("Float: %.2f\n", b);
+    printf("Character: %c\n", c);
+
+    return 0;
+}
+    </code></pre>
+    <p>This program declares and initializes three variables of different types: <code>int</code>, <code>float</code>, and <code>char</code>. The <code>printf()</code> function is used to display their values.</p>
+
+    <h3>7. 7. Example 2: Modifying Variable Values</h3>
+    <pre><code>#include <stdio.h>
+
+int main() {
+    int x = 10;   // Initialize x with 10
+    printf("Original value of x: %d\n", x);
+
+    // Modify the value of x
+    x = 20;
+    printf("Modified value of x: %d\n", x);
+
+    return 0;
+}
+    </code></pre>
+    <p>This example demonstrates modifying the value of a variable after its initial assignment. The value of <code>x</code> is changed from 10 to 20 during the execution of the program.</p>
+
+    <h3>8. 7. Example 3: Using Variables in Expressions</h3>
+    <pre><code>#include <stdio.h>
+
+int main() {
+    int a = 10, b = 5;
+    int sum = a + b;
+    int diff = a - b;
+    int product = a * b;
+    int quotient = a / b;
+
+    printf("Sum: %d\n", sum);
+    printf("Difference: %d\n", diff);
+    printf("Product: %d\n", product);
+    printf("Quotient: %d\n", quotient);
+
+    return 0;
+}
+    </code></pre>
+    <p>This example shows how variables can be used in arithmetic expressions. The program calculates the sum, difference, product, and quotient of two variables and displays the results.</p>
+
+    <h3>9. 8. Example 4: Scope of Variables</h3>
+    <pre><code>#include <stdio.h>
+
+int globalVar = 100;  // Global variable
+
+void display() {
+    int localVar = 50;  // Local variable
+    printf("Local Variable: %d\n", localVar);
+    printf("Global Variable: %d\n", globalVar);
+}
+
+int main() {
+    display();
+    return 0;
+}
+    </code></pre>
+    <p>This program demonstrates the scope of variables. The <code>globalVar</code> is accessible throughout the program, while the <code>localVar</code> is only accessible within the <code>display()</code> function.</p>
+
+    <h3>10. Rules for Variable Initialization</h3>
+    <p>While initializing variables in C, you must follow certain rules:</p>
+    <ul>
+        <li>Variables must be initialized before being used. Uninitialized variables can lead to undefined behavior.</li>
+        <li>The type of the variable should match the type of the value being assigned to it. For example, an integer variable should not be initialized with a string value.</li>
+        <li>You can use the assignment operator (<code>=</code>) to initialize a variable.</li>
+    </ul>
+
+    <h3>11. Common Mistakes with Variables</h3>
+    <p>Some common mistakes related to variables in C include:</p>
+    <ul>
+        <li>Using uninitialized variables: Always initialize variables before using them.</li>
+        <li>Using variables of the wrong type: Ensure that the data type of the variable matches the type of the data you intend to store.</li>
+        <li>Variable shadowing: When a local variable has the same name as a global variable, it may lead to confusion about which variable is being referred to.</li>
+    </ul>
+
+    <h3>12. Conclusion</h3>
+    <p>Variables are fundamental building blocks in C programming, and mastering their use is essential for writing correct and efficient programs. By understanding how to declare, initialize, and use variables, you can store and manipulate data effectively in your programs. Proper handling of variable types and scope is key to avoiding errors and writing clean, maintainable code.</p>
+</div>
+
+
+       <div class="section">
+    <h2>Data Types in C</h2>
+    <p>Data types in C are essential as they define the type and size of the data stored in variables. Understanding data types is crucial to choosing the right type for variables in your program. It also impacts performance, memory usage, and correctness.</p>
+
+    <h3>Basic Data Types</h3>
+    <p>C provides several basic built-in data types. These types differ in their range, precision, and the memory they occupy.</p>
+
+    <h4>1. <code>int</code> (Integer)</h4>
+    <p>The <code>int</code> data type is used for whole numbers. It can store both positive and negative integers. The size of an integer depends on the machine architecture (typically 4 bytes on modern systems).</p>
+    <pre>
+    int num = 100;  // Positive integer
+    int negative = -10;  // Negative integer
+    </pre>
+    <p><strong>Range of int:</strong> Typically from -2,147,483,648 to 2,147,483,647 on 4-byte systems.</p>
+
+    <h4>2. <code>float</code> (Floating-point number)</h4>
+    <p>The <code>float</code> type is used for decimal numbers (real numbers). It stores numbers with fractional parts and uses 4 bytes of memory. <code>float</code> is precise up to 6-7 decimal digits.</p>
+    <pre>
+    float temperature = 36.6;  // Float value
+    float price = 29.99;  // Float value
+    </pre>
+    <p><strong>Range of float:</strong> Approximately 1.5 x 10<sup>-45</sup> to 3.4 x 10<sup>38</sup> (positive and negative).</p>
+
+    <h4>3. <code>double</code> (Double Precision Floating-point)</h4>
+    <p>The <code>double</code> data type provides greater precision than <code>float</code> (usually up to 15 decimal digits). It is typically used when higher precision is needed for real numbers.</p>
+    <pre>
+    double pi = 3.141592653589793;
+    double largeNumber = 987654321.987654;
+    </pre>
+    <p><strong>Range of double:</strong> Approximately 5.0 x 10<sup>-324</sup> to 1.7 x 10<sup>308</sup>.</p>
+
+    <h4>4. <code>char</code> (Character)</h4>
+    <p>The <code>char</code> data type is used to store individual characters. It occupies 1 byte and stores any character (such as a letter or symbol) using its ASCII value.</p>
+    <pre>
+    char grade = 'A';  // Character
+    char initial = 'B';  // Character
+    </pre>
+    <p><strong>Range of char:</strong> Typically from -128 to 127 (signed char) or 0 to 255 (unsigned char).</p>
+
+    <h3>Modifiers to Data Types</h3>
+    <p>C allows several modifiers to alter the range of data types, providing better control over memory usage and variable size.</p>
+
+    <h4>1. <code>short</code> and <code>long</code></h4>
+    <p>The <code>short</code> modifier is used with <code>int</code> to store smaller integers, while <code>long</code> allows storing larger integer values. These modifiers adjust the storage size.</p>
+    <pre>
+    short small = 5000;  // short int (2 bytes)
+    long big = 50000000;  // long int (4 bytes)
+    </pre>
+    <p><strong>Range of short:</strong> Typically from -32,768 to 32,767 (2 bytes).</p>
+    <p><strong>Range of long:</strong> Typically from -2,147,483,648 to 2,147,483,647 (4 bytes), or more on 64-bit systems.</p>
+
+    <h4>2. <code>unsigned</code></h4>
+    <p>The <code>unsigned</code> modifier indicates that the variable will only hold positive values, which effectively doubles the range of positive numbers.</p>
+    <pre>
+    unsigned int num = 1000;  // unsigned integer
+    unsigned char byte = 255;  // unsigned char (0-255)
+    </pre>
+    <p><strong>Range of unsigned int:</strong> Typically from 0 to 4,294,967,295 on a 4-byte system.</p>
+
+    <h3>Derived Data Types</h3>
+    <p>C allows the creation of complex data types, combining basic data types to build more sophisticated structures.</p>
+
+    <h4>1. <code>Array</code></h4>
+    <p>An array is a collection of variables of the same type, stored in contiguous memory locations. The size of an array must be known at compile time.</p>
+    <pre>
+    int numbers[5] = {1, 2, 3, 4, 5};  // Array of integers
+    char name[10] = "John";  // Array of characters
+    </pre>
+    <p>Accessing array elements is done using an index, with the first element being at index 0:</p>
+    <pre>
+    printf("%d", numbers[0]);  // Output: 1
+    </pre>
+
+    <h4>2. <code>Pointer</code></h4>
+    <p>A pointer is a variable that holds the address of another variable. Pointers allow dynamic memory allocation and are used for various advanced techniques in C.</p>
+    <pre>
+    int num = 10;
+    int *ptr = &num;  // Pointer to int
+    printf("%d", *ptr);  // Dereferencing the pointer to print 10
+    </pre>
+
+    <h4>3. <code>Structure</code></h4>
+    <p>A structure is a user-defined data type that allows the grouping of variables of different types under a single name.</p>
+    <pre>
+    struct Person {
+        char name[50];
+        int age;
+        float height;
+    };
+    struct Person person1 = {"John", 25, 5.9};
+    printf("%s", person1.name);  // Output: John
+    </pre>
+
+    <h4>4. <code>Union</code></h4>
+    <p>A union is similar to a structure but allows different members to share the same memory location. It helps to save memory space.</p>
+    <pre>
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    union Data data;
+    data.i = 100;
+    printf("%d", data.i);  // Output: 100
+    </pre>
+
+    <h4>5. <code>Enumerated Types (enum)</code></h4>
+    <p>Enums are used to define variables that can only take predefined constant values. It makes the code more readable and reduces errors.</p>
+    <pre>
+    enum Day { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
+    enum Day today = Wednesday;
+    printf("%d", today);  // Output: 3 (for Wednesday)
+    </pre>
+
+    <h3>Size of Data Types</h3>
+    <p>The size of a data type is platform-dependent, but you can use the <code>sizeof()</code> operator to determine the size of a data type or variable in bytes.</p>
+    <pre>
+    printf("Size of int: %zu bytes", sizeof(int));  // Output: 4 bytes
+    printf("Size of double: %zu bytes", sizeof(double));  // Output: 8 bytes
+    </pre>
+
+    <h3>Type Conversion in C</h3>
+    <p>C allows both implicit and explicit type conversion.</p>
+
+    <h4>1. Implicit Type Conversion (Automatic)</h4>
+    <p>Implicit conversion occurs when a smaller data type is automatically converted to a larger one. This ensures that no data is lost.</p>
+    <pre>
+    int a = 10;
+    float b = a;  // int automatically converted to float
+    printf("%f", b);  // Output: 10.000000
+    </pre>
+
+    <h4>2. Explicit Type Conversion (Casting)</h4>
+    <p>Explicit conversion, or casting, occurs when you manually convert a value from one data type to another using the type cast operator.</p>
+    <pre>
+    float x = 5.75;
+    int y = (int)x;  // Explicit cast from float to int
+    printf("%d", y);  // Output: 5
+    </pre>
+
+    <h3>Conclusion</h3>
+    <p>Understanding data types in C is essential for effective programming. Each data type serves a specific purpose, and choosing the right one ensures your program works correctly, efficiently, and without errors. Always consider the size, range, and precision when selecting data types.</p>
+</div>
+
+<div class="input-output-notes">
+    <h2>Input and Output in C</h2>
+    
+    <!-- Standard Input -->
+    <div class="section">
+        <h3>1. Standard Input - Using scanf()</h3>
+        <p>The <code>scanf()</code> function is used to take input from the user. It reads formatted input from the standard input (keyboard).</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    int num;
+    scanf("%d", &num);
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Standard Output -->
+    <div class="section">
+        <h3>2. Standard Output - Using printf()</h3>
+        <p>The <code>printf()</code> function is used to print output to the standard output (screen).</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Multiple Inputs -->
+    <div class="section">
+        <h3>3. Multiple Inputs - Using scanf()</h3>
+        <p>You can take multiple inputs in a single <code>scanf()</code> statement by separating the format specifiers.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    int a, b;
+    scanf("%d %d", &a, &b);
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Single Line Input -->
+    <div class="section">
+        <h3>4. Single Line Input - Using fgets() for Strings</h3>
+        <p>For reading strings with spaces, <code>fgets()</code> is preferred over <code>scanf()</code> to avoid overflow and handle spaces.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    char str[100];
+    fgets(str, sizeof(str), stdin);
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Output with Formatting -->
+    <div class="section">
+        <h3>5. Output with Formatting - Using printf()</h3>
+        <p><code>printf()</code> allows formatting the output to display values with specific precision, widths, and alignment.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    float num = 123.4567;
+    printf("Formatted Output: %.2f", num);  // Outputs 123.46
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Output with Escape Sequences -->
+    <div class="section">
+        <h3>6. Output with Escape Sequences</h3>
+        <p>Escape sequences in C allow special formatting of output, such as newlines, tabs, etc.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\nWorld!");  // Output with newline
+    return 0;
+}
+</code></pre>
+    </div>
+
+    <!-- Input with Validation -->
+    <div class="section">
+        <h3>7. Input with Validation</h3>
+        <p>It's good practice to validate the input before proceeding. Here's an example with <code>scanf()</code> and a loop.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    int num;
+    while(scanf("%d", &num) != 1) {
+        printf("Invalid input! Please enter an integer.\n");
+        while(getchar() != '\n');  // Clear the input buffer
+    }
+    return 0;
+}
+</code></pre>
+    </div>
+</div>
+
+<div class="escape-sequences-notes">
+    <h2>Escape Sequences in C</h2>
+    
+    <!-- Newline -->
+    <div class="section">
+        <h3>1. Newline - <code>\n</code></h3>
+        <p>The <code>\n</code> escape sequence is used to move the cursor to the next line in the output.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\nWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>Hello
+World!</code></pre>
+    </div>
+
+    <!-- Tab -->
+    <div class="section">
+        <h3>2. Horizontal Tab - <code>\t</code></h3>
+        <p>The <code>\t</code> escape sequence inserts a horizontal tab space between output elements.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\tWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>Hello   World!</code></pre>
+    </div>
+
+    <!-- Backslash -->
+    <div class="section">
+        <h3>3. Backslash - <code>\\</code></h3>
+        <p>The <code>\\</code> escape sequence is used to print a backslash character.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("This is a backslash: \\");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>This is a backslash: \</code></pre>
+    </div>
+
+    <!-- Single Quote -->
+    <div class="section">
+        <h3>4. Single Quote - <code>\'</code></h3>
+        <p>The <code>\'</code> escape sequence is used to print a single quote character.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("This is a single quote: \'");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>This is a single quote: '</code></pre>
+    </div>
+
+    <!-- Double Quote -->
+    <div class="section">
+        <h3>5. Double Quote - <code>&quot;</code></h3>
+        <p>The <code>\"</code> escape sequence is used to print a double quote character.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("This is a double quote: \"");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>This is a double quote: "</code></pre>
+    </div>
+
+    <!-- Carriage Return -->
+    <div class="section">
+        <h3>6. Carriage Return - <code>\r</code></h3>
+        <p>The <code>\r</code> escape sequence moves the cursor to the beginning of the current line. It's used for overwriting output.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\rWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>World!</code></pre>
+        <p>Note: "Hello" is overwritten by "World!" due to <code>\r</code>.</p>
+    </div>
+
+    <!-- Backspace -->
+    <div class="section">
+        <h3>7. Backspace - <code>\b</code></h3>
+        <p>The <code>\b</code> escape sequence moves the cursor one position backward, effectively deleting the previous character when used.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\bWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>HellWorld!</code></pre>
+        <p>Note: "o" is erased due to the backspace.</p>
+    </div>
+
+    <!-- Alert -->
+    <div class="section">
+        <h3>8. Alert (Bell) - <code>\a</code></h3>
+        <p>The <code>\a</code> escape sequence causes the system to make a beep sound (bell sound), if supported by the environment.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\aWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Note: A beep sound might be heard in some systems.</p>
+    </div>
+
+    <!-- Vertical Tab -->
+    <div class="section">
+        <h3>9. Vertical Tab - <code>\v</code></h3>
+        <p>The <code>\v</code> escape sequence is used to insert a vertical tab, which is not widely used in modern systems.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    printf("Hello\vWorld!");
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>Hello
+        World!</code></pre>
+    </div>
+
+    <!-- Null Character -->
+    <div class="section">
+        <h3>10. Null Character - <code>\0</code></h3>
+        <p>The <code>\0</code> escape sequence represents the null character, which is used to terminate strings in C.</p>
+        <pre><code>#include &lt;stdio.h&gt;
+int main() {
+    char str[] = "Hello\0World";
+    printf("%s", str);  // Output: Hello
+    return 0;
+}
+</code></pre>
+        <p>Output:</p>
+        <pre><code>Hello</code></pre>
+        <p>Note: The string is terminated at <code>\0</code>, so "World" is not printed.</p>
+    </div>
+</div>
+
+
+       <div id="operators-section">
+    <h2>Operators in C</h2>
+    <p>Operators are symbols used to perform operations on variables and values. C provides several types of operators that are classified as:</p>
+
+    <h3>1. Arithmetic Operators</h3>
+    <p>These operators perform basic arithmetic operations:</p>
+    <pre>
+    int a = 10, b = 20;
+    int result;
+    result = a + b; // Addition
+    result = a - b; // Subtraction
+    result = a * b; // Multiplication
+    result = a / b; // Division
+    result = a % b; // Modulus (Remainder)
+    </pre>
+    <p>Example: <code>result = a + b;</code> adds the values of <code>a</code> and <code>b</code> and stores the result in <code>result</code>.</p>
+
+    <h3>2. Relational Operators</h3>
+    <p>These operators compare two values:</p>
+    <pre>
+    int a = 10, b = 20;
+    int result;
+    result = a == b; // Equal to
+    result = a != b; // Not equal to
+    result = a > b;  // Greater than
+    result = a < b;  // Less than
+    result = a >= b; // Greater than or equal to
+    result = a <= b; // Less than or equal to
+    </pre>
+    <p>Example: <code>a == b;</code> checks if <code>a</code> is equal to <code>b</code>.</p>
+
+    <h3>3. Logical Operators</h3>
+    <p>These operators combine multiple conditions:</p>
+    <pre>
+    int a = 10, b = 20;
+    int result;
+    result = (a > 5) && (b < 30); // Logical AND
+    result = (a > 5) || (b > 30); // Logical OR
+    result = !(a > 5);            // Logical NOT
+    </pre>
+    <p>Example: <code>(a > 5) && (b < 30);</code> checks if both conditions are true.</p>
+
+    <h3>4. Bitwise Operators</h3>
+    <p>These operators perform bit-level operations:</p>
+    <pre>
+    int a = 5, b = 3;
+    int result;
+    result = a & b;  // Bitwise AND
+    result = a | b;  // Bitwise OR
+    result = a ^ b;  // Bitwise XOR
+    result = ~a;     // Bitwise NOT
+    result = a << 1; // Bitwise Left Shift
+    result = a >> 1; // Bitwise Right Shift
+    </pre>
+    <p>Example: <code>a & b;</code> performs bitwise AND between the binary representations of <code>a</code> and <code>b</code>.</p>
+
+    <h3>5. Assignment Operators</h3>
+    <p>These operators assign values to variables:</p>
+    <pre>
+    int a = 5;
+    a += 3;  // a = a + 3
+    a -= 2;  // a = a - 2
+    a *= 4;  // a = a * 4
+    a /= 2;  // a = a / 2
+    a %= 3;  // a = a % 3
+    </pre>
+    <p>Example: <code>a += 3;</code> adds 3 to <code>a</code> and stores the result back in <code>a</code>.</p>
+
+    <h3>6. Increment and Decrement Operators</h3>
+    <p>These operators increase or decrease the value of a variable by one:</p>
+    <pre>
+    int a = 10;
+    a++;  // Post-increment: a = a + 1
+    ++a;  // Pre-increment: a = a + 1
+    a--;  // Post-decrement: a = a - 1
+    --a;  // Pre-decrement: a = a - 1
+    </pre>
+    <p>Example: <code>a++;</code> increments the value of <code>a</code> by 1.</p>
+
+    <h3>7. Conditional (Ternary) Operator</h3>
+    <p>This operator is a shorthand for an if-else statement:</p>
+    <pre>
+    int a = 10, b = 20;
+    int max = (a > b) ? a : b; // max will be 20
+    </pre>
+    <p>Example: <code>(a > b) ? a : b;</code> assigns the larger of <code>a</code> and <code>b</code> to <code>max</code>.</p>
+
+    <h3>8. sizeof Operator</h3>
+    <p>This operator determines the size (in bytes) of a variable or data type:</p>
+    <pre>
+    int a = 10;
+    printf("Size of int: %lu", sizeof(a));  // Output: 4 (on most systems)
+    </pre>
+    <p>Example: <code>sizeof(a);</code> returns the size of <code>a</code> in bytes.</p>
+
+    <h3>9. Comma Operator</h3>
+    <p>This operator allows multiple expressions to be evaluated in a single statement:</p>
+    <pre>
+    int a = 10, b = 20;
+    int result = (a = a + 5, b = b + 5, a + b);  // result = 30
+    </pre>
+    <p>Example: <code>(a = a + 5, b = b + 5, a + b);</code> evaluates all expressions and returns <code>a + b</code>.</p>
+
+    <h3>10. Pointer Operators</h3>
+    <p>The pointer operators are used to work with pointers:</p>
+    <pre>
+    int a = 10;
+    int *ptr = &a;  // & is the address-of operator
+    int value = *ptr;  // * is the dereference operator
+    </pre>
+    <p>Example: <code>&a;</code> returns the address of <code>a</code>, and <code>*ptr;</code> dereferences <code>ptr</code> to get the value at that address.</p>
+
+    <h3>11. Typecasting Operator</h3>
+    <p>Typecasting is used to convert a variable from one data type to another:</p>
+    <pre>
+    int a = 5;
+    double result = (double)a / 2; // Typecasting int to double
+    </pre>
+    <p>Example: <code>(double)a;</code> casts the integer <code>a</code> to a double.</p>
+
+    <h3>12. String Concatenation Operator</h3>
+    <p>In C, the concatenation of strings is performed by using <code>strcat()</code> function, but it is often mistaken for an operator in other languages. It is not an operator in C:</p>
+    <pre>
+    char str1[20] = "Hello ";
+    char str2[] = "World!";
+    strcat(str1, str2); // Concatenates str2 to str1
+    printf("%s", str1);  // Output: "Hello World!"
+    </pre>
+
+    <h3>13. Bitwise Shift Operators</h3>
+    <p>These operators perform bit shifts on integer values:</p>
+    <pre>
+    int a = 5; // Binary: 0101
+    a <<= 1;  // Left shift: a = 10 (Binary: 1010)
+    a >>= 1;  // Right shift: a = 5 (Binary: 0101)
+    </pre>
+    <p>Example: <code>a <<= 1;</code> shifts the bits of <code>a</code> one position to the left.</p>
+
+    <h3>14. Unary Operators</h3>
+    <p>Unary operators perform operations on a single operand:</p>
+    <pre>
+    int a = 5;
+    result = -a;  // Negation: result = -5
+    result = !a;  // Logical NOT: result = 0 (since a is non-zero)
+    </pre>
+    <p>Example: <code>-a;</code> negates the value of <code>a</code>.</p>
+
+    <h3>15. Pointer-to-Structure Operator (->)</h3>
+    <p>This operator is used to access members of a structure through a pointer:</p>
+    <pre>
+    struct Point {
+        int x;
+        int y;
+    };
+    struct Point *ptr;
+    ptr = &point;
+    ptr->x = 10;  // Access x member using the pointer
+    </pre>
+
+    <h3>16. sizeof Operator for Array</h3>
+    <p>The <code>sizeof</code> operator can also be used to find the total size of an array:</p>
+    <pre>
+    int arr[10];
+    printf("Size of array: %lu", sizeof(arr)); // Output: Size of array in bytes
+    </pre>
+
+</div>
+
+<div class="order-of-precedence">
+    <h2>Order of Precedence in C</h2>
+    
+    <p>The order of precedence in C defines the order in which operators are evaluated in an expression. Operators with higher precedence are evaluated first. The following is the list of operators in C, ordered from highest to lowest precedence:</p>
+
+    <!-- Parentheses -->
+    <div class="section">
+        <h3>1. Parentheses - <code>()</code></h3>
+        <p>Parentheses have the highest precedence. Expressions inside parentheses are always evaluated first.</p>
+        <pre><code>int a = (5 + 3) * 2;  // (5 + 3) is evaluated first.</code></pre>
+    </div>
+
+    <!-- Postfix -->
+    <div class="section">
+        <h3>2. Postfix - <code>++ --</code></h3>
+        <p>The postfix increment <code>++</code> and decrement <code>--</code> operators have the second-highest precedence.</p>
+        <pre><code>int a = 5;
+a++;  // a is incremented after the expression is evaluated.</code></pre>
+    </div>
+
+    <!-- Unary -->
+    <div class="section">
+        <h3>3. Unary - <code>+ - ! ~ ++ -- (prefix)</code></h3>
+        <p>Unary operators such as <code>+ - ! ~ ++ --</code> (prefix) have high precedence and are evaluated before binary operators.</p>
+        <pre><code>int a = -5;
+int b = !a;  // b is 0 because a is not 0.</code></pre>
+    </div>
+
+    <!-- Multiplicative -->
+    <div class="section">
+        <h3>4. Multiplicative - <code>* / %</code></h3>
+        <p>The multiplicative operators <code>*</code> (multiplication), <code>/</code> (division), and <code>%</code> (modulus) come next in precedence.</p>
+        <pre><code>int a = 6;
+int b = 3;
+int c = a * b;  // a * b is evaluated first.</code></pre>
+    </div>
+
+    <!-- Additive -->
+    <div class="section">
+        <h3>5. Additive - <code>+ -</code></h3>
+        <p>The additive operators <code>+</code> and <code>-</code> come after multiplicative operators.</p>
+        <pre><code>int a = 6;
+int b = 3;
+int c = a + b;  // a + b is evaluated after multiplication or division.</code></pre>
+    </div>
+
+    <!-- Relational -->
+    <div class="section">
+        <h3>6. Relational - <code>&lt; &gt; <= >=</code></h3>
+        <p>Relational operators like <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code> are used to compare values and have lower precedence than arithmetic operators.</p>
+        <pre><code>int a = 5;
+int b = 3;
+if (a &gt; b) {  // Check if a is greater than b.
+    printf("a is greater than b");
+}</code></pre>
+    </div>
+
+    <!-- Equality -->
+    <div class="section">
+        <h3>7. Equality - <code>== !=</code></h3>
+        <p>Equality operators <code>==</code> and <code>!=</code> are used to check if values are equal or not and have lower precedence than relational operators.</p>
+        <pre><code>int a = 5;
+int b = 5;
+if (a == b) {  // Check if a is equal to b.
+    printf("a is equal to b");
+}</code></pre>
+    </div>
+
+    <!-- Logical AND -->
+    <div class="section">
+        <h3>8. Logical AND - <code>&&</code></h3>
+        <p>The logical AND operator <code>&&</code> has lower precedence than equality and relational operators.</p>
+        <pre><code>int a = 5;
+int b = 3;
+if (a &gt; b && b > 2) {  // Logical AND is evaluated after relational comparisons.
+    printf("a is greater than b, and b is greater than 2");
+}</code></pre>
+    </div>
+
+    <!-- Logical OR -->
+    <div class="section">
+        <h3>9. Logical OR - <code>||</code></h3>
+        <p>The logical OR operator <code>||</code> has lower precedence than logical AND.</p>
+        <pre><code>int a = 5;
+int b = 3;
+if (a &gt; b || b < 2) {  // Logical OR is evaluated after logical AND.
+    printf("a is greater than b, or b is less than 2");
+}</code></pre>
+    </div>
+
+    <!-- Conditional -->
+    <div class="section">
+        <h3>10. Conditional - <code>?:</code></h3>
+        <p>The ternary conditional operator <code>?:</code> is used for inline if-else logic. It has a lower precedence than logical operators.</p>
+        <pre><code>int a = 5;
+int b = (a > 3) ? 10 : 20;  // b is assigned 10 because a > 3.</code></pre>
+    </div>
+
+    <!-- Assignment -->
+    <div class="section">
+        <h3>11. Assignment - <code>= += -= *= /= %=</code></h3>
+        <p>Assignment operators such as <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, and <code>%=</code> have one of the lowest precedences.</p>
+        <pre><code>int a = 5;
+a += 10;  // a is assigned 15 after the addition.</code></pre>
+    </div>
+
+    <!-- Comma -->
+    <div class="section">
+        <h3>12. Comma - <code>,</code></h3>
+        <p>The comma operator <code>,</code> has the lowest precedence. It is used to separate expressions.</p>
+        <pre><code>int a = 5, b = 10;
+a = (b++, a + b);  // b is incremented, then a is updated to 15.</code></pre>
+    </div>
+
+    <p>Note: Operators with higher precedence are evaluated before those with lower precedence. When operators have the same precedence, the associativity (left to right or right to left) determines the order of evaluation.</p>
+</div>
+
+
+        <div id="conditional-statements-section">
+    <h2>Conditional Statements in C</h2>
+    <p>Conditional statements in C allow us to execute certain blocks of code based on the evaluation of an expression. The common types of conditional statements are:</p>
+
+    <h3>1. if Statement</h3>
+    <p>The <code>if</code> statement evaluates an expression and executes the block of code if the expression is true (non-zero).</p>
+    <pre>
+    int a = 10;
+    if (a > 5) {
+        printf("a is greater than 5\n");
+    }
+    </pre>
+    <p>Example: If <code>a</code> is greater than 5, it prints: <code>a is greater than 5</code>.</p>
+
+    <h3>2. if-else Statement</h3>
+    <p>The <code>if-else</code> statement provides two options: one block of code to execute if the condition is true, and another block to execute if the condition is false.</p>
+    <pre>
+    int a = 4;
+    if (a > 5) {
+        printf("a is greater than 5\n");
+    } else {
+        printf("a is less than or equal to 5\n");
+    }
+    </pre>
+    <p>Example: If <code>a</code> is greater than 5, it prints: <code>a is greater than 5</code>, otherwise: <code>a is less than or equal to 5</code>.</p>
+
+    <h3>3. if-else if-else Statement</h3>
+    <p>This conditional structure is used when there are multiple conditions to check. It allows you to evaluate multiple expressions and execute the corresponding block of code for the first true condition.</p>
+    <pre>
+    int a = 10;
+    if (a > 15) {
+        printf("a is greater than 15\n");
+    } else if (a > 5) {
+        printf("a is greater than 5 but less than or equal to 15\n");
+    } else {
+        printf("a is less than or equal to 5\n");
+    }
+    </pre>
+    <p>Example: In this case, it prints: <code>a is greater than 5 but less than or equal to 15</code>.</p>
+
+    <h3>4. Nested if Statement</h3>
+    <p>A nested <code>if</code> statement is when one <code>if</code> statement is inside another <code>if</code> statement. This allows for more complex conditions.</p>
+    <pre>
+    int a = 10, b = 20;
+    if (a > 5) {
+        if (b > 15) {
+            printf("a is greater than 5 and b is greater than 15\n");
+        }
+    }
+    </pre>
+    <p>Example: If <code>a > 5</code> and <code>b > 15</code>, it prints: <code>a is greater than 5 and b is greater than 15</code>.</p>
+
+    <h3>5. Switch Statement</h3>
+    <p>The <code>switch</code> statement is used to execute one of many code blocks based on the value of a variable. It works by evaluating an expression and comparing it with various <code>case</code> labels. If a match is found, the corresponding block of code is executed.</p>
+    <pre>
+    int day = 3;
+    switch (day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        default:
+            printf("Invalid day\n");
+    }
+    </pre>
+    <p>Example: If <code>day = 3</code>, it prints: <code>Wednesday</code>.</p>
+
+    <h3>6. Default Case in Switch</h3>
+    <p>The <code>default</code> case in a <code>switch</code> statement is optional. It runs if no <code>case</code> matches the expression.</p>
+    <pre>
+    int day = 5;
+    switch (day) {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        default:
+            printf("Invalid day\n");
+    }
+    </pre>
+    <p>Example: Since <code>day = 5</code> doesn't match any <code>case</code>, it prints: <code>Invalid day</code>.</p>
+
+    <h3>7. Conditional (Ternary) Operator</h3>
+    <p>The <code>?:</code> operator is a shorthand for an <code>if-else</code> statement. It evaluates a condition and returns one of two values based on whether the condition is true or false.</p>
+    <pre>
+    int a = 10, b = 5;
+    int result = (a > b) ? a : b;  // result will be 10
+    </pre>
+    <p>Example: The condition <code>(a > b)</code> is true, so the value of <code>result</code> will be <code>a</code>, i.e., 10.</p>
+
+    <h3>8. Logical AND (&&) in Conditional Statements</h3>
+    <p>The logical AND operator <code>&&</code> is used to combine multiple conditions. Both conditions must be true for the overall expression to be true.</p>
+    <pre>
+    int a = 10, b = 20;
+    if (a > 5 && b < 30) {
+        printf("Both conditions are true\n");
+    }
+    </pre>
+    <p>Example: Since both conditions are true, it prints: <code>Both conditions are true</code>.</p>
+
+    <h3>9. Logical OR (||) in Conditional Statements</h3>
+    <p>The logical OR operator <code>||</code> is used to combine multiple conditions. If either of the conditions is true, the overall expression will be true.</p>
+    <pre>
+    int a = 10, b = 5;
+    if (a > 5 || b > 10) {
+        printf("At least one condition is true\n");
+    }
+    </pre>
+    <p>Example: Since <code>a > 5</code> is true, it prints: <code>At least one condition is true</code>.</p>
+
+    <h3>10. Combining Multiple Conditions</h3>
+    <p>You can combine multiple conditions using logical operators like <code>&&</code> (AND) and <code>||</code> (OR) to create complex conditional statements.</p>
+    <pre>
+    int a = 10, b = 20, c = 30;
+    if (a > 5 && b < 25 || c == 30) {
+        printf("Multiple conditions evaluated\n");
+    }
+    </pre>
+    <p>Example: Since the last condition <code>c == 30</code> is true, it prints: <code>Multiple conditions evaluated</code>.</p>
+
+</div>
+
+
+        <div id="looping-statements-section">
+    <h2>Looping Statements in C</h2>
+    <p>Looping statements in C are used to execute a block of code repeatedly based on a condition. There are three primary types of loops in C:</p>
+
+    <h3>1. for Loop</h3>
+    <p>The <code>for</code> loop is the most commonly used loop for iterating a block of code a specific number of times. It consists of three parts: initialization, condition check, and update of the loop variable.</p>
+    <pre>
+    for (int i = 0; i < 5; i++) {
+        printf("Iteration number %d\n", i);
+    }
+    </pre>
+    <p>Example: The loop runs from <code>i = 0</code> to <code>i = 4</code>, printing the iteration number each time.</p>
+
+    <h3>2. while Loop</h3>
+    <p>The <code>while</code> loop repeats a block of code as long as the given condition is true. It is typically used when the number of iterations is not known before the loop starts.</p>
+    <pre>
+    int i = 0;
+    while (i < 5) {
+        printf("Iteration number %d\n", i);
+        i++;
+    }
+    </pre>
+    <p>Example: The loop runs as long as <code>i < 5</code>, incrementing <code>i</code> after each iteration.</p>
+
+    <h3>3. do-while Loop</h3>
+    <p>The <code>do-while</code> loop is similar to the <code>while</code> loop, except that the condition is checked after the loop's body is executed. This ensures that the loop is executed at least once, regardless of whether the condition is true or false initially.</p>
+    <pre>
+    int i = 0;
+    do {
+        printf("Iteration number %d\n", i);
+        i++;
+    } while (i < 5);
+    </pre>
+    <p>Example: The loop executes the block once, then checks if <code>i < 5</code> to decide whether to continue looping.</p>
+
+    <h3>4. Infinite Loop</h3>
+    <p>An infinite loop occurs when the loop condition is always true, causing the loop to run indefinitely. Infinite loops are useful in certain scenarios, such as server applications that should run continuously.</p>
+    <pre>
+    while (1) {
+        printf("This loop will run forever.\n");
+    }
+    </pre>
+    <p>Example: Since <code>1</code> is always true, the loop will continue indefinitely, printing the message repeatedly.</p>
+
+    <h3>5. Break Statement</h3>
+    <p>The <code>break</code> statement is used to exit from a loop prematurely, regardless of the loop condition. It is typically used when a certain condition inside the loop is met, and further iterations are unnecessary.</p>
+    <pre>
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            break;  // Exit the loop when i is 5
+        }
+        printf("Iteration number %d\n", i);
+    }
+    </pre>
+    <p>Example: The loop breaks when <code>i == 5</code>, stopping the loop before it reaches <code>i = 9</code>.</p>
+
+    <h3>6. continue Statement</h3>
+    <p>The <code>continue</code> statement is used to skip the current iteration of the loop and move to the next iteration. It doesn't stop the loop entirely, but instead skips the code below it and proceeds with the next iteration.</p>
+    <pre>
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue;  // Skip iteration when i is 5
+        }
+        printf("Iteration number %d\n", i);
+    }
+    </pre>
+    <p>Example: When <code>i == 5</code>, the iteration is skipped, and the loop continues with <code>i = 6</code>.</p>
+
+    <h3>7. Nested Loops</h3>
+    <p>Nested loops are loops inside other loops. They are useful for working with multi-dimensional data structures like matrices or for performing complex repetitive tasks.</p>
+    <pre>
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("i = %d, j = %d\n", i, j);
+        }
+    }
+    </pre>
+    <p>Example: The outer loop iterates from 0 to 2, and the inner loop iterates from 0 to 1 for each iteration of the outer loop, printing <code>i</code> and <code>j</code> values.</p>
+
+    <h3>8. Using Label with Break and Continue</h3>
+    <p>Labels can be used with <code>break</code> and <code>continue</code> to exit or skip out of multiple nested loops at once. This can be useful when working with deep nested loops.</p>
+    <pre>
+    outerloop:
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (i == 2 && j == 2) {
+                break outerloop;  // Break out of both loops when i == 2 and j == 2
+            }
+            printf("i = %d, j = %d\n", i, j);
+        }
+    }
+    </pre>
+    <p>Example: The loop will break entirely when <code>i == 2</code> and <code>j == 2</code>, exiting both loops.</p>
+
+    <h3>9. Looping with Arrays</h3>
+    <p>Loops are commonly used to iterate through arrays to process each element individually. Here's an example of looping through an array of integers.</p>
+    <pre>
+    int arr[] = {10, 20, 30, 40, 50};
+    for (int i = 0; i < 5; i++) {
+        printf("Element %d: %d\n", i, arr[i]);
+    }
+    </pre>
+    <p>Example: The loop iterates through each element of the array <code>arr</code> and prints its value along with its index.</p>
+
+    <h3>10. Looping with Strings</h3>
+    <p>Strings are arrays of characters, and we can use loops to process or manipulate the characters of a string.</p>
+    <pre>
+    char str[] = "Hello";
+    for (int i = 0; str[i] != '\0'; i++) {
+        printf("Character at index %d: %c\n", i, str[i]);
+    }
+    </pre>
+    <p>Example: The loop iterates over each character in the string <code>str</code> and prints it along with its index.</p>
+
+</div>
+
+        <!-- Arrays -->
+        <div id="arrays-section">
+    <h2>Arrays in C</h2>
+    <p>Arrays are a fundamental data structure in C that store a fixed-size sequence of elements of the same type. An array allows us to store multiple values under a single variable name, indexed by positions.</p>
+
+    <h3>1. Introduction to Arrays</h3>
+    <p>An array in C is a collection of elements of the same data type stored at contiguous memory locations. Arrays are indexed, meaning each element is accessed by its index number, starting from 0.</p>
+
+    <pre>
+    // Syntax for declaring an array
+    data_type array_name[array_size];
+    </pre>
+
+    <p>Example of declaring an integer array with 5 elements:</p>
+    <pre>
+    int arr[5] = {10, 20, 30, 40, 50};
+    </pre>
+    <p>In the above example, <code>arr</code> is an integer array containing 5 elements.</p>
+
+    <h3>2. Accessing Array Elements</h3>
+    <p>Array elements can be accessed using an index. Remember that arrays in C are 0-indexed, meaning the first element is at index 0, the second at index 1, and so on.</p>
+
+    <pre>
+    printf("%d", arr[0]);  // Output: 10
+    printf("%d", arr[3]);  // Output: 40
+    </pre>
+
+    <h3>3. Multidimensional Arrays</h3>
+    <p>C supports multidimensional arrays (arrays of arrays). These can be used for creating matrices or tables of data.</p>
+
+    <pre>
+    // Declaring a 2D array
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    </pre>
+    <p>Example of accessing a 2D array element:</p>
+    <pre>
+    printf("%d", matrix[0][2]);  // Output: 3
+    </pre>
+
+    <h3>4. Array Initialization</h3>
+    <p>Arrays can be initialized at the time of declaration. If you don't initialize an array, its elements will contain garbage values.</p>
+
+    <pre>
+    int arr[5] = {1, 2}; // Remaining elements will be initialized to 0
+    </pre>
+
+    <p>Example: In the above array, the first two elements are initialized to 1 and 2, and the remaining elements are initialized to 0.</p>
+
+    <h3>5. Array Size and Indexing</h3>
+    <p>In C, the size of the array must be known at compile time, and it cannot be changed during runtime. Arrays in C are indexed starting from 0.</p>
+    <p>Example:</p>
+    <pre>
+    int arr[] = {1, 2, 3, 4, 5};
+    printf("Size of the array: %lu", sizeof(arr) / sizeof(arr[0])); // Output: 5
+    </pre>
+
+    <h3>6. Array of Pointers</h3>
+    <p>Arrays of pointers are useful when working with dynamically allocated memory or with a set of strings.</p>
+
+    <pre>
+    char *arr[] = {"apple", "banana", "cherry"};
+    printf("%s", arr[1]);  // Output: banana
+    </pre>
+
+    <h3>7. Passing Arrays to Functions</h3>
+    <p>In C, arrays are passed to functions by reference, meaning the function can modify the array contents.</p>
+
+    <pre>
+    void modifyArray(int arr[]) {
+        arr[0] = 100; // Modify the first element
+    }
+
+    int arr[5] = {10, 20, 30, 40, 50};
+    modifyArray(arr);
+    printf("%d", arr[0]);  // Output: 100
+    </pre>
+
+    <h3>8. Array vs Pointer</h3>
+    <p>Arrays and pointers in C are closely related, but they are not exactly the same. Arrays refer to a fixed-size block of memory, while pointers are variables that store memory addresses.</p>
+    <p>Example:</p>
+    <pre>
+    int arr[5] = {1, 2, 3, 4, 5};
+    int *ptr = arr;  // Pointer to the first element of the array
+    printf("%d", *(ptr + 2));  // Output: 3 (accessing the 3rd element)
+    </pre>
+
+    <h3>9. Dynamic Array Allocation</h3>
+    <p>Arrays can also be dynamically allocated using pointers and memory allocation functions like <code>malloc()</code>, <code>calloc()</code>, or <code>realloc()</code>.</p>
+
+    <pre>
+    int *arr = (int *)malloc(5 * sizeof(int)); // Dynamically allocate memory for an array of 5 integers
+    arr[0] = 10;
+    printf("%d", arr[0]);  // Output: 10
+    free(arr); // Free the dynamically allocated memory
+    </pre>
+
+    <h3>10. Common Tricks with Arrays</h3>
+    <p>Here are some common tricks and practices that can be useful when working with arrays:</p>
+
+    <ul>
+        <li><strong>Reversing an array:</strong> You can reverse an array in-place by swapping the elements at opposite ends of the array.</li>
+        <pre>
+        void reverseArray(int arr[], int size) {
+            int start = 0, end = size - 1;
+            while (start < end) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
+        }
+        </pre>
+
+        <li><strong>Finding the maximum and minimum elements in an array:</strong> You can easily find the maximum and minimum elements by iterating through the array.</li>
+        <pre>
+        int findMax(int arr[], int size) {
+            int max = arr[0];
+            for (int i = 1; i < size; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+        </pre>
+
+        <li><strong>Finding the sum of all elements in an array:</strong> Use a loop to accumulate the sum of all elements.</li>
+        <pre>
+        int sumArray(int arr[], int size) {
+            int sum = 0;
+            for (int i = 0; i < size; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+        </pre>
+
+        <li><strong>Using Arrays for Sorting:</strong> Arrays can be sorted using different sorting algorithms like bubble sort, selection sort, and quicksort.</li>
+        <pre>
+        void bubbleSort(int arr[], int size) {
+            for (int i = 0; i < size - 1; i++) {
+                for (int j = 0; j < size - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // Swap the elements
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        </pre>
+    </ul>
+
+    <h3>11. Important Notes</h3>
+    <p>Some important points to remember when working with arrays in C:</p>
+    <ul>
+        <li>The size of an array must be specified at compile-time for static arrays.</li>
+        <li>Arrays are passed to functions by reference, so changes made inside the function affect the original array.</li>
+        <li>Use <code>sizeof()</code> to find the total size of an array or the size of individual elements.</li>
+        <li>Always be cautious when accessing array elements outside the bounds, as it can lead to undefined behavior.</li>
+    </ul>
+
+</div>
+
+
+        <!-- Strings -->
+       <div id="strings-section">
+    <h2>Strings in C</h2>
+    <p>In C, a string is a sequence of characters stored in an array, terminated by a null character ('\0'). C does not have a built-in string data type like higher-level languages, but strings can be easily manipulated using character arrays and standard library functions.</p>
+
+    <h3>1. Introduction to Strings</h3>
+    <p>A string in C is essentially an array of characters, ending with a special character <code>'\0'</code> called the null character, which marks the end of the string.</p>
+
+    <pre>
+    // Declaration and initialization of a string
+    char str[] = "Hello, World!";
+    </pre>
+
+    <p>In the above example, the string <code>"Hello, World!"</code> is stored in the array <code>str</>, with the null character automatically added at the end.</p>
+
+    <h3>2. String Declaration</h3>
+    <p>Strings can be declared in two ways:</p>
+    <ul>
+        <li><strong>Using an array of characters:</strong></li>
+        <pre>
+        char str[20];  // Declaring an array of 20 characters (uninitialized)
+        </pre>
+        <p>Here, the array can hold up to 20 characters, but it won't automatically be initialized.</p>
+
+        <li><strong>Using a string literal:</strong></li>
+        <pre>
+        char str[] = "Hello";  // Array is automatically sized to 6 (5 characters + null terminator)
+        </pre>
+        <p>In this case, the size of the array is implicitly set based on the length of the string literal.</p>
+    </ul>
+
+    <h3>3. String Functions in C</h3>
+    <p>In C, strings are manipulated using various functions from the <code>string.h</code> library. Below are some of the most commonly used string functions:</p>
+
+    <h4>String Length</h4>
+    <p>The <code>strlen()</code> function is used to find the length of a string, excluding the null character.</p>
+    <pre>
+    #include <string.h>
+    char str[] = "Hello";
+    int length = strlen(str);  // Output: 5
+    </pre>
+
+    <h4>String Copy</h4>
+    <p>The <code>strcpy()</code> function copies the content of one string to another string.</p>
+    <pre>
+    char src[] = "Hello";
+    char dest[20];
+    strcpy(dest, src);  // dest will now contain "Hello"
+    </pre>
+
+    <h4>String Concatenation</h4>
+    <p>The <code>strcat()</code> function appends one string to another.</p>
+    <pre>
+    char str1[20] = "Hello, ";
+    char str2[] = "World!";
+    strcat(str1, str2);  // str1 will now contain "Hello, World!"
+    </pre>
+
+    <h4>String Comparison</h4>
+    <p>The <code>strcmp()</code> function compares two strings lexicographically. It returns 0 if the strings are equal, a negative value if the first string is lexicographically less than the second, and a positive value if the first string is greater.</p>
+    <pre>
+    char str1[] = "apple";
+    char str2[] = "banana";
+    int result = strcmp(str1, str2);  // Result will be negative because "apple" < "banana"
+    </pre>
+
+    <h4>String Search</h4>
+    <p>The <code>strchr()</code> function searches for the first occurrence of a character in a string.</p>
+    <pre>
+    char str[] = "Hello, World!";
+    char *ch = strchr(str, 'o');  // ch will point to the first 'o' in the string
+    </pre>
+
+    <h4>String Tokenization</h4>
+    <p>The <code>strtok()</code> function is used to split a string into tokens based on delimiters.</p>
+    <pre>
+    char str[] = "apple,banana,orange";
+    char *token = strtok(str, ",");
+    while (token != NULL) {
+        printf("%s\n", token);  // Output: apple, banana, orange
+        token = strtok(NULL, ",");
+    }
+    </pre>
+
+    <h4>String to Integer Conversion</h4>
+    <p>The <code>atoi()</code> function converts a string to an integer.</p>
+    <pre>
+    char str[] = "1234";
+    int num = atoi(str);  // num will be 1234
+    </pre>
+
+    <h4>String to Float Conversion</h4>
+    <p>The <code>atof()</code> function converts a string to a float.</p>
+    <pre>
+    char str[] = "123.45";
+    float num = atof(str);  // num will be 123.45
+    </pre>
+
+    <h3>4. Common String Operations</h3>
+    <p>Below are some additional useful string operations in C:</p>
+
+    <ul>
+        <li><strong>Reversing a string:</strong> A string can be reversed in-place using a loop.</li>
+        <pre>
+        void reverseString(char str[]) {
+            int start = 0;
+            int end = strlen(str) - 1;
+            while (start < end) {
+                char temp = str[start];
+                str[start] = str[end];
+                str[end] = temp;
+                start++;
+                end--;
+            }
+        }
+        </pre>
+
+        <li><strong>String Length Calculation without using <code>strlen()</code>:</strong> You can manually calculate the length of a string by iterating through it until the null terminator is encountered.</li>
+        <pre>
+        int stringLength(char str[]) {
+            int length = 0;
+            while (str[length] != '\0') {
+                length++;
+            }
+            return length;
+        }
+        </pre>
+
+        <li><strong>Finding a substring:</strong> A substring can be found using a nested loop to check if a substring matches a portion of the string.</li>
+        <pre>
+        int isSubstring(char str[], char substr[]) {
+            int i, j;
+            for (i = 0; str[i] != '\0'; i++) {
+                for (j = 0; substr[j] != '\0' && str[i + j] == substr[j]; j++);
+                if (substr[j] == '\0') {
+                    return 1;  // Substring found
+                }
+            }
+            return 0;  // Substring not found
+        }
+        </pre>
+    </ul>
+
+    <h3>5. String Pointers</h3>
+    <p>Strings can be handled using pointers. A pointer to the first character of a string points to the string, and you can iterate through it using pointer arithmetic.</p>
+
+    <pre>
+    char str[] = "Hello";
+    char *ptr = str;
+    printf("%c", *ptr);  // Output: H
+    ptr++;  // Move to next character
+    printf("%c", *ptr);  // Output: e
+    </pre>
+
+    <h3>6. Important Notes</h3>
+    <ul>
+        <li><strong>Null Terminator:</strong> Strings in C are always terminated by the null character <code>'\0'</code>, which marks the end of the string.</li>
+        <li><strong>Memory Allocation:</strong> Always ensure that there is enough memory allocated for the string, especially when working with user input or dynamic memory allocation.</li>
+        <li><strong>Buffer Overflow:</strong> Always be careful when copying strings to avoid buffer overflow. Functions like <code>strcpy()</code> do not check for buffer overflow, so it is better to use <code>strncpy()</code>.</li>
+        <li><strong>String Literal Storage:</strong> String literals (e.g., <code>"Hello"</code>) are stored in read-only memory, so they should not be modified directly.</li>
+    </ul>
+
+</div>
+
+
+        <!-- Functions and Pointers -->
+        <div id="functions-and-pointers-section">
+    <h2>Functions and Pointers in C</h2>
+
+    <p>In C, functions and pointers are two fundamental concepts that enable flexibility and modularity in your programs. Functions allow you to organize code into reusable blocks, while pointers give you more control over memory, enabling dynamic memory allocation, efficient data passing, and manipulation.</p>
+
+    <h3>1. Introduction to Functions</h3>
+    <p>A function in C is a block of code that performs a specific task. It allows you to encapsulate logic, improve code reusability, and keep your program modular.</p>
+
+    <pre>
+    // Function declaration
+    returnType functionName(parameterList);
+
+    // Function definition
+    returnType functionName(parameterList) {
+        // Function body
+        // Code that performs the task
+        return value;
+    }
+
+    // Function call
+    functionName(parameters);
+    </pre>
+
+    <p>Example of a simple function:</p>
+    <pre>
+    #include <stdio.h>
+
+    void greet() {
+        printf("Hello, World!\n");
+    }
+
+    int main() {
+        greet();  // Function call
+        return 0;
+    }
+    </pre>
+    <p>The <code>greet()</code> function in the example prints "Hello, World!" to the screen. The function doesn't return anything, which is why its return type is <code>void</code>.</p>
+
+    <h3>2. Function Parameters</h3>
+    <p>Functions can take parameters (also called arguments), which are values passed into the function to customize its behavior. There are two types of parameters:</p>
+    <ul>
+        <li><strong>Pass by value:</strong> A copy of the actual argument is passed to the function.</li>
+        <li><strong>Pass by reference:</strong> The address of the actual argument is passed to the function (this is achieved using pointers).</li>
+    </ul>
+
+    <h4>Pass by Value Example</h4>
+    <pre>
+    #include <stdio.h>
+
+    void incrementByValue(int num) {
+        num++;
+        printf("Inside function: %d\n", num);
+    }
+
+    int main() {
+        int value = 5;
+        incrementByValue(value);
+        printf("In main: %d\n", value);
+        return 0;
+    }
+    </pre>
+    <p>The value of the variable <code>value</code> remains unchanged in the <code>main()</code> function because the function receives a copy of the argument (pass by value).</p>
+
+    <h4>Pass by Reference Example (using Pointers)</h4>
+    <pre>
+    #include <stdio.h>
+
+    void incrementByReference(int *num) {
+        (*num)++;
+        printf("Inside function: %d\n", *num);
+    }
+
+    int main() {
+        int value = 5;
+        incrementByReference(&value);  // Pass the address of value
+        printf("In main: %d\n", value);
+        return 0;
+    }
+    </pre>
+    <p>Here, the function modifies the value of the variable <code>value</code> because it was passed by reference using the address of the variable (via the <code>&</code> operator).</p>
+
+    <h3>3. Function Return Types</h3>
+    <p>Functions can return values, which can be of any data type. The return type must be specified before the function name. Here's an example:</p>
+    <pre>
+    #include <stdio.h>
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int main() {
+        int result = add(3, 4);
+        printf("Sum: %d\n", result);
+        return 0;
+    }
+    </pre>
+    <p>The <code>add()</code> function takes two integer parameters and returns their sum.</p>
+
+    <h3>4. Recursive Functions</h3>
+    <p>A recursive function is a function that calls itself. Recursive functions are useful in solving problems that can be broken down into smaller sub-problems of the same type.</p>
+    <pre>
+    #include <stdio.h>
+
+    int factorial(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    int main() {
+        int result = factorial(5);
+        printf("Factorial: %d\n", result);
+        return 0;
+    }
+    </pre>
+    <p>The function <code>factorial()</code> is recursive because it calls itself until the base case is met.</p>
+
+    <h3>5. Introduction to Pointers</h3>
+    <p>A pointer is a variable that stores the address of another variable. Pointers provide a powerful way to manipulate data directly by referencing memory locations.</p>
+
+    <pre>
+    // Declaration of a pointer
+    dataType *pointerName;
+
+    // Assigning the address of a variable to a pointer
+    pointerName = &variable;
+
+    // Dereferencing the pointer to access the value stored at the memory address
+    *pointerName = value;
+    </pre>
+
+    <p>Example of pointer usage:</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int x = 10;
+        int *ptr = &x;  // Pointer holds the address of x
+
+        printf("Address of x: %p\n", ptr);  // Prints the address of x
+        printf("Value of x: %d\n", *ptr);  // Dereferencing the pointer to get the value of x
+
+        return 0;
+    }
+    </pre>
+    <p>The pointer <code>ptr</code> stores the address of variable <code>x</code>, and the <code>*ptr</code> syntax is used to access the value stored at that memory address.</p>
+
+    <h3>6. Pointer Arithmetic</h3>
+    <p>Pointer arithmetic allows you to perform operations on pointers, such as incrementing or decrementing the address they store, or even accessing memory locations relative to the pointer.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int arr[] = {10, 20, 30};
+        int *ptr = arr;
+
+        printf("First element: %d\n", *ptr);  // Dereference ptr
+        ptr++;  // Move pointer to next element
+        printf("Second element: %d\n", *ptr);
+
+        return 0;
+    }
+    </pre>
+    <p>Here, <code>ptr++</code> moves the pointer to the next element in the array, and dereferencing it (<code>*ptr</code>) accesses the new element.</p>
+
+    <h3>7. Function Pointers</h3>
+    <p>A function pointer is a pointer that points to a function instead of a variable. It can be used to call functions dynamically, and is especially useful in situations like callbacks and event-driven programming.</p>
+    <pre>
+    #include <stdio.h>
+
+    void greet() {
+        printf("Hello, World!\n");
+    }
+
+    int main() {
+        void (*funcPtr)() = greet;  // Function pointer initialization
+        funcPtr();  // Calling function through pointer
+        return 0;
+    }
+    </pre>
+    <p>In the example above, <code>funcPtr</code> is a function pointer that points to the <code>greet()</code> function. We can call the function using <code>funcPtr()</code>.</p>
+
+    <h3>8. Pointers to Structures</h3>
+    <p>Pointers can also be used with structures. A pointer to a structure allows you to access and modify structure members indirectly using the <code>-></code> operator.</p>
+    <pre>
+    #include <stdio.h>
+
+    struct Point {
+        int x;
+        int y;
+    };
+
+    int main() {
+        struct Point pt = {10, 20};
+        struct Point *ptr = &pt;
+
+        printf("x: %d, y: %d\n", ptr->x, ptr->y);  // Accessing structure members using pointer
+        return 0;
+    }
+    </pre>
+    <p>Here, <code>ptr->x</code> and <code>ptr->y</code> are used to access the members of the structure through the pointer <code>ptr</code>.</p>
+
+    <h3>9. Memory Allocation and Pointers</h3>
+    <p>Pointers are essential for dynamic memory allocation in C. The functions <code>malloc()</code>, <code>calloc()</code>, <code>realloc()</code>, and <code>free()</code> are used to allocate and deallocate memory at runtime.</p>
+
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int *arr = (int *)malloc(5 * sizeof(int));  // Dynamically allocate memory for an array of 5 integers
+        if (arr == NULL) {
+            printf("Memory allocation failed!\n");
+            return 1;
+        }
+
+        // Assign values to the allocated memory
+        for (int i = 0; i < 5; i++) {
+            arr[i] = i + 1;
+        }
+
+        // Print values
+        for (int i = 0; i < 5; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+
+        free(arr);  // Deallocate memory
+        return 0;
+    }
+    </pre>
+    <p>The <code>malloc()</code> function allocates memory dynamically, and <code>free()</code> is used to deallocate it. Always remember to free dynamically allocated memory to avoid memory leaks.</p>
+
+</div>
+
+<!--Pointers -->
+
+<div id="pointers-section">
+    <h2>Pointers in C</h2>
+
+    <p>Pointers are one of the most powerful features of C programming. A pointer is a variable that stores the memory address of another variable. Pointers enable dynamic memory management, efficient passing of large data structures to functions, and direct memory access. Understanding pointers is crucial for mastering C programming.</p>
+
+    <h3>1. Introduction to Pointers</h3>
+    <p>A pointer is a variable that stores the address of another variable. The pointer itself does not hold the actual value of the variable; instead, it holds the memory address where the value is stored.</p>
+    <p>Declaration of a pointer:</p>
+    <pre>
+    dataType *pointerName;
+    </pre>
+    <p>Example:</p>
+    <pre>
+    int x = 10;
+    int *ptr = &x;  // Pointer ptr holds the address of variable x
+    </pre>
+    <p>In this example, <code>ptr</code> is a pointer to an integer, and it stores the address of the variable <code>x</code>.</p>
+
+    <h3>2. Dereferencing Pointers</h3>
+    <p>Dereferencing a pointer means accessing the value stored at the memory address the pointer is pointing to. The dereferencing operator (<code>*</code>) is used to get the value stored at the address stored in the pointer.</p>
+    <pre>
+    int x = 10;
+    int *ptr = &x;
+    printf("Value of x: %d\n", *ptr);  // Dereferencing the pointer to access the value of x
+    </pre>
+    <p>In this case, <code>*ptr</code> retrieves the value stored at the address contained in <code>ptr</code>, which is 10.</p>
+
+    <h3>3. Pointer Arithmetic</h3>
+    <p>Pointer arithmetic allows you to perform arithmetic operations on pointers. Since pointers represent addresses, arithmetic on them moves the pointer by a certain number of bytes (depending on the data type).</p>
+    <ul>
+        <li><code>ptr++</code> increments the pointer to the next memory location (for the same data type).</li>
+        <li><code>ptr--</code> decrements the pointer to the previous memory location.</li>
+        <li><code>ptr + n</code> adds <code>n</code> to the pointer, moving it forward by <code>n</code> elements of the pointer's data type.</li>
+    </ul>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int arr[] = {10, 20, 30};
+        int *ptr = arr;  // Pointer to the first element of the array
+
+        printf("First element: %d\n", *ptr);  // Dereferencing the pointer
+        ptr++;  // Move the pointer to the next element
+        printf("Second element: %d\n", *ptr);  // Dereferencing again
+
+        return 0;
+    }
+    </pre>
+    <p>Here, <code>ptr++</code> moves the pointer from the first element to the second element of the array. This is a form of pointer arithmetic.</p>
+
+    <h3>4. Null Pointer</h3>
+    <p>A null pointer is a pointer that does not point to any valid memory location. It is often used to indicate that a pointer is not yet assigned a valid address.</p>
+    <p>To assign a pointer a null value, use the constant <code>NULL</code>.</p>
+    <pre>
+    int *ptr = NULL;
+    if (ptr == NULL) {
+        printf("Pointer is NULL\n");
+    }
+    </pre>
+    <p>In this example, <code>ptr</code> is a null pointer. The condition <code>ptr == NULL</code> checks if the pointer is null.</p>
+
+    <h3>5. Pointers and Arrays</h3>
+    <p>Arrays and pointers are closely related in C. The name of an array is essentially a pointer to its first element, and you can use pointers to access array elements.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int arr[] = {10, 20, 30};
+        int *ptr = arr;  // Pointer points to the first element of the array
+
+        printf("First element: %d\n", *ptr);  // Dereferencing pointer to get the value
+        ptr++;  // Move to the next element in the array
+        printf("Second element: %d\n", *ptr);
+
+        return 0;
+    }
+    </pre>
+    <p>In this example, <code>ptr</code> points to the first element of the array, and we move it to the next element using <code>ptr++</code>.</p>
+
+    <h3>6. Pointers to Functions</h3>
+    <p>A function pointer is a pointer that points to a function. It allows you to call functions dynamically, making it useful in situations like implementing callback functions or handling events.</p>
+    <pre>
+    #include <stdio.h>
+
+    void greet() {
+        printf("Hello, World!\n");
+    }
+
+    int main() {
+        void (*funcPtr)() = greet;  // Function pointer initialization
+        funcPtr();  // Calling function through pointer
+        return 0;
+    }
+    </pre>
+    <p>In this case, <code>funcPtr</code> is a pointer to the <code>greet()</code> function. We can call the function using the pointer: <code>funcPtr()</code>.</p>
+
+    <h3>7. Pointers to Structures</h3>
+    <p>Pointers can be used to point to structures, allowing for indirect manipulation of structure members. To access structure members through a pointer, use the <code>-></code> operator.</p>
+    <pre>
+    #include <stdio.h>
+
+    struct Point {
+        int x;
+        int y;
+    };
+
+    int main() {
+        struct Point pt = {10, 20};
+        struct Point *ptr = &pt;  // Pointer to the structure
+
+        printf("x: %d, y: %d\n", ptr->x, ptr->y);  // Accessing structure members using pointer
+        return 0;
+    }
+    </pre>
+    <p>Here, <code>ptr->x</code> and <code>ptr->y</code> are used to access the members of the structure through the pointer <code>ptr</code>.</p>
+
+    <h3>8. Memory Allocation and Pointers</h3>
+    <p>Pointers are essential for dynamic memory allocation in C. Functions like <code>malloc()</code>, <code>calloc()</code>, <code>realloc()</code>, and <code>free()</code> are used to allocate and deallocate memory at runtime.</p>
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int *arr = (int *)malloc(5 * sizeof(int));  // Dynamically allocate memory for an array of 5 integers
+        if (arr == NULL) {
+            printf("Memory allocation failed!\n");
+            return 1;
+        }
+
+        // Assign values to the allocated memory
+        for (int i = 0; i < 5; i++) {
+            arr[i] = i + 1;
+        }
+
+        // Print values
+        for (int i = 0; i < 5; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+
+        free(arr);  // Deallocate memory
+        return 0;
+    }
+    </pre>
+    <p>In this example, <code>malloc()</code> allocates memory for an array dynamically. After using the memory, <code>free()</code> is called to deallocate it and avoid memory leaks.</p>
+
+    <h3>9. Pointer to Pointer</h3>
+    <p>A pointer to a pointer is a pointer that stores the address of another pointer. This is useful when dealing with dynamically allocated memory or when working with arrays of pointers.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int x = 10;
+        int *ptr = &x;
+        int **ptr2 = &ptr;  // Pointer to pointer
+
+        printf("Value of x: %d\n", **ptr2);  // Dereferencing twice to get the value of x
+        return 0;
+    }
+    </pre>
+    <p>Here, <code>ptr2</code> is a pointer to a pointer, and <code>**ptr2</code> accesses the value of <code>x</code>.</p>
+
+    <h3>10. Pointer to Array</h3>
+    <p>Pointers can also point to arrays. This allows you to pass arrays to functions more efficiently, avoiding unnecessary copying of large arrays.</p>
+    <pre>
+    #include <stdio.h>
+
+    void printArray(int *arr, int size) {
+        for (int i = 0; i < size; i++) {
+            printf("%d ", arr[i]);
+        }
+        printf("\n");
+    }
+
+    int main() {
+        int arr[] = {1, 2, 3, 4, 5};
+        printArray(arr, 5);  // Passing array to function using a pointer
+        return 0;
+    }
+    </pre>
+    <p>In this example, the array <code>arr</code> is passed to the function <code>printArray()</code> using a pointer.</p>
+
+    <h3>11. Double Pointers and Multidimensional Arrays</h3>
+    <p>For multidimensional arrays, you can use double pointers. A double pointer (pointer to pointer) is often used to work with dynamic arrays or matrices.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+        int **ptr = (int **)arr;  // Double pointer to the 2D array
+
+        // Accessing elements using the double pointer
+        printf("%d\n", ptr[0][0]);  // First element
+        printf("%d\n", ptr[1][2]);  // Last element
+
+        return 0;
+    }
+    </pre>
+    <p>In this example, <code>ptr</code> is a double pointer to a 2D array, and we use it to access the elements of the array.</p>
+
+</div>
+
+<div id="types-of-pointers-section">
+    <h2>Types of Pointers in C</h2>
+    
+    <p>In C programming, pointers can be classified into various types based on their usage. Understanding these types will help you effectively manage memory and work with data structures.</p>
+    
+    <h3>1. Null Pointer</h3>
+    <p>A null pointer is a pointer that does not point to any valid memory location. It is often used to indicate that the pointer is not initialized or is intentionally set to not point to any data.</p>
+    <p>The null pointer is defined using the constant <code>NULL</code>.</p>
+    <pre>
+    int *ptr = NULL; // Pointer initialized to NULL
+    if (ptr == NULL) {
+        printf("Pointer is NULL\n");
+    }
+    </pre>
+
+    <h3>2. Void Pointer</h3>
+    <p>A void pointer is a special type of pointer that can point to any data type. It is a generic pointer used to handle any type of data. The void pointer cannot be dereferenced directly without first typecasting it to another pointer type.</p>
+    <pre>
+    void *ptr;
+    int x = 10;
+    ptr = &x;  // Void pointer pointing to an integer variable
+
+    // Dereferencing requires typecasting
+    printf("Value of x: %d\n", *(int *)ptr);
+    </pre>
+
+    <h3>3. Wild Pointer</h3>
+    <p>A wild pointer is a pointer that has not been initialized or assigned to any valid memory address. Dereferencing a wild pointer can cause unpredictable behavior or runtime errors.</p>
+    <p>It is important to always initialize pointers before using them.</p>
+    <pre>
+    int *ptr;  // Wild pointer (uninitialized)
+    // Dereferencing a wild pointer results in undefined behavior
+    // printf("%d", *ptr); // Dangerous operation
+    </pre>
+
+    <h3>4. Dangling Pointer</h3>
+    <p>A dangling pointer is a pointer that continues to point to a memory location after the memory has been freed or deleted. Dereferencing a dangling pointer can cause segmentation faults or undefined behavior.</p>
+    <p>Always set pointers to <code>NULL</code> after freeing the memory they point to.</p>
+    <pre>
+    int *ptr = (int *)malloc(sizeof(int));  // Memory allocation
+    free(ptr);  // Memory deallocation
+    ptr = NULL; // Set pointer to NULL after deallocation
+    </pre>
+
+    <h3>5. Function Pointer</h3>
+    <p>A function pointer is a pointer that points to a function rather than a variable. It allows the function to be passed as an argument or called dynamically.</p>
+    <pre>
+    #include <stdio.h>
+
+    // Function prototype
+    void greet() {
+        printf("Hello, World!\n");
+    }
+
+    int main() {
+        void (*funcPtr)() = greet;  // Pointer to the function greet
+        funcPtr();  // Calling function via the pointer
+        return 0;
+    }
+    </pre>
+
+    <h3>6. Pointer to Array</h3>
+    <p>A pointer to an array is a pointer that points to the first element of an array. It can be used to access array elements efficiently, and array indexing can also be achieved using pointer arithmetic.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int arr[] = {10, 20, 30};
+        int *ptr = arr;  // Pointer to the first element of the array
+
+        printf("First element: %d\n", *ptr);  // Dereferencing the pointer
+        ptr++;  // Move to the next element
+        printf("Second element: %d\n", *ptr); // Dereferencing the pointer again
+
+        return 0;
+    }
+    </pre>
+
+    <h3>7. Pointer to Pointer</h3>
+    <p>A pointer to a pointer is a pointer that stores the address of another pointer. This is useful in working with dynamic memory or multidimensional arrays.</p>
+    <pre>
+    #include <stdio.h>
+
+    int main() {
+        int x = 10;
+        int *ptr = &x;
+        int **ptr2 = &ptr;  // Pointer to pointer
+
+        printf("Value of x: %d\n", **ptr2);  // Dereferencing twice to get the value of x
+        return 0;
+    }
+    </pre>
+
+    <h3>8. Constant Pointer</h3>
+    <p>A constant pointer is a pointer that cannot be changed after it has been initialized to point to a certain memory location. The value at the memory location can still be modified, but the pointer itself cannot point to a different location.</p>
+    <pre>
+    int x = 10;
+    int y = 20;
+    int *const ptr = &x;  // Constant pointer to x
+
+    *ptr = 15;  // Allowed: value of x can be changed
+    // ptr = &y;  // Error: pointer cannot be reassigned
+    </pre>
+
+    <h3>9. Pointer to Constant</h3>
+    <p>A pointer to constant is a pointer where the data it points to cannot be modified. However, the pointer itself can be redirected to point to another memory location.</p>
+    <pre>
+    const int x = 10;
+    const int *ptr = &x;  // Pointer to constant integer
+
+    // *ptr = 20;  // Error: Cannot modify value of x
+    ptr = &y;  // Allowed: pointer can point to another memory location
+    </pre>
+
+    <h3>10. Constant Pointer to Constant</h3>
+    <p>A constant pointer to a constant is a pointer where both the data it points to and the pointer itself cannot be modified.</p>
+    <pre>
+    const int x = 10;
+    const int *const ptr = &x;  // Constant pointer to constant data
+
+    // *ptr = 20;  // Error: Cannot modify the value of x
+    // ptr = &y;  // Error: Cannot change the pointer to point to another memory location
+    </pre>
+
+    <h3>11. Pointer to Structure</h3>
+    <p>A pointer to a structure is a pointer that points to a structure. This allows us to manipulate structure members through the pointer using the <code>-></code> operator.</p>
+    <pre>
+    struct Point {
+        int x;
+        int y;
+    };
+
+    int main() {
+        struct Point pt = {10, 20};
+        struct Point *ptr = &pt;  // Pointer to structure
+
+        printf("x: %d, y: %d\n", ptr->x, ptr->y);  // Accessing structure members through the pointer
+        return 0;
+    }
+    </pre>
+
+    <h3>12. Pointer to Function</h3>
+    <p>A pointer to a function is a pointer that points to a function rather than a variable. Function pointers are useful for implementing callbacks or passing functions as arguments to other functions.</p>
+    <pre>
+    #include <stdio.h>
+
+    void greet() {
+        printf("Hello, World!\n");
+    }
+
+    int main() {
+        void (*funcPtr)() = greet;  // Pointer to function greet
+        funcPtr();  // Calling the function via the pointer
+        return 0;
+    }
+    </pre>
+
+    <h3>13. Dynamic Memory Allocation Pointer</h3>
+    <p>Dynamic memory allocation in C is done using <code>malloc()</code>, <code>calloc()</code>, and <code>realloc()</code>, and the memory is accessed using pointers. Pointers are crucial for managing memory dynamically at runtime.</p>
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int *ptr = (int *)malloc(5 * sizeof(int));  // Dynamic memory allocation for an array of 5 integers
+
+        if (ptr == NULL) {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
+
+        // Assigning values to the allocated memory
+        for (int i = 0; i < 5; i++) {
+            ptr[i] = i + 1;
+        }
+
+        // Printing the values
+        for (int i = 0; i < 5; i++) {
+            printf("%d ", ptr[i]);
+        }
+
+        free(ptr);  // Freeing the allocated memory
+        return 0;
+    }
+    </pre>
+
+</div>
+
+
+        <!-- Structures and Unions -->
+        <div id="structures-section">
+    <h2>Structures in C</h2>
+    
+    <p>A <strong>structure</strong> in C is a user-defined data type that allows grouping variables of different data types under a single name. It is useful for creating complex data types that represent real-world entities.</p>
+
+    <h3>1. Defining a Structure</h3>
+    <p>To define a structure, the <code>struct</code> keyword is used. The structure definition includes the name of the structure and its members.</p>
+    <pre>
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+    </pre>
+    <p>Here, the structure <code>Student</code> contains three members: <code>rollNo</code> (integer), <code>name</code> (character array), and <code>marks</code> (floating point).</p>
+
+    <h3>2. Declaring Structure Variables</h3>
+    <p>After defining a structure, variables of that type can be declared.</p>
+    <pre>
+    struct Student student1, student2;  // Declaring two structure variables
+    </pre>
+    <p>In this case, <code>student1</code> and <code>student2</code> are variables of the type <code>Student</code>.</p>
+
+    <h3>3. Accessing Structure Members</h3>
+    <p>Structure members can be accessed using the dot operator (<code>.</code>) when working with structure variables.</p>
+    <pre>
+    student1.rollNo = 101;
+    strcpy(student1.name, "John Doe");
+    student1.marks = 85.5;
+
+    printf("Roll No: %d\n", student1.rollNo);
+    printf("Name: %s\n", student1.name);
+    printf("Marks: %.2f\n", student1.marks);
+    </pre>
+    <p>In the above example, we access and assign values to the structure members using the dot operator.</p>
+
+    <h3>4. Using Structure Pointers</h3>
+    <p>We can use pointers to access structure members. When working with a structure pointer, the arrow operator (<code>-></code>) is used.</p>
+    <pre>
+    struct Student *ptr;
+    ptr = &student1;  // Pointer pointing to student1
+
+    printf("Roll No: %d\n", ptr->rollNo);
+    printf("Name: %s\n", ptr->name);
+    printf("Marks: %.2f\n", ptr->marks);
+    </pre>
+    <p>Here, <code>ptr->rollNo</code> accesses the <code>rollNo</code> member of <code>student1</code> through the pointer <code>ptr</code>.</p>
+
+    <h3>5. Initializing Structures</h3>
+    <p>Structures can be initialized at the time of declaration by providing values for each member in the same order as they are defined in the structure.</p>
+    <pre>
+    struct Student student1 = {101, "John Doe", 85.5};
+    </pre>
+    <p>The structure <code>student1</code> is initialized with <code>rollNo = 101</code>, <code>name = "John Doe"</code>, and <code>marks = 85.5</code>.</p>
+
+    <h3>6. Nested Structures</h3>
+    <p>Structures can contain other structures as members. This is called a <strong>nested structure</strong>.</p>
+    <pre>
+    struct Address {
+        char street[100];
+        char city[50];
+        int zipCode;
+    };
+
+    struct Employee {
+        int empID;
+        char name[50];
+        struct Address addr;  // Nested structure
+    };
+    </pre>
+    <p>Here, the <code>Employee</code> structure contains an instance of the <code>Address</code> structure.</p>
+
+    <h3>7. Array of Structures</h3>
+    <p>Just like arrays of basic data types, arrays of structures can also be created. This is useful when you need to store multiple records of the same type.</p>
+    <pre>
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+
+    struct Student students[5];  // Array of structures (size 5)
+    </pre>
+    <p>In this case, <code>students</code> is an array that can hold 5 <code>Student</code> structures.</p>
+
+    <h3>8. Passing Structures to Functions</h3>
+    <p>Structures can be passed to functions in two ways: by value and by reference (using pointers).</p>
+
+    <h4>By Value:</h4>
+    <pre>
+    void display(struct Student s) {
+        printf("Roll No: %d\n", s.rollNo);
+        printf("Name: %s\n", s.name);
+        printf("Marks: %.2f\n", s.marks);
+    }
+
+    int main() {
+        struct Student student1 = {101, "John Doe", 85.5};
+        display(student1);  // Passing structure by value
+        return 0;
+    }
+    </pre>
+
+    <h4>By Reference:</h4>
+    <pre>
+    void updateMarks(struct Student *s, float newMarks) {
+        s->marks = newMarks;  // Modify the marks directly using pointer
+    }
+
+    int main() {
+        struct Student student1 = {101, "John Doe", 85.5};
+        updateMarks(&student1, 90.0);  // Passing structure by reference
+        printf("Updated Marks: %.2f\n", student1.marks);
+        return 0;
+    }
+    </pre>
+    <p>Passing by reference allows the function to modify the structure's data directly.</p>
+
+    <h3>9. Returning Structures from Functions</h3>
+    <p>Structures can be returned from functions. However, returning a structure by value involves copying the entire structure, which can be inefficient. To avoid this, a pointer to the structure can be returned.</p>
+    <pre>
+    struct Student createStudent(int rollNo, char *name, float marks) {
+        struct Student s;
+        s.rollNo = rollNo;
+        strcpy(s.name, name);
+        s.marks = marks;
+        return s;
+    }
+
+    int main() {
+        struct Student student1 = createStudent(101, "John Doe", 85.5);
+        printf("Roll No: %d\n", student1.rollNo);
+        printf("Name: %s\n", student1.name);
+        printf("Marks: %.2f\n", student1.marks);
+        return 0;
+    }
+    </pre>
+    <p>In this example, the <code>createStudent</code> function returns a structure <code>Student</code> by value.</p>
+
+    <h3>10. Typedef and Structures</h3>
+    <p>The <code>typedef</code> keyword can be used to create a new name (alias) for an existing data type. This can be useful when working with structures to make the code more readable.</p>
+    <pre>
+    typedef struct {
+        int rollNo;
+        char name[50];
+        float marks;
+    } Student;  // Creating alias for the structure
+
+    Student student1;  // Using the alias name for structure type
+    </pre>
+    <p>Now, instead of writing <code>struct Student</code>, we can simply use <code>Student</code> to declare variables of that type.</p>
+
+    <h3>11. Memory Size of Structure</h3>
+    <p>The size of a structure depends on the data types and alignment of its members. The <code>sizeof()</code> function can be used to find the size of a structure.</p>
+    <pre>
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+
+    int main() {
+        printf("Size of structure: %lu bytes\n", sizeof(struct Student));
+        return 0;
+    }
+    </pre>
+    <p>This program will print the size of the <code>Student</code> structure, including any padding added for alignment.</p>
+
+    <h3>12. Structure Padding</h3>
+    <p>In C, compilers often add padding between structure members to ensure that they are aligned properly for efficient access. This can result in the size of the structure being larger than the sum of its individual members.</p>
+    <p>For example:</p>
+    <pre>
+    struct Student {
+        char name[50];
+        int rollNo;
+        float marks;
+    };
+    </pre>
+    <p>In the above structure, padding may be added between <code>name</code> and <code>rollNo</code> to ensure that the integer <code>rollNo</code> is aligned to a 4-byte boundary (depending on the system).</p>
+
+</div>
+
+
+        <!-- Array of Structures -->
+       <div id="array-of-structures-section">
+    <h2>Array of Structures in C</h2>
+    
+    <p>An <strong>array of structures</strong> is a collection of multiple structure variables, where each structure is an instance of a structure type. It allows you to store and manage multiple records of the same type in a single array. This is particularly useful when working with large datasets like records of students, employees, etc.</p>
+
+    <h3>1. Defining Array of Structures</h3>
+    <p>To define an array of structures, you can follow the same process as defining an array of basic data types, but using a structure as the data type.</p>
+    <pre>
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+
+    struct Student students[5];  // Array of 5 Student structures
+    </pre>
+    <p>In this example, <code>students</code> is an array that can store 5 <code>Student</code> structures, each containing the <code>rollNo</code>, <code>name</code>, and <code>marks</code>.</p>
+
+    <h3>2. Accessing Array of Structures</h3>
+    <p>To access members of an array of structures, you use the array index along with the dot operator to access structure members.</p>
+    <pre>
+    students[0].rollNo = 101;
+    strcpy(students[0].name, "John Doe");
+    students[0].marks = 90.5;
+
+    printf("Student 1: Roll No: %d, Name: %s, Marks: %.2f\n", students[0].rollNo, students[0].name, students[0].marks);
+    </pre>
+    <p>In the above example, we access and assign values to the first element of the array <code>students[0]</code> using the dot operator for structure members.</p>
+
+    <h3>3. Initializing Array of Structures</h3>
+    <p>Array of structures can be initialized at the time of declaration. Each element of the array is initialized with the structure's values.</p>
+    <pre>
+    struct Student students[2] = {
+        {101, "John Doe", 90.5},
+        {102, "Jane Smith", 85.3}
+    };
+    </pre>
+    <p>In this case, the <code>students</code> array is initialized with two <code>Student</code> structures, each containing roll number, name, and marks.</p>
+
+    <h3>4. Iterating Over Array of Structures</h3>
+    <p>You can iterate over the array of structures using loops to access or modify each element of the array.</p>
+    <pre>
+    for(int i = 0; i < 5; i++) {
+        printf("Student %d: Roll No: %d, Name: %s, Marks: %.2f\n", i+1, students[i].rollNo, students[i].name, students[i].marks);
+    }
+    </pre>
+    <p>Here, a <code>for</code> loop is used to iterate over the array <code>students</code> and print the details of each student.</p>
+
+    <h3>5. Passing Array of Structures to Functions</h3>
+    <p>An array of structures can be passed to functions in the same way as arrays of basic data types. It can be passed by reference (pointer) for more efficient memory usage.</p>
+
+    <h4>Passing by Value:</h4>
+    <pre>
+    void displayStudents(struct Student s[], int size) {
+        for(int i = 0; i < size; i++) {
+            printf("Student %d: Roll No: %d, Name: %s, Marks: %.2f\n", i+1, s[i].rollNo, s[i].name, s[i].marks);
+        }
+    }
+
+    int main() {
+        struct Student students[2] = {{101, "John Doe", 90.5}, {102, "Jane Smith", 85.3}};
+        displayStudents(students, 2);  // Passing array by value
+        return 0;
+    }
+    </pre>
+
+    <h4>Passing by Reference:</h4>
+    <pre>
+    void updateMarks(struct Student *s, int size, float newMarks) {
+        for(int i = 0; i < size; i++) {
+            s[i].marks = newMarks;  // Update all students' marks
+        }
+    }
+
+    int main() {
+        struct Student students[2] = {{101, "John Doe", 90.5}, {102, "Jane Smith", 85.3}};
+        updateMarks(students, 2, 92.0);  // Passing array by reference
+        printf("Updated Marks:\n");
+        displayStudents(students, 2);
+        return 0;
+    }
+    </pre>
+
+    <p>In the above example, the function <code>updateMarks</code> updates the marks of all students by passing the array of structures by reference.</p>
+
+    <h3>6. Returning Array of Structures from Functions</h3>
+    <p>While it is not possible to return an array directly from a function, you can return a pointer to an array of structures. The memory for the array can be allocated dynamically inside the function.</p>
+    <pre>
+    struct Student* createStudents() {
+        struct Student *s = malloc(2 * sizeof(struct Student));
+        s[0].rollNo = 101;
+        strcpy(s[0].name, "John Doe");
+        s[0].marks = 90.5;
+        s[1].rollNo = 102;
+        strcpy(s[1].name, "Jane Smith");
+        s[1].marks = 85.3;
+        return s;
+    }
+
+    int main() {
+        struct Student *students = createStudents();
+        printf("Student 1: %d, %s, %.2f\n", students[0].rollNo, students[0].name, students[0].marks);
+        printf("Student 2: %d, %s, %.2f\n", students[1].rollNo, students[1].name, students[1].marks);
+        free(students);  // Free dynamically allocated memory
+        return 0;
+    }
+    </pre>
+    <p>In this case, the function <code>createStudents</code> dynamically allocates memory for an array of structures and returns a pointer to the allocated memory.</p>
+
+    <h3>7. Advantages of Array of Structures</h3>
+    <ul>
+        <li><strong>Organized Data Representation:</strong> It groups data in a more structured way, making it easier to manage and access multiple records.</li>
+        <li><strong>Efficient Memory Usage:</strong> Instead of creating separate variables for each record, an array of structures allows better memory utilization.</li>
+        <li><strong>Better Data Access:</strong> Arrays allow easy access to specific records based on index and manipulation of multiple records at once.</li>
+    </ul>
+
+    <h3>8. Example Program with Array of Structures</h3>
+    <pre>
+    #include <stdio.h>
+    #include <string.h>
+
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+
+    int main() {
+        struct Student students[3] = {
+            {101, "John", 85.5},
+            {102, "Jane", 90.0},
+            {103, "Paul", 78.5}
+        };
+
+        printf("Student Information:\n");
+        for(int i = 0; i < 3; i++) {
+            printf("Roll No: %d, Name: %s, Marks: %.2f\n", students[i].rollNo, students[i].name, students[i].marks);
+        }
+
+        return 0;
+    }
+    </pre>
+    <p>Output:</p>
+    <pre>
+    Student Information:
+    Roll No: 101, Name: John, Marks: 85.50
+    Roll No: 102, Name: Jane, Marks: 90.00
+    Roll No: 103, Name: Paul, Marks: 78.50
+    </pre>
+
+</div>
+
+
+<div id="union-section">
+    <h2>Union in C</h2>
+    
+    <p>A <strong>union</strong> is a special data type in C that allows storing different data types in the same memory location. Unlike structures, where each member has its own memory location, a union allocates a shared memory space for all its members. This means that at any given time, a union can only hold one of its members, and the size of a union is determined by the largest member.</p>
+
+    <h3>1. Defining a Union</h3>
+    <p>To define a union in C, you use the <code>union</code> keyword. Each member of the union shares the same memory location, and only one member can be accessed at a time.</p>
+    <pre>
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    </pre>
+    <p>In this example, the <code>Data</code> union can store an integer, a float, or a string of characters. The size of the union will be the size of the largest member, which in this case would be the size of the string.</p>
+
+    <h3>2. Union Declaration and Access</h3>
+    <p>To declare a union variable, you use the same syntax as a structure. However, when accessing the members of a union, remember that they share the same memory location, so modifying one member affects the others.</p>
+    <pre>
+    union Data data;
+    
+    data.i = 10;
+    printf("data.i: %d\n", data.i);
+    
+    data.f = 220.5;
+    printf("data.f: %.2f\n", data.f);  // The value of data.i will be overwritten
+    
+    strcpy(data.str, "Hello, Union!");
+    printf("data.str: %s\n", data.str);  // The value of data.f will be overwritten
+    </pre>
+    <p>In this example, after assigning values to the members <code>i</code>, <code>f</code>, and <code>str</code>, each member overwrites the previous one because they share the same memory location.</p>
+
+    <h3>3. Size of Union</h3>
+    <p>The size of a union is the size of its largest member. This is because the compiler allocates enough memory to store the largest data type. You can use the <code>sizeof()</code> operator to find the size of a union.</p>
+    <pre>
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    
+    printf("Size of union Data: %zu bytes\n", sizeof(union Data));
+    </pre>
+    <p>In this case, the size of the union will be the size of the largest member, which would be the size of <code>str[20]</>.</p>
+
+    <h3>4. Use Case for Unions</h3>
+    <p>Unions are particularly useful when you need to work with multiple types of data, but only one of them will be used at a time. They are memory-efficient because they use the same memory space for different data types.</p>
+
+    <h4>Example of Use Case: Representing Different Data Types</h4>
+    <pre>
+    #include <stdio.h>
+    
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    
+    int main() {
+        union Data data;
+        
+        // Storing integer value
+        data.i = 100;
+        printf("data.i: %d\n", data.i);
+        
+        // Storing float value
+        data.f = 220.5;
+        printf("data.f: %.2f\n", data.f);
+        
+        // Storing string value
+        strcpy(data.str, "Hello, Union!");
+        printf("data.str: %s\n", data.str);
+        
+        return 0;
+    }
+    </pre>
+    <p>In this program, each member of the union is used in turn, but only one member can hold a value at a time. Changing one member will overwrite the previous value stored in that union.</p>
+
+    <h3>5. Union vs. Structure</h3>
+    <p>The key difference between unions and structures is how memory is allocated for their members:</p>
+    <ul>
+        <li><strong>Union:</strong> All members of a union share the same memory space. The size of the union is the size of the largest member.</li>
+        <li><strong>Structure:</strong> Each member of a structure has its own memory location. The size of the structure is the sum of the sizes of all its members.</li>
+    </ul>
+
+    <h4>Example:</h4>
+    <pre>
+    struct Student {
+        int rollNo;
+        char name[50];
+        float marks;
+    };
+    
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+    
+    printf("Size of structure Student: %zu bytes\n", sizeof(struct Student));
+    printf("Size of union Data: %zu bytes\n", sizeof(union Data));
+    </pre>
+    <p>In this case, the structure <code>Student</code> will have a larger size because each member has its own memory, whereas the union <code>Data</code> will have a size equal to the largest member.</p>
+
+    <h3>6. Nested Unions</h3>
+    <p>Unions can also be nested inside other structures or unions. This allows more complex data structures with mixed types of data.</p>
+    <pre>
+    union Inner {
+        int i;
+        float f;
+    };
+
+    union Outer {
+        struct Inner data;
+        char str[20];
+    };
+    
+    union Outer outer;
+    outer.data.i = 10;
+    printf("outer.data.i: %d\n", outer.data.i);
+    </pre>
+    <p>In this case, <code>Outer</code> contains another union <code>Inner</>, allowing us to store an integer or float inside <code>data</> or a string in <code>str</>.</p>
+
+    <h3>7. Advantages of Union</h3>
+    <ul>
+        <li><strong>Memory Efficient:</strong> Unions use less memory since all members share the same memory location.</li>
+        <li><strong>Flexible:</strong> Unions allow different data types to be stored and accessed at different times.</li>
+        <li><strong>Useful in Low-Level Programming:</strong> Unions are often used in situations where memory usage is critical, such as embedded systems and device drivers.</li>
+    </ul>
+
+    <h3>8. Disadvantages of Union</h3>
+    <ul>
+        <li><strong>Single Member Access:</strong> At any point, only one member can store a value. This can be limiting in certain applications.</li>
+        <li><strong>Data Overwriting:</strong> Storing a new value in one member of the union overwrites the previous value stored in another member.</li>
+    </ul>
+
+    <h3>9. Example Program Using Union</h3>
+    <pre>
+    #include <stdio.h>
+    #include <string.h>
+
+    union Data {
+        int i;
+        float f;
+        char str[20];
+    };
+
+    int main() {
+        union Data data;
+        
+        // Storing an integer
+        data.i = 5;
+        printf("Integer: %d\n", data.i);
+
+        // Storing a float (this will overwrite the integer)
+        data.f = 3.14;
+        printf("Float: %.2f\n", data.f);
+        
+        // Storing a string (this will overwrite the float)
+        strcpy(data.str, "Hello, Union!");
+        printf("String: %s\n", data.str);
+
+        return 0;
+    }
+    </pre>
+    <p>Output:</p>
+    <pre>
+    Integer: 5
+    Float: 3.14
+    String: Hello, Union!
+    </pre>
+
+</div>
+
+<!-- Dynamic Memory Allocation-->
+
+<div id="dynamic-memory-allocation-section">
+    <h2>Dynamic Memory Allocation in C</h2>
+
+    <p><strong>Dynamic Memory Allocation</strong> is the process of allocating memory at runtime. This is done using functions defined in the <code>stdlib.h</code> header. In contrast to static memory allocation, where memory is allocated at compile time, dynamic memory allocation allows the program to request memory space during its execution, making the program more flexible.</p>
+
+    <h3>1. Why Use Dynamic Memory Allocation?</h3>
+    <p>Dynamic memory allocation is useful in situations where the size of data structures is not known in advance. It allows you to allocate memory only when you need it, and to release memory when it is no longer required, preventing memory wastage.</p>
+
+    <h3>2. Functions for Dynamic Memory Allocation</h3>
+    <p>There are four main functions used for dynamic memory allocation in C:</p>
+    <ul>
+        <li><strong><code>malloc()</code>:</strong> Allocates a block of memory of a specified size and returns a pointer to the first byte of this block.</li>
+        <li><strong><code>calloc()</code>:</strong> Allocates a block of memory for an array of specified elements, initializes them to zero, and returns a pointer to the first byte of the block.</li>
+        <li><strong><code>realloc()</code>:</strong> Resizes a previously allocated memory block, either expanding or shrinking it, and returns a pointer to the newly allocated memory block.</li>
+        <li><strong><code>free()</code>:</strong> Releases a previously allocated block of memory, making it available for future allocations.</li>
+    </ul>
+
+    <h3>3. malloc() – Memory Allocation</h3>
+    <p>The <code>malloc()</code> function allocates a specified number of bytes of memory. If memory allocation is successful, it returns a pointer to the allocated memory. If it fails, it returns <code>NULL</code>.</p>
+    <pre>
+    int *arr;
+    int n = 5;
+    
+    arr = (int *)malloc(n * sizeof(int));  // Allocating memory for 5 integers
+    
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+    } else {
+        // Memory allocation was successful, we can use the array
+        for (int i = 0; i < n; i++) {
+            arr[i] = i * 2;  // Initializing array
+            printf("arr[%d] = %d\n", i, arr[i]);
+        }
+    }
+    
+    free(arr);  // Freeing the dynamically allocated memory
+    </pre>
+    <p>In this example, <code>malloc()</code> is used to allocate memory for an array of 5 integers. We check whether the memory allocation was successful and then use the allocated memory. Finally, we free the allocated memory using <code>free()</code>.</p>
+
+    <h3>4. calloc() – Contiguous Allocation</h3>
+    <p>The <code>calloc()</code> function allocates memory for an array of elements and initializes each byte to zero. It takes two arguments: the number of elements and the size of each element.</p>
+    <pre>
+    int *arr;
+    int n = 5;
+    
+    arr = (int *)calloc(n, sizeof(int));  // Allocating memory for 5 integers, initialized to zero
+    
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+    } else {
+        // Memory allocated and initialized to zero
+        for (int i = 0; i < n; i++) {
+            printf("arr[%d] = %d\n", i, arr[i]);  // All values will be 0
+        }
+    }
+    
+    free(arr);  // Freeing the dynamically allocated memory
+    </pre>
+    <p>Here, <code>calloc()</code> is used to allocate memory for 5 integers, and each integer is automatically initialized to 0.</p>
+
+    <h3>5. realloc() – Reallocation</h3>
+    <p>The <code>realloc()</code> function is used to resize a previously allocated memory block. You can expand or shrink the size of the memory block. If the memory is successfully resized, it returns a pointer to the newly allocated memory. If not, it returns <code>NULL</code>.</p>
+    <pre>
+    int *arr;
+    int n = 5;
+    
+    arr = (int *)malloc(n * sizeof(int));  // Allocating memory for 5 integers
+    
+    if (arr == NULL) {
+        printf("Memory allocation failed!\n");
+    } else {
+        for (int i = 0; i < n; i++) {
+            arr[i] = i * 2;
+        }
+        
+        // Resize the memory block to store 10 integers
+        arr = (int *)realloc(arr, 10 * sizeof(int));
+        
+        if (arr == NULL) {
+            printf("Memory reallocation failed!\n");
+        } else {
+            // Memory resized successfully
+            for (int i = 5; i < 10; i++) {
+                arr[i] = i * 3;
+            }
+            
+            for (int i = 0; i < 10; i++) {
+                printf("arr[%d] = %d\n", i, arr[i]);
+            }
+        }
+    }
+    
+    free(arr);  // Freeing the dynamically allocated memory
+    </pre>
+    <p>In this case, after initially allocating memory for 5 integers, we use <code>realloc()</code> to resize the array to hold 10 integers, initializing the newly allocated space with some values.</p>
+
+    <h3>6. free() – Freeing Allocated Memory</h3>
+    <p>The <code>free()</code> function is used to release dynamically allocated memory that is no longer needed. It's essential to free any dynamically allocated memory to prevent memory leaks in your program.</p>
+    <pre>
+    int *arr;
+    int n = 5;
+    
+    arr = (int *)malloc(n * sizeof(int));  // Allocating memory for 5 integers
+    
+    // After using arr
+    free(arr);  // Freeing the dynamically allocated memory
+    </pre>
+    <p>After using the dynamically allocated memory, you should always call <code>free()</code> to release it back to the system. This prevents memory leaks.</p>
+
+    <h3>7. Memory Leaks</h3>
+    <p>Memory leaks occur when memory is dynamically allocated but never freed, which leads to the wastage of memory. This is a critical issue in programs that run for a long time or allocate large amounts of memory. Always ensure that for every call to <code>malloc()</code>, <code>calloc()</code>, or <code>realloc()</code>, there is a corresponding call to <code>free()</code>.</p>
+
+    <h3>8. Example Program Using All Dynamic Memory Functions</h3>
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int *arr;
+        int n = 5;
+        
+        // Using malloc to allocate memory
+        arr = (int *)malloc(n * sizeof(int));
+        
+        if (arr == NULL) {
+            printf("Memory allocation failed!\n");
+            return 1;
+        }
+        
+        // Initializing array elements
+        for (int i = 0; i < n; i++) {
+            arr[i] = i * 2;
+        }
+        
+        // Resizing the memory using realloc
+        arr = (int *)realloc(arr, 10 * sizeof(int));
+        
+        if (arr == NULL) {
+            printf("Memory reallocation failed!\n");
+            return 1;
+        }
+        
+        // Initializing new elements
+        for (int i = 5; i < 10; i++) {
+            arr[i] = i * 3;
+        }
+        
+        // Printing the array
+        for (int i = 0; i < 10; i++) {
+            printf("arr[%d] = %d\n", i, arr[i]);
+        }
+        
+        // Freeing the dynamically allocated memory
+        free(arr);
+        
+        return 0;
+    }
+    </pre>
+    <p>This program demonstrates the usage of all dynamic memory functions: <code>malloc()</code>, <code>realloc()</code>, and <code>free()</code>. It first allocates memory using <code>malloc()</code>, then resizes it using <code>realloc()</code>, and finally frees the memory using <code>free()</code>.</p>
+
+</div>
+
+<div id="multi-dimensional-dynamic-allocation-section">
+    <h2>Multi-dimensional Dynamic Memory Allocation in C</h2>
+
+    <p><strong>Multi-dimensional Dynamic Memory Allocation</strong> allows you to allocate memory for two-dimensional or higher-dimensional arrays at runtime. This is particularly useful when the size of the array is not known at compile time and needs to be determined during program execution.</p>
+
+    <p>In C, multi-dimensional arrays can be allocated dynamically using the <code>malloc()</code> or <code>calloc()</code> functions, and pointers are used to manage the dynamically allocated memory.</p>
+
+    <h3>1. Allocating Memory for a 2D Array</h3>
+    <p>To allocate memory for a two-dimensional array dynamically, we need to allocate memory for each row, and each row will have a pointer to its respective columns.</p>
+
+    <h4>Syntax for Dynamic Memory Allocation for a 2D Array:</h4>
+    <pre>
+    type **arr = (type **)malloc(rows * sizeof(type *));
+    for (int i = 0; i < rows; i++) {
+        arr[i] = (type *)malloc(columns * sizeof(type));
+    }
+    </pre>
+
+    <h3>2. Example for Allocating Memory for a 2D Array:</h3>
+    <p>Here’s an example demonstrating how to allocate memory for a 2D array dynamically using <code>malloc()</code>:</p>
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int **arr;
+        int rows = 3;
+        int cols = 4;
+        
+        // Allocating memory for rows
+        arr = (int **)malloc(rows * sizeof(int *));
+        
+        // Allocating memory for columns of each row
+        for (int i = 0; i < rows; i++) {
+            arr[i] = (int *)malloc(cols * sizeof(int));
+        }
+        
+        // Initializing the array
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                arr[i][j] = i * j;
+            }
+        }
+        
+        // Printing the 2D array
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+            }
+        }
+        
+        // Freeing the memory
+        for (int i = 0; i < rows; i++) {
+            free(arr[i]);
+        }
+        free(arr);
+
+        return 0;
+    }
+    </pre>
+
+    <h4>Explanation:</h4>
+    <ul>
+        <li><code>arr = (int **)malloc(rows * sizeof(int *))</code>: Allocates memory for an array of pointers (rows).</li>
+        <li><code>arr[i] = (int *)malloc(cols * sizeof(int))</code>: For each row, memory is allocated dynamically for the number of columns.</li>
+        <li>The array is then initialized, printed, and freed.</li>
+    </ul>
+
+    <h3>3. Allocating Memory for a 3D Array</h3>
+    <p>For a three-dimensional array, the logic is similar, except that memory needs to be allocated for an additional level of pointers (for depth or 3rd dimension).</p>
+
+    <h4>Syntax for Dynamic Memory Allocation for a 3D Array:</h4>
+    <pre>
+    type ***arr = (type ***)malloc(depth * sizeof(type **));
+    for (int i = 0; i < depth; i++) {
+        arr[i] = (type **)malloc(rows * sizeof(type *));
+        for (int j = 0; j < rows; j++) {
+            arr[i][j] = (type *)malloc(columns * sizeof(type));
+        }
+    }
+    </pre>
+
+    <h3>4. Example for Allocating Memory for a 3D Array:</h3>
+    <p>Here’s an example demonstrating how to allocate memory for a 3D array dynamically using <code>malloc()</code>:</p>
+    <pre>
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main() {
+        int ***arr;
+        int depth = 2, rows = 3, cols = 4;
+        
+        // Allocating memory for depth
+        arr = (int ***)malloc(depth * sizeof(int **));
+        
+        // Allocating memory for rows at each depth
+        for (int i = 0; i < depth; i++) {
+            arr[i] = (int **)malloc(rows * sizeof(int *));
+            
+            // Allocating memory for columns at each row in each depth
+            for (int j = 0; j < rows; j++) {
+                arr[i][j] = (int *)malloc(cols * sizeof(int));
+            }
+        }
+        
+        // Initializing the array
+        for (int i = 0; i < depth; i++) {
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < cols; k++) {
+                    arr[i][j][k] = i * j * k;
+                }
+            }
+        }
+        
+        // Printing the 3D array
+        for (int i = 0; i < depth; i++) {
+            for (int j = 0; j < rows; j++) {
+                for (int k = 0; k < cols; k++) {
+                    printf("arr[%d][%d][%d] = %d\n", i, j, k, arr[i][j][k]);
+                }
+            }
+        }
+        
+        // Freeing the memory
+        for (int i = 0; i < depth; i++) {
+            for (int j = 0; j < rows; j++) {
+                free(arr[i][j]);
+            }
+            free(arr[i]);
+        }
+        free(arr);
+
+        return 0;
+    }
+    </pre>
+
+    <h4>Explanation:</h4>
+    <ul>
+        <li><code>arr = (int ***)malloc(depth * sizeof(int **))</code>: Allocates memory for the depth of the array (3rd dimension).</li>
+        <li><code>arr[i] = (int **)malloc(rows * sizeof(int *))</code>: Allocates memory for the rows at each depth level.</li>
+        <li><code>arr[i][j] = (int *)malloc(cols * sizeof(int))</code>: Allocates memory for the columns at each row in each depth.</li>
+        <li>The array is then initialized, printed, and freed.</li>
+    </ul>
+
+    <h3>5. General Notes on Multi-dimensional Dynamic Memory Allocation</h3>
+    <ul>
+        <li>Each level of memory allocation corresponds to a dimension of the array.</li>
+        <li>Always ensure that you free the memory after using it to avoid memory leaks.</li>
+        <li>Dynamic memory allocation helps in creating arrays where the size is determined at runtime.</li>
+        <li>Multi-dimensional arrays can also be allocated using a single <code>malloc()</code> or <code>calloc()</code> call, but using multiple calls makes it easier to handle each dimension separately.</li>
+    </ul>
+</div>
+
+
+
+</div>
+
+    <footer>
+        ©2023-2025. SEED Institute Of Training. All Rights Reserved.
+    </footer>
+</body>
+</html>

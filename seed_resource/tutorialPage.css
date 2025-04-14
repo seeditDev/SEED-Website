@@ -1,0 +1,641 @@
+html {scroll-behavior: smooth;}
+#hero.tutorialPage{min-height:400px;}
+/* #hero.tutorialPage .tutorialbanner{display: block;text-align: center;} */
+#hero.tutorialPage .tutorialbanner{display: flex; justify-content: center; align-items: center; height: 100%;text-align: center;}
+#hero.tutorialPage .tutorialbanner img{max-width: 100%;height: auto !important;display: inline-block;}
+#hero.tutorialPage .hero-content h1{font-size:45px;line-height: 50px;}
+#hero.tutorialPage .hero-content p{font-size:18px;}
+.tutorialPageContent{padding: 30px 0;overflow: inherit;}
+.sidebar{position:sticky;align-self: start;top:0px;}
+.innerSideBar{padding-top:10px;margin-top:0px;display: block;}
+.sidbarbox{background-color:#f8f8f8;border:1px solid #a1a1a1;border-radius: 10px;}
+.list-of-tutorials::-webkit-scrollbar {width:5px;background:rgba(233,199,80,0);padding-top:0px;}
+.list-of-tutorials::-webkit-scrollbar-track {background-color:rgba(233,199,80,0);}
+.list-of-tutorials::-webkit-scrollbar-thumb {background:#1f39a4;width:2px;border-radius:3px;}
+.innerasideContent{position: relative;margin-top:0px;}
+.list-of-tutorials{display:block;padding: 0;margin:0;list-style: none;padding-top:0px;height:750px;width:100%;overflow:auto;}
+.list-of-tutorials li{border-bottom: 1px solid #a1a1a1;}
+.list-of-tutorials li.loftitle{padding: 10px 20px;display: block;font-size:24px;color:#484848;font-weight:700;}
+.list-of-tutorials li a{display: block;padding: 10px 20px;font-size: 17px;color:#484848;font-weight: 400;}
+.list-of-tutorials li:last-child{border-bottom: 0;}
+.hero-row .col-lg-7 {
+    margin-top: 50px;
+}
+.logo-grids {
+    padding-left: 12%;
+    padding-top: 4%;
+}
+.size-h {
+  height: 450px !important;
+}
+.size-v {
+  margin: 0 auto;
+}
+.b_read{
+  text-align: center;
+  margin: 0 auto;
+  /* display: block; */
+  width: 20%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #ffffff;
+}
+a.b_read {
+  color: #ffffff;
+}
+.read{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+    background-color: #2231a4;
+    padding: 1%;
+    border-radius: 3px;
+    color: #ffffff;
+}
+a.read {
+  color: #ffffff;
+}
+.tutorialbanner img {
+    margin: 0 auto;
+    display: block;
+}
+/*Software Testing*/
+.software-testing1{
+  margin-top: 2%;
+}
+.software-testing2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -2%;
+}
+.software-testing3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.software-testing4{
+  color: #2b2c2d;
+}
+.software-testing5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.software-testing6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+a.software-testing6{
+  color: #fff;
+}
+.logo-full {
+  padding-left: 12%;
+  padding-top: 2%;
+}
+.logo-software-testing{
+  padding-left: 10%;
+  padding-top: 3%;}
+a.python-boxs-6.bk {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+}
+.python-boxs{
+  position: relative;
+  
+}
+.python-boxs-1{
+  padding: 5%;
+}
+.python-boxs-2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  
+}
+.python-boxs-3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.python-boxs-4{
+  color: #2b2c2d;
+}
+.python-boxs-5{
+  text-align: justify;
+   margin-left: 2%;
+   width: 95%;
+}
+.python-boxs-6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+.java1{
+  margin-top: 2%;
+}
+.java2{
+  background: #f8f8f8;
+  width: 83.4%;height: 200px;
+  
+  margin-top: -7%;
+}
+.java3{
+  color: #2b2c2d;
+}
+
+.java4{
+  text-align: justify;
+   margin-left: 2%;
+  width: 95%;
+}
+.java5{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.java6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.data1{
+  margin-top: 2%;
+}
+.data2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  
+  margin-top: -7%;
+  
+}
+.data3{
+  padding: 11px;color: #2b2c2d;
+}
+.data4{
+  color: #2b2c2d;
+}
+.data5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.data6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+.s-titl {
+    color: #1f39a4;
+    font-size: 25px;
+    padding: 20px 0;
+}
+.hacking1{
+  margin-top: 2%;
+}
+.hacking2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -7%;
+}
+.hacking3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.hacking4{
+  color: #2b2c2d;
+}
+.hacking5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.hacking6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.aws1{
+  margin-top: 2%;
+}
+.aws2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -7%;
+}
+.aws3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.aws4{
+  color: #2b2c2d;
+}
+.aws5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.aws6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+.fullstack1{
+ margin-top: 2%;
+}
+.fullstack2{
+ background: #f8f8f8;
+ width: 83.4%;
+ height: 200px;
+ margin-top: -7%;
+}
+.fullstack3{
+ padding: 11px;
+ color: #2b2c2d;
+}
+.fullstack4{
+ color: #2b2c2d;
+}
+.fullstack5{
+ text-align: justify;
+ margin-left: 2%;
+ width: 95%;
+}
+.fullstack6{
+ text-align: left;
+ margin-left: 2%;
+ background-color: #2231a4;
+ padding: 1%;
+ border-radius: 3px;
+ color: #fff;
+}
+a.fullstack6{
+ color: #fff;
+}
+.logo-full {
+ padding-left: 12%;
+ padding-top: 2%;
+}
+
+.devops1{
+ margin-top: 2%;
+}
+.devops2{
+ background: #f8f8f8;
+ width: 83.4%;
+ height: 200px;
+ margin-top: -7%;
+}
+.devops3{
+ padding: 11px;
+ color: #2b2c2d;
+}
+.devops4{
+ color: #2b2c2d;
+}
+.devops5{
+ text-align: justify;
+ margin-left: 2%;
+ width: 95%;
+}
+.devops6{
+ text-align: left;
+ margin-left: 2%;
+ background-color: #2231a4;
+ padding: 1%;
+ border-radius: 3px;
+ color: #fff;
+}
+a.devops6{
+ color: #fff;
+}
+.logo-full {
+ padding-left: 12%;
+ padding-top: 2%;
+}
+.logo-devops{
+ padding-left: 10%;
+ padding-top: 2%;}
+tutorialPage
+.hljs {
+ display: block;
+ overflow-x: auto;
+ padding: 0.5em;
+ background: #f5f5f5;
+ font-size: larger;
+ border: 1px solid #ccc;
+ border-radius: 3px;
+}
+.tutorialbanner-top {
+    padding-left: 32%;
+    padding-top: 23%;
+}
+.b-inner {
+         width: 100%;
+    padding: 11px;
+    background-color: #f8f8f8;
+    height: auto;
+    margin-bottom: 20px !important;
+    padding-bottom: 20px;
+         }
+         .btn-cht {
+         text-align: left;
+         margin-left: 0;
+         background-color: #2231a4;
+         padding: 10px;
+         border-radius: 3px;
+         color: #fff;
+         }
+         .b-inner h2 a {
+         color: #000000;
+         }
+         .btn-cht:hover {
+         color: #ffffff;
+         }
+         .bannerimage-cht img {
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+.side-v {
+    margin: 0 auto;
+    display: block;
+}
+a.python-boxs-6, a.java6, a.data6, a.hacking6, a.aws6 {
+  color: #fff;
+}
+.tutorialInnerBanner figure img{width: 100%;height: auto;display: block;}
+
+.innerContent{position: relative;margin: 0 auto;}
+.innerContent p{font-size: 16px;color: #121212;font-weight: 400;margin-bottom:20px;}
+.innerContent p span{display: block;}
+.innerContent p span a{color: #121212;}
+.liststyleOption{margin:0;list-style: none;margin: 0 auto !important;}
+.liststyleOption li{padding-left:30px;position: relative;font-size: 16px;color: #121212;font-weight: 400;margin-bottom: 15px;}
+.liststyleOption li:before{content:'';position:absolute;left:0;top:5px;width: 20px;height: 15px;background: url(../img/tick-icon.png) no-repeat;}
+td{border-style: groove;border-color: #f8f8f8;}
+.language-java{padding-left: 20px;}
+.hljs{display: block;overflow-x: auto;padding: .5em;background: #fdfcfc;}
+.list-of-tutorials-1::-webkit-scrollbar {width:5px;background:rgba(233,199,80,0);padding-top:0px;}
+.list-of-tutorials-1::-webkit-scrollbar-track {background-color:rgba(233,199,80,0);}
+.list-of-tutorials-1::-webkit-scrollbar-thumb {background:#1f39a4;width:2px;border-radius:3px;}
+.innerasideContent{position: relative;margin-top:0px;}
+.list-of-tutorials-1{display:block;padding: 0;margin:0;list-style: none;padding-top:0px;width:100%;overflow:auto;}
+.list-of-tutorials-1 li{border-bottom: 1px solid #a1a1a1;}
+.list-of-tutorials-1 li.loftitle{padding: 10px 20px;display: block;font-size:24px;color:#484848;font-weight:700;}
+.list-of-tutorials-1 li a{display: block;padding: 10px 20px;font-size: 17px;color:#484848;font-weight: 400;}
+.list-of-tutorials-1 li:last-child{border-bottom: 0;}
+@media only screen and (max-width:768px){
+  .b-inner {
+    width: 100%;
+    height: auto;
+    }
+    .b_read{
+      width: 70%;
+      }
+    .read{
+    width: 70%;
+    }
+    .tutorialbanner-top {
+    padding:  0;
+}
+.tutorialPageContent{padding: 50px 0;}
+.sidebar{display: none;}
+#hero.tutorialPage .tutorialbanner img{width:50%;}
+.tblrm {
+    overflow-x: scroll;
+  }
+}
+
+@media only screen and (max-width:600px){
+.sec-para{padding-top:20px;}
+#hero.tutorialPage .hero-content p{line-height:25px;}
+.tblrm {
+    overflow-x: scroll;
+  }
+  #hero.tutorialPage .hero-content h1 {
+    font-size: 28px;
+    line-height: 30px;
+}
+
+}
+.salesforce1{
+  margin-top: 2%;
+}
+.salesforce2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -7%;
+}
+.salesforce3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.salesforce4{
+  color: #2b2c2d;
+}
+.salesforce5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.salesforce6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+a.salesforce6{
+  color: #fff;
+}
+.logo-full {
+  padding-left: 12%;
+  padding-top: 2%;
+}
+.logo-salesforce{
+  padding-left: 10%;
+  padding-top: 2%;
+}
+
+.salesforce2 {
+background: #f8f8f8;
+width: 83.4%;
+height: 230px;
+margin-top: -7%;
+}
+
+/*selenium*/
+.selenium1{
+  margin-top: 2%;
+}
+.selenium2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -7%;
+}
+.selenium3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.selenium4{
+  color: #2b2c2d;
+}
+.selenium5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.selenium6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+a.selenium6{
+  color: #fff;
+}
+.logo-full {
+  padding-left: 12%;
+  padding-top: 2%;
+}
+.logo-selenium{
+  padding-left: 10%;
+  padding-top: 5%;}
+
+/*uipath*/
+.uipath1{
+  margin-top: 2%;
+}
+.uipath2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -2%;
+}
+.uipath3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.uipath4{
+  color: #2b2c2d;
+}
+.uipath5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.uipath6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+a.uipath6{
+  color: #fff;
+}
+
+/*Angular*/
+.angular1{
+  margin-top: 2%;
+}
+.angular2{
+  background: #f8f8f8;
+  width: 83.4%;
+  height: 200px;
+  margin-top: -2%;
+}
+.angular3{
+  padding: 11px;
+  color: #2b2c2d;
+}
+.angular4{
+  color: #2b2c2d;
+}
+.angular5{
+  text-align: justify; 
+  margin-left: 2%;
+  width: 95%;
+}
+.angular6{
+  text-align: left;
+  margin-left: 2%;
+  background-color: #2231a4;
+  padding: 1%;
+  border-radius: 3px;
+  color: #fff;
+}
+a.angular6{
+  color: #fff;
+}
+.logo-full {
+  padding-left: 12%;
+  padding-top: 2%;
+}
+.logo-angular{
+  padding-left: 10%;
+  padding-top: 5%;}
+
+.books-color{
+  background-color: #2231a4;
+    padding: 1%;
+    border-radius: 3px;
+    color: #fff;
+    border-color: #2231a4;
+    margin: 0 auto;
+    display: block;
+    width: 20%;
+}
+
+@media (max-width: 767px) {
+  .socialIcons {
+      display: none;
+  }
+}
+
+.book_pdf {
+  display: flex;
+  flex-direction: column;
+flex-wrap: wrap;
+align-content: center;
+justify-content: space-between;
+align-items: center;
+  justify-content: space-between; /* Space buttons apart */
+  gap: 10px; /* Optional, for spacing between the buttons */
+}
+a.b_read.cart {
+  background: red;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEED-IT Login</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" type="image/webp">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Firebase SDKs (with module type) -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js"></script>
+
+  <style>
+    /* CSS for the Login Template */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      width: 360px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2e2e2e;
+      font-size: 32px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .logo {
+      max-width: 50%;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    label {
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    input[type="text"], input[type="password"], select {
+      width: 100%;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-top: 8px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus, select:focus {
+      border-color: #4ed655;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      background-color: #4ed655;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #39c740;
+    }
+
+    .error {
+      color: #ff0000;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="logo" src="https://raw.githubusercontent.com/seeditDev/SEED-Website/f3cee9002410a00df4da7bea636ac9fbc4c312ca/Plugins/SEED_Logo.webp" alt="SEED Logo">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="role">Role</label>
+        <select id="role" required>
+          <option value="employee">Employee</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+      </div>
+      <input type="submit" value="Login">
+      <div id="error" class="error"></div>
+    </form>
+  </div>
+
+  <script type="module">
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCJfOQkl1P3eluAaZgV2lplo21MyKZ-SyQ",
+    authDomain: "seed-employees.firebaseapp.com",
+    projectId: "seed-employees",
+    databaseURL: "https://seed-employees-default-rtdb.asia-southeast1.firebasedatabase.app",
+    storageBucket: "seed-employees.appspot.com",
+    messagingSenderId: "580101907759",
+    appId: "1:580101907759:web:28dfcbfceba76db1866dda",
+    measurementId: "G-R76C8RQDLB"
+  };
+
+  // Import Firebase modules
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
+  import { getDatabase, ref, get } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js';
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getDatabase(app);
+
+  // Set Firebase Authentication persistence to LOCAL
+  setPersistence(auth, browserLocalPersistence)
+    .then(() => {
+      // Firebase Authentication: Login form submit handler
+      document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Firebase sign-in
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const userId = userCredential.user.uid;
+            const userEmail = userCredential.user.email;
+
+            console.log("Authenticated UID:", userId);
+
+            const userRef = ref(db, 'users/' + userId); // Ensure this path is correct
+            get(userRef)
+              .then((snapshot) => {
+                if (snapshot.exists()) {
+                  const user = snapshot.val();
+                  console.log("User data found:", user);
+                  const role = user.role;
+                  const name = user.name;
+
+                  // Store user data in sessionStorage
+                  sessionStorage.setItem("role", role);
+                  sessionStorage.setItem("name", name);
+                  sessionStorage.setItem("email", userEmail);
+                  sessionStorage.setItem("authenticated", "true");
+
+                  // Handle the user role (redirect to admin/employee dashboard)
+                  if (role === "admin") {
+                    window.location.href = "https://www.seedit.rf.gd/admin/";
+                  } else if (role === "employee") {
+                    window.location.href = "https://www.seedit.rf.gd/employee/";
+                  } else {
+                    console.error("Invalid role:", role);
+                    alert("You don't have access to this application.");
+                  }
+                } else {
+                  console.log("No user found in Realtime Database for UID:", userId);
+                  alert("User data not found. Please check your credentials.");
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching user data:", error.message);
+              });
+          })
+          .catch((error) => {
+            console.error("Sign-in failed:", error.message);
+            alert("Authentication failed. Please check your credentials.");
+          });
+      });
+    })
+    .catch((error) => {
+      console.error("Error setting persistence:", error.message);
+    });
+
+  // Firebase: Check authentication state on page load
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log("User is logged in:", user.email);
+      const userId = user.uid;
+      const userEmail = user.email;
+      const userRef = ref(db, 'users/' + userId);
+
+      get(userRef)
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            const user = snapshot.val();
+            const role = user.role;
+            const name = user.name;
+
+            // Store user data in sessionStorage
+            sessionStorage.setItem("role", role);
+            sessionStorage.setItem("name", name);
+            sessionStorage.setItem("email", userEmail);
+            sessionStorage.setItem("authenticated", "true");
+
+            if (role === "admin") {
+              window.location.href = "https://www.seedit.rf.gd/admin/";
+            } else if (role === "employee") {
+              window.location.href = "https://www.seedit.rf.gd/employee/";
+            } else {
+              alert("Unauthorized user role.");
+            }
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching user data:", error.message);
+        });
+    } else {
+      console.log("No user logged in.");
+      sessionStorage.setItem("authenticated", "false"); // Clear authentication status
+    }
+  });
+</script>
+
+</body>
+</html>
