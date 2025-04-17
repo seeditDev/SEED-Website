@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-algebra-test3",
+    "name": "Test 3 - Algebra",
+    "section": "quantitative",
+    "topic": "algebra",
+    "difficulty": "easy",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Solve for x: 2x + 5 = 13",
+            "options": [
+                "x = 3",
+                "x = 4",
+                "x = 5",
+                "x = 6"
+            ],
+            "correctAnswer": "x = 4",
+            "explanation": "2x + 5 = 13\n2x = 13 - 5\n2x = 8\nx = 4"
+        },
+        {
+            "id": "2",
+            "question": "If 3y = 18, what is y?",
+            "options": [
+                "y = 4",
+                "y = 5",
+                "y = 6",
+                "y = 9"
+            ],
+            "correctAnswer": "y = 6",
+            "explanation": "3y = 18\ny = 18/3\ny = 6"
+        },
+        {
+            "id": "3",
+            "question": "Simplify: 3(x + 2) - 5",
+            "options": [
+                "3x + 1",
+                "3x + 6 - 5",
+                "3x + 1",
+                "3x - 3"
+            ],
+            "correctAnswer": "3x + 1",
+            "explanation": "3(x + 2) - 5 = 3x + 6 - 5 = 3x + 1"
+        },
+        {
+            "id": "4",
+            "question": "What is the value of 5x² when x = 2?",
+            "options": [
+                "10",
+                "15",
+                "20",
+                "25"
+            ],
+            "correctAnswer": "20",
+            "explanation": "5x² = 5(2)² = 5(4) = 20"
+        },
+        {
+            "id": "5",
+            "question": "Solve: x/2 = 6",
+            "options": [
+                "x = 3",
+                "x = 8",
+                "x = 12",
+                "x = 18"
+            ],
+            "correctAnswer": "x = 12",
+            "explanation": "x/2 = 6\nx = 6 × 2\nx = 12"
+        },
+        {
+            "id": "6",
+            "question": "Simplify: 4(2x - 1) + 3x",
+            "options": [
+                "8x - 4 + 3x",
+                "11x - 4",
+                "11x - 1",
+                "8x + 3x - 1"
+            ],
+            "correctAnswer": "11x - 4",
+            "explanation": "4(2x - 1) + 3x = 8x - 4 + 3x = 11x - 4"
+        },
+        {
+            "id": "7",
+            "question": "If b + 7 = 15, what is b?",
+            "options": [
+                "b = 6",
+                "b = 8",
+                "b = 22",
+                "b = 105"
+            ],
+            "correctAnswer": "b = 8",
+            "explanation": "b + 7 = 15\nb = 15 - 7\nb = 8"
+        },
+        {
+            "id": "8",
+            "question": "Solve for c: 5c - 10 = 15",
+            "options": [
+                "c = 1",
+                "c = 3",
+                "c = 5",
+                "c = 25"
+            ],
+            "correctAnswer": "c = 5",
+            "explanation": "5c - 10 = 15\n5c = 15 + 10\n5c = 25\nc = 5"
+        },
+        {
+            "id": "9",
+            "question": "What is the value of 8 + 3 × 4?",
+            "options": [
+                "20",
+                "24",
+                "44",
+                "56"
+            ],
+            "correctAnswer": "20",
+            "explanation": "8 + 3 × 4 = 8 + 12 = 20 (multiplication is performed before addition)"
+        },
+        {
+            "id": "10",
+            "question": "Simplify: 6x + 7x",
+            "options": [
+                "13x",
+                "13x²",
+                "42x",
+                "42x²"
+            ],
+            "correctAnswer": "13x",
+            "explanation": "6x + 7x = (6 + 7)x = 13x"
+        },
+        {
+            "id": "11",
+            "question": "Solve: 3(x - 2) = 9",
+            "options": [
+                "x = 1",
+                "x = 3",
+                "x = 5",
+                "x = 7"
+            ],
+            "correctAnswer": "x = 5",
+            "explanation": "3(x - 2) = 9\nx - 2 = 9/3\nx - 2 = 3\nx = 5"
+        },
+        {
+            "id": "12",
+            "question": "What is the value of d in the equation 4d - 3 = d + 6?",
+            "options": [
+                "d = 1",
+                "d = 3",
+                "d = 9",
+                "d = 12"
+            ],
+            "correctAnswer": "d = 3",
+            "explanation": "4d - 3 = d + 6\n4d - d = 6 + 3\n3d = 9\nd = 3"
+        },
+        {
+            "id": "13",
+            "question": "Simplify: 2(x + 3) - 3(x - 2)",
+            "options": [
+                "-x + 12",
+                "-x + 6",
+                "5x + 12",
+                "5x + 6"
+            ],
+            "correctAnswer": "-x + 12",
+            "explanation": "2(x + 3) - 3(x - 2) = 2x + 6 - 3x + 6 = -x + 12"
+        },
+        {
+            "id": "14",
+            "question": "If 2x + 3 = x + 8, what is x?",
+            "options": [
+                "x = 1",
+                "x = 3",
+                "x = 5",
+                "x = 11"
+            ],
+            "correctAnswer": "x = 5",
+            "explanation": "2x + 3 = x + 8\n2x - x = 8 - 3\nx = 5"
+        },
+        {
+            "id": "15",
+            "question": "Evaluate 5x when x = 3",
+            "options": [
+                "8",
+                "12",
+                "15",
+                "20"
+            ],
+            "correctAnswer": "15",
+            "explanation": "5x = 5(3) = 15"
+        },
+        {
+            "id": "16",
+            "question": "Solve for e: e/3 + 2 = 5",
+            "options": [
+                "e = 3",
+                "e = 6",
+                "e = 9",
+                "e = 15"
+            ],
+            "correctAnswer": "e = 9",
+            "explanation": "e/3 + 2 = 5\ne/3 = 5 - 2\ne/3 = 3\ne = 9"
+        },
+        {
+            "id": "17",
+            "question": "Simplify: 7x - 4 + 2x + 9",
+            "options": [
+                "9x - 13",
+                "9x + 5",
+                "9x + 13",
+                "5x + 5"
+            ],
+            "correctAnswer": "9x + 5",
+            "explanation": "7x - 4 + 2x + 9 = (7x + 2x) + (-4 + 9) = 9x + 5"
+        },
+        {
+            "id": "18",
+            "question": "If 6f = 24, what is f?",
+            "options": [
+                "f = 3",
+                "f = 4",
+                "f = 18",
+                "f = 144"
+            ],
+            "correctAnswer": "f = 4",
+            "explanation": "6f = 24\nf = 24/6\nf = 4"
+        },
+        {
+            "id": "19",
+            "question": "Solve: 8 - 4x = 0",
+            "options": [
+                "x = -2",
+                "x = 0",
+                "x = 2",
+                "x = 4"
+            ],
+            "correctAnswer": "x = 2",
+            "explanation": "8 - 4x = 0\n-4x = -8\nx = 2"
+        },
+        {
+            "id": "20",
+            "question": "Evaluate: 20 ÷ 4 × 3",
+            "options": [
+                "5",
+                "10",
+                "15",
+                "60"
+            ],
+            "correctAnswer": "15",
+            "explanation": "20 ÷ 4 × 3 = 5 × 3 = 15 (division and multiplication are performed from left to right)"
+        },
+        {
+            "id": "21",
+            "question": "Simplify: 3(2x - 3) - 2(x + 2)",
+            "options": [
+                "4x - 13",
+                "4x - 5",
+                "8x - 13",
+                "8x - 5"
+            ],
+            "correctAnswer": "4x - 13",
+            "explanation": "3(2x - 3) - 2(x + 2) = 6x - 9 - 2x - 4 = 4x - 13"
+        },
+        {
+            "id": "22",
+            "question": "If x - 5 = 8, what is x?",
+            "options": [
+                "x = 3",
+                "x = 13",
+                "x = -3",
+                "x = -13"
+            ],
+            "correctAnswer": "x = 13",
+            "explanation": "x - 5 = 8\nx = 8 + 5\nx = 13"
+        },
+        {
+            "id": "23",
+            "question": "What is the value of (3 + 4)²?",
+            "options": [
+                "7",
+                "14",
+                "25",
+                "49"
+            ],
+            "correctAnswer": "49",
+            "explanation": "(3 + 4)² = 7² = 49"
+        },
+        {
+            "id": "24",
+            "question": "Solve: 4(q + 1) = 16",
+            "options": [
+                "q = 0",
+                "q = 2",
+                "q = 3",
+                "q = 5"
+            ],
+            "correctAnswer": "q = 3",
+            "explanation": "4(q + 1) = 16\nq + 1 = 16/4\nq + 1 = 4\nq = 3"
+        },
+        {
+            "id": "25",
+            "question": "If 4m + 3 = 15, what is m?",
+            "options": [
+                "m = 2",
+                "m = 3",
+                "m = 12/4",
+                "m = 18/4"
+            ],
+            "correctAnswer": "m = 3",
+            "explanation": "4m + 3 = 15\n4m = 15 - 3\n4m = 12\nm = 3"
+        },
+        {
+            "id": "26",
+            "question": "Simplify: (4x)²",
+            "options": [
+                "8x²",
+                "16x²",
+                "4x²",
+                "4²x²"
+            ],
+            "correctAnswer": "16x²",
+            "explanation": "(4x)² = 4²x² = 16x²"
+        },
+        {
+            "id": "27",
+            "question": "Find the value of 4r when r = 3",
+            "options": [
+                "7",
+                "10",
+                "12",
+                "81"
+            ],
+            "correctAnswer": "12",
+            "explanation": "4r = 4(3) = 12"
+        },
+        {
+            "id": "28",
+            "question": "Solve for s: s/3 - 2 = 3",
+            "options": [
+                "s = 3",
+                "s = 9",
+                "s = 15",
+                "s = 21"
+            ],
+            "correctAnswer": "s = 15",
+            "explanation": "s/3 - 2 = 3\ns/3 = 3 + 2\ns/3 = 5\ns = 15"
+        },
+        {
+            "id": "29",
+            "question": "What is the value of -3 × 4 + 5?",
+            "options": [
+                "-7",
+                "-12 + 5",
+                "-7",
+                "-17"
+            ],
+            "correctAnswer": "-7",
+            "explanation": "-3 × 4 + 5 = -12 + 5 = -7"
+        },
+        {
+            "id": "30",
+            "question": "If 6x - 5 = 13, what is x?",
+            "options": [
+                "x = 1.33",
+                "x = 3",
+                "x = 8",
+                "x = 18"
+            ],
+            "correctAnswer": "x = 3",
+            "explanation": "6x - 5 = 13\n6x = 13 + 5\n6x = 18\nx = 3"
+        }
+    ]
+}

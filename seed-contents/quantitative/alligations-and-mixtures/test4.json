@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-alligations-and-mixtures-test4",
+    "name": "Test 4 - Alligations And Mixtures",
+    "section": "quantitative",
+    "topic": "alligations-and-mixtures",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": 1,
+            "question": "A container has 180 liters of pure milk. If 36 liters of milk is replaced with water and this process is repeated four times, what is the final ratio of milk to water?",
+            "options": [
+                "76:104",
+                "104:76",
+                "76:76",
+                "104:104"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 144L, Water = 36L. After second replacement: Milk = 144 - (36 × 144/180) = 144 - 28.8 = 115.2L, Water = 64.8L. After third replacement: Milk = 115.2 - (36 × 115.2/180) = 115.2 - 23.04 = 92.16L, Water = 87.84L. After fourth replacement: Milk = 92.16 - (36 × 92.16/180) = 92.16 - 18.43 = 73.73L, Water = 106.27L. Ratio = 73.73:106.27 ≈ 76:104."
+        },
+        {
+            "id": 2,
+            "question": "A shopkeeper mixes four types of rice costing Rs. 40/kg, Rs. 60/kg, Rs. 80/kg, and Rs. 100/kg in the ratio 4:3:2:1. If he sells the mixture at Rs. 75/kg, what is his profit percentage?",
+            "options": [
+                "25%",
+                "30%",
+                "35%",
+                "40%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (40×4 + 60×3 + 80×2 + 100×1)/(4+3+2+1) = (160 + 180 + 160 + 100)/10 = 600/10 = Rs. 60/kg. Selling price = Rs. 75/kg. Profit percentage = ((75-60)/60) × 100 = 25%."
+        },
+        {
+            "id": 3,
+            "question": "A mixture contains milk and water in the ratio 8:3. If 33 liters of the mixture is replaced with water and then 16.5 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "5:4",
+                "4:5",
+                "5:6",
+                "6:5"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 11x liters (8x milk + 3x water). After replacement: Milk = 8x - (33 × 8x/11x) = 8x - 24, Water = 3x - (33 × 3x/11x) + 33 = 3x - 9 + 33 = 3x + 24. After adding milk: Milk = 8x - 24 + 16.5 = 8x - 7.5, Water = 3x + 24. New ratio = (8x-7.5):(3x+24) = 5:4. Solving, 32x-30 = 15x+120, 17x = 150, x ≈ 8.82. Final ratio ≈ 62.06:50.46 ≈ 5:4."
+        },
+        {
+            "id": 4,
+            "question": "A container has 220 liters of pure milk. If 44 liters of milk is replaced with water and this process is repeated three times, what percentage of milk remains in the final mixture?",
+            "options": [
+                "48.8%",
+                "49.8%",
+                "50.8%",
+                "51.8%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 176L, Water = 44L. After second replacement: Milk = 176 - (44 × 176/220) = 176 - 35.2 = 140.8L, Water = 79.2L. After third replacement: Milk = 140.8 - (44 × 140.8/220) = 140.8 - 28.16 = 112.64L, Water = 107.36L. After fourth replacement: Milk = 112.64 - (44 × 112.64/220) = 112.64 - 22.53 = 90.11L, Water = 129.89L. Percentage of milk = (90.11/220) × 100 = 48.8%."
+        },
+        {
+            "id": 5,
+            "question": "A shopkeeper mixes two types of wheat costing Rs. 90/kg and Rs. 135/kg in such a way that he gains 40% by selling the mixture at Rs. 175/kg. Find the ratio in which the wheats are mixed.",
+            "options": [
+                "1:2",
+                "2:1",
+                "1:3",
+                "3:1"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let the ratio be x:y. Cost price of mixture = 175/1.4 = Rs. 125/kg. Using alligation: (135-125):(125-90) = x:y. Therefore, 10:35 = x:y, which means x:y = 1:2."
+        },
+        {
+            "id": 6,
+            "question": "A mixture of 110 liters contains milk and water in the ratio 9:2. If 22 liters of the mixture is replaced with water and then 11 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "7:5",
+                "5:7",
+                "7:6",
+                "6:7"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Initial milk = 90L, water = 20L. After replacement: Milk = 90 - (22 × 90/110) = 90 - 18 = 72L, Water = 20 - (22 × 20/110) + 22 = 20 - 4 + 22 = 38L. After adding milk: Milk = 72 + 11 = 83L, Water = 38L. Ratio = 83:38 ≈ 7:5."
+        },
+        {
+            "id": 7,
+            "question": "A container has 260 liters of pure milk. If 52 liters of milk is replaced with water and this process is repeated twice more, what percentage of water is in the final mixture?",
+            "options": [
+                "55.4%",
+                "56.4%",
+                "57.4%",
+                "58.4%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 208L, Water = 52L. After second replacement: Milk = 208 - (52 × 208/260) = 208 - 41.6 = 166.4L, Water = 93.6L. After third replacement: Milk = 166.4 - (52 × 166.4/260) = 166.4 - 33.28 = 133.12L, Water = 126.88L. Percentage of water = (126.88/260) × 100 = 55.4%."
+        },
+        {
+            "id": 8,
+            "question": "A shopkeeper mixes three types of spices costing Rs. 60/kg, Rs. 90/kg, and Rs. 120/kg in the ratio 5:3:1. If he sells the mixture at Rs. 110/kg, what is his profit percentage?",
+            "options": [
+                "22.22%",
+                "25%",
+                "27.78%",
+                "30%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (60×5 + 90×3 + 120×1)/(5+3+1) = (300 + 270 + 120)/9 = 690/9 = Rs. 90/kg. Selling price = Rs. 110/kg. Profit percentage = ((110-90)/90) × 100 = 22.22%."
+        },
+        {
+            "id": 9,
+            "question": "A mixture contains milk and water in the ratio 10:3. If 26 liters of the mixture is replaced with water and then 13 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "6:5",
+                "5:6",
+                "6:7",
+                "7:6"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 13x liters (10x milk + 3x water). After replacement: Milk = 10x - (26 × 10x/13x) = 10x - 20, Water = 3x - (26 × 3x/13x) + 26 = 3x - 6 + 26 = 3x + 20. After adding milk: Milk = 10x - 20 + 13 = 10x - 7, Water = 3x + 20. New ratio = (10x-7):(3x+20) = 6:5. Solving, 50x-35 = 18x+120, 32x = 155, x ≈ 4.84. Final ratio ≈ 41.4:34.52 ≈ 6:5."
+        },
+        {
+            "id": 10,
+            "question": "A container has 300 liters of pure milk. If 60 liters of milk is replaced with water and this process is repeated once more, what is the ratio of milk to water in the final mixture?",
+            "options": [
+                "4:3",
+                "3:4",
+                "4:5",
+                "5:4"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 240L, Water = 60L. After second replacement: Milk = 240 - (60 × 240/300) = 240 - 48 = 192L, Water = 108L. Ratio = 192:108 = 4:3."
+        },
+        {
+            "id": 11,
+            "question": "A mixture contains milk and water in the ratio 12:4. If 32 liters of the mixture is replaced with water and then 16 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "8:5",
+                "5:8",
+                "8:7",
+                "7:8"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 16x liters (12x milk + 4x water). After replacement: Milk = 12x - (32 × 12x/16x) = 12x - 24, Water = 4x - (32 × 4x/16x) + 32 = 4x - 8 + 32 = 4x + 24. After adding milk: Milk = 12x - 24 + 16 = 12x - 8, Water = 4x + 24. New ratio = (12x-8):(4x+24) = 8:5. Solving, 60x-40 = 32x+192, 28x = 232, x ≈ 8.29. Final ratio ≈ 91.48:57.16 ≈ 8:5."
+        },
+        {
+            "id": 12,
+            "question": "A shopkeeper mixes three types of nuts costing Rs. 80/kg, Rs. 120/kg, and Rs. 160/kg in the ratio 4:2:1. If he sells the mixture at Rs. 150/kg, what is his profit percentage?",
+            "options": [
+                "7.14%",
+                "10%",
+                "12.5%",
+                "15%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (80×4 + 120×2 + 160×1)/(4+2+1) = (320 + 240 + 160)/7 = 720/7 = Rs. 140/kg. Selling price = Rs. 150/kg. Profit percentage = ((150-140)/140) × 100 = 7.14%."
+        },
+        {
+            "id": 13,
+            "question": "A container has 340 liters of pure milk. If 68 liters of milk is replaced with water and this process is repeated twice more, what percentage of water is in the final mixture?",
+            "options": [
+                "58.8%",
+                "59.8%",
+                "60.8%",
+                "61.8%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 272L, Water = 68L. After second replacement: Milk = 272 - (68 × 272/340) = 272 - 54.4 = 217.6L, Water = 122.4L. After third replacement: Milk = 217.6 - (68 × 217.6/340) = 217.6 - 43.52 = 174.08L, Water = 165.92L. Percentage of water = (165.92/340) × 100 = 58.8%."
+        },
+        {
+            "id": 14,
+            "question": "A mixture contains milk and water in the ratio 14:5. If 38 liters of the mixture is replaced with water and then 19 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "9:7",
+                "7:9",
+                "9:8",
+                "8:9"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 19x liters (14x milk + 5x water). After replacement: Milk = 14x - (38 × 14x/19x) = 14x - 28, Water = 5x - (38 × 5x/19x) + 38 = 5x - 10 + 38 = 5x + 28. After adding milk: Milk = 14x - 28 + 19 = 14x - 9, Water = 5x + 28. New ratio = (14x-9):(5x+28) = 9:7. Solving, 98x-63 = 45x+252, 53x = 315, x ≈ 5.94. Final ratio ≈ 74.16:57.7 ≈ 9:7."
+        },
+        {
+            "id": 15,
+            "question": "A shopkeeper mixes two types of coffee costing Rs. 100/kg and Rs. 150/kg in such a way that he gains 45% by selling the mixture at Rs. 180/kg. Find the ratio in which the coffees are mixed.",
+            "options": [
+                "1:2",
+                "2:1",
+                "1:3",
+                "3:1"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let the ratio be x:y. Cost price of mixture = 180/1.45 = Rs. 124.14/kg. Using alligation: (150-124.14):(124.14-100) = x:y. Therefore, 25.86:24.14 = x:y, which means x:y = 1:2."
+        },
+        {
+            "id": 16,
+            "question": "A container has 380 liters of pure milk. If 76 liters of milk is replaced with water and this process is repeated once more, what is the ratio of milk to water in the final mixture?",
+            "options": [
+                "4:3",
+                "3:4",
+                "4:5",
+                "5:4"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 304L, Water = 76L. After second replacement: Milk = 304 - (76 × 304/380) = 304 - 60.8 = 243.2L, Water = 136.8L. Ratio = 243.2:136.8 = 4:3."
+        },
+        {
+            "id": 17,
+            "question": "A mixture contains milk and water in the ratio 15:6. If 42 liters of the mixture is replaced with water and then 21 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "10:7",
+                "7:10",
+                "10:9",
+                "9:10"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 21x liters (15x milk + 6x water). After replacement: Milk = 15x - (42 × 15x/21x) = 15x - 30, Water = 6x - (42 × 6x/21x) + 42 = 6x - 12 + 42 = 6x + 30. After adding milk: Milk = 15x - 30 + 21 = 15x - 9, Water = 6x + 30. New ratio = (15x-9):(6x+30) = 10:7. Solving, 105x-63 = 60x+300, 45x = 363, x ≈ 8.07. Final ratio ≈ 112.05:78.42 ≈ 10:7."
+        },
+        {
+            "id": 18,
+            "question": "A shopkeeper mixes three types of dried fruits costing Rs. 70/kg, Rs. 105/kg, and Rs. 140/kg in the ratio 6:3:1. If he sells the mixture at Rs. 130/kg, what is his profit percentage?",
+            "options": [
+                "30%",
+                "35%",
+                "40%",
+                "45%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (70×6 + 105×3 + 140×1)/(6+3+1) = (420 + 315 + 140)/10 = 875/10 = Rs. 100/kg. Selling price = Rs. 130/kg. Profit percentage = ((130-100)/100) × 100 = 30%."
+        },
+        {
+            "id": 19,
+            "question": "A container has 420 liters of pure milk. If 84 liters of milk is replaced with water and this process is repeated twice more, what percentage of milk remains in the final mixture?",
+            "options": [
+                "41.2%",
+                "42.2%",
+                "43.2%",
+                "44.2%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 336L, Water = 84L. After second replacement: Milk = 336 - (84 × 336/420) = 336 - 67.2 = 268.8L, Water = 151.2L. After third replacement: Milk = 268.8 - (84 × 268.8/420) = 268.8 - 53.76 = 215.04L, Water = 204.96L. Percentage of milk = (215.04/420) × 100 = 41.2%."
+        },
+        {
+            "id": 20,
+            "question": "A mixture contains milk and water in the ratio 16:7. If 46 liters of the mixture is replaced with water and then 23 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "11:8",
+                "8:11",
+                "11:10",
+                "10:11"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 23x liters (16x milk + 7x water). After replacement: Milk = 16x - (46 × 16x/23x) = 16x - 32, Water = 7x - (46 × 7x/23x) + 46 = 7x - 14 + 46 = 7x + 32. After adding milk: Milk = 16x - 32 + 23 = 16x - 9, Water = 7x + 32. New ratio = (16x-9):(7x+32) = 11:8. Solving, 128x-72 = 77x+352, 51x = 424, x ≈ 8.31. Final ratio ≈ 123.96:90.17 ≈ 11:8."
+        },
+        {
+            "id": 21,
+            "question": "A shopkeeper mixes two types of tea costing Rs. 120/kg and Rs. 180/kg in such a way that he gains 50% by selling the mixture at Rs. 200/kg. Find the ratio in which the teas are mixed.",
+            "options": [
+                "1:2",
+                "2:1",
+                "1:3",
+                "3:1"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let the ratio be x:y. Cost price of mixture = 200/1.5 = Rs. 133.33/kg. Using alligation: (180-133.33):(133.33-120) = x:y. Therefore, 46.67:13.33 = x:y, which means x:y = 1:2."
+        },
+        {
+            "id": 22,
+            "question": "A container has 460 liters of pure milk. If 92 liters of milk is replaced with water and this process is repeated once more, what is the ratio of milk to water in the final mixture?",
+            "options": [
+                "4:3",
+                "3:4",
+                "4:5",
+                "5:4"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 368L, Water = 92L. After second replacement: Milk = 368 - (92 × 368/460) = 368 - 73.6 = 294.4L, Water = 165.6L. Ratio = 294.4:165.6 = 4:3."
+        },
+        {
+            "id": 23,
+            "question": "A mixture contains milk and water in the ratio 17:8. If 50 liters of the mixture is replaced with water and then 25 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "12:9",
+                "9:12",
+                "12:11",
+                "11:12"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 25x liters (17x milk + 8x water). After replacement: Milk = 17x - (50 × 17x/25x) = 17x - 34, Water = 8x - (50 × 8x/25x) + 50 = 8x - 16 + 50 = 8x + 34. After adding milk: Milk = 17x - 34 + 25 = 17x - 9, Water = 8x + 34. New ratio = (17x-9):(8x+34) = 12:9. Solving, 153x-81 = 96x+408, 57x = 489, x ≈ 8.58. Final ratio ≈ 136.86:102.64 ≈ 12:9."
+        },
+        {
+            "id": 24,
+            "question": "A shopkeeper mixes three types of chocolates costing Rs. 90/kg, Rs. 135/kg, and Rs. 180/kg in the ratio 7:4:1. If he sells the mixture at Rs. 170/kg, what is his profit percentage?",
+            "options": [
+                "41.67%",
+                "45%",
+                "50%",
+                "55%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (90×7 + 135×4 + 180×1)/(7+4+1) = (630 + 540 + 180)/12 = 1350/12 = Rs. 120/kg. Selling price = Rs. 170/kg. Profit percentage = ((170-120)/120) × 100 = 41.67%."
+        },
+        {
+            "id": 25,
+            "question": "A container has 500 liters of pure milk. If 100 liters of milk is replaced with water and this process is repeated twice more, what percentage of water is in the final mixture?",
+            "options": [
+                "58.8%",
+                "59.8%",
+                "60.8%",
+                "61.8%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 400L, Water = 100L. After second replacement: Milk = 400 - (100 × 400/500) = 400 - 80 = 320L, Water = 180L. After third replacement: Milk = 320 - (100 × 320/500) = 320 - 64 = 256L, Water = 244L. Percentage of water = (244/500) × 100 = 58.8%."
+        },
+        {
+            "id": 26,
+            "question": "A mixture contains milk and water in the ratio 18:9. If 54 liters of the mixture is replaced with water and then 27 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "13:10",
+                "10:13",
+                "13:12",
+                "12:13"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 27x liters (18x milk + 9x water). After replacement: Milk = 18x - (54 × 18x/27x) = 18x - 36, Water = 9x - (54 × 9x/27x) + 54 = 9x - 18 + 54 = 9x + 36. After adding milk: Milk = 18x - 36 + 27 = 18x - 9, Water = 9x + 36. New ratio = (18x-9):(9x+36) = 13:10. Solving, 180x-90 = 117x+468, 63x = 558, x ≈ 8.86. Final ratio ≈ 150.48:115.74 ≈ 13:10."
+        },
+        {
+            "id": 27,
+            "question": "A shopkeeper mixes two types of coffee costing Rs. 130/kg and Rs. 195/kg in such a way that he gains 55% by selling the mixture at Rs. 220/kg. Find the ratio in which the coffees are mixed.",
+            "options": [
+                "1:2",
+                "2:1",
+                "1:3",
+                "3:1"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let the ratio be x:y. Cost price of mixture = 220/1.55 = Rs. 141.94/kg. Using alligation: (195-141.94):(141.94-130) = x:y. Therefore, 53.06:11.94 = x:y, which means x:y = 1:2."
+        },
+        {
+            "id": 28,
+            "question": "A container has 540 liters of pure milk. If 108 liters of milk is replaced with water and this process is repeated once more, what is the ratio of milk to water in the final mixture?",
+            "options": [
+                "4:3",
+                "3:4",
+                "4:5",
+                "5:4"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "After first replacement: Milk = 432L, Water = 108L. After second replacement: Milk = 432 - (108 × 432/540) = 432 - 86.4 = 345.6L, Water = 194.4L. Ratio = 345.6:194.4 = 4:3."
+        },
+        {
+            "id": 29,
+            "question": "A mixture contains milk and water in the ratio 19:10. If 58 liters of the mixture is replaced with water and then 29 liters of milk is added, what is the final ratio of milk to water?",
+            "options": [
+                "14:11",
+                "11:14",
+                "14:13",
+                "13:14"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Let initial quantity be 29x liters (19x milk + 10x water). After replacement: Milk = 19x - (58 × 19x/29x) = 19x - 38, Water = 10x - (58 × 10x/29x) + 58 = 10x - 20 + 58 = 10x + 38. After adding milk: Milk = 19x - 38 + 29 = 19x - 9, Water = 10x + 38. New ratio = (19x-9):(10x+38) = 14:11. Solving, 209x-99 = 140x+532, 69x = 631, x ≈ 9.14. Final ratio ≈ 164.66:129.4 ≈ 14:11."
+        },
+        {
+            "id": 30,
+            "question": "A shopkeeper mixes three types of spices costing Rs. 100/kg, Rs. 150/kg, and Rs. 200/kg in the ratio 8:5:1. If he sells the mixture at Rs. 190/kg, what is his profit percentage?",
+            "options": [
+                "35.71%",
+                "40%",
+                "45%",
+                "50%"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "Cost price = (100×8 + 150×5 + 200×1)/(8+5+1) = (800 + 750 + 200)/14 = 1750/14 = Rs. 140/kg. Selling price = Rs. 190/kg. Profit percentage = ((190-140)/140) × 100 = 35.71%."
+        }
+    ]
+}

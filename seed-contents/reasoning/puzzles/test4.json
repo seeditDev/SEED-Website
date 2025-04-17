@@ -1,0 +1,371 @@
+{
+    "id": "reasoning-puzzles-test4",
+    "name": "Test 4 - Puzzles",
+    "section": "reasoning",
+    "topic": "puzzles",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in Puzzles"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in Puzzles"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in Puzzles"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in Puzzles"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in Puzzles"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in Puzzles"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in Puzzles"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in Puzzles"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in Puzzles"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in Puzzles"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Puzzles"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Puzzles"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Puzzles"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Puzzles"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Puzzles"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Puzzles"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Puzzles"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Puzzles"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Puzzles"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Puzzles"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Puzzles"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Puzzles"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Puzzles"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Puzzles"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Puzzles"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Puzzles"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Puzzles"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Puzzles"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Puzzles"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Puzzles",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Puzzles"
+        }
+    ]
+}

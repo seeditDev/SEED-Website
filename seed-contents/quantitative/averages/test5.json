@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-averages-test5",
+    "name": "Test 5 - Averages",
+    "section": "quantitative",
+    "topic": "averages",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "The average of 8 consecutive numbers is 24.5. What is the sum of the first and last numbers?",
+            "options": [
+                "45",
+                "47",
+                "49",
+                "51"
+            ],
+            "correctAnswer": "49",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 7\n3) Average = 24.5\n4) (8x + 28) ÷ 8 = 24.5\n5) 8x + 28 = 196\n6) 8x = 168\n7) x = 21\n8) Last number = 28\n9) Sum = 21 + 28 = 49"
+        },
+        {
+            "id": "2",
+            "question": "The average temperature for a week is 25°C. If the temperature on Monday is excluded, the average becomes 24°C. What was the temperature on Monday?",
+            "options": [
+                "31°C",
+                "32°C",
+                "33°C",
+                "34°C"
+            ],
+            "correctAnswer": "31°C",
+            "explanation": "Let's solve this step by step:\n1) Total for week = 7 × 25 = 175°C\n2) Total for 6 days = 6 × 24 = 144°C\n3) Monday's temperature = 175 - 144 = 31°C"
+        },
+        {
+            "id": "3",
+            "question": "The average of 6 consecutive even numbers is 25. What is the largest number?",
+            "options": [
+                "28",
+                "30",
+                "32",
+                "34"
+            ],
+            "correctAnswer": "30",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+2, x+4, x+6, x+8, x+10\n2) Average = 25\n3) (6x + 30) ÷ 6 = 25\n4) 6x + 30 = 150\n5) 6x = 120\n6) x = 20\n7) Largest number = x + 10 = 30"
+        },
+        {
+            "id": "4",
+            "question": "A student's average marks in 5 subjects is 82. If his marks in a sixth subject are included, his average drops to 80. What are his marks in the sixth subject?",
+            "options": [
+                "70",
+                "72",
+                "74",
+                "76"
+            ],
+            "correctAnswer": "70",
+            "explanation": "Let's solve this step by step:\n1) Original total = 5 × 82 = 410\n2) New total = 6 × 80 = 480\n3) Sixth subject marks = 480 - 410 = 70"
+        },
+        {
+            "id": "5",
+            "question": "The average of 7 consecutive odd numbers is 21. What is the middle number?",
+            "options": [
+                "19",
+                "21",
+                "23",
+                "25"
+            ],
+            "correctAnswer": "21",
+            "explanation": "Let's solve this step by step:\n1) In 7 consecutive odd numbers, middle number is the average\n2) Therefore, middle number = 21\n3) Numbers are 15, 17, 19, 21, 23, 25, 27"
+        },
+        {
+            "id": "6",
+            "question": "The average of 9 numbers is 36. If one number is changed from 42 to 30, what is the new average?",
+            "options": [
+                "34",
+                "35",
+                "36",
+                "37"
+            ],
+            "correctAnswer": "34",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 36 = 324\n2) Change in number = 42 - 30 = 12\n3) New total = 324 - 12 = 312\n4) New average = 312 ÷ 9 = 34"
+        },
+        {
+            "id": "7",
+            "question": "The average of 5 consecutive multiples of 4 is 20. What is the smallest number?",
+            "options": [
+                "12",
+                "16",
+                "20",
+                "24"
+            ],
+            "correctAnswer": "12",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+4, x+8, x+12, x+16\n2) Average = 20\n3) (5x + 40) ÷ 5 = 20\n4) 5x + 40 = 100\n5) 5x = 60\n6) x = 12"
+        },
+        {
+            "id": "8",
+            "question": "The average of 8 numbers is 28. Two numbers are removed and their average becomes 30. If one of the removed numbers is 20, what is the other removed number?",
+            "options": [
+                "22",
+                "24",
+                "26",
+                "28"
+            ],
+            "correctAnswer": "24",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 28 = 224\n2) New total = 6 × 30 = 180\n3) Sum of removed numbers = 224 - 180 = 44\n4) One number = 20\n5) Other number = 44 - 20 = 24"
+        },
+        {
+            "id": "9",
+            "question": "The average of 6 consecutive numbers is 22.5. What is the product of the smallest and largest numbers?",
+            "options": [
+                "380",
+                "385",
+                "390",
+                "395"
+            ],
+            "correctAnswer": "380",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 5\n3) Average = 22.5\n4) (6x + 15) ÷ 6 = 22.5\n5) 6x + 15 = 135\n6) 6x = 120\n7) x = 20\n8) Last number = 25\n9) Product = 20 × 25 = 380"
+        },
+        {
+            "id": "10",
+            "question": "The average of 4 consecutive multiples of 3 is 18. What is the largest number?",
+            "options": [
+                "21",
+                "24",
+                "27",
+                "30"
+            ],
+            "correctAnswer": "21",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+3, x+6, x+9\n2) Average = 18\n3) (4x + 18) ÷ 4 = 18\n4) 4x + 18 = 72\n5) 4x = 54\n6) x = 15\n7) Largest number = x + 9 = 21"
+        },
+        {
+            "id": "11",
+            "question": "The average of 7 numbers is 32. If one number is excluded, the average becomes 30. What is the excluded number?",
+            "options": [
+                "44",
+                "46",
+                "48",
+                "50"
+            ],
+            "correctAnswer": "44",
+            "explanation": "Let's solve this step by step:\n1) Original total = 7 × 32 = 224\n2) New total = 6 × 30 = 180\n3) Excluded number = 224 - 180 = 44"
+        },
+        {
+            "id": "12",
+            "question": "The average of 5 consecutive even numbers is 26. What is the sum of the first and last numbers?",
+            "options": [
+                "50",
+                "52",
+                "54",
+                "56"
+            ],
+            "correctAnswer": "52",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+2, x+4, x+6, x+8\n2) Average = 26\n3) (5x + 20) ÷ 5 = 26\n4) 5x + 20 = 130\n5) 5x = 110\n6) x = 22\n7) Last number = 30\n8) Sum = 22 + 30 = 52"
+        },
+        {
+            "id": "13",
+            "question": "The average of 8 numbers is 40. If each number is increased by 5, what is the new average?",
+            "options": [
+                "42",
+                "43",
+                "44",
+                "45"
+            ],
+            "correctAnswer": "45",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 40 = 320\n2) When each number is increased by 5, the total increases by 8 × 5 = 40\n3) New total = 320 + 40 = 360\n4) New average = 360 ÷ 8 = 45"
+        },
+        {
+            "id": "14",
+            "question": "The average of 6 consecutive odd numbers is 24. What is the middle number?",
+            "options": [
+                "22",
+                "24",
+                "26",
+                "28"
+            ],
+            "correctAnswer": "24",
+            "explanation": "Let's solve this step by step:\n1) In 6 consecutive odd numbers, average of middle two numbers is the overall average\n2) Therefore, middle numbers are 23 and 25\n3) Numbers are 19, 21, 23, 25, 27, 29"
+        },
+        {
+            "id": "15",
+            "question": "The average of 9 numbers is 45. If one number is changed from 50 to 40, what is the new average?",
+            "options": [
+                "43",
+                "44",
+                "45",
+                "46"
+            ],
+            "correctAnswer": "44",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 45 = 405\n2) Change in number = 50 - 40 = 10\n3) New total = 405 - 10 = 395\n4) New average = 395 ÷ 9 = 44"
+        },
+        {
+            "id": "16",
+            "question": "The average of 7 consecutive multiples of 5 is 35. What is the smallest number?",
+            "options": [
+                "20",
+                "25",
+                "30",
+                "35"
+            ],
+            "correctAnswer": "20",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+5, x+10, x+15, x+20, x+25, x+30\n2) Average = 35\n3) (7x + 105) ÷ 7 = 35\n4) 7x + 105 = 245\n5) 7x = 140\n6) x = 20"
+        },
+        {
+            "id": "17",
+            "question": "The average of 8 numbers is 36. Two numbers are removed and their average becomes 38. If one of the removed numbers is 30, what is the other removed number?",
+            "options": [
+                "34",
+                "36",
+                "38",
+                "40"
+            ],
+            "correctAnswer": "38",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 36 = 288\n2) New total = 6 × 38 = 228\n3) Sum of removed numbers = 288 - 228 = 60\n4) One number = 30\n5) Other number = 60 - 30 = 38"
+        },
+        {
+            "id": "18",
+            "question": "The average of 6 consecutive numbers is 27.5. What is the product of the smallest and largest numbers?",
+            "options": [
+                "650",
+                "675",
+                "700",
+                "725"
+            ],
+            "correctAnswer": "650",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 5\n3) Average = 27.5\n4) (6x + 15) ÷ 6 = 27.5\n5) 6x + 15 = 165\n6) 6x = 150\n7) x = 25\n8) Last number = 30\n9) Product = 25 × 30 = 650"
+        },
+        {
+            "id": "19",
+            "question": "The average of 5 consecutive multiples of 4 is 24. What is the largest number?",
+            "options": [
+                "28",
+                "32",
+                "36",
+                "40"
+            ],
+            "correctAnswer": "28",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+4, x+8, x+12, x+16\n2) Average = 24\n3) (5x + 40) ÷ 5 = 24\n4) 5x + 40 = 120\n5) 5x = 80\n6) x = 16\n7) Largest number = x + 16 = 28"
+        },
+        {
+            "id": "20",
+            "question": "The average of 7 numbers is 38. If each number is decreased by 4, what is the new average?",
+            "options": [
+                "32",
+                "33",
+                "34",
+                "35"
+            ],
+            "correctAnswer": "34",
+            "explanation": "Let's solve this step by step:\n1) Original total = 7 × 38 = 266\n2) When each number is decreased by 4, the total decreases by 7 × 4 = 28\n3) New total = 266 - 28 = 238\n4) New average = 238 ÷ 7 = 34"
+        },
+        {
+            "id": "21",
+            "question": "The average of 8 consecutive numbers is 26.5. What is the sum of the first and last numbers?",
+            "options": [
+                "51",
+                "53",
+                "55",
+                "57"
+            ],
+            "correctAnswer": "53",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 7\n3) Average = 26.5\n4) (8x + 28) ÷ 8 = 26.5\n5) 8x + 28 = 212\n6) 8x = 184\n7) x = 23\n8) Last number = 30\n9) Sum = 23 + 30 = 53"
+        },
+        {
+            "id": "22",
+            "question": "The average of 6 consecutive even numbers is 27. What is the largest number?",
+            "options": [
+                "30",
+                "32",
+                "34",
+                "36"
+            ],
+            "correctAnswer": "32",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+2, x+4, x+6, x+8, x+10\n2) Average = 27\n3) (6x + 30) ÷ 6 = 27\n4) 6x + 30 = 162\n5) 6x = 132\n6) x = 22\n7) Largest number = x + 10 = 32"
+        },
+        {
+            "id": "23",
+            "question": "The average of 9 numbers is 42. If one number is excluded, the average becomes 40. What is the excluded number?",
+            "options": [
+                "58",
+                "60",
+                "62",
+                "64"
+            ],
+            "correctAnswer": "58",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 42 = 378\n2) New total = 8 × 40 = 320\n3) Excluded number = 378 - 320 = 58"
+        },
+        {
+            "id": "24",
+            "question": "The average of 5 consecutive multiples of 3 is 21. What is the smallest number?",
+            "options": [
+                "15",
+                "18",
+                "21",
+                "24"
+            ],
+            "correctAnswer": "15",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+3, x+6, x+9, x+12\n2) Average = 21\n3) (5x + 30) ÷ 5 = 21\n4) 5x + 30 = 105\n5) 5x = 75\n6) x = 15"
+        },
+        {
+            "id": "25",
+            "question": "The average of 7 numbers is 34. If each number is increased by 3, what is the new average?",
+            "options": [
+                "35",
+                "36",
+                "37",
+                "38"
+            ],
+            "correctAnswer": "37",
+            "explanation": "Let's solve this step by step:\n1) Original total = 7 × 34 = 238\n2) When each number is increased by 3, the total increases by 7 × 3 = 21\n3) New total = 238 + 21 = 259\n4) New average = 259 ÷ 7 = 37"
+        },
+        {
+            "id": "26",
+            "question": "The average of 8 consecutive odd numbers is 28. What is the middle number?",
+            "options": [
+                "26",
+                "28",
+                "30",
+                "32"
+            ],
+            "correctAnswer": "28",
+            "explanation": "Let's solve this step by step:\n1) In 8 consecutive odd numbers, average of middle two numbers is the overall average\n2) Therefore, middle numbers are 27 and 29\n3) Numbers are 21, 23, 25, 27, 29, 31, 33, 35"
+        },
+        {
+            "id": "27",
+            "question": "The average of 6 numbers is 32. If one number is changed from 38 to 26, what is the new average?",
+            "options": [
+                "30",
+                "31",
+                "32",
+                "33"
+            ],
+            "correctAnswer": "30",
+            "explanation": "Let's solve this step by step:\n1) Original total = 6 × 32 = 192\n2) Change in number = 38 - 26 = 12\n3) New total = 192 - 12 = 180\n4) New average = 180 ÷ 6 = 30"
+        },
+        {
+            "id": "28",
+            "question": "The average of 5 consecutive multiples of 4 is 28. What is the largest number?",
+            "options": [
+                "32",
+                "36",
+                "40",
+                "44"
+            ],
+            "correctAnswer": "36",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+4, x+8, x+12, x+16\n2) Average = 28\n3) (5x + 40) ÷ 5 = 28\n4) 5x + 40 = 140\n5) 5x = 100\n6) x = 20\n7) Largest number = x + 16 = 36"
+        },
+        {
+            "id": "29",
+            "question": "The average of 9 numbers is 44. Two numbers are removed and their average becomes 46. If one of the removed numbers is 40, what is the other removed number?",
+            "options": [
+                "42",
+                "44",
+                "46",
+                "48"
+            ],
+            "correctAnswer": "46",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 44 = 396\n2) New total = 7 × 46 = 322\n3) Sum of removed numbers = 396 - 322 = 74\n4) One number = 40\n5) Other number = 74 - 40 = 46"
+        },
+        {
+            "id": "30",
+            "question": "The average of 7 consecutive numbers is 29.5. What is the product of the smallest and largest numbers?",
+            "options": [
+                "780",
+                "800",
+                "820",
+                "840"
+            ],
+            "correctAnswer": "780",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 6\n3) Average = 29.5\n4) (7x + 21) ÷ 7 = 29.5\n5) 7x + 21 = 206.5\n6) 7x = 185.5\n7) x = 26.5\n8) Last number = 32.5\n9) Product = 26.5 × 32.5 = 780"
+        }
+    ]
+}

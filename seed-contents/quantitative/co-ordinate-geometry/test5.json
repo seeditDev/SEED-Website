@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-co-ordinate-geometry-test5",
+    "name": "Test 5 - Co Ordinate Geometry",
+    "section": "quantitative",
+    "topic": "co-ordinate-geometry",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Find the area of the triangle formed by the lines 5x + 2y = 10, x = 0, and y = 0.",
+            "options": [
+                "4 square units",
+                "5 square units",
+                "6 square units",
+                "7 square units"
+            ],
+            "correctAnswer": "5 square units",
+            "explanation": "Let's solve this step by step:\n1) Find points of intersection\n2) With x-axis: 5x = 10, x = 2\n3) With y-axis: 2y = 10, y = 5\n4) Base = 2, height = 5\n5) Area = ½ × base × height\n6) Area = ½ × 2 × 5\n7) Area = 5 square units"
+        },
+        {
+            "id": "2",
+            "question": "Find the equation of the circle passing through points (4,4), (8,4), and (4,8).",
+            "options": [
+                "(x-6)² + (y-6)² = 8",
+                "(x-6)² + (y-6)² = 10",
+                "(x-6)² + (y-6)² = 12",
+                "(x-6)² + (y-6)² = 14"
+            ],
+            "correctAnswer": "(x-6)² + (y-6)² = 8",
+            "explanation": "Let's solve this step by step:\n1) The points form a right triangle\n2) Center is at midpoint of hypotenuse\n3) Center = ((4+8)/2, (4+8)/2) = (6,6)\n4) Radius = distance from center to (4,4)\n5) Radius = √(2² + 2²) = √8\n6) Therefore, equation is (x-6)² + (y-6)² = 8"
+        },
+        {
+            "id": "3",
+            "question": "Find the distance between the parallel lines 7x + 24y = 28 and 7x + 24y = 56.",
+            "options": [
+                "1.0",
+                "1.2",
+                "1.4",
+                "1.6"
+            ],
+            "correctAnswer": "1.2",
+            "explanation": "Let's solve this step by step:\n1) For parallel lines ax + by + c₁ = 0 and ax + by + c₂ = 0\n2) Distance = |c₂ - c₁|/√(a² + b²)\n3) Here, a = 7, b = 24, c₁ = -28, c₂ = -56\n4) Distance = |-56 - (-28)|/√(7² + 24²)\n5) Distance = 28/√625\n6) Distance = 28/25\n7) Distance = 1.2"
+        },
+        {
+            "id": "4",
+            "question": "Find the equation of the line passing through (5,6) and making an angle of 30° with the x-axis.",
+            "options": [
+                "y = (1/√3)x + 5",
+                "y = √3x + 2",
+                "y = (1/√3)x + 4",
+                "y = √3x + 1"
+            ],
+            "correctAnswer": "y = (1/√3)x + 4",
+            "explanation": "Let's solve this step by step:\n1) Line making 30° has slope m = tan(30°) = 1/√3\n2) Using point-slope form: y - y₁ = m(x - x₁)\n3) y - 6 = (1/√3)(x - 5)\n4) y - 6 = (1/√3)x - 5/√3\n5) y = (1/√3)x + 4"
+        },
+        {
+            "id": "5",
+            "question": "Find the area of the quadrilateral formed by the lines x = 5, y = 5, x = 9, and y = 8.",
+            "options": [
+                "10 square units",
+                "12 square units",
+                "14 square units",
+                "16 square units"
+            ],
+            "correctAnswer": "12 square units",
+            "explanation": "Let's solve this step by step:\n1) This is a rectangle with length 4 and width 3\n2) Area = length × width\n3) Area = 4 × 3\n4) Area = 12 square units"
+        },
+        {
+            "id": "6",
+            "question": "Find the equation of the line passing through the origin and perpendicular to 7x + 24y = 28.",
+            "options": [
+                "24x - 7y = 0",
+                "7x - 24y = 0",
+                "24x + 7y = 0",
+                "7x + 24y = 0"
+            ],
+            "correctAnswer": "24x - 7y = 0",
+            "explanation": "Let's solve this step by step:\n1) First find slope of given line\n2) 24y = -7x + 28\n3) y = (-7/24)x + 28/24\n4) Slope of given line = -7/24\n5) For perpendicular lines, m₁m₂ = -1\n6) (-7/24)m₂ = -1\n7) m₂ = 24/7\n8) Using point-slope form: y = (24/7)x"
+        },
+        {
+            "id": "7",
+            "question": "Find the distance of point (8,10) from the line 5x - 12y + 15 = 0.",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "3",
+            "explanation": "Let's solve this step by step:\n1) Using distance formula: d = |ax₁ + by₁ + c|/√(a² + b²)\n2) Here, a = 5, b = -12, c = 15, x₁ = 8, y₁ = 10\n3) d = |5(8) + (-12)(10) + 15|/√(5² + (-12)²)\n4) d = |40 - 120 + 15|/√(25 + 144)\n5) d = |-65|/√169\n6) d = 65/13\n7) d = 3"
+        },
+        {
+            "id": "8",
+            "question": "Find the equation of the circle with center (7,9) and passing through point (4,5).",
+            "options": [
+                "(x-7)² + (y-9)² = 25",
+                "(x-7)² + (y-9)² = 30",
+                "(x-7)² + (y-9)² = 35",
+                "(x-7)² + (y-9)² = 40"
+            ],
+            "correctAnswer": "(x-7)² + (y-9)² = 25",
+            "explanation": "Let's solve this step by step:\n1) Center is at (7,9)\n2) Radius = distance from center to (4,5)\n3) Radius = √[(4-7)² + (5-9)²]\n4) Radius = √[9 + 16]\n5) Radius = √25 = 5\n6) Therefore, equation is (x-7)² + (y-9)² = 25"
+        },
+        {
+            "id": "9",
+            "question": "Find the slope of the line passing through points (-4,5) and (8,-3).",
+            "options": [
+                "-2/3",
+                "-3/4",
+                "-4/5",
+                "-5/6"
+            ],
+            "correctAnswer": "-2/3",
+            "explanation": "Let's solve this step by step:\n1) Using slope formula: m = (y₂-y₁)/(x₂-x₁)\n2) Here, x₁ = -4, y₁ = 5, x₂ = 8, y₂ = -3\n3) m = (-3-5)/(8-(-4))\n4) m = -8/12\n5) m = -2/3"
+        },
+        {
+            "id": "10",
+            "question": "Find the equation of the line with slope -4 and y-intercept 7.",
+            "options": [
+                "y = -4x + 7",
+                "y = 4x + 7",
+                "y = -4x - 7",
+                "y = 4x - 7"
+            ],
+            "correctAnswer": "y = -4x + 7",
+            "explanation": "Let's solve this step by step:\n1) Using slope-intercept form: y = mx + b\n2) Here, m = -4, b = 7\n3) y = -4x + 7"
+        },
+        {
+            "id": "11",
+            "question": "Find the area of the triangle formed by the lines y = 7x, y = -7x, and y = 14.",
+            "options": [
+                "2 square units",
+                "4 square units",
+                "6 square units",
+                "8 square units"
+            ],
+            "correctAnswer": "4 square units",
+            "explanation": "Let's solve this step by step:\n1) Find points of intersection\n2) y = 7x and y = 14: x = 2\n3) y = -7x and y = 14: x = -2\n4) Base = 4 (from -2 to 2)\n5) Height = 14\n6) Area = ½ × base × height\n7) Area = ½ × 4 × 14\n8) Area = 4 square units"
+        },
+        {
+            "id": "12",
+            "question": "Find the equation of the line passing through (6,7) and parallel to the line joining (4,5) and (8,13).",
+            "options": [
+                "y = 2x - 5",
+                "y = 2x + 5",
+                "y = 2x - 3",
+                "y = 2x + 3"
+            ],
+            "correctAnswer": "y = 2x - 5",
+            "explanation": "Let's solve this step by step:\n1) First find slope of given line\n2) m = (13-5)/(8-4) = 8/4 = 2\n3) Parallel line has same slope\n4) Using point-slope form: y - y₁ = m(x - x₁)\n5) y - 7 = 2(x - 6)\n6) y - 7 = 2x - 12\n7) y = 2x - 5"
+        },
+        {
+            "id": "13",
+            "question": "Find the distance between points A(-6,5) and B(8,-3).",
+            "options": [
+                "10√2",
+                "12√2",
+                "14√2",
+                "16√2"
+            ],
+            "correctAnswer": "14√2",
+            "explanation": "Let's solve this step by step:\n1) Using distance formula: d = √[(x₂-x₁)² + (y₂-y₁)²]\n2) Here, x₁ = -6, y₁ = 5, x₂ = 8, y₂ = -3\n3) d = √[(8-(-6))² + (-3-5)²]\n4) d = √[14² + (-8)²]\n5) d = √[196 + 64]\n6) d = √392\n7) d = 14√2"
+        },
+        {
+            "id": "14",
+            "question": "Find the equation of the circle with center at the origin and passing through point (10,8).",
+            "options": [
+                "x² + y² = 164",
+                "x² + y² = 166",
+                "x² + y² = 168",
+                "x² + y² = 170"
+            ],
+            "correctAnswer": "x² + y² = 164",
+            "explanation": "Let's solve this step by step:\n1) Center is at (0,0)\n2) Radius = distance from center to (10,8)\n3) Radius = √(10² + 8²) = √164\n4) Circle equation: x² + y² = r²\n5) x² + y² = (√164)²\n6) x² + y² = 164"
+        },
+        {
+            "id": "15",
+            "question": "Find the slope of the line perpendicular to 10x + 21y = 42.",
+            "options": [
+                "-21/10",
+                "-10/21",
+                "10/21",
+                "21/10"
+            ],
+            "correctAnswer": "21/10",
+            "explanation": "Let's solve this step by step:\n1) First find slope of given line\n2) 21y = -10x + 42\n3) y = (-10/21)x + 2\n4) Slope of given line = -10/21\n5) For perpendicular lines, m₁m₂ = -1\n6) (-10/21)m₂ = -1\n7) m₂ = 21/10"
+        },
+        {
+            "id": "16",
+            "question": "Find the area of the triangle formed by the lines x = 0, y = 0, and 8x + 6y = 24.",
+            "options": [
+                "6 square units",
+                "8 square units",
+                "10 square units",
+                "12 square units"
+            ],
+            "correctAnswer": "12 square units",
+            "explanation": "Let's solve this step by step:\n1) Find points of intersection\n2) With x-axis: 8x = 24, x = 3\n3) With y-axis: 6y = 24, y = 4\n4) Base = 3, height = 8\n5) Area = ½ × base × height\n6) Area = ½ × 3 × 8\n7) Area = 12 square units"
+        },
+        {
+            "id": "17",
+            "question": "Find the equation of the line with x-intercept 6 and y-intercept 3.",
+            "options": [
+                "3x + 6y = 18",
+                "6x + 3y = 18",
+                "3x + 6y = 24",
+                "6x + 3y = 24"
+            ],
+            "correctAnswer": "3x + 6y = 18",
+            "explanation": "Let's solve this step by step:\n1) Using intercept form: x/a + y/b = 1\n2) Here, a = 6, b = 3\n3) x/6 + y/3 = 1\n4) Multiply by 18: 3x + 6y = 18"
+        },
+        {
+            "id": "18",
+            "question": "Find the distance between points A(4,5) and B(10,11).",
+            "options": [
+                "6√2",
+                "7√2",
+                "8√2",
+                "9√2"
+            ],
+            "correctAnswer": "6√2",
+            "explanation": "Let's solve this step by step:\n1) Using distance formula: d = √[(x₂-x₁)² + (y₂-y₁)²]\n2) Here, x₁ = 4, y₁ = 5, x₂ = 10, y₂ = 11\n3) d = √[(10-4)² + (11-5)²]\n4) d = √[6² + 6²]\n5) d = √[36 + 36]\n6) d = √72\n7) d = 6√2"
+        },
+        {
+            "id": "19",
+            "question": "Find the equation of the line passing through (7,8) and parallel to the line joining (5,6) and (9,14).",
+            "options": [
+                "y = 2x - 6",
+                "y = 2x + 6",
+                "y = 2x - 4",
+                "y = 2x + 4"
+            ],
+            "correctAnswer": "y = 2x - 6",
+            "explanation": "Let's solve this step by step:\n1) First find slope of given line\n2) m = (14-6)/(9-5) = 8/4 = 2\n3) Parallel line has same slope\n4) Using point-slope form: y - y₁ = m(x - x₁)\n5) y - 8 = 2(x - 7)\n6) y - 8 = 2x - 14\n7) y = 2x - 6"
+        },
+        {
+            "id": "20",
+            "question": "Find the area of the circle with equation (x-5)² + (y-6)² = 25.",
+            "options": [
+                "20π",
+                "22π",
+                "24π",
+                "25π"
+            ],
+            "correctAnswer": "25π",
+            "explanation": "Let's solve this step by step:\n1) Circle equation: (x-h)² + (y-k)² = r²\n2) Here, r² = 25\n3) Therefore, r = 5\n4) Area = πr²\n5) Area = π(5)²\n6) Area = 25π"
+        },
+        {
+            "id": "21",
+            "question": "Find the slope of the line passing through the origin and the point of intersection of lines 6x + y = 12 and x - y = 3.",
+            "options": [
+                "1/2",
+                "2/3",
+                "3/4",
+                "4/5"
+            ],
+            "correctAnswer": "2/3",
+            "explanation": "Let's solve this step by step:\n1) First find point of intersection\n2) Add equations: 7x = 15, x = 15/7\n3) Substitute: 15/7 - y = 3\n4) y = 15/7 - 3\n5) Point is (15/7, 15/7 - 3)\n6) Slope = (15/7 - 3)/(15/7) = 2/3"
+        },
+        {
+            "id": "22",
+            "question": "Find the equation of the perpendicular bisector of the line segment joining points A(5,6) and B(9,10).",
+            "options": [
+                "x + y = 15",
+                "x + y = 16",
+                "x + y = 17",
+                "x + y = 18"
+            ],
+            "correctAnswer": "x + y = 15",
+            "explanation": "Let's solve this step by step:\n1) Midpoint = ((5+9)/2, (6+10)/2) = (7,8)\n2) Slope of AB = (10-6)/(9-5) = 1\n3) Perpendicular slope = -1\n4) Using point-slope form: y - 8 = -1(x - 7)\n5) y - 8 = -x + 7\n6) x + y = 15"
+        },
+        {
+            "id": "23",
+            "question": "Find the distance of the point (9,10) from the line 5x - 12y + 20 = 0.",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "4",
+            "explanation": "Let's solve this step by step:\n1) Using distance formula: d = |ax₁ + by₁ + c|/√(a² + b²)\n2) Here, a = 5, b = -12, c = 20, x₁ = 9, y₁ = 10\n3) d = |5(9) + (-12)(10) + 20|/√(5² + (-12)²)\n4) d = |45 - 120 + 20|/√(25 + 144)\n5) d = |-55|/√169\n6) d = 55/13\n7) d = 4"
+        },
+        {
+            "id": "24",
+            "question": "Find the equation of the circle with center at the origin and passing through point (15,8).",
+            "options": [
+                "x² + y² = 289",
+                "x² + y² = 290",
+                "x² + y² = 291",
+                "x² + y² = 292"
+            ],
+            "correctAnswer": "x² + y² = 289",
+            "explanation": "Let's solve this step by step:\n1) Center is at (0,0)\n2) Radius = distance from center to (15,8)\n3) Radius = √(15² + 8²) = √289 = 17\n4) Circle equation: x² + y² = r²\n5) x² + y² = 17²\n6) x² + y² = 289"
+        },
+        {
+            "id": "25",
+            "question": "Find the area of the triangle formed by the lines y = 8x, y = -8x, and y = 16.",
+            "options": [
+                "2 square units",
+                "4 square units",
+                "6 square units",
+                "8 square units"
+            ],
+            "correctAnswer": "2 square units",
+            "explanation": "Let's solve this step by step:\n1) Find points of intersection\n2) y = 8x and y = 16: x = 2\n3) y = -8x and y = 16: x = -2\n4) Base = 4 (from -2 to 2)\n5) Height = 16\n6) Area = ½ × base × height\n7) Area = ½ × 4 × 16\n8) Area = 2 square units"
+        },
+        {
+            "id": "26",
+            "question": "Find the equation of the line passing through (8,9) and making equal angles with the coordinate axes.",
+            "options": [
+                "x + y = 17",
+                "x - y = 1",
+                "x + y = 1",
+                "x - y = 17"
+            ],
+            "correctAnswer": "x + y = 17",
+            "explanation": "Let's solve this step by step:\n1) Line making equal angles has slope ±1\n2) Using point-slope form: y - 9 = ±1(x - 8)\n3) For slope 1: y - 9 = x - 8\n4) x - y = 1\n5) For slope -1: y - 9 = -(x - 8)\n6) x + y = 17"
+        },
+        {
+            "id": "27",
+            "question": "Find the distance between the parallel lines 10x + 24y = 30 and 10x + 24y = 60.",
+            "options": [
+                "1.0",
+                "1.2",
+                "1.4",
+                "1.6"
+            ],
+            "correctAnswer": "1.2",
+            "explanation": "Let's solve this step by step:\n1) For parallel lines ax + by + c₁ = 0 and ax + by + c₂ = 0\n2) Distance = |c₂ - c₁|/√(a² + b²)\n3) Here, a = 10, b = 24, c₁ = -30, c₂ = -60\n4) Distance = |-60 - (-30)|/√(10² + 24²)\n5) Distance = 30/√676\n6) Distance = 30/26\n7) Distance = 1.2"
+        },
+        {
+            "id": "28",
+            "question": "Find the equation of the circle passing through points (0,0), (15,0), and (0,12).",
+            "options": [
+                "(x-7.5)² + (y-6)² = 90.25",
+                "(x-7.5)² + (y-6)² = 91.25",
+                "(x-7.5)² + (y-6)² = 92.25",
+                "(x-7.5)² + (y-6)² = 93.25"
+            ],
+            "correctAnswer": "(x-7.5)² + (y-6)² = 90.25",
+            "explanation": "Let's solve this step by step:\n1) The points form a right triangle\n2) Center is at midpoint of hypotenuse\n3) Center = ((0+15)/2, (0+12)/2) = (7.5,6)\n4) Radius = distance from center to origin\n5) Radius = √(7.5² + 6²) = √90.25\n6) Therefore, equation is (x-7.5)² + (y-6)² = 90.25"
+        },
+        {
+            "id": "29",
+            "question": "Find the slope of the line that bisects the angle between the lines 9x + 40y = 36 and 40x - 9y = 36.",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctAnswer": "1",
+            "explanation": "Let's solve this step by step:\n1) First find slopes of given lines\n2) Line 1: 40y = -9x + 36, slope = -9/40\n3) Line 2: 9y = 40x - 36, slope = 40/9\n4) Angle bisector slope = (m₁ + m₂)/(1 - m₁m₂)\n5) = (-9/40 + 40/9)/(1 - (-9/40)(40/9))\n6) = (1521/360)/(1 + 1)\n7) = 1521/720\n8) ≈ 1"
+        },
+        {
+            "id": "30",
+            "question": "Find the area of the quadrilateral formed by the lines x = 4, y = 4, x = 8, and y = 9.",
+            "options": [
+                "16 square units",
+                "18 square units",
+                "20 square units",
+                "22 square units"
+            ],
+            "correctAnswer": "20 square units",
+            "explanation": "Let's solve this step by step:\n1) This is a rectangle with length 4 and width 5\n2) Area = length × width\n3) Area = 4 × 5\n4) Area = 20 square units"
+        }
+    ]
+}

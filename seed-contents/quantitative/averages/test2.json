@@ -1,0 +1,371 @@
+{
+    "id": "test2",
+    "name": "Averages Test 2",
+    "section": "quantitative",
+    "topic": "averages",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": 1,
+            "question": "The average of 10 numbers is 45. If two numbers 55 and 65 are added to these numbers, what is the new average?",
+            "options": [
+                "47",
+                "48",
+                "49",
+                "50"
+            ],
+            "correctAnswer": "48",
+            "explanation": "Let's solve this step by step:\n1) Original total = 10 × 45 = 450\n2) Sum of new numbers = 55 + 65 = 120\n3) New total = 450 + 120 = 570\n4) New number count = 12\n5) New average = 570 ÷ 12 = 48"
+        },
+        {
+            "id": 2,
+            "question": "The average weight of 28 students is 58 kg. When the weight of their teacher is included, the average increases by 2 kg. What is the teacher's weight?",
+            "options": [
+                "85 kg",
+                "87 kg",
+                "89 kg",
+                "91 kg"
+            ],
+            "correctAnswer": "87 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 28 × 58 = 1624 kg\n2) New average = 58 + 2 = 60 kg\n3) New total weight = 29 × 60 = 1740 kg\n4) Teacher's weight = 1740 - 1624 = 87 kg"
+        },
+        {
+            "id": 3,
+            "question": "The average marks of 45 students is 72. After removing the marks of 5 students, the average becomes 75. What is the average marks of the 5 students whose marks were removed?",
+            "options": [
+                "48",
+                "51",
+                "54",
+                "57"
+            ],
+            "correctAnswer": "51",
+            "explanation": "Let's solve this step by step:\n1) Original total marks = 45 × 72 = 3240\n2) New total marks = 40 × 75 = 3000\n3) Removed marks total = 3240 - 3000 = 240\n4) Average of removed marks = 240 ÷ 5 = 51"
+        },
+        {
+            "id": 4,
+            "question": "The average age of 15 players in a cricket team is 26 years. If the captain's age is excluded, the average becomes 25 years. What is the captain's age?",
+            "options": [
+                "38 years",
+                "39 years",
+                "40 years",
+                "41 years"
+            ],
+            "correctAnswer": "40 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 15 × 26 = 390 years\n2) New total age = 14 × 25 = 350 years\n3) Captain's age = 390 - 350 = 40 years"
+        },
+        {
+            "id": 5,
+            "question": "The average monthly salary of 40 employees in a company is ₹45,000. If 10 new employees join with an average salary of ₹35,000, what is the new average salary?",
+            "options": [
+                "₹42,500",
+                "₹43,000",
+                "₹43,500",
+                "₹44,000"
+            ],
+            "correctAnswer": "₹43,000",
+            "explanation": "Let's solve this step by step:\n1) Original total salary = 40 × 45,000 = ₹18,00,000\n2) New employees' total salary = 10 × 35,000 = ₹3,50,000\n3) New total salary = ₹18,00,000 + ₹3,50,000 = ₹21,50,000\n4) Total employees = 50\n5) New average = ₹21,50,000 ÷ 50 = ₹43,000"
+        },
+        {
+            "id": 6,
+            "question": "The average score of 32 students in a test is 85. If the highest score of 100 and the lowest score are removed, the average becomes 84. What is the lowest score?",
+            "options": [
+                "68",
+                "70",
+                "72",
+                "74"
+            ],
+            "correctAnswer": "70",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 32 × 85 = 2720\n2) New total score = 30 × 84 = 2520\n3) Sum of highest and lowest = 2720 - 2520 = 200\n4) Highest score = 100\n5) Lowest score = 200 - 100 = 70"
+        },
+        {
+            "id": 7,
+            "question": "The average of first 10 even numbers is:",
+            "options": [
+                "10",
+                "11",
+                "12",
+                "13"
+            ],
+            "correctAnswer": "11",
+            "explanation": "Let's solve this step by step:\n1) First 10 even numbers are: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20\n2) Sum = 110\n3) Count = 10\n4) Average = 110 ÷ 10 = 11"
+        },
+        {
+            "id": 8,
+            "question": "The average temperature for 5 days was 37°C. If the temperature on the 6th day is 31°C, what is the new average temperature?",
+            "options": [
+                "35°C",
+                "35.5°C",
+                "36°C",
+                "36.5°C"
+            ],
+            "correctAnswer": "36°C",
+            "explanation": "Let's solve this step by step:\n1) Original total = 5 × 37 = 185°C\n2) New temperature = 31°C\n3) New total = 185 + 31 = 216°C\n4) New average = 216 ÷ 6 = 36°C"
+        },
+        {
+            "id": 9,
+            "question": "The average speed of a car for a 4-hour journey is 60 km/h. If the speed for the last 2 hours was 70 km/h, what was the average speed for the first 2 hours?",
+            "options": [
+                "50 km/h",
+                "52 km/h",
+                "54 km/h",
+                "56 km/h"
+            ],
+            "correctAnswer": "50 km/h",
+            "explanation": "Let's solve this step by step:\n1) Total distance = 4 × 60 = 240 km\n2) Distance in last 2 hours = 2 × 70 = 140 km\n3) Distance in first 2 hours = 240 - 140 = 100 km\n4) Average speed for first 2 hours = 100 ÷ 2 = 50 km/h"
+        },
+        {
+            "id": 10,
+            "question": "The average weight of 8 boxes is 52 kg. Two more boxes weighing 48 kg and 56 kg are added. What is the new average weight?",
+            "options": [
+                "51.6 kg",
+                "52 kg",
+                "52.4 kg",
+                "52.8 kg"
+            ],
+            "correctAnswer": "52 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 8 × 52 = 416 kg\n2) Weight of new boxes = 48 + 56 = 104 kg\n3) New total weight = 416 + 104 = 520 kg\n4) New number of boxes = 10\n5) New average = 520 ÷ 10 = 52 kg"
+        },
+        {
+            "id": 11,
+            "question": "The average age of a group is 34 years. When 8 new members with an average age of 26 years join, the average becomes 32 years. How many members were in the original group?",
+            "options": [
+                "16",
+                "18",
+                "20",
+                "22"
+            ],
+            "correctAnswer": "16",
+            "explanation": "Let's solve this step by step:\n1) Let the original number of members be x\n2) Original total age = 34x\n3) New total age = 34x + (8 × 26) = 34x + 208\n4) New average equation: (34x + 208)/(x + 8) = 32\n5) Solving: 34x + 208 = 32x + 256\n6) 2x = 48\n7) x = 16"
+        },
+        {
+            "id": 12,
+            "question": "The average rainfall for 7 days is 3.5 cm. If it rains 4.2 cm on the 8th day, what is the new average rainfall?",
+            "options": [
+                "3.6 cm",
+                "3.7 cm",
+                "3.8 cm",
+                "3.9 cm"
+            ],
+            "correctAnswer": "3.6 cm",
+            "explanation": "Let's solve this step by step:\n1) Original total rainfall = 7 × 3.5 = 24.5 cm\n2) New rainfall = 4.2 cm\n3) New total rainfall = 24.5 + 4.2 = 28.7 cm\n4) New average = 28.7 ÷ 8 = 3.6 cm"
+        },
+        {
+            "id": 13,
+            "question": "The average marks of 36 students is 65. If the marks of 6 students who scored above 80 are excluded, the average becomes 62. What is the average marks of the excluded students?",
+            "options": [
+                "83",
+                "84",
+                "85",
+                "86"
+            ],
+            "correctAnswer": "83",
+            "explanation": "Let's solve this step by step:\n1) Original total marks = 36 × 65 = 2340\n2) New total marks = 30 × 62 = 1860\n3) Excluded students' total = 2340 - 1860 = 480\n4) Average of excluded students = 480 ÷ 6 = 83"
+        },
+        {
+            "id": 14,
+            "question": "The average price of 25 books is ₹320. After removing some books, the average becomes ₹350. If the total price decreases by ₹1,200, how many books were removed?",
+            "options": [
+                "6",
+                "7",
+                "8",
+                "9"
+            ],
+            "correctAnswer": "8",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 25 × 320 = ₹8,000\n2) New total price = ₹8,000 - ₹1,200 = ₹6,800\n3) Let removed books be x\n4) New average equation: 6,800/(25 - x) = 350\n5) 6,800 = 350(25 - x)\n6) 6,800 = 8,750 - 350x\n7) 350x = 1,950\n8) x = 8"
+        },
+        {
+            "id": 15,
+            "question": "The average of 15 numbers is 36. If each number is decreased by 4 and then multiplied by 2, what is the new average?",
+            "options": [
+                "64",
+                "66",
+                "68",
+                "70"
+            ],
+            "correctAnswer": "64",
+            "explanation": "Let's solve this step by step:\n1) Original total = 15 × 36 = 540\n2) When each number is decreased by 4: 540 - (15 × 4) = 480\n3) When each number is multiplied by 2: 480 × 2 = 960\n4) New average = 960 ÷ 15 = 64"
+        },
+        {
+            "id": 16,
+            "question": "The average height of 20 trees is 15 feet. When 5 new trees are planted, the average becomes 16 feet. What is the average height of the new trees?",
+            "options": [
+                "19 feet",
+                "20 feet",
+                "21 feet",
+                "22 feet"
+            ],
+            "correctAnswer": "20 feet",
+            "explanation": "Let's solve this step by step:\n1) Original total height = 20 × 15 = 300 feet\n2) New total height = 25 × 16 = 400 feet\n3) Height of new trees = 400 - 300 = 100 feet\n4) Average height of new trees = 100 ÷ 5 = 20 feet"
+        },
+        {
+            "id": 17,
+            "question": "The average consumption of rice by 24 families is 60 kg per month. If 6 families with an average consumption of 80 kg join them, what is the new average consumption?",
+            "options": [
+                "63 kg",
+                "64 kg",
+                "65 kg",
+                "66 kg"
+            ],
+            "correctAnswer": "64 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total consumption = 24 × 60 = 1440 kg\n2) New families' total consumption = 6 × 80 = 480 kg\n3) New total consumption = 1440 + 480 = 1920 kg\n4) Total families = 30\n5) New average = 1920 ÷ 30 = 64 kg"
+        },
+        {
+            "id": 18,
+            "question": "The average score in a game for 9 rounds is 85. In the 10th round, a player scores 95. What is the new average?",
+            "options": [
+                "86",
+                "87",
+                "88",
+                "89"
+            ],
+            "correctAnswer": "86",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 9 × 85 = 765\n2) New score = 95\n3) New total score = 765 + 95 = 860\n4) New average = 860 ÷ 10 = 86"
+        },
+        {
+            "id": 19,
+            "question": "The average monthly expenditure of a family for the first 4 months is ₹8,000. If the family spends ₹10,000 in the 5th month, what is the new average monthly expenditure?",
+            "options": [
+                "₹8,200",
+                "₹8,400",
+                "₹8,600",
+                "₹8,800"
+            ],
+            "correctAnswer": "₹8,400",
+            "explanation": "Let's solve this step by step:\n1) Original total expenditure = 4 × 8,000 = ₹32,000\n2) New expenditure = ₹10,000\n3) New total expenditure = ₹32,000 + ₹10,000 = ₹42,000\n4) New average = ₹42,000 ÷ 5 = ₹8,400"
+        },
+        {
+            "id": 20,
+            "question": "The average age of 30 students in a class is 14 years. If 5 students leave the class, the average age increases by 1 year. What is the average age of the students who left?",
+            "options": [
+                "9 years",
+                "10 years",
+                "11 years",
+                "12 years"
+            ],
+            "correctAnswer": "9 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 30 × 14 = 420 years\n2) New average = 15 years\n3) New total age = 25 × 15 = 375 years\n4) Age of students who left = 420 - 375 = 45 years\n5) Average age of students who left = 45 ÷ 5 = 9 years"
+        },
+        {
+            "id": 21,
+            "question": "The average weight of 40 students is 45 kg. If 8 students weighing an average of 55 kg leave the class, what is the new average weight?",
+            "options": [
+                "42 kg",
+                "43 kg",
+                "44 kg",
+                "45 kg"
+            ],
+            "correctAnswer": "43 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 40 × 45 = 1800 kg\n2) Weight of leaving students = 8 × 55 = 440 kg\n3) New total weight = 1800 - 440 = 1360 kg\n4) Remaining students = 32\n5) New average = 1360 ÷ 32 = 43 kg"
+        },
+        {
+            "id": 22,
+            "question": "The average marks of 50 students is 70. After adding grace marks of 5 to each student who scored less than 40, the average becomes 72. How many students scored less than 40?",
+            "options": [
+                "18",
+                "20",
+                "22",
+                "24"
+            ],
+            "correctAnswer": "20",
+            "explanation": "Let's solve this step by step:\n1) Original total marks = 50 × 70 = 3500\n2) New average = 72\n3) New total = 50 × 72 = 3600\n4) Increase in total = 3600 - 3500 = 100\n5) Each student gets 5 marks\n6) Number of students = 100 ÷ 5 = 20"
+        },
+        {
+            "id": 23,
+            "question": "The average speed of a train for a journey of 6 hours is 80 km/h. For the first 2 hours, its speed was 60 km/h. What was its average speed for the remaining journey?",
+            "options": [
+                "90 km/h",
+                "92 km/h",
+                "94 km/h",
+                "96 km/h"
+            ],
+            "correctAnswer": "90 km/h",
+            "explanation": "Let's solve this step by step:\n1) Total distance = 6 × 80 = 480 km\n2) Distance in first 2 hours = 2 × 60 = 120 km\n3) Remaining distance = 480 - 120 = 360 km\n4) Remaining time = 4 hours\n5) Average speed = 360 ÷ 4 = 90 km/h"
+        },
+        {
+            "id": 24,
+            "question": "The average salary of all employees in a company is ₹25,000. The average salary of male employees is ₹28,000 and that of female employees is ₹20,000. What is the ratio of male to female employees?",
+            "options": [
+                "3:2",
+                "2:3",
+                "3:4",
+                "4:3"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Let's solve this step by step:\n1) Let the ratio of male to female employees be x:y\n2) According to weighted average: (28000x + 20000y)/(x + y) = 25000\n3) 28000x + 20000y = 25000x + 25000y\n4) 3000x = 5000y\n5) x:y = 5:3 = 3:2"
+        },
+        {
+            "id": 25,
+            "question": "The average of 5 consecutive even numbers is 50. What is the largest number?",
+            "options": [
+                "52",
+                "54",
+                "56",
+                "58"
+            ],
+            "correctAnswer": "54",
+            "explanation": "Let's solve this step by step:\n1) Let the numbers be (x-8), (x-6), (x-4), (x-2), x\n2) Average = 50\n3) [(x-8) + (x-6) + (x-4) + (x-2) + x]/5 = 50\n4) [5x - 20]/5 = 50\n5) 5x - 20 = 250\n6) x = 54"
+        },
+        {
+            "id": 26,
+            "question": "The average of 11 numbers is 60. If one number is excluded, the average of the remaining numbers is 58. What is the excluded number?",
+            "options": [
+                "78",
+                "80",
+                "82",
+                "84"
+            ],
+            "correctAnswer": "82",
+            "explanation": "Let's solve this step by step:\n1) Original total = 11 × 60 = 660\n2) New total = 10 × 58 = 580\n3) Excluded number = 660 - 580 = 82"
+        },
+        {
+            "id": 27,
+            "question": "The average runs scored by a cricket team in 10 matches is 280. In the next match, they score 360 runs. What is the new average?",
+            "options": [
+                "285",
+                "287",
+                "289",
+                "291"
+            ],
+            "correctAnswer": "287",
+            "explanation": "Let's solve this step by step:\n1) Original total runs = 10 × 280 = 2800\n2) New runs = 360\n3) New total = 2800 + 360 = 3160\n4) New average = 3160 ÷ 11 = 287"
+        },
+        {
+            "id": 28,
+            "question": "The average weight of 60 students is 58 kg. If the weight of each student increases by 2 kg, what is the new average weight?",
+            "options": [
+                "59 kg",
+                "60 kg",
+                "61 kg",
+                "62 kg"
+            ],
+            "correctAnswer": "60 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 60 × 58 = 3480 kg\n2) Increase in each weight = 2 kg\n3) Total increase = 60 × 2 = 120 kg\n4) New total weight = 3480 + 120 = 3600 kg\n5) New average = 3600 ÷ 60 = 60 kg"
+        },
+        {
+            "id": 29,
+            "question": "The average price of 45 items is ₹85. If 15 items with an average price of ₹95 are removed, what is the new average price?",
+            "options": [
+                "₹80",
+                "₹81",
+                "₹82",
+                "₹83"
+            ],
+            "correctAnswer": "80",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 45 × 85 = ₹3,825\n2) Removed items total price = 15 × 95 = ₹1,425\n3) New total price = ₹3,825 - ₹1,425 = ₹2,400\n4) Remaining items = 30\n5) New average = ₹2,400 ÷ 30 = ₹80"
+        },
+        {
+            "id": 30,
+            "question": "The average age of 8 family members 3 years ago was 28 years. A baby was born during this period. What is the present average age of all the family members?",
+            "options": [
+                "29 years",
+                "30 years",
+                "31 years",
+                "32 years"
+            ],
+            "correctAnswer": "29 years",
+            "explanation": "Let's solve this step by step:\n1) Total age 3 years ago = 8 × 28 = 224 years\n2) Present age of original members = 224 + (8 × 3) = 248 years\n3) Baby's age = 3 years\n4) Total present age = 248 + 3 = 251 years\n5) Total members now = 9\n6) Present average age = 251 ÷ 9 = 29 years"
+        }
+    ]
+}

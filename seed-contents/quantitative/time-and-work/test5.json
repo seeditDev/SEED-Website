@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-time-and-work-test5",
+    "name": "Test 5 - Time And Work",
+    "section": "quantitative",
+    "topic": "time-and-work",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "A and B working together can complete a work in 8 days. If A alone can complete the same work in 12 days, in how many days can B alone complete the work?",
+            "options": [
+                "20 days",
+                "24 days",
+                "28 days",
+                "32 days"
+            ],
+            "correctAnswer": "24 days",
+            "explanation": "Using work equation: 1/8 = 1/12 + 1/x, where x is B's time. Solving gives x = 24"
+        },
+        {
+            "id": "2",
+            "question": "If 6 workers can complete a task in 12 days, how many days will it take for 9 workers to complete the same task?",
+            "options": [
+                "6 days",
+                "8 days",
+                "10 days",
+                "12 days"
+            ],
+            "correctAnswer": "8 days",
+            "explanation": "Using the formula: (M1 \u00d7 D1) = (M2 \u00d7 D2), where M = number of workers, D = days. (6 \u00d7 12) = (9 \u00d7 D2), D2 = 8"
+        },
+        {
+            "id": "3",
+            "question": "A can do a piece of work in 10 days and B can do it in 15 days. They work together for 5 days and then A leaves. In how many days will B finish the remaining work?",
+            "options": [
+                "2.5 days",
+                "3 days",
+                "3.5 days",
+                "4 days"
+            ],
+            "correctAnswer": "2.5 days",
+            "explanation": "A and B together complete 5/6 of the work in 5 days. B alone will take 2.5 days to complete the remaining 1/6 of the work."
+        },
+        {
+            "id": "4",
+            "question": "If 12 men can build a wall in 20 days, how many men are needed to build the same wall in 15 days?",
+            "options": [
+                "14 men",
+                "16 men",
+                "18 men",
+                "20 men"
+            ],
+            "correctAnswer": "16 men",
+            "explanation": "Using the formula: (M1 \u00d7 D1) = (M2 \u00d7 D2), (12 \u00d7 20) = (M2 \u00d7 15), M2 = 16"
+        },
+        {
+            "id": "5",
+            "question": "A can complete a task in 8 days, B in 12 days, and C in 16 days. If they work together, in how many days will they complete the task?",
+            "options": [
+                "3.7 days",
+                "4.2 days",
+                "4.8 days",
+                "5.3 days"
+            ],
+            "correctAnswer": "4.8 days",
+            "explanation": "Combined work rate = 1/8 + 1/12 + 1/16 = 13/48. Time taken = 48/13 \u2248 4.8 days"
+        },
+        {
+            "id": "6",
+            "question": "If 5 workers can complete a project in 20 days, how many additional workers are needed to complete the same project in 10 days?",
+            "options": [
+                "3 workers",
+                "5 workers",
+                "7 workers",
+                "10 workers"
+            ],
+            "correctAnswer": "5 workers",
+            "explanation": "Using the formula: (M1 \u00d7 D1) = (M2 \u00d7 D2), (5 \u00d7 20) = (M2 \u00d7 10), M2 = 10. Additional workers needed = 10 - 5 = 5"
+        },
+        {
+            "id": "7",
+            "question": "A can do a piece of work in 6 days and B in 9 days. They work together for 3 days and then B leaves. In how many days will A finish the remaining work?",
+            "options": [
+                "1 day",
+                "1.5 days",
+                "2 days",
+                "2.5 days"
+            ],
+            "correctAnswer": "1.5 days",
+            "explanation": "A and B together complete 5/6 of the work in 3 days. A alone will take 1.5 days to complete the remaining 1/6 of the work."
+        },
+        {
+            "id": "8",
+            "question": "If 8 workers can complete a task in 15 days, how many days will it take for 12 workers to complete the same task?",
+            "options": [
+                "8 days",
+                "10 days",
+                "12 days",
+                "15 days"
+            ],
+            "correctAnswer": "10 days",
+            "explanation": "Using the formula: (M1 \u00d7 D1) = (M2 \u00d7 D2), (8 \u00d7 15) = (12 \u00d7 D2), D2 = 10"
+        },
+        {
+            "id": "9",
+            "question": "A can do a piece of work in 10 days, B in 15 days, and C in 20 days. If they work together for 4 days and then C leaves, in how many days will A and B finish the remaining work?",
+            "options": [
+                "2 days",
+                "2.5 days",
+                "3 days",
+                "3.5 days"
+            ],
+            "correctAnswer": "2.5 days",
+            "explanation": "A, B, and C together complete 13/15 of the work in 4 days. A and B together will take 2.5 days to complete the remaining 2/15 of the work."
+        },
+        {
+            "id": "10",
+            "question": "If 10 workers can complete a project in 18 days, how many workers are needed to complete the same project in 9 days?",
+            "options": [
+                "15 workers",
+                "18 workers",
+                "20 workers",
+                "25 workers"
+            ],
+            "correctAnswer": "20 workers",
+            "explanation": "Using the formula: (M1 \u00d7 D1) = (M2 \u00d7 D2), (10 \u00d7 18) = (M2 \u00d7 9), M2 = 20"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Time And Work"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Time And Work"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Time And Work"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Time And Work"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Time And Work"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Time And Work"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Time And Work"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Time And Work"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Time And Work"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Time And Work"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Time And Work"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Time And Work"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Time And Work"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Time And Work"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Time And Work"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Time And Work"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Time And Work"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Time And Work"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Time And Work"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Time And Work",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Time And Work"
+        }
+    ]
+}

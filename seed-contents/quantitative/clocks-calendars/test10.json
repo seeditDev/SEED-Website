@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-clocks-calendars-test10",
+    "name": "Test 10 - Clocks Calendars",
+    "section": "quantitative",
+    "topic": "clocks-calendars",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "At what time between 3 and 4 o'clock will the hands of a clock be at right angles?",
+            "options": [
+                "3:15",
+                "3:45",
+                "3:16",
+                "3:30"
+            ],
+            "correctAnswer": "3:15",
+            "explanation": "Let's solve this step by step:\n1) Hour hand moves (360/12) = 30° per hour or 0.5° per minute\n2) Minute hand moves (360/60) = 6° per minute\n3) At 3:15, hour hand moves (15 × 0.5) = 7.5° from 3\n4) Hour hand position = 90° + 7.5° = 97.5°\n5) Minute hand position = (15 × 6) = 90°\n6) Angle between hands = 90°"
+        },
+        {
+            "id": "2",
+            "question": "If today is Monday and the day after 61 days will be:",
+            "options": [
+                "Friday",
+                "Saturday",
+                "Sunday",
+                "Thursday"
+            ],
+            "correctAnswer": "Friday",
+            "explanation": "Let's solve this step by step:\n1) 61 ÷ 7 = 8 remainder 5\n2) This means after 61 days, we'll move forward 5 days from Monday\n3) Monday → Tuesday → Wednesday → Thursday → Friday\n4) Therefore, after 61 days it will be Friday"
+        },
+        {
+            "id": "3",
+            "question": "How many times do the hands of a clock overlap in 24 hours?",
+            "options": [
+                "20",
+                "22",
+                "24",
+                "21"
+            ],
+            "correctAnswer": "22",
+            "explanation": "Let's solve this step by step:\n1) In 12 hours, hands overlap 11 times\n2) First overlap at start (12 o'clock)\n3) Then approximately every 1 hour and 5.5 minutes\n4) In 24 hours, this happens twice\n5) So total overlaps = 11 × 2 = 22 times"
+        },
+        {
+            "id": "4",
+            "question": "A clock shows 8:30. What is the angle between the hour and minute hands?",
+            "options": [
+                "105°",
+                "115°",
+                "125°",
+                "135°"
+            ],
+            "correctAnswer": "105°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: (8 × 30°) + (30 × 0.5) = 240° + 15° = 255°\n2) Minute hand: 30 × 6° = 180°\n3) Angle = |255° - 180°| = 75°\n4) Larger angle = 180° - 75° = 105°"
+        },
+        {
+            "id": "5",
+            "question": "If January 1, 2024 is Monday, what day will be March 1, 2024?",
+            "options": [
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "correctAnswer": "Friday",
+            "explanation": "Let's solve this step by step:\n1) January has 31 days\n2) February 2024 (leap year) has 29 days\n3) Total days = 31 + 29 = 60 days\n4) 60 ÷ 7 = 8 remainder 4\n5) From Monday, count 4 days: Mon→Tue→Wed→Thu→Fri"
+        },
+        {
+            "id": "6",
+            "question": "At what time between 5 and 6 o'clock will the minute and hour hands coincide?",
+            "options": [
+                "5:27",
+                "5:28",
+                "5:29",
+                "5:30"
+            ],
+            "correctAnswer": "5:27",
+            "explanation": "Let's solve this step by step:\n1) Hour hand moves 0.5° per minute\n2) Minute hand moves 6° per minute\n3) At 5 o'clock, hour hand is at 150°\n4) Let x be minutes after 5\n5) 150° + 0.5x = 6x\n6) 150 = 5.5x\n7) x ≈ 27.27 minutes\n8) Therefore, hands coincide at 5:27"
+        },
+        {
+            "id": "7",
+            "question": "How many odd days are there in 400 years?",
+            "options": [
+                "0",
+                "1",
+                "2",
+                "5"
+            ],
+            "correctAnswer": "0",
+            "explanation": "Let's solve this step by step:\n1) 100 years = 76 normal years + 24 leap years\n2) Odd days = (76 × 1 + 24 × 2) = 124 days = 5 odd days\n3) 400 years = 4 × 100 years\n4) Total odd days = 4 × 5 = 20 days\n5) 20 ÷ 7 = 2 remainder 6\n6) Therefore, 0 odd days"
+        },
+        {
+            "id": "8",
+            "question": "What angle does the hour hand of a clock rotate through in 20 minutes?",
+            "options": [
+                "8°",
+                "10°",
+                "12°",
+                "15°"
+            ],
+            "correctAnswer": "10°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand completes 360° in 12 hours\n2) In 1 hour = 360° ÷ 12 = 30°\n3) In 1 minute = 30° ÷ 60 = 0.5°\n4) In 20 minutes = 20 × 0.5° = 10°"
+        },
+        {
+            "id": "9",
+            "question": "If a day is added after every 4 years in the month of February, then after how many years will January 1 fall on the same day again?",
+            "options": [
+                "6 years",
+                "28 years",
+                "24 years",
+                "7 years"
+            ],
+            "correctAnswer": "28 years",
+            "explanation": "Let's solve this step by step:\n1) In 4 years = (3 × 365 + 366) = 1461 days\n2) 1461 ÷ 7 = 208 remainder 5\n3) After 4 years, day shifts by 5 days\n4) To get same day: 7 × 4 = 28 years\n5) This is called the calendar cycle"
+        },
+        {
+            "id": "10",
+            "question": "A clock strikes once at 1 o'clock, twice at 2 o'clock, and so on. How many times will it strike in 24 hours?",
+            "options": [
+                "78",
+                "156",
+                "144",
+                "168"
+            ],
+            "correctAnswer": "156",
+            "explanation": "Let's solve this step by step:\n1) In 12 hours: 1+2+3+...+12 = (12×13)/2 = 78 strikes\n2) This happens twice in 24 hours\n3) Total strikes = 78 × 2 = 156"
+        },
+        {
+            "id": "11",
+            "question": "What is the angle between the hands of a clock at 4:40?",
+            "options": [
+                "130°",
+                "140°",
+                "150°",
+                "160°"
+            ],
+            "correctAnswer": "140°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: (4 × 30°) + (40 × 0.5°) = 120° + 20° = 140°\n2) Minute hand: 40 × 6° = 240°\n3) Angle = |240° - 140°| = 100°\n4) Larger angle = 180° - 100° = 140°"
+        },
+        {
+            "id": "12",
+            "question": "In a leap year starting with Monday, what day will be on December 31?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Tuesday",
+            "explanation": "Let's solve this step by step:\n1) Leap year has 366 days\n2) 366 ÷ 7 = 52 remainder 2\n3) So it will be 2 days after Monday\n4) Monday → Tuesday\n5) Therefore, December 31 will be Tuesday"
+        },
+        {
+            "id": "13",
+            "question": "How many minutes past 7 o'clock will the hands of a clock be in opposite directions?",
+            "options": [
+                "34.5 minutes",
+                "35.5 minutes",
+                "36.5 minutes",
+                "37.5 minutes"
+            ],
+            "correctAnswer": "34.5 minutes",
+            "explanation": "Let's solve this step by step:\n1) At 7:00, hour hand at 210°\n2) For opposite direction, difference should be 180°\n3) Let x be minutes past 7\n4) 210° + 0.5x = 6x - 180°\n5) 390° = 5.5x\n6) x = 34.5 minutes"
+        },
+        {
+            "id": "14",
+            "question": "If July 4 is Wednesday, what day will August 15 be in the same year?",
+            "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) Days from July 4 to August 15:\n2) July remaining = 27 days\n3) August = 15 days\n4) Total = 42 days\n5) 42 ÷ 7 = 6 remainder 0\n6) Therefore, same day as July 4 (Wednesday)"
+        },
+        {
+            "id": "15",
+            "question": "A clock gains 5 minutes every hour. What time will it show when the correct time is 6:00 PM if it was set right at 6:00 AM?",
+            "options": [
+                "7:00 PM",
+                "8:00 PM",
+                "9:00 PM",
+                "10:00 PM"
+            ],
+            "correctAnswer": "7:00 PM",
+            "explanation": "Let's solve this step by step:\n1) Time difference = 12 hours\n2) Gain per hour = 5 minutes\n3) Total gain = 12 × 5 = 60 minutes = 1 hour\n4) Therefore, clock will show 7:00 PM"
+        },
+        {
+            "id": "16",
+            "question": "What is the day of the week on January 1, 2025, if January 1, 2024, is Monday?",
+            "options": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year (366 days)\n2) 366 ÷ 7 = 52 remainder 2\n3) So it will be 2 days after Monday\n4) Monday → Tuesday → Wednesday"
+        },
+        {
+            "id": "17",
+            "question": "At what time between 4 and 5 o'clock will the minute hand be 3 minutes ahead of the hour hand?",
+            "options": [
+                "4:18",
+                "4:21",
+                "4:24",
+                "4:27"
+            ],
+            "correctAnswer": "4:21",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: 120° + 0.5x\n2) Minute hand: 6x\n3) For 3 minutes ahead: 6x - (120° + 0.5x) = 18°\n4) 5.5x = 138°\n5) x = 21 minutes"
+        },
+        {
+            "id": "18",
+            "question": "How many days are there in 12 years when February has 29 days three times?",
+            "options": [
+                "4380",
+                "4383",
+                "4386",
+                "4389"
+            ],
+            "correctAnswer": "4383",
+            "explanation": "Let's solve this step by step:\n1) Normal years = 9 × 365 = 3285 days\n2) Leap years = 3 × 366 = 1098 days\n3) Total days = 3285 + 1098 = 4383 days"
+        },
+        {
+            "id": "19",
+            "question": "A clock shows 3:00. Through what angle will the minute hand turn in 45 minutes?",
+            "options": [
+                "270°",
+                "265°",
+                "275°",
+                "280°"
+            ],
+            "correctAnswer": "270°",
+            "explanation": "Let's solve this step by step:\n1) Minute hand moves 6° per minute\n2) In 45 minutes = 45 × 6°\n3) = 270°"
+        },
+        {
+            "id": "20",
+            "question": "If March 1, 2024, is Friday, what day is April 30, 2024?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Tuesday",
+            "explanation": "Let's solve this step by step:\n1) March has 31 days\n2) April has 30 days\n3) Total days from March 1 to April 30 = 61 days\n4) 61 ÷ 7 = 8 remainder 5\n5) From Friday, count 5 days: Fri→Sat→Sun→Mon→Tue"
+        },
+        {
+            "id": "21",
+            "question": "In a clock showing 2:30, what is the smaller angle between the hour and minute hands?",
+            "options": [
+                "105°",
+                "115°",
+                "125°",
+                "135°"
+            ],
+            "correctAnswer": "105°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: (2 × 30°) + (30 × 0.5°) = 60° + 15° = 75°\n2) Minute hand: 30 × 6° = 180°\n3) Angle = |180° - 75°| = 105°"
+        },
+        {
+            "id": "22",
+            "question": "How many odd days are there in 500 years?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "correctAnswer": "2",
+            "explanation": "Let's solve this step by step:\n1) 400 years = 0 odd days\n2) 100 years = 5 odd days\n3) Total odd days = 0 + 5 = 5\n4) 5 ÷ 7 = 0 remainder 2\n5) Therefore, 2 odd days"
+        },
+        {
+            "id": "23",
+            "question": "A clock is set right at 5 AM. The clock gains 10 minutes in 1 hour. What will be the true time when the clock indicates 10 PM?",
+            "options": [
+                "4:00 PM",
+                "5:00 PM",
+                "6:00 PM",
+                "7:00 PM"
+            ],
+            "correctAnswer": "5:00 PM",
+            "explanation": "Let's solve this step by step:\n1) Time difference = 17 hours\n2) Gain per hour = 10 minutes\n3) Total gain = 17 × 10 = 170 minutes\n4) = 2 hours and 50 minutes\n5) True time = 10 PM - 5 hours = 5 PM"
+        },
+        {
+            "id": "24",
+            "question": "What will be the day of the week after 1000 days from Monday?",
+            "options": [
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+            ],
+            "correctAnswer": "Thursday",
+            "explanation": "Let's solve this step by step:\n1) 1000 ÷ 7 = 142 remainder 6\n2) From Monday, count 6 days\n3) Monday → Tuesday → Wednesday → Thursday\n4) Therefore, it will be Thursday"
+        },
+        {
+            "id": "25",
+            "question": "At what time between 6 and 7 o'clock will the hands of a clock form an angle of 120°?",
+            "options": [
+                "6:22",
+                "6:24",
+                "6:26",
+                "6:28"
+            ],
+            "correctAnswer": "6:22",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: 180° + 0.5x\n2) Minute hand: 6x\n3) |6x - (180° + 0.5x)| = 120°\n4) 5.5x = 300°\n5) x = 22 minutes"
+        },
+        {
+            "id": "26",
+            "question": "How many times in a day do the hour and minute hands of a clock make an angle of 90°?",
+            "options": [
+                "22",
+                "24",
+                "44",
+                "48"
+            ],
+            "correctAnswer": "44",
+            "explanation": "Let's solve this step by step:\n1) In 12 hours, hands make 90° angle 22 times\n2) In 24 hours, this happens twice\n3) Total occurrences = 22 × 2 = 44 times"
+        },
+        {
+            "id": "27",
+            "question": "If today is Tuesday, what day will it be after 100 weeks?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Tuesday",
+            "explanation": "Let's solve this step by step:\n1) 1 week = 7 days\n2) 100 weeks = 100 × 7 = 700 days\n3) 700 ÷ 7 = 100 remainder 0\n4) Therefore, same day (Tuesday)"
+        },
+        {
+            "id": "28",
+            "question": "A clock strikes once at 1 o'clock, twice at 2 o'clock, thrice at 3 o'clock, and so on. How many times will it strike from 1 o'clock to 7 o'clock?",
+            "options": [
+                "28",
+                "21",
+                "35",
+                "42"
+            ],
+            "correctAnswer": "28",
+            "explanation": "Let's solve this step by step:\n1) Number of strikes = 1 + 2 + 3 + 4 + 5 + 6 + 7\n2) Using arithmetic progression sum formula\n3) = 7(7+1)/2\n4) = 7 × 4 = 28 strikes"
+        },
+        {
+            "id": "29",
+            "question": "What is the angle between the hands of a clock at 7:10?",
+            "options": [
+                "175°",
+                "180°",
+                "185°",
+                "190°"
+            ],
+            "correctAnswer": "185°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand: (7 × 30°) + (10 × 0.5°) = 210° + 5° = 215°\n2) Minute hand: 10 × 6° = 60°\n3) Angle = |215° - 60°| = 155°\n4) Larger angle = 185°"
+        },
+        {
+            "id": "30",
+            "question": "In which year between 2020 and 2030 does February have exactly 4 Sundays?",
+            "options": [
+                "2021",
+                "2022",
+                "2023",
+                "2025"
+            ],
+            "correctAnswer": "2021",
+            "explanation": "Let's solve this step by step:\n1) February 2021 has 28 days\n2) February 1, 2021 is Monday\n3) First Sunday is on February 7\n4) Other Sundays: 14, 21, 28\n5) Total 4 Sundays"
+        }
+    ]
+}

@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-averages-test4",
+    "name": "Test 4 - Averages",
+    "section": "quantitative",
+    "topic": "averages",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "The average of five numbers is 20. If one number is removed, the average becomes 18. What is the removed number?",
+            "options": [
+                "22",
+                "24",
+                "26",
+                "28"
+            ],
+            "correctAnswer": "26",
+            "explanation": "Sum of five numbers = 5 \u00d7 20 = 100. Sum of four numbers = 4 \u00d7 18 = 72. Removed number = 100 - 72 = 26"
+        },
+        {
+            "id": "2",
+            "question": "The average age of a group of 10 people is 25 years. If a person aged 35 years joins the group, what is the new average age?",
+            "options": [
+                "25.5 years",
+                "26 years",
+                "26.5 years",
+                "27 years"
+            ],
+            "correctAnswer": "26 years",
+            "explanation": "Sum of ages of 10 people = 10 \u00d7 25 = 250. New sum = 250 + 35 = 285. New average = 285 \u00f7 11 = 26 years"
+        },
+        {
+            "id": "3",
+            "question": "The average of three numbers is 15. If one number is 10, what is the average of the other two numbers?",
+            "options": [
+                "15",
+                "17.5",
+                "20",
+                "22.5"
+            ],
+            "correctAnswer": "17.5",
+            "explanation": "Sum of three numbers = 3 \u00d7 15 = 45. Sum of other two numbers = 45 - 10 = 35. Average of other two numbers = 35 \u00f7 2 = 17.5"
+        },
+        {
+            "id": "4",
+            "question": "The average weight of 6 students is 50 kg. If the weight of one student is 60 kg, what is the average weight of the remaining students?",
+            "options": [
+                "48 kg",
+                "49 kg",
+                "50 kg",
+                "51 kg"
+            ],
+            "correctAnswer": "48 kg",
+            "explanation": "Sum of weights of 6 students = 6 \u00d7 50 = 300 kg. Sum of weights of remaining 5 students = 300 - 60 = 240 kg. Average weight of remaining students = 240 \u00f7 5 = 48 kg"
+        },
+        {
+            "id": "5",
+            "question": "The average of four numbers is 12. If three of the numbers are 10, 12, and 14, what is the fourth number?",
+            "options": [
+                "10",
+                "12",
+                "14",
+                "16"
+            ],
+            "correctAnswer": "12",
+            "explanation": "Sum of four numbers = 4 \u00d7 12 = 48. Sum of three numbers = 10 + 12 + 14 = 36. Fourth number = 48 - 36 = 12"
+        },
+        {
+            "id": "6",
+            "question": "The average score of a student in five tests is 80. If the highest score is 100, what is the minimum possible score in any of the tests?",
+            "options": [
+                "0",
+                "20",
+                "40",
+                "60"
+            ],
+            "correctAnswer": "20",
+            "explanation": "Sum of five scores = 5 \u00d7 80 = 400. If one score is 100, the sum of the other four scores = 400 - 100 = 300. Minimum possible score = 0, but this would make the average less than 80. So, minimum score = 20"
+        },
+        {
+            "id": "7",
+            "question": "The average age of a family of five members is 30 years. If the youngest member is 10 years old, what is the average age of the other four members?",
+            "options": [
+                "32.5 years",
+                "35 years",
+                "37.5 years",
+                "40 years"
+            ],
+            "correctAnswer": "32.5 years",
+            "explanation": "Sum of ages of five members = 5 \u00d7 30 = 150. Sum of ages of other four members = 150 - 10 = 140. Average age of other four members = 140 \u00f7 4 = 32.5 years"
+        },
+        {
+            "id": "8",
+            "question": "The average of six numbers is 18. If one number is 24, what is the average of the other five numbers?",
+            "options": [
+                "14.4",
+                "16.8",
+                "18.4",
+                "20.8"
+            ],
+            "correctAnswer": "16.8",
+            "explanation": "Sum of six numbers = 6 \u00d7 18 = 108. Sum of other five numbers = 108 - 24 = 84. Average of other five numbers = 84 \u00f7 5 = 16.8"
+        },
+        {
+            "id": "9",
+            "question": "The average height of 8 students is 160 cm. If the height of one student is 180 cm, what is the average height of the remaining students?",
+            "options": [
+                "155 cm",
+                "157.5 cm",
+                "160 cm",
+                "162.5 cm"
+            ],
+            "correctAnswer": "157.5 cm",
+            "explanation": "Sum of heights of 8 students = 8 \u00d7 160 = 1280 cm. Sum of heights of remaining 7 students = 1280 - 180 = 1100 cm. Average height of remaining students = 1100 \u00f7 7 = 157.5 cm"
+        },
+        {
+            "id": "10",
+            "question": "The average of five numbers is 25. If four of the numbers are 20, 25, 30, and 35, what is the fifth number?",
+            "options": [
+                "15",
+                "20",
+                "25",
+                "30"
+            ],
+            "correctAnswer": "15",
+            "explanation": "Sum of five numbers = 5 \u00d7 25 = 125. Sum of four numbers = 20 + 25 + 30 + 35 = 110. Fifth number = 125 - 110 = 15"
+        },
+        {
+            "id": "11",
+            "question": "The average of 8 consecutive numbers is 24.5. What is the sum of the first and last numbers?",
+            "options": [
+                "45",
+                "47",
+                "49",
+                "51"
+            ],
+            "correctAnswer": "49",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 7\n3) Average = 24.5\n4) (8x + 28) ÷ 8 = 24.5\n5) 8x + 28 = 196\n6) 8x = 168\n7) x = 21\n8) Last number = 28\n9) Sum = 21 + 28 = 49"
+        },
+        {
+            "id": "12",
+            "question": "The average temperature for a week is 25°C. If the temperature on Monday is excluded, the average becomes 24°C. What was the temperature on Monday?",
+            "options": [
+                "31°C",
+                "32°C",
+                "33°C",
+                "34°C"
+            ],
+            "correctAnswer": "31°C",
+            "explanation": "Let's solve this step by step:\n1) Total for week = 7 × 25 = 175°C\n2) Total for 6 days = 6 × 24 = 144°C\n3) Monday's temperature = 175 - 144 = 31°C"
+        },
+        {
+            "id": "13",
+            "question": "The average of 6 consecutive even numbers is 25. What is the largest number?",
+            "options": [
+                "28",
+                "30",
+                "32",
+                "34"
+            ],
+            "correctAnswer": "30",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+2, x+4, x+6, x+8, x+10\n2) Average = 25\n3) (6x + 30) ÷ 6 = 25\n4) 6x + 30 = 150\n5) 6x = 120\n6) x = 20\n7) Largest number = x + 10 = 30"
+        },
+        {
+            "id": "14",
+            "question": "A student's average marks in 5 subjects is 82. If his marks in a sixth subject are included, his average drops to 80. What are his marks in the sixth subject?",
+            "options": [
+                "70",
+                "72",
+                "74",
+                "76"
+            ],
+            "correctAnswer": "70",
+            "explanation": "Let's solve this step by step:\n1) Original total = 5 × 82 = 410\n2) New total = 6 × 80 = 480\n3) Sixth subject marks = 480 - 410 = 70"
+        },
+        {
+            "id": "15",
+            "question": "The average of 7 consecutive odd numbers is 21. What is the middle number?",
+            "options": [
+                "19",
+                "21",
+                "23",
+                "25"
+            ],
+            "correctAnswer": "21",
+            "explanation": "Let's solve this step by step:\n1) In 7 consecutive odd numbers, middle number is the average\n2) Therefore, middle number = 21\n3) Numbers are 15, 17, 19, 21, 23, 25, 27"
+        },
+        {
+            "id": "16",
+            "question": "The average of 9 numbers is 36. If one number is changed from 42 to 30, what is the new average?",
+            "options": [
+                "34",
+                "35",
+                "36",
+                "37"
+            ],
+            "correctAnswer": "34",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 36 = 324\n2) Change in number = 42 - 30 = 12\n3) New total = 324 - 12 = 312\n4) New average = 312 ÷ 9 = 34"
+        },
+        {
+            "id": "17",
+            "question": "The average of 5 consecutive multiples of 4 is 20. What is the smallest number?",
+            "options": [
+                "12",
+                "16",
+                "20",
+                "24"
+            ],
+            "correctAnswer": "12",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+4, x+8, x+12, x+16\n2) Average = 20\n3) (5x + 40) ÷ 5 = 20\n4) 5x + 40 = 100\n5) 5x = 60\n6) x = 12"
+        },
+        {
+            "id": "18",
+            "question": "The average of 8 numbers is 28. Two numbers are removed and their average becomes 30. If one of the removed numbers is 20, what is the other removed number?",
+            "options": [
+                "22",
+                "24",
+                "26",
+                "28"
+            ],
+            "correctAnswer": "24",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 28 = 224\n2) New total = 6 × 30 = 180\n3) Sum of removed numbers = 224 - 180 = 44\n4) One number = 20\n5) Other number = 44 - 20 = 24"
+        },
+        {
+            "id": "19",
+            "question": "The average of 6 consecutive numbers is 22.5. What is the product of the smallest and largest numbers?",
+            "options": [
+                "380",
+                "385",
+                "390",
+                "395"
+            ],
+            "correctAnswer": "380",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 5\n3) Average = 22.5\n4) (6x + 15) ÷ 6 = 22.5\n5) 6x + 15 = 135\n6) 6x = 120\n7) x = 20\n8) Last number = 25\n9) Product = 20 × 25 = 380"
+        },
+        {
+            "id": "20",
+            "question": "The average of 4 consecutive multiples of 3 is 18. What is the largest number?",
+            "options": [
+                "21",
+                "24",
+                "27",
+                "30"
+            ],
+            "correctAnswer": "21",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+3, x+6, x+9\n2) Average = 18\n3) (4x + 18) ÷ 4 = 18\n4) 4x + 18 = 72\n5) 4x = 54\n6) x = 15\n7) Largest number = x + 9 = 21"
+        },
+        {
+            "id": "21",
+            "question": "The average of 7 numbers is 32. If one number is excluded, the average becomes 30. What is the excluded number?",
+            "options": [
+                "44",
+                "46",
+                "48",
+                "50"
+            ],
+            "correctAnswer": "44",
+            "explanation": "Let's solve this step by step:\n1) Original total = 7 × 32 = 224\n2) New total = 6 × 30 = 180\n3) Excluded number = 224 - 180 = 44"
+        },
+        {
+            "id": "22",
+            "question": "The average of 5 consecutive even numbers is 26. What is the sum of the first and last numbers?",
+            "options": [
+                "50",
+                "52",
+                "54",
+                "56"
+            ],
+            "correctAnswer": "52",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+2, x+4, x+6, x+8\n2) Average = 26\n3) (5x + 20) ÷ 5 = 26\n4) 5x + 20 = 130\n5) 5x = 110\n6) x = 22\n7) Last number = 30\n8) Sum = 22 + 30 = 52"
+        },
+        {
+            "id": "23",
+            "question": "The average of 8 numbers is 40. If each number is increased by 5, what is the new average?",
+            "options": [
+                "42",
+                "43",
+                "44",
+                "45"
+            ],
+            "correctAnswer": "45",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 40 = 320\n2) When each number is increased by 5, the total increases by 8 × 5 = 40\n3) New total = 320 + 40 = 360\n4) New average = 360 ÷ 8 = 45"
+        },
+        {
+            "id": "24",
+            "question": "The average of 6 consecutive odd numbers is 24. What is the middle number?",
+            "options": [
+                "22",
+                "24",
+                "26",
+                "28"
+            ],
+            "correctAnswer": "24",
+            "explanation": "Let's solve this step by step:\n1) In 6 consecutive odd numbers, average of middle two numbers is the overall average\n2) Therefore, middle numbers are 23 and 25\n3) Numbers are 19, 21, 23, 25, 27, 29"
+        },
+        {
+            "id": "25",
+            "question": "The average of 9 numbers is 45. If one number is changed from 50 to 40, what is the new average?",
+            "options": [
+                "43",
+                "44",
+                "45",
+                "46"
+            ],
+            "correctAnswer": "44",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 45 = 405\n2) Change in number = 50 - 40 = 10\n3) New total = 405 - 10 = 395\n4) New average = 395 ÷ 9 = 44"
+        },
+        {
+            "id": "26",
+            "question": "The average of 7 consecutive multiples of 5 is 35. What is the smallest number?",
+            "options": [
+                "20",
+                "25",
+                "30",
+                "35"
+            ],
+            "correctAnswer": "20",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+5, x+10, x+15, x+20, x+25, x+30\n2) Average = 35\n3) (7x + 105) ÷ 7 = 35\n4) 7x + 105 = 245\n5) 7x = 140\n6) x = 20"
+        },
+        {
+            "id": "27",
+            "question": "The average of 8 numbers is 36. Two numbers are removed and their average becomes 38. If one of the removed numbers is 30, what is the other removed number?",
+            "options": [
+                "34",
+                "36",
+                "38",
+                "40"
+            ],
+            "correctAnswer": "38",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 36 = 288\n2) New total = 6 × 38 = 228\n3) Sum of removed numbers = 288 - 228 = 60\n4) One number = 30\n5) Other number = 60 - 30 = 38"
+        },
+        {
+            "id": "28",
+            "question": "The average of 6 consecutive numbers is 27.5. What is the product of the smallest and largest numbers?",
+            "options": [
+                "650",
+                "675",
+                "700",
+                "725"
+            ],
+            "correctAnswer": "650",
+            "explanation": "Let's solve this step by step:\n1) Let first number be x\n2) Last number = x + 5\n3) Average = 27.5\n4) (6x + 15) ÷ 6 = 27.5\n5) 6x + 15 = 165\n6) 6x = 150\n7) x = 25\n8) Last number = 30\n9) Product = 25 × 30 = 650"
+        },
+        {
+            "id": "29",
+            "question": "The average of 5 consecutive multiples of 4 is 24. What is the largest number?",
+            "options": [
+                "28",
+                "32",
+                "36",
+                "40"
+            ],
+            "correctAnswer": "28",
+            "explanation": "Let's solve this step by step:\n1) Let numbers be x, x+4, x+8, x+12, x+16\n2) Average = 24\n3) (5x + 40) ÷ 5 = 24\n4) 5x + 40 = 120\n5) 5x = 80\n6) x = 16\n7) Largest number = x + 16 = 28"
+        },
+        {
+            "id": "30",
+            "question": "The average of 7 numbers is 38. If each number is decreased by 4, what is the new average?",
+            "options": [
+                "32",
+                "33",
+                "34",
+                "35"
+            ],
+            "correctAnswer": "34",
+            "explanation": "Let's solve this step by step:\n1) Original total = 7 × 38 = 266\n2) When each number is decreased by 4, the total decreases by 7 × 4 = 28\n3) New total = 266 - 28 = 238\n4) New average = 238 ÷ 7 = 34"
+        }
+    ]
+}

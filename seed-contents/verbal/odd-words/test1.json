@@ -1,0 +1,371 @@
+{
+    "id": "verbal-odd-words-test1",
+    "name": "Test 1 - Odd Words",
+    "section": "verbal",
+    "topic": "odd-words",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in Odd Words"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in Odd Words"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in Odd Words"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in Odd Words"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in Odd Words"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in Odd Words"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in Odd Words"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in Odd Words"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in Odd Words"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in Odd Words"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Odd Words"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Odd Words"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Odd Words"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Odd Words"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Odd Words"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Odd Words"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Odd Words"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Odd Words"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Odd Words"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Odd Words"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Odd Words"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Odd Words"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Odd Words"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Odd Words"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Odd Words"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Odd Words"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Odd Words"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Odd Words"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Odd Words"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Odd Words",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Odd Words"
+        }
+    ]
+}

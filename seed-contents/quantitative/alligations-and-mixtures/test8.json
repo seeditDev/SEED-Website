@@ -1,0 +1,371 @@
+{
+    "id": "test8",
+    "name": "Alligations And Mixtures Test 8",
+    "section": "quantitative",
+    "topic": "alligations-and-mixtures",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "A container has 180 liters of a mixture of milk and water in the ratio 7:2. If 45 liters of the mixture is replaced with water, what will be the new ratio of milk to water?",
+            "options": [
+                "5:4",
+                "4:5",
+                "3:2",
+                "2:3"
+            ],
+            "correctAnswer": "5:4",
+            "explanation": "Initial mixture: 180 liters with milk:water = 7:2\nMilk = (7/9) × 180 = 140 liters\nWater = (2/9) × 180 = 40 liters\n\nAfter replacement:\nMilk removed = (7/9) × 45 = 35 liters\nWater removed = (2/9) × 45 = 10 liters\n\nFinal mixture:\nMilk = 140 - 35 = 105 liters\nWater = 40 - 10 + 45 = 75 liters\n\nNew ratio = 105:75 = 7:5 = 5:4 (simplified)"
+        },
+        {
+            "id": "2",
+            "question": "A shopkeeper mixes three types of rice costing Rs. 30, Rs. 40, and Rs. 50 per kg in the ratio 2:3:1. If he sells the mixture at Rs. 45 per kg, what is his profit percentage?",
+            "options": [
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            "correctAnswer": "12.5%",
+            "explanation": "Let the quantities be 2x, 3x, and x kg respectively.\nTotal cost = (30 × 2x) + (40 × 3x) + (50 × x) = 60x + 120x + 50x = 230x\nTotal quantity = 2x + 3x + x = 6x kg\nCost price per kg = 230x/6x = Rs. 38.33\nSelling price = Rs. 45\nProfit = 45 - 38.33 = Rs. 6.67\nProfit percentage = (6.67/38.33) × 100 = 12.5%"
+        },
+        {
+            "id": "3",
+            "question": "A vessel contains 240 liters of a mixture of milk and water. If 60 liters of the mixture is replaced with water and the ratio becomes 3:2, what was the initial ratio of milk to water?",
+            "options": [
+                "4:1",
+                "3:1",
+                "5:1",
+                "2:1"
+            ],
+            "correctAnswer": "4:1",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 240\nInitial water = (1/(x+1)) × 240\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 60\nWater removed = (1/(x+1)) × 60\n\nFinal mixture:\nMilk = (x/(x+1)) × 240 - (x/(x+1)) × 60 = (x/(x+1)) × 180\nWater = (1/(x+1)) × 240 - (1/(x+1)) × 60 + 60 = (1/(x+1)) × 180 + 60\n\nGiven final ratio is 3:2\n((x/(x+1)) × 180)/((1/(x+1)) × 180 + 60) = 3/2\nSolving, x = 4\nTherefore, initial ratio was 4:1"
+        },
+        {
+            "id": "4",
+            "question": "A mixture of milk and water contains 80% milk. If 20 liters of water is added to 100 liters of this mixture, what will be the percentage of milk in the new mixture?",
+            "options": [
+                "66.67%",
+                "70%",
+                "75%",
+                "80%"
+            ],
+            "correctAnswer": "66.67%",
+            "explanation": "Initial mixture: 100 liters\nMilk = 80% of 100 = 80 liters\nWater = 20% of 100 = 20 liters\n\nAfter adding water:\nTotal mixture = 100 + 20 = 120 liters\nMilk = 80 liters (unchanged)\nWater = 20 + 20 = 40 liters\n\nPercentage of milk = (80/120) × 100 = 66.67%"
+        },
+        {
+            "id": "5",
+            "question": "A shopkeeper has two types of sugar costing Rs. 25 and Rs. 35 per kg. He wants to make a mixture costing Rs. 30 per kg. In what ratio should he mix the two types of sugar?",
+            "options": [
+                "1:1",
+                "2:1",
+                "1:2",
+                "3:1"
+            ],
+            "correctAnswer": "1:1",
+            "explanation": "Using allegation method:\n\n25 -------- 35\n    30\n\n35-30 : 30-25\n5 : 5\n1 : 1\n\nTherefore, the ratio should be 1:1"
+        },
+        {
+            "id": "6",
+            "question": "A container has 150 liters of a mixture of milk and water. If 30 liters of the mixture is replaced with milk and the ratio becomes 4:1, what was the initial ratio of milk to water?",
+            "options": [
+                "3:2",
+                "2:1",
+                "5:2",
+                "4:3"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 150\nInitial water = (1/(x+1)) × 150\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 30\nWater removed = (1/(x+1)) × 30\n\nFinal mixture:\nMilk = (x/(x+1)) × 150 - (x/(x+1)) × 30 + 30 = (x/(x+1)) × 120 + 30\nWater = (1/(x+1)) × 150 - (1/(x+1)) × 30 = (1/(x+1)) × 120\n\nGiven final ratio is 4:1\n((x/(x+1)) × 120 + 30)/((1/(x+1)) × 120) = 4/1\nSolving, x = 1.5\nTherefore, initial ratio was 3:2"
+        },
+        {
+            "id": "7",
+            "question": "A mixture of alcohol and water contains 60% alcohol. If 40 liters of the mixture is replaced with water and the percentage of alcohol becomes 45%, what was the total volume of the mixture?",
+            "options": [
+                "160 liters",
+                "180 liters",
+                "200 liters",
+                "220 liters"
+            ],
+            "correctAnswer": "160 liters",
+            "explanation": "Let total volume be x liters\nInitial alcohol = 60% of x = 0.6x\nInitial water = 40% of x = 0.4x\n\nAfter replacement:\nAlcohol removed = 60% of 40 = 24 liters\nWater removed = 40% of 40 = 16 liters\n\nFinal mixture:\nAlcohol = 0.6x - 24\nWater = 0.4x - 16 + 40 = 0.4x + 24\n\nGiven alcohol is 45%\n(0.6x - 24)/x = 0.45\n0.6x - 24 = 0.45x\n0.15x = 24\nx = 160 liters"
+        },
+        {
+            "id": "8",
+            "question": "A shopkeeper mixes two types of tea costing Rs. 200 and Rs. 300 per kg in such a way that the cost price of the mixture is Rs. 250 per kg. If he sells the mixture at Rs. 275 per kg, what is his profit percentage?",
+            "options": [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%"
+            ],
+            "correctAnswer": "10%",
+            "explanation": "Using allegation method:\n\n200 -------- 300\n    250\n\n300-250 : 250-200\n50 : 50\n1 : 1\n\nTherefore, the ratio is 1:1\nCost price = Rs. 250\nSelling price = Rs. 275\nProfit = 275 - 250 = Rs. 25\nProfit percentage = (25/250) × 100 = 10%"
+        },
+        {
+            "id": "9",
+            "question": "A vessel contains 200 liters of a mixture of milk and water. If 50 liters of the mixture is replaced with milk and the ratio becomes 5:3, what was the initial ratio of milk to water?",
+            "options": [
+                "3:2",
+                "4:3",
+                "5:4",
+                "2:1"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 200\nInitial water = (1/(x+1)) × 200\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 50\nWater removed = (1/(x+1)) × 50\n\nFinal mixture:\nMilk = (x/(x+1)) × 200 - (x/(x+1)) × 50 + 50 = (x/(x+1)) × 150 + 50\nWater = (1/(x+1)) × 200 - (1/(x+1)) × 50 = (1/(x+1)) × 150\n\nGiven final ratio is 5:3\n((x/(x+1)) × 150 + 50)/((1/(x+1)) × 150) = 5/3\nSolving, x = 1.5\nTherefore, initial ratio was 3:2"
+        },
+        {
+            "id": "10",
+            "question": "A mixture of milk and water contains 75% milk. If 25 liters of water is added to 100 liters of this mixture, what will be the percentage of milk in the new mixture?",
+            "options": [
+                "60%",
+                "65%",
+                "70%",
+                "75%"
+            ],
+            "correctAnswer": "60%",
+            "explanation": "Initial mixture: 100 liters\nMilk = 75% of 100 = 75 liters\nWater = 25% of 100 = 25 liters\n\nAfter adding water:\nTotal mixture = 100 + 25 = 125 liters\nMilk = 75 liters (unchanged)\nWater = 25 + 25 = 50 liters\n\nPercentage of milk = (75/125) × 100 = 60%"
+        },
+        {
+            "id": "11",
+            "question": "A shopkeeper has three types of rice costing Rs. 20, Rs. 30, and Rs. 40 per kg. He wants to make a mixture costing Rs. 30 per kg. In what ratio should he mix the three types of rice?",
+            "options": [
+                "1:1:1",
+                "2:1:1",
+                "1:2:1",
+                "1:1:2"
+            ],
+            "correctAnswer": "1:1:1",
+            "explanation": "Using allegation method:\n\n20 -------- 30 -------- 40\n          30\n\n30-20 : 30-30 : 40-30\n10 : 0 : 10\n1 : 0 : 1\n\nTherefore, the ratio should be 1:1:1"
+        },
+        {
+            "id": "12",
+            "question": "A container has 120 liters of a mixture of milk and water in the ratio 5:1. If 30 liters of the mixture is replaced with water, what will be the new ratio of milk to water?",
+            "options": [
+                "4:3",
+                "3:2",
+                "2:1",
+                "1:1"
+            ],
+            "correctAnswer": "4:3",
+            "explanation": "Initial mixture: 120 liters with milk:water = 5:1\nMilk = (5/6) × 120 = 100 liters\nWater = (1/6) × 120 = 20 liters\n\nAfter replacement:\nMilk removed = (5/6) × 30 = 25 liters\nWater removed = (1/6) × 30 = 5 liters\n\nFinal mixture:\nMilk = 100 - 25 = 75 liters\nWater = 20 - 5 + 30 = 45 liters\n\nNew ratio = 75:45 = 5:3 = 4:3 (simplified)"
+        },
+        {
+            "id": "13",
+            "question": "A mixture of alcohol and water contains 70% alcohol. If 35 liters of the mixture is replaced with water and the percentage of alcohol becomes 55%, what was the total volume of the mixture?",
+            "options": [
+                "140 liters",
+                "160 liters",
+                "180 liters",
+                "200 liters"
+            ],
+            "correctAnswer": "140 liters",
+            "explanation": "Let total volume be x liters\nInitial alcohol = 70% of x = 0.7x\nInitial water = 30% of x = 0.3x\n\nAfter replacement:\nAlcohol removed = 70% of 35 = 24.5 liters\nWater removed = 30% of 35 = 10.5 liters\n\nFinal mixture:\nAlcohol = 0.7x - 24.5\nWater = 0.3x - 10.5 + 35 = 0.3x + 24.5\n\nGiven alcohol is 55%\n(0.7x - 24.5)/x = 0.55\n0.7x - 24.5 = 0.55x\n0.15x = 24.5\nx = 140 liters"
+        },
+        {
+            "id": "14",
+            "question": "A shopkeeper mixes two types of sugar costing Rs. 15 and Rs. 25 per kg in such a way that the cost price of the mixture is Rs. 20 per kg. If he sells the mixture at Rs. 24 per kg, what is his profit percentage?",
+            "options": [
+                "20%",
+                "25%",
+                "30%",
+                "35%"
+            ],
+            "correctAnswer": "20%",
+            "explanation": "Using allegation method:\n\n15 -------- 25\n    20\n\n25-20 : 20-15\n5 : 5\n1 : 1\n\nTherefore, the ratio is 1:1\nCost price = Rs. 20\nSelling price = Rs. 24\nProfit = 24 - 20 = Rs. 4\nProfit percentage = (4/20) × 100 = 20%"
+        },
+        {
+            "id": "15",
+            "question": "A vessel contains 160 liters of a mixture of milk and water. If 40 liters of the mixture is replaced with milk and the ratio becomes 3:1, what was the initial ratio of milk to water?",
+            "options": [
+                "2:1",
+                "3:2",
+                "4:3",
+                "5:4"
+            ],
+            "correctAnswer": "2:1",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 160\nInitial water = (1/(x+1)) × 160\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 40\nWater removed = (1/(x+1)) × 40\n\nFinal mixture:\nMilk = (x/(x+1)) × 160 - (x/(x+1)) × 40 + 40 = (x/(x+1)) × 120 + 40\nWater = (1/(x+1)) × 160 - (1/(x+1)) × 40 = (1/(x+1)) × 120\n\nGiven final ratio is 3:1\n((x/(x+1)) × 120 + 40)/((1/(x+1)) × 120) = 3/1\nSolving, x = 2\nTherefore, initial ratio was 2:1"
+        },
+        {
+            "id": "16",
+            "question": "A mixture of milk and water contains 85% milk. If 30 liters of water is added to 100 liters of this mixture, what will be the percentage of milk in the new mixture?",
+            "options": [
+                "65.38%",
+                "70%",
+                "75%",
+                "80%"
+            ],
+            "correctAnswer": "65.38%",
+            "explanation": "Initial mixture: 100 liters\nMilk = 85% of 100 = 85 liters\nWater = 15% of 100 = 15 liters\n\nAfter adding water:\nTotal mixture = 100 + 30 = 130 liters\nMilk = 85 liters (unchanged)\nWater = 15 + 30 = 45 liters\n\nPercentage of milk = (85/130) × 100 = 65.38%"
+        },
+        {
+            "id": "17",
+            "question": "A shopkeeper has two types of tea costing Rs. 150 and Rs. 250 per kg. He wants to make a mixture costing Rs. 200 per kg. In what ratio should he mix the two types of tea?",
+            "options": [
+                "1:1",
+                "2:1",
+                "1:2",
+                "3:1"
+            ],
+            "correctAnswer": "1:1",
+            "explanation": "Using allegation method:\n\n150 -------- 250\n    200\n\n250-200 : 200-150\n50 : 50\n1 : 1\n\nTherefore, the ratio should be 1:1"
+        },
+        {
+            "id": "18",
+            "question": "A container has 140 liters of a mixture of milk and water in the ratio 6:1. If 35 liters of the mixture is replaced with water, what will be the new ratio of milk to water?",
+            "options": [
+                "5:3",
+                "4:3",
+                "3:2",
+                "2:1"
+            ],
+            "correctAnswer": "5:3",
+            "explanation": "Initial mixture: 140 liters with milk:water = 6:1\nMilk = (6/7) × 140 = 120 liters\nWater = (1/7) × 140 = 20 liters\n\nAfter replacement:\nMilk removed = (6/7) × 35 = 30 liters\nWater removed = (1/7) × 35 = 5 liters\n\nFinal mixture:\nMilk = 120 - 30 = 90 liters\nWater = 20 - 5 + 35 = 50 liters\n\nNew ratio = 90:50 = 9:5 = 5:3 (simplified)"
+        },
+        {
+            "id": "19",
+            "question": "A mixture of alcohol and water contains 65% alcohol. If 40 liters of the mixture is replaced with water and the percentage of alcohol becomes 50%, what was the total volume of the mixture?",
+            "options": [
+                "160 liters",
+                "180 liters",
+                "200 liters",
+                "220 liters"
+            ],
+            "correctAnswer": "160 liters",
+            "explanation": "Let total volume be x liters\nInitial alcohol = 65% of x = 0.65x\nInitial water = 35% of x = 0.35x\n\nAfter replacement:\nAlcohol removed = 65% of 40 = 26 liters\nWater removed = 35% of 40 = 14 liters\n\nFinal mixture:\nAlcohol = 0.65x - 26\nWater = 0.35x - 14 + 40 = 0.35x + 26\n\nGiven alcohol is 50%\n(0.65x - 26)/x = 0.50\n0.65x - 26 = 0.50x\n0.15x = 26\nx = 160 liters"
+        },
+        {
+            "id": "20",
+            "question": "A shopkeeper mixes two types of coffee costing Rs. 100 and Rs. 200 per kg in such a way that the cost price of the mixture is Rs. 150 per kg. If he sells the mixture at Rs. 180 per kg, what is his profit percentage?",
+            "options": [
+                "20%",
+                "25%",
+                "30%",
+                "35%"
+            ],
+            "correctAnswer": "20%",
+            "explanation": "Using allegation method:\n\n100 -------- 200\n    150\n\n200-150 : 150-100\n50 : 50\n1 : 1\n\nTherefore, the ratio is 1:1\nCost price = Rs. 150\nSelling price = Rs. 180\nProfit = 180 - 150 = Rs. 30\nProfit percentage = (30/150) × 100 = 20%"
+        },
+        {
+            "id": "21",
+            "question": "A vessel contains 180 liters of a mixture of milk and water. If 45 liters of the mixture is replaced with milk and the ratio becomes 4:1, what was the initial ratio of milk to water?",
+            "options": [
+                "3:2",
+                "4:3",
+                "5:4",
+                "2:1"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 180\nInitial water = (1/(x+1)) × 180\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 45\nWater removed = (1/(x+1)) × 45\n\nFinal mixture:\nMilk = (x/(x+1)) × 180 - (x/(x+1)) × 45 + 45 = (x/(x+1)) × 135 + 45\nWater = (1/(x+1)) × 180 - (1/(x+1)) × 45 = (1/(x+1)) × 135\n\nGiven final ratio is 4:1\n((x/(x+1)) × 135 + 45)/((1/(x+1)) × 135) = 4/1\nSolving, x = 1.5\nTherefore, initial ratio was 3:2"
+        },
+        {
+            "id": "22",
+            "question": "A mixture of milk and water contains 90% milk. If 40 liters of water is added to 100 liters of this mixture, what will be the percentage of milk in the new mixture?",
+            "options": [
+                "64.29%",
+                "70%",
+                "75%",
+                "80%"
+            ],
+            "correctAnswer": "64.29%",
+            "explanation": "Initial mixture: 100 liters\nMilk = 90% of 100 = 90 liters\nWater = 10% of 100 = 10 liters\n\nAfter adding water:\nTotal mixture = 100 + 40 = 140 liters\nMilk = 90 liters (unchanged)\nWater = 10 + 40 = 50 liters\n\nPercentage of milk = (90/140) × 100 = 64.29%"
+        },
+        {
+            "id": "23",
+            "question": "A shopkeeper has three types of tea costing Rs. 100, Rs. 150, and Rs. 200 per kg. He wants to make a mixture costing Rs. 150 per kg. In what ratio should he mix the three types of tea?",
+            "options": [
+                "1:1:1",
+                "2:1:1",
+                "1:2:1",
+                "1:1:2"
+            ],
+            "correctAnswer": "1:1:1",
+            "explanation": "Using allegation method:\n\n100 -------- 150 -------- 200\n          150\n\n150-100 : 150-150 : 200-150\n50 : 0 : 50\n1 : 0 : 1\n\nTherefore, the ratio should be 1:1:1"
+        },
+        {
+            "id": "24",
+            "question": "A container has 160 liters of a mixture of milk and water in the ratio 8:1. If 40 liters of the mixture is replaced with water, what will be the new ratio of milk to water?",
+            "options": [
+                "6:4",
+                "5:3",
+                "4:2",
+                "3:1"
+            ],
+            "correctAnswer": "6:4",
+            "explanation": "Initial mixture: 160 liters with milk:water = 8:1\nMilk = (8/9) × 160 = 142.22 liters\nWater = (1/9) × 160 = 17.78 liters\n\nAfter replacement:\nMilk removed = (8/9) × 40 = 35.56 liters\nWater removed = (1/9) × 40 = 4.44 liters\n\nFinal mixture:\nMilk = 142.22 - 35.56 = 106.66 liters\nWater = 17.78 - 4.44 + 40 = 53.34 liters\n\nNew ratio = 106.66:53.34 = 2:1 = 6:4 (simplified)"
+        },
+        {
+            "id": "25",
+            "question": "A mixture of alcohol and water contains 75% alcohol. If 45 liters of the mixture is replaced with water and the percentage of alcohol becomes 60%, what was the total volume of the mixture?",
+            "options": [
+                "180 liters",
+                "200 liters",
+                "220 liters",
+                "240 liters"
+            ],
+            "correctAnswer": "180 liters",
+            "explanation": "Let total volume be x liters\nInitial alcohol = 75% of x = 0.75x\nInitial water = 25% of x = 0.25x\n\nAfter replacement:\nAlcohol removed = 75% of 45 = 33.75 liters\nWater removed = 25% of 45 = 11.25 liters\n\nFinal mixture:\nAlcohol = 0.75x - 33.75\nWater = 0.25x - 11.25 + 45 = 0.25x + 33.75\n\nGiven alcohol is 60%\n(0.75x - 33.75)/x = 0.60\n0.75x - 33.75 = 0.60x\n0.15x = 33.75\nx = 180 liters"
+        },
+        {
+            "id": "26",
+            "question": "A shopkeeper mixes two types of sugar costing Rs. 20 and Rs. 30 per kg in such a way that the cost price of the mixture is Rs. 25 per kg. If he sells the mixture at Rs. 30 per kg, what is his profit percentage?",
+            "options": [
+                "20%",
+                "25%",
+                "30%",
+                "35%"
+            ],
+            "correctAnswer": "20%",
+            "explanation": "Using allegation method:\n\n20 -------- 30\n    25\n\n30-25 : 25-20\n5 : 5\n1 : 1\n\nTherefore, the ratio is 1:1\nCost price = Rs. 25\nSelling price = Rs. 30\nProfit = 30 - 25 = Rs. 5\nProfit percentage = (5/25) × 100 = 20%"
+        },
+        {
+            "id": "27",
+            "question": "A vessel contains 200 liters of a mixture of milk and water. If 50 liters of the mixture is replaced with milk and the ratio becomes 5:2, what was the initial ratio of milk to water?",
+            "options": [
+                "3:2",
+                "4:3",
+                "5:4",
+                "2:1"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Let initial ratio be x:1\nInitial milk = (x/(x+1)) × 200\nInitial water = (1/(x+1)) × 200\n\nAfter replacement:\nMilk removed = (x/(x+1)) × 50\nWater removed = (1/(x+1)) × 50\n\nFinal mixture:\nMilk = (x/(x+1)) × 200 - (x/(x+1)) × 50 + 50 = (x/(x+1)) × 150 + 50\nWater = (1/(x+1)) × 200 - (1/(x+1)) × 50 = (1/(x+1)) × 150\n\nGiven final ratio is 5:2\n((x/(x+1)) × 150 + 50)/((1/(x+1)) × 150) = 5/2\nSolving, x = 1.5\nTherefore, initial ratio was 3:2"
+        },
+        {
+            "id": "28",
+            "question": "A mixture of milk and water contains 95% milk. If 50 liters of water is added to 100 liters of this mixture, what will be the percentage of milk in the new mixture?",
+            "options": [
+                "63.33%",
+                "70%",
+                "75%",
+                "80%"
+            ],
+            "correctAnswer": "63.33%",
+            "explanation": "Initial mixture: 100 liters\nMilk = 95% of 100 = 95 liters\nWater = 5% of 100 = 5 liters\n\nAfter adding water:\nTotal mixture = 100 + 50 = 150 liters\nMilk = 95 liters (unchanged)\nWater = 5 + 50 = 55 liters\n\nPercentage of milk = (95/150) × 100 = 63.33%"
+        },
+        {
+            "id": "29",
+            "question": "A shopkeeper has two types of rice costing Rs. 40 and Rs. 60 per kg. He wants to make a mixture costing Rs. 50 per kg. In what ratio should he mix the two types of rice?",
+            "options": [
+                "1:1",
+                "2:1",
+                "1:2",
+                "3:1"
+            ],
+            "correctAnswer": "1:1",
+            "explanation": "Using allegation method:\n\n40 -------- 60\n    50\n\n60-50 : 50-40\n10 : 10\n1 : 1\n\nTherefore, the ratio should be 1:1"
+        },
+        {
+            "id": "30",
+            "question": "A container has 180 liters of a mixture of milk and water in the ratio 9:1. If 45 liters of the mixture is replaced with water, what will be the new ratio of milk to water?",
+            "options": [
+                "7:5",
+                "6:4",
+                "5:3",
+                "4:2"
+            ],
+            "correctAnswer": "7:5",
+            "explanation": "Initial mixture: 180 liters with milk:water = 9:1\nMilk = (9/10) × 180 = 162 liters\nWater = (1/10) × 180 = 18 liters\n\nAfter replacement:\nMilk removed = (9/10) × 45 = 40.5 liters\nWater removed = (1/10) × 45 = 4.5 liters\n\nFinal mixture:\nMilk = 162 - 40.5 = 121.5 liters\nWater = 18 - 4.5 + 45 = 58.5 liters\n\nNew ratio = 121.5:58.5 = 2.08:1 = 7:5 (simplified)"
+        }
+    ]
+}

@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-time-speed-distance-test7",
+    "name": "Test 7 - Time Speed Distance",
+    "section": "quantitative",
+    "topic": "time-speed-distance",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "A train travels at a speed of 60 km/h. How far will it travel in 2.5 hours?",
+            "options": [
+                "120 km",
+                "150 km",
+                "180 km",
+                "200 km"
+            ],
+            "correctAnswer": "150 km",
+            "explanation": "Distance = Speed \u00d7 Time = 60 km/h \u00d7 2.5 h = 150 km"
+        },
+        {
+            "id": "2",
+            "question": "A car covers a distance of 240 km in 3 hours. What is its average speed?",
+            "options": [
+                "60 km/h",
+                "70 km/h",
+                "80 km/h",
+                "90 km/h"
+            ],
+            "correctAnswer": "80 km/h",
+            "explanation": "Speed = Distance \u00f7 Time = 240 km \u00f7 3 h = 80 km/h"
+        },
+        {
+            "id": "3",
+            "question": "If a person walks at a speed of 5 km/h, how long will it take to cover a distance of 20 km?",
+            "options": [
+                "3 hours",
+                "4 hours",
+                "5 hours",
+                "6 hours"
+            ],
+            "correctAnswer": "4 hours",
+            "explanation": "Time = Distance \u00f7 Speed = 20 km \u00f7 5 km/h = 4 hours"
+        },
+        {
+            "id": "4",
+            "question": "A bus travels at a speed of 40 km/h for 2 hours and then at 60 km/h for 3 hours. What is the average speed for the entire journey?",
+            "options": [
+                "48 km/h",
+                "50 km/h",
+                "52 km/h",
+                "54 km/h"
+            ],
+            "correctAnswer": "52 km/h",
+            "explanation": "Total distance = (40 \u00d7 2) + (60 \u00d7 3) = 80 + 180 = 260 km. Total time = 2 + 3 = 5 hours. Average speed = 260 \u00f7 5 = 52 km/h"
+        },
+        {
+            "id": "5",
+            "question": "A cyclist covers a distance of 30 km in 2 hours. If he increases his speed by 5 km/h, how long will it take to cover the same distance?",
+            "options": [
+                "1.5 hours",
+                "1.6 hours",
+                "1.7 hours",
+                "1.8 hours"
+            ],
+            "correctAnswer": "1.5 hours",
+            "explanation": "Original speed = 30 km \u00f7 2 h = 15 km/h. New speed = 15 + 5 = 20 km/h. New time = 30 km \u00f7 20 km/h = 1.5 hours"
+        },
+        {
+            "id": "6",
+            "question": "A train travels at a speed of 80 km/h. How long will it take to cover a distance of 400 km?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "5 hours",
+            "explanation": "Time = Distance \u00f7 Speed = 400 km \u00f7 80 km/h = 5 hours"
+        },
+        {
+            "id": "7",
+            "question": "A car travels at a speed of 50 km/h for 3 hours and then at 70 km/h for 2 hours. What is the total distance covered?",
+            "options": [
+                "250 km",
+                "270 km",
+                "290 km",
+                "310 km"
+            ],
+            "correctAnswer": "290 km",
+            "explanation": "Total distance = (50 \u00d7 3) + (70 \u00d7 2) = 150 + 140 = 290 km"
+        },
+        {
+            "id": "8",
+            "question": "If a person runs at a speed of 12 km/h, how far will he travel in 1.5 hours?",
+            "options": [
+                "15 km",
+                "16 km",
+                "17 km",
+                "18 km"
+            ],
+            "correctAnswer": "18 km",
+            "explanation": "Distance = Speed \u00d7 Time = 12 km/h \u00d7 1.5 h = 18 km"
+        },
+        {
+            "id": "9",
+            "question": "A bus travels at a speed of 45 km/h. How long will it take to cover a distance of 180 km?",
+            "options": [
+                "3 hours",
+                "3.5 hours",
+                "4 hours",
+                "4.5 hours"
+            ],
+            "correctAnswer": "4 hours",
+            "explanation": "Time = Distance \u00f7 Speed = 180 km \u00f7 45 km/h = 4 hours"
+        },
+        {
+            "id": "10",
+            "question": "A train travels at a speed of 90 km/h for 2 hours and then at 60 km/h for 3 hours. What is the average speed for the entire journey?",
+            "options": [
+                "70 km/h",
+                "72 km/h",
+                "74 km/h",
+                "76 km/h"
+            ],
+            "correctAnswer": "72 km/h",
+            "explanation": "Total distance = (90 \u00d7 2) + (60 \u00d7 3) = 180 + 180 = 360 km. Total time = 2 + 3 = 5 hours. Average speed = 360 \u00f7 5 = 72 km/h"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Time Speed Distance"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Time Speed Distance"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Time Speed Distance"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Time Speed Distance"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Time Speed Distance"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Time Speed Distance"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Time Speed Distance"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Time Speed Distance"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Time Speed Distance"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Time Speed Distance"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Time Speed Distance"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Time Speed Distance"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Time Speed Distance"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Time Speed Distance"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Time Speed Distance"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Time Speed Distance"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Time Speed Distance"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Time Speed Distance"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Time Speed Distance"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Time Speed Distance",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Time Speed Distance"
+        }
+    ]
+}

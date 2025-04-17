@@ -1,0 +1,371 @@
+{
+    "id": "reasoning-logical-choice-test4",
+    "name": "Test 4 - Logical Choice",
+    "section": "reasoning",
+    "topic": "logical-choice",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in Logical Choice"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in Logical Choice"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in Logical Choice"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in Logical Choice"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in Logical Choice"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in Logical Choice"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in Logical Choice"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in Logical Choice"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in Logical Choice"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in Logical Choice"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Logical Choice"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Logical Choice"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Logical Choice"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Logical Choice"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Logical Choice"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Logical Choice"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Logical Choice"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Logical Choice"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Logical Choice"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Logical Choice"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Logical Choice"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Logical Choice"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Logical Choice"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Logical Choice"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Logical Choice"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Logical Choice"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Logical Choice"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Logical Choice"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Logical Choice"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Logical Choice",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Logical Choice"
+        }
+    ]
+}

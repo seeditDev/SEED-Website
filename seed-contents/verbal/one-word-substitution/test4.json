@@ -1,0 +1,371 @@
+{
+    "id": "verbal-one-word-substitution-test4",
+    "name": "Test 4 - One Word Substitution",
+    "section": "verbal",
+    "topic": "one-word-substitution",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in One Word Substitution"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in One Word Substitution"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in One Word Substitution"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in One Word Substitution"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in One Word Substitution"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in One Word Substitution"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in One Word Substitution"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in One Word Substitution"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in One Word Substitution"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in One Word Substitution"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in One Word Substitution"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in One Word Substitution"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in One Word Substitution"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in One Word Substitution"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in One Word Substitution"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in One Word Substitution"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in One Word Substitution"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in One Word Substitution"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in One Word Substitution"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in One Word Substitution"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in One Word Substitution"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in One Word Substitution"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in One Word Substitution"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in One Word Substitution"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in One Word Substitution"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in One Word Substitution"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in One Word Substitution"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in One Word Substitution"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in One Word Substitution"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for One Word Substitution",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in One Word Substitution"
+        }
+    ]
+}

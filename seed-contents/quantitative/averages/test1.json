@@ -1,0 +1,371 @@
+{
+    "id": "test1",
+    "name": "Averages Test 1",
+    "section": "quantitative",
+    "topic": "averages",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": 1,
+            "question": "The average of 8 numbers is 24. If each number is increased by 6, what is the new average?",
+            "options": [
+                "30",
+                "31",
+                "32",
+                "33"
+            ],
+            "correctAnswer": "30",
+            "explanation": "Let's solve this step by step:\n1) Original total = 8 × 24 = 192\n2) When each number is increased by 6, the total increases by 8 × 6 = 48\n3) New total = 192 + 48 = 240\n4) New average = 240 ÷ 8 = 30"
+        },
+        {
+            "id": 2,
+            "question": "The average age of 12 students in a class is 15 years. If 8 students with an average age of 13 years join the class, what is the new average age?",
+            "options": [
+                "14.2 years",
+                "14.4 years",
+                "14.6 years",
+                "14.8 years"
+            ],
+            "correctAnswer": "14.2 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 12 × 15 = 180 years\n2) New students' total age = 8 × 13 = 104 years\n3) New total age = 180 + 104 = 284 years\n4) New number of students = 12 + 8 = 20\n5) New average = 284 ÷ 20 = 14.2 years"
+        },
+        {
+            "id": 3,
+            "question": "The average weight of 16 people is 70 kg. If the weight of one person is excluded, the average becomes 68 kg. What is the weight of the excluded person?",
+            "options": [
+                "102 kg",
+                "104 kg",
+                "106 kg",
+                "108 kg"
+            ],
+            "correctAnswer": "102 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 16 × 70 = 1120 kg\n2) New total weight = 15 × 68 = 1020 kg\n3) Excluded person's weight = 1120 - 1020 = 102 kg"
+        },
+        {
+            "id": 4,
+            "question": "The average marks of 35 students in a class is 75. If the marks of 7 students who scored above 90 are excluded, the average becomes 72. What is the average marks of the excluded students?",
+            "options": [
+                "93",
+                "94",
+                "95",
+                "96"
+            ],
+            "correctAnswer": "93",
+            "explanation": "Let's solve this step by step:\n1) Original total marks = 35 × 75 = 2625\n2) New total marks = 28 × 72 = 2016\n3) Excluded students' total = 2625 - 2016 = 609\n4) Average of excluded students = 609 ÷ 7 = 93"
+        },
+        {
+            "id": 5,
+            "question": "The average price of 15 items is ₹600. If 5 items with an average price of ₹700 are added, what is the new average price?",
+            "options": [
+                "₹625",
+                "₹630",
+                "₹635",
+                "₹640"
+            ],
+            "correctAnswer": "₹625",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 15 × 600 = ₹9,000\n2) New items' total price = 5 × 700 = ₹3,500\n3) New total price = ₹9,000 + ₹3,500 = ₹12,500\n4) New number of items = 15 + 5 = 20\n5) New average = ₹12,500 ÷ 20 = ₹625"
+        },
+        {
+            "id": 6,
+            "question": "The average height of 14 boys is 165 cm and the average height of 6 girls is 160 cm. What is the average height of all the students?",
+            "options": [
+                "163.5 cm",
+                "164 cm",
+                "164.5 cm",
+                "165 cm"
+            ],
+            "correctAnswer": "163.5 cm",
+            "explanation": "Let's solve this step by step:\n1) Total height of boys = 14 × 165 = 2310 cm\n2) Total height of girls = 6 × 160 = 960 cm\n3) Combined total height = 2310 + 960 = 3270 cm\n4) Total number of students = 14 + 6 = 20\n5) Average height = 3270 ÷ 20 = 163.5 cm"
+        },
+        {
+            "id": 7,
+            "question": "The average of 9 numbers is 27. If each number is multiplied by 3, what is the new average?",
+            "options": [
+                "81",
+                "82",
+                "83",
+                "84"
+            ],
+            "correctAnswer": "81",
+            "explanation": "Let's solve this step by step:\n1) Original total = 9 × 27 = 243\n2) When each number is multiplied by 3, the total also gets multiplied by 3\n3) New total = 243 × 3 = 729\n4) New average = 729 ÷ 9 = 81"
+        },
+        {
+            "id": 8,
+            "question": "The average salary of 20 employees is ₹35,000. If the salary of the manager is included, the average becomes ₹38,000. What is the manager's salary?",
+            "options": [
+                "₹95,000",
+                "₹98,000",
+                "₹101,000",
+                "₹104,000"
+            ],
+            "correctAnswer": "₹95,000",
+            "explanation": "Let's solve this step by step:\n1) Original total salary = 20 × 35,000 = ₹7,00,000\n2) New total salary = 21 × 38,000 = ₹7,98,000\n3) Manager's salary = ₹7,98,000 - ₹7,00,000 = ₹95,000"
+        },
+        {
+            "id": 9,
+            "question": "The average age of a family of 7 members is 32 years. If the youngest member is 12 years old, what is the average age of the remaining members?",
+            "options": [
+                "36.33 years",
+                "37 years",
+                "37.67 years",
+                "38.33 years"
+            ],
+            "correctAnswer": "36.33 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 7 × 32 = 224 years\n2) Age of youngest member = 12 years\n3) Total age of remaining members = 224 - 12 = 212 years\n4) Number of remaining members = 6\n5) New average = 212 ÷ 6 = 36.33 years"
+        },
+        {
+            "id": 10,
+            "question": "The average marks of 45 students in a class is 78. If 15 students with an average of 82 marks join the class, what is the new average marks?",
+            "options": [
+                "79",
+                "79.5",
+                "80",
+                "80.5"
+            ],
+            "correctAnswer": "79",
+            "explanation": "Let's solve this step by step:\n1) Original total marks = 45 × 78 = 3510\n2) New students' total marks = 15 × 82 = 1230\n3) New total marks = 3510 + 1230 = 4740\n4) New number of students = 45 + 15 = 60\n5) New average = 4740 ÷ 60 = 79"
+        },
+        {
+            "id": 11,
+            "question": "The average weight of 22 students is 52 kg. If the weight of the teacher is included, the average becomes 53 kg. What is the teacher's weight?",
+            "options": [
+                "75 kg",
+                "76 kg",
+                "77 kg",
+                "78 kg"
+            ],
+            "correctAnswer": "75 kg",
+            "explanation": "Let's solve this step by step:\n1) Original total weight = 22 × 52 = 1144 kg\n2) New total weight = 23 × 53 = 1219 kg\n3) Teacher's weight = 1219 - 1144 = 75 kg"
+        },
+        {
+            "id": 12,
+            "question": "The average of 12 numbers is 32. If each number is decreased by 8, what is the new average?",
+            "options": [
+                "24",
+                "25",
+                "26",
+                "27"
+            ],
+            "correctAnswer": "24",
+            "explanation": "Let's solve this step by step:\n1) Original total = 12 × 32 = 384\n2) When each number is decreased by 8, the total decreases by 12 × 8 = 96\n3) New total = 384 - 96 = 288\n4) New average = 288 ÷ 12 = 24"
+        },
+        {
+            "id": 13,
+            "question": "The average height of 26 students is 168 cm. If 14 students with an average height of 172 cm join the class, what is the new average height?",
+            "options": [
+                "169.5 cm",
+                "170 cm",
+                "170.5 cm",
+                "171 cm"
+            ],
+            "correctAnswer": "169.5 cm",
+            "explanation": "Let's solve this step by step:\n1) Original total height = 26 × 168 = 4368 cm\n2) New students' total height = 14 × 172 = 2408 cm\n3) New total height = 4368 + 2408 = 6776 cm\n4) New number of students = 26 + 14 = 40\n5) New average = 6776 ÷ 40 = 169.5 cm"
+        },
+        {
+            "id": 14,
+            "question": "The average score of 50 students in a test is 88. If the highest and lowest scores are excluded, the average becomes 89. If the highest score is 98, what is the lowest score?",
+            "options": [
+                "78",
+                "79",
+                "80",
+                "81"
+            ],
+            "correctAnswer": "78",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 50 × 88 = 4400\n2) New total score = 48 × 89 = 4272\n3) Sum of highest and lowest = 4400 - 4272 = 128\n4) Highest score = 98\n5) Lowest score = 128 - 98 = 78"
+        },
+        {
+            "id": 15,
+            "question": "The average price of 30 items is ₹550. If 20 items with an average price of ₹600 are added, what is the new average price?",
+            "options": [
+                "₹570",
+                "₹575",
+                "₹580",
+                "₹585"
+            ],
+            "correctAnswer": "₹570",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 30 × 550 = ₹16,500\n2) New items' total price = 20 × 600 = ₹12,000\n3) New total price = ₹16,500 + ₹12,000 = ₹28,500\n4) New number of items = 30 + 20 = 50\n5) New average = ₹28,500 ÷ 50 = ₹570"
+        },
+        {
+            "id": 16,
+            "question": "The average age of 24 employees in a company is 36 years. If the age of the CEO is included, the average becomes 37 years. What is the CEO's age?",
+            "options": [
+                "61 years",
+                "62 years",
+                "63 years",
+                "64 years"
+            ],
+            "correctAnswer": "61 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 24 × 36 = 864 years\n2) New total age = 25 × 37 = 925 years\n3) CEO's age = 925 - 864 = 61 years"
+        },
+        {
+            "id": 17,
+            "question": "The average of 14 numbers is 38. If each number is increased by 10, what is the new average?",
+            "options": [
+                "48",
+                "49",
+                "50",
+                "51"
+            ],
+            "correctAnswer": "48",
+            "explanation": "Let's solve this step by step:\n1) Original total = 14 × 38 = 532\n2) When each number is increased by 10, the total increases by 14 × 10 = 140\n3) New total = 532 + 140 = 672\n4) New average = 672 ÷ 14 = 48"
+        },
+        {
+            "id": 18,
+            "question": "The average height of 34 students is 166 cm. If 16 students with an average height of 170 cm join the class, what is the new average height?",
+            "options": [
+                "167.2 cm",
+                "167.6 cm",
+                "168 cm",
+                "168.4 cm"
+            ],
+            "correctAnswer": "167.2 cm",
+            "explanation": "Let's solve this step by step:\n1) Original total height = 34 × 166 = 5644 cm\n2) New students' total height = 16 × 170 = 2720 cm\n3) New total height = 5644 + 2720 = 8364 cm\n4) New number of students = 34 + 16 = 50\n5) New average = 8364 ÷ 50 = 167.2 cm"
+        },
+        {
+            "id": 19,
+            "question": "The average score of 55 students in a test is 92. If the highest and lowest scores are excluded, the average becomes 93. If the highest score is 100, what is the lowest score?",
+            "options": [
+                "85",
+                "86",
+                "87",
+                "88"
+            ],
+            "correctAnswer": "85",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 55 × 92 = 5060\n2) New total score = 53 × 93 = 4929\n3) Sum of highest and lowest = 5060 - 4929 = 131\n4) Highest score = 100\n5) Lowest score = 131 - 100 = 85"
+        },
+        {
+            "id": 20,
+            "question": "The average price of 25 items is ₹650. If 15 items with an average price of ₹700 are added, what is the new average price?",
+            "options": [
+                "₹668.75",
+                "₹671.25",
+                "₹673.75",
+                "₹676.25"
+            ],
+            "correctAnswer": "₹668.75",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 25 × 650 = ₹16,250\n2) New items' total price = 15 × 700 = ₹10,500\n3) New total price = ₹16,250 + ₹10,500 = ₹26,750\n4) New number of items = 25 + 15 = 40\n5) New average = ₹26,750 ÷ 40 = ₹668.75"
+        },
+        {
+            "id": 21,
+            "question": "The average age of 22 employees in a company is 38 years. If the age of the CEO is included, the average becomes 39 years. What is the CEO's age?",
+            "options": [
+                "61 years",
+                "62 years",
+                "63 years",
+                "64 years"
+            ],
+            "correctAnswer": "61 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 22 × 38 = 836 years\n2) New total age = 23 × 39 = 897 years\n3) CEO's age = 897 - 836 = 61 years"
+        },
+        {
+            "id": 22,
+            "question": "The average of 16 numbers is 42. If each number is decreased by 8, what is the new average?",
+            "options": [
+                "34",
+                "35",
+                "36",
+                "37"
+            ],
+            "correctAnswer": "34",
+            "explanation": "Let's solve this step by step:\n1) Original total = 16 × 42 = 672\n2) When each number is decreased by 8, the total decreases by 16 × 8 = 128\n3) New total = 672 - 128 = 544\n4) New average = 544 ÷ 16 = 34"
+        },
+        {
+            "id": 23,
+            "question": "The average height of 38 students is 164 cm. If 22 students with an average height of 168 cm join the class, what is the new average height?",
+            "options": [
+                "165.6 cm",
+                "166 cm",
+                "166.4 cm",
+                "166.8 cm"
+            ],
+            "correctAnswer": "165.6 cm",
+            "explanation": "Let's solve this step by step:\n1) Original total height = 38 × 164 = 6232 cm\n2) New students' total height = 22 × 168 = 3696 cm\n3) New total height = 6232 + 3696 = 9928 cm\n4) New number of students = 38 + 22 = 60\n5) New average = 9928 ÷ 60 = 165.6 cm"
+        },
+        {
+            "id": 24,
+            "question": "The average score of 60 students in a test is 94. If the highest and lowest scores are excluded, the average becomes 95. If the highest score is 100, what is the lowest score?",
+            "options": [
+                "88",
+                "89",
+                "90",
+                "91"
+            ],
+            "correctAnswer": "88",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 60 × 94 = 5640\n2) New total score = 58 × 95 = 5510\n3) Sum of highest and lowest = 5640 - 5510 = 130\n4) Highest score = 100\n5) Lowest score = 130 - 100 = 88"
+        },
+        {
+            "id": 25,
+            "question": "The average price of 35 items is ₹750. If 25 items with an average price of ₹800 are added, what is the new average price?",
+            "options": [
+                "₹770.83",
+                "₹772.5",
+                "₹774.17",
+                "₹775.83"
+            ],
+            "correctAnswer": "₹770.83",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 35 × 750 = ₹26,250\n2) New items' total price = 25 × 800 = ₹20,000\n3) New total price = ₹26,250 + ₹20,000 = ₹46,250\n4) New number of items = 35 + 25 = 60\n5) New average = ₹46,250 ÷ 60 = ₹770.83"
+        },
+        {
+            "id": 26,
+            "question": "The average age of 26 employees in a company is 40 years. If the age of the CEO is included, the average becomes 41 years. What is the CEO's age?",
+            "options": [
+                "67 years",
+                "68 years",
+                "69 years",
+                "70 years"
+            ],
+            "correctAnswer": "67 years",
+            "explanation": "Let's solve this step by step:\n1) Original total age = 26 × 40 = 1040 years\n2) New total age = 27 × 41 = 1107 years\n3) CEO's age = 1107 - 1040 = 67 years"
+        },
+        {
+            "id": 27,
+            "question": "The average of 18 numbers is 44. If each number is decreased by 6, what is the new average?",
+            "options": [
+                "38",
+                "39",
+                "40",
+                "41"
+            ],
+            "correctAnswer": "38",
+            "explanation": "Let's solve this step by step:\n1) Original total = 18 × 44 = 792\n2) When each number is decreased by 6, the total decreases by 18 × 6 = 108\n3) New total = 792 - 108 = 684\n4) New average = 684 ÷ 18 = 38"
+        },
+        {
+            "id": 28,
+            "question": "The average height of 42 students is 162 cm. If 18 students with an average height of 166 cm join the class, what is the new average height?",
+            "options": [
+                "163.2 cm",
+                "163.6 cm",
+                "164 cm",
+                "164.4 cm"
+            ],
+            "correctAnswer": "163.2 cm",
+            "explanation": "Let's solve this step by step:\n1) Original total height = 42 × 162 = 6804 cm\n2) New students' total height = 18 × 166 = 2988 cm\n3) New total height = 6804 + 2988 = 9792 cm\n4) New number of students = 42 + 18 = 60\n5) New average = 9792 ÷ 60 = 163.2 cm"
+        },
+        {
+            "id": 29,
+            "question": "The average score of 65 students in a test is 96. If the highest and lowest scores are excluded, the average becomes 97. If the highest score is 100, what is the lowest score?",
+            "options": [
+                "92",
+                "93",
+                "94",
+                "95"
+            ],
+            "correctAnswer": "92",
+            "explanation": "Let's solve this step by step:\n1) Original total score = 65 × 96 = 6240\n2) New total score = 63 × 97 = 6111\n3) Sum of highest and lowest = 6240 - 6111 = 129\n4) Highest score = 100\n5) Lowest score = 129 - 100 = 92"
+        },
+        {
+            "id": 30,
+            "question": "The average price of 40 items is ₹850. If 30 items with an average price of ₹900 are added, what is the new average price?",
+            "options": [
+                "₹871.43",
+                "₹873.57",
+                "₹875.71",
+                "₹877.86"
+            ],
+            "correctAnswer": "₹871.43",
+            "explanation": "Let's solve this step by step:\n1) Original total price = 40 × 850 = ₹34,000\n2) New items' total price = 30 × 900 = ₹27,000\n3) New total price = ₹34,000 + ₹27,000 = ₹61,000\n4) New number of items = 40 + 30 = 70\n5) New average = ₹61,000 ÷ 70 = ₹871.43"
+        }
+    ]
+}

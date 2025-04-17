@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-permutations-combinations-test7",
+    "name": "Test 7 - Permutations Combinations",
+    "section": "quantitative",
+    "topic": "permutations-combinations",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in Permutations Combinations"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in Permutations Combinations"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in Permutations Combinations"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in Permutations Combinations"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in Permutations Combinations"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in Permutations Combinations"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in Permutations Combinations"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in Permutations Combinations"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in Permutations Combinations"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in Permutations Combinations"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Permutations Combinations"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Permutations Combinations"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Permutations Combinations"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Permutations Combinations"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Permutations Combinations"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Permutations Combinations"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Permutations Combinations"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Permutations Combinations"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Permutations Combinations"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Permutations Combinations"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Permutations Combinations"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Permutations Combinations"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Permutations Combinations"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Permutations Combinations"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Permutations Combinations"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Permutations Combinations"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Permutations Combinations"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Permutations Combinations"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Permutations Combinations"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Permutations Combinations",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Permutations Combinations"
+        }
+    ]
+}

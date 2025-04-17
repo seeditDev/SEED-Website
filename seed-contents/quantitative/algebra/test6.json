@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-algebra-test6",
+    "name": "Test 6 - Algebra",
+    "section": "quantitative",
+    "topic": "algebra",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Solve the quadratic equation: x² - 5x + 6 = 0",
+            "options": [
+                "x = 2 and x = 3",
+                "x = -2 and x = -3",
+                "x = 1 and x = 6",
+                "x = -1 and x = -6"
+            ],
+            "correctAnswer": "x = 2 and x = 3",
+            "explanation": "Using the quadratic formula: x = (-b ± √(b² - 4ac))/(2a)\nHere, a = 1, b = -5, c = 6\nx = (5 ± √(25 - 24))/2\nx = (5 ± √1)/2\nx = (5 ± 1)/2\nx = 6/2 = 3 or x = 4/2 = 2"
+        },
+        {
+            "id": "2",
+            "question": "Factor the expression: 2x² + 7x + 3",
+            "options": [
+                "(2x + 1)(x + 3)",
+                "(2x + 3)(x + 1)",
+                "(2x - 1)(x - 3)",
+                "(2x - 3)(x - 1)"
+            ],
+            "correctAnswer": "(2x + 1)(x + 3)",
+            "explanation": "To factor 2x² + 7x + 3, we need to find two numbers that multiply to 2×3 = 6 and add to 7.\nThese numbers are 6 and 1.\nSo we rewrite 7x as 6x + x: 2x² + 6x + x + 3\nThen factor by grouping: 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3)"
+        },
+        {
+            "id": "3",
+            "question": "Solve the system of equations: 3x + 2y = 7, 2x - y = 4",
+            "options": [
+                "x = 3, y = -1",
+                "x = 2, y = 0",
+                "x = 1, y = 2",
+                "x = 0, y = 3.5"
+            ],
+            "correctAnswer": "x = 3, y = -1",
+            "explanation": "From the second equation: y = 2x - 4\nSubstituting into the first equation: 3x + 2(2x - 4) = 7\n3x + 4x - 8 = 7\n7x - 8 = 7\n7x = 15\nx = 3\nThen y = 2(3) - 4 = 6 - 4 = 2"
+        },
+        {
+            "id": "4",
+            "question": "Simplify: (x² - 9)/(x - 3)",
+            "options": [
+                "x + 3 for all x ≠ 3",
+                "x - 3 for all x ≠ 3",
+                "x + 9 for all x ≠ 3",
+                "x - 9 for all x ≠ 3"
+            ],
+            "correctAnswer": "x + 3 for all x ≠ 3",
+            "explanation": "x² - 9 is a difference of squares: a² - b² = (a + b)(a - b)\nHere, a = x and b = 3\nSo x² - 9 = (x + 3)(x - 3)\nTherefore, (x² - 9)/(x - 3) = (x + 3)(x - 3)/(x - 3) = x + 3 for all x ≠ 3"
+        },
+        {
+            "id": "5",
+            "question": "Solve the inequality: 2x + 5 > 3x - 1",
+            "options": [
+                "x < 6",
+                "x > 6",
+                "x < 4",
+                "x > 4"
+            ],
+            "correctAnswer": "x < 6",
+            "explanation": "2x + 5 > 3x - 1\n2x - 3x > -1 - 5\n-x > -6\nx < 6 (remember to reverse the inequality when multiplying or dividing by a negative number)"
+        },
+        {
+            "id": "6",
+            "question": "Find the slope of the line passing through the points (2, 3) and (5, 9)",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "6"
+            ],
+            "correctAnswer": "2",
+            "explanation": "The slope m of a line passing through points (x₁, y₁) and (x₂, y₂) is m = (y₂ - y₁)/(x₂ - x₁)\nHere, (x₁, y₁) = (2, 3) and (x₂, y₂) = (5, 9)\nm = (9 - 3)/(5 - 2) = 6/3 = 2"
+        },
+        {
+            "id": "7",
+            "question": "If f(x) = 2x + 3 and g(x) = x² - 1, find (f ∘ g)(x)",
+            "options": [
+                "2x² + 1",
+                "2x² - 1",
+                "4x² + 12x + 9",
+                "4x² - 12x + 9"
+            ],
+            "correctAnswer": "2x² + 1",
+            "explanation": "(f ∘ g)(x) = f(g(x)) = f(x² - 1) = 2(x² - 1) + 3 = 2x² - 2 + 3 = 2x² + 1"
+        },
+        {
+            "id": "8",
+            "question": "Solve the equation: |2x - 5| = 7",
+            "options": [
+                "x = 6 or x = -1",
+                "x = 1 or x = 6",
+                "x = -6 or x = 1",
+                "x = -1 or x = 6"
+            ],
+            "correctAnswer": "x = 6 or x = -1",
+            "explanation": "|2x - 5| = 7 means either 2x - 5 = 7 or 2x - 5 = -7\nIf 2x - 5 = 7, then 2x = 12, so x = 6\nIf 2x - 5 = -7, then 2x = -2, so x = -1"
+        },
+        {
+            "id": "9",
+            "question": "Find the equation of the line with slope 3 that passes through the point (2, 5)",
+            "options": [
+                "y = 3x - 1",
+                "y = 3x + 1",
+                "y = 3x - 2",
+                "y = 3x + 2"
+            ],
+            "correctAnswer": "y = 3x - 1",
+            "explanation": "Using the point-slope form: y - y₁ = m(x - x₁)\ny - 5 = 3(x - 2)\ny - 5 = 3x - 6\ny = 3x - 1"
+        },
+        {
+            "id": "10",
+            "question": "Simplify: (x³ - 8)/(x - 2)",
+            "options": [
+                "x² + 2x + 4 for all x ≠ 2",
+                "x² - 2x + 4 for all x ≠ 2",
+                "x² + 2x - 4 for all x ≠ 2",
+                "x² - 2x - 4 for all x ≠ 2"
+            ],
+            "correctAnswer": "x² + 2x + 4 for all x ≠ 2",
+            "explanation": "x³ - 8 is a difference of cubes: a³ - b³ = (a - b)(a² + ab + b²)\nHere, a = x and b = 2\nSo x³ - 8 = (x - 2)(x² + 2x + 4)\nTherefore, (x³ - 8)/(x - 2) = x² + 2x + 4 for all x ≠ 2"
+        },
+        {
+            "id": "11",
+            "question": "Solve the equation: log₂(x) = 3",
+            "options": [
+                "x = 6",
+                "x = 8",
+                "x = 9",
+                "x = 12"
+            ],
+            "correctAnswer": "x = 8",
+            "explanation": "log₂(x) = 3 means 2³ = x\n2³ = 8\nTherefore, x = 8"
+        },
+        {
+            "id": "12",
+            "question": "Find the domain of the function f(x) = √(x - 4)",
+            "options": [
+                "x ≥ 4",
+                "x > 4",
+                "x ≤ 4",
+                "x < 4"
+            ],
+            "correctAnswer": "x ≥ 4",
+            "explanation": "For a square root function, the expression inside the square root must be non-negative.\nSo, x - 4 ≥ 0\nx ≥ 4"
+        },
+        {
+            "id": "13",
+            "question": "Solve the equation: 3^(x+1) = 27",
+            "options": [
+                "x = 1",
+                "x = 2",
+                "x = 3",
+                "x = 4"
+            ],
+            "correctAnswer": "x = 2",
+            "explanation": "3^(x+1) = 27\nSince 27 = 3³, we have 3^(x+1) = 3³\nTherefore, x + 1 = 3\nx = 2"
+        },
+        {
+            "id": "14",
+            "question": "Find the equation of the circle with center (3, -2) and radius 4",
+            "options": [
+                "(x - 3)² + (y + 2)² = 16",
+                "(x + 3)² + (y - 2)² = 16",
+                "(x - 3)² + (y + 2)² = 4",
+                "(x + 3)² + (y - 2)² = 4"
+            ],
+            "correctAnswer": "(x - 3)² + (y + 2)² = 16",
+            "explanation": "The standard form of a circle with center (h, k) and radius r is (x - h)² + (y - k)² = r²\nWith center (3, -2) and radius 4:\n(x - 3)² + (y - (-2))² = 4²\n(x - 3)² + (y + 2)² = 16"
+        },
+        {
+            "id": "15",
+            "question": "If f(x) = 3x² - 5x + 2, find f'(x)",
+            "options": [
+                "f'(x) = 6x - 5",
+                "f'(x) = 3x - 5",
+                "f'(x) = 6x + 2",
+                "f'(x) = 3x + 2"
+            ],
+            "correctAnswer": "f'(x) = 6x - 5",
+            "explanation": "To find the derivative of f(x) = 3x² - 5x + 2, we use the power rule: d/dx(xⁿ) = nxⁿ⁻¹\nf'(x) = d/dx(3x²) - d/dx(5x) + d/dx(2)\nf'(x) = 3(2x) - 5(1) + 0\nf'(x) = 6x - 5"
+        },
+        {
+            "id": "16",
+            "question": "Solve the inequality: (x - 2)(x + 3) > 0",
+            "options": [
+                "x < -3 or x > 2",
+                "x < -2 or x > 3",
+                "-3 < x < 2",
+                "-2 < x < 3"
+            ],
+            "correctAnswer": "x < -3 or x > 2",
+            "explanation": "To solve (x - 2)(x + 3) > 0, we need to find the intervals where the product is positive.\nThe zeros are at x = -3 and x = 2.\nTesting regions:\nx < -3: (x - 2) negative, (x + 3) negative, product positive\n-3 < x < 2: (x - 2) negative, (x + 3) positive, product negative\nx > 2: (x - 2) positive, (x + 3) positive, product positive\nTherefore, the solution is x < -3 or x > 2"
+        },
+        {
+            "id": "17",
+            "question": "Find the inverse of the function f(x) = 3x + 4",
+            "options": [
+                "f⁻¹(x) = (x - 4)/3",
+                "f⁻¹(x) = (x + 4)/3",
+                "f⁻¹(x) = 3x - 4",
+                "f⁻¹(x) = -3x - 4"
+            ],
+            "correctAnswer": "f⁻¹(x) = (x - 4)/3",
+            "explanation": "For f(x) = 3x + 4, let y = 3x + 4\nTo find the inverse, swap x and y, and solve for y:\nx = 3y + 4\n3y = x - 4\ny = (x - 4)/3\nTherefore, f⁻¹(x) = (x - 4)/3"
+        },
+        {
+            "id": "18",
+            "question": "Solve the equation: e^(2x) = 16",
+            "options": [
+                "x = ln(4)",
+                "x = 2ln(4)",
+                "x = ln(16)/2",
+                "x = ln(8)"
+            ],
+            "correctAnswer": "x = ln(4)",
+            "explanation": "e^(2x) = 16\nTaking the natural logarithm of both sides: ln(e^(2x)) = ln(16)\n2x = ln(16)\nx = ln(16)/2\nSince 16 = 4², ln(16) = ln(4²) = 2ln(4)\nTherefore, x = 2ln(4)/2 = ln(4)"
+        },
+        {
+            "id": "19",
+            "question": "Find the range of the function f(x) = 3 - √(x - 1)",
+            "options": [
+                "(-∞, 3]",
+                "[3, ∞)",
+                "(-∞, 2]",
+                "[2, ∞)"
+            ],
+            "correctAnswer": "(-∞, 3]",
+            "explanation": "The range of f(x) = 3 - √(x - 1) is determined by the values f(x) can take.\nThe domain of f(x) is x ≥ 1 (since the expression inside the square root must be non-negative).\nAs x increases from 1 to ∞, √(x - 1) increases from 0 to ∞.\nTherefore, 3 - √(x - 1) decreases from 3 to -∞.\nSo the range is (-∞, 3]."
+        },
+        {
+            "id": "20",
+            "question": "If the quadratic equation ax² + bx + c = 0 has exactly one real solution, what must be true about the discriminant?",
+            "options": [
+                "The discriminant must be zero",
+                "The discriminant must be positive",
+                "The discriminant must be negative",
+                "The discriminant can be any real number"
+            ],
+            "correctAnswer": "The discriminant must be zero",
+            "explanation": "The discriminant of a quadratic equation ax² + bx + c = 0 is b² - 4ac.\nIf the equation has exactly one real solution, then the discriminant must be zero.\nThis is because the quadratic formula gives x = (-b ± √(b² - 4ac))/(2a).\nIf b² - 4ac = 0, then x = -b/(2a), which is a single real solution."
+        },
+        {
+            "id": "21",
+            "question": "Solve the inequality: (x - 2)(x + 3)(x - 5) > 0",
+            "options": [
+                "-3 < x < 2 or x > 5",
+                "x < -3 or 2 < x < 5",
+                "x < -3 or x > 5",
+                "-3 < x < 5"
+            ],
+            "correctAnswer": "-3 < x < 2 or x > 5",
+            "explanation": "To solve (x - 2)(x + 3)(x - 5) > 0, we need to find the intervals where the product is positive.\nThe zeros are at x = -3, x = 2, and x = 5.\nTesting regions:\nx < -3: (x - 2) negative, (x + 3) negative, (x - 5) negative, product negative\n-3 < x < 2: (x - 2) negative, (x + 3) positive, (x - 5) negative, product positive\n2 < x < 5: (x - 2) positive, (x + 3) positive, (x - 5) negative, product negative\nx > 5: (x - 2) positive, (x + 3) positive, (x - 5) positive, product positive\nTherefore, the solution is -3 < x < 2 or x > 5"
+        },
+        {
+            "id": "22",
+            "question": "If log₅(x) = 2 and log₅(y) = 3, what is log₅(x/y)?",
+            "options": [
+                "log₅(x/y) = -1",
+                "log₅(x/y) = 1",
+                "log₅(x/y) = 5",
+                "log₅(x/y) = 6"
+            ],
+            "correctAnswer": "log₅(x/y) = -1",
+            "explanation": "Using logarithm properties: log₅(x/y) = log₅(x) - log₅(y)\nGiven log₅(x) = 2 and log₅(y) = 3:\nlog₅(x/y) = 2 - 3 = -1"
+        },
+        {
+            "id": "23",
+            "question": "Find the equation of the parabola with vertex (2, -1) and focus (2, 1)",
+            "options": [
+                "y = (1/4)(x - 2)² - 1",
+                "y = (1/4)(x + 2)² - 1",
+                "y = 4(x - 2)² - 1",
+                "y = 4(x + 2)² - 1"
+            ],
+            "correctAnswer": "y = (1/4)(x - 2)² - 1",
+            "explanation": "The standard form of a vertical parabola with vertex (h, k) and focus (h, k + p) is y = (1/(4p))(x - h)² + k\nHere, the vertex is (2, -1) and the focus is (2, 1).\nThe distance from the vertex to the focus is p = 1 - (-1) = 2\nTherefore, the equation is y = (1/(4(2)))(x - 2)² + (-1) = (1/8)(x - 2)² - 1"
+        },
+        {
+            "id": "24",
+            "question": "If f(x) = x² - 4x + 4, find the value of x for which f(x) = 0",
+            "options": [
+                "x = 2",
+                "x = 4",
+                "x = -2",
+                "x = -4"
+            ],
+            "correctAnswer": "x = 2",
+            "explanation": "f(x) = x² - 4x + 4 = 0\nThis is a perfect square: (x - 2)² = 0\nTherefore, x - 2 = 0\nx = 2"
+        },
+        {
+            "id": "25",
+            "question": "Solve the equation: log₂(x) + log₂(x - 2) = 3",
+            "options": [
+                "x = 4",
+                "x = 6",
+                "x = 8",
+                "x = 10"
+            ],
+            "correctAnswer": "x = 4",
+            "explanation": "Using the logarithm property: log₂(x) + log₂(x - 2) = log₂(x(x - 2)) = 3\nSo x(x - 2) = 2³ = 8\nx² - 2x = 8\nx² - 2x - 8 = 0\n(x - 4)(x + 2) = 0\nx = 4 or x = -2\nSince x > 2 is required for log₂(x - 2) to be defined, x = 4 is the only valid solution."
+        },
+        {
+            "id": "26",
+            "question": "Find the equation of the hyperbola with center (0, 0), vertices at (±3, 0), and foci at (±5, 0)",
+            "options": [
+                "x²/9 - y²/16 = 1",
+                "x²/16 - y²/9 = 1",
+                "y²/9 - x²/16 = 1",
+                "y²/16 - x²/9 = 1"
+            ],
+            "correctAnswer": "x²/9 - y²/16 = 1",
+            "explanation": "The standard form of a horizontal hyperbola with center (0, 0), vertices at (±a, 0), and foci at (±c, 0) is x²/a² - y²/b² = 1, where b² = c² - a².\nHere, a = 3 and c = 5.\nTherefore, b² = 5² - 3² = 25 - 9 = 16\nSo the equation is x²/9 - y²/16 = 1"
+        },
+        {
+            "id": "27",
+            "question": "If f(x) = 2x³ - 3x² + 4x - 1, find f'(x)",
+            "options": [
+                "f'(x) = 6x² - 6x + 4",
+                "f'(x) = 6x² - 3x + 4",
+                "f'(x) = 6x² - 6x + 1",
+                "f'(x) = 6x² - 3x + 1"
+            ],
+            "correctAnswer": "f'(x) = 6x² - 6x + 4",
+            "explanation": "To find the derivative of f(x) = 2x³ - 3x² + 4x - 1, we use the power rule: d/dx(xⁿ) = nxⁿ⁻¹\nf'(x) = d/dx(2x³) - d/dx(3x²) + d/dx(4x) - d/dx(1)\nf'(x) = 2(3x²) - 3(2x) + 4(1) - 0\nf'(x) = 6x² - 6x + 4"
+        },
+        {
+            "id": "28",
+            "question": "Solve the equation: sin(x) = 1/2 in the interval [0, 2π]",
+            "options": [
+                "x = π/6 or x = 5π/6",
+                "x = π/3 or x = 2π/3",
+                "x = π/4 or x = 3π/4",
+                "x = π/2 or x = 3π/2"
+            ],
+            "correctAnswer": "x = π/6 or x = 5π/6",
+            "explanation": "sin(x) = 1/2\nIn the interval [0, 2π], the solutions are x = π/6 and x = 5π/6.\nThis is because sin(π/6) = 1/2 and sin(5π/6) = 1/2."
+        },
+        {
+            "id": "29",
+            "question": "Find the equation of the line that is parallel to 3x - 4y = 8 and passes through the point (2, -1)",
+            "options": [
+                "3x - 4y = 10",
+                "3x - 4y = 14",
+                "4x - 3y = 10",
+                "4x - 3y = 14"
+            ],
+            "correctAnswer": "3x - 4y = 10",
+            "explanation": "A line parallel to 3x - 4y = 8 has the same slope.\nThe slope of 3x - 4y = 8 is 3/4 (rewriting as y = 3/4x - 2).\nUsing the point-slope form: y - y₁ = m(x - x₁)\ny - (-1) = 3/4(x - 2)\ny + 1 = 3/4x - 3/2\ny = 3/4x - 3/2 - 1\ny = 3/4x - 5/2\nMultiplying by 4: 4y = 3x - 10\nRearranging: 3x - 4y = 10"
+        },
+        {
+            "id": "30",
+            "question": "If f(x) = 3x² - 5x + 2, find the value of x for which f(x) has a minimum",
+            "options": [
+                "x = 5/6",
+                "x = 5/3",
+                "x = 5/2",
+                "x = 5"
+            ],
+            "correctAnswer": "x = 5/6",
+            "explanation": "For a quadratic function f(x) = ax² + bx + c, the x-coordinate of the vertex is x = -b/(2a).\nHere, a = 3 and b = -5.\nTherefore, x = -(-5)/(2(3)) = 5/6\nThis is the value of x for which f(x) has a minimum."
+        }
+    ]
+}

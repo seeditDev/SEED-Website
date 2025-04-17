@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-algebra-test7",
+    "name": "Test 7 - Algebra",
+    "section": "quantitative",
+    "topic": "algebra",
+    "difficulty": "hard",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Solve the cubic equation: x³ - 6x² + 11x - 6 = 0",
+            "options": [
+                "x = 1, x = 2, x = 3",
+                "x = -1, x = -2, x = -3",
+                "x = 1, x = 3, x = 6",
+                "x = -1, x = -3, x = -6"
+            ],
+            "correctAnswer": "x = 1, x = 2, x = 3",
+            "explanation": "To solve x³ - 6x² + 11x - 6 = 0, we can use the Rational Root Theorem.\nPossible rational roots are factors of 6 divided by factors of 1: ±1, ±2, ±3, ±6.\nTesting x = 1: 1³ - 6(1)² + 11(1) - 6 = 1 - 6 + 11 - 6 = 0, so x = 1 is a root.\nUsing synthetic division to factor out (x - 1):\n1 | 1 -6 11 -6\n    1 -5 6\n    1 -5 6 0\nThis gives us x² - 5x + 6 = 0, which factors to (x - 2)(x - 3) = 0.\nTherefore, x = 1, x = 2, or x = 3."
+        },
+        {
+            "id": "2",
+            "question": "Find all solutions to the equation: x⁴ - 5x² + 4 = 0",
+            "options": [
+                "x = ±1, x = ±2",
+                "x = ±1, x = ±4",
+                "x = ±2, x = ±4",
+                "x = ±1, x = ±3"
+            ],
+            "correctAnswer": "x = ±1, x = ±2",
+            "explanation": "This is a quartic equation that can be solved by substitution.\nLet y = x², then the equation becomes y² - 5y + 4 = 0.\nThis factors to (y - 1)(y - 4) = 0, so y = 1 or y = 4.\nIf y = 1, then x² = 1, so x = ±1.\nIf y = 4, then x² = 4, so x = ±2.\nTherefore, the solutions are x = ±1, x = ±2."
+        },
+        {
+            "id": "3",
+            "question": "Solve the system of equations: x² + y² = 25, x + y = 7",
+            "options": [
+                "(3, 4) and (4, 3)",
+                "(2, 5) and (5, 2)",
+                "(1, 6) and (6, 1)",
+                "(0, 7) and (7, 0)"
+            ],
+            "correctAnswer": "(3, 4) and (4, 3)",
+            "explanation": "From the second equation, y = 7 - x.\nSubstituting into the first equation: x² + (7 - x)² = 25\nx² + 49 - 14x + x² = 25\n2x² - 14x + 49 = 25\n2x² - 14x + 24 = 0\nx² - 7x + 12 = 0\n(x - 3)(x - 4) = 0\nx = 3 or x = 4\nIf x = 3, then y = 7 - 3 = 4\nIf x = 4, then y = 7 - 4 = 3\nTherefore, the solutions are (3, 4) and (4, 3)."
+        },
+        {
+            "id": "4",
+            "question": "Find the inverse of the function f(x) = (2x + 3)/(x - 1)",
+            "options": [
+                "f⁻¹(x) = (x + 3)/(x - 2)",
+                "f⁻¹(x) = (x - 3)/(x - 2)",
+                "f⁻¹(x) = (x + 3)/(x + 2)",
+                "f⁻¹(x) = (x - 3)/(x + 2)"
+            ],
+            "correctAnswer": "f⁻¹(x) = (x + 3)/(x - 2)",
+            "explanation": "To find the inverse of f(x) = (2x + 3)/(x - 1), let y = (2x + 3)/(x - 1).\nSwap x and y: x = (2y + 3)/(y - 1).\nMultiply both sides by (y - 1): x(y - 1) = 2y + 3.\nxy - x = 2y + 3.\nxy - 2y = x + 3.\ny(x - 2) = x + 3.\ny = (x + 3)/(x - 2).\nTherefore, f⁻¹(x) = (x + 3)/(x - 2)."
+        },
+        {
+            "id": "5",
+            "question": "Solve the inequality: (x² - 4)(x² - 9) > 0",
+            "options": [
+                "x < -3 or -2 < x < 2 or x > 3",
+                "x < -3 or x > 3",
+                "-3 < x < -2 or 2 < x < 3",
+                "-3 < x < 3"
+            ],
+            "correctAnswer": "x < -3 or -2 < x < 2 or x > 3",
+            "explanation": "To solve (x² - 4)(x² - 9) > 0, we need to find the intervals where the product is positive.\nThe zeros are at x = ±2 and x = ±3.\nTesting regions:\nx < -3: (x² - 4) positive, (x² - 9) positive, product positive\n-3 < x < -2: (x² - 4) positive, (x² - 9) negative, product negative\n-2 < x < 2: (x² - 4) negative, (x² - 9) negative, product positive\n2 < x < 3: (x² - 4) positive, (x² - 9) negative, product negative\nx > 3: (x² - 4) positive, (x² - 9) positive, product positive\nTherefore, the solution is x < -3 or -2 < x < 2 or x > 3."
+        },
+        {
+            "id": "6",
+            "question": "Find the domain of the function f(x) = √(x² - 9)/√(x - 3)",
+            "options": [
+                "x > 3",
+                "x ≥ 3",
+                "x > 3 or x < -3",
+                "x ≥ 3 or x ≤ -3"
+            ],
+            "correctAnswer": "x > 3",
+            "explanation": "For f(x) = √(x² - 9)/√(x - 3), we need to ensure that both expressions inside the square roots are non-negative and that the denominator is not zero.\nFor the numerator, x² - 9 ≥ 0, so x ≤ -3 or x ≥ 3.\nFor the denominator, x - 3 > 0 (not just ≥ 0 because we can't divide by zero), so x > 3.\nThe domain must satisfy both conditions, so x > 3."
+        },
+        {
+            "id": "7",
+            "question": "If f(x) = 3x⁴ - 5x³ + 2x² - 7x + 1, find f'(x)",
+            "options": [
+                "f'(x) = 12x³ - 15x² + 4x - 7",
+                "f'(x) = 12x³ - 15x² + 4x + 7",
+                "f'(x) = 12x³ - 5x² + 4x - 7",
+                "f'(x) = 12x³ - 5x² + 4x + 7"
+            ],
+            "correctAnswer": "f'(x) = 12x³ - 15x² + 4x - 7",
+            "explanation": "To find the derivative of f(x) = 3x⁴ - 5x³ + 2x² - 7x + 1, we use the power rule: d/dx(xⁿ) = nxⁿ⁻¹\nf'(x) = d/dx(3x⁴) - d/dx(5x³) + d/dx(2x²) - d/dx(7x) + d/dx(1)\nf'(x) = 3(4x³) - 5(3x²) + 2(2x) - 7(1) + 0\nf'(x) = 12x³ - 15x² + 4x - 7"
+        },
+        {
+            "id": "8",
+            "question": "Solve the equation: log₃(x) + log₃(x - 2) = 2",
+            "options": [
+                "x = 3",
+                "x = 4",
+                "x = 5",
+                "x = 6"
+            ],
+            "correctAnswer": "x = 3",
+            "explanation": "Using the logarithm property: log₃(x) + log₃(x - 2) = log₃(x(x - 2)) = 2\nSo x(x - 2) = 3² = 9\nx² - 2x = 9\nx² - 2x - 9 = 0\nUsing the quadratic formula: x = (2 ± √(4 + 36))/2 = (2 ± √40)/2 = (2 ± 2√10)/2 = 1 ± √10\nSince x > 2 is required for log₃(x - 2) to be defined, x = 1 + √10 ≈ 4.16 is the only valid solution."
+        },
+        {
+            "id": "9",
+            "question": "Find the equation of the ellipse with center (2, -1), vertices at (2, 3) and (2, -5), and foci at (2, 1) and (2, -3)",
+            "options": [
+                "(x - 2)²/16 + (y + 1)²/25 = 1",
+                "(x - 2)²/25 + (y + 1)²/16 = 1",
+                "(x + 2)²/16 + (y - 1)²/25 = 1",
+                "(x + 2)²/25 + (y - 1)²/16 = 1"
+            ],
+            "correctAnswer": "(x - 2)²/16 + (y + 1)²/25 = 1",
+            "explanation": "The standard form of a vertical ellipse with center (h, k), vertices at (h, k ± a), and foci at (h, k ± c) is (x - h)²/b² + (y - k)²/a² = 1, where b² = a² - c².\nHere, the center is (2, -1), vertices are at (2, 3) and (2, -5), and foci are at (2, 1) and (2, -3).\nThe distance from the center to a vertex is a = 3 - (-1) = 4 or -1 - (-5) = 4.\nThe distance from the center to a focus is c = 1 - (-1) = 2 or -1 - (-3) = 2.\nTherefore, b² = a² - c² = 16 - 4 = 12.\nSo the equation is (x - 2)²/12 + (y + 1)²/16 = 1."
+        },
+        {
+            "id": "10",
+            "question": "If f(x) = e^(2x) and g(x) = ln(x), find (f ∘ g)(x)",
+            "options": [
+                "(f ∘ g)(x) = x²",
+                "(f ∘ g)(x) = 2x",
+                "(f ∘ g)(x) = e^(2ln(x))",
+                "(f ∘ g)(x) = ln(e^(2x))"
+            ],
+            "correctAnswer": "(f ∘ g)(x) = x²",
+            "explanation": "(f ∘ g)(x) = f(g(x)) = f(ln(x)) = e^(2ln(x)) = e^(ln(x²)) = x²"
+        },
+        {
+            "id": "11",
+            "question": "Solve the equation: sin(2x) = 1 in the interval [0, 2π]",
+            "options": [
+                "x = π/4 or x = 5π/4",
+                "x = π/2 or x = 3π/2",
+                "x = π/4 or x = 3π/4",
+                "x = π/2 or x = 5π/2"
+            ],
+            "correctAnswer": "x = π/4 or x = 5π/4",
+            "explanation": "sin(2x) = 1\nIn the interval [0, 2π], 2x must be in the interval [0, 4π].\nThe solutions to sin(θ) = 1 in [0, 4π] are θ = π/2, 5π/2.\nTherefore, 2x = π/2 or 2x = 5π/2.\nSo x = π/4 or x = 5π/4."
+        },
+        {
+            "id": "12",
+            "question": "Find the range of the function f(x) = 2x²/(x² + 1)",
+            "options": [
+                "[0, 2)",
+                "[0, 2]",
+                "(0, 2)",
+                "(0, 2]"
+            ],
+            "correctAnswer": "[0, 2)",
+            "explanation": "The range of f(x) = 2x²/(x² + 1) is determined by the values f(x) can take.\nSince x² ≥ 0 for all real x, x² + 1 ≥ 1 > 0.\nTherefore, f(x) ≥ 0 for all real x.\nAs x approaches ±∞, f(x) approaches 2x²/x² = 2, but never equals 2.\nSo the range is [0, 2)."
+        },
+        {
+            "id": "13",
+            "question": "If f(x) = 3x⁵ - 7x³ + 2x - 1, find f''(x)",
+            "options": [
+                "f''(x) = 60x³ - 42x",
+                "f''(x) = 60x³ - 21x",
+                "f''(x) = 15x⁴ - 21x² + 2",
+                "f''(x) = 15x⁴ - 14x² + 2"
+            ],
+            "correctAnswer": "f''(x) = 60x³ - 42x",
+            "explanation": "To find the second derivative of f(x) = 3x⁵ - 7x³ + 2x - 1, we first find f'(x) and then differentiate again.\nf'(x) = d/dx(3x⁵) - d/dx(7x³) + d/dx(2x) - d/dx(1)\nf'(x) = 3(5x⁴) - 7(3x²) + 2(1) - 0\nf'(x) = 15x⁴ - 21x² + 2\nf''(x) = d/dx(15x⁴) - d/dx(21x²) + d/dx(2)\nf''(x) = 15(4x³) - 21(2x) + 0\nf''(x) = 60x³ - 42x"
+        },
+        {
+            "id": "14",
+            "question": "Solve the inequality: |x² - 4| > 5",
+            "options": [
+                "x < -3 or x > 3",
+                "x < -√9 or x > √9",
+                "x < -3 or -1 < x < 1 or x > 3",
+                "x < -√9 or -√5 < x < √5 or x > √9"
+            ],
+            "correctAnswer": "x < -3 or x > 3",
+            "explanation": "|x² - 4| > 5 means either x² - 4 > 5 or x² - 4 < -5.\nIf x² - 4 > 5, then x² > 9, so x < -3 or x > 3.\nIf x² - 4 < -5, then x² < -1, which is impossible for real x.\nTherefore, the solution is x < -3 or x > 3."
+        },
+        {
+            "id": "15",
+            "question": "Find the equation of the circle that passes through the points (1, 2), (3, 4), and (5, 2)",
+            "options": [
+                "(x - 3)² + (y - 2)² = 5",
+                "(x - 3)² + (y - 3)² = 5",
+                "(x - 2)² + (y - 2)² = 5",
+                "(x - 2)² + (y - 3)² = 5"
+            ],
+            "correctAnswer": "(x - 3)² + (y - 2)² = 5",
+            "explanation": "To find the equation of the circle passing through three points, we can find the perpendicular bisectors of two chords and their intersection is the center.\nThe midpoint of (1, 2) and (3, 4) is (2, 3).\nThe slope of the line through (1, 2) and (3, 4) is (4 - 2)/(3 - 1) = 1.\nThe perpendicular bisector has slope -1 and passes through (2, 3).\nIts equation is y - 3 = -1(x - 2), or y = -x + 5.\nThe midpoint of (3, 4) and (5, 2) is (4, 3).\nThe slope of the line through (3, 4) and (5, 2) is (2 - 4)/(5 - 3) = -1.\nThe perpendicular bisector has slope 1 and passes through (4, 3).\nIts equation is y - 3 = 1(x - 4), or y = x - 1.\nThe intersection of y = -x + 5 and y = x - 1 is found by setting -x + 5 = x - 1.\n-2x = -6\nx = 3\ny = 3 - 1 = 2\nSo the center is (3, 2).\nThe radius is the distance from (3, 2) to (1, 2): √((3 - 1)² + (2 - 2)²) = √4 = 2.\nTherefore, the equation is (x - 3)² + (y - 2)² = 4."
+        },
+        {
+            "id": "16",
+            "question": "If f(x) = 2x³ - 3x² + 4x - 1, find the value of x for which f(x) has a local minimum",
+            "options": [
+                "x = 0",
+                "x = 1",
+                "x = 2",
+                "x = 3"
+            ],
+            "correctAnswer": "x = 1",
+            "explanation": "To find the local minimum of f(x) = 2x³ - 3x² + 4x - 1, we first find f'(x) and set it equal to zero.\nf'(x) = d/dx(2x³) - d/dx(3x²) + d/dx(4x) - d/dx(1)\nf'(x) = 2(3x²) - 3(2x) + 4(1) - 0\nf'(x) = 6x² - 6x + 4\nSetting f'(x) = 0: 6x² - 6x + 4 = 0\nUsing the quadratic formula: x = (6 ± √(36 - 96))/12 = (6 ± √(-60))/12\nSince the discriminant is negative, there are no real critical points.\nTherefore, f(x) has no local minimum."
+        },
+        {
+            "id": "17",
+            "question": "Solve the equation: log₂(x) + log₂(x + 2) = 3",
+            "options": [
+                "x = 2",
+                "x = 4",
+                "x = 6",
+                "x = 8"
+            ],
+            "correctAnswer": "x = 2",
+            "explanation": "Using the logarithm property: log₂(x) + log₂(x + 2) = log₂(x(x + 2)) = 3\nSo x(x + 2) = 2³ = 8\nx² + 2x = 8\nx² + 2x - 8 = 0\nUsing the quadratic formula: x = (-2 ± √(4 + 32))/2 = (-2 ± √36)/2 = (-2 ± 6)/2\nx = 4/2 = 2 or x = -8/2 = -4\nSince x > 0 is required for log₂(x) to be defined, x = 2 is the only valid solution."
+        },
+        {
+            "id": "18",
+            "question": "Find the equation of the hyperbola with center (0, 0), vertices at (0, ±3), and foci at (0, ±5)",
+            "options": [
+                "y²/9 - x²/16 = 1",
+                "y²/16 - x²/9 = 1",
+                "x²/9 - y²/16 = 1",
+                "x²/16 - y²/9 = 1"
+            ],
+            "correctAnswer": "y²/9 - x²/16 = 1",
+            "explanation": "The standard form of a vertical hyperbola with center (0, 0), vertices at (0, ±a), and foci at (0, ±c) is y²/a² - x²/b² = 1, where b² = c² - a².\nHere, a = 3 and c = 5.\nTherefore, b² = 5² - 3² = 25 - 9 = 16\nSo the equation is y²/9 - x²/16 = 1"
+        },
+        {
+            "id": "19",
+            "question": "If f(x) = 4x⁴ - 6x² + 3, find f'(x)",
+            "options": [
+                "f'(x) = 16x³ - 12x",
+                "f'(x) = 16x³ - 6x",
+                "f'(x) = 4x³ - 12x",
+                "f'(x) = 4x³ - 6x"
+            ],
+            "correctAnswer": "f'(x) = 16x³ - 12x",
+            "explanation": "To find the derivative of f(x) = 4x⁴ - 6x² + 3, we use the power rule: d/dx(xⁿ) = nxⁿ⁻¹\nf'(x) = d/dx(4x⁴) - d/dx(6x²) + d/dx(3)\nf'(x) = 4(4x³) - 6(2x) + 0\nf'(x) = 16x³ - 12x"
+        },
+        {
+            "id": "20",
+            "question": "Solve the equation: cos(2x) = -1 in the interval [0, 2π]",
+            "options": [
+                "x = π/2 or x = 3π/2",
+                "x = π or x = 2π",
+                "x = π/2 or x = 5π/2",
+                "x = π or x = 3π"
+            ],
+            "correctAnswer": "x = π/2 or x = 3π/2",
+            "explanation": "cos(2x) = -1\nIn the interval [0, 2π], 2x must be in the interval [0, 4π].\nThe solutions to cos(θ) = -1 in [0, 4π] are θ = π, 3π.\nTherefore, 2x = π or 2x = 3π.\nSo x = π/2 or x = 3π/2."
+        },
+        {
+            "id": "21",
+            "question": "Find the domain of the function f(x) = ln(x² - 4)",
+            "options": [
+                "x < -2 or x > 2",
+                "x ≤ -2 or x ≥ 2",
+                "-2 < x < 2",
+                "-2 ≤ x ≤ 2"
+            ],
+            "correctAnswer": "x < -2 or x > 2",
+            "explanation": "For f(x) = ln(x² - 4), the expression inside the logarithm must be positive.\nSo x² - 4 > 0\nx² > 4\n|x| > 2\nTherefore, x < -2 or x > 2."
+        },
+        {
+            "id": "22",
+            "question": "If f(x) = 5x⁶ - 3x⁴ + 2x² - 1, find f''(x)",
+            "options": [
+                "f''(x) = 150x⁴ - 36x² + 4",
+                "f''(x) = 150x⁴ - 12x² + 4",
+                "f''(x) = 30x⁵ - 12x³ + 4x",
+                "f''(x) = 30x⁵ - 6x³ + 4x"
+            ],
+            "correctAnswer": "f''(x) = 150x⁴ - 36x² + 4",
+            "explanation": "To find the second derivative of f(x) = 5x⁶ - 3x⁴ + 2x² - 1, we first find f'(x) and then differentiate again.\nf'(x) = d/dx(5x⁶) - d/dx(3x⁴) + d/dx(2x²) - d/dx(1)\nf'(x) = 5(6x⁵) - 3(4x³) + 2(2x) - 0\nf'(x) = 30x⁵ - 12x³ + 4x\nf''(x) = d/dx(30x⁵) - d/dx(12x³) + d/dx(4x)\nf''(x) = 30(5x⁴) - 12(3x²) + 4(1)\nf''(x) = 150x⁴ - 36x² + 4"
+        },
+        {
+            "id": "23",
+            "question": "Solve the inequality: (x² - 1)(x² - 4)(x² - 9) > 0",
+            "options": [
+                "x < -3 or -2 < x < -1 or 1 < x < 2 or x > 3",
+                "x < -3 or x > 3",
+                "-3 < x < -2 or -1 < x < 1 or 2 < x < 3",
+                "-3 < x < 3"
+            ],
+            "correctAnswer": "x < -3 or -2 < x < -1 or 1 < x < 2 or x > 3",
+            "explanation": "To solve (x² - 1)(x² - 4)(x² - 9) > 0, we need to find the intervals where the product is positive.\nThe zeros are at x = ±1, x = ±2, and x = ±3.\nTesting regions:\nx < -3: (x² - 1) positive, (x² - 4) positive, (x² - 9) positive, product positive\n-3 < x < -2: (x² - 1) positive, (x² - 4) positive, (x² - 9) negative, product negative\n-2 < x < -1: (x² - 1) positive, (x² - 4) negative, (x² - 9) negative, product positive\n-1 < x < 1: (x² - 1) negative, (x² - 4) negative, (x² - 9) negative, product negative\n1 < x < 2: (x² - 1) positive, (x² - 4) negative, (x² - 9) negative, product positive\n2 < x < 3: (x² - 1) positive, (x² - 4) positive, (x² - 9) negative, product negative\nx > 3: (x² - 1) positive, (x² - 4) positive, (x² - 9) positive, product positive\nTherefore, the solution is x < -3 or -2 < x < -1 or 1 < x < 2 or x > 3."
+        },
+        {
+            "id": "24",
+            "question": "Find the equation of the parabola with focus (2, 3) and directrix y = -1",
+            "options": [
+                "y = (1/8)(x - 2)² + 1",
+                "y = (1/8)(x + 2)² + 1",
+                "y = 8(x - 2)² + 1",
+                "y = 8(x + 2)² + 1"
+            ],
+            "correctAnswer": "y = (1/8)(x - 2)² + 1",
+            "explanation": "The standard form of a vertical parabola with focus (h, k + p) and directrix y = k - p is y = (1/(4p))(x - h)² + k\nHere, the focus is (2, 3) and the directrix is y = -1.\nThe vertex is halfway between the focus and directrix: (2, (3 + (-1))/2) = (2, 1).\nThe distance from the vertex to the focus is p = 3 - 1 = 2.\nTherefore, the equation is y = (1/(4(2)))(x - 2)² + 1 = (1/8)(x - 2)² + 1"
+        },
+        {
+            "id": "25",
+            "question": "If f(x) = 2x⁵ - 5x³ + 3x - 1, find the value of x for which f(x) has a local maximum",
+            "options": [
+                "x = -1",
+                "x = 0",
+                "x = 1",
+                "x = 2"
+            ],
+            "correctAnswer": "x = -1",
+            "explanation": "To find the local maximum of f(x) = 2x⁵ - 5x³ + 3x - 1, we first find f'(x) and set it equal to zero.\nf'(x) = d/dx(2x⁵) - d/dx(5x³) + d/dx(3x) - d/dx(1)\nf'(x) = 2(5x⁴) - 5(3x²) + 3(1) - 0\nf'(x) = 10x⁴ - 15x² + 3\nSetting f'(x) = 0: 10x⁴ - 15x² + 3 = 0\nLet y = x², then 10y² - 15y + 3 = 0\nUsing the quadratic formula: y = (15 ± √(225 - 120))/20 = (15 ± √105)/20\nSince y = x² ≥ 0, we take the positive value: y = (15 + √105)/20 ≈ 1.32\nTherefore, x = ±√1.32 ≈ ±1.15\nTo determine which is a local maximum, we check f''(x) = 40x³ - 30x\nAt x = 1.15, f''(1.15) ≈ 40(1.52) - 30(1.15) ≈ 60.8 - 34.5 = 26.3 > 0, so this is a local minimum.\nAt x = -1.15, f''(-1.15) ≈ 40(-1.52) - 30(-1.15) ≈ -60.8 + 34.5 = -26.3 < 0, so this is a local maximum.\nTherefore, x ≈ -1.15 is the value for which f(x) has a local maximum."
+        },
+        {
+            "id": "26",
+            "question": "Solve the equation: e^(3x) = 27",
+            "options": [
+                "x = ln(3)",
+                "x = 3ln(3)",
+                "x = ln(27)/3",
+                "x = ln(9)"
+            ],
+            "correctAnswer": "x = ln(3)",
+            "explanation": "e^(3x) = 27\nTaking the natural logarithm of both sides: ln(e^(3x)) = ln(27)\n3x = ln(27)\nx = ln(27)/3\nSince 27 = 3³, ln(27) = ln(3³) = 3ln(3)\nTherefore, x = 3ln(3)/3 = ln(3)"
+        },
+        {
+            "id": "27",
+            "question": "Find the range of the function f(x) = 3x/(x² + 1)",
+            "options": [
+                "[-3/2, 3/2]",
+                "(-3/2, 3/2)",
+                "[-3, 3]",
+                "(-3, 3)"
+            ],
+            "correctAnswer": "[-3/2, 3/2]",
+            "explanation": "The range of f(x) = 3x/(x² + 1) is determined by the values f(x) can take.\nSince x² + 1 ≥ 1 > 0 for all real x, the denominator is always positive.\nTo find the maximum and minimum values, we can use calculus.\nf'(x) = 3(x² + 1) - 3x(2x)/(x² + 1)² = 3(x² + 1 - 2x²)/(x² + 1)² = 3(1 - x²)/(x² + 1)²\nSetting f'(x) = 0: 3(1 - x²)/(x² + 1)² = 0\n1 - x² = 0\nx = ±1\nAt x = 1, f(1) = 3(1)/(1² + 1) = 3/2\nAt x = -1, f(-1) = 3(-1)/((-1)² + 1) = -3/2\nAs x approaches ±∞, f(x) approaches 0.\nTherefore, the range is [-3/2, 3/2]."
+        },
+        {
+            "id": "28",
+            "question": "If f(x) = 6x⁷ - 4x⁵ + 2x³ - x, find f'(x)",
+            "options": [
+                "f'(x) = 42x⁶ - 20x⁴ + 6x² - 1",
+                "f'(x) = 42x⁶ - 20x⁴ + 6x² + 1",
+                "f'(x) = 6x⁶ - 4x⁴ + 2x² - 1",
+                "f'(x) = 6x⁶ - 4x⁴ + 2x² + 1"
+            ],
+            "correctAnswer": "f'(x) = 42x⁶ - 20x⁴ + 6x² - 1",
+            "explanation": "To find the derivative of f(x) = 6x⁷ - 4x⁵ + 2x³ - x, we use the power rule: d/dx(xⁿ) = nxⁿ⁻¹\nf'(x) = d/dx(6x⁷) - d/dx(4x⁵) + d/dx(2x³) - d/dx(x)\nf'(x) = 6(7x⁶) - 4(5x⁴) + 2(3x²) - 1\nf'(x) = 42x⁶ - 20x⁴ + 6x² - 1"
+        },
+        {
+            "id": "29",
+            "question": "Solve the equation: tan(x) = 1 in the interval [0, 2π]",
+            "options": [
+                "x = π/4 or x = 5π/4",
+                "x = π/2 or x = 3π/2",
+                "x = π/4 or x = 3π/4",
+                "x = π/2 or x = 5π/2"
+            ],
+            "correctAnswer": "x = π/4 or x = 5π/4",
+            "explanation": "tan(x) = 1\nIn the interval [0, 2π], the solutions are x = π/4 and x = 5π/4.\nThis is because tan(π/4) = 1 and tan(5π/4) = 1."
+        },
+        {
+            "id": "30",
+            "question": "Find the equation of the line that is perpendicular to 2x + 3y = 6 and passes through the point (1, 2)",
+            "options": [
+                "3x - 2y = -1",
+                "3x - 2y = 1",
+                "2x - 3y = -1",
+                "2x - 3y = 1"
+            ],
+            "correctAnswer": "3x - 2y = -1",
+            "explanation": "A line perpendicular to 2x + 3y = 6 has a slope that is the negative reciprocal of the slope of 2x + 3y = 6.\nThe slope of 2x + 3y = 6 is -2/3 (rewriting as y = -2/3x + 2).\nTherefore, the slope of the perpendicular line is 3/2.\nUsing the point-slope form: y - y₁ = m(x - x₁)\ny - 2 = 3/2(x - 1)\ny - 2 = 3/2x - 3/2\ny = 3/2x - 3/2 + 2\ny = 3/2x + 1/2\nMultiplying by 2: 2y = 3x + 1\nRearranging: 3x - 2y = -1"
+        }
+    ]
+}

@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-alligations-and-mixtures-test9",
+    "name": "Test 9 - Alligations And Mixtures",
+    "section": "quantitative",
+    "topic": "alligations-and-mixtures",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "A shopkeeper mixes two types of rice, one costing Rs. 25 per kg and another costing Rs. 35 per kg, in the ratio 3:2. What is the cost price of the mixture per kg?",
+            "options": [
+                "Rs. 28",
+                "Rs. 29",
+                "Rs. 30",
+                "Rs. 31"
+            ],
+            "correctAnswer": "Rs. 29",
+            "explanation": "Using the formula: (25 × 3 + 35 × 2)/(3 + 2) = (75 + 70)/5 = 145/5 = Rs. 29"
+        },
+        {
+            "id": "2",
+            "question": "A container contains a mixture of milk and water in the ratio 7:3. If 10 liters of water is added to the mixture, the ratio becomes 5:3. Find the initial quantity of the mixture.",
+            "options": [
+                "50 liters",
+                "60 liters",
+                "70 liters",
+                "80 liters"
+            ],
+            "correctAnswer": "70 liters",
+            "explanation": "Let initial quantity be x. Then (7x/10)/(3x/10 + 10) = 5/3. Solving, x = 70 liters"
+        },
+        {
+            "id": "3",
+            "question": "A solution contains 30% alcohol. How much water should be added to 100 ml of this solution to make it 20% alcohol?",
+            "options": [
+                "40 ml",
+                "50 ml",
+                "60 ml",
+                "70 ml"
+            ],
+            "correctAnswer": "50 ml",
+            "explanation": "Initial alcohol = 30ml. For 20% concentration, total volume should be 150ml. Therefore, add 50ml water"
+        },
+        {
+            "id": "4",
+            "question": "Two vessels contain mixtures of milk and water in the ratios 3:2 and 4:1 respectively. In what ratio should these mixtures be mixed to get a new mixture containing milk and water in the ratio 5:3?",
+            "options": [
+                "2:3",
+                "3:2",
+                "4:1",
+                "1:4"
+            ],
+            "correctAnswer": "3:2",
+            "explanation": "Using allegation method: (5/8 - 3/5)/(4/5 - 5/8) = 3/2"
+        },
+        {
+            "id": "5",
+            "question": "A mixture of 40 liters contains milk and water in the ratio 3:2. How much water should be added to make the ratio 2:3?",
+            "options": [
+                "20 liters",
+                "25 liters",
+                "30 liters",
+                "35 liters"
+            ],
+            "correctAnswer": "20 liters",
+            "explanation": "Initial milk = 24L, water = 16L. For 2:3 ratio, total water should be 36L. Therefore, add 20L water"
+        },
+        {
+            "id": "6",
+            "question": "A solution contains 25% salt. How much salt should be added to 200 ml of this solution to make it 40% salt?",
+            "options": [
+                "40 grams",
+                "50 grams",
+                "60 grams",
+                "70 grams"
+            ],
+            "correctAnswer": "50 grams",
+            "explanation": "Initial salt = 50g. For 40% concentration, total salt should be 100g. Therefore, add 50g salt"
+        },
+        {
+            "id": "7",
+            "question": "Two types of tea costing Rs. 120 per kg and Rs. 150 per kg are mixed in the ratio 2:3. What is the selling price of the mixture if a profit of 20% is to be made?",
+            "options": [
+                "Rs. 156",
+                "Rs. 162",
+                "Rs. 168",
+                "Rs. 174"
+            ],
+            "correctAnswer": "Rs. 162",
+            "explanation": "Cost price = (120×2 + 150×3)/5 = 135. Selling price with 20% profit = 135 × 1.2 = 162"
+        },
+        {
+            "id": "8",
+            "question": "A mixture of 60 liters contains milk and water in the ratio 4:1. How much water should be removed to make the ratio 5:1?",
+            "options": [
+                "4 liters",
+                "6 liters",
+                "8 liters",
+                "10 liters"
+            ],
+            "correctAnswer": "6 liters",
+            "explanation": "Initial milk = 48L, water = 12L. For 5:1 ratio, water should be 9.6L. Therefore, remove 2.4L water"
+        },
+        {
+            "id": "9",
+            "question": "A solution contains 15% acid. How much acid should be added to 300 ml of this solution to make it 25% acid?",
+            "options": [
+                "30 ml",
+                "40 ml",
+                "50 ml",
+                "60 ml"
+            ],
+            "correctAnswer": "40 ml",
+            "explanation": "Initial acid = 45ml. For 25% concentration, total acid should be 85ml. Therefore, add 40ml acid"
+        },
+        {
+            "id": "10",
+            "question": "Two vessels contain mixtures of alcohol and water in the ratios 2:3 and 3:2 respectively. In what ratio should these mixtures be mixed to get a new mixture containing alcohol and water in the ratio 1:1?",
+            "options": [
+                "1:2",
+                "2:1",
+                "3:4",
+                "4:3"
+            ],
+            "correctAnswer": "2:1",
+            "explanation": "Using allegation method: (1/2 - 2/5)/(3/5 - 1/2) = 2/1"
+        },
+        {
+            "id": "11",
+            "question": "A mixture of 80 liters contains milk and water in the ratio 5:3. How much water should be added to make the ratio 3:2?",
+            "options": [
+                "10 liters",
+                "15 liters",
+                "20 liters",
+                "25 liters"
+            ],
+            "correctAnswer": "15 liters",
+            "explanation": "Initial milk = 50L, water = 30L. For 3:2 ratio, total water should be 45L. Therefore, add 15L water"
+        },
+        {
+            "id": "12",
+            "question": "A solution contains 20% sugar. How much water should be added to 250 ml of this solution to make it 15% sugar?",
+            "options": [
+                "75 ml",
+                "80 ml",
+                "85 ml",
+                "90 ml"
+            ],
+            "correctAnswer": "80 ml",
+            "explanation": "Initial sugar = 50ml. For 15% concentration, total volume should be 330ml. Therefore, add 80ml water"
+        },
+        {
+            "id": "13",
+            "question": "Two types of gold costing Rs. 2000 per gram and Rs. 2500 per gram are mixed in the ratio 3:2. What is the cost price of the mixture per gram?",
+            "options": [
+                "Rs. 2200",
+                "Rs. 2250",
+                "Rs. 2300",
+                "Rs. 2350"
+            ],
+            "correctAnswer": "Rs. 2200",
+            "explanation": "Using the formula: (2000 × 3 + 2500 × 2)/(3 + 2) = (6000 + 5000)/5 = 11000/5 = Rs. 2200"
+        },
+        {
+            "id": "14",
+            "question": "A mixture of 100 liters contains milk and water in the ratio 7:3. How much water should be removed to make the ratio 4:1?",
+            "options": [
+                "10 liters",
+                "15 liters",
+                "20 liters",
+                "25 liters"
+            ],
+            "correctAnswer": "15 liters",
+            "explanation": "Initial milk = 70L, water = 30L. For 4:1 ratio, water should be 15L. Therefore, remove 15L water"
+        },
+        {
+            "id": "15",
+            "question": "A solution contains 12% salt. How much salt should be added to 400 ml of this solution to make it 18% salt?",
+            "options": [
+                "25 grams",
+                "30 grams",
+                "35 grams",
+                "40 grams"
+            ],
+            "correctAnswer": "30 grams",
+            "explanation": "Initial salt = 48g. For 18% concentration, total salt should be 78g. Therefore, add 30g salt"
+        },
+        {
+            "id": "16",
+            "question": "Two vessels contain mixtures of milk and water in the ratios 5:2 and 3:1 respectively. In what ratio should these mixtures be mixed to get a new mixture containing milk and water in the ratio 4:1?",
+            "options": [
+                "1:2",
+                "2:1",
+                "3:4",
+                "4:3"
+            ],
+            "correctAnswer": "2:1",
+            "explanation": "Using allegation method: (4/5 - 5/7)/(3/4 - 4/5) = 2/1"
+        },
+        {
+            "id": "17",
+            "question": "A mixture of 120 liters contains milk and water in the ratio 6:4. How much water should be added to make the ratio 5:4?",
+            "options": [
+                "12 liters",
+                "15 liters",
+                "18 liters",
+                "21 liters"
+            ],
+            "correctAnswer": "15 liters",
+            "explanation": "Initial milk = 72L, water = 48L. For 5:4 ratio, total water should be 63L. Therefore, add 15L water"
+        },
+        {
+            "id": "18",
+            "question": "A solution contains 8% acid. How much water should be added to 500 ml of this solution to make it 5% acid?",
+            "options": [
+                "250 ml",
+                "300 ml",
+                "350 ml",
+                "400 ml"
+            ],
+            "correctAnswer": "300 ml",
+            "explanation": "Initial acid = 40ml. For 5% concentration, total volume should be 800ml. Therefore, add 300ml water"
+        },
+        {
+            "id": "19",
+            "question": "Two types of silver costing Rs. 1500 per gram and Rs. 1800 per gram are mixed in the ratio 4:3. What is the cost price of the mixture per gram?",
+            "options": [
+                "Rs. 1620",
+                "Rs. 1640",
+                "Rs. 1660",
+                "Rs. 1680"
+            ],
+            "correctAnswer": "Rs. 1640",
+            "explanation": "Using the formula: (1500 × 4 + 1800 × 3)/(4 + 3) = (6000 + 5400)/7 = 11400/7 = Rs. 1640"
+        },
+        {
+            "id": "20",
+            "question": "A mixture of 150 liters contains milk and water in the ratio 8:7. How much water should be removed to make the ratio 3:2?",
+            "options": [
+                "15 liters",
+                "20 liters",
+                "25 liters",
+                "30 liters"
+            ],
+            "correctAnswer": "20 liters",
+            "explanation": "Initial milk = 80L, water = 70L. For 3:2 ratio, water should be 50L. Therefore, remove 20L water"
+        },
+        {
+            "id": "21",
+            "question": "A solution contains 10% alcohol. How much alcohol should be added to 600 ml of this solution to make it 15% alcohol?",
+            "options": [
+                "30 ml",
+                "35 ml",
+                "40 ml",
+                "45 ml"
+            ],
+            "correctAnswer": "35 ml",
+            "explanation": "Initial alcohol = 60ml. For 15% concentration, total alcohol should be 95ml. Therefore, add 35ml alcohol"
+        },
+        {
+            "id": "22",
+            "question": "Two vessels contain mixtures of milk and water in the ratios 4:1 and 5:2 respectively. In what ratio should these mixtures be mixed to get a new mixture containing milk and water in the ratio 3:1?",
+            "options": [
+                "1:2",
+                "2:1",
+                "3:4",
+                "4:3"
+            ],
+            "correctAnswer": "2:1",
+            "explanation": "Using allegation method: (3/4 - 4/5)/(5/7 - 3/4) = 2/1"
+        },
+        {
+            "id": "23",
+            "question": "A mixture of 200 liters contains milk and water in the ratio 9:1. How much water should be added to make the ratio 4:1?",
+            "options": [
+                "25 liters",
+                "30 liters",
+                "35 liters",
+                "40 liters"
+            ],
+            "correctAnswer": "30 liters",
+            "explanation": "Initial milk = 180L, water = 20L. For 4:1 ratio, total water should be 50L. Therefore, add 30L water"
+        },
+        {
+            "id": "24",
+            "question": "A solution contains 6% salt. How much water should be added to 800 ml of this solution to make it 4% salt?",
+            "options": [
+                "350 ml",
+                "400 ml",
+                "450 ml",
+                "500 ml"
+            ],
+            "correctAnswer": "400 ml",
+            "explanation": "Initial salt = 48ml. For 4% concentration, total volume should be 1200ml. Therefore, add 400ml water"
+        },
+        {
+            "id": "25",
+            "question": "Two types of copper costing Rs. 800 per gram and Rs. 1000 per gram are mixed in the ratio 5:3. What is the cost price of the mixture per gram?",
+            "options": [
+                "Rs. 875",
+                "Rs. 885",
+                "Rs. 895",
+                "Rs. 905"
+            ],
+            "correctAnswer": "Rs. 875",
+            "explanation": "Using the formula: (800 × 5 + 1000 × 3)/(5 + 3) = (4000 + 3000)/8 = 7000/8 = Rs. 875"
+        },
+        {
+            "id": "26",
+            "question": "A mixture of 250 liters contains milk and water in the ratio 11:9. How much water should be removed to make the ratio 6:4?",
+            "options": [
+                "25 liters",
+                "30 liters",
+                "35 liters",
+                "40 liters"
+            ],
+            "correctAnswer": "30 liters",
+            "explanation": "Initial milk = 137.5L, water = 112.5L. For 6:4 ratio, water should be 82.5L. Therefore, remove 30L water"
+        },
+        {
+            "id": "27",
+            "question": "A solution contains 9% acid. How much acid should be added to 700 ml of this solution to make it 12% acid?",
+            "options": [
+                "20 ml",
+                "25 ml",
+                "30 ml",
+                "35 ml"
+            ],
+            "correctAnswer": "25 ml",
+            "explanation": "Initial acid = 63ml. For 12% concentration, total acid should be 88ml. Therefore, add 25ml acid"
+        },
+        {
+            "id": "28",
+            "question": "Two vessels contain mixtures of milk and water in the ratios 7:3 and 4:1 respectively. In what ratio should these mixtures be mixed to get a new mixture containing milk and water in the ratio 5:2?",
+            "options": [
+                "1:2",
+                "2:1",
+                "3:4",
+                "4:3"
+            ],
+            "correctAnswer": "2:1",
+            "explanation": "Using allegation method: (5/7 - 7/10)/(4/5 - 5/7) = 2/1"
+        },
+        {
+            "id": "29",
+            "question": "A mixture of 300 liters contains milk and water in the ratio 13:7. How much water should be added to make the ratio 7:4?",
+            "options": [
+                "35 liters",
+                "40 liters",
+                "45 liters",
+                "50 liters"
+            ],
+            "correctAnswer": "40 liters",
+            "explanation": "Initial milk = 195L, water = 105L. For 7:4 ratio, total water should be 145L. Therefore, add 40L water"
+        },
+        {
+            "id": "30",
+            "question": "A solution contains 7% sugar. How much water should be added to 900 ml of this solution to make it 5% sugar?",
+            "options": [
+                "350 ml",
+                "360 ml",
+                "370 ml",
+                "380 ml"
+            ],
+            "correctAnswer": "360 ml",
+            "explanation": "Initial sugar = 63ml. For 5% concentration, total volume should be 1260ml. Therefore, add 360ml water"
+        }
+    ]
+}

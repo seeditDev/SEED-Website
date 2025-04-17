@@ -1,0 +1,371 @@
+{
+    "id": "company-specific-wipro-test7",
+    "name": "Test 7 - Wipro",
+    "section": "company-specific",
+    "topic": "wipro",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Sample question 1 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 1 in Wipro"
+        },
+        {
+            "id": "2",
+            "question": "Sample question 2 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 2 in Wipro"
+        },
+        {
+            "id": "3",
+            "question": "Sample question 3 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 3 in Wipro"
+        },
+        {
+            "id": "4",
+            "question": "Sample question 4 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 4 in Wipro"
+        },
+        {
+            "id": "5",
+            "question": "Sample question 5 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 5 in Wipro"
+        },
+        {
+            "id": "6",
+            "question": "Sample question 6 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 6 in Wipro"
+        },
+        {
+            "id": "7",
+            "question": "Sample question 7 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 7 in Wipro"
+        },
+        {
+            "id": "8",
+            "question": "Sample question 8 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 8 in Wipro"
+        },
+        {
+            "id": "9",
+            "question": "Sample question 9 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 9 in Wipro"
+        },
+        {
+            "id": "10",
+            "question": "Sample question 10 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 10 in Wipro"
+        },
+        {
+            "id": "11",
+            "question": "Sample question 11 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 11 in Wipro"
+        },
+        {
+            "id": "12",
+            "question": "Sample question 12 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 12 in Wipro"
+        },
+        {
+            "id": "13",
+            "question": "Sample question 13 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 13 in Wipro"
+        },
+        {
+            "id": "14",
+            "question": "Sample question 14 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 14 in Wipro"
+        },
+        {
+            "id": "15",
+            "question": "Sample question 15 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 15 in Wipro"
+        },
+        {
+            "id": "16",
+            "question": "Sample question 16 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 16 in Wipro"
+        },
+        {
+            "id": "17",
+            "question": "Sample question 17 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 17 in Wipro"
+        },
+        {
+            "id": "18",
+            "question": "Sample question 18 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 18 in Wipro"
+        },
+        {
+            "id": "19",
+            "question": "Sample question 19 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 19 in Wipro"
+        },
+        {
+            "id": "20",
+            "question": "Sample question 20 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 20 in Wipro"
+        },
+        {
+            "id": "21",
+            "question": "Sample question 21 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 21 in Wipro"
+        },
+        {
+            "id": "22",
+            "question": "Sample question 22 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 22 in Wipro"
+        },
+        {
+            "id": "23",
+            "question": "Sample question 23 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 23 in Wipro"
+        },
+        {
+            "id": "24",
+            "question": "Sample question 24 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 24 in Wipro"
+        },
+        {
+            "id": "25",
+            "question": "Sample question 25 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 25 in Wipro"
+        },
+        {
+            "id": "26",
+            "question": "Sample question 26 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 26 in Wipro"
+        },
+        {
+            "id": "27",
+            "question": "Sample question 27 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 27 in Wipro"
+        },
+        {
+            "id": "28",
+            "question": "Sample question 28 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 28 in Wipro"
+        },
+        {
+            "id": "29",
+            "question": "Sample question 29 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 29 in Wipro"
+        },
+        {
+            "id": "30",
+            "question": "Sample question 30 for Wipro",
+            "options": [
+                "Option A",
+                "Option B",
+                "Option C",
+                "Option D"
+            ],
+            "correctAnswer": "Option A",
+            "explanation": "This is a sample explanation for question 30 in Wipro"
+        }
+    ]
+}

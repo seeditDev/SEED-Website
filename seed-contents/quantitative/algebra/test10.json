@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-algebra-test10",
+    "name": "Test 10 - Algebra",
+    "section": "quantitative",
+    "topic": "algebra",
+    "difficulty": "hard",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "Solve the cubic equation: x³ - 6x² + 11x - 6 = 0",
+            "options": [
+                "x = 1, 2, 3",
+                "x = -1, -2, -3",
+                "x = 1, -2, 3",
+                "x = -1, 2, -3"
+            ],
+            "correctAnswer": "x = 1, 2, 3",
+            "explanation": "Using the Rational Root Theorem and synthetic division, we find that x = 1 is a root. Factoring out (x-1) gives (x-1)(x²-5x+6) = 0. Solving the quadratic gives x = 2 and x = 3. Therefore, the solutions are x = 1, 2, 3."
+        },
+        {
+            "id": "2",
+            "question": "Find all real solutions to the equation: |2x - 3| + |x + 4| = 7",
+            "options": [
+                "x = -2, 3",
+                "x = -3, 2",
+                "x = -4, 1",
+                "x = -1, 4"
+            ],
+            "correctAnswer": "x = -2, 3",
+            "explanation": "We need to consider different cases based on the critical points x = -4 and x = 1.5. For x < -4: -(2x-3) + -(x+4) = 7, giving x = -2. For -4 ≤ x < 1.5: -(2x-3) + (x+4) = 7, giving x = 0. For x ≥ 1.5: (2x-3) + (x+4) = 7, giving x = 3. After checking all cases, the valid solutions are x = -2 and x = 3."
+        },
+        {
+            "id": "3",
+            "question": "Solve the system of equations: x² + y² = 25, xy = 12",
+            "options": [
+                "(3,4), (4,3), (-3,-4), (-4,-3)",
+                "(2,6), (6,2), (-2,-6), (-6,-2)",
+                "(1,12), (12,1), (-1,-12), (-12,-1)",
+                "(5,2.4), (2.4,5), (-5,-2.4), (-2.4,-5)"
+            ],
+            "correctAnswer": "(3,4), (4,3), (-3,-4), (-4,-3)",
+            "explanation": "From xy = 12, we get y = 12/x. Substituting into x² + y² = 25 gives x² + (12/x)² = 25. Multiplying by x² gives x⁴ - 25x² + 144 = 0. Let u = x², then u² - 25u + 144 = 0. Solving gives u = 9 or 16, so x = ±3 or ±4. The corresponding y values give the four solution pairs."
+        },
+        {
+            "id": "4",
+            "question": "Find the domain of the function: f(x) = √(x² - 4) / (x² - 9)",
+            "options": [
+                "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-2) ∪ (2,∞)",
+                "(-∞,-3) ∪ (-3,-2) ∪ (2,3) ∪ (3,∞)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+            "explanation": "The denominator cannot be zero, so x ≠ ±3. The expression under the square root must be non-negative, so x² - 4 ≥ 0, meaning |x| ≥ 2. Combining these conditions gives the domain (-∞,-3) ∪ (-2,2) ∪ (3,∞)."
+        },
+        {
+            "id": "5",
+            "question": "Solve the inequality: (x² - 4)(x² - 9) > 0",
+            "options": [
+                "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-2) ∪ (2,∞)",
+                "(-3,-2) ∪ (2,3)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+            "explanation": "The critical points are x = ±2 and x = ±3. Testing intervals between these points: For x < -3: positive. For -3 < x < -2: negative. For -2 < x < 2: positive. For 2 < x < 3: negative. For x > 3: positive. Therefore, the solution is (-∞,-3) ∪ (-2,2) ∪ (3,∞)."
+        },
+        {
+            "id": "6",
+            "question": "Find all real solutions to: log₂(x² - 4) = 3",
+            "options": [
+                "x = ±√12",
+                "x = ±√8",
+                "x = ±√6",
+                "x = ±√10"
+            ],
+            "correctAnswer": "x = ±√12",
+            "explanation": "Converting to exponential form: x² - 4 = 2³ = 8. Therefore, x² = 12, so x = ±√12. We must verify these solutions work in the original equation since logarithms require positive arguments."
+        },
+        {
+            "id": "7",
+            "question": "Solve the equation: sin²(x) + sin(x) - 2 = 0 for x in [0,2π]",
+            "options": [
+                "x = π/2",
+                "x = 3π/2",
+                "x = π/2, 3π/2",
+                "No solution"
+            ],
+            "correctAnswer": "x = π/2",
+            "explanation": "Let u = sin(x). Then u² + u - 2 = 0. Solving gives u = 1 or u = -2. Since sin(x) cannot be -2, we have sin(x) = 1, which gives x = π/2 in the interval [0,2π]."
+        },
+        {
+            "id": "8",
+            "question": "Find the equation of the circle that passes through the points (1,1), (2,4), and (5,3)",
+            "options": [
+                "(x-3)² + (y-2)² = 5",
+                "(x-2)² + (y-3)² = 5",
+                "(x-4)² + (y-1)² = 5",
+                "(x-1)² + (y-4)² = 5"
+            ],
+            "correctAnswer": "(x-3)² + (y-2)² = 5",
+            "explanation": "Using the general form (x-h)² + (y-k)² = r² and substituting the three points gives a system of equations. Solving this system gives the center (3,2) and radius √5. Therefore, the equation is (x-3)² + (y-2)² = 5."
+        },
+        {
+            "id": "9",
+            "question": "Find the derivative of f(x) = x²·sin(x)·ln(x) using the product rule",
+            "options": [
+                "2x·sin(x)·ln(x) + x²·cos(x)·ln(x) + x²·sin(x)·(1/x)",
+                "2x·sin(x)·ln(x) + x²·cos(x)·ln(x)",
+                "x²·sin(x)·ln(x) + x²·cos(x)·ln(x) + x²·sin(x)·(1/x)",
+                "2x·sin(x)·ln(x) + x²·sin(x)·(1/x)"
+            ],
+            "correctAnswer": "2x·sin(x)·ln(x) + x²·cos(x)·ln(x) + x²·sin(x)·(1/x)",
+            "explanation": "Using the product rule for three functions: d/dx[u·v·w] = u'vw + uv'w + uvw'. Here, u = x², v = sin(x), w = ln(x). Therefore, f'(x) = 2x·sin(x)·ln(x) + x²·cos(x)·ln(x) + x²·sin(x)·(1/x)."
+        },
+        {
+            "id": "10",
+            "question": "Solve the inequality: |x² - 4| > |x - 2|",
+            "options": [
+                "(-∞,-2) ∪ (-1,1) ∪ (2,∞)",
+                "(-∞,-2) ∪ (2,∞)",
+                "(-∞,-1) ∪ (1,∞)",
+                "(-2,-1) ∪ (1,2)"
+            ],
+            "correctAnswer": "(-∞,-2) ∪ (-1,1) ∪ (2,∞)",
+            "explanation": "We need to consider different cases based on the critical points x = -2, -1, 1, 2. For x < -2: x² - 4 > -(x-2). For -2 ≤ x < -1: -(x²-4) > -(x-2). For -1 ≤ x ≤ 1: -(x²-4) > |x-2|. For 1 < x < 2: -(x²-4) > x-2. For x ≥ 2: x²-4 > x-2. Solving each case and combining gives the solution."
+        },
+        {
+            "id": "11",
+            "question": "Find all real solutions to: e^x + e^(-x) = 4",
+            "options": [
+                "x = ±ln(2 + √3)",
+                "x = ±ln(2)",
+                "x = ±ln(3)",
+                "x = ±ln(1 + √2)"
+            ],
+            "correctAnswer": "x = ±ln(2 + √3)",
+            "explanation": "Let u = e^x. Then u + 1/u = 4. Multiplying by u gives u² - 4u + 1 = 0. Using the quadratic formula: u = 2 ± √3. Therefore, x = ln(2 ± √3). Since ln(2 - √3) = -ln(2 + √3), the solutions are x = ±ln(2 + √3)."
+        },
+        {
+            "id": "12",
+            "question": "Solve the system of equations: x + y + z = 6, xy + yz + xz = 11, xyz = 6",
+            "options": [
+                "(1,2,3) and its permutations",
+                "(2,2,2)",
+                "(1,1,4) and its permutations",
+                "(3,3,0) and its permutations"
+            ],
+            "correctAnswer": "(1,2,3) and its permutations",
+            "explanation": "This is a symmetric system where x, y, z are roots of the cubic equation t³ - 6t² + 11t - 6 = 0. Using the Rational Root Theorem and synthetic division, we find the roots are 1, 2, and 3. Therefore, the solutions are all permutations of (1,2,3)."
+        },
+        {
+            "id": "13",
+            "question": "Find the range of the function: f(x) = (x² - 4)/(x² + 4)",
+            "options": [
+                "[-1,1)",
+                "(-1,1]",
+                "[-1,1]",
+                "(-∞,1)"
+            ],
+            "correctAnswer": "[-1,1)",
+            "explanation": "The function is defined for all real x. To find the range, we solve y = (x² - 4)/(x² + 4) for x. This gives x² = 4(1+y)/(1-y). For real x, we need (1+y)/(1-y) ≥ 0. Solving this inequality gives -1 ≤ y < 1. Therefore, the range is [-1,1)."
+        },
+        {
+            "id": "14",
+            "question": "Solve the equation: √(x + 3) + √(x - 3) = 4",
+            "options": [
+                "x = 4",
+                "x = 5",
+                "x = 6",
+                "x = 7"
+            ],
+            "correctAnswer": "x = 4",
+            "explanation": "Squaring both sides gives (x + 3) + 2√((x+3)(x-3)) + (x - 3) = 16. Simplifying: 2x + 2√(x² - 9) = 16. Isolating the square root and squaring again: 4(x² - 9) = (8 - x)². Solving gives x = 4. We must verify this solution works in the original equation."
+        },
+        {
+            "id": "15",
+            "question": "Find all real solutions to: tan²(x) + tan(x) - 2 = 0 for x in [0,π]",
+            "options": [
+                "x = π/4",
+                "x = 3π/4",
+                "x = π/4, 3π/4",
+                "No solution"
+            ],
+            "correctAnswer": "x = π/4",
+            "explanation": "Let u = tan(x). Then u² + u - 2 = 0. Solving gives u = 1 or u = -2. Since tan(x) = -2 has no solution in [0,π], we have tan(x) = 1, which gives x = π/4 in the interval [0,π]."
+        },
+        {
+            "id": "16",
+            "question": "Find the equation of the hyperbola with foci at (±5,0) and vertices at (±3,0)",
+            "options": [
+                "x²/9 - y²/16 = 1",
+                "x²/16 - y²/9 = 1",
+                "x²/9 - y²/25 = 1",
+                "x²/25 - y²/9 = 1"
+            ],
+            "correctAnswer": "x²/9 - y²/16 = 1",
+            "explanation": "For a hyperbola centered at the origin with horizontal transverse axis: x²/a² - y²/b² = 1, where a is the distance from center to vertex and c is the distance from center to focus. Here, a = 3 and c = 5. Using c² = a² + b², we get b = 4. Therefore, the equation is x²/9 - y²/16 = 1."
+        },
+        {
+            "id": "17",
+            "question": "Solve the inequality: (x² - 1)(x² - 4)(x² - 9) > 0",
+            "options": [
+                "(-∞,-3) ∪ (-2,-1) ∪ (1,2) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-2) ∪ (-1,1) ∪ (2,∞)",
+                "(-3,-2) ∪ (-1,1) ∪ (2,3)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-2,-1) ∪ (1,2) ∪ (3,∞)",
+            "explanation": "The critical points are x = ±1, ±2, ±3. Testing intervals between these points: For x < -3: positive. For -3 < x < -2: negative. For -2 < x < -1: positive. For -1 < x < 1: negative. For 1 < x < 2: positive. For 2 < x < 3: negative. For x > 3: positive. Therefore, the solution is (-∞,-3) ∪ (-2,-1) ∪ (1,2) ∪ (3,∞)."
+        },
+        {
+            "id": "18",
+            "question": "Find all real solutions to: log₃(x² - 1) = 2",
+            "options": [
+                "x = ±√10",
+                "x = ±√8",
+                "x = ±√6",
+                "x = ±√12"
+            ],
+            "correctAnswer": "x = ±√10",
+            "explanation": "Converting to exponential form: x² - 1 = 3² = 9. Therefore, x² = 10, so x = ±√10. We must verify these solutions work in the original equation since logarithms require positive arguments."
+        },
+        {
+            "id": "19",
+            "question": "Solve the equation: cos²(x) - sin²(x) = 1/2 for x in [0,2π]",
+            "options": [
+                "x = π/6, 5π/6",
+                "x = π/4, 3π/4",
+                "x = π/3, 2π/3",
+                "x = π/2, 3π/2"
+            ],
+            "correctAnswer": "x = π/6, 5π/6",
+            "explanation": "Using the double-angle formula: cos(2x) = 1/2. Therefore, 2x = π/3 or 2x = 5π/3. Solving for x in [0,2π] gives x = π/6 or x = 5π/6."
+        },
+        {
+            "id": "20",
+            "question": "Find the equation of the parabola with focus at (2,3) and directrix y = -1",
+            "options": [
+                "(x-2)² = 8(y-1)",
+                "(x-2)² = 4(y-1)",
+                "(y-3)² = 8(x-2)",
+                "(y-3)² = 4(x-2)"
+            ],
+            "correctAnswer": "(x-2)² = 8(y-1)",
+            "explanation": "For a parabola with vertical axis: (x-h)² = 4p(y-k), where (h,k) is the vertex and p is the distance from vertex to focus. The vertex is halfway between focus and directrix: (2,1). The distance p = 2. Therefore, the equation is (x-2)² = 8(y-1)."
+        },
+        {
+            "id": "21",
+            "question": "Solve the inequality: |x² - 9| > |x - 3|",
+            "options": [
+                "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-2) ∪ (2,∞)",
+                "(-3,-2) ∪ (2,3)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+            "explanation": "We need to consider different cases based on the critical points x = -3, -2, 2, 3. For x < -3: x² - 9 > -(x-3). For -3 ≤ x < -2: -(x²-9) > -(x-3). For -2 ≤ x ≤ 2: -(x²-9) > |x-3|. For 2 < x < 3: -(x²-9) > x-3. For x ≥ 3: x²-9 > x-3. Solving each case and combining gives the solution."
+        },
+        {
+            "id": "22",
+            "question": "Find all real solutions to: e^(2x) - 4e^x + 4 = 0",
+            "options": [
+                "x = ln(2)",
+                "x = ln(4)",
+                "x = 2ln(2)",
+                "x = ln(2), ln(4)"
+            ],
+            "correctAnswer": "x = ln(2)",
+            "explanation": "Let u = e^x. Then u² - 4u + 4 = 0. This factors as (u-2)² = 0, so u = 2. Therefore, e^x = 2, so x = ln(2)."
+        },
+        {
+            "id": "23",
+            "question": "Solve the system of equations: x² + y² = 13, xy = 6",
+            "options": [
+                "(2,3), (3,2), (-2,-3), (-3,-2)",
+                "(1,6), (6,1), (-1,-6), (-6,-1)",
+                "(2,2), (-2,-2)",
+                "(3,3), (-3,-3)"
+            ],
+            "correctAnswer": "(2,3), (3,2), (-2,-3), (-3,-2)",
+            "explanation": "From xy = 6, we get y = 6/x. Substituting into x² + y² = 13 gives x² + (6/x)² = 13. Multiplying by x² gives x⁴ - 13x² + 36 = 0. Let u = x², then u² - 13u + 36 = 0. Solving gives u = 4 or 9, so x = ±2 or ±3. The corresponding y values give the four solution pairs."
+        },
+        {
+            "id": "24",
+            "question": "Find the domain of the function: f(x) = √(x² - 9) / (x² - 4)",
+            "options": [
+                "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-2) ∪ (2,∞)",
+                "(-∞,-3) ∪ (-3,-2) ∪ (2,3) ∪ (3,∞)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-2,2) ∪ (3,∞)",
+            "explanation": "The denominator cannot be zero, so x ≠ ±2. The expression under the square root must be non-negative, so x² - 9 ≥ 0, meaning |x| ≥ 3. Combining these conditions gives the domain (-∞,-3) ∪ (-2,2) ∪ (3,∞)."
+        },
+        {
+            "id": "25",
+            "question": "Solve the inequality: (x² - 1)(x² - 9) > 0",
+            "options": [
+                "(-∞,-3) ∪ (-1,1) ∪ (3,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-∞,-1) ∪ (1,∞)",
+                "(-3,-1) ∪ (1,3)"
+            ],
+            "correctAnswer": "(-∞,-3) ∪ (-1,1) ∪ (3,∞)",
+            "explanation": "The critical points are x = ±1 and x = ±3. Testing intervals between these points: For x < -3: positive. For -3 < x < -1: negative. For -1 < x < 1: positive. For 1 < x < 3: negative. For x > 3: positive. Therefore, the solution is (-∞,-3) ∪ (-1,1) ∪ (3,∞)."
+        },
+        {
+            "id": "26",
+            "question": "Find all real solutions to: log₄(x² - 4) = 2",
+            "options": [
+                "x = ±√20",
+                "x = ±√16",
+                "x = ±√12",
+                "x = ±√8"
+            ],
+            "correctAnswer": "x = ±√20",
+            "explanation": "Converting to exponential form: x² - 4 = 4² = 16. Therefore, x² = 20, so x = ±√20. We must verify these solutions work in the original equation since logarithms require positive arguments."
+        },
+        {
+            "id": "27",
+            "question": "Solve the equation: sin(2x) = 1/2 for x in [0,2π]",
+            "options": [
+                "x = π/12, 5π/12, 13π/12, 17π/12",
+                "x = π/6, 5π/6",
+                "x = π/4, 3π/4",
+                "x = π/3, 2π/3"
+            ],
+            "correctAnswer": "x = π/12, 5π/12, 13π/12, 17π/12",
+            "explanation": "Using the unit circle, sin(θ) = 1/2 when θ = π/6 or 5π/6. Therefore, 2x = π/6 + 2πn or 2x = 5π/6 + 2πn, where n is an integer. Solving for x in [0,2π] gives x = π/12, 5π/12, 13π/12, or 17π/12."
+        },
+        {
+            "id": "28",
+            "question": "Find the equation of the ellipse with foci at (±4,0) and vertices at (±5,0)",
+            "options": [
+                "x²/25 + y²/9 = 1",
+                "x²/9 + y²/25 = 1",
+                "x²/16 + y²/9 = 1",
+                "x²/9 + y²/16 = 1"
+            ],
+            "correctAnswer": "x²/25 + y²/9 = 1",
+            "explanation": "For an ellipse centered at the origin with horizontal major axis: x²/a² + y²/b² = 1, where a is the distance from center to vertex and c is the distance from center to focus. Here, a = 5 and c = 4. Using c² = a² - b², we get b = 3. Therefore, the equation is x²/25 + y²/9 = 1."
+        },
+        {
+            "id": "29",
+            "question": "Find the derivative of f(x) = x³·e^x·sin(x) using the product rule",
+            "options": [
+                "3x²·e^x·sin(x) + x³·e^x·sin(x) + x³·e^x·cos(x)",
+                "3x²·e^x·sin(x) + x³·e^x·cos(x)",
+                "x³·e^x·sin(x) + x³·e^x·cos(x)",
+                "3x²·e^x·sin(x) + x³·e^x·sin(x)"
+            ],
+            "correctAnswer": "3x²·e^x·sin(x) + x³·e^x·sin(x) + x³·e^x·cos(x)",
+            "explanation": "Using the product rule for three functions: d/dx[u·v·w] = u'vw + uv'w + uvw'. Here, u = x³, v = e^x, w = sin(x). Therefore, f'(x) = 3x²·e^x·sin(x) + x³·e^x·sin(x) + x³·e^x·cos(x)."
+        },
+        {
+            "id": "30",
+            "question": "Solve the inequality: |x² - 16| > |x - 4|",
+            "options": [
+                "(-∞,-4) ∪ (-3,3) ∪ (4,∞)",
+                "(-∞,-4) ∪ (4,∞)",
+                "(-∞,-3) ∪ (3,∞)",
+                "(-4,-3) ∪ (3,4)"
+            ],
+            "correctAnswer": "(-∞,-4) ∪ (-3,3) ∪ (4,∞)",
+            "explanation": "We need to consider different cases based on the critical points x = -4, -3, 3, 4. For x < -4: x² - 16 > -(x-4). For -4 ≤ x < -3: -(x²-16) > -(x-4). For -3 ≤ x ≤ 3: -(x²-16) > |x-4|. For 3 < x < 4: -(x²-16) > x-4. For x ≥ 4: x²-16 > x-4. Solving each case and combining gives the solution."
+        }
+    ]
+}

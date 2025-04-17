@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-areas-shapes-perimeter-test2",
+    "name": "Test 2 - Areas Shapes Perimeter",
+    "section": "quantitative",
+    "topic": "areas-shapes-perimeter",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "A rectangle has a length of 20 cm and a width of 12 cm. What is its area?",
+            "options": [
+                "220 cm²",
+                "230 cm²",
+                "240 cm²",
+                "250 cm²"
+            ],
+            "correctAnswer": "240 cm²",
+            "explanation": "Area of rectangle = length × width = 20 × 12 = 240 cm²"
+        },
+        {
+            "id": "2",
+            "question": "The perimeter of a square is 60 cm. What is its area?",
+            "options": [
+                "200 cm²",
+                "210 cm²",
+                "220 cm²",
+                "225 cm²"
+            ],
+            "correctAnswer": "225 cm²",
+            "explanation": "Side length = perimeter ÷ 4 = 60 ÷ 4 = 15 cm. Area = side² = 15 × 15 = 225 cm²"
+        },
+        {
+            "id": "3",
+            "question": "A circle has a diameter of 14 cm. What is its area? (Use π = 22/7)",
+            "options": [
+                "150 cm²",
+                "154 cm²",
+                "158 cm²",
+                "162 cm²"
+            ],
+            "correctAnswer": "154 cm²",
+            "explanation": "Radius = diameter ÷ 2 = 14 ÷ 2 = 7 cm. Area = πr² = (22/7) × 7 × 7 = 154 cm²"
+        },
+        {
+            "id": "4",
+            "question": "The area of a regular hexagon is 150 square centimeters. What is the length of each side?",
+            "options": [
+                "5 cm",
+                "6 cm",
+                "7 cm",
+                "8 cm"
+            ],
+            "correctAnswer": "7 cm",
+            "explanation": "Area of regular hexagon = (3√3/2) × side². Therefore, side² = (2 × 150) ÷ (3√3) ≈ 49. Therefore, side = √49 = 7 cm"
+        },
+        {
+            "id": "5",
+            "question": "A triangle has a base of 10 cm and a height of 8 cm. What is its area?",
+            "options": [
+                "35 cm²",
+                "38 cm²",
+                "40 cm²",
+                "42 cm²"
+            ],
+            "correctAnswer": "40 cm²",
+            "explanation": "Area of triangle = (1/2) × base × height = (1/2) × 10 × 8 = 40 cm²"
+        },
+        {
+            "id": "6",
+            "question": "The area of a rectangle is 180 square meters and its width is 12 meters. What is its length?",
+            "options": [
+                "13 meters",
+                "14 meters",
+                "15 meters",
+                "16 meters"
+            ],
+            "correctAnswer": "15 meters",
+            "explanation": "Length = area ÷ width = 180 ÷ 12 = 15 meters"
+        },
+        {
+            "id": "7",
+            "question": "A circle has a radius of 9 cm. What is its circumference? (Use π = 3.14)",
+            "options": [
+                "54.2 cm",
+                "55.2 cm",
+                "56.2 cm",
+                "57.2 cm"
+            ],
+            "correctAnswer": "56.2 cm",
+            "explanation": "Circumference = 2πr = 2 × 3.14 × 9 = 56.2 cm"
+        },
+        {
+            "id": "8",
+            "question": "The area of a parallelogram is 84 square centimeters and its base is 12 centimeters. What is its height?",
+            "options": [
+                "5 cm",
+                "6 cm",
+                "7 cm",
+                "8 cm"
+            ],
+            "correctAnswer": "7 cm",
+            "explanation": "Height = area ÷ base = 84 ÷ 12 = 7 cm"
+        },
+        {
+            "id": "9",
+            "question": "A square has an area of 256 square centimeters. What is its perimeter?",
+            "options": [
+                "60 cm",
+                "62 cm",
+                "64 cm",
+                "66 cm"
+            ],
+            "correctAnswer": "64 cm",
+            "explanation": "Side length = √256 = 16 cm. Perimeter = 4 × side = 4 × 16 = 64 cm"
+        },
+        {
+            "id": "10",
+            "question": "The area of a trapezium is 135 square meters. Its parallel sides are 15 meters and 30 meters. What is its height?",
+            "options": [
+                "5 meters",
+                "6 meters",
+                "7 meters",
+                "8 meters"
+            ],
+            "correctAnswer": "6 meters",
+            "explanation": "Area of trapezium = (1/2)(sum of parallel sides) × height. Therefore, height = (2 × area) ÷ (sum of parallel sides) = (2 × 135) ÷ (15 + 30) = 270 ÷ 45 = 6 meters"
+        },
+        {
+            "id": "11",
+            "question": "A regular pentagon has a perimeter of 50 cm. What is the length of each side?",
+            "options": [
+                "8 cm",
+                "9 cm",
+                "10 cm",
+                "11 cm"
+            ],
+            "correctAnswer": "10 cm",
+            "explanation": "In a regular pentagon, all sides are equal. Side length = perimeter ÷ 5 = 50 ÷ 5 = 10 cm"
+        },
+        {
+            "id": "12",
+            "question": "The circumference of a circle is 66 cm. What is its area? (Use π = 22/7)",
+            "options": [
+                "340 cm²",
+                "345 cm²",
+                "350 cm²",
+                "355 cm²"
+            ],
+            "correctAnswer": "345 cm²",
+            "explanation": "Circumference = 2πr = 66. Therefore, r = 66 ÷ (2 × 22/7) = 10.5 cm. Area = πr² = (22/7) × 10.5 × 10.5 = 345 cm²"
+        },
+        {
+            "id": "13",
+            "question": "A rectangle has a perimeter of 50 cm and a length of 15 cm. What is its area?",
+            "options": [
+                "140 cm²",
+                "145 cm²",
+                "150 cm²",
+                "155 cm²"
+            ],
+            "correctAnswer": "150 cm²",
+            "explanation": "Perimeter = 2(length + width). Therefore, width = (50 ÷ 2) - 15 = 10 cm. Area = length × width = 15 × 10 = 150 cm²"
+        },
+        {
+            "id": "14",
+            "question": "The area of a rhombus is 72 square centimeters and one of its diagonals is 12 centimeters. What is the length of the other diagonal?",
+            "options": [
+                "10 cm",
+                "11 cm",
+                "12 cm",
+                "13 cm"
+            ],
+            "correctAnswer": "12 cm",
+            "explanation": "Area of rhombus = (1/2) × product of diagonals. Therefore, other diagonal = (2 × area) ÷ given diagonal = (2 × 72) ÷ 12 = 12 cm"
+        },
+        {
+            "id": "15",
+            "question": "A circle has an area of 314 square centimeters. What is its radius? (Use π = 3.14)",
+            "options": [
+                "8 cm",
+                "9 cm",
+                "10 cm",
+                "11 cm"
+            ],
+            "correctAnswer": "10 cm",
+            "explanation": "Area = πr² = 314. Therefore, r² = 314 ÷ 3.14 = 100. Therefore, r = √100 = 10 cm"
+        },
+        {
+            "id": "16",
+            "question": "The perimeter of a rectangle is 42 cm and its area is 110 square centimeters. What are its dimensions?",
+            "options": [
+                "10 cm × 11 cm",
+                "11 cm × 10 cm",
+                "9 cm × 12 cm",
+                "12 cm × 9 cm"
+            ],
+            "correctAnswer": "11 cm × 10 cm",
+            "explanation": "Let length = l and width = w. Then 2(l + w) = 42 and l × w = 110. Solving these equations gives l = 11 cm and w = 10 cm"
+        },
+        {
+            "id": "17",
+            "question": "A regular octagon has a perimeter of 72 cm. What is the length of each side?",
+            "options": [
+                "7 cm",
+                "8 cm",
+                "9 cm",
+                "10 cm"
+            ],
+            "correctAnswer": "9 cm",
+            "explanation": "In a regular octagon, all sides are equal. Side length = perimeter ÷ 8 = 72 ÷ 8 = 9 cm"
+        },
+        {
+            "id": "18",
+            "question": "The area of a triangle is 36 square centimeters and its height is 8 centimeters. What is its base?",
+            "options": [
+                "7 cm",
+                "8 cm",
+                "9 cm",
+                "10 cm"
+            ],
+            "correctAnswer": "9 cm",
+            "explanation": "Area of triangle = (1/2) × base × height. Therefore, base = (2 × area) ÷ height = (2 × 36) ÷ 8 = 9 cm"
+        },
+        {
+            "id": "19",
+            "question": "A square and a rectangle have the same area. The rectangle has length 20 cm and width 5 cm. What is the perimeter of the square?",
+            "options": [
+                "40 cm",
+                "42 cm",
+                "44 cm",
+                "46 cm"
+            ],
+            "correctAnswer": "40 cm",
+            "explanation": "Area of rectangle = 20 × 5 = 100 cm². Side of square = √100 = 10 cm. Perimeter of square = 4 × 10 = 40 cm"
+        },
+        {
+            "id": "20",
+            "question": "The circumference of a circle is 50.24 cm. What is its diameter? (Use π = 3.14)",
+            "options": [
+                "14 cm",
+                "15 cm",
+                "16 cm",
+                "17 cm"
+            ],
+            "correctAnswer": "16 cm",
+            "explanation": "Circumference = π × diameter. Therefore, diameter = circumference ÷ π = 50.24 ÷ 3.14 = 16 cm"
+        },
+        {
+            "id": "21",
+            "question": "A parallelogram has a base of 15 cm and a height of 10 cm. What is its area?",
+            "options": [
+                "140 cm²",
+                "145 cm²",
+                "150 cm²",
+                "155 cm²"
+            ],
+            "correctAnswer": "150 cm²",
+            "explanation": "Area of parallelogram = base × height = 15 × 10 = 150 cm²"
+        },
+        {
+            "id": "22",
+            "question": "The area of a circle is 113.04 square centimeters. What is its radius? (Use π = 3.14)",
+            "options": [
+                "5 cm",
+                "6 cm",
+                "7 cm",
+                "8 cm"
+            ],
+            "correctAnswer": "6 cm",
+            "explanation": "Area = πr² = 113.04. Therefore, r² = 113.04 ÷ 3.14 = 36. Therefore, r = √36 = 6 cm"
+        },
+        {
+            "id": "23",
+            "question": "A rectangle has a length of 18 cm and an area of 162 square centimeters. What is its perimeter?",
+            "options": [
+                "52 cm",
+                "54 cm",
+                "56 cm",
+                "58 cm"
+            ],
+            "correctAnswer": "54 cm",
+            "explanation": "Width = area ÷ length = 162 ÷ 18 = 9 cm. Perimeter = 2(length + width) = 2(18 + 9) = 54 cm"
+        },
+        {
+            "id": "24",
+            "question": "The perimeter of a square is 52 cm. What is its area?",
+            "options": [
+                "156 cm²",
+                "159 cm²",
+                "162 cm²",
+                "169 cm²"
+            ],
+            "correctAnswer": "169 cm²",
+            "explanation": "Side length = perimeter ÷ 4 = 52 ÷ 4 = 13 cm. Area = side² = 13 × 13 = 169 cm²"
+        },
+        {
+            "id": "25",
+            "question": "A triangle has sides of length 7 cm, 24 cm, and 25 cm. What is its area?",
+            "options": [
+                "80 cm²",
+                "82 cm²",
+                "84 cm²",
+                "86 cm²"
+            ],
+            "correctAnswer": "84 cm²",
+            "explanation": "This is a right-angled triangle (7-24-25). Area = (1/2) × base × height = (1/2) × 7 × 24 = 84 cm²"
+        },
+        {
+            "id": "26",
+            "question": "The area of a rectangle is 144 square meters and its width is 9 meters. What is its perimeter?",
+            "options": [
+                "48 meters",
+                "50 meters",
+                "52 meters",
+                "54 meters"
+            ],
+            "correctAnswer": "50 meters",
+            "explanation": "Length = area ÷ width = 144 ÷ 9 = 16 meters. Perimeter = 2(length + width) = 2(16 + 9) = 50 meters"
+        },
+        {
+            "id": "27",
+            "question": "A circle has a radius of 8 cm. What is its circumference? (Use π = 3.14)",
+            "options": [
+                "48.2 cm",
+                "49.2 cm",
+                "50.2 cm",
+                "51.2 cm"
+            ],
+            "correctAnswer": "50.2 cm",
+            "explanation": "Circumference = 2πr = 2 × 3.14 × 8 = 50.2 cm"
+        },
+        {
+            "id": "28",
+            "question": "The area of a trapezium is 120 square centimeters. Its parallel sides are 15 centimeters and 25 centimeters. What is its height?",
+            "options": [
+                "5 cm",
+                "6 cm",
+                "7 cm",
+                "8 cm"
+            ],
+            "correctAnswer": "6 cm",
+            "explanation": "Area of trapezium = (1/2)(sum of parallel sides) × height. Therefore, height = (2 × area) ÷ (sum of parallel sides) = (2 × 120) ÷ (15 + 25) = 240 ÷ 40 = 6 cm"
+        },
+        {
+            "id": "29",
+            "question": "A square has an area of 225 square centimeters. What is its perimeter?",
+            "options": [
+                "58 cm",
+                "60 cm",
+                "62 cm",
+                "64 cm"
+            ],
+            "correctAnswer": "60 cm",
+            "explanation": "Side length = √225 = 15 cm. Perimeter = 4 × side = 4 × 15 = 60 cm"
+        },
+        {
+            "id": "30",
+            "question": "The circumference of a circle is 69.08 cm. What is its radius? (Use π = 3.14)",
+            "options": [
+                "9 cm",
+                "10 cm",
+                "11 cm",
+                "12 cm"
+            ],
+            "correctAnswer": "11 cm",
+            "explanation": "Circumference = 2πr = 69.08. Therefore, r = 69.08 ÷ (2 × 3.14) = 11 cm"
+        }
+    ]
+}

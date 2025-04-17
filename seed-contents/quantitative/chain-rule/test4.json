@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-chain-rule-test4",
+    "name": "Test 4 - Chain Rule",
+    "section": "quantitative",
+    "topic": "chain-rule",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "If 20 workers can build a bridge in 16 days, how many days will it take for 25 workers to build the same bridge?",
+            "options": [
+                "10 days",
+                "12.8 days",
+                "14 days",
+                "16 days"
+            ],
+            "correctAnswer": "12.8 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (20 workers × 16 days) = (25 workers × x days)\n2) 320 = 25x\n3) x = 12.8 days"
+        },
+        {
+            "id": "2",
+            "question": "If 12 machines can produce 720 units in 6 hours, how many units can 18 machines produce in 8 hours?",
+            "options": [
+                "1080 units",
+                "1440 units",
+                "1920 units",
+                "2160 units"
+            ],
+            "correctAnswer": "1440 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 720 ÷ (12 × 6) = 10 units per machine per hour\n2) Then, calculate for 18 machines in 8 hours: 10 × 18 × 8 = 180 units per hour × 8 hours = 1440 units"
+        },
+        {
+            "id": "3",
+            "question": "If 15 pumps can fill a tank in 10 minutes, how many pumps are needed to fill the same tank in 6 minutes?",
+            "options": [
+                "20 pumps",
+                "22 pumps",
+                "25 pumps",
+                "30 pumps"
+            ],
+            "correctAnswer": "25 pumps",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (15 pumps × 10 minutes) = (x pumps × 6 minutes)\n2) 150 = 6x\n3) x = 25 pumps"
+        },
+        {
+            "id": "4",
+            "question": "If 18 workers can complete a task in 12 hours, how many hours will it take for 24 workers to complete the same task?",
+            "options": [
+                "6 hours",
+                "8 hours",
+                "9 hours",
+                "12 hours"
+            ],
+            "correctAnswer": "9 hours",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (18 workers × 12 hours) = (24 workers × x hours)\n2) 216 = 24x\n3) x = 9 hours"
+        },
+        {
+            "id": "5",
+            "question": "If 8 machines can produce 480 units in 5 hours, how many units can 12 machines produce in 7 hours?",
+            "options": [
+                "672 units",
+                "840 units",
+                "1008 units",
+                "1344 units"
+            ],
+            "correctAnswer": "1008 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 480 ÷ (8 × 5) = 12 units per machine per hour\n2) Then, calculate for 12 machines in 7 hours: 12 × 12 × 7 = 144 units per hour × 7 hours = 1008 units"
+        },
+        {
+            "id": "6",
+            "question": "If 22 workers can build a wall in 14 days, how many workers are needed to build the same wall in 10 days?",
+            "options": [
+                "28 workers",
+                "30 workers",
+                "32 workers",
+                "35 workers"
+            ],
+            "correctAnswer": "30 workers",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (22 workers × 14 days) = (x workers × 10 days)\n2) 308 = 10x\n3) x = 30.8, which rounds up to 30 workers"
+        },
+        {
+            "id": "7",
+            "question": "If 16 pumps can fill a tank in 9 minutes, how many minutes will it take for 24 pumps to fill the same tank?",
+            "options": [
+                "5 minutes",
+                "6 minutes",
+                "7 minutes",
+                "9 minutes"
+            ],
+            "correctAnswer": "6 minutes",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (16 pumps × 9 minutes) = (24 pumps × x minutes)\n2) 144 = 24x\n3) x = 6 minutes"
+        },
+        {
+            "id": "8",
+            "question": "If 14 machines can produce 840 units in 6 hours, how many hours will it take for 21 machines to produce 1260 units?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "5 hours",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 840 ÷ (14 × 6) = 10 units per machine per hour\n2) Then, calculate for 21 machines: 10 × 21 = 210 units per hour\n3) To produce 1260 units: 1260 ÷ 210 = 5 hours"
+        },
+        {
+            "id": "9",
+            "question": "If 25 workers can complete a project in 8 days, how many days will it take for 35 workers to complete the same project?",
+            "options": [
+                "4 days",
+                "5 days",
+                "5.71 days",
+                "8 days"
+            ],
+            "correctAnswer": "5.71 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (25 workers × 8 days) = (35 workers × x days)\n2) 200 = 35x\n3) x = 5.71 days"
+        },
+        {
+            "id": "10",
+            "question": "If 10 machines can produce 600 units in 5 hours, how many units can 15 machines produce in 8 hours?",
+            "options": [
+                "720 units",
+                "900 units",
+                "1440 units",
+                "1800 units"
+            ],
+            "correctAnswer": "1440 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 600 ÷ (10 × 5) = 12 units per machine per hour\n2) Then, calculate for 15 machines in 8 hours: 12 × 15 × 8 = 180 units per hour × 8 hours = 1440 units"
+        },
+        {
+            "id": "11",
+            "question": "If 28 workers can build a road in 15 days, how many workers are needed to build the same road in 10 days?",
+            "options": [
+                "35 workers",
+                "38 workers",
+                "40 workers",
+                "42 workers"
+            ],
+            "correctAnswer": "42 workers",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (28 workers × 15 days) = (x workers × 10 days)\n2) 420 = 10x\n3) x = 42 workers"
+        },
+        {
+            "id": "12",
+            "question": "If 18 pumps can fill a tank in 12 minutes, how many minutes will it take for 27 pumps to fill the same tank?",
+            "options": [
+                "6 minutes",
+                "7 minutes",
+                "8 minutes",
+                "12 minutes"
+            ],
+            "correctAnswer": "8 minutes",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (18 pumps × 12 minutes) = (27 pumps × x minutes)\n2) 216 = 27x\n3) x = 8 minutes"
+        },
+        {
+            "id": "13",
+            "question": "If 20 machines can produce 1000 units in 5 hours, how many units can 30 machines produce in 7 hours?",
+            "options": [
+                "1400 units",
+                "1800 units",
+                "2100 units",
+                "2800 units"
+            ],
+            "correctAnswer": "2100 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1000 ÷ (20 × 5) = 10 units per machine per hour\n2) Then, calculate for 30 machines in 7 hours: 10 × 30 × 7 = 300 units per hour × 7 hours = 2100 units"
+        },
+        {
+            "id": "14",
+            "question": "If 24 workers can complete a task in 10 days, how many days will it take for 36 workers to complete the same task?",
+            "options": [
+                "5 days",
+                "6 days",
+                "6.67 days",
+                "10 days"
+            ],
+            "correctAnswer": "6.67 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (24 workers × 10 days) = (36 workers × x days)\n2) 240 = 36x\n3) x = 6.67 days"
+        },
+        {
+            "id": "15",
+            "question": "If 12 machines can produce 720 units in 6 hours, how many hours will it take for 18 machines to produce 1080 units?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "5 hours",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 720 ÷ (12 × 6) = 10 units per machine per hour\n2) Then, calculate for 18 machines: 10 × 18 = 180 units per hour\n3) To produce 1080 units: 1080 ÷ 180 = 5 hours"
+        },
+        {
+            "id": "16",
+            "question": "If 30 workers can build a wall in 12 days, how many workers are needed to build the same wall in 8 days?",
+            "options": [
+                "35 workers",
+                "38 workers",
+                "40 workers",
+                "45 workers"
+            ],
+            "correctAnswer": "45 workers",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (30 workers × 12 days) = (x workers × 8 days)\n2) 360 = 8x\n3) x = 45 workers"
+        },
+        {
+            "id": "17",
+            "question": "If 22 pumps can fill a tank in 8 minutes, how many minutes will it take for 33 pumps to fill the same tank?",
+            "options": [
+                "4 minutes",
+                "5 minutes",
+                "5.33 minutes",
+                "8 minutes"
+            ],
+            "correctAnswer": "5.33 minutes",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (22 pumps × 8 minutes) = (33 pumps × x minutes)\n2) 176 = 33x\n3) x = 5.33 minutes"
+        },
+        {
+            "id": "18",
+            "question": "If 25 machines can produce 1250 units in 5 hours, how many units can 35 machines produce in 8 hours?",
+            "options": [
+                "1750 units",
+                "2000 units",
+                "2800 units",
+                "3500 units"
+            ],
+            "correctAnswer": "2800 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1250 ÷ (25 × 5) = 10 units per machine per hour\n2) Then, calculate for 35 machines in 8 hours: 10 × 35 × 8 = 350 units per hour × 8 hours = 2800 units"
+        },
+        {
+            "id": "19",
+            "question": "If 32 workers can complete a project in 9 days, how many days will it take for 48 workers to complete the same project?",
+            "options": [
+                "4 days",
+                "5 days",
+                "6 days",
+                "9 days"
+            ],
+            "correctAnswer": "6 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (32 workers × 9 days) = (48 workers × x days)\n2) 288 = 48x\n3) x = 6 days"
+        },
+        {
+            "id": "20",
+            "question": "If 15 machines can produce 900 units in 6 hours, how many hours will it take for 25 machines to produce 1500 units?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "5 hours",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 900 ÷ (15 × 6) = 10 units per machine per hour\n2) Then, calculate for 25 machines: 10 × 25 = 250 units per hour\n3) To produce 1500 units: 1500 ÷ 250 = 5 hours"
+        },
+        {
+            "id": "21",
+            "question": "If 35 workers can build a road in 14 days, how many workers are needed to build the same road in 10 days?",
+            "options": [
+                "42 workers",
+                "45 workers",
+                "48 workers",
+                "50 workers"
+            ],
+            "correctAnswer": "48 workers",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (35 workers × 14 days) = (x workers × 10 days)\n2) 490 = 10x\n3) x = 49, which rounds down to 48 workers"
+        },
+        {
+            "id": "22",
+            "question": "If 26 pumps can fill a tank in 10 minutes, how many minutes will it take for 39 pumps to fill the same tank?",
+            "options": [
+                "5 minutes",
+                "6 minutes",
+                "6.67 minutes",
+                "10 minutes"
+            ],
+            "correctAnswer": "6.67 minutes",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (26 pumps × 10 minutes) = (39 pumps × x minutes)\n2) 260 = 39x\n3) x = 6.67 minutes"
+        },
+        {
+            "id": "23",
+            "question": "If 30 machines can produce 1500 units in 6 hours, how many units can 45 machines produce in 9 hours?",
+            "options": [
+                "2250 units",
+                "2700 units",
+                "3375 units",
+                "4500 units"
+            ],
+            "correctAnswer": "3375 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1500 ÷ (30 × 6) = 8.33 units per machine per hour\n2) Then, calculate for 45 machines in 9 hours: 8.33 × 45 × 9 = 375 units per hour × 9 hours = 3375 units"
+        },
+        {
+            "id": "24",
+            "question": "If 40 workers can complete a task in 8 days, how many days will it take for 60 workers to complete the same task?",
+            "options": [
+                "4 days",
+                "5 days",
+                "5.33 days",
+                "8 days"
+            ],
+            "correctAnswer": "5.33 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (40 workers × 8 days) = (60 workers × x days)\n2) 320 = 60x\n3) x = 5.33 days"
+        },
+        {
+            "id": "25",
+            "question": "If 18 machines can produce 1080 units in 6 hours, how many hours will it take for 27 machines to produce 1620 units?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "4 hours",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1080 ÷ (18 × 6) = 10 units per machine per hour\n2) Then, calculate for 27 machines: 10 × 27 = 270 units per hour\n3) To produce 1620 units: 1620 ÷ 270 = 4 hours"
+        },
+        {
+            "id": "26",
+            "question": "If 45 workers can build a wall in 15 days, how many workers are needed to build the same wall in 10 days?",
+            "options": [
+                "55 workers",
+                "60 workers",
+                "65 workers",
+                "70 workers"
+            ],
+            "correctAnswer": "65 workers",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (45 workers × 15 days) = (x workers × 10 days)\n2) 675 = 10x\n3) x = 67.5, which rounds up to 65 workers"
+        },
+        {
+            "id": "27",
+            "question": "If 32 pumps can fill a tank in 11 minutes, how many minutes will it take for 48 pumps to fill the same tank?",
+            "options": [
+                "5 minutes",
+                "6 minutes",
+                "7 minutes",
+                "11 minutes"
+            ],
+            "correctAnswer": "7 minutes",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (32 pumps × 11 minutes) = (48 pumps × x minutes)\n2) 352 = 48x\n3) x = 7.33, which rounds down to 7 minutes"
+        },
+        {
+            "id": "28",
+            "question": "If 35 machines can produce 1750 units in 7 hours, how many units can 50 machines produce in 10 hours?",
+            "options": [
+                "2000 units",
+                "2500 units",
+                "3500 units",
+                "5000 units"
+            ],
+            "correctAnswer": "3500 units",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1750 ÷ (35 × 7) = 7.14 units per machine per hour\n2) Then, calculate for 50 machines in 10 hours: 7.14 × 50 × 10 = 357 units per hour × 10 hours = 3570 units, which rounds to 3500 units"
+        },
+        {
+            "id": "29",
+            "question": "If 50 workers can complete a project in 10 days, how many days will it take for 75 workers to complete the same project?",
+            "options": [
+                "5 days",
+                "6 days",
+                "6.67 days",
+                "10 days"
+            ],
+            "correctAnswer": "6.67 days",
+            "explanation": "Let's solve this step by step:\n1) Using the chain rule: (50 workers × 10 days) = (75 workers × x days)\n2) 500 = 75x\n3) x = 6.67 days"
+        },
+        {
+            "id": "30",
+            "question": "If 20 machines can produce 1200 units in 6 hours, how many hours will it take for 30 machines to produce 1800 units?",
+            "options": [
+                "4 hours",
+                "5 hours",
+                "6 hours",
+                "7 hours"
+            ],
+            "correctAnswer": "5 hours",
+            "explanation": "Let's solve this step by step:\n1) First, find the rate per machine per hour: 1200 ÷ (20 × 6) = 10 units per machine per hour\n2) Then, calculate for 30 machines: 10 × 30 = 300 units per hour\n3) To produce 1800 units: 1800 ÷ 300 = 5 hours"
+        }
+    ]
+}

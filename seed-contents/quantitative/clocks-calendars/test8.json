@@ -1,0 +1,371 @@
+{
+    "id": "quantitative-clocks-calendars-test8",
+    "name": "Test 8 - Clocks Calendars",
+    "section": "quantitative",
+    "topic": "clocks-calendars",
+    "difficulty": "medium",
+    "duration": 30,
+    "totalQuestions": 30,
+    "questions": [
+        {
+            "id": "1",
+            "question": "At what time between 3 PM and 4 PM will the minute hand and hour hand of a clock be at right angles?",
+            "options": [
+                "3:15 PM",
+                "3:20 PM",
+                "3:25 PM",
+                "3:30 PM"
+            ],
+            "correctAnswer": "3:20 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands are at right angles is: |30H - 5.5M| = 90°\n2) For 3 PM, H = 3\n3) |30(3) - 5.5M| = 90\n4) |90 - 5.5M| = 90\n5) 90 - 5.5M = 90 or 90 - 5.5M = -90\n6) 5.5M = 0 or 5.5M = 180\n7) M = 0 or M = 32.73\n8) Since we need time between 3 PM and 4 PM, M = 32.73\n9) Therefore, the time is 3:20 PM"
+        },
+        {
+            "id": "2",
+            "question": "If today is Sunday, what day of the week will it be after 250 days?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) A week has 7 days\n2) To find the day after 250 days, divide 250 by 7 and find the remainder\n3) 250 ÷ 7 = 35 remainder 5\n4) Starting from Sunday, count 5 days forward\n5) Sunday → Monday → Tuesday → Wednesday → Thursday → Friday\n6) Therefore, after 250 days, it will be Friday"
+        },
+        {
+            "id": "3",
+            "question": "A clock shows 5:15. What is the angle between the hour and minute hands?",
+            "options": [
+                "67.5°",
+                "75°",
+                "82.5°",
+                "90°"
+            ],
+            "correctAnswer": "67.5°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 5:15, hour hand angle = 30° × 5 + 0.5° × 15 = 150° + 7.5° = 157.5°\n3) Minute hand angle = 6° × minutes\n4) At 5:15, minute hand angle = 6° × 15 = 90°\n5) Angle between hands = |157.5° - 90°| = 67.5°"
+        },
+        {
+            "id": "4",
+            "question": "If May 15, 2023, was a Monday, what day of the week was May 15, 2024?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between May 15, 2023, and May 15, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Monday, count 2 days forward\n4) Monday → Tuesday → Wednesday\n5) Therefore, May 15, 2024, was a Wednesday"
+        },
+        {
+            "id": "5",
+            "question": "At what time between 7 PM and 8 PM will the minute hand and hour hand of a clock overlap?",
+            "options": [
+                "7:35 PM",
+                "7:38.18 PM",
+                "7:40 PM",
+                "7:45 PM"
+            ],
+            "correctAnswer": "7:38.18 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands overlap is: M = 5.4545 × H\n2) For 7 PM, H = 7\n3) M = 5.4545 × 7 = 38.18\n4) Therefore, the hands overlap at 7:38.18 PM"
+        },
+        {
+            "id": "6",
+            "question": "If a clock loses 6 minutes every hour, what will be the actual time when the clock shows 4:00 PM?",
+            "options": [
+                "3:05 PM",
+                "3:10 PM",
+                "3:15 PM",
+                "3:20 PM"
+            ],
+            "correctAnswer": "3:15 PM",
+            "explanation": "Let's solve this step by step:\n1) If the clock loses 6 minutes every hour, it runs at 54 minutes per hour\n2) Let x be the actual time in hours\n3) 54x = 16 (4:00 PM = 16 hours)\n4) x = 16 ÷ 0.9 = 17.78 hours\n5) 17.78 hours = 17 hours and 0.78 × 60 = 47 minutes\n6) 17:47 - 1 hour and 32 minutes = 16:15 (3:15 PM)"
+        },
+        {
+            "id": "7",
+            "question": "How many times do the hour and minute hands of a clock form a right angle in 24 hours?",
+            "options": [
+                "22 times",
+                "24 times",
+                "44 times",
+                "48 times"
+            ],
+            "correctAnswer": "44 times",
+            "explanation": "Let's solve this step by step:\n1) The hands form a right angle when they are at 90° or 270°\n2) In 12 hours, they form a right angle 22 times\n3) In 24 hours, they form a right angle 44 times\n4) Therefore, in 24 hours, they form a right angle 44 times"
+        },
+        {
+            "id": "8",
+            "question": "If November 10, 2023, was a Friday, what day of the week was November 10, 2024?",
+            "options": [
+                "Friday",
+                "Saturday",
+                "Sunday",
+                "Monday"
+            ],
+            "correctAnswer": "Sunday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between November 10, 2023, and November 10, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Friday, count 2 days forward\n4) Friday → Saturday → Sunday\n5) Therefore, November 10, 2024, was a Sunday"
+        },
+        {
+            "id": "9",
+            "question": "A clock shows 7:30. What is the angle between the hour and minute hands?",
+            "options": [
+                "30°",
+                "35°",
+                "40°",
+                "45°"
+            ],
+            "correctAnswer": "45°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 7:30, hour hand angle = 30° × 7 + 0.5° × 30 = 210° + 15° = 225°\n3) Minute hand angle = 6° × minutes\n4) At 7:30, minute hand angle = 6° × 30 = 180°\n5) Angle between hands = |225° - 180°| = 45°"
+        },
+        {
+            "id": "10",
+            "question": "If a clock gains 8 minutes every hour, what will be the actual time when the clock shows 10:00 AM?",
+            "options": [
+                "9:05 AM",
+                "9:10 AM",
+                "9:15 AM",
+                "9:20 AM"
+            ],
+            "correctAnswer": "9:15 AM",
+            "explanation": "Let's solve this step by step:\n1) If the clock gains 8 minutes every hour, it runs at 68 minutes per hour\n2) Let x be the actual time in hours\n3) 68x = 10 (10:00 AM = 10 hours)\n4) x = 10 ÷ 1.1333 = 8.82 hours\n5) 8.82 hours = 8 hours and 0.82 × 60 = 49 minutes\n6) 8:49 - 34 minutes = 8:15 (9:15 AM)"
+        },
+        {
+            "id": "11",
+            "question": "At what time between 5 PM and 6 PM will the minute hand and hour hand of a clock be at right angles?",
+            "options": [
+                "5:15 PM",
+                "5:20 PM",
+                "5:25 PM",
+                "5:30 PM"
+            ],
+            "correctAnswer": "5:20 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands are at right angles is: |30H - 5.5M| = 90°\n2) For 5 PM, H = 5\n3) |30(5) - 5.5M| = 90\n4) |150 - 5.5M| = 90\n5) 150 - 5.5M = 90 or 150 - 5.5M = -90\n6) 5.5M = 60 or 5.5M = 240\n7) M = 10.91 or M = 43.64\n8) Since we need time between 5 PM and 6 PM, M = 43.64\n9) Therefore, the time is 5:20 PM"
+        },
+        {
+            "id": "12",
+            "question": "If today is Wednesday, what day of the week will it be after 275 days?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Thursday",
+            "explanation": "Let's solve this step by step:\n1) A week has 7 days\n2) To find the day after 275 days, divide 275 by 7 and find the remainder\n3) 275 ÷ 7 = 39 remainder 2\n4) Starting from Wednesday, count 2 days forward\n5) Wednesday → Thursday → Friday\n6) Therefore, after 275 days, it will be Friday"
+        },
+        {
+            "id": "13",
+            "question": "A clock shows 11:45. What is the angle between the hour and minute hands?",
+            "options": [
+                "82.5°",
+                "90°",
+                "97.5°",
+                "105°"
+            ],
+            "correctAnswer": "82.5°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 11:45, hour hand angle = 30° × 11 + 0.5° × 45 = 330° + 22.5° = 352.5°\n3) Minute hand angle = 6° × minutes\n4) At 11:45, minute hand angle = 6° × 45 = 270°\n5) Angle between hands = |352.5° - 270°| = 82.5°"
+        },
+        {
+            "id": "14",
+            "question": "If June 20, 2023, was a Tuesday, what day of the week was June 20, 2024?",
+            "options": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "correctAnswer": "Thursday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between June 20, 2023, and June 20, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Tuesday, count 2 days forward\n4) Tuesday → Wednesday → Thursday\n5) Therefore, June 20, 2024, was a Thursday"
+        },
+        {
+            "id": "15",
+            "question": "At what time between 8 PM and 9 PM will the minute hand and hour hand of a clock overlap?",
+            "options": [
+                "8:40 PM",
+                "8:43.64 PM",
+                "8:45 PM",
+                "8:50 PM"
+            ],
+            "correctAnswer": "8:43.64 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands overlap is: M = 5.4545 × H\n2) For 8 PM, H = 8\n3) M = 5.4545 × 8 = 43.64\n4) Therefore, the hands overlap at 8:43.64 PM"
+        },
+        {
+            "id": "16",
+            "question": "If a clock loses 8 minutes every hour, what will be the actual time when the clock shows 6:00 AM?",
+            "options": [
+                "5:05 AM",
+                "5:10 AM",
+                "5:15 AM",
+                "5:20 AM"
+            ],
+            "correctAnswer": "5:15 AM",
+            "explanation": "Let's solve this step by step:\n1) If the clock loses 8 minutes every hour, it runs at 52 minutes per hour\n2) Let x be the actual time in hours\n3) 52x = 6 (6:00 AM = 6 hours)\n4) x = 6 ÷ 0.8667 = 6.92 hours\n5) 6.92 hours = 6 hours and 0.92 × 60 = 55 minutes\n6) 6:55 - 1 hour and 40 minutes = 5:15 AM"
+        },
+        {
+            "id": "17",
+            "question": "How many times do the hour and minute hands of a clock form a straight line in 12 hours?",
+            "options": [
+                "11 times",
+                "22 times",
+                "44 times",
+                "48 times"
+            ],
+            "correctAnswer": "22 times",
+            "explanation": "Let's solve this step by step:\n1) The hands form a straight line when they are either overlapping or at 180°\n2) They overlap 11 times in 12 hours\n3) They are at 180° 11 times in 12 hours\n4) Total = 11 + 11 = 22 times in 12 hours"
+        },
+        {
+            "id": "18",
+            "question": "If December 25, 2023, was a Monday, what day of the week was December 25, 2024?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between December 25, 2023, and December 25, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Monday, count 2 days forward\n4) Monday → Tuesday → Wednesday\n5) Therefore, December 25, 2024, was a Wednesday"
+        },
+        {
+            "id": "19",
+            "question": "A clock shows 1:45. What is the angle between the hour and minute hands?",
+            "options": [
+                "127.5°",
+                "135°",
+                "142.5°",
+                "150°"
+            ],
+            "correctAnswer": "142.5°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 1:45, hour hand angle = 30° × 1 + 0.5° × 45 = 30° + 22.5° = 52.5°\n3) Minute hand angle = 6° × minutes\n4) At 1:45, minute hand angle = 6° × 45 = 270°\n5) Angle between hands = |270° - 52.5°| = 217.5°\n6) Since we want the smaller angle, 360° - 217.5° = 142.5°\n7) Therefore, the angle is 142.5°"
+        },
+        {
+            "id": "20",
+            "question": "If a clock gains 12 minutes every hour, what will be the actual time when the clock shows 11:00 AM?",
+            "options": [
+                "10:05 AM",
+                "10:10 AM",
+                "10:15 AM",
+                "10:20 AM"
+            ],
+            "correctAnswer": "10:15 AM",
+            "explanation": "Let's solve this step by step:\n1) If the clock gains 12 minutes every hour, it runs at 72 minutes per hour\n2) Let x be the actual time in hours\n3) 72x = 11 (11:00 AM = 11 hours)\n4) x = 11 ÷ 1.2 = 9.17 hours\n5) 9.17 hours = 9 hours and 0.17 × 60 = 10 minutes\n6) 9:10 - 55 minutes = 8:15 (10:15 AM)"
+        },
+        {
+            "id": "21",
+            "question": "At what time between 9 PM and 10 PM will the minute hand and hour hand of a clock be at right angles?",
+            "options": [
+                "9:15 PM",
+                "9:20 PM",
+                "9:25 PM",
+                "9:30 PM"
+            ],
+            "correctAnswer": "9:20 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands are at right angles is: |30H - 5.5M| = 90°\n2) For 9 PM, H = 9\n3) |30(9) - 5.5M| = 90\n4) |270 - 5.5M| = 90\n5) 270 - 5.5M = 90 or 270 - 5.5M = -90\n6) 5.5M = 180 or 5.5M = 360\n7) M = 32.73 or M = 65.45\n8) Since we need time between 9 PM and 10 PM, M = 32.73\n9) Therefore, the time is 9:20 PM"
+        },
+        {
+            "id": "22",
+            "question": "If today is Friday, what day of the week will it be after 350 days?",
+            "options": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday"
+            ],
+            "correctAnswer": "Thursday",
+            "explanation": "Let's solve this step by step:\n1) A week has 7 days\n2) To find the day after 350 days, divide 350 by 7 and find the remainder\n3) 350 ÷ 7 = 50 remainder 0\n4) Starting from Friday, count 0 days forward\n5) Therefore, after 350 days, it will be Friday"
+        },
+        {
+            "id": "23",
+            "question": "A clock shows 3:15. What is the angle between the hour and minute hands?",
+            "options": [
+                "7.5°",
+                "10°",
+                "12.5°",
+                "15°"
+            ],
+            "correctAnswer": "7.5°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 3:15, hour hand angle = 30° × 3 + 0.5° × 15 = 90° + 7.5° = 97.5°\n3) Minute hand angle = 6° × minutes\n4) At 3:15, minute hand angle = 6° × 15 = 90°\n5) Angle between hands = |97.5° - 90°| = 7.5°"
+        },
+        {
+            "id": "24",
+            "question": "If January 1, 2023, was a Sunday, what day of the week was January 1, 2024?",
+            "options": [
+                "Sunday",
+                "Monday",
+                "Tuesday",
+                "Wednesday"
+            ],
+            "correctAnswer": "Monday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between January 1, 2023, and January 1, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Sunday, count 2 days forward\n4) Sunday → Monday → Tuesday\n5) Therefore, January 1, 2024, was a Monday"
+        },
+        {
+            "id": "25",
+            "question": "At what time between 10 PM and 11 PM will the minute hand and hour hand of a clock be at right angles?",
+            "options": [
+                "10:15 PM",
+                "10:20 PM",
+                "10:25 PM",
+                "10:30 PM"
+            ],
+            "correctAnswer": "10:20 PM",
+            "explanation": "Let's solve this step by step:\n1) The formula for finding the time when hands are at right angles is: |30H - 5.5M| = 90°\n2) For 10 PM, H = 10\n3) |30(10) - 5.5M| = 90\n4) |300 - 5.5M| = 90\n5) 300 - 5.5M = 90 or 300 - 5.5M = -90\n6) 5.5M = 210 or 5.5M = 390\n7) M = 38.18 or M = 70.91\n8) Since we need time between 10 PM and 11 PM, M = 38.18\n9) Therefore, the time is 10:20 PM"
+        },
+        {
+            "id": "26",
+            "question": "If a clock loses 10 minutes every hour, what will be the actual time when the clock shows 12:00 PM?",
+            "options": [
+                "11:05 AM",
+                "11:10 AM",
+                "11:15 AM",
+                "11:20 AM"
+            ],
+            "correctAnswer": "11:15 AM",
+            "explanation": "Let's solve this step by step:\n1) If the clock loses 10 minutes every hour, it runs at 50 minutes per hour\n2) Let x be the actual time in hours\n3) 50x = 12 (12:00 PM = 12 hours)\n4) x = 12 ÷ 0.8333 = 14.4 hours\n5) 14.4 hours = 14 hours and 0.4 × 60 = 24 minutes\n6) 14:24 - 1 hour and 9 minutes = 13:15 (11:15 AM)"
+        },
+        {
+            "id": "27",
+            "question": "How many times do the hour and minute hands of a clock form a straight line in 48 hours?",
+            "options": [
+                "44 times",
+                "48 times",
+                "88 times",
+                "96 times"
+            ],
+            "correctAnswer": "88 times",
+            "explanation": "Let's solve this step by step:\n1) The hands form a straight line when they are either overlapping or at 180°\n2) They overlap 22 times in 24 hours\n3) They are at 180° 22 times in 24 hours\n4) Total = 22 + 22 = 44 times in 24 hours\n5) In 48 hours, they form a straight line 88 times"
+        },
+        {
+            "id": "28",
+            "question": "If February 14, 2023, was a Tuesday, what day of the week was February 14, 2024?",
+            "options": [
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "correctAnswer": "Wednesday",
+            "explanation": "Let's solve this step by step:\n1) 2024 is a leap year, so there are 366 days between February 14, 2023, and February 14, 2024\n2) 366 ÷ 7 = 52 remainder 2\n3) Starting from Tuesday, count 2 days forward\n4) Tuesday → Wednesday → Thursday\n5) Therefore, February 14, 2024, was a Wednesday"
+        },
+        {
+            "id": "29",
+            "question": "A clock shows 12:30. What is the angle between the hour and minute hands?",
+            "options": [
+                "165°",
+                "170°",
+                "175°",
+                "180°"
+            ],
+            "correctAnswer": "165°",
+            "explanation": "Let's solve this step by step:\n1) Hour hand angle = 30° × hour + 0.5° × minutes\n2) At 12:30, hour hand angle = 30° × 12 + 0.5° × 30 = 360° + 15° = 375°\n3) Since 375° > 360°, we subtract 360° to get 15°\n4) Minute hand angle = 6° × minutes\n5) At 12:30, minute hand angle = 6° × 30 = 180°\n6) Angle between hands = |180° - 15°| = 165°"
+        },
+        {
+            "id": "30",
+            "question": "If a clock gains 15 minutes every hour, what will be the actual time when the clock shows 1:00 PM?",
+            "options": [
+                "12:05 PM",
+                "12:10 PM",
+                "12:15 PM",
+                "12:20 PM"
+            ],
+            "correctAnswer": "12:15 PM",
+            "explanation": "Let's solve this step by step:\n1) If the clock gains 15 minutes every hour, it runs at 75 minutes per hour\n2) Let x be the actual time in hours\n3) 75x = 13 (1:00 PM = 13 hours)\n4) x = 13 ÷ 1.25 = 10.4 hours\n5) 10.4 hours = 10 hours and 0.4 × 60 = 24 minutes\n6) 10:24 - 2 hours and 9 minutes = 8:15 (12:15 PM)"
+        }
+    ]
+}
