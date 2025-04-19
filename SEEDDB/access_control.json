@@ -330,8 +330,8 @@
                 "2K24": {
                     "CSBS": {
                         "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
-                        "batch_start": "2024-03-01",
-                        "batch_end": "2024-12-31"
+                        "batch_start": "2025-03-01",
+                        "batch_end": "2025-12-31"
                     }
                 }
             },
@@ -360,16 +360,16 @@
                                 "status": "scheduled"
                             }
                         }
-                    },
-                    "SEED": {
-                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
-                        "batch_start": "2024-03-01",
-                        "batch_end": "2024-12-31"
-                    },
+                    }
+                    
+                }
+            },
+            "SEED-IT": {
+                "2K24": {
                     "CSBS": {
                         "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
-                        "batch_start": "2024-03-01",
-                        "batch_end": "2024-12-31"
+                        "batch_start": "2025-03-01",
+                        "batch_end": "2025-12-31"
                     }
                 }
             }
