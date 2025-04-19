@@ -329,7 +329,7 @@
             "KPRIET": {
                 "2K24": {
                     "CSBS": {
-                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
+                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005","A001"],
                         "batch_start": "2025-03-01",
                         "batch_end": "2025-12-31"
                     }
