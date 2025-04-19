@@ -335,9 +335,9 @@
                     }
                 }
             },
-            "SECE": {
+            "SREC": {
                 "2K24": {
-                    "CSBS": {
+                    "EEE": {
                         "allowed_modules": [
                             "F001", "F002", "F003", "F004", "F005",
                             "A001", "A002"
@@ -366,7 +366,7 @@
                         "batch_start": "2024-03-01",
                         "batch_end": "2024-12-31"
                     },
-                    "MANAGEMENT": {
+                    "CSBS": {
                         "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
                         "batch_start": "2024-03-01",
                         "batch_end": "2024-12-31"
