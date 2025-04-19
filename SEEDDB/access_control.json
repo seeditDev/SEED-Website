@@ -1,0 +1,379 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "last_updated": "2024-03-20",
+        "cache_duration": "24h"
+    },
+    "courses": {
+        "fundamentals": {
+            "title": "C Programming Fundamentals",
+            "display_order": 1,
+            "modules": {
+                "basic_io": {
+                    "id": "F001",
+                    "name": "Basic Input/Output Operations",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-basic-datatypes",
+                    "display_order": 1
+                },
+                "conditional_statements": {
+                    "id": "F002",
+                    "name": "Conditional Statements",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-conditional-statements",
+                    "display_order": 2
+                },
+                "looping": {
+                    "id": "F003",
+                    "name": "Looping Constructs",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-looping",
+                    "display_order": 3
+                },
+                "patterns": {
+                    "id": "F004",
+                    "name": "Pattern Programming",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-patterns",
+                    "display_order": 4
+                },
+                "number_operations": {
+                    "id": "F005",
+                    "name": "Number Crunching",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-number-crunching",
+                    "display_order": 5
+                },
+                "number_problems": {
+                    "id": "F006",
+                    "name": "Number Based Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-number-based-problems",
+                    "display_order": 6
+                },
+                "arrays": {
+                    "id": "F007",
+                    "name": "Arrays and Operations",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-arrays",
+                    "display_order": 7
+                },
+                "strings": {
+                    "id": "F008",
+                    "name": "String Manipulation",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-strings",
+                    "display_order": 8
+                },
+                "functions_pointers": {
+                    "id": "F009",
+                    "name": "Functions and Pointers",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-functions-and-pointers",
+                    "display_order": 9
+                },
+                "structures": {
+                    "id": "F010",
+                    "name": "Structures and Concepts",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-structures-and-concepts",
+                    "display_order": 10
+                }
+            }
+        },
+        "dsa": {
+            "title": "Data Structures & Algorithms",
+            "display_order": 2,
+            "modules": {
+                "arrays_algorithms": {
+                    "id": "D001",
+                    "name": "Array Algorithms",
+                    "url": "placeholder_url",
+                    "display_order": 1
+                },
+                "linked_lists": {
+                    "id": "D002",
+                    "name": "Linked Lists",
+                    "url": "placeholder_url",
+                    "display_order": 2
+                },
+                "stacks_queues": {
+                    "id": "D003",
+                    "name": "Stacks and Queues",
+                    "url": "placeholder_url",
+                    "display_order": 3
+                },
+                "trees": {
+                    "id": "D004",
+                    "name": "Tree Data Structures",
+                    "url": "placeholder_url",
+                    "display_order": 4
+                },
+                "graphs": {
+                    "id": "D005",
+                    "name": "Graph Algorithms",
+                    "url": "placeholder_url",
+                    "display_order": 5
+                },
+                "searching": {
+                    "id": "D006",
+                    "name": "Searching Algorithms",
+                    "url": "placeholder_url",
+                    "display_order": 6
+                },
+                "sorting": {
+                    "id": "D007",
+                    "name": "Sorting Algorithms",
+                    "url": "placeholder_url",
+                    "display_order": 7
+                },
+                "dynamic_programming": {
+                    "id": "D008",
+                    "name": "Dynamic Programming",
+                    "url": "placeholder_url",
+                    "display_order": 8
+                }
+            }
+        },
+        "advanced_topics": {
+            "title": "Advanced C Programming",
+            "display_order": 3,
+            "modules": {
+                "file_handling": {
+                    "id": "T001",
+                    "name": "File Operations and Handling",
+                    "url": "placeholder_url",
+                    "display_order": 1
+                },
+                "memory_management": {
+                    "id": "T002",
+                    "name": "Memory Management and Dynamic Allocation",
+                    "url": "placeholder_url",
+                    "display_order": 2
+                },
+                "preprocessor": {
+                    "id": "T003",
+                    "name": "Preprocessor Directives",
+                    "url": "placeholder_url",
+                    "display_order": 3
+                },
+                "multithreading": {
+                    "id": "T004",
+                    "name": "Multi-threading Basics",
+                    "url": "placeholder_url",
+                    "display_order": 4
+                },
+                "networking": {
+                    "id": "T005",
+                    "name": "Socket Programming",
+                    "url": "placeholder_url",
+                    "display_order": 5
+                }
+            }
+        },
+        "projects": {
+            "title": "Hands-on Projects",
+            "display_order": 4,
+            "modules": {
+                "mini_projects": {
+                    "id": "P001",
+                    "name": "Mini Projects",
+                    "url": "placeholder_url",
+                    "display_order": 1
+                },
+                "file_manager": {
+                    "id": "P002",
+                    "name": "File Management System",
+                    "url": "placeholder_url",
+                    "display_order": 2
+                },
+                "library_system": {
+                    "id": "P003",
+                    "name": "Library Management System",
+                    "url": "placeholder_url",
+                    "display_order": 3
+                },
+                "database": {
+                    "id": "P004",
+                    "name": "Simple Database Implementation",
+                    "url": "placeholder_url",
+                    "display_order": 4
+                },
+                "game": {
+                    "id": "P005",
+                    "name": "Console-based Game",
+                    "url": "placeholder_url",
+                    "display_order": 5
+                }
+            }
+        },
+        "interview_prep": {
+            "title": "Interview Preparation",
+            "display_order": 5,
+            "modules": {
+                "coding_challenges": {
+                    "id": "I001",
+                    "name": "Coding Challenges",
+                    "url": "placeholder_url",
+                    "display_order": 1
+                },
+                "mock_interviews": {
+                    "id": "I002",
+                    "name": "Technical Mock Interviews",
+                    "url": "placeholder_url",
+                    "display_order": 2
+                },
+                "problem_solving": {
+                    "id": "I003",
+                    "name": "Problem Solving Techniques",
+                    "url": "placeholder_url",
+                    "display_order": 3
+                },
+                "optimization": {
+                    "id": "I004",
+                    "name": "Code Optimization Problems",
+                    "url": "placeholder_url",
+                    "display_order": 4
+                },
+                "system_design": {
+                    "id": "I005",
+                    "name": "Basic System Design",
+                    "url": "placeholder_url",
+                    "display_order": 5
+                }
+            }
+        },
+        "assessments": {
+            "title": "Course Assessments",
+            "display_order": 6,
+            "modules": {
+                "phase_1": {
+                    "id": "A001",
+                    "name": "Assessment Phase 1",
+                    "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-1-1-1-1",
+                    "display_order": 1
+                },
+                "phase_2": {
+                    "id": "A002",
+                    "name": "Assessment Phase 2",
+                    "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-2",
+                    "display_order": 2
+                },
+                "phase_3": {
+                    "id": "A003",
+                    "name": "Assessment Phase 3",
+                    "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-3",
+                    "display_order": 3
+                },
+                "final": {
+                    "id": "A004",
+                    "name": "Final Assessment",
+                    "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-final",
+                    "display_order": 4
+                }
+            }
+        },
+        "company_specific": {
+            "title": "Company-Specific Practice",
+            "display_order": 7,
+            "modules": {
+                "tcs": {
+                    "id": "C001",
+                    "name": "TCS Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-basic-datatypes",
+                    "display_order": 1
+                },
+                "cts": {
+                    "id": "C002",
+                    "name": "Cognizant Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-conditional-statements",
+                    "display_order": 2
+                },
+                "accenture": {
+                    "id": "C003",
+                    "name": "Accenture Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-looping",
+                    "display_order": 3
+                },
+                "infosys": {
+                    "id": "C004",
+                    "name": "Infosys Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-patterns",
+                    "display_order": 4
+                },
+                "wipro": {
+                    "id": "C005",
+                    "name": "Wipro Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-number-crunching",
+                    "display_order": 5
+                },
+                "zoho": {
+                    "id": "C006",
+                    "name": "Zoho Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-number-based-problems",
+                    "display_order": 6
+                },
+                "capgemini": {
+                    "id": "C007",
+                    "name": "Capgemini Practice Problems",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-arrays",
+                    "display_order": 7
+                }
+            }
+        },
+        "special_tracks": {
+            "title": "Special Practice Tracks",
+            "display_order": 8,
+            "modules": {
+                "real_time_problems": {
+                    "id": "S001",
+                    "name": "Real-Time Problem Solving",
+                    "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-strings",
+                    "display_order": 1
+                }
+            }
+        }
+    },
+    "access_control": {
+        "colleges": {
+            "KPRIET": {
+                "2K24": {
+                    "CSBS": {
+                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
+                        "batch_start": "2024-03-01",
+                        "batch_end": "2024-12-31"
+                    }
+                }
+            },
+            "SECE": {
+                "2K24": {
+                    "CSBS": {
+                        "allowed_modules": [
+                            "F001", "F002", "F003", "F004", "F005",
+                            "A001", "A002"
+                        ],
+                        "batch_start": "2024-03-01",
+                        "batch_end": "2024-12-31",
+                        "assessment_controls": {
+                            "A001": {
+                                "start_time": "2024-04-01T10:00:00Z",
+                                "end_time": "2024-04-01T12:00:00Z",
+                                "duration_minutes": 120,
+                                "attempts_allowed": 1,
+                                "status": "scheduled"
+                            },
+                            "A002": {
+                                "start_time": "2024-05-01T14:00:00Z",
+                                "end_time": "2024-05-01T16:00:00Z",
+                                "duration_minutes": 120,
+                                "attempts_allowed": 1,
+                                "status": "scheduled"
+                            }
+                        }
+                    },
+                    "SEED": {
+                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
+                        "batch_start": "2024-03-01",
+                        "batch_end": "2024-12-31"
+                    },
+                    "MANAGEMENT": {
+                        "allowed_modules": ["F001", "F002", "F003", "F004", "F005"],
+                        "batch_start": "2024-03-01",
+                        "batch_end": "2024-12-31"
+                    }
+                }
+            }
+        },
+        "assessment_statuses": ["scheduled", "in_progress", "completed", "cancelled"]
+    }
+} 
