@@ -2170,5 +2170,17 @@
     "Year": "2K26",
     "Hackerrank Mail": "jayasrithimmaraj4@gmail.com",
     "Hackerrank ID": "Jayasri Thimmaraj"
+  },
+  {
+    "Email": "temp@kgkite.ac.in",
+    "Password": "123@KITE",
+    "College": "KITE",
+    "Name": "TEMP_USER",
+    "Role": "Student",
+    "Roll Number": 123,
+    "Department": "CSE",
+    "Year": "2K26",
+    "Hackerrank Mail": "temp@kgkite.ac.in",
+    "Hackerrank ID": "tempuser"
   }
 ]
