@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Binary Tree Visualizer</title>
+  <style>
+    body {
+      background-color: #1e1e2f;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .array-container {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      margin-bottom: 5px;
+    }
+    .bar {
+      width: 40px;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px 0;
+    }
+    .blue { background-color: #3b82f6; }
+    .yellow { background-color: #facc15; }
+    .red { background-color: #ef4444; }
+    .gray { background-color: #4b5563; }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #4b5563;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input {
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+    .explanation {
+      background-color: #2d2d3a;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      width: 90%;
+      max-width: 600px;
+      white-space: pre-wrap;
+    }
+    .indexes {
+      margin-top: 0px;
+      font-size: 12px;
+      text-align: center;
+      display: flex;
+      gap: 10px;
+    }
+    .indexes span {
+      width: 40px;
+      text-align: center;
+    }
+    .code-box {
+      margin-top: 20px;
+      background: #2d2d3a;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: monospace;
+      width: 90%;
+      max-width: 600px;
+    }
+    .highlight { background-color: #44475a; color: #f1fa8c; }
+    .lang-switcher {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Binary Tree Visualizer</h1>
+  <input type="text" id="userInput" placeholder="Enter tree values comma-separated" />
+  <button onclick="resetTree()">Start</button>
+  <div class="array-container" id="array"></div>
+  <div class="indexes" id="indexes"></div>
+  <div>
+    <button onclick="prevStep()">Prev</button>
+    <button onclick="nextStep()">Next</button>
+    <button onclick="toggleAutoPlay()" id="toggleBtn">Play</button>
+  </div>
+  <div class="explanation" id="explanation"></div>
+  <div class="code-box" id="codeBox"></div>
+  <div class="lang-switcher">
+    <button onclick="switchLang('js')">JS</button>
+    <button onclick="switchLang('c')">C</button>
+    <button onclick="switchLang('cpp')">C++</button>
+    <button onclick="switchLang('java')">Java</button>
+    <button onclick="switchLang('py')">Python</button>
+  </div>
+
+  <script>
+    let tree = [5, 3, 8, 1, 4, 7, 9];
+    let steps = [];
+    let stepIndex = 0;
+    let autoPlay = false;
+    let interval;
+
+    const codeSnippets = {
+      js: [
+        "class TreeNode {",
+        "  constructor(val) {",
+        "    this.val = val;",
+        "    this.left = null;",
+        "    this.right = null;",
+        "  }",
+        "}",
+        "function insert(root, val) {",
+        "  if (!root) return new TreeNode(val);",
+        "  if (val < root.val) root.left = insert(root.left, val);",
+        "  else root.right = insert(root.right, val);",
+        "  return root;",
+        "}"
+      ],
+      // Add snippets for C, C++, Java, and Python as needed.
+    };
+
+    let currentLang = 'js';
+    let codeLines = codeSnippets[currentLang];
+
+    function switchLang(lang) {
+      currentLang = lang;
+      codeLines = codeSnippets[lang];
+      render();
+    }
+
+    function generateSteps(arr) {
+      const steps = [];
+      function insertNode(root, val) {
+        if (!root) return new TreeNode(val);
+        if (val < root.val) {
+          root.left = insertNode(root.left, val);
+        } else {
+          root.right = insertNode(root.right, val);
+        }
+        return root;
+      }
+
+      let root = null;
+      for (let i = 0; i < arr.length; i++) {
+        steps.push({ type: 'insert', val: arr[i], message: `Inserting ${arr[i]} into the tree`, array: [...arr], codeLine: 6 });
+        root = insertNode(root, arr[i]);
+      }
+
+      return steps;
+    }
+
+    function render() {
+      const container = document.getElementById('array');
+      const idxContainer = document.getElementById('indexes');
+      const explanation = document.getElementById('explanation');
+      const codeBox = document.getElementById('codeBox');
+      const step = steps[stepIndex] || {};
+
+      container.innerHTML = '';
+      idxContainer.innerHTML = '';
+
+      (step.array || tree).forEach((val, idx) => {
+        const bar = document.createElement('div');
+        bar.className = 'bar ';
+        if (step.val === val) {
+          bar.className += 'yellow';
+        } else {
+          bar.className += 'blue';
+        }
+        bar.textContent = val;
+        container.appendChild(bar);
+
+        const idxSpan = document.createElement('span');
+        idxSpan.textContent = idx;
+        idxContainer.appendChild(idxSpan);
+      });
+
+      explanation.innerHTML = `<b>Step ${stepIndex + 1}:</b> ${step.message || 'Initial Tree'}`;
+
+      codeBox.innerHTML = codeLines.map((line, i) => {
+        return `<div class="${i === step.codeLine ? 'highlight' : ''}">${line}</div>`;
+      }).join('');
+    }
+
+    function nextStep() {
+      if (stepIndex < steps.length - 1) {
+        stepIndex++;
+        render();
+      }
+    }
+
+    function prevStep() {
+      if (stepIndex > 0) {
+        stepIndex--;
+        render();
+      }
+    }
+
+    function toggleAutoPlay() {
+      autoPlay = !autoPlay;
+      document.getElementById('toggleBtn').textContent = autoPlay ? 'Pause' : 'Play';
+      if (autoPlay) {
+        interval = setInterval(() => {
+          if (stepIndex < steps.length - 1) {
+            stepIndex++;
+            render();
+          } else {
+            clearInterval(interval);
+            autoPlay = false;
+            document.getElementById('toggleBtn').textContent = 'Play';
+          }
+        }, 1000);
+      } else {
+        clearInterval(interval);
+      }
+    }
+
+    function resetTree() {
+      const input = document.getElementById('userInput').value;
+      if (input.trim()) {
+        tree = input.split(',').map(Number).filter(x => !isNaN(x));
+      }
+      steps = generateSteps([...tree]);
+      stepIndex = 0;
+      render();
+    }
+
+    steps = generateSteps([...tree]);
+    render();
+  </script>
+</body>
+</html>
