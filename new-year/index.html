@@ -1,208 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy New Year - SEED Institute</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle, #1e3c72, #2a5298, #34495e);
-            color: #fff;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .logo img {
-            width: 200px;
-            height: auto;
-            margin-bottom: 40px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin: 10px 0;
-            color: #ffd700;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 165, 0, 0.7);
-            animation: glow 1.5s infinite alternate;
-        }
-
-        h2 {
-            font-size: 2.2rem;
-            margin: 15px 0;
-            color: #00d4ff;
-            text-shadow: 0 0 5px rgba(0, 212, 255, 0.8), 0 0 10px rgba(0, 255, 200, 0.6);
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        .message {
-            font-size: 1.3rem;
-            margin: 20px 0;
-            line-height: 1.6;
-            color: #e6e6e6;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-
-        .learn-more {
-            margin-top: 20px;
-        }
-
-        .learn-more a {
-            display: inline-block;
-            padding: 12px 30px;
-            background: linear-gradient(90deg, #ff7e5f, #feb47b);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(255, 126, 95, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .learn-more a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(255, 126, 95, 0.7);
-        }
-
-        .footer {
-            margin-top: auto;
-            font-size: 1rem;
-            opacity: 0.9;
-            color: #ffffff;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Fireworks Canvas */
-        .fireworks {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* Animation */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.6);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(255, 255, 0, 1), 0 0 40px rgba(255, 165, 0, 0.8);
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/seeditDev/SEED-Website/d7ed13af5f61a1713ce723df1d4686f6185d0faa/Plugins/SEED_Logo.webp" alt="SEED Logo">
-        </div>
-        <h1>🎆 Happy New Year 2025! 🎆</h1>
-        <h2>A Spectacular Start Awaits!</h2>
-        <p class="message">
-            As the clock resets, we embrace new beginnings with optimism and energy. <br>
-            Here's to a fantastic 2025 filled with success, joy, and endless opportunities! <br>
-            From all of us at SEED Institute of Training, Happy New Year!
-        </p>
-        <div class="learn-more">
-            <a href="https://www.seedit.rf.gd" target="_blank">Goto our Page</a>
-        </div>
-    </div>
-    <canvas class="fireworks"></canvas>
-    <div class="footer">
-        <p>© 2025 SEED Institute of Training. All Rights Reserved.</p>
-    </div>
-
-    <script>
-        // Fireworks animation script
-        const canvas = document.querySelector('.fireworks');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        function random(min, max) {
-            return Math.random() * (max - min) + min;
-        }
-
-        function createParticle(x, y) {
-            return {
-                x: x,
-                y: y,
-                dx: random(-3, 3),
-                dy: random(-3, 3),
-                size: random(2, 4),
-                alpha: 1,
-                color: `rgba(${random(150, 255)}, ${random(50, 200)}, ${random(50, 200)},`
-            };
-        }
-
-        const particles = [];
-        setInterval(() => {
-            const x = random(0, canvas.width);
-            const y = random(0, canvas.height / 2);
-            for (let i = 0; i < 50; i++) {
-                particles.push(createParticle(x, y));
-            }
-        }, 400);
-
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            particles.forEach((particle, i) => {
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fillStyle = `${particle.color} ${particle.alpha})`;
-                ctx.fill();
-
-                particle.x += particle.dx;
-                particle.y += particle.dy;
-                particle.alpha -= 0.02;
-
-                if (particle.alpha <= 0) {
-                    particles.splice(i, 1);
-                }
-            });
-
-            requestAnimationFrame(draw);
-        }
-
-        draw();
-    </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8" />  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  <title>Binary Tree Visualizer</title>  <style>    body {      background-color: #1e1e2f;      color: white;      font-family: sans-serif;      display: flex;      flex-direction: column;      align-items: center;      padding: 20px;    }    .array-container {      display: flex;      gap: 10px;      align-items: flex-end;      margin-bottom: 5px;    }    .bar {      width: 40px;      text-align: center;      border-radius: 5px;      padding: 10px 0;    }    .blue { background-color: #3b82f6; }    .yellow { background-color: #facc15; }    .red { background-color: #ef4444; }    .gray { background-color: #4b5563; }    button {      margin: 5px;      padding: 10px 20px;      background-color: #4b5563;      border: none;      color: white;      border-radius: 5px;      cursor: pointer;    }    input {      margin: 5px;      padding: 10px;      border-radius: 5px;      border: none;      width: 200px;    }    .explanation {      background-color: #2d2d3a;      padding: 10px;      border-radius: 5px;      margin-top: 10px;      width: 90%;      max-width: 600px;      white-space: pre-wrap;    }    .indexes {      margin-top: 0px;      font-size: 12px;      text-align: center;      display: flex;      gap: 10px;    }    .indexes span {      width: 40px;      text-align: center;    }    .code-box {      margin-top: 20px;      background: #2d2d3a;      padding: 10px;      border-radius: 5px;      font-family: monospace;      width: 90%;      max-width: 600px;    }    .highlight { background-color: #44475a; color: #f1fa8c; }    .lang-switcher {      margin-top: 20px;      display: flex;      gap: 10px;    }  </style></head><body>  <h1>Binary Tree Visualizer</h1>  <input type="text" id="userInput" placeholder="Enter tree values comma-separated" />  <button onclick="resetTree()">Start</button>  <div class="array-container" id="array"></div>  <div class="indexes" id="indexes"></div>  <div>    <button onclick="prevStep()">Prev</button>    <button onclick="nextStep()">Next</button>    <button onclick="toggleAutoPlay()" id="toggleBtn">Play</button>  </div>  <div class="explanation" id="explanation"></div>  <div class="code-box" id="codeBox"></div>  <div class="lang-switcher">    <button onclick="switchLang('js')">JS</button>    <button onclick="switchLang('c')">C</button>    <button onclick="switchLang('cpp')">C++</button>    <button onclick="switchLang('java')">Java</button>    <button onclick="switchLang('py')">Python</button>  </div>  <script>    let tree = [5, 3, 8, 1, 4, 7, 9];    let steps = [];    let stepIndex = 0;    let autoPlay = false;    let interval;    const codeSnippets = {      js: [        "class TreeNode {",        "  constructor(val) {",        "    this.val = val;",        "    this.left = null;",        "    this.right = null;",        "  }",        "}",        "function insert(root, val) {",        "  if (!root) return new TreeNode(val);",        "  if (val < root.val) root.left = insert(root.left, val);",        "  else root.right = insert(root.right, val);",        "  return root;",        "}"      ],      // Add snippets for C, C++, Java, and Python as needed.    };    let currentLang = 'js';    let codeLines = codeSnippets[currentLang];    function switchLang(lang) {      currentLang = lang;      codeLines = codeSnippets[lang];      render();    }    function generateSteps(arr) {      const steps = [];      function insertNode(root, val) {        if (!root) return new TreeNode(val);        if (val < root.val) {          root.left = insertNode(root.left, val);        } else {          root.right = insertNode(root.right, val);        }        return root;      }      let root = null;      for (let i = 0; i < arr.length; i++) {        steps.push({ type: 'insert', val: arr[i], message: `Inserting ${arr[i]} into the tree`, array: [...arr], codeLine: 6 });        root = insertNode(root, arr[i]);      }      return steps;    }    function render() {      const container = document.getElementById('array');      const idxContainer = document.getElementById('indexes');      const explanation = document.getElementById('explanation');      const codeBox = document.getElementById('codeBox');      const step = steps[stepIndex] || {};      container.innerHTML = '';      idxContainer.innerHTML = '';      (step.array || tree).forEach((val, idx) => {        const bar = document.createElement('div');        bar.className = 'bar ';        if (step.val === val) {          bar.className += 'yellow';        } else {          bar.className += 'blue';        }        bar.textContent = val;        container.appendChild(bar);        const idxSpan = document.createElement('span');        idxSpan.textContent = idx;        idxContainer.appendChild(idxSpan);      });      explanation.innerHTML = `<b>Step ${stepIndex + 1}:</b> ${step.message || 'Initial Tree'}`;      codeBox.innerHTML = codeLines.map((line, i) => {        return `<div class="${i === step.codeLine ? 'highlight' : ''}">${line}</div>`;      }).join('');    }    function nextStep() {      if (stepIndex < steps.length - 1) {        stepIndex++;        render();      }    }    function prevStep() {      if (stepIndex > 0) {        stepIndex--;        render();      }    }    function toggleAutoPlay() {      autoPlay = !autoPlay;      document.getElementById('toggleBtn').textContent = autoPlay ? 'Pause' : 'Play';      if (autoPlay) {        interval = setInterval(() => {          if (stepIndex < steps.length - 1) {            stepIndex++;            render();          } else {            clearInterval(interval);            autoPlay = false;            document.getElementById('toggleBtn').textContent = 'Play';          }        }, 1000);      } else {        clearInterval(interval);      }    }    function resetTree() {      const input = document.getElementById('userInput').value;      if (input.trim()) {        tree = input.split(',').map(Number).filter(x => !isNaN(x));      }      steps = generateSteps([...tree]);      stepIndex = 0;      render();    }    steps = generateSteps([...tree]);    render();  </script></body></html>
