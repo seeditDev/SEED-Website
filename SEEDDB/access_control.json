@@ -273,7 +273,16 @@
           "name": "Daily Assessments",
           "url": "https://www.hackerrank.com/daily-challenge-kite2026",
           "display_order": 7,
-          "passkey": "234567"
+          "passkey": "123456",
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2025-08-09",
+            "startTime": "15:55",
+            "endDate": "2025-08-10",
+            "endTime": "15:58",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
         }
       }
     },
