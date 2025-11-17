@@ -5,6 +5,44 @@
     "cache_duration": "24h"
   },
   "courses": {
+    "mcqs": {
+      "title": "MCQ Assessments",
+      "display_order": 9,
+      "modules": {
+        "test_name": {
+          "id": "MCQ001",
+          "name": "Test Name",
+          "url": "/mcqs/Hackathon/test1.json",
+          "display_order": 1,
+          "passkey": "123456"
+        },
+        "asd": {
+          "id": "A002",
+          "name": "ASD",
+          "url": "/mcqs/Hackathon/test1.json",
+          "display_order": 2,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "daily",
+            "startDate": "2025-11-12",
+            "startTime": "13:56",
+            "endDate": "2025-11-30",
+            "endTime": "13:02",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "qwe": {
+          "id": "MC003",
+          "name": "qwe",
+          "url": "/mcqs/Hackathon/test1.json",
+          "display_order": 3
+        }
+      }
+    },
     "fundamentals": {
       "title": "C Programming Fundamentals",
       "display_order": 1,
@@ -276,10 +314,10 @@
           "passkey": "123456",
           "schedule": {
             "type": "one_time",
-            "startDate": "2025-08-10",
-            "startTime": "12:31",
-            "endDate": "2025-08-10",
-            "endTime": "13:30",
+            "startDate": "2025-08-09",
+            "startTime": "15:55",
+            "endDate": "2025-08-09",
+            "endTime": "15:58",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -1341,16 +1379,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1365,16 +1399,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1389,16 +1419,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1413,16 +1439,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1437,16 +1459,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1461,16 +1479,12 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1485,45 +1499,15 @@
               "F006",
               "F007",
               "F008",
-              "D001",
-              "D002",
-              "D003",
-              "D004",
-              "D005",
-              "D006",
-              "D007",
-              "D008",
               "A005",
-              "A006"
+              "A006",
+              "MCQ001",
+              "A002",
+              "A002",
+              "MC003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
-          }
-        }
-      },
-      "KPRIET": {
-        "2K26": {
-          "CSBS": {
-            "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "F009",
-              "F010",
-              "A001",
-              "A002",
-              "A003",
-              "A004",
-              "A006",
-              "A005"
-            ],
-            "batch_start": "2025-08-11",
-            "batch_end": "2026-08-11"
           }
         }
       }
