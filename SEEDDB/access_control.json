@@ -9,37 +9,15 @@
       "title": "MCQ Assessments",
       "display_order": 9,
       "modules": {
-        "test_name": {
-          "id": "MCQ001",
-          "name": "Test Name",
+        "techninal_mcqs_1": {
+          "id": "A001",
+          "name": "Techninal MCQs 1",
           "url": "/mcqs/Hackathon/test1.json",
           "display_order": 1,
-          "passkey": "123456"
-        },
-        "asd": {
-          "id": "A002",
-          "name": "ASD",
-          "url": "/mcqs/Hackathon/test1.json",
-          "display_order": 2,
           "passkey": "123456",
           "difficulty": "Medium",
           "questions": 30,
-          "duration_minutes": 60,
-          "schedule": {
-            "type": "daily",
-            "startDate": "2025-11-12",
-            "startTime": "13:56",
-            "endDate": "2025-11-30",
-            "endTime": "13:02",
-            "daysOfWeek": [],
-            "timezone": "Asia/Kolkata"
-          }
-        },
-        "qwe": {
-          "id": "MC003",
-          "name": "qwe",
-          "url": "/mcqs/Hackathon/test1.json",
-          "display_order": 3
+          "duration_minutes": 60
         }
       }
     },
@@ -1371,140 +1349,56 @@
         "2K26": {
           "MECH": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "ECE": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSE": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "IT": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "AIDS": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSBS": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "MCA": {
             "allowed_modules": [
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A005",
-              "A006",
-              "MCQ001",
-              "A002",
-              "A002",
-              "MC003"
+              
+              "A001"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
