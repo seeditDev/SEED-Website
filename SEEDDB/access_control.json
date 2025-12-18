@@ -290,12 +290,15 @@
           "url": "https://www.hackerrank.com/daily-challenge-kite2026",
           "display_order": 7,
           "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
           "schedule": {
-            "type": "one_time",
-            "startDate": "2025-08-09",
-            "startTime": "15:55",
-            "endDate": "2025-08-09",
-            "endTime": "15:58",
+            "type": "daily",
+            "startDate": "2025-12-18",
+            "startTime": "04:55",
+            "endDate": "2025-12-18",
+            "endTime": "19:58",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
