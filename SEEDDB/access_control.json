@@ -22,7 +22,7 @@
       }
     },
     "fundamentals": {
-      "title": "C Programming Fundamentals",
+      "title": "Programming Fundamentals",
       "display_order": 1,
       "modules": {
         "basic_io": {
