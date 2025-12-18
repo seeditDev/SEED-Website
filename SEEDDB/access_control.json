@@ -296,9 +296,9 @@
           "schedule": {
             "type": "daily",
             "startDate": "2025-12-18",
-            "startTime": "04:55",
-            "endDate": "2025-12-18",
-            "endTime": "19:58",
+            "startTime": "17:00",
+            "endDate": "2025-12-31",
+            "endTime": "23:59",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
