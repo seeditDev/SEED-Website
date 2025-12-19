@@ -1,5 +1,29 @@
 [
   {
+    "Email": "mustafa_23aia57@kgkite.ac.in",
+    "Password": "23AIA57@KITE",
+    "College": "KITE",
+    "Name": "MUSTAFA A",
+    "Role": "Student",
+    "Roll Number": "23AIA57",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "mustafatinwala6@gmail.com",
+    "Hackerrank ID": "mustafatinwala6"
+  },
+  {
+    "Email": "ragavarshini_23aib12@kgkite.ac.in",
+    "Password": "23AIB12@KITE",
+    "College": "KITE",
+    "Name": "RAGAVARSHINI A",
+    "Role": "Student",
+    "Roll Number": "23AIB12",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "alagarsamyvarshini@gmail.com",
+    "Hackerrank ID": "ragavarshini_30"
+  },
+  {
     "Email": "abinavprakash_23aia01@kgkite.ac.in",
     "Password": "23AIA01@KITE",
     "College": "KITE",
@@ -37,11 +61,11 @@
   },
   {
     "Email": "ajay_23aia05@kgkite.ac.in",
-    "Password": "711723243005@KITE",
+    "Password": "23AIA05@KITE",
     "College": "KITE",
     "Name": "AJAY S",
     "Role": "Student",
-    "Roll Number": 711723243005,
+    "Roll Number": "23AIA05",
     "Department": "AIDS",
     "Year": "2K27",
     "Hackerrank Mail": "mailxajay@gmail.com",
@@ -154,6 +178,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "bensinghbu@gmail.com",
     "Hackerrank ID": "bensinghbu"
+  },
+  {
+    "Email": "bharathi_23aia15@kgkite.ac.in",
+    "Password": "23AIA15@KITE",
+    "College": "KITE",
+    "Name": "BHARATHI M",
+    "Role": "Student",
+    "Roll Number": "23AIA15",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "bharathimuthusamy2006@gmail.com",
+    "Hackerrank ID": "bharathimuthusa1"
   },
   {
     "Email": "bharathi_23aia16@kgkite.ac.in",
@@ -276,7 +312,19 @@
     "Hackerrank ID": "geethanagaraj201"
   },
   {
-    "Email": "gopikrishnashenoy.s@gmail.com",
+    "Email": "gokulram.k_23aia65@kgkite.ac.in",
+    "Password": "23AIA65@KITE",
+    "College": "KITE",
+    "Name": "GOKULRAM GK",
+    "Role": "Student",
+    "Roll Number": "23AIA65",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "vkgokulrm@gmail.com",
+    "Hackerrank ID": "vkgokulrm"
+  },
+  {
+    "Email": "gopikrishna_23aia28@kgkite.ac.in",
     "Password": "23AIA28@KITE",
     "College": "KITE",
     "Name": "GOPI KRISHNA",
@@ -300,6 +348,18 @@
     "Hackerrank ID": "gunalkumargunal1"
   },
   {
+    "Email": "gururamana_23aia30@kgkite.ac.in",
+    "Password": "23AIA30@KITE",
+    "College": "KITE",
+    "Name": "GURURAMANA",
+    "Role": "Student",
+    "Roll Number": "23AIA30",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "gururamanadoss@gmail.com",
+    "Hackerrank ID": "gururamanadoss"
+  },
+  {
     "Email": "hapsamarlia_23aia31@kgkite.ac.in",
     "Password": "23AIA31@KITE",
     "College": "KITE",
@@ -310,6 +370,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "hapsamarlia2005@gmail.com",
     "Hackerrank ID": "hapsamarlia2005"
+  },
+  {
+    "Email": "hariharan_23aia32@kgkite.ac.in",
+    "Password": "23AIA32@KITE",
+    "College": "KITE",
+    "Name": "HARIHARAN R",
+    "Role": "Student",
+    "Roll Number": "23AIA32",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "rajamanickamhari05@gmail.com",
+    "Hackerrank ID": "rajamanickamhar2"
   },
   {
     "Email": "hariharan.s_23aib64@kgkite.ac.in",
@@ -348,28 +420,16 @@
     "Hackerrank ID": "harikrishnan3522"
   },
   {
-    "Email": "chellahk318@gmail.com",
+    "Email": "harinandhan_23aia34@kgkite.ac.in",
     "Password": "23AIA34@KITE",
     "College": "KITE",
-    "Name": "HARINANDHAN",
+    "Name": "HARINANDHAN KP",
     "Role": "Student",
     "Roll Number": "23AIA34",
     "Department": "AIDS",
     "Year": "2K27",
     "Hackerrank Mail": "chellahk318@gmail.com",
     "Hackerrank ID": "chellahk318"
-  },
-  {
-    "Email": "harishankarbb2005@gmail.com",
-    "Password": "23AIA35@KITE",
-    "College": "KITE",
-    "Name": "HARISHANKAR M",
-    "Role": "Student",
-    "Roll Number": "23AIA35",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "yoyoharishankar@gmail.com",
-    "Hackerrank ID": "harishankar00"
   },
   {
     "Email": "harismitha_23aia36@kgkite.ac.in",
@@ -384,6 +444,30 @@
     "Hackerrank ID": "harismitha1308"
   },
   {
+    "Email": "harshavardhan_23aia37@kgkite.ac.in",
+    "Password": "23AIA37@KITE",
+    "College": "KITE",
+    "Name": "HARSHAVARDHAN G M",
+    "Role": "Student",
+    "Roll Number": "23AIA37",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "harshasignin96@gmail.com",
+    "Hackerrank ID": "harshasignin96"
+  },
+  {
+    "Email": "jaiyakarthi_23aia38@kgkite.ac.in",
+    "Password": "23AIA38@KITE",
+    "College": "KITE",
+    "Name": "JAIYAKARTHI S",
+    "Role": "Student",
+    "Roll Number": "23AIA38",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "jaiyakarthisivakumar2005@gmail.com",
+    "Hackerrank ID": "jaiyakarthisiva1"
+  },
+  {
     "Email": "kailainathan_23aia40@kgkite.ac.in",
     "Password": "23AIA40@KITE",
     "College": "KITE",
@@ -394,18 +478,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "kailainathan2006@gmail.com",
     "Hackerrank ID": "kailainathan2006"
-  },
-  {
-    "Email": "kamaleshjayaganesh@gmail.com",
-    "Password": "23AIA41@KITE",
-    "College": "KITE",
-    "Name": "KAMALESH J",
-    "Role": "Student",
-    "Roll Number": "23AIA41",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "kamaleshjayaganesh@gmail.com",
-    "Hackerrank ID": "kamaleshjayagan1"
   },
   {
     "Email": "kamalika_23aia42@kgkite.ac.in",
@@ -432,7 +504,7 @@
     "Hackerrank ID": "rajkanish41"
   },
   {
-    "Email": "kanishkachidambaramudhayareka_23aia45@kgkite.ac.in",
+    "Email": "23aia45@kgkite.ac.in",
     "Password": "23AIA45@KITE",
     "College": "KITE",
     "Name": "KANISHKA C U",
@@ -468,6 +540,18 @@
     "Hackerrank ID": "karthikav929"
   },
   {
+    "Email": "23aib67karthigaijothi.s@kgkite.ac.in",
+    "Password": "23UAD801@KITE",
+    "College": "KITE",
+    "Name": "KARTHIKAI JOTHI S",
+    "Role": "Student",
+    "Roll Number": "23UAD801",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "karthikajothi87@gmail.com",
+    "Hackerrank ID": "karthikajothi87"
+  },
+  {
     "Email": "kaviya_23aia48@kgkite.ac.in",
     "Password": "23AIA48@KITE",
     "College": "KITE",
@@ -478,6 +562,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "sivakumar.kavi08@gmail.com",
     "Hackerrank ID": "sivakumar_kavi08"
+  },
+  {
+    "Email": "kirupashankar_23aia49@kgkite.ac.in",
+    "Password": "23AIA49@KITE",
+    "College": "KITE",
+    "Name": "KIRUPASHANKAR S",
+    "Role": "Student",
+    "Roll Number": "23AIA49",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "kirupamannai2005@gmail.com",
+    "Hackerrank ID": "kirupamannai2005"
   },
   {
     "Email": "kishan_23aia50@kgkite.ac.in",
@@ -492,7 +588,7 @@
     "Hackerrank ID": "kishanragunatha1"
   },
   {
-    "Email": "sudhaselva690@gmail.com",
+    "Email": "kishore_23aia51@kgkite.ac.in",
     "Password": "23AIA51@KITE",
     "College": "KITE",
     "Name": "KISHORE S",
@@ -540,6 +636,18 @@
     "Hackerrank ID": "mahadarshini2901"
   },
   {
+    "Email": "maheshkumar_23aia54@kgkite.ac.in",
+    "Password": "23AIA54@KITE",
+    "College": "KITE",
+    "Name": "MAHESH KUMAR M",
+    "Role": "Student",
+    "Roll Number": "23AIA54",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "maheshkumarm1608@gmail.com",
+    "Hackerrank ID": "maheshkumar16"
+  },
+  {
     "Email": "mekarajbanu_23aia55@kgkite.ac.in",
     "Password": "23AIA55@KITE",
     "College": "KITE",
@@ -552,19 +660,31 @@
     "Hackerrank ID": "aslinrafina96"
   },
   {
-    "Email": "mithunavannanjayaram@gmail.com",
-    "Password": "23AIA64@KITE",
+    "Email": "moulidharan_23aia56@kgkite.ac.in",
+    "Password": "23AIA56@KITE",
     "College": "KITE",
-    "Name": "MITHUNAVANNAN JR",
+    "Name": "MOULIDHARAN",
     "Role": "Student",
-    "Roll Number": "23AIA64",
+    "Roll Number": "23AIA56",
     "Department": "AIDS",
     "Year": "2K27",
-    "Hackerrank Mail": "mithunavannanjayaraam@gmail.com",
-    "Hackerrank ID": "mithunavannanja1"
+    "Hackerrank Mail": "moulidharanparthi@gmail.com",
+    "Hackerrank ID": "moulidharanpart1"
   },
   {
-    "Email": "vishal03012006@gmail.com",
+    "Email": "mustafa_23aia57@kgkite.ac.in",
+    "Password": "23AIA57@KITE",
+    "College": "KITE",
+    "Name": "MUSTAFA TINWALA",
+    "Role": "Student",
+    "Roll Number": "23AIA57",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "mustafatinwala6@gmail.com",
+    "Hackerrank ID": "mustafatinwala6"
+  },
+  {
+    "Email": "nabeenbharathi_23aia58@kgkite.ac.in",
     "Password": "23AIA58@KITE",
     "College": "KITE",
     "Name": "NABEEN BHARATHI K",
@@ -598,6 +718,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "karthicknaren37@gmail.com",
     "Hackerrank ID": "karthicknaren37"
+  },
+  {
+    "Email": "narmadha_23aia61@kgkite.ac.in",
+    "Password": "23AIA61@KITE",
+    "College": "KITE",
+    "Name": "NARMADHA B",
+    "Role": "Student",
+    "Roll Number": "23AIA61",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "narmadhabas76@gmail.com",
+    "Hackerrank ID": "narmadhabas76"
   },
   {
     "Email": "nevil_23aia62@kgkite.ac.in",
@@ -648,6 +780,18 @@
     "Hackerrank ID": "pradi3214srpn"
   },
   {
+    "Email": "pranesh.m_23aia67@kgkite.ac.in",
+    "Password": "23AIA67@KITE",
+    "College": "KITE",
+    "Name": "PRANESH M",
+    "Role": "Student",
+    "Roll Number": "23AIA67",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "praneshmeee@gmail.com",
+    "Hackerrank ID": "praneshmeee"
+  },
+  {
     "Email": "prasannadevi_23aib03@kgkite.ac.in",
     "Password": "23AIB03@KITE",
     "College": "KITE",
@@ -696,18 +840,6 @@
     "Hackerrank ID": "priyaakila2005"
   },
   {
-    "Email": "priyadarsan0312@gmail.com",
-    "Password": "23AIB07@KITE",
-    "College": "KITE",
-    "Name": "PRIYADARSAN P",
-    "Role": "Student",
-    "Roll Number": "23AIB07",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "priyadarsan0312@gmail.com",
-    "Hackerrank ID": "priyadarsan0312"
-  },
-  {
     "Email": "priyadharshini_23aib08@kgkite.ac.in",
     "Password": "23AIB08@KITE",
     "College": "KITE",
@@ -754,30 +886,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "priyankaraju2226@gmail.com",
     "Hackerrank ID": "priyankaraju2226"
-  },
-  {
-    "Email": "pranesh.m_23aia67@kgkite.ac.in",
-    "Password": "23AIA67@KITE",
-    "College": "KITE",
-    "Name": "PRNESH M",
-    "Role": "Student",
-    "Roll Number": "23AIA67",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "praneshmeee@gmail.com",
-    "Hackerrank ID": "praneshmeee"
-  },
-  {
-    "Email": "alagarsamyvarshini@gmail.com",
-    "Password": "23AIB12@KITE",
-    "College": "KITE",
-    "Name": "RAGAVARSHINI A",
-    "Role": "Student",
-    "Roll Number": "23AIB12",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "alagarsamyvarshini@gmail.com",
-    "Hackerrank ID": "ragavarshini_30"
   },
   {
     "Email": "raghuldharshan_23aib13@kgkite.ac.in",
@@ -852,7 +960,7 @@
     "Hackerrank ID": "sandhiyasivaram1"
   },
   {
-    "Email": "sanjayakash67@gmail.com",
+    "Email": "sanjayakash_23aib25@kgkite.ac.in",
     "Password": "23AIB25@KITE",
     "College": "KITE",
     "Name": "SANJAY AKASH V",
@@ -912,19 +1020,19 @@
     "Hackerrank ID": "srisanjay642"
   },
   {
-    "Email": "sanjeevikumar_23aib27@kgkite.ac.in",
-    "Password": "23AIB27ZA@KITE",
+    "Email": "sanjaykumar_23aib26@kgkite.ac.in",
+    "Password": "23AIB26@KITE",
     "College": "KITE",
-    "Name": "SANJEEVIKUMAR M",
+    "Name": "SANJAYKUMAR G",
     "Role": "Student",
-    "Roll Number": "23AIB27ZA",
+    "Roll Number": "23AIB26",
     "Department": "AIDS",
     "Year": "2K27",
-    "Hackerrank Mail": "sanjeevikumar2225@gmail.com",
-    "Hackerrank ID": "sanjeevikumar221"
+    "Hackerrank Mail": "sanjayganesan501@gmail.com",
+    "Hackerrank ID": "sanjayganesan501"
   },
   {
-    "Email": "sanjeevikumar2225@gmail.com",
+    "Email": "sanjeevikumar_23aib27@kgkite.ac.in",
     "Password": "23AIB27@KITE",
     "College": "KITE",
     "Name": "SANJEEVIKUMAR M",
@@ -1068,7 +1176,7 @@
     "Hackerrank ID": "sivasundar110621"
   },
   {
-    "Email": "sooryathamilselvan@gmail.com",
+    "Email": "soorya_23aib38@kgkite.ac.in",
     "Password": "23AIB38@KITE",
     "College": "KITE",
     "Name": "SOORYA K T",
@@ -1090,18 +1198,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "srijith2611@gmail.com",
     "Hackerrank ID": "srijith2611"
-  },
-  {
-    "Email": "ssudheeshss2005@gmail.com",
-    "Password": "23AIB41@KITE",
-    "College": "KITE",
-    "Name": "SUDHEESH S",
-    "Role": "Student",
-    "Roll Number": "23AIB41",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "ssudheeshss2005@gmail.com",
-    "Hackerrank ID": "ssudheeshss2005"
   },
   {
     "Email": "sujithra_23aib43@kgkite.ac.in",
@@ -1126,6 +1222,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "sushmithaprem9@gmail.com",
     "Hackerrank ID": "sushmithaprem9"
+  },
+  {
+    "Email": "swathika_23aib45@kgkite.ac.in",
+    "Password": "23AIB45@KITE",
+    "College": "KITE",
+    "Name": "SWATHIKA",
+    "Role": "Student",
+    "Roll Number": "23AIB45",
+    "Department": "AIDS",
+    "Year": "2K27",
+    "Hackerrank Mail": "swathikagopinath0609@gmail.com",
+    "Hackerrank ID": "swathikagopinat1"
   },
   {
     "Email": "swathini_23aib46@kgkite.ac.in",
@@ -1380,18 +1488,6 @@
     "Hackerrank ID": "amithaditya_23c1"
   },
   {
-    "Email": "arinimugunthan6@gmail.com",
-    "Password": "23CB05@KITE",
-    "College": "KITE",
-    "Name": "ARINI M",
-    "Role": "Student",
-    "Roll Number": "23CB05",
-    "Department": "CSBS",
-    "Year": "2K27",
-    "Hackerrank Mail": "arinimugunthan6@gmail.com",
-    "Hackerrank ID": "arinimugunthan6"
-  },
-  {
     "Email": "bhargavi_23cb06@kgkite.ac.in",
     "Password": "23CB06@KITE",
     "College": "KITE",
@@ -1416,10 +1512,10 @@
     "Hackerrank ID": "bbhumi331"
   },
   {
-    "Email": "brindhamanikandan0910@gmail.com",
+    "Email": "brindha_23cb08@kgkite.ac.in",
     "Password": "23CB08@KITE",
     "College": "KITE",
-    "Name": "BRINDHA",
+    "Name": "BRINDHA MANIKANDAN",
     "Role": "Student",
     "Roll Number": "23CB08",
     "Department": "CSBS",
@@ -1476,7 +1572,7 @@
     "Hackerrank ID": "cyberdq97"
   },
   {
-    "Email": "elakyan19102005@gmail.com",
+    "Email": "elakkiya_23cb13@kgkite.ac.in",
     "Password": "23CB13@KITE",
     "College": "KITE",
     "Name": "ELAKKIYA N",
@@ -1500,7 +1596,19 @@
     "Hackerrank ID": "gajendiran1908"
   },
   {
-    "Email": "iamstella1912@gmail.com",
+    "Email": "ganiga_23cb15@kgkite.ac.in",
+    "Password": "23CB15@KITE",
+    "College": "KITE",
+    "Name": "GANIGA",
+    "Role": "Student",
+    "Roll Number": "23CB15",
+    "Department": "CSBS",
+    "Year": "2K27",
+    "Hackerrank Mail": "ganigaa888@gmail.com",
+    "Hackerrank ID": "ganiga_23cb15"
+  },
+  {
+    "Email": "gnanastella_23cb16@kgkite.ac.in",
     "Password": "23CB16@KITE",
     "College": "KITE",
     "Name": "GNANA STELLA P",
@@ -1524,7 +1632,7 @@
     "Hackerrank ID": "rgokulhishna"
   },
   {
-    "Email": "kidboyhari@gmail.com",
+    "Email": "harikrishna_23cb18@kgkite.ac.in",
     "Password": "23CB18@KITE",
     "College": "KITE",
     "Name": "HARIKRISHNA G",
@@ -1560,10 +1668,10 @@
     "Hackerrank ID": "harshithhari0004"
   },
   {
-    "Email": "ishasreeks002@gmail.com",
+    "Email": "ishasri_23cb21@kgkite.ac.in",
     "Password": "23CB21@KITE",
     "College": "KITE",
-    "Name": "ISHA SRI",
+    "Name": "ISHA SRI S",
     "Role": "Student",
     "Roll Number": "23CB21",
     "Department": "CSBS",
@@ -1584,28 +1692,16 @@
     "Hackerrank ID": "janeshnanda_2005"
   },
   {
-    "Email": "jjayasri752@gmail.com",
+    "Email": "jayasri_23cb23@kgkite.ac.in",
     "Password": "23CB23@KITE",
     "College": "KITE",
-    "Name": "JAYASRI",
+    "Name": "JAYASRI J",
     "Role": "Student",
     "Roll Number": "23CB23",
     "Department": "CSBS",
     "Year": "2K27",
     "Hackerrank Mail": "jjayasri752@gmail.com",
     "Hackerrank ID": "jjayasri752"
-  },
-  {
-    "Email": "jeeviswega@gmail.com",
-    "Password": "23CB24@KITE",
-    "College": "KITE",
-    "Name": "JEEVITHA M",
-    "Role": "Student",
-    "Roll Number": "23CB24",
-    "Department": "CSBS",
-    "Year": "2K27",
-    "Hackerrank Mail": "jeeviswega@gmail.com",
-    "Hackerrank ID": "jeeviswega"
   },
   {
     "Email": "kalaiselvan_23cb25@kgkite.ac.in",
@@ -1620,7 +1716,7 @@
     "Hackerrank ID": "kalaiselvan_23c1"
   },
   {
-    "Email": "kalaivanibabu333@gmail.com",
+    "Email": "kalaivani_23cb26@kgkite.ac.in",
     "Password": "23CB26@KITE",
     "College": "KITE",
     "Name": "KALAIVANI B",
@@ -1836,6 +1932,18 @@
     "Hackerrank ID": "ranjith310706"
   },
   {
+    "Email": "roshanbala_23cb47@kgkite.ac.in",
+    "Password": "23CB47@KITE",
+    "College": "KITE",
+    "Name": "ROSHAN BALA J",
+    "Role": "Student",
+    "Roll Number": "23CB47",
+    "Department": "CSBS",
+    "Year": "2K27",
+    "Hackerrank Mail": "roshanbala_23cb47@kgkite.ac.in",
+    "Hackerrank ID": "roshanbala_23cb1"
+  },
+  {
     "Email": "sabreenbanu_23cb48@kgkite.ac.in",
     "Password": "23CB48@KITE",
     "College": "KITE",
@@ -1848,7 +1956,7 @@
     "Hackerrank ID": "sabreenasraf060"
   },
   {
-    "Email": "dhuraidhrai@gmail.com",
+    "Email": "sandhiya_23cb49@kgkite.ac.in",
     "Password": "23CB49@KITE",
     "College": "KITE",
     "Name": "SANDHIYA",
@@ -1932,6 +2040,18 @@
     "Hackerrank ID": "srinithiganesan2"
   },
   {
+    "Email": "swetha_23cb57@kgkite.ac.in",
+    "Password": "23CB57@KITE",
+    "College": "KITE",
+    "Name": "SWETHA V",
+    "Role": "Student",
+    "Roll Number": "23CB57",
+    "Department": "CSBS",
+    "Year": "2K27",
+    "Hackerrank Mail": "swethavelmurugan04@gmail.com",
+    "Hackerrank ID": "swethavelmuruga3"
+  },
+  {
     "Email": "vaishnavi_23cb58@kgkite.ac.in",
     "Password": "23CB58@KITE",
     "College": "KITE",
@@ -1944,7 +2064,7 @@
     "Hackerrank ID": "vaishnavisivak12"
   },
   {
-    "Email": "vasanthapriyan1840@gmail.com",
+    "Email": "vasanthapriyan_23cb59@kgkite.ac.in",
     "Password": "23CB59@KITE",
     "College": "KITE",
     "Name": "VASANTHA PRIYAN L",
@@ -1980,7 +2100,7 @@
     "Hackerrank ID": "vidyasree0310"
   },
   {
-    "Email": "vimitha_23cb62@gmail.com",
+    "Email": "vimitha_23cb62@kgkite.ac.in",
     "Password": "23CB62@KITE",
     "College": "KITE",
     "Name": "VIMITHA",
@@ -2052,7 +2172,7 @@
     "Hackerrank ID": "abinayasp0211"
   },
   {
-    "Email": "adithyasivakumar07@gmail.com",
+    "Email": "adithya_23csa06@kgkite.ac.in",
     "Password": "23CSA06@KITE",
     "College": "KITE",
     "Name": "ADITHYA S",
@@ -2062,6 +2182,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "adithyasivakumar07@gmail.com",
     "Hackerrank ID": "adithyasivakuma1"
+  },
+  {
+    "Email": "adithya_23csa05@kgkite.ac.in",
+    "Password": "23CSA05@KITE",
+    "College": "KITE",
+    "Name": "ADITHYA S",
+    "Role": "Student",
+    "Roll Number": "23CSA05",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sadithya.s256@gmail.com",
+    "Hackerrank ID": "sadithya_s2561"
   },
   {
     "Email": "ajay_23csa08@kgkite.ac.in",
@@ -2160,7 +2292,19 @@
     "Hackerrank ID": "bharathbharath10"
   },
   {
-    "Email": "darshan060224@gmail.com",
+    "Email": "boobeshkumar6109@gmail.com",
+    "Password": "23CSA18@KITE",
+    "College": "KITE",
+    "Name": "BOOBESH KUMAR S",
+    "Role": "Student",
+    "Roll Number": "23CSA18",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "boobeshkumar6109@gmail.com",
+    "Hackerrank ID": "boobeshkumar6109"
+  },
+  {
+    "Email": "darshan_23csa19@kgkite.ac.in",
     "Password": "23CSA19@KITE",
     "College": "KITE",
     "Name": "DARSHAN U",
@@ -2194,6 +2338,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "dhanu04012006@gmail.com",
     "Hackerrank ID": "dhanu04012006"
+  },
+  {
+    "Email": "dharsenipriya_23csa23@kgkite.ac.in",
+    "Password": "23CSA23@KITE",
+    "College": "KITE",
+    "Name": "DHARSENI PRIYA S",
+    "Role": "Student",
+    "Roll Number": "23CSA23",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "dharsenipriya5@gmail.com",
+    "Hackerrank ID": "dharsenipriya5"
   },
   {
     "Email": "dinesh_23csa24@kgkite.ac.in",
@@ -2271,7 +2427,7 @@
     "Email": "harini_23csa31@kgkite.ac.in",
     "Password": "23CSA31@KITE",
     "College": "KITE",
-    "Name": "HARINI",
+    "Name": "HARINI H",
     "Role": "Student",
     "Roll Number": "23CSA31",
     "Department": "CSE",
@@ -2364,6 +2520,30 @@
     "Hackerrank ID": "jaisurya142006"
   },
   {
+    "Email": "jeevitha_23cb24@kgkite.ac.in",
+    "Password": "23CB24@KITE",
+    "College": "KITE",
+    "Name": "JEEVITHA M",
+    "Role": "Student",
+    "Roll Number": "23CB24",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "jeeviswega@gmail.com",
+    "Hackerrank ID": "jeeviswega"
+  },
+  {
+    "Email": "jeevitha_23csa38@kgkite.ac.in",
+    "Password": "23CSA38@KITE",
+    "College": "KITE",
+    "Name": "JEEVITHA S",
+    "Role": "Student",
+    "Roll Number": "23CSA38",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "jsai4255@gmail.com",
+    "Hackerrank ID": "jsai4255"
+  },
+  {
     "Email": "jerlintrin.s_23csa68@kgkite.ac.in",
     "Password": "23CSA68@KITE",
     "College": "KITE",
@@ -2448,18 +2628,6 @@
     "Hackerrank ID": "kavinshelby758"
   },
   {
-    "Email": "kavinkk3376@gmail.com",
-    "Password": "23CSA45@KITE",
-    "College": "KITE",
-    "Name": "KAVINKUMAR S",
-    "Role": "Student",
-    "Roll Number": "23CSA45",
-    "Department": "CSE",
-    "Year": "2K27",
-    "Hackerrank Mail": "kavinkk3376@gmail.com",
-    "Hackerrank ID": "kavinkk3376"
-  },
-  {
     "Email": "kaviya_23csa46@kgkite.ac.in",
     "Password": "23CSA46@KITE",
     "College": "KITE",
@@ -2496,6 +2664,18 @@
     "Hackerrank ID": "kiruthik847"
   },
   {
+    "Email": "kishore_23csa49@kgkite.ac.in",
+    "Password": "23CSA49@KITE",
+    "College": "KITE",
+    "Name": "KISHORE S",
+    "Role": "Student",
+    "Roll Number": "23CSA49",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "skishore210905@gmail.com",
+    "Hackerrank ID": "skishore210905"
+  },
+  {
     "Email": "kizhakancheryharikrishna_23csa50@kgkite.ac.in",
     "Password": "23CSA50@KITE",
     "College": "KITE",
@@ -2506,6 +2686,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "harihk495@gmail.com",
     "Hackerrank ID": "harihk495"
+  },
+  {
+    "Email": "kowsalyadevi_23csa51@kgkite.ac.in",
+    "Password": "23CSA51@KITE",
+    "College": "KITE",
+    "Name": "KOWSALYA DEVI P",
+    "Role": "Student",
+    "Roll Number": "23CSA51",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "kowsalya18115@gmail.com",
+    "Hackerrank ID": "kowsalya18115"
   },
   {
     "Email": "kumaran_23csa53@kgkite.ac.in",
@@ -2520,7 +2712,7 @@
     "Hackerrank ID": "vvkumaran24"
   },
   {
-    "Email": "lakshanofficial14@gmail.com",
+    "Email": "lakshan.m_23csa69@kgkite.ac.in",
     "Password": "23CSA69@KITE",
     "College": "KITE",
     "Name": "LAKSHAN M",
@@ -2545,11 +2737,11 @@
   },
   {
     "Email": "akshayaraajashrri_23csa09@kgkite.ac.in",
-    "Password": "23CSAO9@KITE",
+    "Password": "23CSA09@KITE",
     "College": "KITE",
     "Name": "M AKSHAYA RAAJA SHRRI",
     "Role": "Student",
-    "Roll Number": "23CSAO9",
+    "Roll Number": "23CSA09",
     "Department": "CSE",
     "Year": "2K27",
     "Hackerrank Mail": "raajashrriakshaya@gmail.com",
@@ -2616,7 +2808,7 @@
     "Hackerrank ID": "manojsb0330"
   },
   {
-    "Email": "melkin96969@gmail.com",
+    "Email": "melkin.s_23csa70@kgkite.ac.in",
     "Password": "23CSA70@KITE",
     "College": "KITE",
     "Name": "MELKIN S",
@@ -2662,6 +2854,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "mohamedbaasil40@gmail.com",
     "Hackerrank ID": "mohamedbaasil40"
+  },
+  {
+    "Email": "mohamedjasim_23csb01@kgkite.ac.in",
+    "Password": "23CSB01@KITE",
+    "College": "KITE",
+    "Name": "MOHAMED JASIM N",
+    "Role": "Student",
+    "Roll Number": "23CSB01",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "jasimmd0403@gmail.com",
+    "Hackerrank ID": "jasimmd0403"
   },
   {
     "Email": "mohammedhibathullah_23csb02@kgkite.ac.in",
@@ -2724,6 +2928,18 @@
     "Hackerrank ID": "narayanan6105"
   },
   {
+    "Email": "nirupa_23csb07@kgkite.ac.in",
+    "Password": "23CSB07@KITE",
+    "College": "KITE",
+    "Name": "NIRUPA P",
+    "Role": "Student",
+    "Roll Number": "23CSB07",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "devikah259@gmail.com",
+    "Hackerrank ID": "devikah259"
+  },
+  {
     "Email": "nithisha_23csb08@kgkite.ac.in",
     "Password": "23CSB08@KITE",
     "College": "KITE",
@@ -2748,6 +2964,30 @@
     "Hackerrank ID": "nivetha7746"
   },
   {
+    "Email": "pavithran_23csb10@kgkite.ac.in",
+    "Password": "23CSB10@KITE",
+    "College": "KITE",
+    "Name": "PAVITHRAN V",
+    "Role": "Student",
+    "Roll Number": "23CSB10",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "pavithranvg2006@gmail.com",
+    "Hackerrank ID": "pavithranvg2006"
+  },
+  {
+    "Email": "preethi_23csb11@kgkite.ac.in",
+    "Password": "23CSB11@KITE",
+    "College": "KITE",
+    "Name": "PREETHI K",
+    "Role": "Student",
+    "Roll Number": "23CSB11",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "preethikalaiselvan570@gmail.com",
+    "Hackerrank ID": "Preeethii"
+  },
+  {
     "Email": "priyadharshini_23csb12@kgkite.ac.in",
     "Password": "23CSB12@KITE",
     "College": "KITE",
@@ -2760,7 +3000,7 @@
     "Hackerrank ID": "priyadharshi1839"
   },
   {
-    "Email": "priyadhrashni_23csb13@kgkite.ac.in",
+    "Email": "priyadharshni_23csb13@kgkite.ac.in",
     "Password": "23CSB13@KITE",
     "College": "KITE",
     "Name": "PRIYADHARSHNI R",
@@ -2782,6 +3022,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "priyankasivakumar214@gmail.com",
     "Hackerrank ID": "priyankasivakum3"
+  },
+  {
+    "Email": "prnow_23csb15@kgkite.ac.in",
+    "Password": "23CSB15@KITE",
+    "College": "KITE",
+    "Name": "PRNOW SM",
+    "Role": "Student",
+    "Roll Number": "23CSB15",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "smpranow2006@gmail.com",
+    "Hackerrank ID": "smpranow2006"
   },
   {
     "Email": "rakshanivasini_23csb17@kgkite.ac.in",
@@ -2808,7 +3060,7 @@
     "Hackerrank ID": "ramya2005skz"
   },
   {
-    "Email": "mranjith2505@gmail.com",
+    "Email": "ranjith_23csb19@kgkite.ac.in",
     "Password": "23CSB19@KITE",
     "College": "KITE",
     "Name": "RANJITH M",
@@ -2818,6 +3070,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "mranjith2506@gmail.com",
     "Hackerrank ID": "mranjith2506"
+  },
+  {
+    "Email": "rephinfernando_23csb20@kgkite.ac.in",
+    "Password": "23CSB20@KITE",
+    "College": "KITE",
+    "Name": "REPHIN FERNANDO R",
+    "Role": "Student",
+    "Roll Number": "23CSB20",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "rephinofficial@gmail.com",
+    "Hackerrank ID": "rephinofficial"
   },
   {
     "Email": "roobika_23csb21@kgkite.ac.in",
@@ -2832,7 +3096,19 @@
     "Hackerrank ID": "roobika266"
   },
   {
-    "Email": "saajahan10a35@gmail.com",
+    "Email": "roshini_23csb22@kgkite.ac.in",
+    "Password": "23CSB22@KITE",
+    "College": "KITE",
+    "Name": "ROSHINI",
+    "Role": "Student",
+    "Roll Number": "23CSB22",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "roshinik0205@gmail.com",
+    "Hackerrank ID": "roshinik0205"
+  },
+  {
+    "Email": "saajahan_23csb23@kgkite.ac.in",
     "Password": "23CSB23@KITE",
     "College": "KITE",
     "Name": "SAAJAHAN A T",
@@ -2856,7 +3132,7 @@
     "Hackerrank ID": "francissam2005"
   },
   {
-    "Email": "sameerbatcha852@gmail.com",
+    "Email": "sameerbatcha_23csb25@kgkite.ac.in",
     "Password": "23CSB25@KITE",
     "College": "KITE",
     "Name": "SAMEER BATCHA R",
@@ -2868,7 +3144,19 @@
     "Hackerrank ID": "sameerbatcha852"
   },
   {
-    "Email": "sandhiyaayyasamy001@gmail.com",
+    "Email": "samuel_23csb26@kgkite.ac.in",
+    "Password": "23CSB26@KITE",
+    "College": "KITE",
+    "Name": "SAMUEL A J",
+    "Role": "Student",
+    "Roll Number": "23CSB26",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "samuelanand2005@gmail.com",
+    "Hackerrank ID": "samuel_a_j"
+  },
+  {
+    "Email": "sandhiya_23csb27@kgkite.ac.in",
     "Password": "23CSB27@KITE",
     "College": "KITE",
     "Name": "SANDHIYA A",
@@ -2892,7 +3180,7 @@
     "Hackerrank ID": "ssanjai2504"
   },
   {
-    "Email": "23csb28_sanjai@kgkite.ac.in",
+    "Email": "sanjai_23csb28@kgkite.ac.in",
     "Password": "23CSB28@KITE",
     "College": "KITE",
     "Name": "SANJAI M",
@@ -2950,6 +3238,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "sasikumar14465@gmail.com",
     "Hackerrank ID": "sasikumar14465"
+  },
+  {
+    "Email": "shreeaadharsh_23csb35@kgkite.ac.in",
+    "Password": "23CSB35@KITE",
+    "College": "KITE",
+    "Name": "SHREE AADHARSH K",
+    "Role": "Student",
+    "Roll Number": "23CSB35",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "shreeaadharsh4@gmail.com",
+    "Hackerrank ID": "shreeaadharsh4"
   },
   {
     "Email": "shreya_23csb36@kgkite.ac.in",
@@ -3072,19 +3372,7 @@
     "Hackerrank ID": "sridarvijayakum1"
   },
   {
-    "Email": "srikanthrajendran007@gmail.com",
-    "Password": "23CSB44@KITE",
-    "College": "KITE",
-    "Name": "SRIKANTH",
-    "Role": "Student",
-    "Roll Number": "23CSB44",
-    "Department": "CSE",
-    "Year": "2K27",
-    "Hackerrank Mail": "srikanthrajendran007@gmail.com",
-    "Hackerrank ID": "srikanthrajendr1"
-  },
-  {
-    "Email": "23csb45_sudharsanan@kgkite.ac.in",
+    "Email": "sudharsanan_23csb45@kgkite.ac.in",
     "Password": "23CSB45@KITE",
     "College": "KITE",
     "Name": "SUDHARSANAN",
@@ -3120,6 +3408,30 @@
     "Hackerrank ID": "sunanthabalraj"
   },
   {
+    "Email": "sundarjothi_23csb48@kgkite.ac.in",
+    "Password": "23CSB48@KITE",
+    "College": "KITE",
+    "Name": "SUNDARAJOTHI K",
+    "Role": "Student",
+    "Roll Number": "23CSB48",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sundarajothi18@gmail.com",
+    "Hackerrank ID": "sundarajothi18"
+  },
+  {
+    "Email": "sundarajothi_23csb48@kgkite.ac.in",
+    "Password": "23CSB48@KITE",
+    "College": "KITE",
+    "Name": "SUNDARAJOTHI K",
+    "Role": "Student",
+    "Roll Number": "23CSB48",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sundarajothi18@gmail.com",
+    "Hackerrank ID": "sundarajothi18"
+  },
+  {
     "Email": "surya_23csb49@kgkite.ac.in",
     "Password": "23CSB49@KITE",
     "College": "KITE",
@@ -3144,6 +3456,18 @@
     "Hackerrank ID": "swethacr2006"
   },
   {
+    "Email": "taryn_23csb51@kgkite.ac.in",
+    "Password": "23CSB51@KITE",
+    "College": "KITE",
+    "Name": "TARYN P",
+    "Role": "Student",
+    "Roll Number": "23CSB51",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "tarynjenifer6125@gmail.com",
+    "Hackerrank ID": "tarynjenifer6125"
+  },
+  {
     "Email": "thivakar_23csb53@kgkite.ac.in",
     "Password": "23CSB53@KITE",
     "College": "KITE",
@@ -3156,7 +3480,19 @@
     "Hackerrank ID": "thivakart2006"
   },
   {
-    "Email": "vaishnavisvaishu04@gmail.com",
+    "Email": "uvashree_23csb54@kgkite.ac.in",
+    "Password": "23CSB54@KITE",
+    "College": "KITE",
+    "Name": "UVASHREE V",
+    "Role": "Student",
+    "Roll Number": "23CSB54",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "uvash2745@gmail.com",
+    "Hackerrank ID": "uva_shree"
+  },
+  {
+    "Email": "vaishnavi_23csb55@kgkite.ac.in",
     "Password": "23CSB55@KITE",
     "College": "KITE",
     "Name": "VAISHNAVI S",
@@ -3192,6 +3528,18 @@
     "Hackerrank ID": "vasu24760"
   },
   {
+    "Email": "veerarahul _23csb58@kgkite.ac.in",
+    "Password": "23CSB58@KITE",
+    "College": "KITE",
+    "Name": "VEERARAHUL K",
+    "Role": "Student",
+    "Roll Number": "23CSB58",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "veerarahul9@gmail.com",
+    "Hackerrank ID": "veerarahul 7433"
+  },
+  {
     "Email": "vigneswaran_23csb59@kgkite.ac.in",
     "Password": "23CSB59@KITE",
     "College": "KITE",
@@ -3202,6 +3550,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "svigneswaran990@gmail.com",
     "Hackerrank ID": "svigneswaran990"
+  },
+  {
+    "Email": "vikranth_23csb60@kgkite.ac.in",
+    "Password": "23CSB60@KITE",
+    "College": "KITE",
+    "Name": "VIKRANTH S",
+    "Role": "Student",
+    "Roll Number": "23CSB60",
+    "Department": "CSE",
+    "Year": "2K27",
+    "Hackerrank Mail": "vkvikranth51@gmail.com",
+    "Hackerrank ID": "vkvikranth51"
   },
   {
     "Email": "vishnu_23csb61@kgkite.ac.in",
@@ -3216,7 +3576,7 @@
     "Hackerrank ID": "vishnutitan40"
   },
   {
-    "Email": "yogeshvenugopal875@gmail.com",
+    "Email": "yogeshvenugopal_23csb62@kgkite.ac.in",
     "Password": "23CSB62@KITE",
     "College": "KITE",
     "Name": "YOGESH VENUGOPAL",
@@ -3264,7 +3624,7 @@
     "Hackerrank ID": "abdulhaleel_23e1"
   },
   {
-    "Email": "abinathakks27@gmail.com",
+    "Email": "abinatha_23eca03@kgkite.ac.in",
     "Password": "23ECA03@KITE",
     "College": "KITE",
     "Name": "ABINATHA K",
@@ -3286,6 +3646,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "abinaya200624@gmail.com",
     "Hackerrank ID": "abinaya200624"
+  },
+  {
+    "Email": "abinaya_23eca04@kgkite.ac.in",
+    "Password": "23ECA04@KITE",
+    "College": "KITE",
+    "Name": "ABINAYA S",
+    "Role": "Student",
+    "Roll Number": "23ECA04",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "abinayasivakumar129@gmail.com",
+    "Hackerrank ID": "abinayasivakum12"
   },
   {
     "Email": "abinesh_23eca06@kgkite.ac.in",
@@ -3396,6 +3768,18 @@
     "Hackerrank ID": "yasararf786"
   },
   {
+    "Email": "arokianitharsana_23eca15@kgkite.ac.in",
+    "Password": "23ECA15@KITE",
+    "College": "KITE",
+    "Name": "AROKIA NITHARSANA S",
+    "Role": "Student",
+    "Roll Number": "23ECA15",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "nitharsana63@gmail.com",
+    "Hackerrank ID": "nitharsana63"
+  },
+  {
     "Email": "ashokkumar_23eca17@kgkite.ac.in",
     "Password": "23ECA17@KITE",
     "College": "KITE",
@@ -3406,6 +3790,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "ashokvijay6767@gmail.com",
     "Hackerrank ID": "ashokvijay6767"
+  },
+  {
+    "Email": "ashokkumar_23eca16@kgkite.ac.in",
+    "Password": "23ECA16@KITE",
+    "College": "KITE",
+    "Name": "ASHOKKUMAR M",
+    "Role": "Student",
+    "Roll Number": "23ECA16",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "ashokfromtamilnadu@gmail.com",
+    "Hackerrank ID": "ashokfromtamiln1"
   },
   {
     "Email": "balamurugan_23eca18@kgkite.ac.in",
@@ -3420,16 +3816,16 @@
     "Hackerrank ID": "balagokila777"
   },
   {
-    "Email": "bavadhariniselvakumar890@gmail.com",
+    "Email": "bavadharini_23eca20@kgkite.ac.in",
     "Password": "23ECA20@KITE",
     "College": "KITE",
-    "Name": "BAVADHARINI",
+    "Name": "BAVADHARINI S",
     "Role": "Student",
     "Roll Number": "23ECA20",
     "Department": "ECE",
     "Year": "2K27",
     "Hackerrank Mail": "bavadhariniselvakumar890@gmail.com",
-    "Hackerrank ID": "Bavadharini"
+    "Hackerrank ID": "bavadhariniselv1"
   },
   {
     "Email": "bharadhwaaj_23eca21@kgkite.ac.in",
@@ -3468,6 +3864,30 @@
     "Hackerrank ID": "rajb73457"
   },
   {
+    "Email": "bharathi_23eca23@kgkite.ac.in",
+    "Password": "23ECA23@KITE",
+    "College": "KITE",
+    "Name": "BHARATHI C",
+    "Role": "Student",
+    "Roll Number": "23ECA23",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "bharathibharathi032005@gmail.com",
+    "Hackerrank ID": "bharathibharat20"
+  },
+  {
+    "Email": "bhuvanesvari_23eca25@kgkite.ac.in",
+    "Password": "23ECA25@KITE",
+    "College": "KITE",
+    "Name": "BHUVANESVARI B",
+    "Role": "Student",
+    "Roll Number": "23ECA25",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "bhuvanesvaribbhuvanesvari@gmail.com",
+    "Hackerrank ID": "bhuvanesvaribbh1"
+  },
+  {
     "Email": "daruka_23eca26@kgkite.ac.in",
     "Password": "23ECA26@KITE",
     "College": "KITE",
@@ -3504,7 +3924,7 @@
     "Hackerrank ID": "deepaksuresh0075"
   },
   {
-    "Email": "devamayil1604@gmail.com",
+    "Email": "devadarshini_23eca29@kgkite.ac.in",
     "Password": "23ECA29@KITE",
     "College": "KITE",
     "Name": "DEVADARSHINI M",
@@ -3624,7 +4044,7 @@
     "Hackerrank ID": "harishism006"
   },
   {
-    "Email": "lovelyhari0101@gmail.com",
+    "Email": "harishwa_23eca41@kgkite.ac.in",
     "Password": "23ECA41@KITE",
     "College": "KITE",
     "Name": "HARISHWA A",
@@ -3684,6 +4104,30 @@
     "Hackerrank ID": "janisaa_rajan"
   },
   {
+    "Email": "jaswanth_23eca46@kgkite.ac.in",
+    "Password": "23ECA46@KITE",
+    "College": "KITE",
+    "Name": "JASWANTH S",
+    "Role": "Student",
+    "Roll Number": "23ECA46",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "jaswanthselvakumar@gmail.com",
+    "Hackerrank ID": "jaswanthselvaku1"
+  },
+  {
+    "Email": "joneskabriel_23eca48@kgkite.ac.in",
+    "Password": "23ECA48@KITE",
+    "College": "KITE",
+    "Name": "JONES KABRIEL E",
+    "Role": "Student",
+    "Roll Number": "23ECA48",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "joneskabriel2502@gmail.com",
+    "Hackerrank ID": "j1zzz_17"
+  },
+  {
     "Email": "kamaleshwarigayathri_223eca49@kgkite.ac.in",
     "Password": "23ECA49@KITE",
     "College": "KITE",
@@ -3732,7 +4176,31 @@
     "Hackerrank ID": "kirubapreetta_21"
   },
   {
-    "Email": "kokilavanitamilarasu@gamil.com",
+    "Email": "kishore_23eca53@kgkite.ac.in",
+    "Password": "23ECA53@KITE",
+    "College": "KITE",
+    "Name": "KISHORE K",
+    "Role": "Student",
+    "Roll Number": "23ECA53",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "kishore638455@gmail.com",
+    "Hackerrank ID": "kishore638455"
+  },
+  {
+    "Email": "kishore_23eca54@kgkite.ac.in",
+    "Password": "23ECA54@KITE",
+    "College": "KITE",
+    "Name": "KISHORE M",
+    "Role": "Student",
+    "Roll Number": "23ECA54",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "kishore90438@gmail.com",
+    "Hackerrank ID": "kishore90438"
+  },
+  {
+    "Email": "kokilavani_23eca55@kgkite.ac.in",
     "Password": "23ECA55@KITE",
     "College": "KITE",
     "Name": "KOKILAVANI T",
@@ -3742,6 +4210,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "kokilavanitamilrasu@gmail.com",
     "Hackerrank ID": "kokilavanitamil1"
+  },
+  {
+    "Email": "lalithkishore_23eca56@kgkite.ac.in",
+    "Password": "23ECA56@KITE",
+    "College": "KITE",
+    "Name": "LALITH KISHORE A J",
+    "Role": "Student",
+    "Roll Number": "23ECA56",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "lalithkishore58074@gmail.com",
+    "Hackerrank ID": "lalithkishore581"
   },
   {
     "Email": "madheswaran_23eca57@kgkite.ac.in",
@@ -3768,7 +4248,7 @@
     "Hackerrank ID": "madhusivakumar1"
   },
   {
-    "Email": "madhujanani46773@gmail.com",
+    "Email": "madhujanani_23eca59@kgkite.ac.in",
     "Password": "23ECA59@KITE",
     "College": "KITE",
     "Name": "MADHU JANANI B",
@@ -3780,6 +4260,18 @@
     "Hackerrank ID": "madhujanani46773"
   },
   {
+    "Email": "mahasivahari_23eca61@kgkite.ac.in",
+    "Password": "23ECA61@KITE",
+    "College": "KITE",
+    "Name": "MAHA SIVA HARI",
+    "Role": "Student",
+    "Roll Number": "23ECA61",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "kgmahasivahari@gmail.com",
+    "Hackerrank ID": "kgmahasivahari"
+  },
+  {
     "Email": "mahalakshmi_23eca60@kgkite.ac.in",
     "Password": "23ECA60@KITE",
     "College": "KITE",
@@ -3788,8 +4280,8 @@
     "Roll Number": "23ECA60",
     "Department": "ECE",
     "Year": "2K27",
-    "Hackerrank Mail": "mahalakshmi1690@gmail.com",
-    "Hackerrank ID": "Mahalakshmi N"
+    "Hackerrank Mail": "mahalakshmi16905@gmail.com",
+    "Hackerrank ID": "mahalakshmi16905"
   },
   {
     "Email": "maileswaran_23eca62@kgkite.ac.in",
@@ -3802,18 +4294,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "mailrsm2005@gmail.com",
     "Hackerrank ID": "mailrsm2005"
-  },
-  {
-    "Email": "manimekalai_23eca63@kgkite.ac.in",
-    "Password": "23ECA63@KITE",
-    "College": "KITE",
-    "Name": "MANIMEKALAI M",
-    "Role": "Student",
-    "Roll Number": "23ECA63",
-    "Department": "ECE",
-    "Year": "2K27",
-    "Hackerrank Mail": "mariyappanmanimekalai03@gmail.com",
-    "Hackerrank ID": "MANIMEKALAI M"
   },
   {
     "Email": "manimekalai_23eca63@kgkite.ac.in",
@@ -3898,18 +4378,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "maryarchana1812@gmail.com",
     "Hackerrank ID": "maryarchana1812"
-  },
-  {
-    "Email": "nithishwaran237@gmail.com",
-    "Password": "23ECB09@KITE",
-    "College": "KITE",
-    "Name": "NITHISHWARAN K",
-    "Role": "Student",
-    "Roll Number": "23ECB09",
-    "Department": "ECE",
-    "Year": "2K27",
-    "Hackerrank Mail": "nithishwaran237@gmail.com",
-    "Hackerrank ID": "nithishwaran237"
   },
   {
     "Email": "nithya_23ecb10@kgkite.ac.in",
@@ -4020,6 +4488,18 @@
     "Hackerrank ID": "rithi_p1011"
   },
   {
+    "Email": "ruban_23ecb20@kgkite.ac.in",
+    "Password": "23ECB20@KITE",
+    "College": "KITE",
+    "Name": "RUBAN R",
+    "Role": "Student",
+    "Roll Number": "23ECB20",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "rubanrajan2005@gmail.com",
+    "Hackerrank ID": "Ruban .R"
+  },
+  {
     "Email": "saif_23ecb21@kgkite.ac.in",
     "Password": "23ECB21@KITE",
     "College": "KITE",
@@ -4044,6 +4524,30 @@
     "Hackerrank ID": "samithakrishnam1"
   },
   {
+    "Email": "sanjay_23ecb24@kgkite.ac.in",
+    "Password": "23ECB24@KITE",
+    "College": "KITE",
+    "Name": "SANJAY K",
+    "Role": "Student",
+    "Roll Number": "23ECB24",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sanjaysangeetha8019@gmail.com",
+    "Hackerrank ID": "sanjaysangeetha4"
+  },
+  {
+    "Email": "sanjithkannan_23ecb26@kgkite.ac.in",
+    "Password": "23ECB26@KITE",
+    "College": "KITE",
+    "Name": "SANJITHKANNAN",
+    "Role": "Student",
+    "Roll Number": "23ECB26",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sanjithkannan22@gmail.com",
+    "Hackerrank ID": "sanjithkannan22"
+  },
+  {
     "Email": "saravanan_23ecb27@kgkite.ac.in",
     "Password": "23ECB27@KITE",
     "College": "KITE",
@@ -4056,7 +4560,7 @@
     "Hackerrank ID": "saransathishtvl"
   },
   {
-    "Email": "sarmathassarmathas@gmail.com",
+    "Email": "sarmatha_23ecb28@kgkite.ac.in",
     "Password": "23ECB28@KITE",
     "College": "KITE",
     "Name": "SARMATHA S",
@@ -4102,6 +4606,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "seetharamanlakshminarayanan@gmail.com",
     "Hackerrank ID": "seetharamanlaks1"
+  },
+  {
+    "Email": "seshagiri_23ecb31@kgkite.ac.in",
+    "Password": "23ECB31@KITE",
+    "College": "KITE",
+    "Name": "SESHAGIRI V",
+    "Role": "Student",
+    "Roll Number": "23ECB31",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "seshagirivenkatesh17092005@gmail.com",
+    "Hackerrank ID": "seshagirivenkat1"
   },
   {
     "Email": "shalini_23ecb32@kgkite.ac.in",
@@ -4161,10 +4677,10 @@
     "Department": "ECE",
     "Year": "2K27",
     "Hackerrank Mail": "k.shriharikrishna@gmail.com",
-    "Hackerrank ID": "k_shriharikrish1"
+    "Hackerrank ID": "shak006"
   },
   {
-    "Email": "shyamjithshyamk@gmail.com",
+    "Email": "shyamjith_23ecb36@kgkite.ac.in",
     "Password": "23ECB36@KITE",
     "College": "KITE",
     "Name": "SHYAMJITH K",
@@ -4186,6 +4702,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "sivamuruganraja004@gmail.com",
     "Hackerrank ID": "sivamuruganraja1"
+  },
+  {
+    "Email": "sooriya_23ecb37@kgkite.ac.in",
+    "Password": "23ECB37@KITE",
+    "College": "KITE",
+    "Name": "SOORIYA S",
+    "Role": "Student",
+    "Roll Number": "23ECB37",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sooriyas146@gmail.com",
+    "Hackerrank ID": "Sooriya_s"
   },
   {
     "Email": "sowmiya_23ecb38@kgkite.ac.in",
@@ -4248,7 +4776,7 @@
     "Hackerrank ID": "srijananisadhas1"
   },
   {
-    "Email": "angeshvar1@gmail.com",
+    "Email": "srijit_23ecb43@kgkite.ac.in",
     "Password": "23ECB43@KITE",
     "College": "KITE",
     "Name": "SRIJIT B",
@@ -4270,6 +4798,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "srinathi_23ecb44@kgkite.ac.in",
     "Hackerrank ID": "srinathi_23ecb44"
+  },
+  {
+    "Email": "sriram.s_23eca70@kgkite.ac.in",
+    "Password": "23ECA7O@KITE",
+    "College": "KITE",
+    "Name": "SRIRAM S",
+    "Role": "Student",
+    "Roll Number": "23ECA7O",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "sriramselvaraj15@gmail.com",
+    "Hackerrank ID": "sriramselvaraj15"
   },
   {
     "Email": "sruthi_23ecb45@kgkite.ac.in",
@@ -4306,6 +4846,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "sunilxsk21@gmail.com",
     "Hackerrank ID": "sunilxsk21"
+  },
+  {
+    "Email": "suriya_23ecb48@kgkite.ac.in",
+    "Password": "23ECB48@KITE",
+    "College": "KITE",
+    "Name": "SURIYA C R",
+    "Role": "Student",
+    "Roll Number": "23ECB48",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "suiqac424@gmail.com",
+    "Hackerrank ID": "suiqac424"
   },
   {
     "Email": "swathi_23ecb49@kgkite.ac.in",
@@ -4428,6 +4980,18 @@
     "Hackerrank ID": "vidusaro"
   },
   {
+    "Email": "vigneshbala_23ecb58@kgkite.ac.in",
+    "Password": "23ECB58@KITE",
+    "College": "KITE",
+    "Name": "VIGNESH BALA R",
+    "Role": "Student",
+    "Roll Number": "23ECB58",
+    "Department": "ECE",
+    "Year": "2K27",
+    "Hackerrank Mail": "ranjanramesh22@gmail.com",
+    "Hackerrank ID": "vignesh_bala_r"
+  },
+  {
     "Email": "vinish_23ecb59@kgkite.ac.in",
     "Password": "23ECB59@KITE",
     "College": "KITE",
@@ -4438,18 +5002,6 @@
     "Year": "2K27",
     "Hackerrank Mail": "viniv6687@gmail.com",
     "Hackerrank ID": "viniv6687"
-  },
-  {
-    "Email": "vishnukumaran17@gmail.com",
-    "Password": "23ECB61@KITE",
-    "College": "KITE",
-    "Name": "VISHNU KUMARAN L",
-    "Role": "Student",
-    "Roll Number": "23ECB61",
-    "Department": "ECE",
-    "Year": "2K27",
-    "Hackerrank Mail": "vishnukumaran17@gmail.com",
-    "Hackerrank ID": "vishnukumaran17"
   },
   {
     "Email": "vishnu_23ecb60@kgkite.ac.in",
@@ -4644,6 +5196,18 @@
     "Hackerrank ID": "gugan_p777"
   },
   {
+    "Email": "hapsiba_23it15@kgkite.ac.in",
+    "Password": "23IT15@KITE",
+    "College": "KITE",
+    "Name": "HAPSIBA",
+    "Role": "Student",
+    "Roll Number": "23IT15",
+    "Department": "IT",
+    "Year": "2K27",
+    "Hackerrank Mail": "hapsibayeasudass@gmail.com",
+    "Hackerrank ID": "hapsibayeasudass"
+  },
+  {
     "Email": "jaisarathi_23it16@kgkite.ac.in",
     "Password": "23IT16@KITE",
     "College": "KITE",
@@ -4704,6 +5268,18 @@
     "Hackerrank ID": "kaviyadharshin54"
   },
   {
+    "Email": "kowsalya_23it22@kgkite.ac.in",
+    "Password": "23IT22@KITE",
+    "College": "KITE",
+    "Name": "KOWSALYA S",
+    "Role": "Student",
+    "Roll Number": "23IT22",
+    "Department": "IT",
+    "Year": "2K27",
+    "Hackerrank Mail": "kowsalyasasikumar2006@gmail.com",
+    "Hackerrank ID": "kowsalyasasikum1"
+  },
+  {
     "Email": "krishnaprakash_23it23@kgkite.ac.in",
     "Password": "23IT23@KITE",
     "College": "KITE",
@@ -4726,6 +5302,18 @@
     "Year": "2K27",
     "Hackerrank Mail": "lavanyavnive2006@gmail.com",
     "Hackerrank ID": "Lavanya v"
+  },
+  {
+    "Email": "leelaram_23it25@kgkite.ac.in",
+    "Password": "23IT25@KITE",
+    "College": "KITE",
+    "Name": "LEELARAM",
+    "Role": "Student",
+    "Roll Number": "23IT25",
+    "Department": "IT",
+    "Year": "2K27",
+    "Hackerrank Mail": "leelaramramaraju@gmail.com",
+    "Hackerrank ID": "leelaramramaraju"
   },
   {
     "Email": "loganathan_23it26@kgkite.ac.in",
@@ -4872,6 +5460,18 @@
     "Hackerrank ID": "nidhyashree08"
   },
   {
+    "Email": "parvinkumar_23it38@kgkite.ac.in",
+    "Password": "23IT38@KITE",
+    "College": "KITE",
+    "Name": "PARVINKUMAR K",
+    "Role": "Student",
+    "Roll Number": "23IT38",
+    "Department": "IT",
+    "Year": "2K27",
+    "Hackerrank Mail": "parvinkumar3118@gmail.com",
+    "Hackerrank ID": "parvinkumar3118"
+  },
+  {
     "Email": "pooja_23it39@kgkite.ac.in",
     "Password": "23IT39@KITE",
     "College": "KITE",
@@ -4968,7 +5568,7 @@
     "Hackerrank ID": "sadhanaarumugam1"
   },
   {
-    "Email": "shrihariharasuthan_23it47@kgkite.ac.in",
+    "Email": "shrihari.m2006@gmail.com",
     "Password": "23IT47@KITE",
     "College": "KITE",
     "Name": "SHRI HARIHARA SUTHAN M",
@@ -5136,6 +5736,18 @@
     "Hackerrank ID": "vaishaliv9702"
   },
   {
+    "Email": "varshinijanaki_23it61@kgkite.ac.in",
+    "Password": "23IT61@KITE",
+    "College": "KITE",
+    "Name": "VARSHINI JANAKI",
+    "Role": "Student",
+    "Roll Number": "23IT61",
+    "Department": "IT",
+    "Year": "2K27",
+    "Hackerrank Mail": "janunithesh@gmail.com",
+    "Hackerrank ID": "janunithesh"
+  },
+  {
     "Email": "varshini_23it60@kgkite.ac.in",
     "Password": "23IT60@KITE",
     "College": "KITE",
@@ -5184,87 +5796,51 @@
     "Hackerrank ID": "yasodharajan083"
   },
   {
-    "Email": "harshavardhan_23aia37@kgkite.ac.in",
-    "Password": "23AIA37@KITE",
+    "Email": "bharathi_23aia15@kgkite.ac.in",
+    "Password": "23AIA15@KITE",
     "College": "KITE",
-    "Name": "HARSHAVARDHAN G M",
+    "Name": "BHARATHI M",
     "Role": "Student",
-    "Roll Number": "23AIA37",
+    "Roll Number": "23AIA15",
     "Department": "AIDS",
     "Year": "2K27",
-    "Hackerrank Mail": "harshasignin96@gmail.com",
-    "Hackerrank ID": "harshasignin96"
+    "Hackerrank Mail": "bharathimuthusamy2006@gmail.com",
+    "Hackerrank ID": "bharathimuthusa1"
   },
   {
-    "Email": "hariharan_23aia32@kgkite.ac.in",
-    "Password": "23AIA32@KITE",
+    "Email": "ericabishekh_23aia24@kgkite.ac.in",
+    "Password": "23AIA24@KITE",
     "College": "KITE",
-    "Name": "HARIHARAN R",
+    "Name": "ERIC ABHISHEKH",
     "Role": "Student",
-    "Roll Number": "23AIA32",
+    "Roll Number": "23AIA24",
     "Department": "AIDS",
     "Year": "2K27",
-    "Hackerrank Mail": "rajamanickamhari05@gmail.com",
-    "Hackerrank ID": "rajamanickamhar2"
+    "Hackerrank Mail": "ericabishekh576@gmail.com",
+    "Hackerrank ID": "Eric_Abishekh"
   },
   {
-    "Email": "jaiyakarthi_23aia38@kgkite.ac.in",
-    "Password": "23AIA38@KITE",
+    "Email": "dinesh_23csa24@kgkite.ac.in",
+    "Password": "23CSA24@KITE",
     "College": "KITE",
-    "Name": "JAIYAKARTHI S",
+    "Name": "DINESH RA",
     "Role": "Student",
-    "Roll Number": "23AIA38",
-    "Department": "AIDS",
+    "Roll Number": "23CSA24",
+    "Department": "CSE",
     "Year": "2K27",
-    "Hackerrank Mail": "jaiyakarthisivakumar2005@gmail.com",
-    "Hackerrank ID": "jaiyakarthisiva1"
+    "Hackerrank Mail": "dineshra2005@gmail.com",
+    "Hackerrank ID": "dineshra2005"
   },
   {
-    "Email": "gokulram.k_23aia65@kgkite.ac.in",
-    "Password": "23AIA65@KITE",
+    "Email": "hamsinia2006@gmail.com",
+    "Password": "23CSA30@KITE",
     "College": "KITE",
-    "Name": "GOKULRAM GK",
+    "Name": "HAMSINI",
     "Role": "Student",
-    "Roll Number": "23AIA65",
-    "Department": "AIDS",
+    "Roll Number": "23CSA30",
+    "Department": "CSE",
     "Year": "2K27",
-    "Hackerrank Mail": "vkgokulrm@gmail.com",
-    "Hackerrank ID": "kanagarajkanaga1"
-  },
-  {
-    "Email": "kirupashankar_23aia49@kgkite.ac.in",
-    "Password": "23AIA49@KITE",
-    "College": "KITE",
-    "Name": "KIRUPASHANKAR S",
-    "Role": "Student",
-    "Roll Number": "23AIA49",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "kirupamannai2005@gmail.com",
-    "Hackerrank ID": "kirupamannai2005"
-  },
-  {
-    "Email": "narmadha_23aia61@kgkite.ac.in",
-    "Password": "23AIA61@KITE",
-    "College": "KITE",
-    "Name": "NARMADHA B",
-    "Role": "Student",
-    "Roll Number": "23AIA61",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "narmadhabas76@gmail.com",
-    "Hackerrank ID": "narmadhabas76"
-  },
-  {
-    "Email": "gokulram.k_23aia65@kgkite.ac.in",
-    "Password": "23AIA65@KITE",
-    "College": "KITE",
-    "Name": "GOKULRAM GK",
-    "Role": "Student",
-    "Roll Number": "23AIA65",
-    "Department": "AIDS",
-    "Year": "2K27",
-    "Hackerrank Mail": "vkgokulrm@gmail.com",
-    "Hackerrank ID": "vkgokulrm"
+    "Hackerrank Mail": "hamsinia2006@gmail.com",
+    "Hackerrank ID": "Hamsini"
   }
 ]
