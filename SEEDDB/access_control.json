@@ -331,7 +331,7 @@
           "schedule": {
             "type": "one_time",
             "startDate": "2025-12-22",
-            "startTime": "08:40",
+            "startTime": "08:30",
             "endDate": "2025-12-22",
             "endTime": "11:10",
             "daysOfWeek": [],
@@ -350,7 +350,7 @@
           "schedule": {
             "type": "one_time",
             "startDate": "2025-12-22",
-            "startTime": "13:00",
+            "startTime": "12:30",
             "endDate": "2025-12-22",
             "endTime": "15:30",
             "daysOfWeek": [],
