@@ -14,6 +14,26 @@
           "name": "Techninal MCQs 1",
           "url": "/mcqs/Hackathon/test1.json",
           "display_order": 1
+        },
+        "assessment_1_-_(cse,it,csbs)": {
+          "id": "A002",
+          "name": "Assessment 1 - (CSE,IT,CSBS)",
+          "url": "/mcqs/Hackathon/test2.json",
+          "display_order": 2,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 30
+        },
+        "assessment_2_-_(aids,_ece)": {
+          "id": "A003",
+          "name": "Assessment 2 - (AIDS, ECE)",
+          "url": "/mcqs/Hackathon/test3.json",
+          "display_order": 3,
+          "passkey": "234567",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 30
         }
       }
     },
@@ -299,15 +319,43 @@
             "timezone": "Asia/Kolkata"
           }
         },
-        "pre-assessment": {
+        "assessment_-_cse,it,csbs": {
           "id": "A007",
-          "name": "Pre-Assessment",
-          "url": "https://www.hackerrank.com/daily-coding-challenge-2027",
+          "name": "Assessment - CSE,IT,CSBS",
+          "url": "https://www.hackerrank.com/mid-assessment-1-2027",
           "display_order": 8,
-          "passkey": "123456",
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 90,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2025-12-22",
+            "startTime": "08:40",
+            "endDate": "2025-12-22",
+            "endTime": "11:10",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "assessment_-_aids,ece": {
+          "id": "A008",
+          "name": "Assessment - AIDS,ECE",
+          "url": "https://www.hackerrank.com/mid-assessment-1-2027-kite",
+          "display_order": 9,
+          "passkey": "234567",
           "difficulty": "Medium",
           "questions": 30,
-          "duration_minutes": 60
+          "duration_minutes": 90,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2025-12-22",
+            "startTime": "13:00",
+            "endDate": "2025-12-22",
+            "endTime": "15:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
         }
       }
     },
@@ -1368,8 +1416,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1386,8 +1437,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1404,8 +1458,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1422,8 +1479,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1440,8 +1500,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1458,8 +1521,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1476,8 +1542,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1496,8 +1565,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1514,8 +1586,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1532,8 +1607,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1550,8 +1628,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1568,8 +1649,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1586,8 +1670,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1604,8 +1691,11 @@
               "F007",
               "F008",
               "A007",
-              "A001",
-              "A001"
+              "A002",
+              "A003",
+              "A002",
+              "A003",
+              "A008"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
