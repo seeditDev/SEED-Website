@@ -21,7 +21,7 @@
           "duration_minutes": 30
         },
         "weekly_assessment-28.12.2025": {
-          "id": "MA003",
+          "id": "A011",
           "name": "Weekly Assessment-28.12.2025",
           "url": "/mcqs/Hackathon/test3.json",
           "display_order": 3,
@@ -326,7 +326,7 @@
           }
         },
         "weekly_assessments-28.12.2025": {
-          "id": "CA009",
+          "id": "A010",
           "name": "Weekly Assessments-28.12.2025",
           "url": "https://www.hackerrank.com/mid-assess-1-2-2027-kite",
           "display_order": 10,
@@ -1507,8 +1507,8 @@
               "F006",
               "F007",
               "F008",
-              "CA009",
-              "MA003"
+              "A010",
+              "A011"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
