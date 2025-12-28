@@ -9,14 +9,9 @@
       "title": "MCQ Assessments",
       "display_order": 9,
       "modules": {
-        "techninal_mcqs_1": {
-          "id": "A001",
-          "name": "Techninal MCQs 1",
-          "url": "/mcqs/Hackathon/test1.json",
-          "display_order": 1
-        },
+        
         "assessment_1_-_(cse,it,csbs)": {
-          "id": "A002",
+          "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
           "url": "/mcqs/Hackathon/test2.json",
           "display_order": 2,
@@ -25,15 +20,24 @@
           "questions": 30,
           "duration_minutes": 30
         },
-        "assessment_2_-_(aids,_ece)": {
-          "id": "A003",
-          "name": "Assessment 2 - (AIDS, ECE)",
+        "weekly_assessment-28.12.2025": {
+          "id": "MA003",
+          "name": "Weekly Assessment-28.12.2025",
           "url": "/mcqs/Hackathon/test3.json",
           "display_order": 3,
-          "passkey": "234567",
+          "passkey": "123456",
           "difficulty": "Medium",
           "questions": 30,
-          "duration_minutes": 30
+          "duration_minutes": 30,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2025-12-27",
+            "startTime": "18:15",
+            "endDate": "2025-12-28",
+            "endTime": "23:59",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
         }
       }
     },
@@ -89,18 +93,6 @@
           "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-strings",
           "display_order": 8
         },
-        "functions_pointers": {
-          "id": "F009",
-          "name": "Functions and Pointers",
-          "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-functions-and-pointers",
-          "display_order": 9
-        },
-        "structures": {
-          "id": "F010",
-          "name": "Structures and Concepts",
-          "url": "https://www.hackerrank.com/seed-it-sde-c-level-0-1-structures-and-concepts",
-          "display_order": 10
-        }
       }
     },
     "dsa": {
@@ -269,30 +261,6 @@
       "title": "Course Assessments",
       "display_order": 6,
       "modules": {
-        "phase_1": {
-          "id": "A001",
-          "name": "Assessment Phase 1",
-          "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-1-1-1-1",
-          "display_order": 1
-        },
-        "phase_2": {
-          "id": "A002",
-          "name": "Assessment Phase 2",
-          "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-2",
-          "display_order": 2
-        },
-        "phase_3": {
-          "id": "A003",
-          "name": "Assessment Phase 3",
-          "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-3",
-          "display_order": 3
-        },
-        "final": {
-          "id": "A004",
-          "name": "Final Assessment",
-          "url": "https://www.hackerrank.com/seed-it-sde-assessment-phase-final",
-          "display_order": 4
-        },
         "special_coding_challenge": {
           "id": "A006",
           "name": "Special Coding Challenge",
@@ -353,6 +321,25 @@
             "startTime": "12:30",
             "endDate": "2025-12-22",
             "endTime": "15:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "weekly_assessments-28.12.2025": {
+          "id": "CA009",
+          "name": "Weekly Assessments-28.12.2025",
+          "url": "https://www.hackerrank.com/mid-assess-1-2-2027-kite",
+          "display_order": 10,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 90,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2025-12-27",
+            "startTime": "18:15",
+            "endDate": "2025-12-28",
+            "endTime": "23:59",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -1405,149 +1392,37 @@
       "KITE": {
         "2K26": {
           "MECH": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "ECE": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSE": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "IT": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "AIDS": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSBS": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "MCA": {
-            "allowed_modules": [
-              "A005",
-              "F001",
-              "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006",
-              "F007",
-              "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
-            ],
+            "allowed_modules": [],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           }
@@ -1576,7 +1451,6 @@
           },
           "ECE": {
             "allowed_modules": [
-              "A005",
               "F001",
               "F002",
               "F003",
@@ -1585,19 +1459,14 @@
               "F006",
               "F007",
               "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
+              "CA009",
+              "MA003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSE": {
             "allowed_modules": [
-              "A005",
               "F001",
               "F002",
               "F003",
@@ -1606,19 +1475,14 @@
               "F006",
               "F007",
               "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
+              "CA009",
+              "MA003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "IT": {
             "allowed_modules": [
-              "A005",
               "F001",
               "F002",
               "F003",
@@ -1627,19 +1491,14 @@
               "F006",
               "F007",
               "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
+              "CA009",
+              "MA003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "AIDS": {
             "allowed_modules": [
-              "A005",
               "F001",
               "F002",
               "F003",
@@ -1648,19 +1507,14 @@
               "F006",
               "F007",
               "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
+              "CA009",
+              "MA003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
           },
           "CSBS": {
             "allowed_modules": [
-              "A005",
               "F001",
               "F002",
               "F003",
@@ -1669,12 +1523,8 @@
               "F006",
               "F007",
               "F008",
-              "A007",
-              "A002",
-              "A003",
-              "A002",
-              "A003",
-              "A008"
+              "CA009",
+              "MA003"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
