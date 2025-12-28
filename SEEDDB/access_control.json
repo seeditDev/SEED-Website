@@ -25,15 +25,9 @@
           "questions": 30,
           "duration_minutes": 30
         },
-<<<<<<< HEAD
-        "weekly_assessment-28.12.2025": {
-          "id": "A011",
-          "name": "Weekly Assessment-28.12.2025",
-=======
         "assessment_2_-_(aids,_ece)": {
           "id": "A003",
           "name": "Assessment 2 - (AIDS, ECE)",
->>>>>>> parent of 5fd12a8 (up)
           "url": "/mcqs/Hackathon/test3.json",
           "display_order": 3,
           "passkey": "234567",
@@ -362,28 +356,6 @@
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
-<<<<<<< HEAD
-        },
-        "weekly_assessments-28.12.2025": {
-          "id": "A010",
-          "name": "Weekly Assessments-28.12.2025",
-          "url": "https://www.hackerrank.com/mid-assess-1-2-2027-kite",
-          "display_order": 10,
-          "passkey": "123456",
-          "difficulty": "Medium",
-          "questions": 5,
-          "duration_minutes": 90,
-          "schedule": {
-            "type": "one_time",
-            "startDate": "2025-12-27",
-            "startTime": "18:15",
-            "endDate": "2025-12-28",
-            "endTime": "23:59",
-            "daysOfWeek": [],
-            "timezone": "Asia/Kolkata"
-          }
-=======
->>>>>>> parent of 5fd12a8 (up)
         }
       }
     },
@@ -1676,17 +1648,12 @@
               "F006",
               "F007",
               "F008",
-<<<<<<< HEAD
-              "A010",
-              "A011"
-=======
               "A007",
               "A002",
               "A003",
               "A002",
               "A003",
               "A008"
->>>>>>> parent of 5fd12a8 (up)
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
