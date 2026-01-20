@@ -34,6 +34,16 @@
           "difficulty": "Medium",
           "questions": 30,
           "duration_minutes": 30
+        },
+        "onboarding_test": {
+          "id": "MA004",
+          "name": "Onboarding Test",
+          "url": "/mcqs/Hackathon/onboardingtest.json",
+          "display_order": 4,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60
         }
       }
     },
@@ -105,7 +115,7 @@
     },
     "assessments": {
       "title": "Course Assessments",
-      "display_order": 6,
+      "display_order": 3,
       "modules": {
         "weekly_assessment": {
           "id": "A008",
@@ -154,6 +164,16 @@
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
+        },
+        "onboarding_assessment": {
+          "id": "CA009",
+          "name": "Onboarding Assessment",
+          "url": "https://www.hackerrank.com/onboarding-kite-2028",
+          "display_order": 3,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 90
         }
       }
     }
@@ -1381,6 +1401,168 @@
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
+          }
+        },
+        "2K28": {
+          "MECH": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "ECE": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "CSE": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "IT": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "AIDS": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "CSBS": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "MCA": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "CYBER": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "AIML": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
+          },
+          "EEE": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "MA004",
+              "CA009"
+            ],
+            "batch_start": "2026-01-20",
+            "batch_end": "2027-06-29"
           }
         }
       }
