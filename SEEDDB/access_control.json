@@ -35,15 +35,34 @@
           "questions": 30,
           "duration_minutes": 30
         },
-        "onboarding_test": {
+        "pre-assessment_test": {
           "id": "MA004",
-          "name": "Onboarding Test",
-          "url": "/mcqs/Hackathon/onboardingtest.json",
+          "name": "Pre-Assessment Test",
+          "url": "/mcqs/Hackathon/preassessment.json",
           "display_order": 4,
           "passkey": "123456",
           "difficulty": "Medium",
           "questions": 30,
           "duration_minutes": 60
+        },
+        "assessment_-_1": {
+          "id": "MA005",
+          "name": "Assessment - 1",
+          "url": "/mcqs/Hackathon/assessment1.json",
+          "display_order": 5,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-01-28",
+            "startTime": "07:55",
+            "endDate": "2026-01-28",
+            "endTime": "10:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
         }
       }
     },
@@ -165,9 +184,9 @@
             "timezone": "Asia/Kolkata"
           }
         },
-        "onboarding_assessment": {
+        "pre-assessment_": {
           "id": "CA009",
-          "name": "Onboarding Assessment",
+          "name": "Pre-Assessment ",
           "url": "https://www.hackerrank.com/onboarding-kite-2028",
           "display_order": 3,
           "passkey": "123456",
@@ -180,16 +199,16 @@
           "name": "ELITE SEGREGATION TEST - SET 1",
           "url": "https://www.hackerrank.com/elite-segregation-assessment-set1",
           "display_order": 4,
-          "passkey": "1234567",
+          "passkey": "123456",
           "difficulty": "Medium",
           "questions": 5,
           "duration_minutes": 180,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-01-26",
-            "startTime": "13:00",
-            "endDate": "2026-01-27",
-            "endTime": "16:15",
+            "startDate": "2026-01-28",
+            "startTime": "08:30",
+            "endDate": "2026-01-28",
+            "endTime": "12:15",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -199,16 +218,35 @@
           "name": "ELITE SEGREGATION TEST - SET 2",
           "url": "https://www.hackerrank.com/elite-segregation-assessment-set2",
           "display_order": 5,
-          "passkey": "234567",
+          "passkey": "987654",
           "difficulty": "Medium",
           "questions": 5,
           "duration_minutes": 180,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-01-26",
-            "startTime": "13:00",
-            "endDate": "2026-01-27",
-            "endTime": "16:15",
+            "startDate": "2026-01-28",
+            "startTime": "08:30",
+            "endDate": "2026-01-28",
+            "endTime": "12:15",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "assessment_1_-_2028": {
+          "id": "CA012",
+          "name": "Assessment 1 - 2028",
+          "url": "https://www.hackerrank.com/assessment-1-kite-2028",
+          "display_order": 6,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 2,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-01-28",
+            "startTime": "07:55",
+            "endDate": "2026-01-28",
+            "endTime": "10:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -1331,9 +1369,8 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008"
+              "CA010",
+              "CA011"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1348,9 +1385,6 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008",
               "CA010",
               "CA011"
             ],
@@ -1367,9 +1401,6 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008",
               "CA010",
               "CA011"
             ],
@@ -1386,9 +1417,6 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008",
               "CA010",
               "CA011"
             ],
@@ -1405,9 +1433,6 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008",
               "CA010",
               "CA011"
             ],
@@ -1424,9 +1449,6 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008",
               "CA010",
               "CA011"
             ],
@@ -1443,9 +1465,56 @@
               "F006",
               "F007",
               "F008",
-              "A003",
-              "A003",
-              "A008"
+              "CA010",
+              "CA011"
+            ],
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
+          },
+          "CYBER": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "CA010",
+              "CA011"
+            ],
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
+          },
+          "AIML": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "CA010",
+              "CA011"
+            ],
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
+          },
+          "EEE": {
+            "allowed_modules": [
+              "F001",
+              "F002",
+              "F003",
+              "F004",
+              "F005",
+              "F006",
+              "F007",
+              "F008",
+              "CA010",
+              "CA011"
             ],
             "batch_start": "2025-06-29",
             "batch_end": "2026-07-29"
@@ -1462,11 +1531,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "ECE": {
             "allowed_modules": [
@@ -1478,11 +1549,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "CSE": {
             "allowed_modules": [
@@ -1494,11 +1567,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "IT": {
             "allowed_modules": [
@@ -1510,11 +1585,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "AIDS": {
             "allowed_modules": [
@@ -1526,11 +1603,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "CSBS": {
             "allowed_modules": [
@@ -1542,11 +1621,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "MCA": {
             "allowed_modules": [
@@ -1558,11 +1639,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "CYBER": {
             "allowed_modules": [
@@ -1574,11 +1657,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "AIML": {
             "allowed_modules": [
@@ -1590,11 +1675,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           },
           "EEE": {
             "allowed_modules": [
@@ -1606,11 +1693,13 @@
               "F006",
               "F007",
               "F008",
+              "CA009",
+              "CA012",
               "MA004",
-              "CA009"
+              "MA005"
             ],
-            "batch_start": "2026-01-20",
-            "batch_end": "2027-06-29"
+            "batch_start": "2025-06-29",
+            "batch_end": "2026-07-29"
           }
         }
       }
