@@ -59,7 +59,7 @@
             "startDate": "2026-01-27",
             "startTime": "07:55",
             "endDate": "2026-01-28",
-            "endTime": "10:00",
+            "endTime": "20:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -246,7 +246,7 @@
             "startDate": "2026-01-27",
             "startTime": "07:55",
             "endDate": "2026-01-28",
-            "endTime": "10:00",
+            "endTime": "20:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
