@@ -159,7 +159,7 @@
         "daily_coding_challenge_-2027": {
           "id": "CA002",
           "name": "Daily Coding Challenge -2027",
-          "url": "https://www.hackerrank.com/daily-coding-challenge-2027",
+          "url": "https://www.hackerrank.com/code-daily-2k27",
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
@@ -264,7 +264,7 @@
         "daily_coding_challenge_-2028": {
           "id": "CA008",
           "name": "Daily Coding Challenge -2028",
-          "url": "https://www.hackerrank.com/daily-coding-challenge-kite-2028",
+          "url": "https://www.hackerrank.com/code-today-2k28",
           "display_order": 7,
           "passkey": "987654",
           "difficulty": "Medium",
