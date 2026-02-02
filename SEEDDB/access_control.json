@@ -168,7 +168,7 @@
           "schedule": {
             "type": "daily",
             "startDate": "2026-01-29",
-            "startTime": "02:00",
+            "startTime": "18:00",
             "endDate": "2026-12-31",
             "endTime": "23:59",
             "daysOfWeek": [],
@@ -273,7 +273,7 @@
           "schedule": {
             "type": "daily",
             "startDate": "2026-01-29",
-            "startTime": "01:00",
+            "startTime": "18:00",
             "endDate": "2026-12-31",
             "endTime": "23:59",
             "daysOfWeek": [],
