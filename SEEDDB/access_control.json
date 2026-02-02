@@ -226,7 +226,7 @@
         "elite_segregation_test_-_set_2": {
           "id": "CA006",
           "name": "ELITE SEGREGATION TEST - SET 2",
-          "url": "https://www.hackerrank.com/elite-segregation-assessment-set2",
+          "url": "https://www.hackerrank.com/elite-assessment-set2",
           "display_order": 5,
           "passkey": "020226",
           "difficulty": "Medium",
@@ -350,6 +350,7 @@
               "F010",
               "CA001",
               "CA002",
+              "CA006",
               "MA006"
             ],
             "batch_start": "2026-01-29",
