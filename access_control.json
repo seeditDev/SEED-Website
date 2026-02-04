@@ -86,7 +86,7 @@
           "schedule": {
             "type": "one_time",
             "startDate": "2026-02-04",
-            "startTime": "01:30",
+            "startTime": "07:30",
             "endDate": "2026-02-04",
             "endTime": "10:00",
             "daysOfWeek": [],
