@@ -85,10 +85,10 @@
           "duration_minutes": 60,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-02-04",
-            "startTime": "07:30",
-            "endDate": "2026-02-04",
-            "endTime": "10:00",
+            "startDate": "2026-02-05",
+            "startTime": "18:30",
+            "endDate": "2026-02-05",
+            "endTime": "22:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -263,10 +263,10 @@
           "duration_minutes": 60,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-02-04",
-            "startTime": "00:55",
-            "endDate": "2026-02-04",
-            "endTime": "10:00",
+            "startDate": "2026-02-05",
+            "startTime": "18:30",
+            "endDate": "2026-02-05",
+            "endTime": "22:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
