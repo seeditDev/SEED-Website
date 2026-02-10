@@ -204,6 +204,16 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "kit_day_2_-_java": {
+          "id": "CA014",
+          "name": "KIT Day 2 - JAVA",
+          "url": "https://www.hackerrank.com/mid-assessment-1-2027",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -671,133 +681,133 @@
         "2K27": {
           "CIVIL": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "MECH": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "EEE": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "ECE": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "CSE": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "IT": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "AIDS": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "AIML": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "CSBS": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "CSD": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "MECHATRONICS": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "CYBER": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "IOT": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "CLOUD": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "ETC": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "BCOM_CA": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "BSC_CS": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "BCA": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
           },
           "MCA": {
             "allowed_modules": [
-              "CA013"
+              "CA014"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
