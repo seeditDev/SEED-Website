@@ -215,6 +215,16 @@
           "questions": 30,
           "duration_minutes": 60
         },
+        "kit_-_java_day4": {
+          "id": "CA016",
+          "name": "KIT - Java Day4",
+          "url": "https://www.hackerrank.com/tricky-question",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -684,7 +694,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -693,7 +704,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -702,7 +714,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -711,7 +724,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -720,7 +734,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -729,7 +744,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -738,7 +754,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -747,7 +764,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -756,7 +774,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -765,7 +784,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -774,7 +794,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -783,7 +804,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -792,7 +814,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -801,7 +824,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -810,7 +834,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -819,7 +844,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -828,7 +854,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -837,7 +864,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
@@ -846,7 +874,8 @@
             "allowed_modules": [
               "CA013",
               "CA014",
-              "CA015"
+              "CA015",
+              "CA016"
             ],
             "batch_start": "2026-02-03",
             "batch_end": "2027-05-04"
