@@ -311,10 +311,10 @@
             "timezone": "Asia/Kolkata"
           }
         },
-        "assessment_2_-_2028": {
+        "assessment_3_-_2028": {
           "id": "CA007",
-          "name": "Assessment 2 - 2028",
-          "url": "https://www.hackerrank.com/assessment-1-kite-2028",
+          "name": "Assessment 3 - 2028",
+          "url": "https://www.hackerrank.com/assessment-3-kite-2028",
           "display_order": 6,
           "passkey": "987654",
           "difficulty": "Medium",
@@ -322,10 +322,10 @@
           "duration_minutes": 60,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-02-05",
+            "startDate": "2026-02-17",
             "startTime": "18:30",
-            "endDate": "2026-02-05",
-            "endTime": "22:00",
+            "endDate": "2026-02-18",
+            "endTime": "10:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -513,64 +513,64 @@
         "2K28": {
           "MECH": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "ECE": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CSE": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "IT": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "AIDS": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "AIML": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CSBS": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CYBER": {
             "allowed_modules": [
-              "CA008",
-              "CA011"
+              "CA007",
+              "CA008"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
