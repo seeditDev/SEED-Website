@@ -175,6 +175,25 @@
           "questions": 30,
           "duration_minutes": 90
         },
+        "elite_test_-1_": {
+          "id": "CA017",
+          "name": "Elite Test -1 ",
+          "url": "https://www.hackerrank.com/elite-test-1-kite",
+          "display_order": 0,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-02-17",
+            "startTime": "13:00",
+            "endDate": "2026-02-17",
+            "endTime": "16:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "daily_coding_challenge_-2027": {
           "id": "CA002",
           "name": "Daily Coding Challenge -2027",
@@ -407,6 +426,7 @@
               "F008",
               "F009",
               "F010",
+              "CA017",
               "CA002",
               "CA010"
             ],
@@ -425,6 +445,7 @@
               "F008",
               "F009",
               "F010",
+              "CA017",
               "CA002",
               "CA010"
             ],
@@ -443,6 +464,7 @@
               "F008",
               "F009",
               "F010",
+              "CA017",
               "CA002",
               "CA010"
             ],
@@ -461,6 +483,7 @@
               "F008",
               "F009",
               "F010",
+              "CA017",
               "CA002",
               "CA010"
             ],
@@ -479,6 +502,7 @@
               "F008",
               "F009",
               "F010",
+              "CA017",
               "CA002",
               "CA010"
             ],
