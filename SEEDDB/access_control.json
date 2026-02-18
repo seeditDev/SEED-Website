@@ -183,16 +183,7 @@
           "passkey": "123456",
           "difficulty": "Medium",
           "questions": 30,
-          "duration_minutes": 60,
-          "schedule": {
-            "type": "one_time",
-            "startDate": "2026-02-17",
-            "startTime": "13:00",
-            "endDate": "2026-02-17",
-            "endTime": "16:00",
-            "daysOfWeek": [],
-            "timezone": "Asia/Kolkata"
-          }
+          "duration_minutes": 60
         },
         "daily_coding_challenge_-2027": {
           "id": "CA002",
@@ -322,10 +313,10 @@
           "duration_minutes": 60,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-02-17",
-            "startTime": "18:30",
+            "startDate": "2026-02-18",
+            "startTime": "18:00",
             "endDate": "2026-02-18",
-            "endTime": "10:00",
+            "endTime": "23:59",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
