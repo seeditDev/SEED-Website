@@ -207,12 +207,21 @@
         "daily_coding_challenge_-2027": {
           "id": "CA002",
           "name": "Daily Coding Challenge -2027",
-          "url": "https://www.hackerrank.com/code-daily-2k27",
+          "url": "https://www.hackerrank.com/codes-daily-2k27",
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
           "questions": 2,
-          "duration_minutes": 60
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "daily",
+            "startDate": "2026-02-24",
+            "startTime": "18:00",
+            "endDate": "2026-05-24",
+            "endTime": "23:59",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
         },
         "kit_java_assessment": {
           "id": "CA013",
