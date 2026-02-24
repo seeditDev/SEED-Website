@@ -595,134 +595,134 @@
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "MECH": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "EEE": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "ECE": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "CSE": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "IT": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "AIDS": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "AIML": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "CSBS": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "CSD": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "MECHATRONICS": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "CYBER": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "IOT": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "CLOUD": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "ETC": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "BCOM_CA": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "BSC_CS": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "BCA": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           },
           "MCA": {
             "allowed_modules": [
               "CA018"
             ],
-            "batch_start": "",
-            "batch_end": ""
+            "batch_start": "2026-02-24",
+            "batch_end": "2026-04-16"
           }
         }
       },
