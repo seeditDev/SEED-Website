@@ -9,11 +9,15 @@
       "title": "MCQ Assessments",
       "display_order": 9,
       "modules": {
-        "techninal_mcqs_1": {
+        "technical_mcqs_1": {
           "id": "MA001",
-          "name": "Techninal MCQs 1",
+          "name": "Technical MCQs 1",
           "url": "/mcqs/Hackathon/test1.json",
-          "display_order": 1
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60
         },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
@@ -177,7 +181,7 @@
         },
         "elite_test_-1_": {
           "id": "CA017",
-          "name": "Elite Test -1 ",
+          "name": "Elite Test -1",
           "url": "https://www.hackerrank.com/elite-test-1-kite",
           "display_order": 0,
           "passkey": "123456",
@@ -212,16 +216,7 @@
           "passkey": "123456",
           "difficulty": "Medium",
           "questions": 2,
-          "duration_minutes": 60,
-          "schedule": {
-            "type": "daily",
-            "startDate": "2026-02-24",
-            "startTime": "18:00",
-            "endDate": "2026-05-24",
-            "endTime": "23:59",
-            "daysOfWeek": [],
-            "timezone": "Asia/Kolkata"
-          }
+          "duration_minutes": 60
         },
         "kit_java_assessment": {
           "id": "CA013",
@@ -924,7 +919,7 @@
             "batch_end": "2027-05-04"
           }
         }
-      },
+      }
     },
     "assessment_statuses": [
       "scheduled",
