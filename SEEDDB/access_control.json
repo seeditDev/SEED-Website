@@ -185,6 +185,25 @@
           "questions": 30,
           "duration_minutes": 60
         },
+        "elite_2026_eod_assessment": {
+          "id": "CA018",
+          "name": "Elite 2026 EOD Assessment",
+          "url": "https://www.hackerrank.com/elite-2026-eod-assessment",
+          "display_order": 0,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "daily",
+            "startDate": "2026-02-24",
+            "startTime": "14:30",
+            "endDate": "2026-03-31",
+            "endTime": "14:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "daily_coding_challenge_-2027": {
           "id": "CA002",
           "name": "Daily Coding Challenge -2027",
