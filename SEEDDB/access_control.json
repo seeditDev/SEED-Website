@@ -197,9 +197,9 @@
           "schedule": {
             "type": "daily",
             "startDate": "2026-02-24",
-            "startTime": "14:30",
+            "startTime": "15:30",
             "endDate": "2026-03-31",
-            "endTime": "14:30",
+            "endTime": "17:30",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -589,133 +589,133 @@
         "2K26": {
           "CIVIL": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "MECH": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "EEE": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "ECE": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "CSE": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "IT": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "AIDS": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "AIML": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "CSBS": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "CSD": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "MECHATRONICS": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "CYBER": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "IOT": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "CLOUD": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "ETC": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "BCOM_CA": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "BSC_CS": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "BCA": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
           },
           "MCA": {
             "allowed_modules": [
-              "CA012"
+              "CA018"
             ],
             "batch_start": "",
             "batch_end": ""
