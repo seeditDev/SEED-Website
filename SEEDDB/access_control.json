@@ -208,6 +208,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "weekly_assessment_3-_2027": {
+          "id": "CA020",
+          "name": "Weekly Assessment 3- 2027",
+          "url": "https://www.hackerrank.com/weekly-assessment-3-2027",
+          "display_order": 0,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-02-28",
+            "startTime": "09:00",
+            "endDate": "2026-03-01",
+            "endTime": "23:45",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "daily_coding_challenge_-2027": {
           "id": "CA002",
           "name": "Daily Coding Challenge -2027",
@@ -273,6 +292,25 @@
             "startTime": "17:03",
             "endDate": "2026-02-25",
             "endTime": "13:03",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "weekly_assessment_3_-_2028": {
+          "id": "CA021",
+          "name": "Weekly Assessment 3 - 2028",
+          "url": "https://www.hackerrank.com/weekly-assessment-3-2028",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-02-28",
+            "startTime": "09:00",
+            "endDate": "2026-03-01",
+            "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
@@ -459,9 +497,8 @@
               "F008",
               "F009",
               "F010",
-              "CA017",
-              "CA002",
-              "CA010"
+              "CA020",
+              "CA002"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -478,9 +515,8 @@
               "F008",
               "F009",
               "F010",
-              "CA017",
-              "CA002",
-              "CA010"
+              "CA020",
+              "CA002"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -497,9 +533,8 @@
               "F008",
               "F009",
               "F010",
-              "CA017",
-              "CA002",
-              "CA010"
+              "CA020",
+              "CA002"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -516,9 +551,8 @@
               "F008",
               "F009",
               "F010",
-              "CA017",
-              "CA002",
-              "CA010"
+              "CA020",
+              "CA002"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -535,9 +569,8 @@
               "F008",
               "F009",
               "F010",
-              "CA017",
-              "CA002",
-              "CA010"
+              "CA020",
+              "CA002"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -546,7 +579,7 @@
         "2K28": {
           "MECH": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -554,7 +587,7 @@
           },
           "ECE": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -562,7 +595,7 @@
           },
           "CSE": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -570,7 +603,7 @@
           },
           "IT": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -578,7 +611,7 @@
           },
           "AIDS": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -586,7 +619,7 @@
           },
           "AIML": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -594,7 +627,7 @@
           },
           "CSBS": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -602,7 +635,7 @@
           },
           "CYBER": {
             "allowed_modules": [
-              "CA019",
+              "CA021",
               "CA008"
             ],
             "batch_start": "2026-01-29",
