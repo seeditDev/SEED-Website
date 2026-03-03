@@ -315,6 +315,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "assessment_5_-_2028": {
+          "id": "CA022",
+          "name": "Assessment 5 - 2028",
+          "url": "https://www.hackerrank.com/assessment-5-kite-2028",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-03",
+            "startTime": "22:09",
+            "endDate": "2026-03-04",
+            "endTime": "10:10",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -579,7 +598,7 @@
         "2K28": {
           "MECH": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -587,7 +606,7 @@
           },
           "ECE": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -595,7 +614,7 @@
           },
           "CSE": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -603,7 +622,7 @@
           },
           "IT": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -611,7 +630,7 @@
           },
           "AIDS": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -619,7 +638,7 @@
           },
           "AIML": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -627,7 +646,7 @@
           },
           "CSBS": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -635,7 +654,7 @@
           },
           "CYBER": {
             "allowed_modules": [
-              "CA021",
+              "CA022",
               "CA008"
             ],
             "batch_start": "2026-01-29",
