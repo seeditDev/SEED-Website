@@ -19,6 +19,25 @@
           "questions": 30,
           "duration_minutes": 60
         },
+        "cadence_assessment_-1": {
+          "id": "MA009",
+          "name": "Cadence Assessment -1",
+          "url": "/mcqs/Hackathon/cadenceTest1.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 40,
+          "duration_minutes": 45,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-09",
+            "startTime": "09:00",
+            "endDate": "2026-03-09",
+            "endTime": "10:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -341,9 +360,8 @@
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
-          "questions": 5,
-		  "nofoattempts":2,
-          "duration_minutes": 2,
+          "questions": 30,
+          "duration_minutes": 60,
           "schedule": {
             "type": "one_time",
             "startDate": "2026-03-07",
@@ -556,7 +574,8 @@
               "F009",
               "F010",
               "CA002",
-              "CA023"
+              "CA023",
+              "MA009"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -574,7 +593,8 @@
               "F009",
               "F010",
               "CA002",
-              "CA023"
+              "CA023",
+              "MA009"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -592,7 +612,8 @@
               "F009",
               "F010",
               "CA002",
-              "CA023"
+              "CA023",
+              "MA009"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -610,7 +631,8 @@
               "F009",
               "F010",
               "CA002",
-              "CA023"
+              "CA023",
+              "MA009"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -628,7 +650,8 @@
               "F009",
               "F010",
               "CA002",
-              "CA023"
+              "CA023",
+              "MA009"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
