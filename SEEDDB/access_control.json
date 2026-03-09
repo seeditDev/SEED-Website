@@ -341,8 +341,9 @@
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
-          "questions": 30,
-          "duration_minutes": 60,
+          "questions": 5,
+		  "nofoattempts":2,
+          "duration_minutes": 2,
           "schedule": {
             "type": "one_time",
             "startDate": "2026-03-07",
