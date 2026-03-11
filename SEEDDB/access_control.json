@@ -57,6 +57,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "java_mcq_test_-2": {
+          "id": "MA011",
+          "name": "Java MCQ Test -2",
+          "url": "/mcqs/Hackathon/javatest2.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 100,
+          "duration_minutes": 50,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-11",
+            "startTime": "08:30",
+            "endDate": "2026-03-11",
+            "endTime": "09:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -613,7 +632,8 @@
               "F010",
               "CA002",
               "CA023",
-              "MA010"
+              "MA010",
+              "MA011"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -632,7 +652,8 @@
               "F010",
               "CA002",
               "CA023",
-              "MA010"
+              "MA010",
+              "MA011"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -651,7 +672,8 @@
               "F010",
               "CA002",
               "CA023",
-              "MA010"
+              "MA010",
+              "MA011"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -670,7 +692,8 @@
               "F010",
               "CA002",
               "CA023",
-              "MA010"
+              "MA010",
+              "MA011"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -689,7 +712,8 @@
               "F010",
               "CA002",
               "CA023",
-              "MA010"
+              "MA010",
+              "MA011"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
