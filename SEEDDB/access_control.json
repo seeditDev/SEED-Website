@@ -76,6 +76,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "java_mcq_test_-3": {
+          "id": "MA012",
+          "name": "Java MCQ Test -3",
+          "url": "/mcqs/Hackathon/javatest2.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 100,
+          "duration_minutes": 50,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-12",
+            "startTime": "08:30",
+            "endDate": "2026-03-12",
+            "endTime": "09:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
