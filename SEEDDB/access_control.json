@@ -79,7 +79,7 @@
         "java_mcq_test_-3": {
           "id": "MA012",
           "name": "Java MCQ Test -3",
-          "url": "/mcqs/Hackathon/javatest2.json",
+          "url": "/mcqs/Hackathon/javatest3.json",
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
@@ -89,6 +89,25 @@
             "type": "one_time",
             "startDate": "2026-03-12",
             "startTime": "08:30",
+            "endDate": "2026-03-12",
+            "endTime": "09:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "java_mcq_test_-3-1": {
+          "id": "MA013",
+          "name": "Java MCQ Test -3-1",
+          "url": "/mcqs/Hackathon/javatest3.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 60,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-12",
+            "startTime": "08:45",
             "endDate": "2026-03-12",
             "endTime": "09:30",
             "daysOfWeek": [],
@@ -653,7 +672,7 @@
               "CA023",
               "MA010",
               "MA011",
-              "MA012"
+              "MA013"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -674,7 +693,7 @@
               "CA023",
               "MA010",
               "MA011",
-              "MA012"
+              "MA013"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -695,7 +714,7 @@
               "CA023",
               "MA010",
               "MA011",
-              "MA012"
+              "MA013"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -716,7 +735,7 @@
               "CA023",
               "MA010",
               "MA011",
-              "MA012"
+              "MA013"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -737,7 +756,7 @@
               "CA023",
               "MA010",
               "MA011",
-              "MA012"
+              "MA013"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
