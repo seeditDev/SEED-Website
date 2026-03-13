@@ -152,6 +152,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "java_mcq_360_test_1": {
+          "id": "MA016",
+          "name": "Java MCQ 360 TEST 1",
+          "url": "/mcqs/Hackathon/JavaMCQ360.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 360,
+          "duration_minutes": 150,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-14",
+            "startTime": "09:00",
+            "endDate": "2026-03-14",
+            "endTime": "17:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -524,6 +543,44 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "weekly_assessment_-_5_-_2027": {
+          "id": "CA026",
+          "name": "Weekly Assessment - 5 - 2027",
+          "url": "https://www.hackerrank.com/weekly-assessment-5-2027",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 150,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-13",
+            "startTime": "18:00",
+            "endDate": "2026-03-16",
+            "endTime": "23:45",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "weekly_assessment_-_5_-_2028": {
+          "id": "CA027",
+          "name": "Weekly Assessment - 5 - 2028",
+          "url": "https://www.hackerrank.com/weekly-assessment-5-2028",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 150,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-13",
+            "startTime": "18:00",
+            "endDate": "2026-03-16",
+            "endTime": "23:45",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -707,12 +764,13 @@
               "F009",
               "F010",
               "CA002",
-              "CA023",
+              "CA026",
               "MA015",
               "MA010",
               "MA011",
               "MA013",
-              "MA014"
+              "MA014",
+              "MA016"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -730,12 +788,13 @@
               "F009",
               "F010",
               "CA002",
-              "CA023",
+              "CA026",
               "MA015",
               "MA010",
               "MA011",
               "MA013",
-              "MA014"
+              "MA014",
+              "MA016"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -753,12 +812,13 @@
               "F009",
               "F010",
               "CA002",
-              "CA023",
+              "CA026",
               "MA015",
               "MA010",
               "MA011",
               "MA013",
-              "MA014"
+              "MA014",
+              "MA016"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -776,12 +836,13 @@
               "F009",
               "F010",
               "CA002",
-              "CA023",
+              "CA026",
               "MA015",
               "MA010",
               "MA011",
               "MA013",
-              "MA014"
+              "MA014",
+              "MA016"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -799,12 +860,13 @@
               "F009",
               "F010",
               "CA002",
-              "CA023",
+              "CA026",
               "MA015",
               "MA010",
               "MA011",
               "MA013",
-              "MA014"
+              "MA014",
+              "MA016"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -813,7 +875,7 @@
         "2K28": {
           "MECH": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -821,7 +883,7 @@
           },
           "ECE": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -829,7 +891,7 @@
           },
           "CSE": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -837,7 +899,7 @@
           },
           "IT": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -845,7 +907,7 @@
           },
           "AIDS": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -853,7 +915,7 @@
           },
           "AIML": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -861,7 +923,7 @@
           },
           "CSBS": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
@@ -869,7 +931,7 @@
           },
           "CYBER": {
             "allowed_modules": [
-              "CA025",
+              "CA027",
               "CA008"
             ],
             "batch_start": "2026-01-29",
