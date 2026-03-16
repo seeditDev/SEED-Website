@@ -404,6 +404,8 @@
           "url": "https://www.hackerrank.com/codes-daily-2k27",
           "display_order": 1,
           "passkey": "123456",
+		   "nofoattempts": 2,
+		   "proctoring": true,
           "difficulty": "Medium",
           "questions": 2,
           "duration_minutes": 60
