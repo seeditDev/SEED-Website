@@ -190,6 +190,44 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "java_mcq_test_-_6": {
+          "id": "MA019",
+          "name": "Java MCQ Test - 6",
+          "url": "/mcqs/Hackathon/javatest6.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 20,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-17",
+            "startTime": "08:30",
+            "endDate": "2026-03-17",
+            "endTime": "10:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
+        "time_and_work_-1_(easy)": {
+          "id": "MA020",
+          "name": "Time and Work -1 (Easy)",
+          "url": "/mcqs/Hackathon/timeandwork1.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Easy",
+          "questions": 20,
+          "duration_minutes": 30,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-17",
+            "startTime": "08:30",
+            "endDate": "2026-03-17",
+            "endTime": "10:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -404,8 +442,6 @@
           "url": "https://www.hackerrank.com/codes-daily-2k27",
           "display_order": 1,
           "passkey": "123456",
-		   "nofoattempts": 2,
-		   "proctoring": true,
           "difficulty": "Medium",
           "questions": 2,
           "duration_minutes": 60
