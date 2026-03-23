@@ -247,6 +247,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "elite_mid_assessment_-_1_2027": {
+          "id": "MA022",
+          "name": "Elite Mid Assessment - 1 2027",
+          "url": "/mcqs/Hackathon/elitemidtest1.json",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 100,
+          "duration_minutes": 45,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-23",
+            "startTime": "08:00",
+            "endDate": "2026-03-23",
+            "endTime": "12:00",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -676,6 +695,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "elite_mid_assessment_-1_2027": {
+          "id": "CA029",
+          "name": "Elite Mid Assessment -1 2027",
+          "url": "https://www.hackerrank.com/elite-mid-test-1",
+          "display_order": 1,
+          "passkey": "123456",
+          "difficulty": "Medium",
+          "questions": 10,
+          "duration_minutes": 180,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-23",
+            "startTime": "08:00",
+            "endDate": "2026-03-23",
+            "endTime": "11:59",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -860,6 +898,7 @@
               "F010",
               "CA002",
               "CA026",
+              "CA029",
               "MA015",
               "MA011",
               "MA013",
@@ -868,7 +907,8 @@
               "MA018",
               "MA019",
               "MA020",
-              "MA021"
+              "MA021",
+              "MA022"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -887,6 +927,7 @@
               "F010",
               "CA002",
               "CA026",
+              "CA029",
               "MA015",
               "MA011",
               "MA013",
@@ -895,7 +936,8 @@
               "MA018",
               "MA019",
               "MA020",
-              "MA021"
+              "MA021",
+              "MA022"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -914,6 +956,7 @@
               "F010",
               "CA002",
               "CA026",
+              "CA029",
               "MA015",
               "MA011",
               "MA013",
@@ -922,7 +965,8 @@
               "MA018",
               "MA019",
               "MA020",
-              "MA021"
+              "MA021",
+              "MA022"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -941,6 +985,7 @@
               "F010",
               "CA002",
               "CA026",
+              "CA029",
               "MA015",
               "MA011",
               "MA013",
@@ -949,7 +994,8 @@
               "MA018",
               "MA019",
               "MA020",
-              "MA021"
+              "MA021",
+              "MA022"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
@@ -968,6 +1014,7 @@
               "F010",
               "CA002",
               "CA026",
+              "CA029",
               "MA015",
               "MA011",
               "MA013",
@@ -976,7 +1023,8 @@
               "MA018",
               "MA019",
               "MA020",
-              "MA021"
+              "MA021",
+              "MA022"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2027-03-29"
