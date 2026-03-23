@@ -70,7 +70,7 @@
             "type": "daily",
             "startDate": "2026-03-16",
             "startTime": "08:30",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-29",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -89,7 +89,7 @@
             "type": "one_time",
             "startDate": "2026-03-16",
             "startTime": "08:30",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-29",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -108,7 +108,7 @@
             "type": "one_time",
             "startDate": "2026-03-12",
             "startTime": "08:30",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-30",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -127,7 +127,7 @@
             "type": "one_time",
             "startDate": "2026-03-12",
             "startTime": "08:45",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-30",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -146,7 +146,7 @@
             "type": "one_time",
             "startDate": "2026-03-13",
             "startTime": "08:25",
-            "endDate": "2026-03-13",
+            "endDate": "2026-03-30",
             "endTime": "09:30",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -165,7 +165,7 @@
             "type": "one_time",
             "startDate": "2026-03-14",
             "startTime": "09:00",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-30",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -184,7 +184,7 @@
             "type": "one_time",
             "startDate": "2026-03-16",
             "startTime": "08:30",
-            "endDate": "2026-03-16",
+            "endDate": "2026-03-30",
             "endTime": "23:45",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -203,7 +203,7 @@
             "type": "one_time",
             "startDate": "2026-03-17",
             "startTime": "08:30",
-            "endDate": "2026-03-17",
+            "endDate": "2026-03-30",
             "endTime": "10:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
@@ -241,7 +241,7 @@
             "type": "one_time",
             "startDate": "2026-03-18",
             "startTime": "08:00",
-            "endDate": "2026-03-18",
+            "endDate": "2026-03-29",
             "endTime": "09:30",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
