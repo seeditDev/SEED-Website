@@ -372,7 +372,7 @@
           "duration_minutes": 30,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-03-25",
+            "startDate": "2026-03-24",
             "startTime": "08:00",
             "endDate": "2026-03-25",
             "endTime": "10:30",
@@ -858,7 +858,7 @@
           "duration_minutes": 100,
           "schedule": {
             "type": "one_time",
-            "startDate": "2026-03-25",
+            "startDate": "2026-03-24",
             "startTime": "08:30",
             "endDate": "2026-03-25",
             "endTime": "10:30",
