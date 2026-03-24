@@ -361,6 +361,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "c++_mcq_test_-1": {
+          "id": "MA029",
+          "name": "C++ MCQ Test -1",
+          "url": "/mcqs/Hackathon/cplusplustest1.json",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 30,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-25",
+            "startTime": "08:00",
+            "endDate": "2026-03-25",
+            "endTime": "10:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -828,6 +847,25 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "assessment_8_-_2028": {
+          "id": "CA030",
+          "name": "Assessment 8 - 2028",
+          "url": "https://www.hackerrank.com/assessment-8-kite-2028",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 100,
+          "schedule": {
+            "type": "one_time",
+            "startDate": "2026-03-25",
+            "startTime": "08:30",
+            "endDate": "2026-03-25",
+            "endTime": "10:30",
+            "daysOfWeek": [],
+            "timezone": "Asia/Kolkata"
+          }
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -1172,72 +1210,72 @@
         "2K28": {
           "MECH": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "ECE": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CSE": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "IT": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "AIDS": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "AIML": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CSBS": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
           },
           "CYBER": {
             "allowed_modules": [
-              "CA027",
-              "CA028",
-              "CA008"
+              "CA030",
+              "CA008",
+              "MA029"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
