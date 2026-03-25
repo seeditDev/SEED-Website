@@ -297,9 +297,9 @@
           "schedule": {
             "type": "one_time",
             "startDate": "2026-03-25",
-            "startTime": "08:00",
+            "startTime": "08:30",
             "endDate": "2026-03-25",
-            "endTime": "09:20",
+            "endTime": "10:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
