@@ -831,7 +831,7 @@
         "elite_mid_assessment_-1_2027": {
           "id": "CA029",
           "name": "Elite Mid Assessment -1 2027",
-          "url": "https://www.hackerrank.com/elite-mid-test-1",
+          "url": "https://www.hackerrank.com/elite-middle-test-1",
           "display_order": 1,
           "passkey": "123456",
           "difficulty": "Medium",
@@ -841,7 +841,7 @@
             "type": "one_time",
             "startDate": "2026-03-23",
             "startTime": "08:00",
-            "endDate": "2026-03-26",
+            "endDate": "2026-03-27",
             "endTime": "23:59",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
