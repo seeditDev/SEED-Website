@@ -898,7 +898,7 @@
         "elite_segregation_test_-_set_1": {
           "id": "CA005",
           "name": "ELITE SEGREGATION TEST - SET 1",
-          "url": "https://www.hackerrank.com/kite26-assessment-set1",
+          "url": "https://www.hackerrank.com/contests/zoho-day-2",
           "display_order": 4,
           "passkey": "123456",
           "difficulty": "Medium",
@@ -907,9 +907,9 @@
           "schedule": {
             "type": "one_time",
             "startDate": "2026-03-27",
-            "startTime": "08:30",
+            "startTime": "13:30",
             "endDate": "2026-03-27",
-            "endTime": "12:30",
+            "endTime": "16:00",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
           }
