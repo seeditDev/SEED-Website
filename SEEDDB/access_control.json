@@ -841,7 +841,7 @@
             "type": "one_time",
             "startDate": "2026-03-23",
             "startTime": "08:00",
-            "endDate": "2026-03-27",
+            "endDate": "2026-04-27",
             "endTime": "23:59",
             "daysOfWeek": [],
             "timezone": "Asia/Kolkata"
