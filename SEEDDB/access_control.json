@@ -380,6 +380,16 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "sp_-_aptitude_and_com_test": {
+          "id": "MA030",
+          "name": "SP - Aptitude  and COM test",
+          "url": "/mcqs/Hackathon/sp_test.json",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 30,
+          "duration_minutes": 30
+        },
         "assessment_1_-_(cse,it,csbs)": {
           "id": "MA002",
           "name": "Assessment 1 - (CSE,IT,CSBS)",
@@ -866,6 +876,16 @@
             "timezone": "Asia/Kolkata"
           }
         },
+        "2k28_sp_-_daily_test_11-06-2026": {
+          "id": "CA031",
+          "name": "2k28 SP - Daily Test 11-06-2026",
+          "url": "https://www.hackerrank.com/2k28-analysis-test",
+          "display_order": 1,
+          "passkey": "987654",
+          "difficulty": "Medium",
+          "questions": 5,
+          "duration_minutes": 30
+        },
         "assessment_-_cse,it,csbs": {
           "id": "CA003",
           "name": "Assessment - CSE,IT,CSBS",
@@ -1221,8 +1241,9 @@
           "MECH": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1230,8 +1251,9 @@
           "ECE": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1239,8 +1261,9 @@
           "CSE": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1248,8 +1271,9 @@
           "IT": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1257,8 +1281,9 @@
           "AIDS": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1266,8 +1291,9 @@
           "AIML": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1275,8 +1301,9 @@
           "CSBS": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
@@ -1284,8 +1311,9 @@
           "CYBER": {
             "allowed_modules": [
               "CA030",
+              "CA031",
               "CA008",
-              "MA029"
+              "MA030"
             ],
             "batch_start": "2026-01-29",
             "batch_end": "2028-03-29"
