@@ -136,24 +136,40 @@ class DataService {
             });
 
             if (role.toLowerCase() === 'staff') {
-                console.log(`[DataService] Staff login - Fetching from staff endpoints`);
-                const staffData = await this.fetchWithFallback(
-                    API_ENDPOINTS.LOCAL.STAFF_PASSWORD,
-                    API_ENDPOINTS.GITHUB_API.STAFF_PASSWORD,
-                    API_ENDPOINTS.GITHUB.STAFF_PASSWORD,
-                    'staff_credentials'
-                );
+                console.log(`[DataService] Staff login - Fetching from backend API`);
+                const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
                 
-                console.log(`[DataService] Staff data received:`, staffData);
-                const staffMember = staffData.find(s => s.Email === email && s.Password === password);
-                console.log(`[DataService] Staff validation result:`, staffMember ? 'Found' : 'Not Found');
+                const response = await fetch(`${API_URL}/api/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username: email, password })
+                });
                 
-                if (!staffMember) return null;
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log(`[DataService] Staff backend login successful:`, data);
+                    
+                    if (data.token) {
+                        localStorage.setItem('token', data.token);
+                        localStorage.setItem('isAuthenticated', 'true');
+                        const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+                        localStorage.setItem('authExpiration', expirationTime.toString());
+                    }
 
-                return {
-                    ...staffMember,
-                    isAuthenticated: true
-                };
+                    return {
+                        Email: data.user.email || data.user.Email,
+                        Name: data.user.name || data.user.Name,
+                        Role: data.user.role || data.user.Role,
+                        College: data.user.college || data.user.College,
+                        Department: data.user.department || data.user.Department || null,
+                        isAuthenticated: true
+                    };
+                } else {
+                    const errData = await response.json().catch(() => ({}));
+                    throw new Error(errData.detail || 'Invalid credentials');
+                }
             } else {
                 console.log(`[DataService] Student login - Fetching profiles for college: ${college}, year: ${year}`);
                 const profiles = await this.getCollegeData(college, FILE_TYPES.PROFILES, year);

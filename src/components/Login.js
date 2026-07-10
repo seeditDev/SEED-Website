@@ -38,6 +38,14 @@ const Login = () => {
     document.documentElement.setAttribute('data-theme', currentTheme);
   }, [currentTheme]);
 
+  useEffect(() => {
+    // If already authenticated, redirect to appropriate dashboard page
+    const authDataRaw = localStorage.getItem("auth_data");
+    const userRole = localStorage.getItem("role");
+    if (authDataRaw && userRole) {
+      navigate(DASHBOARD_PATHS[userRole] || "/");
+    }
+  }, [navigate]);
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("rememberedUser"));
@@ -221,7 +229,7 @@ const Login = () => {
       }
     } catch (error) {
       console.error("Login error:", error);
-      setError("Login failed. Please try again.");
+      setError(error.message || "Login failed. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -557,7 +565,7 @@ const Login = () => {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder="Email"
+                  placeholder={role === 'staff' ? "Username" : "Email"}
                   required
                 />
               </div>
