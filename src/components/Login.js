@@ -4,6 +4,18 @@ import { FaCheckCircle, FaUser, FaLock, FaEye, FaEyeSlash, FaBook, FaTrophy, FaC
 import DataService from "../services/dataService";
 import TrackingService from "../services/trackingService";
 import { COLLEGES, ACADEMIC_YEARS } from "../config/constants";
+import {
+  Container,
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Paper,
+  Alert,
+  IconButton,
+  InputAdornment
+} from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 
 const DASHBOARD_PATHS = {
   student: "/student/dashboard",
@@ -293,6 +305,122 @@ const Login = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  if (role === "staff") {
+    return (
+      <Box
+        sx={{
+          backgroundColor: '#f5f5f5',
+          minHeight: '100vh',
+          width: '100vw',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+        }}
+      >
+        <Container component="main" maxWidth="xs">
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Paper
+              elevation={3}
+              sx={{
+                padding: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
+                borderRadius: 1,
+              }}
+            >
+              <Typography component="h1" variant="h5" gutterBottom sx={{ color: '#000', fontWeight: 'medium' }}>
+                SEED-IT Staff Login
+              </Typography>
+              {error && (
+                <Alert severity="error" sx={{ width: '100%', mb: 2 }}>
+                  {error}
+                </Alert>
+              )}
+              <Box component="form" onSubmit={handleLogin} sx={{ mt: 1, width: '100%' }}>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="username"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                  autoFocus
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          aria-label="toggle password visibility"
+                          onClick={() => setShowPassword(!showPassword)}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  disabled={loading}
+                  sx={{ mt: 3, mb: 2, py: 1.2 }}
+                >
+                  {loading ? 'Signing In...' : 'Sign In'}
+                </Button>
+                
+                <Box sx={{ mt: 2, textAlign: 'center' }}>
+                  <Button 
+                    size="small" 
+                    onClick={() => handleRoleChange('student')}
+                    sx={{ textTransform: 'none' }}
+                  >
+                    Are you a Student? Login here
+                  </Button>
+                </Box>
+              </Box>
+            </Paper>
+          </Box>
+        </Container>
+        
+        {/* Success Modal */}
+        {showSuccess && (
+          <div className="modal-overlay">
+            <div className="success-modal">
+              <FaCheckCircle className="success-icon" />
+              <p>Welcome to SEED!</p>
+              <p className="redirect-text">Redirecting to dashboard...</p>
+            </div>
+          </div>
+        )}
+      </Box>
+    );
+  }
 
   return (
     <div className="login-page">
