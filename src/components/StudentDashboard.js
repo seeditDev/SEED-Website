@@ -16,7 +16,10 @@ import {
   FaTimes,
   FaCheck,
   FaCheckCircle,
-  FaExclamationTriangle
+  FaExclamationTriangle,
+  FaChartLine,
+  FaBriefcase,
+  FaDownload
 } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/StudentDashboard.css';
@@ -525,6 +528,70 @@ const StudentDashboard = () => {
     return null;
   };
 
+  const renderPerformance = () => {
+    return (
+      <div className="dashboard-section-card">
+        <div className="section-card-header" style={{ marginBottom: '20px' }}>
+          <h2 className="section-title" style={{ color: '#ffffff', fontSize: '1.6rem', fontWeight: '800' }}>📈 Performance Tracking</h2>
+        </div>
+        <div className="section-card-body" style={{ minHeight: '320px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '40px', background: '#1e293b', border: '1px solid #334155', borderRadius: '12px' }}>
+          <div className="icon-placeholder-large" style={{ fontSize: '4rem', color: 'rgba(0, 168, 58, 0.2)', marginBottom: '20px' }}>
+            <FaChartLine style={{ color: 'var(--secondary-color-neon)' }} />
+          </div>
+          <h3 style={{ color: '#ffffff', marginBottom: '10px', fontSize: '1.4rem' }}>Performance Tracking Metrics</h3>
+          <p style={{ color: '#94a3b8', maxWidth: '460px', margin: '0 auto 25px', lineHeight: '1.6', fontSize: '0.95rem' }}>
+            Individual assessment progress reports, concept-wise strength matrices, and tracking hours data are currently being integrated and will be available in the next version release.
+          </p>
+          <span className="badge-yet-to-add" style={{ backgroundColor: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b', padding: '8px 20px', borderRadius: '30px', fontWeight: '700', fontSize: '0.85rem', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
+            ⚠️ Yet to Add
+          </span>
+        </div>
+      </div>
+    );
+  };
+
+  const renderPlacements = () => {
+    return (
+      <div className="dashboard-section-card">
+        <div className="section-card-header" style={{ marginBottom: '25px' }}>
+          <h2 className="section-title" style={{ color: '#ffffff', fontSize: '1.6rem', fontWeight: '800' }}>💼 Campus Placements & Eligibility</h2>
+        </div>
+        <div className="section-card-body" style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '12px', padding: '30px' }}>
+          <div style={{ marginBottom: '30px', background: 'rgba(0, 168, 58, 0.05)', border: '1px solid rgba(0, 168, 58, 0.15)', borderRadius: '8px', padding: '20px' }}>
+            <h4 style={{ color: 'var(--secondary-color-neon)', marginBottom: '10px', fontSize: '1.1rem', fontWeight: '700' }}>Placement Readiness Status</h4>
+            <p style={{ color: '#cbd5e1', fontSize: '0.95rem', margin: 0, lineHeight: '1.6' }}>
+              Your current profile is being scanned against recruitment cutoffs for ongoing placement drives. Keep practicing coding modules and attempting mock tests to improve your Placement Readiness Index (PRI).
+            </p>
+          </div>
+          
+          <h4 style={{ color: '#ffffff', marginBottom: '15px', fontSize: '1.1rem', fontWeight: '700' }}>Top Recruiting Partners & Benchmark Packages</h4>
+          <div className="placements-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
+            <div className="placement-stat-box" style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '20px', textAlign: 'center' }}>
+              <h5 style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Java Development</h5>
+              <h3 style={{ color: 'var(--secondary-color-neon)', fontWeight: '800', margin: '0 0 5px', fontSize: '1.8rem' }}>7.0 LPA</h3>
+              <p style={{ color: '#64748b', fontSize: '0.8rem', margin: 0 }}>Average Package</p>
+            </div>
+            <div className="placement-stat-box" style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '20px', textAlign: 'center' }}>
+              <h5 style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Python & ML Track</h5>
+              <h3 style={{ color: 'var(--secondary-color-neon)', fontWeight: '800', margin: '0 0 5px', fontSize: '1.8rem' }}>8.1 LPA</h3>
+              <p style={{ color: '#64748b', fontSize: '0.8rem', margin: 0 }}>Average Package</p>
+            </div>
+            <div className="placement-stat-box" style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '20px', textAlign: 'center' }}>
+              <h5 style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Cyber Security</h5>
+              <h3 style={{ color: 'var(--secondary-color-neon)', fontWeight: '800', margin: '0 0 5px', fontSize: '1.8rem' }}>8.0 LPA</h3>
+              <p style={{ color: '#64748b', fontSize: '0.8rem', margin: 0 }}>Average Package</p>
+            </div>
+            <div className="placement-stat-box" style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '20px', textAlign: 'center' }}>
+              <h5 style={{ color: '#94a3b8', fontSize: '0.85rem', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Frontend / React</h5>
+              <h3 style={{ color: 'var(--secondary-color-neon)', fontWeight: '800', margin: '0 0 5px', fontSize: '1.8rem' }}>4.0 LPA</h3>
+              <p style={{ color: '#64748b', fontSize: '0.8rem', margin: 0 }}>Average Package</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderProfile = () => {
     const isPremium = user?.Premium === true || user?.Premium === 'true' || user?.Premium === 1 || user?.Premium === 'Yes' || !!user?.isPremium;
 
@@ -787,6 +854,27 @@ const StudentDashboard = () => {
               <FaUser />
               <span className="menu-text">Profile</span>
             </button>
+            <button 
+              className={`menu-item ${activeTab === "performance" ? "active" : ""}`} 
+              onClick={() => setActiveTab("performance")}
+            >
+              <FaChartLine />
+              <span className="menu-text">Performance</span>
+            </button>
+            <button 
+              className={`menu-item ${activeTab === "placements" ? "active" : ""}`} 
+              onClick={() => setActiveTab("placements")}
+            >
+              <FaBriefcase />
+              <span className="menu-text">Placements</span>
+            </button>
+            <button 
+              className="menu-item download-app-sidebar-btn" 
+              onClick={() => window.open('https://github.com/seeditDev/Seed-IT-App/releases/tag/SEEDITAPP', '_blank')}
+            >
+              <FaDownload style={{ color: 'var(--secondary-color-neon)' }} />
+              <span className="menu-text" style={{ color: 'var(--secondary-color-neon)' }}>Download SEED-SEB</span>
+            </button>
             <button className="menu-item logout-btn" onClick={handleLogout}>
               <FaSignOutAlt />
               <span className="menu-text">Logout</span>
@@ -796,7 +884,9 @@ const StudentDashboard = () => {
 
         {/* Main Content Area */}
         <main className="dashboard-main">
-          {renderProfile()}
+          {activeTab === "profile" && renderProfile()}
+          {activeTab === "performance" && renderPerformance()}
+          {activeTab === "placements" && renderPlacements()}
         </main>
       </div>
 
