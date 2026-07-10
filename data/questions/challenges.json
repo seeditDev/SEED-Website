@@ -1,0 +1,37 @@
+[
+    {
+        "id": "hello_world",
+        "title": "1. Hello, World!",
+        "difficulty": "Easy",
+        "description": "Write a program that outputs exactly \"Hello, World!\" to the standard output.",
+        "category": "Fundamentals"
+    },
+    {
+        "id": "add_numbers",
+        "title": "2. Sum of Two Integers",
+        "difficulty": "Easy",
+        "description": "Write a program that reads two space-separated integers from standard input and prints their sum.",
+        "category": "Fundamentals"
+    },
+    {
+        "id": "even_odd",
+        "title": "3. Even or Odd",
+        "difficulty": "Easy",
+        "description": "Read an integer N from standard input and output \"Even\" if N is even, and \"Odd\" if N is odd.",
+        "category": "Fundamentals"
+    },
+    {
+        "id": "factorial",
+        "title": "4. Factorial of N",
+        "difficulty": "Medium",
+        "description": "Write a program that calculates the factorial of a given non-negative integer N. Factorial of N (N!) is the product of all positive integers less than or equal to N.",
+        "category": "Advanced"
+    },
+    {
+        "id": "binary_search",
+        "title": "5. Binary Search",
+        "difficulty": "Medium",
+        "description": "Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.",
+        "category": "Advanced"
+    }
+]

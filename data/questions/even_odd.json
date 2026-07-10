@@ -1,0 +1,26 @@
+{
+    "id": "even_odd",
+    "title": "3. Even or Odd",
+    "difficulty": "Easy",
+    "statement": "Read an integer N from standard input and output \"Even\" if N is even, and \"Odd\" if N is odd.",
+    "instructions": "Input consists of a single integer. Output exactly \"Even\" or \"Odd\" (case-sensitive).",
+    "constraints": "-10^9 <= N <= 10^9\nTime Limit: 2.0s",
+    "timeLimit": 2.0,
+    "memoryLimit": 256,
+    "sampleTests": [
+        {
+            "input": "4",
+            "expected": "Even\n"
+        },
+        {
+            "input": "7",
+            "expected": "Odd\n"
+        }
+    ],
+    "boilerplates": {
+        "c": "#include <stdio.h>\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        if (n % 2 == 0) {\n            printf(\"Even\\n\");\n        } else {\n            printf(\"Odd\\n\");\n        }\n    }\n    return 0;\n}",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    if (cin >> n) {\n        if (n % 2 == 0) cout << \"Even\" << endl;\n        else cout << \"Odd\" << endl;\n    }\n    return 0;\n}",
+        "python": "import sys\n\ntry:\n    n = int(sys.stdin.read().strip())\n    if n % 2 == 0:\n        print(\"Even\")\n    else:\n        print(\"Odd\")\nexcept:\n    pass",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            if (n % 2 == 0) System.out.println(\"Even\");\n            else System.out.println(\"Odd\");\n        }\n    }\n}"
+    }
+}

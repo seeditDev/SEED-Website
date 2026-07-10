@@ -1,0 +1,156 @@
+[
+  {
+    "id": "TCS-NQE-2026-SEP",
+    "company": {
+      "name": "TCS",
+      "logoUrl": "https://cdn.example.com/logos/tcs.png",
+      "website": "https://www.tcs.com"
+    },
+    "role": {
+      "title": "Software Engineer",
+      "level": "Entry",
+      "type": "Full-time",
+      "category": "Software Development",
+      "domain": ["Backend", "Cloud"]
+    },
+    "locations": ["Bengaluru", "Hyderabad", "Pune"],
+    "workMode": "Hybrid",
+    "compensation": {
+      "ctc": "₹7.0 LPA",
+      "stipend": null,
+      "salaryNotes": "Performance bonus up to 10%"
+    },
+    "eligibility": {
+      "batches": ["2025", "2026"],
+      "collegesAllowed": ["SEED-IT", "KPRIET", "KITE"],
+      "departmentsAllowed": ["CSE", "IT", "ECE", "CSBS", "AIDS"],
+      "minCGPA": 7.0,
+      "backlogPolicy": "No active backlogs",
+      "experience": "0-1 years"
+    },
+    "skills": {
+      "required": ["DSA", "Java", "SQL"],
+      "preferred": ["Spring Boot", "Docker", "AWS"]
+    },
+    "application": {
+      "applyUrl": "https://careers.example.com/apply/abc123",
+      "jdUrl": "https://careers.example.com/jd/abc123.pdf",
+      "referral": {
+        "enabled": false,
+        "instructions": null,
+        "contactEmail": null
+      },
+      "test": {
+        "required": true,
+        "platform": "HackerRank",
+        "durationMins": 120,
+        "sections": ["MCQ", "Coding"]
+      },
+      "rounds": [
+        { "name": "Online Test", "notes": "DSA + MCQ" },
+        { "name": "Technical Interview", "notes": "2 rounds" },
+        { "name": "HR Interview", "notes": "Final" }
+      ],
+      "lastDate": "2025-11-25T18:30:00.000Z",
+      "startDate": "2025-12-10T00:00:00.000Z"
+    },
+    "posting": {
+      "postedAt": "2025-11-10T08:00:00.000Z",
+      "source": "Company",
+      "contactEmail": "campus@tcs.com",
+      "attachments": [
+        { "name": "JD.pdf", "url": "https://careers.example.com/jd/abc123.pdf" }
+      ]
+    },
+    "quotas": {
+      "numPositions": 120,
+      "collegeCap": { "SEED-IT": 20 }
+    },
+    "metadata": {
+      "priority": "High",
+      "status": "Open",
+      "tags": ["On-campus", "Product", "Java"],
+      "isRemoteFriendly": true,
+      "notes": "SEED-IT gets priority slots"
+    },
+    "ui": {
+      "tileSubtitle": "Entry • Hybrid • India",
+      "badges": ["Freshers", "HackerRank Test"],
+      "highlight": true
+    }
+  },
+  {
+    "id": "ZOHO-INT-2026-OCT",
+    "company": {
+      "name": "Zoho",
+      "logoUrl": "https://cdn.example.com/logos/zoho.png",
+      "website": "https://www.zoho.com"
+    },
+    "role": {
+      "title": "QA Intern",
+      "level": "Intern",
+      "type": "Internship",
+      "category": "Quality Assurance",
+      "domain": ["Testing"]
+    },
+    "locations": ["Chennai"],
+    "workMode": "Onsite",
+    "compensation": {
+      "ctc": null,
+      "stipend": "₹20,000 / month",
+      "salaryNotes": null
+    },
+    "eligibility": {
+      "batches": ["2026"],
+      "collegesAllowed": ["SEED-IT"],
+      "departmentsAllowed": ["CSE", "IT", "ECE"],
+      "minCGPA": 6.5,
+      "backlogPolicy": "Up to 1 allowed",
+      "experience": "0 years"
+    },
+    "skills": {
+      "required": ["Manual Testing", "SQL"],
+      "preferred": ["Selenium", "JavaScript"]
+    },
+    "application": {
+      "applyUrl": "https://careers.example.com/apply/xyz789",
+      "jdUrl": null,
+      "referral": {
+        "enabled": true,
+        "instructions": "Share resume to referral@zoho.com",
+        "contactEmail": "referral@zoho.com"
+      },
+      "test": {
+        "required": false
+      },
+      "rounds": [
+        { "name": "Technical Interview", "notes": "1 round" },
+        { "name": "HR Interview", "notes": "Final" }
+      ],
+      "lastDate": "2025-10-20T18:30:00.000Z",
+      "startDate": null
+    },
+    "posting": {
+      "postedAt": "2025-10-01T08:00:00.000Z",
+      "source": "Campus Team",
+      "contactEmail": "placements@seed-it.com",
+      "attachments": []
+    },
+    "quotas": {
+      "numPositions": 15,
+      "collegeCap": { "SEED-IT": 15 }
+    },
+    "metadata": {
+      "priority": "Medium",
+      "status": "Open",
+      "tags": ["On-campus", "Internship"],
+      "isRemoteFriendly": false,
+      "notes": null
+    },
+    "ui": {
+      "tileSubtitle": "Internship • Onsite • Chennai",
+      "badges": ["SEED-IT Only"],
+      "highlight": false
+    }
+  }
+]

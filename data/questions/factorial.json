@@ -1,0 +1,26 @@
+{
+    "id": "factorial",
+    "title": "4. Factorial of N",
+    "difficulty": "Medium",
+    "statement": "Write a program that calculates the factorial of a given non-negative integer N. Factorial of N (N!) is the product of all positive integers less than or equal to N.",
+    "instructions": "Input consists of an integer N. Output the factorial value.",
+    "constraints": "0 <= N <= 12 (to prevent integer overflow)\nTime Limit: 2.0s",
+    "timeLimit": 2.0,
+    "memoryLimit": 256,
+    "sampleTests": [
+        {
+            "input": "5",
+            "expected": "120\n"
+        },
+        {
+            "input": "0",
+            "expected": "1\n"
+        }
+    ],
+    "boilerplates": {
+        "c": "#include <stdio.h>\n\nlong long factorial(int n) {\n    long long fact = 1;\n    for(int i = 1; i <= n; i++) {\n        fact *= i;\n    }\n    return fact;\n}\n\nint main() {\n    int n;\n    if (scanf(\"%d\", &n) == 1) {\n        printf(\"%lld\\n\", factorial(n));\n    }\n    return 0;\n}",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nlong long factorial(int n) {\n    long long fact = 1;\n    for(int i = 1; i <= n; i++) fact *= i;\n    return fact;\n}\n\nint main() {\n    int n;\n    if (cin >> n) {\n        cout << factorial(n) << endl;\n    }\n    return 0;\n}",
+        "python": "import sys\n\ndef factorial(n):\n    fact = 1\n    for i in range(1, n + 1):\n        fact *= i\n    return fact\n\ntry:\n    n = int(sys.stdin.read().strip())\n    print(factorial(n))\nexcept:\n    pass",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static long factorial(int n) {\n        long fact = 1;\n        for(int i = 1; i <= n; i++) fact *= i;\n        return fact;\n    }\n    public static void main(String[] args) {\n        Scanner sc = new Scanner(System.in);\n        if (sc.hasNextInt()) {\n            int n = sc.nextInt();\n            System.out.println(factorial(n));\n        }\n    }\n}"
+    }
+}

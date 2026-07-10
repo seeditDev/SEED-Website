@@ -1,0 +1,16 @@
+[
+    {
+        "id": "practice_contest",
+        "title": "SEED-IT Practice Contest",
+        "description": "General practice for C, C++, Java, and Python.",
+        "startTime": "2026-01-01T00:00:00Z",
+        "endTime": "2026-12-31T23:59:59Z",
+        "questions": [
+            "hello_world",
+            "add_numbers",
+            "even_odd",
+            "factorial",
+            "binary_search"
+        ]
+    }
+]
