@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaCheckCircle, FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaCheckCircle, FaUser, FaLock, FaEye, FaEyeSlash, FaBook, FaTrophy, FaChartBar, FaQuoteLeft, FaShieldAlt, FaArrowRight, FaGoogle, FaMicrosoft, FaGlobe, FaLaptop } from "react-icons/fa";
 import DataService from "../services/dataService";
 import TrackingService from "../services/trackingService";
 import { COLLEGES, ACADEMIC_YEARS } from "../config/constants";
@@ -28,6 +28,16 @@ const Login = () => {
   const [showYearDropdown, setShowYearDropdown] = useState(false);
   const [filteredYears, setFilteredYears] = useState(Object.entries(ACADEMIC_YEARS));
   const navigate = useNavigate();
+
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    // Default to 'Monochrome Minimalist (B&W)' if no preference saved yet
+    return localStorage.getItem('portal_theme') || 'bw';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
+
 
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("rememberedUser"));
@@ -184,6 +194,15 @@ const Login = () => {
         localStorage.setItem("auth_data", JSON.stringify(authData));
         localStorage.setItem("role", role);
 
+        // Sync PyQt session if desktop bridge is available
+        try {
+          if (window.desktopBridge) {
+            window.desktopBridge.setStudentSession(authData);
+          }
+        } catch (e) {
+          console.error("Failed to sync session with PyQt:", e);
+        }
+
         // Start Live User Tracking
         try {
           await TrackingService.startTracking(authData);
@@ -269,35 +288,126 @@ const Login = () => {
 
   return (
     <div className="login-page">
-      {/* Background Section - Left side */}
-      <div className="background-section">
-        <div className="background-content">
-          <div className="background-logo">
-            SEED<span></span>
-          </div>
-          <div className="welcome-text">
-            <h2>Welcome Back to SEED!</h2>
-            <p>Where every login brings you closer to your goals.</p>
-            <p className="login-prompt">Log in to continue your journey</p>
-            <p className="empowerment-text">Empower yourself with the tools, knowledge, and opportunities to succeed.</p>
-          </div>
-        </div>
+      {/* Perspective Grid Background Layer */}
+      <div className="perspective-grid"></div>
+
+      {/* Floating 3D Geometric shapes */}
+      <div className="geometric-cube"></div>
+      <div className="geometric-sphere"></div>
+
+      {/* 3D trophy svg background */}
+      <svg className="geometric-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+        <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+        <path d="M4 22h16" />
+        <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34" />
+        <path d="M12 2a6 6 0 0 1 6 6v5a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6Z" />
+      </svg>
+
+      {/* Floating 3D Programming Language Chips */}
+      <div className="floating-chip chip-python">
+        <span className="chip-logo" style={{ color: '#07243bff' }}>🐍</span>
+        <span>Python</span>
+      </div>
+      <div className="floating-chip chip-java">
+        <span className="chip-logo" style={{ color: '#e76f51' }}>☕</span>
+        <span>Java</span>
+      </div>
+      <div className="floating-chip chip-cpp">
+        <span className="chip-logo" style={{ color: '#00599c' }}>⚡</span>
+        <span>C++</span>
+      </div>
+      <div className="floating-chip chip-rust">
+        <span className="chip-logo" style={{ color: '#f4a261' }}>🦀</span>
+        <span>Rust</span>
       </div>
 
-      {/* Form Section - Right side */}
-      <div className="form-section">
-        <div className="container">
-          {/* Mobile Logo - Only shows on mobile */}
-          <div className="mobile-logo">
-            <div className="logo-text">
-              SEED<span className="dot"></span>
+      {/* Floating Company Logos */}
+      <div className="floating-chip chip-google">
+        <FaGoogle className="chip-logo" style={{ color: '#ea4335' }} />
+        <span>Google</span>
+      </div>
+      <div className="floating-chip chip-microsoft">
+        <FaMicrosoft className="chip-logo" style={{ color: '#00a4ef' }} />
+        <span>Microsoft</span>
+      </div>
+      <div className="floating-chip chip-meta">
+        <FaGlobe className="chip-logo" style={{ color: '#0668e1' }} />
+        <span>Meta</span>
+      </div>
+
+      {/* Left panel: Info & Feature Cards */}
+      <div className="background-section animate-fade-in">
+        <div className="background-content">
+          <div className="background-logo">
+            SEED <span></span>
+          </div>
+          <span className="platform-pill">SEED-SEB Platform</span>
+          <h2>Welcome back to <span className="gradient-text">SEED</span></h2>
+          <p className="welcome-subtitle">Where every login brings you closer to your goals.</p>
+
+          <div className="background-features">
+            <div className="feature-item">
+              <div className="feature-icon-wrapper icon-blue">
+                <FaBook />
+              </div>
+              <div className="feature-text-block">
+                <h3>Learn</h3>
+                <p>Access curated resources and enhance your knowledge.</p>
+              </div>
+              <FaArrowRight className="feature-arrow" />
+            </div>
+
+            <div className="feature-item">
+              <div className="feature-icon-wrapper icon-purple">
+                <FaTrophy />
+              </div>
+              <div className="feature-text-block">
+                <h3>Practice</h3>
+                <p>Solve problems, test yourself and improve every day.</p>
+              </div>
+              <FaArrowRight className="feature-arrow" />
+            </div>
+
+            <div className="feature-item">
+              <div className="feature-icon-wrapper icon-green">
+                <FaChartBar />
+              </div>
+              <div className="feature-text-block">
+                <h3>Assess</h3>
+                <p>Take assessments, participate in contests and track progress.</p>
+              </div>
+              <FaArrowRight className="feature-arrow" />
             </div>
           </div>
 
-          <h1 className="login-title">Welcome back!</h1>
-          <p className="login-subtitle">Login to your account</p>
+          <div className="quote-card">
+            <FaQuoteLeft className="quote-icon" />
+            <p>Empower yourself with the tools, knowledge, and opportunities to succeed.</p>
+          </div>
 
-          <form onSubmit={handleLogin} className="animate-slide-up">
+          <div className="security-badges">
+            <FaShieldAlt className="badge-icon" />
+            <span>Secure • Reliable • Trusted</span>
+          </div>
+          <p className="copyright-text">
+            © 2026 SEED-SEB. All rights reserved.
+          </p>
+        </div>
+      </div>
+
+      {/* Right panel: Glassmorphic form card */}
+      <div className="form-section">
+        <div className="login-glass-card animate-slide-up">
+          {/* Avatar placeholder with Letter S */}
+          <div className="avatar-wrapper">
+            S
+          </div>
+
+          <h1>Welcome back!</h1>
+          <p className="subtitle">Login to your account</p>
+
+          <form onSubmit={handleLogin} className="login-form-wrapper">
             <div className="role-selection">
               <button
                 type="button"
@@ -317,8 +427,10 @@ const Login = () => {
 
             {role === 'student' && (
               <>
+                {/* College Search Autocomplete Input */}
                 <div className="input-group animate-fade-in">
-                  <div className="search-container login-search-wrapper">
+                  <div className="search-container login-search-wrapper" style={{ position: 'relative' }}>
+                    <FaLaptop className="input-icon" />
                     <input
                       type="text"
                       className="login-search-box"
@@ -331,21 +443,43 @@ const Login = () => {
                     />
 
                     {/* Arrow indicator */}
-                    <div className="arrow-indicator"></div>
+                    <div style={{
+                      position: 'absolute',
+                      right: '12px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      width: 0,
+                      height: 0,
+                      borderLeft: '5px solid transparent',
+                      borderRight: '5px solid transparent',
+                      borderTop: '5px solid #a78bfa',
+                      pointerEvents: 'none'
+                    }}></div>
 
                     <div className="suggestions" style={{ display: showDropdown ? 'block' : 'none' }}>
                       {filteredColleges.map(([key, name]) => (
                         <div
                           key={key}
-                          className={`suggestion-item ${key === college ? 'active-item' : ''}`}
+                          className="suggestion-item"
                           onClick={() => handleCollegeSelect(key)}
+                          style={{
+                            backgroundColor: key === college ? 'rgba(124, 58, 237, 0.15)' : 'transparent',
+                            color: key === college ? '#c084fc' : '#d1d5db',
+                            fontWeight: key === college ? 'bold' : 'normal'
+                          }}
                         >
                           {name}
                         </div>
                       ))}
 
                       {filteredColleges.length === 0 && (
-                        <div className="no-matches">
+                        <div style={{
+                          padding: '10px',
+                          textAlign: 'center',
+                          color: '#6b7280',
+                          fontStyle: 'italic',
+                          fontSize: '0.85rem'
+                        }}>
                           No matches found
                         </div>
                       )}
@@ -353,8 +487,10 @@ const Login = () => {
                   </div>
                 </div>
 
+                {/* Batch Year Search Autocomplete Input */}
                 <div className="input-group animate-fade-in">
-                  <div className="search-container year-search-container">
+                  <div className="search-container year-search-container" style={{ position: 'relative' }}>
+                    <FaCheckCircle className="input-icon" />
                     <input
                       type="text"
                       className="login-search-box"
@@ -367,21 +503,43 @@ const Login = () => {
                     />
 
                     {/* Arrow indicator */}
-                    <div className="arrow-indicator"></div>
+                    <div style={{
+                      position: 'absolute',
+                      right: '12px',
+                      top: '50%',
+                      transform: 'translateY(-50%)',
+                      width: 0,
+                      height: 0,
+                      borderLeft: '5px solid transparent',
+                      borderRight: '5px solid transparent',
+                      borderTop: '5px solid #a78bfa',
+                      pointerEvents: 'none'
+                    }}></div>
 
                     <div className="suggestions" style={{ display: showYearDropdown ? 'block' : 'none' }}>
                       {filteredYears.map(([key, name]) => (
                         <div
                           key={key}
-                          className={`suggestion-item ${key === year ? 'active-item' : ''}`}
+                          className="suggestion-item"
                           onClick={() => handleYearSelect(key)}
+                          style={{
+                            backgroundColor: key === year ? 'rgba(124, 58, 237, 0.15)' : 'transparent',
+                            color: key === year ? '#c084fc' : '#d1d5db',
+                            fontWeight: key === year ? 'bold' : 'normal'
+                          }}
                         >
                           {name}
                         </div>
                       ))}
 
                       {filteredYears.length === 0 && (
-                        <div className="no-matches">
+                        <div style={{
+                          padding: '10px',
+                          textAlign: 'center',
+                          color: '#6b7280',
+                          fontStyle: 'italic',
+                          fontSize: '0.85rem'
+                        }}>
                           No matches found
                         </div>
                       )}
@@ -391,6 +549,7 @@ const Login = () => {
               </>
             )}
 
+            {/* Email/Username input */}
             <div className="input-group">
               <div className="input-with-icon">
                 <FaUser className="input-icon" />
@@ -399,12 +558,12 @@ const Login = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Email"
-                  className="login-input"
                   required
                 />
               </div>
             </div>
 
+            {/* Password input */}
             <div className="input-group">
               <div className="input-with-icon">
                 <FaLock className="input-icon" />
@@ -413,13 +572,24 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
-                  className="login-input password-input"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="password-toggle-btn"
+                  style={{
+                    position: 'absolute',
+                    right: '12px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    color: '#9ca3af',
+                    display: 'flex',
+                    alignItems: 'center',
+                    padding: '0'
+                  }}
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -427,26 +597,28 @@ const Login = () => {
               </div>
             </div>
 
-            <div className="remember-me">
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
-                id="remember-me-checkbox"
-              />
-              <label htmlFor="remember-me-checkbox">Remember Me</label>
+            {/* Remember me and Forgot Row */}
+            <div className="form-footer-row">
+              <div className="remember-me">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                  id="remember-me-checkbox"
+                  className="login-checkbox"
+                />
+                <label htmlFor="remember-me-checkbox">Remember Me</label>
+              </div>
+
             </div>
 
+            {/* Login button */}
             <button type="submit" disabled={loading} className="login-button">
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? 'Logging in...' : 'Login'} <FaArrowRight />
             </button>
 
             {error && <div className="error">{error}</div>}
           </form>
-
-          <footer className="footer">
-            <p>Copyright © 2023-2025. All rights reserved to SEED Innovating Technologies and Educational Services (SEED-ITES).</p>
-          </footer>
         </div>
       </div>
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { APP_VERSION } from "../App";
-import { 
-  FaBars, 
-  FaUser, 
-  FaSignOutAlt, 
-  FaLaptopCode, 
-  FaQuestionCircle, 
+import {
+  FaBars,
+  FaUser,
+  FaSignOutAlt,
+  FaLaptopCode,
+  FaQuestionCircle,
   FaClipboardList,
   FaClock,
   FaCalendarAlt,
@@ -46,13 +46,13 @@ const _0xd3 = 'dG56bWZDUUZK';
 const _0xe4 = 'UU9KTjJBZDhocEZO';
 
 const slugify = (value = '') => {
-    if (!value) return 'test';
-    return value
-        .toString()
-        .trim()
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-+|-+$/g, '') || 'test';
+  if (!value) return 'test';
+  return value
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'test';
 };
 
 const StudentDashboard = () => {
@@ -60,19 +60,27 @@ const StudentDashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [user, setUser] = useState(null);
   const [showLogoutAnimation, setShowLogoutAnimation] = useState(false);
-  
+
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    return localStorage.getItem('portal_theme') || 'bw';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
+
   // Assessments List State
   const [assessments, setAssessments] = useState([]);
   const [filteredAssessments, setFilteredAssessments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   // Filter States
   const [searchTerm, setSearchTerm] = useState("");
   const [filterDifficulty, setFilterDifficulty] = useState("All");
   const [filterType, setFilterType] = useState("All");
   const [filterStatus, setFilterStatus] = useState("All");
-  
+
   // ─── Launch Wizard State ──────────────────────────────────────────
   // launchStep: null | 'verifying' | 'passkey' | 'preflight' | 'instructions' | 'launching'
   const [launchStep, setLaunchStep] = useState(null);
@@ -90,7 +98,7 @@ const StudentDashboard = () => {
   });
   const [preflightDone, setPreflightDone] = useState(false);
   // ─────────────────────────────────────────────────────────────────
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -109,7 +117,7 @@ const StudentDashboard = () => {
     try {
       // 1. Fetch access control configurations
       const accessControlData = await DataService.getAccessControl();
-      
+
       const departmentAccess = accessControlData?.access_control?.colleges?.[userData.College]?.[userData.Year]?.[userData.Department];
       if (!departmentAccess) {
         setAssessments([]);
@@ -131,7 +139,7 @@ const StudentDashboard = () => {
         })
         .map(([key, module]) => {
           const derivedSlug = module.slug || slugify(module.id || module.name || key);
-          
+
           let finalUrl = module.url || '';
           if (!finalUrl.endsWith('.json')) {
             if (module.slug) {
@@ -169,7 +177,7 @@ const StudentDashboard = () => {
         })
         .map(([key, module]) => {
           const derivedSlug = module.slug || slugify(module.id || module.name || key);
-          
+
           let finalUrl = module.url || '';
           if (!finalUrl.endsWith('.json')) {
             if (module.slug) {
@@ -245,8 +253,8 @@ const StudentDashboard = () => {
 
     if (searchTerm.trim()) {
       const q = searchTerm.toLowerCase();
-      filtered = filtered.filter(a => 
-        a.name.toLowerCase().includes(q) || 
+      filtered = filtered.filter(a =>
+        a.name.toLowerCase().includes(q) ||
         a.id.toLowerCase().includes(q)
       );
     }
@@ -503,7 +511,7 @@ const StudentDashboard = () => {
       localStorage.removeItem("auth_data");
       localStorage.removeItem("role");
       localStorage.removeItem("portal_links");
-      
+
       setTimeout(() => {
         localStorage.clear();
       }, 100);
@@ -563,7 +571,7 @@ const StudentDashboard = () => {
               Your current profile is being scanned against recruitment cutoffs for ongoing placement drives. Keep practicing coding modules and attempting mock tests to improve your Placement Readiness Index (PRI).
             </p>
           </div>
-          
+
           <h4 style={{ color: '#ffffff', marginBottom: '15px', fontSize: '1.1rem', fontWeight: '700' }}>Top Recruiting Partners & Benchmark Packages</h4>
           <div className="placements-stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px' }}>
             <div className="placement-stat-box" style={{ background: '#0f172a', border: '1px solid #334155', borderRadius: '8px', padding: '20px', textAlign: 'center' }}>
@@ -665,7 +673,7 @@ const StudentDashboard = () => {
           <div className="lw-card" style={{ maxWidth: '440px' }}>
             <div className="lw-card-header">
               <div className="lw-step-badge">Step 2 of 4</div>
-              <h3 className="lw-title"><FaLock style={{ marginRight: '8px', color: '#6366f1' }}/>Access Passkey Required</h3>
+              <h3 className="lw-title"><FaLock style={{ marginRight: '8px', color: '#6366f1' }} />Access Passkey Required</h3>
               <p className="lw-subtitle">This assessment is passkey-protected. Enter the passkey provided by your instructor.</p>
             </div>
             <div className="lw-card-body">
@@ -687,7 +695,7 @@ const StudentDashboard = () => {
             <div className="lw-card-footer">
               <button className="lw-btn-secondary" onClick={cancelWizard}>Cancel</button>
               <button className="lw-btn-primary" onClick={handleValidatePasskey}>
-                <FaCheck style={{ marginRight: '6px' }}/>Unlock & Continue
+                <FaCheck style={{ marginRight: '6px' }} />Unlock & Continue
               </button>
             </div>
           </div>
@@ -710,8 +718,8 @@ const StudentDashboard = () => {
                 <span className="lw-preflight-label">Internet Connectivity</span>
                 <span className={`lw-preflight-status lw-preflight-${preflightResults.internet}`}>
                   {preflightResults.internet === 'pending' && <span className="lw-mini-spinner"></span>}
-                  {preflightResults.internet === 'pass'    && <FaCheck />}
-                  {preflightResults.internet === 'fail'    && <FaTimes />}
+                  {preflightResults.internet === 'pass' && <FaCheck />}
+                  {preflightResults.internet === 'fail' && <FaTimes />}
                   &nbsp;{preflightResults.internet === 'pending' ? 'Checking...' : preflightResults.internet === 'pass' ? 'Ready' : 'No Connection'}
                 </span>
               </div>
@@ -735,7 +743,7 @@ const StudentDashboard = () => {
                 disabled={!preflightDone || preflightResults.internet === 'fail'}
                 onClick={handlePreflightProceed}
               >
-                <FaCheck style={{ marginRight: '6px' }}/>Proceed
+                <FaCheck style={{ marginRight: '6px' }} />Proceed
               </button>
             </div>
           </div>
@@ -785,7 +793,7 @@ const StudentDashboard = () => {
             <div className="lw-card-footer">
               <button className="lw-btn-secondary" onClick={cancelWizard}>Cancel</button>
               <button className="lw-btn-success" onClick={handleAgreeAndLaunch}>
-                <FaCheckCircle style={{ marginRight: '6px' }}/>I Agree & Start Assessment
+                <FaCheckCircle style={{ marginRight: '6px' }} />I Agree & Start Assessment
               </button>
             </div>
           </div>
@@ -809,7 +817,7 @@ const StudentDashboard = () => {
           <div className="lw-card" style={{ maxWidth: '440px' }}>
             <div className="lw-card-header" style={{ borderBottom: '1px solid rgba(239,68,68,0.3)' }}>
               <h3 className="lw-title" style={{ color: '#ef4444' }}>
-                <FaExclamationTriangle style={{ marginRight: '8px' }}/>{eligibilityError.title}
+                <FaExclamationTriangle style={{ marginRight: '8px' }} />{eligibilityError.title}
               </h3>
             </div>
             <div className="lw-card-body">
@@ -847,30 +855,30 @@ const StudentDashboard = () => {
         {/* Sidebar Navigation */}
         <aside className="dashboard-sidebar">
           <nav className="sidebar-menu">
-            <button 
-              className={`menu-item ${activeTab === "profile" ? "active" : ""}`} 
+            <button
+              className={`menu-item ${activeTab === "profile" ? "active" : ""}`}
               onClick={() => setActiveTab("profile")}
             >
               <FaUser />
               <span className="menu-text">Profile</span>
             </button>
-            <button 
-              className={`menu-item ${activeTab === "performance" ? "active" : ""}`} 
+            <button
+              className={`menu-item ${activeTab === "performance" ? "active" : ""}`}
               onClick={() => setActiveTab("performance")}
             >
               <FaChartLine />
               <span className="menu-text">Performance</span>
             </button>
-            <button 
-              className={`menu-item ${activeTab === "placements" ? "active" : ""}`} 
+            <button
+              className={`menu-item ${activeTab === "placements" ? "active" : ""}`}
               onClick={() => setActiveTab("placements")}
             >
               <FaBriefcase />
               <span className="menu-text">Placements</span>
             </button>
-            <button 
-              className="menu-item download-app-sidebar-btn" 
-              onClick={() => window.open('https://github.com/seeditDev/Seed-IT-App/releases/tag/SEEDITAPP', '_blank')}
+            <button
+              className="menu-item download-app-sidebar-btn"
+              onClick={() => window.open('https://github.com/seeditDev/SEED-SEB-APP/releases/tag/SEED-SEB-APP', '_blank')}
             >
               <FaDownload style={{ color: 'var(--secondary-color-neon)' }} />
               <span className="menu-text" style={{ color: 'var(--secondary-color-neon)' }}>Download SEED-SEB</span>
