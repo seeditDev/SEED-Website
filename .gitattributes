@@ -1,0 +1,4 @@
+netlify.toml text eol=lf
+_redirects text eol=lf
+public/_redirects text eol=lf
+build/_redirects text eol=lf
