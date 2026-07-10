@@ -23,6 +23,9 @@ import '../styles/StudentDashboard.css';
 import TrackingService from '../services/trackingService';
 import DataService from '../services/dataService';
 import timeService from '../services/timeService';
+import MCQService from '../services/mcqService';
+import CodingAssessmentService from '../services/codingAssessmentService';
+
 
 const LOCAL_BASE_URL = '/seed-contents';
 const GITHUB_BASE_URL = 'https://raw.githubusercontent.com/seeditDev/seed-contents/main';
