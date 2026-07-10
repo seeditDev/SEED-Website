@@ -16,6 +16,11 @@ function SeedSeb() {
   // 4. Reports & Analytics State
   const [activeRole, setActiveRole] = useState("student"); // student, faculty, institution, placementCell
 
+  // 5. Interactive Platform Gallery State
+  const [galleryTab, setGalleryTab] = useState("dashboard");
+  const [learningSubTab, setLearningSubTab] = useState(0); // 0: content, 1: playlist 1, 2: playlist 2
+  const [practiceSubTab, setPracticeSubTab] = useState(0); // 0: bank, 1: modules, 2: editor
+
   // Handle Proctoring simulator transitions
   useEffect(() => {
     let t1, t2;
@@ -380,11 +385,14 @@ function SeedSeb() {
           </div>
           <div className="seb-hero-right">
             <div className="seb-hero-img-box">
-              {/* Using a premium illustration mockup */}
               <img 
-                src="https://raw.githubusercontent.com/seeditDev/SEED-Website/316d3a1cd2ccf88284d13a46429758acd77ea06f/Plugins/main-banner-seed-it.webp" 
-                alt="SEED-SEB Student Dashboard UI Mockup"
-                className="seb-hero-placeholder"
+                src="/images/seedseb/Seed-seb-StudentDashboard.png" 
+                alt="SEED-SEB Student Dashboard UI"
+                className="seb-hero-placeholder clickable-screenshot"
+                onClick={() => {
+                  setGalleryTab("dashboard");
+                  document.getElementById("platform-gallery")?.scrollIntoView({ behavior: 'smooth' });
+                }}
               />
             </div>
           </div>
@@ -489,6 +497,290 @@ function SeedSeb() {
                 <h4>40+ Company Papers</h4>
                 <p>MNC screening simulations (TCS Ninja/Digital, Accenture, Infosys, Zoho).</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEED-SEB Platform Interface Gallery Section */}
+      <section id="platform-gallery" className="seb-section seb-gallery-bg">
+        <div className="seb-section-title">
+          <h2>SEED-SEB Platform Interface Gallery</h2>
+          <p>Explore real screenshots of the student prep environment and dashboard modules.</p>
+        </div>
+
+        <div className="seb-gallery-container">
+          {/* Main Category Tabs */}
+          <div className="seb-gallery-tabs">
+            <button 
+              className={`seb-gallery-tab-btn ${galleryTab === "dashboard" ? "active" : ""}`}
+              onClick={() => setGalleryTab("dashboard")}
+            >
+              📊 Student Dashboard
+            </button>
+            <button 
+              className={`seb-gallery-tab-btn ${galleryTab === "login" ? "active" : ""}`}
+              onClick={() => setGalleryTab("login")}
+            >
+              🔒 Portal Access
+            </button>
+            <button 
+              className={`seb-gallery-tab-btn ${galleryTab === "learning" ? "active" : ""}`}
+              onClick={() => setGalleryTab("learning")}
+            >
+              📚 Learning Content
+            </button>
+            <button 
+              className={`seb-gallery-tab-btn ${galleryTab === "practice" ? "active" : ""}`}
+              onClick={() => setGalleryTab("practice")}
+            >
+              💻 Practice & Coding
+            </button>
+            <button 
+              className={`seb-gallery-tab-btn ${galleryTab === "profile" ? "active" : ""}`}
+              onClick={() => setGalleryTab("profile")}
+            >
+              👤 Verified Profile
+            </button>
+          </div>
+
+          {/* Interactive Card Display */}
+          <div className="seb-gallery-content">
+            <div className="seb-gallery-grid">
+              
+              {/* Left Column: Description & Info */}
+              <div className="seb-gallery-details">
+                {galleryTab === "dashboard" && (
+                  <div>
+                    <h3>📊 Centralized Student Dashboard</h3>
+                    <p className="seb-gallery-desc">
+                      The primary cockpit for students. This screen shows overall progress metrics, placement eligibility trackers, mock assessment summaries, live activity charts, and ranking metrics.
+                    </p>
+                    <div className="seb-gallery-features-list">
+                      <div className="seb-gallery-feat-item">✔️ Placement Ready Status indication</div>
+                      <div className="seb-gallery-feat-item">✔️ Practice hours and coding problem tracker</div>
+                      <div className="seb-gallery-feat-item">✔️ Strengths and concept mastery distribution map</div>
+                      <div className="seb-gallery-feat-item">✔️ Quick access to assigned upcoming tests</div>
+                    </div>
+                  </div>
+                )}
+
+                {galleryTab === "login" && (
+                  <div>
+                    <h3>🔒 Secure Portal Entry</h3>
+                    <p className="seb-gallery-desc">
+                      A high-integrity login portal designed for security. It verifies session variables, manages cookie authentication details, and ensures single-user session binding.
+                    </p>
+                    <div className="seb-gallery-features-list">
+                      <div className="seb-gallery-feat-item">✔️ Role-based access selector (Student/Faculty)</div>
+                      <div className="seb-gallery-feat-item">✔️ Secure session state establishment</div>
+                      <div className="seb-gallery-feat-item">✔️ Auto-cleanup of stale tracking storage</div>
+                    </div>
+                  </div>
+                )}
+
+                {galleryTab === "learning" && (
+                  <div>
+                    <h3>📚 Domain Learning & DSA Playlists</h3>
+                    <p className="seb-gallery-desc">
+                      A repository of structured academic content. Students can study module theories, watch embedded lectures, and navigate sequential DSA playlist roadmaps.
+                    </p>
+                    {/* Sub-tabs for Learning */}
+                    <div className="seb-gallery-subtabs">
+                      <button 
+                        className={`seb-gallery-subtab-btn ${learningSubTab === 0 ? "active" : ""}`}
+                        onClick={() => setLearningSubTab(0)}
+                      >
+                        Module Chapters
+                      </button>
+                      <button 
+                        className={`seb-gallery-subtab-btn ${learningSubTab === 1 ? "active" : ""}`}
+                        onClick={() => setLearningSubTab(1)}
+                      >
+                        DSA Roadmap
+                      </button>
+                      <button 
+                        className={`seb-gallery-subtab-btn ${learningSubTab === 2 ? "active" : ""}`}
+                        onClick={() => setLearningSubTab(2)}
+                      >
+                        Topic Navigation
+                      </button>
+                    </div>
+                    <div className="seb-gallery-features-list" style={{ marginTop: '15px' }}>
+                      {learningSubTab === 0 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ Structured chapter hierarchies for standard courses</div>
+                          <div className="seb-gallery-feat-item">✔️ Detailed written lecture reviews and resource links</div>
+                        </>
+                      )}
+                      {learningSubTab === 1 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ DSA Playlist Track covering arrays, lists, recursion</div>
+                          <div className="seb-gallery-feat-item">✔️ Step-by-step progress tracking for algorithmic puzzles</div>
+                        </>
+                      )}
+                      {learningSubTab === 2 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ Language selection (Java, Python, C++, SQL)</div>
+                          <div className="seb-gallery-feat-item">✔️ Comprehensive concept categorization and quizzes</div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {galleryTab === "practice" && (
+                  <div>
+                    <h3>💻 Practice Modules & Compiler Console</h3>
+                    <p className="seb-gallery-desc">
+                      The core practice framework. Students can solve conceptual questions, select modular challenges based on topic categories, and submit code to verify testcases.
+                    </p>
+                    {/* Sub-tabs for Practice */}
+                    <div className="seb-gallery-subtabs">
+                      <button 
+                        className={`seb-gallery-subtab-btn ${practiceSubTab === 0 ? "active" : ""}`}
+                        onClick={() => setPracticeSubTab(0)}
+                      >
+                        Practice Bank
+                      </button>
+                      <button 
+                        className={`seb-gallery-subtab-btn ${practiceSubTab === 1 ? "active" : ""}`}
+                        onClick={() => setPracticeSubTab(1)}
+                      >
+                        Topic Modules
+                      </button>
+                      <button 
+                        className={`seb-gallery-subtab-btn ${practiceSubTab === 2 ? "active" : ""}`}
+                        onClick={() => setPracticeSubTab(2)}
+                      >
+                        Compiler IDE
+                      </button>
+                    </div>
+                    <div className="seb-gallery-features-list" style={{ marginTop: '15px' }}>
+                      {practiceSubTab === 0 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ Thousands of categorized coding challenges</div>
+                          <div className="seb-gallery-feat-item">✔️ Dynamic filtering by difficulty (Easy/Medium/Hard)</div>
+                        </>
+                      )}
+                      {practiceSubTab === 1 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ Practice modules matching target recruitment blueprints</div>
+                          <div className="seb-gallery-feat-item">✔️ Completion rate counters for targeted subcategories</div>
+                        </>
+                      )}
+                      {practiceSubTab === 2 && (
+                        <>
+                          <div className="seb-gallery-feat-item">✔️ Interactive code editor console with multi-language compiler</div>
+                          <div className="seb-gallery-feat-item">✔️ Live compiler console matching output testcases</div>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {galleryTab === "profile" && (
+                  <div>
+                    <h3>👤 Verified Student Performance Profile</h3>
+                    <p className="seb-gallery-desc">
+                      The candidate portfolio. Displays individual assessment scorecards, roll number validations, topic breakdown matrices, and recruiter-ready verified metrics.
+                    </p>
+                    <div className="seb-gallery-features-list">
+                      <div className="seb-gallery-feat-item">✔️ College roll number and badge indicator</div>
+                      <div className="seb-gallery-feat-item">✔️ Section-by-section breakdown (Aptitude, Tech, Coding)</div>
+                      <div className="seb-gallery-feat-item">✔️ Score logs history and performance benchmark export</div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Right Column: Screenshot Visual Mockup */}
+              <div className="seb-gallery-visual">
+                <div className="seb-browser-mockup">
+                  <div className="seb-browser-header">
+                    <span className="dot dot-red"></span>
+                    <span className="dot dot-yellow"></span>
+                    <span className="dot dot-green"></span>
+                    <div className="seb-browser-address-bar">
+                      https://platform.seedit.in/{galleryTab}
+                    </div>
+                  </div>
+                  <div className="seb-browser-viewport">
+                    {galleryTab === "dashboard" && (
+                      <img 
+                        src="/images/seedseb/Seed-seb-StudentDashboard.png" 
+                        alt="SEED-SEB Student Dashboard UI" 
+                        className="seb-gallery-img"
+                      />
+                    )}
+                    {galleryTab === "login" && (
+                      <img 
+                        src="/images/seedseb/Seed-seb-loginPage.png" 
+                        alt="SEED-SEB Login Page UI" 
+                        className="seb-gallery-img"
+                      />
+                    )}
+                    {galleryTab === "learning" && (
+                      <>
+                        {learningSubTab === 0 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-LearningContent.png" 
+                            alt="SEED-SEB Learning Content UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                        {learningSubTab === 1 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-DSAplaylist.png" 
+                            alt="SEED-SEB DSA Playlist UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                        {learningSubTab === 2 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-Dsaplaylist2.png" 
+                            alt="SEED-SEB DSA Sub playlist UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                      </>
+                    )}
+                    {galleryTab === "practice" && (
+                      <>
+                        {practiceSubTab === 0 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-PracitceBank.png" 
+                            alt="SEED-SEB Practice Bank UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                        {practiceSubTab === 1 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-Practice Modules-.png" 
+                            alt="SEED-SEB Practice Modules UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                        {practiceSubTab === 2 && (
+                          <img 
+                            src="/images/seedseb/Seed-seb-codingPage.png" 
+                            alt="SEED-SEB Coding Page Editor UI" 
+                            className="seb-gallery-img"
+                          />
+                        )}
+                      </>
+                    )}
+                    {galleryTab === "profile" && (
+                      <img 
+                        src="/images/seedseb/Seed-seb-ProfilePage.png" 
+                        alt="SEED-SEB Student Profile UI" 
+                        className="seb-gallery-img"
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -679,6 +971,27 @@ function SeedSeb() {
               <li>Dynamic question database pooling</li>
               <li>Adaptive test difficulty options</li>
             </ul>
+          </div>
+        </div>
+
+        <div className="seb-engine-screenshot-box">
+          <h4 style={{ textAlign: 'center', marginBottom: '20px', color: 'var(--text-dimmed)' }}>💡 Real-world Compiler Workspace interface inside assessments:</h4>
+          <div className="seb-browser-mockup">
+            <div className="seb-browser-header">
+              <span className="dot dot-red"></span>
+              <span className="dot dot-yellow"></span>
+              <span className="dot dot-green"></span>
+              <div className="seb-browser-address-bar">
+                https://platform.seedit.in/assessment/coding-editor
+              </div>
+            </div>
+            <div className="seb-browser-viewport">
+              <img 
+                src="/images/seedseb/Seed-seb-codingPage.png" 
+                alt="SEED-SEB Compiler Coding Workspace" 
+                className="seb-gallery-img"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -883,14 +1196,60 @@ function SeedSeb() {
         </div>
 
         <div className="seb-analytics-view-card">
-          <h3>{analyticsRoles[activeRole].title} Specifications</h3>
-          <p>{analyticsRoles[activeRole].desc}</p>
-          <div className="seb-analytics-bullet-grid">
-            {analyticsRoles[activeRole].bullets.map((bullet, idx) => (
-              <div key={idx} className="seb-analytics-bullet">
-                 {bullet}
+          <div className="seb-analytics-split">
+            <div className="seb-analytics-left">
+              <h3>{analyticsRoles[activeRole].title} Specifications</h3>
+              <p>{analyticsRoles[activeRole].desc}</p>
+              <div className="seb-analytics-bullet-grid">
+                {analyticsRoles[activeRole].bullets.map((bullet, idx) => (
+                  <div key={idx} className="seb-analytics-bullet">
+                     {bullet}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="seb-analytics-right">
+              {activeRole === "student" && (
+                <div className="seb-browser-mockup compact">
+                  <div className="seb-browser-header">
+                    <span className="dot dot-red"></span>
+                    <span className="dot dot-yellow"></span>
+                    <span className="dot dot-green"></span>
+                    <div className="seb-browser-address-bar">
+                      https://platform.seedit.in/student/profile
+                    </div>
+                  </div>
+                  <div className="seb-browser-viewport">
+                    <img 
+                      src="/images/seedseb/Seed-seb-ProfilePage.png" 
+                      alt="Student Profile Panel" 
+                      className="seb-gallery-img"
+                    />
+                  </div>
+                </div>
+              )}
+              {activeRole === "faculty" && (
+                <div className="seb-analytics-panel-placeholder">
+                  <h4>Faculty Control Panel Dashboard</h4>
+                  <p>Includes live class completion status lists, custom test parameters creation tools, and diagnostic marks summary charts.</p>
+                  <span className="seb-badge-tag-neon">Interactive metrics live</span>
+                </div>
+              )}
+              {activeRole === "institution" && (
+                <div className="seb-analytics-panel-placeholder">
+                  <h4>Institutional Management Dashboard</h4>
+                  <p>Aggregates multi-department KPIs, historic placement trends, infrastructure logging summaries, and batch eligibility indexes.</p>
+                  <span className="seb-badge-tag-neon">Centralized compliance check</span>
+                </div>
+              )}
+              {activeRole === "placementCell" && (
+                <div className="seb-analytics-panel-placeholder">
+                  <h4>Campus Recruiter Dashboard</h4>
+                  <p>Equips hiring representatives with filtering queries for candidate scores, offer statuses tracking logs, and resume bundles extraction.</p>
+                  <span className="seb-badge-tag-neon">Enterprise Recruiter Search</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
