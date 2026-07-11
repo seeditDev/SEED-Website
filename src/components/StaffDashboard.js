@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import StudentAnalysisView from './StudentAnalysisView';
 import { useNavigate } from 'react-router-dom';
 import {
   Box, Button, Card, CardContent, Grid, Paper, Table, TableBody,
@@ -482,6 +483,12 @@ const StaffDashboardComponent = () => {
   const [showLogout, setShowLogout] = useState(false);
   const [generatingPdf, setGeneratingPdf] = useState(false);
 
+  // Student drill-down states (Tab 2)
+  const [studentView, setStudentView] = useState('list'); // 'list' | 'assessments' | 'analysis'
+  const [drillStudent, setDrillStudent] = useState(null);
+  const [drillAssessmentData, setDrillAssessmentData] = useState(null);
+
+
   // Filter states
   const [searchText, setSearchText] = useState('');
   const [yearFilter, setYearFilter] = useState('All');
@@ -621,21 +628,8 @@ const StaffDashboardComponent = () => {
     return { total, avgPct, highAchievers, topPerformers, needsAttention, deptData, testData, sectionData, totalCorrect, totalQ };
   }, [filteredResults, assessmentResults]);
 
-  // Unique students for PDF tab
-  const uniqueStudents = useMemo(() => {
-    const seen = new Set();
-    return filteredResults.filter(r => {
-      const key = `${r.email?.toLowerCase()}_${r.testID}`;
-      if (seen.has(key)) return false;
-      seen.add(key); return true;
-    });
-  }, [filteredResults]);
 
-  const pdfStudents = useMemo(() => {
-    if (!studentSearch) return uniqueStudents;
-    const q = studentSearch.toLowerCase();
-    return uniqueStudents.filter(s => s.name?.toLowerCase().includes(q) || s.rollNumber?.toLowerCase().includes(q));
-  }, [uniqueStudents, studentSearch]);
+
 
   // Export marks Excel
   const exportMarks = () => {
@@ -737,7 +731,8 @@ const StaffDashboardComponent = () => {
                 sx={{ bgcolor: '#f8fafc', '& .MuiTab-root': { fontSize: 12, fontWeight: 700 } }}>
                 <Tab icon={<BarChartIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Marks Report" />
                 <Tab icon={<AssessmentIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Section Analysis" />
-                <Tab icon={<PdfIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Student PDF" />
+                <Tab icon={<PersonIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Student Analysis" />
+
               </Tabs>
             </Paper>
 
@@ -950,58 +945,146 @@ const StaffDashboardComponent = () => {
               </Grid>
             )}
 
-            {/* Student PDF Tab */}
+            {/* Student Analysis Tab */}
             {reportTab === 2 && (
-              <>
-                <Alert severity="info" sx={{ mb: 2.5, borderRadius: 2 }} icon={<PdfIcon />}>
-                  Select a student to generate a detailed PDF report with placement readiness, strength/weakness analysis, question timing, and coding insights.
-                </Alert>
-                <TextField fullWidth size="small" label="Search Student" value={studentSearch}
-                  onChange={e => setStudentSearch(e.target.value)}
-                  InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }}
-                  sx={{ mb: 2.5, maxWidth: 400 }} />
-                <Grid container spacing={2.5}>
-                  {pdfStudents.length === 0 ? (
-                    <Grid item xs={12}><Box sx={{ py: 6, textAlign: 'center', color: 'text.secondary' }}><PersonIcon sx={{ fontSize: 48, mb: 1, opacity: 0.3 }} /><Typography>No students found</Typography></Box></Grid>
-                  ) : pdfStudents.map((student, i) => {
-                    const pct = student.percentage;
-                    const category = pct >= 85 ? 'Elite' : pct >= 70 ? 'Placement Ready' : pct >= 55 ? 'Near Ready' : pct >= 40 ? 'Developing' : 'Needs Support';
-                    const catColor = pct >= 85 ? '#6366f1' : pct >= 70 ? '#22c55e' : pct >= 55 ? '#eab308' : pct >= 40 ? '#f59e0b' : '#ef4444';
-                    return (
-                      <Grid item xs={12} sm={6} md={4} key={i}>
-                        <Card sx={{ borderRadius: 3, transition: 'all 0.2s', '&:hover': { transform: 'translateY(-2px)', boxShadow: '0 8px 24px rgba(99,102,241,0.15)' } }}>
-                          <CardContent sx={{ p: 2.5 }}>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
-                              <Avatar sx={{ bgcolor: catColor + '20', color: catColor, fontWeight: 700 }}>{(student.name || 'S')[0].toUpperCase()}</Avatar>
-                              <Chip label={category} size="small" sx={{ bgcolor: catColor + '15', color: catColor, fontWeight: 700, fontSize: 10 }} />
-                            </Box>
-                            <Typography variant="subtitle2" fontWeight={700} noWrap>{student.name}</Typography>
-                            <Typography variant="caption" color="text.secondary" display="block">{student.rollNumber} · {student.department}</Typography>
-                            <Typography variant="caption" color="text.secondary" display="block" noWrap>{student.testName}</Typography>
-                            <Box sx={{ mt: 2, mb: 1 }}>
-                              <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                                <Typography variant="caption">Score</Typography>
-                                <Typography variant="caption" fontWeight={700} color={catColor}>{pct.toFixed(0)}%</Typography>
-                              </Box>
-                              <LinearProgress variant="determinate" value={Math.min(pct, 100)}
-                                sx={{ height: 6, borderRadius: 3, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: catColor, borderRadius: 3 } }} />
-                            </Box>
-                            <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap', mt: 1.5 }}>
-                              <Chip icon={<TimerIcon sx={{ fontSize: 11 }} />} label={student.timeTaken} size="small" sx={{ fontSize: 10, height: 20 }} />
-                              <Chip icon={<CodeIcon sx={{ fontSize: 11 }} />} label={student.type.toUpperCase()} size="small" sx={{ fontSize: 10, height: 20 }} />
-                            </Box>
-                            <Button fullWidth variant="contained" startIcon={generatingPdf ? <CircularProgress size={14} color="inherit" /> : <PdfIcon />}
-                              onClick={() => handlePDF(student)} disabled={generatingPdf}
-                              sx={{ mt: 2, bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' }, borderRadius: 2, fontSize: 12 }}>
-                              {generatingPdf ? 'Generating…' : 'Download PDF'}
-                            </Button>
-                          </CardContent>
-                        </Card>
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-              </>
+              <Box>
+                {/* View: Full Analysis */}
+                {studentView === 'analysis' && drillStudent && (
+                  <StudentAnalysisView
+                    student={drillStudent}
+                    assessmentData={drillAssessmentData}
+                    allStudentResults={allResults}
+                    onBack={() => setStudentView('assessments')}
+                  />
+                )}
+
+                {/* View: Assessment list for student */}
+                {studentView === 'assessments' && drillStudent && (() => {
+                  const attempts = allResults.filter(
+                    r => r.email?.toLowerCase() === drillStudent.email?.toLowerCase() ||
+                         r.rollNumber === drillStudent.rollNumber
+                  );
+                  return (
+                    <Box>
+                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                        <Button startIcon={<PersonIcon />} variant="outlined" size="small"
+                          onClick={() => { setStudentView('list'); setDrillStudent(null); }} sx={{ borderRadius: 2 }}>
+                          All Students
+                        </Button>
+                        <Box sx={{ flex: 1 }}>
+                          <Typography variant="h6" fontWeight={800}>{drillStudent.name}</Typography>
+                          <Typography variant="caption" color="text.secondary">{drillStudent.rollNumber} · {drillStudent.department}</Typography>
+                        </Box>
+                        <Chip label={`${attempts.length} Assessments`} sx={{ bgcolor: '#ede9fe', color: '#6d28d9', fontWeight: 700 }} />
+                      </Box>
+                      {attempts.length === 0
+                        ? <Box sx={{ py: 8, textAlign: 'center', color: 'text.secondary' }}><Typography>No assessment records found.</Typography></Box>
+                        : <Grid container spacing={2.5}>
+                            {attempts.map((attempt, i) => {
+                              const pct = attempt.percentage || 0;
+                              const cc = pct >= 75 ? '#22c55e' : pct >= 40 ? '#6366f1' : '#ef4444';
+                              const deepData = assessmentResults.find(
+                                d => (d.testID === attempt.testID || d.testName === attempt.testName) &&
+                                     (d.email?.toLowerCase() === attempt.email?.toLowerCase() || d.rollNumber === attempt.rollNumber)
+                              );
+                              return (
+                                <Grid item xs={12} sm={6} md={4} key={i}>
+                                  <Card sx={{ borderRadius: 3, border: '1px solid #e2e8f0', transition: 'all 0.2s', '&:hover': { boxShadow: '0 8px 24px rgba(99,102,241,0.15)', transform: 'translateY(-2px)' } }}>
+                                    <CardContent sx={{ p: 2.5 }}>
+                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
+                                        <Chip label={(attempt.type || 'MCQ').toUpperCase()} size="small"
+                                          sx={{ bgcolor: attempt.type === 'coding' ? '#ede9fe' : attempt.type === 'assessment' ? '#fce7f3' : '#e0f2fe', color: attempt.type === 'coding' ? '#6d28d9' : attempt.type === 'assessment' ? '#be185d' : '#0369a1', fontSize: 10, height: 20 }} />
+                                        <Chip label={`${Math.round(pct)}%`} sx={{ fontWeight: 700, bgcolor: cc + '18', color: cc, fontSize: 12, height: 24 }} />
+                                      </Box>
+                                      <Typography variant="subtitle2" fontWeight={700} noWrap sx={{ mb: 0.5 }}>{attempt.testName || 'Assessment'}</Typography>
+                                      <Typography variant="caption" color="text.secondary" display="block">{attempt.correctAnswers || 0}/{attempt.totalQuestions || 0} correct · {attempt.timeTaken || 'N/A'}</Typography>
+                                      {attempt.submittedAt && <Typography variant="caption" color="text.secondary" display="block">{new Date(attempt.submittedAt).toLocaleDateString('en-IN')}</Typography>}
+                                      <Box sx={{ mt: 1.5 }}>
+                                        <LinearProgress variant="determinate" value={Math.min(pct, 100)}
+                                          sx={{ height: 6, borderRadius: 3, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: cc, borderRadius: 3 } }} />
+                                      </Box>
+                                      {deepData && <Chip label="✓ Deep data" size="small" sx={{ mt: 1, bgcolor: '#f0fdf4', color: '#15803d', fontSize: 9, height: 18 }} />}
+                                      <Button fullWidth variant="contained" startIcon={<AssessmentIcon />}
+                                        onClick={() => { setDrillAssessmentData(deepData || null); setDrillStudent({ ...attempt }); setStudentView('analysis'); }}
+                                        sx={{ mt: 1.5, bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' }, borderRadius: 2, fontSize: 12 }}>
+                                        Generate Analysis
+                                      </Button>
+                                    </CardContent>
+                                  </Card>
+                                </Grid>
+                              );
+                            })}
+                          </Grid>
+                      }
+                    </Box>
+                  );
+                })()}
+
+                {/* View: Student list */}
+                {studentView === 'list' && (() => {
+                  const seen = new Set();
+                  const unique = [];
+                  [...allResults].sort((a, b) => (a.name || '').localeCompare(b.name || '')).forEach(r => {
+                    const key = (r.email || r.rollNumber || '').toLowerCase();
+                    if (key && !seen.has(key)) { seen.add(key); unique.push(r); }
+                  });
+                  const q = studentSearch.toLowerCase();
+                  const filtered = unique.filter(s => !q || (s.name || '').toLowerCase().includes(q) || (s.rollNumber || '').toLowerCase().includes(q));
+                  return (
+                    <Box>
+                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
+                        <Box>
+                          <Typography variant="h6" fontWeight={700}>Student Analysis</Typography>
+                          <Typography variant="caption" color="text.secondary">{unique.length} students · Click "Analysis" to view assessments</Typography>
+                        </Box>
+                        <TextField size="small" placeholder="Search name or roll no…" value={studentSearch} onChange={e => setStudentSearch(e.target.value)}
+                          InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }} sx={{ width: 280 }} />
+                      </Box>
+                      {filtered.length === 0
+                        ? <Box sx={{ py: 8, textAlign: 'center', color: 'text.secondary' }}><PersonIcon sx={{ fontSize: 56, mb: 1, opacity: 0.3 }} /><Typography>No students found</Typography></Box>
+                        : <Grid container spacing={2}>
+                            {filtered.map((student, i) => {
+                              const pct = student.percentage || 0;
+                              const category = pct >= 85 ? 'Elite' : pct >= 70 ? 'Placement Ready' : pct >= 55 ? 'Near Ready' : pct >= 40 ? 'Developing' : 'Needs Support';
+                              const catColor = pct >= 85 ? '#6366f1' : pct >= 70 ? '#22c55e' : pct >= 55 ? '#f59e0b' : pct >= 40 ? '#f97316' : '#ef4444';
+                              const attempts = allResults.filter(r => r.email?.toLowerCase() === student.email?.toLowerCase() || r.rollNumber === student.rollNumber);
+                              return (
+                                <Grid item xs={12} sm={6} md={4} key={i}>
+                                  <Card sx={{ borderRadius: 3, border: '1px solid #e2e8f0', transition: 'all 0.2s', '&:hover': { boxShadow: '0 8px 24px rgba(99,102,241,0.12)', transform: 'translateY(-2px)' } }}>
+                                    <CardContent sx={{ p: 2 }}>
+                                      <Box sx={{ display: 'flex', gap: 1.5, mb: 1.5, alignItems: 'center' }}>
+                                        <Avatar sx={{ bgcolor: catColor + '20', color: catColor, fontWeight: 800, width: 40, height: 40 }}>{(student.name || 'S')[0].toUpperCase()}</Avatar>
+                                        <Box sx={{ flex: 1, minWidth: 0 }}>
+                                          <Typography variant="subtitle2" fontWeight={700} noWrap>{student.name}</Typography>
+                                          <Typography variant="caption" color="text.secondary" noWrap>{student.rollNumber}</Typography>
+                                        </Box>
+                                      </Box>
+                                      <Typography variant="caption" color="text.secondary" display="block" noWrap sx={{ mb: 0.5 }}>{student.department} · {student.year}</Typography>
+                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                                        <Chip label={category} size="small" sx={{ bgcolor: catColor + '15', color: catColor, fontWeight: 700, fontSize: 10, height: 20 }} />
+                                        <Typography variant="caption" fontWeight={700} sx={{ color: catColor }}>{Math.round(pct)}%</Typography>
+                                      </Box>
+                                      <LinearProgress variant="determinate" value={Math.min(pct, 100)}
+                                        sx={{ height: 5, borderRadius: 3, mb: 1.5, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: catColor, borderRadius: 3 } }} />
+                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Typography variant="caption" color="text.secondary">{attempts.length} assessment{attempts.length !== 1 ? 's' : ''}</Typography>
+                                        <Button size="small" variant="contained"
+                                          onClick={() => { setDrillStudent(student); setStudentView('assessments'); }}
+                                          sx={{ bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' }, borderRadius: 1.5, fontSize: 11, py: 0.4, px: 1.5 }}>
+                                          Analysis
+                                        </Button>
+                                      </Box>
+                                    </CardContent>
+                                  </Card>
+                                </Grid>
+                              );
+                            })}
+                          </Grid>
+                      }
+                    </Box>
+                  );
+                })()}
+              </Box>
             )}
           </Box>
         )}
