@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import StudentAnalysisView from './StudentAnalysisView';
+import TestCreator from './TestCreator';
 import { useNavigate } from 'react-router-dom';
 import {
   Box, Button, Card, CardContent, Grid, Paper, Table, TableBody,
@@ -720,6 +721,7 @@ const StaffDashboardComponent = () => {
           <Tab label="Reports" sx={{ fontWeight: 700 }} />
           <Tab label="Student Directory" sx={{ fontWeight: 700 }} />
           <Tab label="Performance Insights" sx={{ fontWeight: 700 }} />
+          <Tab label="Test Creator" sx={{ fontWeight: 700 }} />
         </Tabs>
 
         {/* ══ REPORTS TAB ══════════════════════════════════════════════════════ */}
@@ -1187,6 +1189,13 @@ const StaffDashboardComponent = () => {
                 </Paper>
               </Grid>
             </Grid>
+          </Box>
+        )}
+        
+        {/* ══ TEST CREATOR TAB ══════════════════════════════════════════════════ */}
+        {activeTab === 3 && (
+          <Box sx={{ p: 1 }}>
+            <TestCreator college={college} />
           </Box>
         )}
       </Paper>
