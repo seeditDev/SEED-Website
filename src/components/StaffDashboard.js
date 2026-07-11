@@ -804,7 +804,7 @@ const StaffDashboardComponent = () => {
                           <TableCell sx={{ fontSize: 11 }}>{r.department}</TableCell>
                           <TableCell sx={{ fontSize: 11 }}>{r.year}</TableCell>
                           <TableCell sx={{ fontSize: 11 }}><Tooltip title={r.testName}><span>{r.testName?.length > 18 ? r.testName.substring(0, 16) + '..' : r.testName}</span></Tooltip></TableCell>
-                          <TableCell><Chip label={r.type.toUpperCase()} size="small" sx={{ fontSize: 10, height: 20 }} /></TableCell>
+                          <TableCell><Chip label={r.type.toUpperCase()} size="small" sx={{ fontSize: 10, height: 20, bgcolor: r.type === 'coding' ? '#ede9fe' : (r.type === 'assessment' || r.type === 'multisection') ? '#fce7f3' : '#e0f2fe', color: r.type === 'coding' ? '#7c3aed' : (r.type === 'assessment' || r.type === 'multisection') ? '#be185d' : '#0369a1' }} /></TableCell>
                           <TableCell>
                             <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ fontWeight: 700, fontSize: 11, bgcolor: r.percentage >= 75 ? '#dcfce7' : r.percentage >= 40 ? '#ede9fe' : '#fee2e2', color: r.percentage >= 75 ? '#15803d' : r.percentage >= 40 ? '#6d28d9' : '#dc2626' }} />
                           </TableCell>
@@ -960,7 +960,7 @@ const StaffDashboardComponent = () => {
 
                 {/* View: Assessment list for student */}
                 {studentView === 'assessments' && drillStudent && (() => {
-                  const attempts = allResults.filter(
+                  const attempts = filteredResults.filter(
                     r => r.email?.toLowerCase() === drillStudent.email?.toLowerCase() ||
                          r.rollNumber === drillStudent.rollNumber
                   );
@@ -1024,12 +1024,13 @@ const StaffDashboardComponent = () => {
                 {studentView === 'list' && (() => {
                   const seen = new Set();
                   const unique = [];
-                  [...allResults].sort((a, b) => (a.name || '').localeCompare(b.name || '')).forEach(r => {
+                  [...filteredResults].sort((a, b) => (a.name || '').localeCompare(b.name || '')).forEach(r => {
                     const key = (r.email || r.rollNumber || '').toLowerCase();
                     if (key && !seen.has(key)) { seen.add(key); unique.push(r); }
                   });
                   const q = studentSearch.toLowerCase();
                   const filtered = unique.filter(s => !q || (s.name || '').toLowerCase().includes(q) || (s.rollNumber || '').toLowerCase().includes(q));
+
                   return (
                     <Box>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
