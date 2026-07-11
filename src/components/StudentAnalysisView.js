@@ -270,22 +270,37 @@ const Timeline = ({ events }) => {
 
 // ─── PDF: Report 1 (Summary) ──────────────────────────────────────────────────
 
-const downloadSummaryPDF = async (student, assessmentData, rank, totalStudents, sections, codingData) => {
+// ─── PDF: Unified Multi-Page Report (Summary + Analytics + AI Readiness) ────────
+
+const downloadUnifiedPDF = async (student, assessmentData, rank, totalStudents, allStudentResults) => {
   const { jsPDF } = await import('jspdf');
   await import('jspdf-autotable');
+  
   const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
   const pw = doc.internal.pageSize.getWidth(), ph = doc.internal.pageSize.getHeight();
   let y = 0;
-  const P = [99, 102, 241], S = [236, 72, 153], G = [34, 197, 94], R = [239, 68, 68], D = [15, 23, 42], Gr = [71, 85, 105];
+  
+  const P = [99, 102, 241];    // Primary Indigo
+  const S = [236, 72, 153];    // Secondary Pink
+  const G = [34, 197, 94];     // Success Green
+  const R = [239, 68, 68];     // Error Red
+  const D = [15, 23, 42];      // Dark Charcoal
+  const Gr = [71, 85, 105];    // Gray
+  const LGr = [241, 245, 249]; // Light Gray
+  
   const chk = (n = 20) => { if (y + n > ph - 14) { doc.addPage(); y = 14; } };
-
+  
+  // ───────────────────────────────────────────────────────────────────────────
+  // PAGE 1: MARKS SUMMARY REPORT
+  // ───────────────────────────────────────────────────────────────────────────
+  
   // Header
   doc.setFillColor(...P); doc.rect(0, 0, pw, 36, 'F');
   doc.setFillColor(...S); doc.rect(0, 32, pw, 4, 'F');
   doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold');
   doc.setFontSize(17); doc.text('SEED-SEB Assessment Platform', 14, 13);
   doc.setFontSize(10); doc.setFont('helvetica', 'normal');
-  doc.text('Report 1 — Assessment Summary (Marks Only)', 14, 21);
+  doc.text('Report 1 — Assessment Summary & Scorecard', 14, 21);
   doc.setFontSize(8); doc.text(`Generated: ${new Date().toLocaleString('en-IN')}`, 14, 29);
   y = 43;
 
@@ -327,6 +342,7 @@ const downloadSummaryPDF = async (student, assessmentData, rank, totalStudents, 
   y += 36;
 
   // Section-wise Table
+  const sections = assessmentData?.sections || [];
   chk(40);
   doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
   doc.text('Section-wise Marks', 14, y); y += 5;
@@ -342,7 +358,8 @@ const downloadSummaryPDF = async (student, assessmentData, rank, totalStudents, 
   });
   y = doc.lastAutoTable.finalY + 7;
 
-  // Coding Summary
+  // Coding Summary (if coding data exists)
+  const codingData = assessmentData?.codingSubmissions || assessmentData?.coding || [];
   if (codingData.length) {
     chk(30); doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
     doc.text('Coding Summary', 14, y); y += 5;
@@ -356,180 +373,202 @@ const downloadSummaryPDF = async (student, assessmentData, rank, totalStudents, 
     y = doc.lastAutoTable.finalY + 7;
   }
 
-  // Footer
+  // ───────────────────────────────────────────────────────────────────────────
+  // PAGE 2: PERFORMANCE ANALYTICS REPORT
+  // ───────────────────────────────────────────────────────────────────────────
+  doc.addPage();
+  
+  // Header
+  doc.setFillColor(...P); doc.rect(0, 0, pw, 18, 'F');
+  doc.setFillColor(...S); doc.rect(0, 16, pw, 2, 'F');
+  doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+  doc.text('Report 2 — Detailed Performance Analytics', 14, 11);
+  y = 26;
+
+  // Questions metrics
+  const questions = assessmentData?.questions || assessmentData?.answers || [];
+  const correct = questions.filter(q => q.isCorrect || q.correct || (q.selectedAnswer && q.selectedAnswer === q.correctAnswer)).length;
+  const skipped = questions.filter(q => !q.selectedAnswer && !q.answer).length;
+  const wrong = questions.length - correct - skipped;
+
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+  doc.text('Questions Outcome Summary', 14, y); y += 5;
+  doc.setFillColor(...LGr); doc.roundedRect(14, y, pw - 28, 14, 1.5, 1.5, 'F');
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(...Gr);
+  doc.text(`Total Questions: ${questions.length}    ·    Correct: ${correct}    ·    Wrong: ${wrong}    ·    Skipped: ${skipped}`, 18, y + 8.5);
+  y += 21;
+
+  // Peer comparison (Horizontal Progress Bars)
+  const sameTest = allStudentResults.filter(r => r.testName === student.testName || r.testID === student.testID);
+  const collegeAvg = sameTest.length ? sameTest.reduce((s, r) => s + r.percentage, 0) / sameTest.length : 0;
+  const deptSame = sameTest.filter(r => r.department === student.department);
+  const deptAvg = deptSame.length ? deptSame.reduce((s, r) => s + r.percentage, 0) / deptSame.length : 0;
+  const top10 = [...sameTest].sort((a, b) => b.percentage - a.percentage).slice(0, Math.max(1, Math.floor(sameTest.length * 0.1)));
+  const top10Avg = top10.length ? top10.reduce((s, r) => s + r.percentage, 0) / top10.length : 0;
+
+  chk(40);
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+  doc.text('Peer Benchmark Comparison', 14, y); y += 6;
+  [
+    { l: 'Student Percentage', v: pct, color: P },
+    { l: 'College Average', v: Math.round(collegeAvg), color: S },
+    { l: 'Department Average', v: Math.round(deptAvg), color: G },
+    { l: 'Top 10% Score Average', v: Math.round(top10Avg), color: [168, 85, 247] }
+  ].forEach((item) => {
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); doc.setTextColor(...D);
+    doc.text(item.l, 14, y + 4);
+    doc.text(`${item.v}%`, pw - 24, y + 4);
+    
+    // Draw bar background
+    doc.setFillColor(226, 232, 240);
+    doc.roundedRect(65, y, 100, 4.5, 1, 1, 'F');
+    // Draw bar fill
+    if (item.v > 0) {
+      doc.setFillColor(...item.color);
+      doc.roundedRect(65, y, Math.min(item.v, 100), 4.5, 1, 1, 'F');
+    }
+    y += 8;
+  });
+  y += 6;
+
+  // Difficulty Distribution
+  const diff = { easy: 0, medium: 0, hard: 0, ec: 0, mc: 0, hc: 0 };
+  questions.forEach(q => {
+    const d = (q.difficulty || 'medium').toLowerCase();
+    const ok = !!(q.isCorrect || q.correct || (q.selectedAnswer && q.selectedAnswer === q.correctAnswer));
+    if (d === 'easy') { diff.easy++; if (ok) diff.ec++; }
+    else if (d === 'hard') { diff.hard++; if (ok) diff.hc++; }
+    else { diff.medium++; if (ok) diff.mc++; }
+  });
+
+  chk(30);
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+  doc.text('Accuracy vs Question Difficulty', 14, y); y += 6;
+  [
+    { l: 'Easy Questions', t: diff.easy, c2: diff.ec, color: G },
+    { l: 'Medium Questions', t: diff.medium, c2: diff.mc, color: S },
+    { l: 'Hard Questions', t: diff.hard, c2: diff.hc, color: R }
+  ].forEach(d => {
+    const accuracy = d.t > 0 ? Math.round(d.c2 / d.t * 100) : 0;
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5); doc.setTextColor(...D);
+    doc.text(d.l, 14, y + 4);
+    doc.text(`${d.c2}/${d.t} (${accuracy}%)`, pw - 34, y + 4);
+    
+    doc.setFillColor(226, 232, 240);
+    doc.roundedRect(65, y, 100, 4.5, 1, 1, 'F');
+    if (accuracy > 0) {
+      doc.setFillColor(...d.color);
+      doc.roundedRect(65, y, accuracy, 4.5, 1, 1, 'F');
+    }
+    y += 8;
+  });
+  y += 6;
+
+  // Topic mastery table
+  const tagStats = computeTagStats(questions);
+  if (tagStats.length) {
+    chk(35);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+    doc.text('Topic Mastery Tag Analytics', 14, y); y += 5;
+    doc.autoTable({
+      startY: y,
+      head: [['Topic / Tag', 'Questions', 'Correct', 'Wrong', 'Skipped', 'Accuracy', 'Avg Time']],
+      body: tagStats.slice(0, 10).map(t => [t.tag, String(t.total), String(t.correct), String(t.wrong), String(t.skipped), `${t.accuracy}%`, t.avgTime > 0 ? `${t.avgTime}s` : '—']),
+      theme: 'grid', headStyles: { fillColor: P, textColor: [255, 255, 255], fontSize: 8.5 },
+      bodyStyles: { fontSize: 8.5 }, margin: { left: 14, right: 14 }
+    });
+    y = doc.lastAutoTable.finalY + 7;
+  }
+
+  // ───────────────────────────────────────────────────────────────────────────
+  // PAGE 3: AI PLACEMENT READINESS REPORT
+  // ───────────────────────────────────────────────────────────────────────────
+  doc.addPage();
+
+  // Header
+  doc.setFillColor(...P); doc.rect(0, 0, pw, 18, 'F');
+  doc.setFillColor(...S); doc.rect(0, 16, pw, 2, 'F');
+  doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
+  doc.text('Report 3 — AI Placement Readiness & Reaction Plan', 14, 11);
+  y = 26;
+
+  // Calculations for report 3
+  const placementScore = computePlacementScore(student, tagStats, codingData);
+  const companyMatch = computeCompanyMatch(student, placementScore, tagStats);
+  const weakTopics = tagStats.filter(t => t.accuracy < 50);
+  const strongTopics = tagStats.filter(t => t.accuracy >= 70);
+  const narrative = generateNarrative(student, tagStats, placementScore, weakTopics, strongTopics);
+  const learningPath = generateLearningPath(weakTopics);
+
+  let category = 'Needs Support', catColor = R, salary = '₹3–4L (Entry Level)';
+  if (pct >= 85) { category = 'Placement Ready – Elite'; catColor = P; salary = '₹10L+ (Zoho, Google, Infosys SP)'; }
+  else if (pct >= 70) { category = 'Placement Ready'; catColor = G; salary = '₹5–8L (TCS Digital, CTS, Wipro Turbo)'; }
+  else if (pct >= 55) { category = 'Near Placement Ready'; catColor = S; salary = '₹4–5L (Infosys SE, Wipro)'; }
+  else if (pct >= 40) { category = 'Developing'; catColor = [249, 115, 22]; salary = '₹3–4L (Needs Core Review)'; }
+
+  // Narrative
+  doc.setFillColor(243, 244, 246); doc.setDrawColor(...P);
+  doc.roundedRect(14, y, pw - 28, 22, 1.5, 1.5, 'FD');
+  doc.setTextColor(...D); doc.setFont('helvetica', 'bold'); doc.setFontSize(9);
+  doc.text('AI ASSESSMENT SUMMARY & CAREER PROFILE', 18, y + 6);
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(...Gr);
+  const lines = doc.splitTextToSize(narrative, pw - 36).slice(0, 3);
+  lines.forEach((line, idx) => doc.text(line, 18, y + 11.5 + idx * 4));
+  y += 28;
+
+  // Score details
+  chk(20);
+  doc.setFillColor(239, 246, 255); doc.roundedRect(14, y, pw - 28, 14, 1.5, 1.5, 'F');
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(9); doc.setTextColor(...D);
+  doc.text(`Placement Readiness Score: ${placementScore}/100`, 18, y + 9);
+  doc.setFont('helvetica', 'normal'); doc.setFontSize(8.5); doc.setTextColor(...Gr);
+  doc.text(`Category: ${category}    ·    Predicted Package: ${salary}`, 96, y + 9);
+  y += 20;
+
+  // Company Match Table
+  chk(40);
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+  doc.text('Company Compatibility Compatibility Matrix', 14, y); y += 5;
+  doc.autoTable({
+    startY: y,
+    head: [['Company', 'Tier Type', 'Match Probability', 'Fit Rating']],
+    body: companyMatch.slice(0, 7).map(co => [co.name, co.tier, `${co.probability}%`, co.probability >= 80 ? 'Highly Recommended' : co.probability >= 60 ? 'Good Fit' : co.probability >= 40 ? 'Possible Match' : 'Requires Preparation']),
+    theme: 'grid', headStyles: { fillColor: P, textColor: [255, 255, 255], fontSize: 8.5 },
+    bodyStyles: { fontSize: 8.5 }, margin: { left: 14, right: 14 }
+  });
+  y = doc.lastAutoTable.finalY + 7;
+
+  // Recommended learning path
+  if (learningPath.length) {
+    chk(35);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
+    doc.text('Recommended Weekly Remediation Path', 14, y); y += 5;
+    doc.autoTable({
+      startY: y,
+      head: [['Timeline', 'Recommended Study Focus Area', 'Remedial Action']],
+      body: learningPath.map((w, idx) => [`Week ${w.week}`, w.topics.join(', '), idx === 0 ? 'Review fundamental concepts' : 'Solve medium & hard challenges']),
+      theme: 'striped', headStyles: { fillColor: G, textColor: [255, 255, 255], fontSize: 8.5 },
+      bodyStyles: { fontSize: 8.5 }, margin: { left: 14, right: 14 }
+    });
+    y = doc.lastAutoTable.finalY + 7;
+  }
+
+  // Summary Footer on all pages
   const tp = doc.internal.getNumberOfPages();
   for (let p = 1; p <= tp; p++) {
     doc.setPage(p);
     doc.setFillColor(15, 23, 42); doc.rect(0, ph - 10, pw, 10, 'F');
-    doc.setTextColor(255, 255, 255); doc.setFontSize(7);
-    doc.text('Generated by SEED-SEB · Confidential', 14, ph - 4);
-    doc.text(`Page ${p} of ${tp}`, pw - 30, ph - 4);
+    doc.setTextColor(255, 255, 255); doc.setFontSize(7.5); doc.setFont('helvetica', 'normal');
+    doc.text('SEED-SEB Unified Assessment Diagnostics Report · Confidential', 14, ph - 4.5);
+    doc.text(`Page ${p} of ${tp}`, pw - 26, ph - 4.5);
   }
-  doc.save(`SEEDSEB_Summary_${(student.name || 'Student').replace(/\s+/g, '_')}.pdf`);
-};
-
-// ─── PDF: Report 3 (AI Placement) ────────────────────────────────────────────
-
-const downloadPlacementPDF = async (student, placementScore, companyMatch, narrative, tagStats, learningPath, badges, category, catColor, salary) => {
-  const { jsPDF } = await import('jspdf');
-  await import('jspdf-autotable');
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-  const pw = doc.internal.pageSize.getWidth(), ph = doc.internal.pageSize.getHeight();
-  let y = 0;
-  const P = [99, 102, 241], S = [236, 72, 153], G = [34, 197, 94], D = [15, 23, 42], Gr = [71, 85, 105];
-  const colorFromHex = (hex) => { const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16); return [r, g, b]; };
-  const cc = colorFromHex(catColor);
-  const chk = (n = 20) => { if (y + n > ph - 14) { doc.addPage(); y = 14; } };
-
-  // Cover Page
-  doc.setFillColor(...P); doc.rect(0, 0, pw, ph, 'F');
-  doc.setFillColor(255, 255, 255, 15); doc.circle(pw - 15, 35, 65, 'F');
-  doc.setFillColor(255, 255, 255, 10); doc.circle(25, ph - 40, 55, 'F');
-
-  // Logo Box
-  doc.setFillColor(255, 255, 255);
-  doc.roundedRect(pw / 2 - 28, 18, 56, 18, 3, 3, 'F');
-  doc.setTextColor(...P); doc.setFont('helvetica', 'bold'); doc.setFontSize(12);
-  doc.text('SEED-SEB', pw / 2, 29, { align: 'center' });
-
-  // Title
-  doc.setTextColor(255, 255, 255); doc.setFontSize(22); doc.setFont('helvetica', 'bold');
-  doc.text('AI Placement Readiness', pw / 2, 65, { align: 'center' });
-  doc.setFontSize(14); doc.setFont('helvetica', 'normal');
-  doc.text('Career Report', pw / 2, 77, { align: 'center' });
-
-  // Student block
-  doc.setFillColor(255, 255, 255); doc.setFillColor(255, 255, 255, 30);
-  doc.roundedRect(pw / 2 - 52, 88, 104, 28, 3, 3, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(14);
-  doc.text(student.name || 'Student', pw / 2, 101, { align: 'center' });
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(9);
-  doc.text(`${student.college || ''} · ${student.department || ''} · ${student.year || ''}`, pw / 2, 110, { align: 'center' });
-
-  // Score circle
-  doc.setFillColor(255, 255, 255); doc.circle(pw / 2, 152, 24, 'F');
-  doc.setTextColor(...cc); doc.setFont('helvetica', 'bold'); doc.setFontSize(20);
-  doc.text(String(placementScore), pw / 2, 156, { align: 'center' });
-  doc.setFontSize(8); doc.setTextColor(100, 100, 100); doc.text('/100', pw / 2, 165, { align: 'center' });
-  doc.setFontSize(12); doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold');
-  doc.text(category, pw / 2, 188, { align: 'center' });
-  doc.setFontSize(8); doc.setFont('helvetica', 'normal');
-  doc.text(`Generated: ${new Date().toLocaleDateString('en-IN')}  ·  AI-Powered Analysis`, pw / 2, ph - 10, { align: 'center' });
-
-  // Page 2
-  doc.addPage(); y = 14;
-
-  // AI Summary
-  doc.setFillColor(...P); doc.roundedRect(14, y, pw - 28, 8, 2, 2, 'F');
-  doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(9);
-  doc.text('AI ASSESSMENT NARRATIVE', 18, y + 5.5); y += 13;
-
-  doc.setFillColor(239, 246, 255); doc.setDrawColor(...P);
-  doc.roundedRect(14, y, pw - 28, 30, 2, 2, 'FD');
-  doc.setTextColor(...D); doc.setFont('helvetica', 'normal'); doc.setFontSize(9);
-  doc.splitTextToSize(narrative, pw - 36).slice(0, 5).forEach((line, i) => doc.text(line, 18, y + 7 + i * 5)); y += 36;
-
-  // Metric cards
-  const cw4 = (pw - 28 - 9) / 4;
-  const metCards = [
-    { label: 'Placement Score', val: `${placementScore}/100`, color: cc },
-    { label: 'Overall Score', val: `${Math.round(student.percentage || 0)}%`, color: P },
-    { label: 'Salary Predicted', val: salary, color: G },
-    { label: 'Category', val: category.split(' ')[0], color: S },
-  ];
-  chk(28);
-  metCards.forEach((m, i) => {
-    const bx = 14 + i * (cw4 + 3);
-    doc.setFillColor(...m.color); doc.roundedRect(bx, y, cw4, 22, 2, 2, 'F');
-    doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(11);
-    doc.text(m.val, bx + cw4 / 2, y + 13, { align: 'center' });
-    doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-    doc.text(m.label, bx + cw4 / 2, y + 19, { align: 'center' });
-  });
-  y += 30;
-
-  // Company match
-  chk(50);
-  doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
-  doc.text('Predicted Company Match', 14, y); y += 5;
-  doc.autoTable({
-    startY: y,
-    head: [['Company', 'Tier', 'Probability', 'Recommendation']],
-    body: companyMatch.slice(0, 10).map(co => [co.name, co.tier, `${co.probability}%`, co.probability >= 80 ? 'Highly Recommended' : co.probability >= 60 ? 'Good Fit' : co.probability >= 40 ? 'Possible' : 'Focus on Prep']),
-    theme: 'grid', headStyles: { fillColor: P, textColor: [255, 255, 255], fontSize: 9, fontStyle: 'bold' },
-    bodyStyles: { fontSize: 9 }, margin: { left: 14, right: 14 },
-  });
-  y = doc.lastAutoTable.finalY + 8;
-
-  // Salary
-  chk(20);
-  doc.setFillColor(240, 253, 244); doc.setDrawColor(...G);
-  doc.roundedRect(14, y, pw - 28, 16, 2, 2, 'FD');
-  doc.setTextColor(...D); doc.setFont('helvetica', 'bold'); doc.setFontSize(10);
-  doc.text(`Predicted Salary Package: ${salary}`, 18, y + 7);
-  doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.setTextColor(...Gr);
-  doc.text('Based on placement score, skill analysis, and company benchmarks', 18, y + 12);
-  y += 24;
-
-  // Tag Analysis
-  if (tagStats.length) {
-    chk(40);
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
-    doc.text('Topic Mastery Analysis', 14, y); y += 5;
-    doc.autoTable({
-      startY: y,
-      head: [['Topic / Tag', 'Questions', 'Correct', 'Accuracy', 'Level']],
-      body: tagStats.slice(0, 12).map(t => [t.tag, String(t.total), String(t.correct), `${t.accuracy}%`, t.accuracy >= 75 ? 'Strong' : t.accuracy >= 50 ? 'Average' : 'Weak']),
-      theme: 'striped', headStyles: { fillColor: [79, 70, 229], textColor: [255, 255, 255], fontSize: 9 },
-      bodyStyles: { fontSize: 9 }, margin: { left: 14, right: 14 },
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // Learning path
-  if (learningPath.length) {
-    chk(40);
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
-    doc.text('Recommended Learning Path', 14, y); y += 5;
-    doc.autoTable({
-      startY: y,
-      head: [['Week', 'Focus Topics', 'Goal']],
-      body: learningPath.map((w, i) => [`Week ${w.week}`, w.topics.join(', '), i === 0 ? 'Build foundation' : 'Advance skills']),
-      theme: 'grid', headStyles: { fillColor: G, textColor: [255, 255, 255], fontSize: 9 },
-      bodyStyles: { fontSize: 9 }, margin: { left: 14, right: 14 },
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // Badges
-  if (badges.length) {
-    chk(24);
-    doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
-    doc.text('Achievement Badges', 14, y); y += 7;
-    badges.forEach((b, i) => {
-      const bx = 14 + i * 58;
-      doc.setFillColor(...colorFromHex(b.bg));
-      doc.roundedRect(bx, y, 55, 16, 2, 2, 'F');
-      doc.setTextColor(255, 255, 255); doc.setFont('helvetica', 'bold'); doc.setFontSize(8);
-      doc.text(`${b.icon} ${b.label}`, bx + 27.5, y + 10, { align: 'center' });
-    });
-    y += 24;
-  }
-
-  const tp = doc.internal.getNumberOfPages();
-  for (let p = 1; p <= tp; p++) {
-    doc.setPage(p);
-    doc.setFillColor(...D); doc.rect(0, ph - 10, pw, 10, 'F');
-    doc.setTextColor(255, 255, 255); doc.setFontSize(7);
-    doc.text('SEED-SEB AI Placement Report · Confidential', 14, ph - 4);
-    doc.text(`Page ${p} of ${tp}`, pw - 28, ph - 4);
-  }
-  doc.save(`SEEDSEB_Placement_${(student.name || 'Student').replace(/\s+/g, '_')}.pdf`);
+  
+  doc.save(`SEEDSEB_Unified_Report_${(student.name || 'Student').replace(/\s+/g, '_')}.pdf`);
 };
 
 // ─── Report 1: Summary ────────────────────────────────────────────────────────
 
-const SummaryReport = ({ student, assessmentData, rank, totalStudents }) => {
+const SummaryReport = ({ student, assessmentData, rank, totalStudents, allStudentResults }) => {
   const pct = Math.round(student.percentage || 0);
   const pass = pct >= 50;
   const sections = assessmentData?.sections || [];
@@ -538,7 +577,7 @@ const SummaryReport = ({ student, assessmentData, rank, totalStudents }) => {
 
   const handlePDF = async () => {
     setBusy(true);
-    try { await downloadSummaryPDF(student, assessmentData, rank, totalStudents, sections, codingData); }
+    try { await downloadUnifiedPDF(student, assessmentData, rank, totalStudents, allStudentResults); }
     catch (e) { console.error(e); alert('PDF generation failed. Please try again.'); }
     finally { setBusy(false); }
   };
@@ -1040,7 +1079,7 @@ const PlacementReport = ({ student, assessmentData, allStudentResults }) => {
 
   const handlePDF = async () => {
     setBusy(true);
-    try { await downloadPlacementPDF(student, placementScore, companyMatch, narrative, tagStats, learningPath, badges, category, catColor, salary); }
+    try { await downloadUnifiedPDF(student, assessmentData, rank, sameTest.length || 1, allStudentResults); }
     catch (e) { console.error(e); alert('PDF generation failed.'); }
     finally { setBusy(false); }
   };
@@ -1242,14 +1281,36 @@ const PlacementReport = ({ student, assessmentData, allStudentResults }) => {
 
 const StudentAnalysisView = ({ student, assessmentData, allStudentResults = [], onBack }) => {
   const [tab, setTab] = useState(0);
+  const [busy, setBusy] = useState(false);
   const sameTest = allStudentResults.filter(r => r.testName === student.testName || r.testID === student.testID);
   const rank = [...sameTest].sort((a, b) => b.percentage - a.percentage).findIndex(r => r.email?.toLowerCase() === student.email?.toLowerCase()) + 1 || '—';
+
+  const handleDownloadUnified = async () => {
+    setBusy(true);
+    try {
+      await downloadUnifiedPDF(student, assessmentData, rank, sameTest.length || 1, allStudentResults);
+    } catch (e) {
+      console.error(e);
+      alert('PDF generation failed. Please try again.');
+    } finally {
+      setBusy(false);
+    }
+  };
 
   return (
     <Box>
       {/* Navigation */}
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3, flexWrap: 'wrap' }}>
         <Button startIcon={<ArrowBackIcon />} onClick={onBack} variant="outlined" size="small" sx={{ borderRadius: 2 }}>Back</Button>
+        <Button
+          variant="contained"
+          startIcon={busy ? <CircularProgress size={14} color="inherit" /> : <PdfIcon />}
+          onClick={handleDownloadUnified}
+          disabled={busy}
+          sx={{ borderRadius: 2, bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' } }}
+        >
+          {busy ? 'Generating PDF…' : 'Download Complete Report (PDF)'}
+        </Button>
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <Typography variant="h6" fontWeight={800} noWrap>{student.name}</Typography>
           <Typography variant="caption" color="text.secondary">{student.rollNumber} · {student.testName}</Typography>
@@ -1270,7 +1331,7 @@ const StudentAnalysisView = ({ student, assessmentData, allStudentResults = [], 
         </Tabs>
       </Paper>
 
-      {tab === 0 && <SummaryReport student={student} assessmentData={assessmentData} rank={typeof rank === 'number' ? rank : '—'} totalStudents={sameTest.length || 1} />}
+      {tab === 0 && <SummaryReport student={student} assessmentData={assessmentData} rank={typeof rank === 'number' ? rank : '—'} totalStudents={sameTest.length || 1} allStudentResults={allStudentResults} />}
       {tab === 1 && <AnalyticsReport student={student} assessmentData={assessmentData} allStudentResults={allStudentResults} />}
       {tab === 2 && <PlacementReport student={student} assessmentData={assessmentData} allStudentResults={allStudentResults} />}
     </Box>
