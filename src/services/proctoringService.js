@@ -30,10 +30,10 @@ class ProctoringService {
             };
 
             const docRef = await addDoc(eventsRef, eventDocument);
-            console.log('[ProctoringService] Event logged:', docRef.id);
+            /* console.log('[ProctoringService] Event logged:', docRef.id) */ void 0;
             return { success: true, docId: docRef.id };
         } catch (error) {
-            console.error('[ProctoringService] Error logging event:', error);
+            /* console.error('[ProctoringService] Error logging event:', error) */ void 0;
             
             // Save to localStorage for retry if offline
             if (!navigator.onLine || error.code === 'unavailable') {
@@ -61,9 +61,9 @@ class ProctoringService {
                 department
             });
             localStorage.setItem(key, JSON.stringify(existing));
-            console.log('[ProctoringService] Event saved to localStorage for retry');
+            /* console.log('[ProctoringService] Event saved to localStorage for retry') */ void 0;
         } catch (error) {
-            console.error('[ProctoringService] Error saving to localStorage:', error);
+            /* console.error('[ProctoringService] Error saving to localStorage:', error) */ void 0;
         }
     }
 
@@ -98,7 +98,7 @@ class ProctoringService {
                     );
                     synced++;
                 } catch (error) {
-                    console.error('[ProctoringService] Retry failed:', error);
+                    /* console.error('[ProctoringService] Retry failed:', error) */ void 0;
                     remaining.push(event);
                     failed++;
                 }
@@ -112,7 +112,7 @@ class ProctoringService {
 
             return { synced, failed };
         } catch (error) {
-            console.error('[ProctoringService] Error syncing offline events:', error);
+            /* console.error('[ProctoringService] Error syncing offline events:', error) */ void 0;
             return { synced: 0, failed: 0 };
         }
     }
@@ -140,9 +140,9 @@ class ProctoringService {
                 }
             }, { merge: true });
 
-            console.log('[ProctoringService] Proctoring summary updated');
+            /* console.log('[ProctoringService] Proctoring summary updated') */ void 0;
         } catch (error) {
-            console.error('[ProctoringService] Error updating proctoring summary:', error);
+            /* console.error('[ProctoringService] Error updating proctoring summary:', error) */ void 0;
             throw error;
         }
     }

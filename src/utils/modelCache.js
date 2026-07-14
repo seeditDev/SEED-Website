@@ -47,7 +47,7 @@ export const isModelCached = async (modelName) => {
       request.onerror = () => resolve(false);
     });
   } catch (error) {
-    console.warn('[ModelCache] Error checking cache:', error);
+    /* console.warn('[ModelCache] Error checking cache:', error) */ void 0;
     return false;
   }
 };
@@ -71,7 +71,7 @@ export const getCachedModel = async (modelName) => {
       request.onerror = () => reject(request.error);
     });
   } catch (error) {
-    console.warn('[ModelCache] Error getting cached model:', error);
+    /* console.warn('[ModelCache] Error getting cached model:', error) */ void 0;
     throw error;
   }
 };
@@ -83,9 +83,9 @@ export const cacheModel = async (modelName, modelData) => {
     const transaction = db.transaction([STORE_NAME], 'readwrite');
     const store = transaction.objectStore(STORE_NAME);
     await store.put(modelData, modelName);
-    console.log(`[ModelCache] Cached model: ${modelName}`);
+    /* console.log(`[ModelCache] Cached model: ${modelName}`) */ void 0;
   } catch (error) {
-    console.warn('[ModelCache] Error caching model:', error);
+    /* console.warn('[ModelCache] Error caching model:', error) */ void 0;
   }
 };
 
@@ -95,7 +95,7 @@ export const loadModelWithCache = async (modelName, loadFunction) => {
     // Check cache first
     const cached = await getCachedModel(modelName);
     if (cached) {
-      console.log(`[ModelCache] Using cached model: ${modelName}`);
+      /* console.log(`[ModelCache] Using cached model: ${modelName}`) */ void 0;
       return cached;
     }
   } catch (error) {
@@ -103,14 +103,14 @@ export const loadModelWithCache = async (modelName, loadFunction) => {
   }
 
   // Load from source
-  console.log(`[ModelCache] Loading model from source: ${modelName}`);
+  /* console.log(`[ModelCache] Loading model from source: ${modelName}`) */ void 0;
   const model = await loadFunction();
   
   // Cache it
   try {
     await cacheModel(modelName, model);
   } catch (error) {
-    console.warn('[ModelCache] Failed to cache model, but model loaded:', error);
+    /* console.warn('[ModelCache] Failed to cache model, but model loaded:', error) */ void 0;
   }
 
   return model;

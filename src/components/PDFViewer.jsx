@@ -50,7 +50,7 @@ const PDFViewer = ({ albumUrl, onClose, title }) => {
       
       // If we have cached data, use it
       if (cachedData) {
-        console.log(`Loading part ${part} from cache`);
+        /* console.log(`Loading part ${part} from cache`) */ void 0;
         setImages(prev => {
           const newImages = [...prev];
           cachedData.forEach(img => {
@@ -144,7 +144,7 @@ const PDFViewer = ({ albumUrl, onClose, title }) => {
       return newImages.length < 30;
 
     } catch (error) {
-      console.error('Error loading part:', error);
+      /* console.error('Error loading part:', error) */ void 0;
       setLoadingMore(false);
       return true;
     }
@@ -168,7 +168,7 @@ const PDFViewer = ({ albumUrl, onClose, title }) => {
         
       } catch (error) {
         setError('Failed to load images');
-        console.error('Error initializing viewer:', error);
+        /* console.error('Error initializing viewer:', error) */ void 0;
       } finally {
         setLoading(false);
       }
@@ -215,7 +215,7 @@ const PDFViewer = ({ albumUrl, onClose, title }) => {
   const playPageFlipSound = () => {
     if (audioRef.current) {
       audioRef.current.currentTime = 0;
-      audioRef.current.play().catch(err => console.log('Audio playback error:', err));
+      audioRef.current.play().catch(err => /* console.log('Audio playback error:', err) */ void 0);
     }
   };
 
@@ -323,7 +323,7 @@ const PDFViewer = ({ albumUrl, onClose, title }) => {
   };
 
   const handleImageError = (index) => {
-    console.error(`Failed to load image at index ${index}`);
+    /* console.error(`Failed to load image at index ${index}`) */ void 0;
     setLoadedImages(prev => ({
       ...prev,
       [index]: 'error'

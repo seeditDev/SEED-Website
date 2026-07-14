@@ -43,7 +43,7 @@ const uploadFileToRepo = async (path, content, message) => {
       sha = data.sha;
     }
   } catch (e) {
-    console.log('File does not exist yet, will create new file.');
+    /* console.log('File does not exist yet, will create new file.') */ void 0;
   }
 
   const requestData = {
@@ -334,7 +334,7 @@ const TestCreator = ({ college }) => {
       const filtered = list.filter(item => item.name.startsWith(`${college}_`));
       setExistingTests(filtered);
     } catch (e) {
-      console.error(e);
+      /* console.error(e) */ void 0;
     } finally {
       setLoadingExisting(false);
     }
@@ -436,7 +436,7 @@ const TestCreator = ({ college }) => {
       showMsg('Test data successfully loaded! You are now in edit/update mode.', 'success');
       setActiveStep(0);
     } catch (e) {
-      console.error(e);
+      /* console.error(e) */ void 0;
       showMsg('Error loading test data: ' + e.message, 'error');
     } finally {
       setBusy(false);
@@ -776,7 +776,7 @@ const TestCreator = ({ college }) => {
               await addQuestionToCategory(questionData.metadata.category, qId);
             }
           } catch (indexErr) {
-            console.warn('Index registry warning:', indexErr);
+            /* console.warn('Index registry warning:', indexErr) */ void 0;
           }
 
           questionIds.push(qId);
@@ -806,7 +806,7 @@ const TestCreator = ({ college }) => {
       handleResetCreator();
       loadExistingTests();
     } catch (err) {
-      console.error(err);
+      /* console.error(err) */ void 0;
       showMsg(err.message || 'Error occurred while saving.', 'error');
     } finally {
       setBusy(false);

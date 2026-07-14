@@ -60,7 +60,7 @@ class CacheManager {
             localStorage.setItem(cacheKey, JSON.stringify(cacheData));
             return true;
         } catch (error) {
-            console.error('Error setting local cache:', error);
+            /* console.error('Error setting local cache:', error) */ void 0;
             return false;
         }
     }
@@ -88,7 +88,7 @@ class CacheManager {
 
             return data;
         } catch (error) {
-            console.error('Error getting local cache:', error);
+            /* console.error('Error getting local cache:', error) */ void 0;
             return null;
         }
     }
@@ -96,7 +96,7 @@ class CacheManager {
     // Version Management Methods
     clearCacheOnVersionChange(oldVersion, newVersion) {
         if (!oldVersion || !newVersion || compareVersions(newVersion, oldVersion) !== 0) {
-            console.log(`Clearing cache due to version change: ${oldVersion} -> ${newVersion}`);
+            /* console.log(`Clearing cache due to version change: ${oldVersion} -> ${newVersion}`) */ void 0;
             
             // Clear memory cache
             this.clearMemoryCache();
@@ -226,7 +226,7 @@ class CacheManager {
                 return userData;
             }
         } catch (error) {
-            console.error('Error fetching user data:', error);
+            /* console.error('Error fetching user data:', error) */ void 0;
         }
 
         return null;

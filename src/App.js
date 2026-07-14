@@ -55,8 +55,8 @@ class ErrorBoundary extends React.Component {
       error: error,
       errorInfo: errorInfo
     });
-    console.error('Error:', error);
-    console.error('Error Info:', errorInfo);
+    /* console.error('Error:', error) */ void 0;
+    /* console.error('Error Info:', errorInfo) */ void 0;
   }
 
   render() {
@@ -123,7 +123,7 @@ const App = () => {
         try {
           setter(value);
         } catch (e) {
-          console.warn('State update failed:', e);
+          /* console.warn('State update failed:', e) */ void 0;
         }
       }
     };
@@ -158,7 +158,7 @@ const App = () => {
           }
         }
       } catch (err) {
-        console.error('Initialization error:', err);
+        /* console.error('Initialization error:', err) */ void 0;
         safeSetState(setError, err.message);
       } finally {
         timeoutId = setTimeout(() => {
@@ -175,7 +175,7 @@ const App = () => {
       try {
         TrackingService.startTracking(JSON.parse(rawAuth));
       } catch (e) {
-        console.error("Failed to restart tracking on App mount:", e);
+        /* console.error("Failed to restart tracking on App mount:", e) */ void 0;
       }
     }
 
@@ -192,7 +192,7 @@ const App = () => {
       try {
         cacheManager.clearMemoryCache();
       } catch (e) {
-        console.warn('Cleanup error:', e);
+        /* console.warn('Cleanup error:', e) */ void 0;
       }
     };
   }, []);

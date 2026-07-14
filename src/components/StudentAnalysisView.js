@@ -578,7 +578,7 @@ const SummaryReport = ({ student, assessmentData, rank, totalStudents, allStuden
   const handlePDF = async () => {
     setBusy(true);
     try { await downloadUnifiedPDF(student, assessmentData, rank, totalStudents, allStudentResults); }
-    catch (e) { console.error(e); alert('PDF generation failed. Please try again.'); }
+    catch (e) { /* console.error(e) */ void 0; alert('PDF generation failed. Please try again.'); }
     finally { setBusy(false); }
   };
 
@@ -1080,7 +1080,7 @@ const PlacementReport = ({ student, assessmentData, allStudentResults }) => {
   const handlePDF = async () => {
     setBusy(true);
     try { await downloadUnifiedPDF(student, assessmentData, rank, sameTest.length || 1, allStudentResults); }
-    catch (e) { console.error(e); alert('PDF generation failed.'); }
+    catch (e) { /* console.error(e) */ void 0; alert('PDF generation failed.'); }
     finally { setBusy(false); }
   };
 
@@ -1290,7 +1290,7 @@ const StudentAnalysisView = ({ student, assessmentData, allStudentResults = [], 
     try {
       await downloadUnifiedPDF(student, assessmentData, rank, sameTest.length || 1, allStudentResults);
     } catch (e) {
-      console.error(e);
+      /* console.error(e) */ void 0;
       alert('PDF generation failed. Please try again.');
     } finally {
       setBusy(false);

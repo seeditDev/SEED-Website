@@ -35,13 +35,13 @@ const isRunningInPyQt = () => {
   // For development, ALWAYS return true to test PyQt features
   const devOverride = process.env.NODE_ENV === 'development';
   
-  console.log('PyQt detection results:', {
+  /* console.log('PyQt detection results:', {
     userAgentCheck,
     flagCheck,
     functionCheck,
     notBrowserCheck,
     devOverride
-  });
+  }) */ void 0;
   
   // Return true if any check passes
   return userAgentCheck || flagCheck || functionCheck || notBrowserCheck || devOverride;
@@ -52,7 +52,7 @@ const mount = () => {
   const rootElement = document.getElementById('root');
   
   if (!rootElement) {
-    console.error('Root element not found');
+    /* console.error('Root element not found') */ void 0;
     return;
   }
 
@@ -69,7 +69,7 @@ const mount = () => {
       )
     );
   } catch (error) {
-    console.error('Error mounting app:', error);
+    /* console.error('Error mounting app:', error) */ void 0;
   }
 };
 

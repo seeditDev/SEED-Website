@@ -79,7 +79,7 @@ class TrackingService {
 
             this.startHeartbeat();
         } catch (error) {
-            console.error('Error starting tracking:', error);
+            /* console.error('Error starting tracking:', error) */ void 0;
         }
     }
 
@@ -112,7 +112,7 @@ class TrackingService {
                 IsOnline: true
             });
         } catch (error) {
-            console.error('Heartbeat failed:', error);
+            /* console.error('Heartbeat failed:', error) */ void 0;
         }
     }
 
@@ -135,7 +135,7 @@ class TrackingService {
             this.currentUser = null;
             this.heartbeatTimer = null;
         } catch (error) {
-            console.error('Error stopping tracking:', error);
+            /* console.error('Error stopping tracking:', error) */ void 0;
         }
     }
 
@@ -153,7 +153,7 @@ class TrackingService {
         return onSnapshot(q, (snapshot) => {
             callback(snapshot.size);
         }, (error) => {
-            console.error("Live count subscription error:", error);
+            /* console.error("Live count subscription error:", error) */ void 0;
             // Fallback to 0 if permission error (or index needed)
             callback(0);
         });

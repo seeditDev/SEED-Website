@@ -22,7 +22,7 @@ class DataService {
             cacheManager.setLocalCache(cacheKey, data);
             return data;
         } catch (error) {
-            console.error('Fetch error:', error);
+            /* console.error('Fetch error:', error) */ void 0;
             throw error;
         }
     }
@@ -32,28 +32,28 @@ class DataService {
             // Check cache first
             const cachedData = cacheManager.getLocalCache(cacheKey);
             if (cachedData) {
-                console.log('[DataService] Returning cached data for:', cacheKey);
+                /* console.log('[DataService] Returning cached data for:', cacheKey) */ void 0;
                 return cachedData;
             }
 
             // Try local first
             try {
-                console.log('[DataService] Trying local fetch:', localUrl);
+                /* console.log('[DataService] Trying local fetch:', localUrl) */ void 0;
                 const localResponse = await fetch(localUrl);
                 if (localResponse.ok) {
-                    console.log('[DataService] Local fetch successful');
+                    /* console.log('[DataService] Local fetch successful') */ void 0;
                     const data = await localResponse.json();
                     cacheManager.setLocalCache(cacheKey, data);
                     return data;
                 }
-                console.log('[DataService] Local fetch failed, trying GitHub API');
+                /* console.log('[DataService] Local fetch failed, trying GitHub API') */ void 0;
             } catch (localError) {
-                console.log('[DataService] Local fetch error:', localError);
+                /* console.log('[DataService] Local fetch error:', localError) */ void 0;
             }
 
             // Try GitHub API with token
             try {
-                console.log('[DataService] Attempting GitHub API fetch');
+                /* console.log('[DataService] Attempting GitHub API fetch') */ void 0;
                 const token = atob(Object.values(TOKEN_PARTS).join(''));
                 
                 const apiResponse = await fetch(githubApiUrl, {
@@ -65,28 +65,28 @@ class DataService {
 
                 if (apiResponse.ok) {
                     const data = await apiResponse.json();
-                    console.log('[DataService] GitHub API fetch successful');
+                    /* console.log('[DataService] GitHub API fetch successful') */ void 0;
                     const parsedData = JSON.parse(atob(data.content));
                     cacheManager.setLocalCache(cacheKey, parsedData);
                     return parsedData;
                 }
-                console.log('[DataService] GitHub API fetch failed, trying raw GitHub');
+                /* console.log('[DataService] GitHub API fetch failed, trying raw GitHub') */ void 0;
             } catch (apiError) {
-                console.log('[DataService] GitHub API error:', apiError);
+                /* console.log('[DataService] GitHub API error:', apiError) */ void 0;
             }
 
             // Try raw GitHub URL as last resort
-            console.log('[DataService] Attempting raw GitHub fetch:', githubUrl);
+            /* console.log('[DataService] Attempting raw GitHub fetch:', githubUrl) */ void 0;
             const rawResponse = await fetch(githubUrl);
             if (!rawResponse.ok) {
                 throw new Error(`Failed to fetch data: ${rawResponse.status}`);
             }
-            console.log('[DataService] Raw GitHub fetch successful');
+            /* console.log('[DataService] Raw GitHub fetch successful') */ void 0;
             const data = await rawResponse.json();
             cacheManager.setLocalCache(cacheKey, data);
             return data;
         } catch (error) {
-            console.error('[DataService] All fetch attempts failed:', error);
+            /* console.error('[DataService] All fetch attempts failed:', error) */ void 0;
             throw error;
         }
     }
@@ -114,7 +114,7 @@ class DataService {
             github: API_ENDPOINTS.GITHUB.getCollegeData(college, year, fileType)
         };
 
-        console.log(`[DataService] Fetching ${fileType} data for college: ${college}, year: ${year || 'all'}, URLs:`, urls);
+        /* console.log(`[DataService] Fetching ${fileType} data for college: ${college}, year: ${year || 'all'}, URLs:`, urls) */ void 0;
         return await this.fetchWithFallback(urls.local, urls.githubApi, urls.github, cacheKey);
     }
 
@@ -128,15 +128,15 @@ class DataService {
 
     static async validateCredentials(email, password, role, college, year) {
         try {
-            console.log(`[DataService] Validating credentials for:`, {
+            /* console.log(`[DataService] Validating credentials for:`, {
                 email,
                 role,
                 college: college || 'N/A',
                 year: year || 'N/A'
-            });
+            }) */ void 0;
 
             if (role.toLowerCase() === 'staff') {
-                console.log(`[DataService] Staff login - Fetching from backend API`);
+                /* console.log(`[DataService] Staff login - Fetching from backend API`) */ void 0;
                 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
                 
                 const response = await fetch(`${API_URL}/api/auth/login`, {
@@ -149,7 +149,7 @@ class DataService {
                 
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(`[DataService] Staff backend login successful:`, data);
+                    /* console.log(`[DataService] Staff backend login successful:`, data) */ void 0;
                     
                     if (data.token) {
                         localStorage.setItem('token', data.token);
@@ -171,29 +171,29 @@ class DataService {
                     throw new Error(errData.detail || 'Invalid credentials');
                 }
             } else {
-                console.log(`[DataService] Student login - Fetching profiles for college: ${college}, year: ${year}`);
+                /* console.log(`[DataService] Student login - Fetching profiles for college: ${college}, year: ${year}`) */ void 0;
                 const profiles = await this.getCollegeData(college, FILE_TYPES.PROFILES, year);
-                console.log(`[DataService] Profiles received:`, profiles);
+                /* console.log(`[DataService] Profiles received:`, profiles) */ void 0;
                 
                 const userProfile = profiles.find(p => p.Email === email);
-                console.log(`[DataService] Student profile found:`, userProfile ? 'Yes' : 'No');
+                /* console.log(`[DataService] Student profile found:`, userProfile ? 'Yes' : 'No') */ void 0;
                 
                 if (!userProfile || userProfile.Password !== password) {
-                    console.log(`[DataService] Student validation failed:`, {
+                    /* console.log(`[DataService] Student validation failed:`, {
                         profileFound: !!userProfile,
                         passwordMatch: userProfile ? userProfile.Password === password : false
-                    });
+                    }) */ void 0;
                     return null;
                 }
 
-                console.log(`[DataService] Student validation successful for: ${email}`);
+                /* console.log(`[DataService] Student validation successful for: ${email}`) */ void 0;
                 return {
                     ...userProfile,
                     isAuthenticated: true
                 };
             }
         } catch (error) {
-            console.error('Validation error:', error);
+            /* console.error('Validation error:', error) */ void 0;
             throw error;
         }
     }
@@ -220,7 +220,7 @@ class DataService {
             
             return userScores;
         } catch (error) {
-            console.error('Error fetching scores:', error);
+            /* console.error('Error fetching scores:', error) */ void 0;
             return null;
         }
     }
@@ -231,7 +231,7 @@ class DataService {
             const cacheKey = 'access_control_data';
             const cachedData = cacheManager.getLocalCache(cacheKey);
             if (cachedData) {
-                console.log('[DataService] Returning cached access control data');
+                /* console.log('[DataService] Returning cached access control data') */ void 0;
                 return cachedData;
             }
 
@@ -242,23 +242,23 @@ class DataService {
                 github: API_ENDPOINTS.GITHUB.ACCESS_CONTROL
             };
 
-            console.log('[DataService] Fetching access control data');
+            /* console.log('[DataService] Fetching access control data') */ void 0;
             const data = await this.fetchWithFallback(urls.local, urls.githubApi, urls.github, cacheKey);
             return data;
         } catch (error) {
-            console.error('[DataService] Error fetching access control:', error);
+            /* console.error('[DataService] Error fetching access control:', error) */ void 0;
             throw error;
         }
     }
 
     static async getUserAccess(email, college) {
         try {
-            console.log('[DataService] getUserAccess called with email:', email, 'college:', college);
+            /* console.log('[DataService] getUserAccess called with email:', email, 'college:', college) */ void 0;
             
             // First check if we have access data in auth_data in localStorage
             const authData = JSON.parse(localStorage.getItem("auth_data") || "{}");
             if (authData.access) {
-                console.log('[DataService] Returning access data from auth_data in localStorage');
+                /* console.log('[DataService] Returning access data from auth_data in localStorage') */ void 0;
                 return authData.access;
             }
             
@@ -267,7 +267,7 @@ class DataService {
             const department = authData.Department;
             
             if (!year || !department) {
-                console.error('[DataService] Missing year or department in auth data');
+                /* console.error('[DataService] Missing year or department in auth data') */ void 0;
                 throw new Error('Year and department information is missing. Please log in again.');
             }
 
@@ -276,7 +276,7 @@ class DataService {
             const departmentAccess = accessControl?.access_control?.colleges?.[college]?.[year]?.[department];
             
             if (!departmentAccess) {
-                console.error('[DataService] No access configuration found for:', { college, year, department });
+                /* console.error('[DataService] No access configuration found for:', { college, year, department }) */ void 0;
                 throw new Error('No access configuration found for your department. Please contact support.');
             }
 
@@ -315,7 +315,7 @@ class DataService {
 
             return accessData;
         } catch (error) {
-            console.error('[DataService] Error in getUserAccess:', error);
+            /* console.error('[DataService] Error in getUserAccess:', error) */ void 0;
             throw error;
         }
     }
@@ -331,7 +331,7 @@ class DataService {
 
             return accessData.allowed_modules.includes(moduleId);
         } catch (error) {
-            console.error('[DataService] Error checking module access:', error);
+            /* console.error('[DataService] Error checking module access:', error) */ void 0;
             return false;
         }
     }
@@ -379,24 +379,24 @@ class DataService {
                 attemptsAllowed: assessment.attempts_allowed
             };
         } catch (error) {
-            console.error('[DataService] Error checking assessment access:', error);
+            /* console.error('[DataService] Error checking assessment access:', error) */ void 0;
             return { allowed: false, reason: 'Error checking assessment access' };
         }
     }
 
     static async getPortalLinks() {
         try {
-            console.log('getPortalLinks called');
+            /* console.log('getPortalLinks called') */ void 0;
             
             // First check if we have portal links in sessionStorage (preferred approach)
             const portalLinksData = sessionStorage.getItem("portal_links");
             if (portalLinksData) {
                 try {
                     const storedLinks = JSON.parse(portalLinksData);
-                    console.log('Returning portal links from sessionStorage');
+                    /* console.log('Returning portal links from sessionStorage') */ void 0;
                     return storedLinks;
                 } catch (e) {
-                    console.error('Error parsing portal links from sessionStorage:', e);
+                    /* console.error('Error parsing portal links from sessionStorage:', e) */ void 0;
                     // If JSON parsing fails, we'll continue to check other sources
                 }
             }
@@ -406,15 +406,15 @@ class DataService {
             if (localStorageLinks) {
                 try {
                     const parsedLinks = JSON.parse(localStorageLinks);
-                    console.log('Found portal links in localStorage, migrating to sessionStorage');
+                    /* console.log('Found portal links in localStorage, migrating to sessionStorage') */ void 0;
                     // Migrate to sessionStorage
                     sessionStorage.setItem("portal_links", localStorageLinks);
                     // Remove from localStorage since we're transitioning
                     localStorage.removeItem("portal_links");
-                    console.log('Migrated portal links from localStorage to sessionStorage');
+                    /* console.log('Migrated portal links from localStorage to sessionStorage') */ void 0;
                     return parsedLinks;
                 } catch (e) {
-                    console.error('Error parsing portal links from localStorage:', e);
+                    /* console.error('Error parsing portal links from localStorage:', e) */ void 0;
                 }
             }
             
@@ -423,41 +423,41 @@ class DataService {
             const legacyCacheKey = 'portal_links';
             const cachedLinks = cacheManager.getLocalCache(legacyCacheKey);
             if (cachedLinks) {
-                console.log('Found portal links in legacy cache system with key:', legacyCacheKey);
+                /* console.log('Found portal links in legacy cache system with key:', legacyCacheKey) */ void 0;
                 
                 // Migrate to the sessionStorage approach
                 sessionStorage.setItem("portal_links", JSON.stringify(cachedLinks));
-                console.log('Migrated portal links to sessionStorage');
+                /* console.log('Migrated portal links to sessionStorage') */ void 0;
                 
                 // Clear the old cache to avoid duplication
                 cacheManager.clearCache(legacyCacheKey);
-                console.log('Cleared legacy cache entry');
+                /* console.log('Cleared legacy cache entry') */ void 0;
                 
                 return cachedLinks;
             }
             
             // If not found in any cache, fetch from server
-            console.log('No cached portal links found, fetching from server');
+            /* console.log('No cached portal links found, fetching from server') */ void 0;
             const url = 'https://raw.githubusercontent.com/seeditDev/SEEDDB/main/portalLinks/portalLinks.json';
-            console.log('Fetching portal links from URL:', url);
+            /* console.log('Fetching portal links from URL:', url) */ void 0;
             
             const response = await fetch(url);
             
             if (!response.ok) {
-                console.error('Portal links HTTP error, status:', response.status);
+                /* console.error('Portal links HTTP error, status:', response.status) */ void 0;
                 throw new Error(`Failed to fetch portal links: HTTP error ${response.status}`);
             }
             
             const links = await response.json();
-            console.log('Portal links received:', links);
+            /* console.log('Portal links received:', links) */ void 0;
             
             // Store in sessionStorage
             sessionStorage.setItem("portal_links", JSON.stringify(links));
-            console.log('Stored portal links in sessionStorage');
+            /* console.log('Stored portal links in sessionStorage') */ void 0;
             
             return links;
         } catch (error) {
-            console.error('Error in getPortalLinks:', error);
+            /* console.error('Error in getPortalLinks:', error) */ void 0;
             throw error; // Re-throw the error to be handled by the calling function
         }
     }

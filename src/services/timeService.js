@@ -40,14 +40,14 @@ class TimeService {
                 this.isInitialized = true;
                 this.lastFetchTime = localTime;
                 
-                console.log(`[TimeService] Sync successful via ${api}. Offset: ${this.offset}ms`);
+                /* console.log(`[TimeService] Sync successful via ${api}. Offset: ${this.offset}ms`) */ void 0;
                 return;
             } catch (error) {
-                console.warn(`[TimeService] API ${api} failed:`, error.message);
+                /* console.warn(`[TimeService] API ${api} failed:`, error.message) */ void 0;
             }
         }
 
-        console.warn('[TimeService] All time APIs failed. Using local system time as fallback.');
+        /* console.warn('[TimeService] All time APIs failed. Using local system time as fallback.') */ void 0;
     }
 
     /**

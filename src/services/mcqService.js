@@ -20,7 +20,7 @@ class MCQService {
         try {
             // Check if online first
             if (!navigator.onLine) {
-                console.warn('[MCQService] Client is offline, cannot check existing attempt');
+                /* console.warn('[MCQService] Client is offline, cannot check existing attempt') */ void 0;
                 // Return safe default - allow test to proceed, Firestore will handle duplicate on submit
                 return { exists: false, data: null, completed: false, offline: true };
             }
@@ -40,11 +40,11 @@ class MCQService {
 
             return { exists: false, data: null, completed: false };
         } catch (error) {
-            console.error('[MCQService] Error checking existing attempt:', error);
+            /* console.error('[MCQService] Error checking existing attempt:', error) */ void 0;
 
             // Handle offline errors gracefully
             if (error.code === 'unavailable' || error.message?.includes('offline') || error.message?.includes('network')) {
-                console.warn('[MCQService] Network error, allowing test to proceed');
+                /* console.warn('[MCQService] Network error, allowing test to proceed') */ void 0;
                 return { exists: false, data: null, completed: false, offline: true };
             }
 
@@ -64,7 +64,7 @@ class MCQService {
     static async fetchUserAttempts(email, college, year, department) {
         try {
             if (!navigator.onLine) {
-                console.warn('[MCQService] Client is offline, cannot fetch user attempts');
+                /* console.warn('[MCQService] Client is offline, cannot fetch user attempts') */ void 0;
                 return {};
             }
 
@@ -85,7 +85,7 @@ class MCQService {
             });
             return attemptsMap;
         } catch (error) {
-            console.error('[MCQService] Error fetching user attempts:', error);
+            /* console.error('[MCQService] Error fetching user attempts:', error) */ void 0;
             return {};
         }
     }
@@ -133,10 +133,10 @@ class MCQService {
             // Use setDoc with merge to avoid overwriting if document exists
             await setDoc(docRef, initialData, { merge: true });
 
-            console.log('[MCQService] Initial attempt created:', docPath);
+            /* console.log('[MCQService] Initial attempt created:', docPath) */ void 0;
             return { success: true, docPath };
         } catch (error) {
-            console.error('[MCQService] Error creating initial attempt:', error);
+            /* console.error('[MCQService] Error creating initial attempt:', error) */ void 0;
             throw error;
         }
     }
@@ -150,10 +150,10 @@ class MCQService {
             const docPath = `colleges/${college}/years/${year}/departments/${department}/students/${email}/mcq_results/${testID}`;
             const docRef = doc(db, docPath);
             await setDoc(docRef, { completed: true, status: 'submitting' }, { merge: true });
-            console.log('[MCQService] Marked test as submitting to prevent refresh reattempts');
+            /* console.log('[MCQService] Marked test as submitting to prevent refresh reattempts') */ void 0;
             return true;
         } catch (error) {
-            console.error('[MCQService] Error marking test as submitting:', error);
+            /* console.error('[MCQService] Error marking test as submitting:', error) */ void 0;
             return false;
         }
     }
@@ -202,7 +202,7 @@ class MCQService {
                     throw checkError;
                 }
                 // For other errors, log and continue (Firestore will handle duplicate check)
-                console.warn('[MCQService] Error checking existing attempt during save, continuing:', checkError);
+                /* console.warn('[MCQService] Error checking existing attempt during save, continuing:', checkError) */ void 0;
             }
 
             const docPath = `colleges/${college}/years/${year}/departments/${department}/students/${email}/mcq_results/${testID}`;
@@ -261,10 +261,10 @@ class MCQService {
             // Use setDoc to create/update the document
             await setDoc(docRef, resultDocument, { merge: true });
 
-            console.log('[MCQService] Result saved to Firestore:', docPath);
+            /* console.log('[MCQService] Result saved to Firestore:', docPath) */ void 0;
             return { success: true, docId: docPath, docRef: docRef };
         } catch (error) {
-            console.error('[MCQService] Error saving to Firestore:', error);
+            /* console.error('[MCQService] Error saving to Firestore:', error) */ void 0;
             throw error;
         }
     }
@@ -309,7 +309,7 @@ class MCQService {
                 violationsDetails: JSON.stringify(resultData.violations || [])
             };
 
-            console.log('[MCQService] Sending to Google Sheets:', payload);
+            /* console.log('[MCQService] Sending to Google Sheets:', payload) */ void 0;
 
             const response = await fetch(GAS_ENDPOINT, {
                 method: 'POST',
@@ -322,11 +322,11 @@ class MCQService {
 
             // Note: With no-cors mode, we can't read the response
             // But the request is sent successfully
-            console.log('[MCQService] Result sent to Google Sheets');
+            /* console.log('[MCQService] Result sent to Google Sheets') */ void 0;
 
             return { success: true };
         } catch (error) {
-            console.error('[MCQService] Error saving to Google Sheets:', error);
+            /* console.error('[MCQService] Error saving to Google Sheets:', error) */ void 0;
             throw error;
         }
     }
@@ -373,7 +373,7 @@ class MCQService {
             if (error) throw error;
             return { success: true };
         } catch (error) {
-            console.error('[MCQService] Error saving to Supabase:', error);
+            /* console.error('[MCQService] Error saving to Supabase:', error) */ void 0;
             throw error;
         }
     }
@@ -411,12 +411,12 @@ class MCQService {
             if (docSnap.exists()) {
                 const existingData = docSnap.data();
                 if (existingData.completed === true || existingData.submitted === true) {
-                    console.warn('[MCQService] Skipping progress sync: Test already marked as completed/submitted in Firestore');
+                    /* console.warn('[MCQService] Skipping progress sync: Test already marked as completed/submitted in Firestore') */ void 0;
                     return { success: true, skipped: true };
                 }
             }
         } catch (e) {
-            console.warn('[MCQService] Error checking existing status during progress sync, proceeding with caution:', e);
+            /* console.warn('[MCQService] Error checking existing status during progress sync, proceeding with caution:', e) */ void 0;
         }
 
         const progressDocument = {
@@ -504,7 +504,7 @@ class MCQService {
             // await this.saveProgressToSheets(progressData);
             return { success: true };
         } catch (error) {
-            console.error('[MCQService] Progress sync failed:', error);
+            /* console.error('[MCQService] Progress sync failed:', error) */ void 0;
             throw error;
         }
     }
@@ -529,9 +529,9 @@ class MCQService {
                 syncedAtISO: timeService.getNow().toISOString()
             }, { merge: true });
 
-            console.log('[MCQService] Marked as synced to Sheets');
+            /* console.log('[MCQService] Marked as synced to Sheets') */ void 0;
         } catch (error) {
-            console.error('[MCQService] Error marking as synced:', error);
+            /* console.error('[MCQService] Error marking as synced:', error) */ void 0;
             throw error;
         }
     }
@@ -557,9 +557,9 @@ class MCQService {
                 syncedAtISO: timeService.getNow().toISOString()
             }, { merge: true });
 
-            console.log('[MCQService] Marked as synced to Supabase');
+            /* console.log('[MCQService] Marked as synced to Supabase') */ void 0;
         } catch (error) {
-            console.error('[MCQService] Error marking as synced to Supabase:', error);
+            /* console.error('[MCQService] Error marking as synced to Supabase:', error) */ void 0;
             throw error;
         }
     }
@@ -577,9 +577,9 @@ class MCQService {
                 lastRetry: null
             });
             localStorage.setItem('mcq_unsynced_results', JSON.stringify(unsynced));
-            console.log('[MCQService] Saved unsynced result to localStorage');
+            /* console.log('[MCQService] Saved unsynced result to localStorage') */ void 0;
         } catch (error) {
-            console.error('[MCQService] Error saving unsynced result:', error);
+            /* console.error('[MCQService] Error saving unsynced result:', error) */ void 0;
         }
     }
 
@@ -626,7 +626,7 @@ class MCQService {
 
                     synced++;
                 } catch (error) {
-                    console.error('[MCQService] Retry failed for result:', error);
+                    /* console.error('[MCQService] Retry failed for result:', error) */ void 0;
                     result.retryCount = (result.retryCount || 0) + 1;
                     result.lastRetry = new Date().toISOString();
 
@@ -648,7 +648,7 @@ class MCQService {
 
             return { synced, failed };
         } catch (error) {
-            console.error('[MCQService] Error syncing unsynced results:', error);
+            /* console.error('[MCQService] Error syncing unsynced results:', error) */ void 0;
             return { synced: 0, failed: 0 };
         }
     }
@@ -760,7 +760,7 @@ class MCQService {
 
             return { success: true, data: mappedData };
         } catch (error) {
-            console.error('[MCQService] Error fetching MCQ results from Supabase:', error);
+            /* console.error('[MCQService] Error fetching MCQ results from Supabase:', error) */ void 0;
             return { success: false, message: error.message };
         }
     }
@@ -778,9 +778,9 @@ class MCQService {
             try {
                 await this.saveResultToFirestore(resultData);
                 firestoreSuccess = true;
-                console.log('[MCQService] ✅ Firestore save successful');
+                /* console.log('[MCQService] ✅ Firestore save successful') */ void 0;
             } catch (firestoreError) {
-                console.error('[MCQService] ❌ Firestore save failed:', firestoreError);
+                /* console.error('[MCQService] ❌ Firestore save failed:', firestoreError) */ void 0;
 
                 // If it's a duplicate submission error, throw it immediately
                 if (firestoreError.message.includes('DUPLICATE_SUBMISSION')) {
@@ -829,9 +829,9 @@ class MCQService {
                         resultData.department
                     );
                 }
-                console.log('[MCQService] ✅ Supabase save successful');
+                /* console.log('[MCQService] ✅ Supabase save successful') */ void 0;
             }).catch(supabaseError => {
-                console.error('[MCQService] ⚠️ Supabase save failed:', supabaseError);
+                /* console.error('[MCQService] ⚠️ Supabase save failed:', supabaseError) */ void 0;
                 // Save to localStorage for retry
                 if (firestoreSuccess) {
                     this.saveUnsyncedResult(resultData);
@@ -844,7 +844,7 @@ class MCQService {
                 supabase: false // Pending
             };
         } catch (error) {
-            console.error('[MCQService] ❌ Submission failed:', error);
+            /* console.error('[MCQService] ❌ Submission failed:', error) */ void 0;
             throw error;
         }
     }

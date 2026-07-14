@@ -210,7 +210,7 @@ const StudentDashboard = () => {
       setAssessments(combined);
       setFilteredAssessments(combined);
     } catch (err) {
-      console.error("Failed to load assessments map:", err);
+      /* console.error("Failed to load assessments map:", err) */ void 0;
       setError("Failed to retrieve your assigned assessments. Please try again.");
     } finally {
       setLoading(false);
@@ -285,7 +285,7 @@ const StudentDashboard = () => {
         const response = await fetch(localUrl);
         if (response.ok) return await response.json();
       } catch (err) {
-        console.log("Local fetch failed, trying GitHub repository fallback");
+        /* console.log("Local fetch failed, trying GitHub repository fallback") */ void 0;
       }
 
       const token = atob([_0x5f, _0x4e, _0x3d, _0x2c, _0x1b, _0xa0, _0xb1, _0xc2, _0xd3, _0xe4].join(''));
@@ -308,7 +308,7 @@ const StudentDashboard = () => {
       if (!rawRes.ok) throw new Error("Could not download questions JSON.");
       return await rawRes.json();
     } catch (err) {
-      console.error("All fetch attempts failed:", err);
+      /* console.error("All fetch attempts failed:", err) */ void 0;
       throw err;
     }
   };
@@ -381,7 +381,7 @@ const StudentDashboard = () => {
         await runPreflightChecks(assessment);
       }
     } catch (err) {
-      console.error("Eligibility check failed:", err);
+      /* console.error("Eligibility check failed:", err) */ void 0;
       // Still wait out the minimum 5 seconds before showing error
       const elapsed = Date.now() - verifyStart;
       const remaining = Math.max(0, 5000 - elapsed);
@@ -479,7 +479,7 @@ const StudentDashboard = () => {
         navigate(`/student/coding/${assessment.slug}`);
       }
     } catch (err) {
-      console.error("Launch setup failed:", err);
+      /* console.error("Launch setup failed:", err) */ void 0;
       setLaunchStep(null);
       setEligibilityError({
         title: "Setup Error",
@@ -504,7 +504,7 @@ const StudentDashboard = () => {
         document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=.hackerrank.com";
       }
     } catch (error) {
-      console.error('Error clearing cookies:', error);
+      /* console.error('Error clearing cookies:', error) */ void 0;
     }
 
     try {
@@ -516,7 +516,7 @@ const StudentDashboard = () => {
         localStorage.clear();
       }, 100);
     } catch (error) {
-      console.error('Error clearing storage:', error);
+      /* console.error('Error clearing storage:', error) */ void 0;
     }
 
     setTimeout(() => {

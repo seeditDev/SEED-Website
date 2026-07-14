@@ -389,7 +389,7 @@ const fetchFirestoreForCollege = async (college) => {
         const pct = r.percentage > 1 ? r.percentage : (r.percentage || 0) * 100;
         mcqResults.push({ ...r, id: d.id, type: 'mcq', percentage: pct, testName: r.testName || r.test_name || 'MCQ Test', testID: r.testID || r.test_id || 'unknown' });
       });
-    } catch (e) { console.warn('MCQ fetch error:', e); }
+    } catch (e) { /* console.warn('MCQ fetch error:', e) */ void 0; }
 
     // Coding Results
     try {
@@ -405,7 +405,7 @@ const fetchFirestoreForCollege = async (college) => {
         const pct = r.percentage > 1 ? r.percentage : (r.score ? (r.score / 300) * 100 : 0);
         codingResults.push({ ...r, id: d.id, type: 'coding', percentage: pct, testName: r.assessmentName || r.testName || 'Coding Test', testID: r.assessmentID || r.testID || 'unknown_coding' });
       });
-    } catch (e) { console.warn('Coding fetch error:', e); }
+    } catch (e) { /* console.warn('Coding fetch error:', e) */ void 0; }
 
     // Assessment_Results
     try {
@@ -414,9 +414,9 @@ const fetchFirestoreForCollege = async (college) => {
         const r = d.data();
         if (r.college === college) assessmentResults.push({ ...r, id: d.id });
       });
-    } catch (e) { console.warn('Assessment_Results fetch error:', e); }
+    } catch (e) { /* console.warn('Assessment_Results fetch error:', e) */ void 0; }
 
-  } catch (e) { console.error('Firestore fetch error:', e); }
+  } catch (e) { /* console.error('Firestore fetch error:', e) */ void 0; }
 
   return { mcqResults, codingResults, assessmentResults };
 };
@@ -512,7 +512,7 @@ const StaffDashboardComponent = () => {
         try {
           const data = await DataService.getCollegeData(college, 'profiles', yr);
           if (Array.isArray(data)) profiles = [...profiles, ...data.map(p => ({ ...p, Year: yr }))];
-        } catch (e) { console.warn(`Profile fetch failed for year ${yr}:`, e); }
+        } catch (e) { /* console.warn(`Profile fetch failed for year ${yr}:`, e) */ void 0; }
       }
       setStudents(profiles);
 
@@ -521,11 +521,11 @@ const StaffDashboardComponent = () => {
       try {
         const { data: mcqData } = await supabase.from('mcq_results').select('*').eq('college', college);
         if (mcqData) supaResults = [...supaResults, ...mcqData.map(r => ({ ...r, type: 'mcq' }))];
-      } catch (e) { console.warn('Supabase MCQ error:', e); }
+      } catch (e) { /* console.warn('Supabase MCQ error:', e) */ void 0; }
       try {
         const { data: codingData } = await supabase.from('coding_results').select('*').eq('college', college);
         if (codingData) supaResults = [...supaResults, ...codingData.map(r => ({ ...r, type: 'coding' }))];
-      } catch (e) { console.warn('Supabase coding error:', e); }
+      } catch (e) { /* console.warn('Supabase coding error:', e) */ void 0; }
 
       // 3. Firestore results
       const { mcqResults: fsMcq, codingResults: fsCoding, assessmentResults: fsAssessment } = await fetchFirestoreForCollege(college);
@@ -540,7 +540,7 @@ const StaffDashboardComponent = () => {
       });
       setAllResults(combined);
     } catch (e) {
-      console.error('Error fetching data:', e);
+      /* console.error('Error fetching data:', e) */ void 0;
     } finally {
       setLoading(false);
     }
@@ -662,7 +662,7 @@ const StaffDashboardComponent = () => {
 
   const handlePDF = async (student) => {
     try { setGeneratingPdf(true); await generateStudentPDF(student, assessmentResults); }
-    catch (e) { console.error('PDF error:', e); alert('PDF generation failed.'); }
+    catch (e) { /* console.error('PDF error:', e) */ void 0; alert('PDF generation failed.'); }
     finally { setGeneratingPdf(false); }
   };
 

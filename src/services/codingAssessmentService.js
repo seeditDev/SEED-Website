@@ -11,7 +11,7 @@ class CodingAssessmentService {
     static async checkExistingAttempt(email, assessmentID, college, year, department) {
         try {
             if (!navigator.onLine) {
-                console.warn('[CodingAssessmentService] Client is offline, cannot check existing attempt');
+                /* console.warn('[CodingAssessmentService] Client is offline, cannot check existing attempt') */ void 0;
                 return { exists: false, data: null, completed: false, offline: true };
             }
 
@@ -30,7 +30,7 @@ class CodingAssessmentService {
 
             return { exists: false, data: null, completed: false };
         } catch (error) {
-            console.error('[CodingAssessmentService] Error checking existing attempt:', error);
+            /* console.error('[CodingAssessmentService] Error checking existing attempt:', error) */ void 0;
             if (error.code === 'unavailable' || error.message?.includes('offline') || error.message?.includes('network')) {
                 return { exists: false, data: null, completed: false, offline: true };
             }
@@ -44,7 +44,7 @@ class CodingAssessmentService {
     static async fetchUserAttempts(email, college, year, department) {
         try {
             if (!navigator.onLine) {
-                console.warn('[CodingAssessmentService] Client is offline, cannot fetch user attempts');
+                /* console.warn('[CodingAssessmentService] Client is offline, cannot fetch user attempts') */ void 0;
                 return {};
             }
 
@@ -64,7 +64,7 @@ class CodingAssessmentService {
             });
             return attemptsMap;
         } catch (error) {
-            console.error('[CodingAssessmentService] Error fetching user attempts:', error);
+            /* console.error('[CodingAssessmentService] Error fetching user attempts:', error) */ void 0;
             return {};
         }
     }
@@ -132,7 +132,7 @@ class CodingAssessmentService {
                     });
                 if (supabaseError) throw supabaseError;
             } catch (supabaseErr) {
-                console.warn('[CodingAssessmentService] Supabase coding_results initial attempt insert failed:', supabaseErr.message);
+                /* console.warn('[CodingAssessmentService] Supabase coding_results initial attempt insert failed:', supabaseErr.message) */ void 0;
             }
 
             // Also write initial 'started' status to unified assessment_results table
@@ -159,16 +159,16 @@ class CodingAssessmentService {
                         time_started: initialData.timeStartedISO,
                         updated_at: new Date().toISOString()
                     }, { onConflict: 'email,test_id,type' });
-                if (arErr) console.warn('[CodingAssessmentService] assessment_results initial insert failed (non-blocking):', arErr.message);
+                if (arErr) /* console.warn('[CodingAssessmentService] assessment_results initial insert failed (non-blocking):', arErr.message) */ void 0;
             } catch (arEx) {
-                console.warn('[CodingAssessmentService] assessment_results initial exception:', arEx.message);
+                /* console.warn('[CodingAssessmentService] assessment_results initial exception:', arEx.message) */ void 0;
             }
 
             await setDoc(docRef, initialData, { merge: true });
-            console.log('[CodingAssessmentService] Initial attempt created:', docPath);
+            /* console.log('[CodingAssessmentService] Initial attempt created:', docPath) */ void 0;
             return { success: true, docPath };
         } catch (error) {
-            console.warn('[CodingAssessmentService] Could not register attempt in Firestore (non-blocking):', error.message);
+            /* console.warn('[CodingAssessmentService] Could not register attempt in Firestore (non-blocking):', error.message) */ void 0;
             // Do NOT re-throw — Firestore permission issues must never block the test from starting.
             // The student's progress is always saved to localStorage as primary backup.
             return { success: false, error: error.message };
@@ -197,13 +197,13 @@ class CodingAssessmentService {
                         onConflict: 'email,test_id'
                     });
             } catch (supErr) {
-                console.warn('[CodingAssessmentService] Supabase markAsSubmitting status update failed:', supErr.message);
+                /* console.warn('[CodingAssessmentService] Supabase markAsSubmitting status update failed:', supErr.message) */ void 0;
             }
 
             return true;
         } catch (error) {
             // Non-critical — silently ignore permission or network errors
-            console.warn('[CodingAssessmentService] markAsSubmitting skipped (non-blocking):', error.message);
+            /* console.warn('[CodingAssessmentService] markAsSubmitting skipped (non-blocking):', error.message) */ void 0;
             return false;
         }
     }
@@ -285,15 +285,15 @@ class CodingAssessmentService {
                     type: 'coding',
                     assessmentCentricPath: assessmentDocPath
                 }, { merge: true });
-                console.log('[CodingAssessmentService] Result also saved to AssessmentResults:', assessmentDocPath);
+                /* console.log('[CodingAssessmentService] Result also saved to AssessmentResults:', assessmentDocPath) */ void 0;
             } catch (assessErr) {
-                console.warn('[CodingAssessmentService] AssessmentResults write failed (non-blocking):', assessErr.message);
+                /* console.warn('[CodingAssessmentService] AssessmentResults write failed (non-blocking):', assessErr.message) */ void 0;
             }
 
-            console.log('[CodingAssessmentService] Result saved to Firestore:', docPath);
+            /* console.log('[CodingAssessmentService] Result saved to Firestore:', docPath) */ void 0;
             return { success: true, docId: docPath, docRef };
         } catch (error) {
-            console.error('[CodingAssessmentService] Error saving to Firestore:', error);
+            /* console.error('[CodingAssessmentService] Error saving to Firestore:', error) */ void 0;
             throw error;
         }
     }
@@ -338,7 +338,7 @@ class CodingAssessmentService {
                 });
 
             if (error) {
-                console.warn('[CodingAssessmentService] Supabase coding_results upload failed. Continuing...', error);
+                /* console.warn('[CodingAssessmentService] Supabase coding_results upload failed. Continuing...', error) */ void 0;
             }
 
             // Also upsert into unified assessment_results table
@@ -374,14 +374,14 @@ class CodingAssessmentService {
                         execution_stats: resultData.executionStats || {},
                         updated_at: new Date().toISOString()
                     }, { onConflict: 'email,test_id,type' });
-                if (arErr) console.warn('[CodingAssessmentService] assessment_results upsert failed (non-blocking):', arErr.message);
+                if (arErr) /* console.warn('[CodingAssessmentService] assessment_results upsert failed (non-blocking):', arErr.message) */ void 0;
             } catch (arEx) {
-                console.warn('[CodingAssessmentService] assessment_results exception (non-blocking):', arEx.message);
+                /* console.warn('[CodingAssessmentService] assessment_results exception (non-blocking):', arEx.message) */ void 0;
             }
 
             return { success: true };
         } catch (error) {
-            console.error('[CodingAssessmentService] Supabase exception:', error);
+            /* console.error('[CodingAssessmentService] Supabase exception:', error) */ void 0;
             return { success: false, error: error.message };
         }
     }
@@ -398,7 +398,7 @@ class CodingAssessmentService {
             await this.saveResultToFirestore(resultData);
             firestoreOk = true;
         } catch (err) {
-            console.warn('[CodingAssessmentService] Firestore submission failed (non-blocking):', err.message);
+            /* console.warn('[CodingAssessmentService] Firestore submission failed (non-blocking):', err.message) */ void 0;
         }
 
         // 2. Try Supabase (best-effort backup)
@@ -406,10 +406,10 @@ class CodingAssessmentService {
             await this.saveResultToSupabase(resultData);
             supabaseOk = true;
         } catch (err) {
-            console.warn('[CodingAssessmentService] Supabase backup failed:', err.message);
+            /* console.warn('[CodingAssessmentService] Supabase backup failed:', err.message) */ void 0;
         }
 
-        console.log(`[CodingAssessmentService] Submission channels — Firestore: ${firestoreOk}, Supabase: ${supabaseOk}`);
+        /* console.log(`[CodingAssessmentService] Submission channels — Firestore: ${firestoreOk}, Supabase: ${supabaseOk}`) */ void 0;
 
         // Always succeed from the student's perspective — at least one channel is enough
         return { success: true, firestoreOk, supabaseOk };
@@ -471,7 +471,7 @@ class CodingAssessmentService {
             await setDoc(docRef, progressDocument, { merge: true });
             return { success: true };
         } catch (error) {
-            console.error('[CodingAssessmentService] Progress backup failed:', error);
+            /* console.error('[CodingAssessmentService] Progress backup failed:', error) */ void 0;
             throw error;
         }
     }

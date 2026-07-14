@@ -92,7 +92,7 @@ const AdminQuestionBank = () => {
             list.sort((a, b) => a.title.localeCompare(b.title));
             setChallenges(list);
         } catch (err) {
-            console.error("Failed to load questions in admin dashboard:", err);
+            /* console.error("Failed to load questions in admin dashboard:", err) */ void 0;
         } finally {
             setIsLoading(false);
         }
@@ -106,7 +106,7 @@ const AdminQuestionBank = () => {
             snap.forEach(doc => list.push({ id: doc.id, ...doc.data() }));
             setContests(list);
         } catch (err) {
-            console.error("Failed to load contests:", err);
+            /* console.error("Failed to load contests:", err) */ void 0;
         } finally {
             setIsLoading(false);
         }

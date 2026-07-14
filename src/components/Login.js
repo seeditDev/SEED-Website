@@ -220,14 +220,14 @@ const Login = () => {
             window.desktopBridge.setStudentSession(authData);
           }
         } catch (e) {
-          console.error("Failed to sync session with PyQt:", e);
+          /* console.error("Failed to sync session with PyQt:", e) */ void 0;
         }
 
         // Start Live User Tracking
         try {
           await TrackingService.startTracking(authData);
         } catch (trackError) {
-          console.error("Error starting tracking on login:", trackError);
+          /* console.error("Error starting tracking on login:", trackError) */ void 0;
         }
 
         setShowSuccess(true);
@@ -240,7 +240,7 @@ const Login = () => {
         setError("Invalid credentials");
       }
     } catch (error) {
-      console.error("Login error:", error);
+      /* console.error("Login error:", error) */ void 0;
       setError(error.message || "Login failed. Please try again.");
     } finally {
       setLoading(false);

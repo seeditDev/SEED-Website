@@ -184,7 +184,7 @@ function Registration() {
       setConfirmRollNumber("");
 
     } catch (error) {
-      console.error("Error:", error);
+      /* console.error("Error:", error) */ void 0;
       setSubmitStatus({
         loading: false,
         error: "Registration failed. Please try again."

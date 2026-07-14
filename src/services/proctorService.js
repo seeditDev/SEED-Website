@@ -14,7 +14,7 @@ class ProctorService {
   static async uploadSnapshot(studentID, testID, imageBlob, filename) {
     try {
       if (!imageBlob) {
-        console.warn('[ProctorService] No image blob provided');
+        /* console.warn('[ProctorService] No image blob provided') */ void 0;
         return null;
       }
 
@@ -26,7 +26,7 @@ class ProctorService {
       const storagePath = `proctor_snapshots/${sanitizedStudentID}/${sanitizedTestID}/${sanitizedFilename}.jpg`;
       const storageRef = ref(storage, storagePath);
 
-      console.log('[ProctorService] Uploading snapshot to:', storagePath);
+      /* console.log('[ProctorService] Uploading snapshot to:', storagePath) */ void 0;
 
       // Upload blob
       const snapshot = await uploadBytes(storageRef, imageBlob, {
@@ -36,11 +36,11 @@ class ProctorService {
 
       // Get download URL
       const downloadURL = await getDownloadURL(snapshot.ref);
-      console.log('[ProctorService] Snapshot uploaded successfully:', downloadURL);
+      /* console.log('[ProctorService] Snapshot uploaded successfully:', downloadURL) */ void 0;
 
       return downloadURL;
     } catch (error) {
-      console.error('[ProctorService] Error uploading snapshot:', error);
+      /* console.error('[ProctorService] Error uploading snapshot:', error) */ void 0;
       
       // Save to localStorage for retry
       this.saveUnsyncedSnapshot(studentID, testID, imageBlob, filename);
@@ -82,10 +82,10 @@ class ProctorService {
       const logRef = collection(db, 'proctor_logs', sanitizedStudentID, sanitizedTestID);
       const docRef = await addDoc(logRef, logData);
 
-      console.log('[ProctorService] Proctor event logged:', docRef.id);
+      /* console.log('[ProctorService] Proctor event logged:', docRef.id) */ void 0;
       return docRef.id;
     } catch (error) {
-      console.error('[ProctorService] Error logging proctor event:', error);
+      /* console.error('[ProctorService] Error logging proctor event:', error) */ void 0;
       
       // Save to localStorage for retry
       this.saveUnsyncedLog(studentID, testID, eventData);
@@ -114,11 +114,11 @@ class ProctorService {
           retryCount: 0
         });
         localStorage.setItem(key, JSON.stringify(unsynced));
-        console.log('[ProctorService] Saved unsynced snapshot to localStorage');
+        /* console.log('[ProctorService] Saved unsynced snapshot to localStorage') */ void 0;
       };
       reader.readAsDataURL(imageBlob);
     } catch (error) {
-      console.error('[ProctorService] Error saving unsynced snapshot:', error);
+      /* console.error('[ProctorService] Error saving unsynced snapshot:', error) */ void 0;
     }
   }
 
@@ -139,9 +139,9 @@ class ProctorService {
       });
       
       localStorage.setItem(key, JSON.stringify(unsynced));
-      console.log('[ProctorService] Saved unsynced log to localStorage');
+      /* console.log('[ProctorService] Saved unsynced log to localStorage') */ void 0;
     } catch (error) {
-      console.error('[ProctorService] Error saving unsynced log:', error);
+      /* console.error('[ProctorService] Error saving unsynced log:', error) */ void 0;
     }
   }
 
@@ -168,7 +168,7 @@ class ProctorService {
           );
           
           if (url) {
-            console.log('[ProctorService] Retried snapshot upload successfully');
+            /* console.log('[ProctorService] Retried snapshot upload successfully') */ void 0;
           } else {
             snapshot.retryCount++;
             if (snapshot.retryCount < 5) {
@@ -176,7 +176,7 @@ class ProctorService {
             }
           }
         } catch (error) {
-          console.error('[ProctorService] Retry snapshot failed:', error);
+          /* console.error('[ProctorService] Retry snapshot failed:', error) */ void 0;
           snapshot.retryCount++;
           if (snapshot.retryCount < 5) {
             remainingSnapshots.push(snapshot);
@@ -197,9 +197,9 @@ class ProctorService {
       for (const log of unsyncedLogs) {
         try {
           await this.logProctorEvent(log.studentID, log.testID, log);
-          console.log('[ProctorService] Retried log upload successfully');
+          /* console.log('[ProctorService] Retried log upload successfully') */ void 0;
         } catch (error) {
-          console.error('[ProctorService] Retry log failed:', error);
+          /* console.error('[ProctorService] Retry log failed:', error) */ void 0;
           log.retryCount++;
           if (log.retryCount < 5) {
             remainingLogs.push(log);
@@ -218,7 +218,7 @@ class ProctorService {
         logsRetried: unsyncedLogs.length - remainingLogs.length
       };
     } catch (error) {
-      console.error('[ProctorService] Error retrying unsynced data:', error);
+      /* console.error('[ProctorService] Error retrying unsynced data:', error) */ void 0;
       return { snapshotsRetried: 0, logsRetried: 0 };
     }
   }
