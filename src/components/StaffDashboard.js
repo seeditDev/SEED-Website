@@ -734,7 +734,7 @@ const StaffDashboardComponent = () => {
                 <Tab icon={<BarChartIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Marks Report" />
                 <Tab icon={<AssessmentIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Section Analysis" />
                 <Tab icon={<PersonIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Student Analysis" />
-
+                <Tab icon={<AssessmentIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Spoken English Reports" />
               </Tabs>
             </Paper>
 
@@ -1087,6 +1087,92 @@ const StaffDashboardComponent = () => {
                     </Box>
                   );
                 })()}
+              </Box>
+            )}
+
+            {/* Spoken English Reports Tab */}
+            {reportTab === 3 && (
+              <Box>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                  <Typography variant="h6" fontWeight={700}>
+                    Spoken English & Communication Reports
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    startIcon={<CloudDownloadIcon />}
+                    onClick={() => {
+                      const rows = allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).map(r => ({
+                        'Roll Number': r.rollNumber || 'N/A',
+                        'Student Name': r.studentName || r.name || 'N/A',
+                        'Email': r.email || 'N/A',
+                        'College': r.college || 'N/A',
+                        'Department': r.department || 'N/A',
+                        'Year': r.year || 'N/A',
+                        'Test Name': r.testName || 'Spoken English Assessment',
+                        'CEFR Level': r.cefrLevel || 'N/A',
+                        'CEFR Rating': r.cefrName || 'N/A',
+                        'Accuracy (%)': r.percentage || r.score || 0,
+                        'Speaking Pace (WPM)': r.wpm || 0,
+                        'Fillers Used': r.fillerCount || 0,
+                      }));
+                      const ws = XLSX.utils.json_to_sheet(rows.length > 0 ? rows : [{ note: 'No spoken English data' }]);
+                      const wb = XLSX.utils.book_new();
+                      XLSX.utils.book_append_sheet(wb, ws, 'Spoken English Reports');
+                      XLSX.writeFile(wb, `SEEDIT_Spoken_English_Report_${new Date().toISOString().slice(0, 10)}.xlsx`);
+                    }}
+                    sx={{ bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' } }}
+                  >
+                    Export Spoken English Excel
+                  </Button>
+                </Box>
+
+                <TableContainer sx={{ maxHeight: 550, borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+                  <Table stickyHeader size="small">
+                    <TableHead>
+                      <TableRow sx={{ '& th': { bgcolor: '#0f172a', color: '#38bdf8', fontWeight: 800, fontSize: 11 } }}>
+                        <TableCell>#</TableCell>
+                        <TableCell>Roll Number</TableCell>
+                        <TableCell>Student Name</TableCell>
+                        <TableCell>Department</TableCell>
+                        <TableCell>Year</TableCell>
+                        <TableCell align="center">CEFR Level</TableCell>
+                        <TableCell align="center">Accuracy Score</TableCell>
+                        <TableCell align="center">Speaking Pace</TableCell>
+                        <TableCell align="center">Fillers Count</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).length === 0 ? (
+                        <TableRow>
+                          <TableCell colSpan={9} align="center" sx={{ py: 4, color: 'text.secondary' }}>
+                            No spoken English assessment records found for this cohort.
+                          </TableCell>
+                        </TableRow>
+                      ) : (
+                        allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).map((row, idx) => {
+                          const cefrColor = row.cefrLevel === 'C2' ? '#10b981' : row.cefrLevel === 'C1' ? '#3b82f6' : row.cefrLevel === 'B2' ? '#8b5cf6' : row.cefrLevel === 'B1' ? '#f59e0b' : '#ef4444';
+                          return (
+                            <TableRow key={idx} hover sx={{ '&:nth-of-type(even)': { bgcolor: '#f8fafc' } }}>
+                              <TableCell sx={{ fontSize: 12, fontWeight: 600 }}>{idx + 1}</TableCell>
+                              <TableCell sx={{ fontSize: 12, fontWeight: 700, fontFamily: 'monospace' }}>{row.rollNumber || 'N/A'}</TableCell>
+                              <TableCell sx={{ fontSize: 12, fontWeight: 700 }}>{row.studentName || row.name || 'N/A'}</TableCell>
+                              <TableCell sx={{ fontSize: 12 }}>{row.department || 'N/A'}</TableCell>
+                              <TableCell sx={{ fontSize: 12 }}>{row.year || 'N/A'}</TableCell>
+                              <TableCell align="center">
+                                <Chip label={`${row.cefrLevel || 'B2'} (${row.cefrName || 'Upper Inter'})`} size="small" sx={{ bgcolor: cefrColor + '20', color: cefrColor, fontWeight: 900, fontSize: 11 }} />
+                              </TableCell>
+                              <TableCell align="center" sx={{ fontSize: 12, fontWeight: 800, color: '#0284c7' }}>{row.percentage || row.score || 0}%</TableCell>
+                              <TableCell align="center" sx={{ fontSize: 12, fontWeight: 700 }}>{row.wpm || 0} WPM</TableCell>
+                              <TableCell align="center">
+                                <Chip label={`${row.fillerCount || 0} fillers`} size="small" sx={{ bgcolor: (row.fillerCount || 0) > 3 ? '#fef3c7' : '#dcfce7', color: (row.fillerCount || 0) > 3 ? '#b45309' : '#15803d', fontWeight: 800, fontSize: 10 }} />
+                              </TableCell>
+                            </TableRow>
+                          );
+                        })
+                      )}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
               </Box>
             )}
           </Box>
