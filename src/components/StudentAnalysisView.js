@@ -342,7 +342,8 @@ const downloadUnifiedPDF = async (student, assessmentData, rank, totalStudents, 
   y += 36;
 
   // Section-wise Table
-  const sections = assessmentData?.sections || [];
+  const rawSections = assessmentData?.sectionsArray || assessmentData?.sections || [];
+  const sections = Array.isArray(rawSections) ? rawSections : (rawSections && typeof rawSections === 'object' ? Object.values(rawSections) : []);
   chk(40);
   doc.setFont('helvetica', 'bold'); doc.setFontSize(10); doc.setTextColor(...D);
   doc.text('Section-wise Marks', 14, y); y += 5;
@@ -571,7 +572,8 @@ const downloadUnifiedPDF = async (student, assessmentData, rank, totalStudents, 
 const SummaryReport = ({ student, assessmentData, rank, totalStudents, allStudentResults }) => {
   const pct = Math.round(student.percentage || 0);
   const pass = pct >= 50;
-  const sections = assessmentData?.sections || [];
+  const rawSecs1 = assessmentData?.sectionsArray || assessmentData?.sections || [];
+  const sections = Array.isArray(rawSecs1) ? rawSecs1 : (rawSecs1 && typeof rawSecs1 === 'object' ? Object.values(rawSecs1) : []);
   const codingData = assessmentData?.codingSubmissions || assessmentData?.coding || [];
   const [busy, setBusy] = useState(false);
 
@@ -734,7 +736,8 @@ const SummaryReport = ({ student, assessmentData, rank, totalStudents, allStuden
 const AnalyticsReport = ({ student, assessmentData, allStudentResults }) => {
   const questions = assessmentData?.questions || assessmentData?.answers || [];
   const codingData = assessmentData?.codingSubmissions || assessmentData?.coding || [];
-  const sections = assessmentData?.sections || [];
+  const rawSecs2 = assessmentData?.sectionsArray || assessmentData?.sections || [];
+  const sections = Array.isArray(rawSecs2) ? rawSecs2 : (rawSecs2 && typeof rawSecs2 === 'object' ? Object.values(rawSecs2) : []);
 
   const tagStats = useMemo(() => computeTagStats(questions), [questions]);
 

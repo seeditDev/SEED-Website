@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
-import StudentAnalysisView from './StudentAnalysisView';
 import TestCreator from './TestCreator';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -7,7 +6,7 @@ import {
   TableCell, TableContainer, TableHead, TableRow, TextField, Typography,
   Divider, Stack, FormControl, InputLabel, Select, MenuItem, CircularProgress,
   Tabs, Tab, Chip, Tooltip, ThemeProvider, createTheme, CssBaseline,
-  LinearProgress, Alert, Avatar, IconButton,
+  LinearProgress, Alert,
 } from '@mui/material';
 import {
   CloudDownload as CloudDownloadIcon,
@@ -19,12 +18,6 @@ import {
   AssignmentTurnedIn as AssignmentTurnedInIcon,
   People as PeopleIcon,
   ExitToApp as ExitToAppIcon,
-  PictureAsPdf as PdfIcon,
-  Assessment as AssessmentIcon,
-  BarChart as BarChartIcon,
-  Person as PersonIcon,
-  Code as CodeIcon,
-  Timer as TimerIcon,
 } from '@mui/icons-material';
 import * as XLSX from 'xlsx';
 import { supabase } from '../supabaseClient';
@@ -55,318 +48,150 @@ const theme = createTheme({
   },
 });
 
-// ─── PDF Generator ─────────────────────────────────────────────────────────────
-const generateStudentPDF = async (student, assessmentResults) => {
-  const { jsPDF } = await import('jspdf');
-  await import('jspdf-autotable');
+// ─── Helpers ───────────────────────────────────────────────────────────────────
+const formatYear = (y) => {
+  if (!y || y === 'N/A' || y === 'All') return 'All';
+  const str = String(y).trim();
+  if (/^2K\d{2}$/i.test(str)) return str;
+  if (/^\d{4}$/.test(str)) return `2K${str.slice(2)}`;
+  if (/^[1-4]$/.test(str)) {
+    const yrMap = { '1': '2K28', '2': '2K27', '3': '2K26', '4': '2K25' };
+    return yrMap[str] || str;
+  }
+  return str;
+};
 
-  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
-  const pw = doc.internal.pageSize.getWidth();
-  const ph = doc.internal.pageSize.getHeight();
-  let y = 0;
+const formatTime = (timeVal) => {
+  if (!timeVal) return '—';
+  if (typeof timeVal === 'object') {
+    if (typeof timeVal.toDate === 'function') {
+      try { return timeVal.toDate().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }); } catch (_) {}
+    }
+    if (typeof timeVal.seconds === 'number') {
+      try { return new Date(timeVal.seconds * 1000).toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }); } catch (_) {}
+    }
+    return '—';
+  }
+  try {
+    const d = new Date(timeVal);
+    if (isNaN(d.getTime())) return String(timeVal);
+    return d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+  } catch (e) {
+    return '—';
+  }
+};
 
-  const c = {
-    primary: [99, 102, 241], secondary: [236, 72, 153],
-    success: [34, 197, 94], warning: [251, 191, 36],
-    error: [239, 68, 68], dark: [15, 23, 42],
-    light: [248, 250, 252], gray: [71, 85, 105],
+const formatDateDisplay = (dateVal) => {
+  if (!dateVal) return '—';
+  try {
+    if (typeof dateVal === 'object' && dateVal.toDate) return dateVal.toDate().toLocaleDateString('en-IN');
+    if (typeof dateVal === 'object' && dateVal.seconds) return new Date(dateVal.seconds * 1000).toLocaleDateString('en-IN');
+    const d = new Date(dateVal);
+    if (isNaN(d.getTime())) return String(dateVal);
+    return d.toLocaleDateString('en-IN');
+  } catch (e) {
+    return '—';
+  }
+};
+
+const formatHrMinSec = (secInput) => {
+  if (secInput === undefined || secInput === null || secInput === '') return '0s';
+  if (typeof secInput === 'string') {
+    if (secInput.trim() === '' || secInput === '—' || secInput === 'N/A') return '0s';
+    if (secInput.includes('s') || secInput.includes('m') || secInput.includes(':') || secInput.includes('hr')) return secInput;
+  }
+  const secNum = Number(secInput) || 0;
+  if (secNum === 0) return '0s';
+  const hrs = Math.floor(secNum / 3600);
+  const mins = Math.floor((secNum % 3600) / 60);
+  const secs = Math.floor(secNum % 60);
+  const parts = [];
+  if (hrs > 0) parts.push(`${hrs} hr${hrs > 1 ? 's' : ''}`);
+  if (mins > 0) parts.push(`${mins} min${mins > 1 ? 's' : ''}`);
+  if (secs > 0 || parts.length === 0) parts.push(`${secs} sec${secs !== 1 ? 's' : ''}`);
+  return parts.join(' ');
+};
+
+const getQuestionTimeTaken = (q) => {
+  if (!q) return 'Did Not Attempt';
+  const t = q.timeTaken !== undefined ? q.timeTaken :
+            q.timeSpent !== undefined ? q.timeSpent :
+            q.duration !== undefined ? q.duration :
+            q.timeTakenSeconds !== undefined ? q.timeTakenSeconds :
+            q.time_taken !== undefined ? q.time_taken :
+            q.time !== undefined ? q.time :
+            q.elapsedTime !== undefined ? q.elapsedTime : 0;
+
+  return formatHrMinSec(t);
+};
+
+const getInsightCategory = (pct) => {
+  const p = Number(pct) || 0;
+  if (p >= 85) return { insight: 'Strong Performance', category: 'Best' };
+  if (p >= 70) return { insight: 'Good to go', category: 'Good' };
+  if (p >= 55) return { insight: 'Average Performance', category: 'Average' };
+  if (p >= 40) return { insight: 'Needs Practice', category: 'Average' };
+  return { insight: 'Need Attention', category: 'Poor' };
+};
+
+const getCodingSubmissions = (student, assessData) => {
+  const sources = [
+    student?.codingSubmissions,
+    student?.coding,
+    student?.codingResults,
+    assessData?.codingSubmissions,
+    assessData?.coding,
+    assessData?.codingResults,
+  ];
+
+  for (const src of sources) {
+    if (Array.isArray(src) && src.length > 0) return src;
+  }
+
+  const allQs = student?.questions || student?.answers || assessData?.questions || assessData?.answers || [];
+  if (Array.isArray(allQs) && allQs.length > 0) {
+    const codingQs = allQs.filter(q => q && (q.type === 'coding' || q.code || q.submittedCode || q.solutionCode || q.solution));
+    if (codingQs.length > 0) return codingQs;
+  }
+
+  return [];
+};
+
+const createExcelCell = (value, options = {}) => {
+  const {
+    bg = 'FFFFFF',
+    fg = '000000',
+    bold = false,
+    fontSize = 10,
+    align = 'center',
+    wrap = false,
+    border = true,
+  } = options;
+
+  let cellValue = value;
+  if (cellValue === null || cellValue === undefined) cellValue = '—';
+
+  const cellType = typeof cellValue === 'number' ? 'n' : 's';
+  const cellObj = {
+    v: cellValue,
+    t: cellType,
+    s: {
+      font: { name: 'Calibri', sz: fontSize, bold, color: { rgb: fg } },
+      fill: { fgColor: { rgb: bg } },
+      alignment: { horizontal: align, vertical: 'center', wrapText: wrap },
+    },
   };
 
-  const checkPage = (needed = 20) => { if (y + needed > ph - 15) { doc.addPage(); y = 15; } };
-
-  // Header
-  doc.setFillColor(...c.primary);
-  doc.rect(0, 0, pw, 38, 'F');
-  doc.setFillColor(...c.secondary);
-  doc.rect(0, 34, pw, 4, 'F');
-  doc.setTextColor(255, 255, 255);
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(20);
-  doc.text('SEED-IT Platform', 14, 14);
-  doc.setFontSize(11);
-  doc.setFont('helvetica', 'normal');
-  doc.text('Student Performance & Placement Readiness Report', 14, 22);
-  doc.setFontSize(9);
-  doc.text(`Generated: ${new Date().toLocaleString('en-IN')}`, 14, 30);
-  doc.text(`College: ${student.college || 'N/A'}`, pw - 60, 30);
-  y = 48;
-
-  // Student Profile
-  doc.setFillColor(...c.light);
-  doc.roundedRect(14, y, pw - 28, 40, 3, 3, 'F');
-  doc.setDrawColor(...c.primary);
-  doc.setLineWidth(0.5);
-  doc.roundedRect(14, y, pw - 28, 40, 3, 3, 'S');
-  doc.setTextColor(...c.dark);
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(14);
-  doc.text(student.name || 'Student', 22, y + 10);
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(9);
-  doc.setTextColor(...c.gray);
-  [
-    [`Roll No: ${student.rollNumber || 'N/A'}`, `College: ${student.college || 'N/A'}`],
-    [`Department: ${student.department || 'N/A'}`, `Year: ${student.year || 'N/A'}`],
-    [`Email: ${student.email || 'N/A'}`, `Assessment: ${student.testName || 'N/A'}`],
-  ].forEach((row, i) => {
-    doc.text(row[0], 22, y + 18 + i * 7);
-    doc.text(row[1], pw / 2, y + 18 + i * 7);
-  });
-  y += 50;
-
-  // Placement Readiness
-  const pct = student.percentage || 0;
-  let category = '', catColor = c.error, pkg = '';
-  if (pct >= 85) { category = 'Placement Ready – Elite'; catColor = c.primary; pkg = 'High chance for ₹10L+ (TCS Digital, Infosys SP, Wipro Elite)'; }
-  else if (pct >= 70) { category = 'Placement Ready'; catColor = c.success; pkg = 'Well positioned for ₹4–8L packages (TCS, Infosys, CTS, Wipro)'; }
-  else if (pct >= 55) { category = 'Near Placement Ready'; catColor = [234, 179, 8]; pkg = 'Needs focused prep; can target ₹3–5L packages'; }
-  else if (pct >= 40) { category = 'Developing'; catColor = c.warning; pkg = 'Requires improvement; focus on fundamentals'; }
-  else { category = 'Needs Intervention'; catColor = c.error; pkg = 'Immediate academic support recommended'; }
-
-  doc.setFillColor(...catColor);
-  doc.roundedRect(14, y, pw - 28, 28, 3, 3, 'F');
-  doc.setTextColor(255, 255, 255);
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(11);
-  doc.text('PLACEMENT READINESS ASSESSMENT', 22, y + 8);
-  doc.setFontSize(14);
-  doc.text(category, 22, y + 17);
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8);
-  doc.text(pkg, 22, y + 24);
-  doc.setFillColor(255, 255, 255);
-  doc.circle(pw - 30, y + 14, 12, 'F');
-  doc.setTextColor(...catColor);
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(13);
-  doc.text(`${Math.round(pct)}%`, pw - 37, y + 16);
-  doc.setFontSize(7);
-  doc.text('SCORE', pw - 35, y + 21);
-  y += 36;
-
-  // Summary Metrics
-  checkPage(28);
-  const metrics = [
-    { label: 'Overall Score', value: `${student.score || 0}/${student.totalMarks || 100}`, color: c.primary },
-    { label: 'Percentage', value: `${Math.round(pct)}%`, color: pct >= 70 ? c.success : pct >= 40 ? c.warning : c.error },
-    { label: 'Time Taken', value: student.timeTaken || 'N/A', color: c.gray },
-    { label: 'Violations', value: String(student.violationCount || 0), color: (student.violationCount || 0) > 0 ? c.error : c.success },
-  ];
-  const cardW = (pw - 28 - 9) / 4;
-  metrics.forEach((m, i) => {
-    const cx = 14 + i * (cardW + 3);
-    doc.setFillColor(...m.color);
-    doc.roundedRect(cx, y, cardW, 20, 2, 2, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(14);
-    doc.text(m.value, cx + cardW / 2, y + 12, { align: 'center' });
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    doc.text(m.label, cx + cardW / 2, y + 18, { align: 'center' });
-  });
-  y += 28;
-
-  // Find matching assessment data
-  const assessData = assessmentResults.find(a =>
-    a.email?.toLowerCase() === student.email?.toLowerCase() ||
-    a.rollNumber === student.rollNumber
-  );
-
-  // Section Performance
-  if (assessData?.sections?.length > 0) {
-    checkPage(40);
-    doc.setTextColor(...c.dark);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(12);
-    doc.text('Section-wise Performance', 14, y);
-    y += 6;
-    doc.autoTable({
-      startY: y,
-      head: [['Section', 'Score', 'Max', 'Percentage', 'Time', 'Status']],
-      body: assessData.sections.map(sec => [
-        sec.name || sec.sectionName || 'Section',
-        String(sec.score || 0),
-        String(sec.totalMarks || 0),
-        `${Math.round(((sec.score || 0) / Math.max(sec.totalMarks || 1, 1)) * 100)}%`,
-        `${sec.timeTaken || sec.timeSpent || 0}s`,
-        (sec.score || 0) >= (sec.totalMarks || 1) * 0.5 ? 'Pass' : 'Fail',
-      ]),
-      theme: 'grid',
-      headStyles: { fillColor: c.primary, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 9 },
-      bodyStyles: { fontSize: 8 },
-      margin: { left: 14, right: 14 },
-    });
-    y = doc.lastAutoTable.finalY + 8;
+  if (border) {
+    cellObj.s.border = {
+      top: { style: 'thin', color: { rgb: 'D1D5DB' } },
+      bottom: { style: 'thin', color: { rgb: 'D1D5DB' } },
+      left: { style: 'thin', color: { rgb: 'D1D5DB' } },
+      right: { style: 'thin', color: { rgb: 'D1D5DB' } },
+    };
   }
 
-  // Tag-based Strength/Weakness
-  const questions = assessData?.questions || assessData?.answers || [];
-  const tagStats = {};
-  questions.forEach(q => {
-    (q.tags || (q.topic ? [q.topic] : ['General'])).forEach(tag => {
-      if (!tag) return;
-      if (!tagStats[tag]) tagStats[tag] = { correct: 0, total: 0 };
-      tagStats[tag].total++;
-      if (q.isCorrect || q.correct || q.selectedAnswer === q.correctAnswer) tagStats[tag].correct++;
-    });
-  });
-  const tagList = Object.entries(tagStats).map(([tag, s]) => ({
-    tag, accuracy: Math.round((s.correct / s.total) * 100), total: s.total
-  })).sort((a, b) => b.accuracy - a.accuracy);
-  const strengths = tagList.filter(t => t.accuracy >= 70);
-  const needsWork = tagList.filter(t => t.accuracy < 50);
-
-  if (tagList.length > 0) {
-    checkPage(50);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(12);
-    doc.setTextColor(...c.dark);
-    doc.text('Strength & Improvement Areas', 14, y);
-    y += 8;
-    const halfW = (pw - 31) / 2;
-    const boxH = Math.max(Math.max(strengths.length, needsWork.length) * 7 + 18, 30);
-
-    doc.setFillColor(240, 253, 244);
-    doc.setDrawColor(...c.success);
-    doc.roundedRect(14, y, halfW, boxH, 2, 2, 'FD');
-    doc.setTextColor(...c.success);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9);
-    doc.text('✓ STRENGTHS', 18, y + 7);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8);
-    doc.setTextColor(...c.dark);
-    (strengths.length > 0 ? strengths : [{ tag: 'Keep practicing', accuracy: 0 }]).slice(0, 6).forEach((t, i) => {
-      doc.text(`• ${t.tag}${t.accuracy ? ` (${t.accuracy}%)` : ''}`, 18, y + 14 + i * 7);
-    });
-
-    const nx = 14 + halfW + 3;
-    doc.setFillColor(254, 242, 242);
-    doc.setDrawColor(...c.error);
-    doc.roundedRect(nx, y, halfW, boxH, 2, 2, 'FD');
-    doc.setTextColor(...c.error);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9);
-    doc.text('⚠ NEEDS ATTENTION', nx + 4, y + 7);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8);
-    doc.setTextColor(...c.dark);
-    (needsWork.length > 0 ? needsWork : [{ tag: 'No critical weak areas!', accuracy: 0 }]).slice(0, 6).forEach((t, i) => {
-      doc.text(`• ${t.tag}${t.accuracy ? ` (${t.accuracy}%)` : ''}`, nx + 4, y + 14 + i * 7);
-    });
-    y += boxH + 8;
-  }
-
-  // Question Analysis Table
-  if (questions.length > 0) {
-    checkPage(30);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(12);
-    doc.setTextColor(...c.dark);
-    doc.text('Question-by-Question Analysis', 14, y);
-    y += 6;
-    doc.autoTable({
-      startY: y,
-      head: [['#', 'Question', 'Tags', 'Result', 'Your Answer', 'Time', 'Difficulty']],
-      body: questions.slice(0, 50).map((q, i) => [
-        String(i + 1),
-        (q.questionText || q.question || 'Question').substring(0, 40),
-        (q.tags || [q.topic]).filter(Boolean).join(', ') || 'General',
-        q.isCorrect || q.correct ? '✓' : '✗',
-        q.selectedAnswer || q.answer || 'N/A',
-        `${q.timeSpent || q.timeTaken || 0}s`,
-        q.difficulty || 'Medium',
-      ]),
-      theme: 'striped',
-      headStyles: { fillColor: c.primary, textColor: [255, 255, 255], fontSize: 8 },
-      bodyStyles: { fontSize: 7 },
-      columnStyles: { 0: { cellWidth: 8 }, 3: { halign: 'center' } },
-      margin: { left: 14, right: 14 },
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // Coding Analysis
-  const codingSubmissions = assessData?.codingSubmissions || assessData?.coding || [];
-  if (codingSubmissions.length > 0) {
-    checkPage(40);
-    const sorted = [...codingSubmissions].sort((a, b) => (a.submittedAt || 0) - (b.submittedAt || 0));
-    const first = sorted[0];
-    const approach = first?.difficulty === 'Hard' ? 'Prefers Challenges' :
-      first?.difficulty === 'Easy' ? 'Starts Safe' : 'Balanced Approach';
-
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(12);
-    doc.setTextColor(...c.dark);
-    doc.text('Coding Section Analysis', 14, y);
-    y += 6;
-    doc.setFillColor(239, 246, 255);
-    doc.setDrawColor(...c.primary);
-    doc.roundedRect(14, y, pw - 28, 14, 2, 2, 'FD');
-    doc.setTextColor(...c.primary);
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(9);
-    doc.text(`Coding Approach: ${approach}`, 18, y + 6);
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(8);
-    doc.setTextColor(...c.gray);
-    doc.text(`First submitted: Q${first?.questionNumber || 1} (${first?.difficulty || 'Medium'}) — Language: ${codingSubmissions[0]?.language || 'N/A'}`, 18, y + 12);
-    y += 20;
-
-    doc.autoTable({
-      startY: y,
-      head: [['Q#', 'Problem', 'Language', 'Time Complexity', 'Tests Passed', 'Time']],
-      body: codingSubmissions.map((c2, i) => [
-        `Q${c2.questionNumber || i + 1}`,
-        (c2.problemTitle || c2.title || 'Problem').substring(0, 35),
-        c2.language || 'N/A',
-        c2.timeComplexity || 'N/A',
-        `${c2.testsPassed || 0}/${c2.totalTests || 0}`,
-        `${c2.timeTaken || 0}s`,
-      ]),
-      theme: 'grid',
-      headStyles: { fillColor: [79, 70, 229], textColor: [255, 255, 255], fontSize: 8 },
-      bodyStyles: { fontSize: 7 },
-      margin: { left: 14, right: 14 },
-    });
-    y = doc.lastAutoTable.finalY + 8;
-  }
-
-  // Recommendations
-  checkPage(40);
-  doc.setFillColor(248, 250, 252);
-  doc.setDrawColor(...c.primary);
-  doc.roundedRect(14, y, pw - 28, 36, 3, 3, 'FD');
-  doc.setTextColor(...c.primary);
-  doc.setFont('helvetica', 'bold');
-  doc.setFontSize(10);
-  doc.text('Recommendations & Action Plan', 18, y + 8);
-  doc.setFont('helvetica', 'normal');
-  doc.setFontSize(8);
-  doc.setTextColor(...c.dark);
-  const recs = [];
-  if (pct < 50) recs.push('Focus on fundamentals – revisit core concepts in weak topics');
-  if (pct >= 50 && pct < 70) recs.push('Target 70%+ by practicing topic-specific mock tests');
-  if (needsWork.length > 0) recs.push(`Priority topics: ${needsWork.slice(0, 3).map(t => t.tag).join(', ')}`);
-  if (strengths.length > 0) recs.push(`Build on strengths: ${strengths.slice(0, 2).map(t => t.tag).join(', ')}`);
-  if (pct >= 70) recs.push('Start applying to companies – your profile is competitive');
-  if (recs.length === 0) recs.push('Continue current preparation strategy – performance is on track');
-  recs.slice(0, 4).forEach((rec, i) => { doc.text(`${i + 1}. ${rec}`, 18, y + 16 + i * 7); });
-
-  // Footer on all pages
-  const totalPages = doc.internal.getNumberOfPages();
-  for (let p = 1; p <= totalPages; p++) {
-    doc.setPage(p);
-    doc.setFillColor(15, 23, 42);
-    doc.rect(0, ph - 10, pw, 10, 'F');
-    doc.setTextColor(255, 255, 255);
-    doc.setFontSize(7);
-    doc.setFont('helvetica', 'normal');
-    doc.text('SEED-IT Platform — Confidential Student Report', 14, ph - 4);
-    doc.text(`Page ${p} of ${totalPages}`, pw - 30, ph - 4);
-  }
-  doc.save(`SEEDIT_${(student.name || 'Student').replace(/\s/g, '_')}_Report.pdf`);
+  return cellObj;
 };
 
 // ─── Fetch Firestore Data (college-scoped) ──────────────────────────────────────
@@ -375,7 +200,6 @@ const fetchFirestoreForCollege = async (college) => {
   try {
     const { collectionGroup, getDocs, query, where } = await import('firebase/firestore');
 
-    // MCQ Results
     try {
       let snap;
       try {
@@ -389,9 +213,8 @@ const fetchFirestoreForCollege = async (college) => {
         const pct = r.percentage > 1 ? r.percentage : (r.percentage || 0) * 100;
         mcqResults.push({ ...r, id: d.id, type: 'mcq', percentage: pct, testName: r.testName || r.test_name || 'MCQ Test', testID: r.testID || r.test_id || 'unknown' });
       });
-    } catch (e) { /* console.warn('MCQ fetch error:', e) */ void 0; }
+    } catch (e) { void 0; }
 
-    // Coding Results
     try {
       let snap;
       try {
@@ -405,18 +228,17 @@ const fetchFirestoreForCollege = async (college) => {
         const pct = r.percentage > 1 ? r.percentage : (r.score ? (r.score / 300) * 100 : 0);
         codingResults.push({ ...r, id: d.id, type: 'coding', percentage: pct, testName: r.assessmentName || r.testName || 'Coding Test', testID: r.assessmentID || r.testID || 'unknown_coding' });
       });
-    } catch (e) { /* console.warn('Coding fetch error:', e) */ void 0; }
+    } catch (e) { void 0; }
 
-    // Assessment_Results
     try {
       const snap = await getDocs(query(collectionGroup(db, 'Assessments')));
       snap.forEach(d => {
         const r = d.data();
         if (r.college === college) assessmentResults.push({ ...r, id: d.id });
       });
-    } catch (e) { /* console.warn('Assessment_Results fetch error:', e) */ void 0; }
+    } catch (e) { void 0; }
 
-  } catch (e) { /* console.error('Firestore fetch error:', e) */ void 0; }
+  } catch (e) { void 0; }
 
   return { mcqResults, codingResults, assessmentResults };
 };
@@ -446,29 +268,6 @@ const normalize = (r, college) => {
   };
 };
 
-// ─── DonutChart ────────────────────────────────────────────────────────────────
-const DonutChart = ({ correct, total }) => {
-  if (!total) return null;
-  const pct = correct / total;
-  const r = 38, cx = 56, cy = 56;
-  const circ = 2 * Math.PI * r;
-  const dash = pct * circ;
-  const color = pct >= 0.7 ? '#22c55e' : pct >= 0.4 ? '#6366f1' : '#ef4444';
-  return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <svg width={112} height={112}>
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#e2e8f0" strokeWidth={14} />
-        <circle cx={cx} cy={cy} r={r} fill="none" stroke={color} strokeWidth={14}
-          strokeDasharray={`${dash} ${circ - dash}`}
-          strokeDashoffset={circ / 4} strokeLinecap="round" />
-        <text x={cx} y={cy - 2} textAnchor="middle" fontSize={15} fontWeight="bold" fill="#0f172a">{Math.round(pct * 100)}%</text>
-        <text x={cx} y={cy + 12} textAnchor="middle" fontSize={9} fill="#475569">Correct</text>
-      </svg>
-      <Typography variant="caption" color="text.secondary">{correct} / {total}</Typography>
-    </Box>
-  );
-};
-
 // ─── Main Component ───────────────────────────────────────────────────────────
 const StaffDashboardComponent = () => {
   const navigate = useNavigate();
@@ -476,19 +275,11 @@ const StaffDashboardComponent = () => {
   const college = user?.College || user?.college || 'KGKITE';
 
   const [activeTab, setActiveTab] = useState(0);
-  const [reportTab, setReportTab] = useState(0);
   const [loading, setLoading] = useState(true);
   const [students, setStudents] = useState([]);
   const [allResults, setAllResults] = useState([]);
   const [assessmentResults, setAssessmentResults] = useState([]);
   const [showLogout, setShowLogout] = useState(false);
-  const [generatingPdf, setGeneratingPdf] = useState(false);
-
-  // Student drill-down states (Tab 2)
-  const [studentView, setStudentView] = useState('list'); // 'list' | 'assessments' | 'analysis'
-  const [drillStudent, setDrillStudent] = useState(null);
-  const [drillAssessmentData, setDrillAssessmentData] = useState(null);
-
 
   // Filter states
   const [searchText, setSearchText] = useState('');
@@ -496,7 +287,6 @@ const StaffDashboardComponent = () => {
   const [deptFilter, setDeptFilter] = useState('All');
   const [testFilter, setTestFilter] = useState('All');
   const [typeFilter, setTypeFilter] = useState('All');
-  const [studentSearch, setStudentSearch] = useState('');
   const [dirSearch, setDirSearch] = useState('');
   const [dirYear, setDirYear] = useState('All');
   const [dirDept, setDirDept] = useState('All');
@@ -512,7 +302,7 @@ const StaffDashboardComponent = () => {
         try {
           const data = await DataService.getCollegeData(college, 'profiles', yr);
           if (Array.isArray(data)) profiles = [...profiles, ...data.map(p => ({ ...p, Year: yr }))];
-        } catch (e) { /* console.warn(`Profile fetch failed for year ${yr}:`, e) */ void 0; }
+        } catch (e) { void 0; }
       }
       setStudents(profiles);
 
@@ -521,11 +311,11 @@ const StaffDashboardComponent = () => {
       try {
         const { data: mcqData } = await supabase.from('mcq_results').select('*').eq('college', college);
         if (mcqData) supaResults = [...supaResults, ...mcqData.map(r => ({ ...r, type: 'mcq' }))];
-      } catch (e) { /* console.warn('Supabase MCQ error:', e) */ void 0; }
+      } catch (e) { void 0; }
       try {
         const { data: codingData } = await supabase.from('coding_results').select('*').eq('college', college);
         if (codingData) supaResults = [...supaResults, ...codingData.map(r => ({ ...r, type: 'coding' }))];
-      } catch (e) { /* console.warn('Supabase coding error:', e) */ void 0; }
+      } catch (e) { void 0; }
 
       // 3. Firestore results
       const { mcqResults: fsMcq, codingResults: fsCoding, assessmentResults: fsAssessment } = await fetchFirestoreForCollege(college);
@@ -540,7 +330,7 @@ const StaffDashboardComponent = () => {
       });
       setAllResults(combined);
     } catch (e) {
-      /* console.error('Error fetching data:', e) */ void 0;
+      void 0;
     } finally {
       setLoading(false);
     }
@@ -603,67 +393,392 @@ const StaffDashboardComponent = () => {
     });
     const deptData = Object.entries(deptMap).map(([dept, d]) => ({ label: dept, value: parseFloat((d.sum / d.count).toFixed(1)), count: d.count })).sort((a, b) => b.value - a.value);
 
-    const testMap = {};
-    filteredResults.forEach(r => {
-      if (!r.testName) return;
-      if (!testMap[r.testName]) testMap[r.testName] = { sum: 0, count: 0 };
-      testMap[r.testName].sum += r.percentage;
-      testMap[r.testName].count++;
-    });
-    const testData = Object.entries(testMap).map(([t, d]) => ({ label: t.length > 22 ? t.substring(0, 20) + '..' : t, value: parseFloat((d.sum / d.count).toFixed(1)), count: d.count }));
+    return { total, avgPct, highAchievers, topPerformers, needsAttention, deptData };
+  }, [filteredResults]);
 
-    const sectionMap = {};
-    assessmentResults.forEach(r => {
-      (r.sections || []).forEach(sec => {
-        const n = sec.name || sec.sectionName || 'Section';
-        if (!sectionMap[n]) sectionMap[n] = { sum: 0, count: 0 };
-        const pct = sec.totalMarks ? (sec.score / sec.totalMarks) * 100 : 0;
-        sectionMap[n].sum += pct; sectionMap[n].count++;
+  // ── Multi-Sheet Excel Export for College (Row 1 & Row 2 Aligned, Scaled Coding Marks) ──
+  const exportCollegeExcel = (selectedGroup) => {
+    const results = selectedGroup?.results || filteredResults;
+    if (!results || results.length === 0) return;
+
+    const secs = selectedGroup?.sections || [];
+    const isSpoken = selectedGroup?.type === 'spoken_english' || selectedGroup?.type === 'speech' || selectedGroup?.type === 'sea';
+
+    // Computed stats for Summary Sheet
+    const totalStudents = results.length;
+    const avgPct = totalStudents > 0 ? results.reduce((s, r) => s + (Number(r.percentage) || 0), 0) / totalStudents : 0;
+    const highestPct = totalStudents > 0 ? Math.max(...results.map(r => Number(r.percentage) || 0)) : 0;
+    const lowestPct = totalStudents > 0 ? Math.min(...results.map(r => Number(r.percentage) || 0)) : 0;
+    const sample = results[0] || {};
+    const totalMarks = sample.totalMarks || 100;
+    const numQ = sample.totalQuestions || secs.reduce((s, sec) => s + (sec.totalQuestions || sec.numQuestions || 0), 0) || '—';
+    const batch = formatYear(sample.year || yearFilter || '—');
+    const testDate = sample.submittedAt ? new Date(sample.submittedAt).toDateString() : '—';
+    const attendance = `${totalStudents} / ${selectedGroup?.totalEnrolled || totalStudents}`;
+    const duration = sample.assessmentDuration || sample.duration || '—';
+
+    // Status counts
+    const gtkCount = results.filter(r => (Number(r.percentage) || 0) >= 70).length;
+    const niCount  = results.filter(r => { const p = Number(r.percentage) || 0; return p >= 50 && p < 70; }).length;
+    const ntCount  = results.filter(r => (Number(r.percentage) || 0) < 50).length;
+
+    // Top / At-Risk
+    const sortedDesc = [...results].sort((a, b) => (Number(b.percentage) || 0) - (Number(a.percentage) || 0));
+    const sortedAsc  = [...results].sort((a, b) => (Number(a.percentage) || 0) - (Number(b.percentage) || 0));
+    const topN    = sortedDesc.slice(0, 10);
+    const atRiskN = sortedAsc.slice(0, 10);
+
+    // Branch-wise
+    const branchMap = {};
+    results.forEach(r => {
+      const br = r.department || r.branch || 'Unknown';
+      if (!branchMap[br]) branchMap[br] = { total: 0, poor: 0, avg: 0, good: 0, best: 0 };
+      branchMap[br].total++;
+      const p = Number(r.percentage) || 0;
+      if (p >= 81)      branchMap[br].best++;
+      else if (p >= 61) branchMap[br].good++;
+      else if (p >= 31) branchMap[br].avg++;
+      else              branchMap[br].poor++;
+    });
+    const branches = Object.entries(branchMap).sort((a, b) => a[0].localeCompare(b[0]));
+
+    // ── Summary Sheet ──
+    const HMain = (v) => createExcelCell(v, { bg: '10B981', fg: 'FFFFFF', bold: true, fontSize: 13 });
+    const HSec  = (v, bg = '059669') => createExcelCell(v, { bg, fg: 'FFFFFF', bold: true, fontSize: 11 });
+    const HDark = (v) => createExcelCell(v, { bg: '047857', fg: 'FFFFFF', bold: true, fontSize: 11 });
+    const HCol  = (v, bg = '10B981') => createExcelCell(v, { bg, fg: 'FFFFFF', bold: true, fontSize: 10 });
+    const HKey  = (v) => createExcelCell(v, { bg: 'E6F4EA', fg: '065F46', bold: true, fontSize: 10 });
+    const CD    = (v, bg = 'FFFFFF', fg = '1F2937', bold = false) => createExcelCell(v, { bg, fg, bold, fontSize: 10 });
+
+    const summaryAOA = [];
+
+    // Title Header Centered (First 2 Lines)
+    summaryAOA.push([
+      HMain('SEED SEB ASSESSMENT ANALYSIS REPORT'),
+      '', '', '', '', '', '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      HMain('SEED SEB COMPANY READINESS REPORT'),
+      '', '', '', '', '', '', '', '', '', '', ''
+    ]);
+
+    // Assessment Overview Header
+    summaryAOA.push([
+      HDark('Assessment Details'), '', '', '', '',
+      '', HDark('Attachments'), '', '', '', '', ''
+    ]);
+
+    summaryAOA.push([
+      HKey('Test Name:'), CD(selectedGroup?.testName || (testFilter !== 'All' ? testFilter : 'College Assessment Report'), 'FFFFFF', '1F2937', true), '',
+      HKey('Attendance:'), CD(attendance), '',
+      HKey('Assessment Report'), '', HKey('Test Date:'), CD(testDate), '', ''
+    ]);
+    summaryAOA.push([
+      HKey('Number of Questions:'), CD(numQ), '',
+      HKey('Answer Key'), '', HKey('Batch:'), CD(batch), '', ''
+    ]);
+    summaryAOA.push([
+      HKey('Total Marks:'), CD(totalMarks), '',
+      '', '', HKey('College:'), CD(college), '', ''
+    ]);
+
+    summaryAOA.push(['', '', '', '', '', '', '', '', '', '', '', ''].map(v => CD(v, 'FFFFFF', 'FFFFFF')));
+
+    // Summary Table
+    summaryAOA.push([
+      HSec('Total Students'), HSec('Average %'), HSec('Highest %'), HSec('Lowest %'), HSec('Duration (Mins)'),
+      '', '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      CD(totalStudents, 'F9FAFB', '1F2937', true),
+      CD(`${avgPct.toFixed(2)}%`, 'F9FAFB', '10B981', true),
+      CD(`${highestPct.toFixed(2)}%`, 'F9FAFB', '059669', true),
+      CD(`${lowestPct.toFixed(2)}%`, 'F9FAFB', 'DC2626', true),
+      CD(duration, 'F9FAFB', '1F2937', true),
+      '', '', '', '', '', '', ''
+    ]);
+
+    summaryAOA.push(['', '', '', '', '', '', '', '', '', '', '', ''].map(v => CD(v, 'FFFFFF', 'FFFFFF')));
+
+    // Status Summary Table
+    summaryAOA.push([
+      HDark('Status'), HDark('Count'), HDark('Percentage'), HDark('Criteria'),
+      '', '', '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      CD('Good to Go', 'F0FDF4', '15803D', true), CD(gtkCount, 'F0FDF4'), CD(`${totalStudents > 0 ? ((gtkCount/totalStudents)*100).toFixed(1) : 0}%`, 'F0FDF4'), CD('>=70%', 'F0FDF4'),
+      '', '', '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      CD('Needs Improvement', 'FFFBEB', 'B45309', true), CD(niCount, 'FFFBEB'), CD(`${totalStudents > 0 ? ((niCount/totalStudents)*100).toFixed(1) : 0}%`, 'FFFBEB'), CD('50-69%', 'FFFBEB'),
+      '', '', '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      CD('Needs Training', 'FEF2F2', 'B91C1C', true), CD(ntCount, 'FEF2F2'), CD(`${totalStudents > 0 ? ((ntCount/totalStudents)*100).toFixed(1) : 0}%`, 'FEF2F2'), CD('<50%', 'FEF2F2'),
+      '', '', '', '', '', '', '', ''
+    ]);
+
+    summaryAOA.push(['', '', '', '', '', '', '', '', '', '', '', ''].map(v => CD(v, 'FFFFFF', 'FFFFFF')));
+
+    // Top Performers & At-Risk Side-by-Side
+    summaryAOA.push([
+      HSec('🏆 Top Performers', '059669'), '', '', '',
+      HSec('⚠ At-Risk Students', 'DC2626'), '', '', '',
+      '', '', '', ''
+    ]);
+    summaryAOA.push([
+      HCol('Rank'), HCol('Name'), HCol('Branch'), HCol('Percentage %'),
+      HCol('Rank', 'EF4444'), HCol('Name', 'EF4444'), HCol('Branch', 'EF4444'), HCol('Percentage %', 'EF4444'),
+      '', '', '', ''
+    ]);
+
+    const maxRows = Math.max(topN.length, atRiskN.length);
+    for (let i = 0; i < maxRows; i++) {
+      const tp = topN[i];
+      const ar = atRiskN[i];
+      const tBg = i % 2 === 0 ? 'F9FAFB' : 'FFFFFF';
+      summaryAOA.push([
+        tp ? CD(i + 1, tBg) : '',
+        tp ? CD(tp.name || 'N/A', tBg, '1F2937', true) : '',
+        tp ? CD(tp.department || tp.branch || 'N/A', tBg) : '',
+        tp ? CD(`${(Number(tp.percentage) || 0).toFixed(1)}%`, tBg, '059669', true) : '',
+        ar ? CD(i + 1, tBg) : '',
+        ar ? CD(ar.name || 'N/A', tBg, '1F2937', true) : '',
+        ar ? CD(ar.department || ar.branch || 'N/A', tBg) : '',
+        ar ? CD(`${(Number(ar.percentage) || 0).toFixed(1)}%`, tBg, 'DC2626', true) : '',
+        '', '', '', ''
+      ]);
+    }
+
+    summaryAOA.push(['', '', '', '', '', '', '', '', '', '', '', ''].map(v => CD(v, 'FFFFFF', 'FFFFFF')));
+
+    // Branch-wise Header
+    summaryAOA.push([
+      HDark('📊 Branch-wise Performance Summary'), '', '', '', '', '',
+      '', '', '', '', '', ''
+    ]);
+    summaryAOA.push([
+      HCol('Branch'), HCol('Total'), HCol('POOR (<=30%)', 'EF4444'), HCol('AVERAGE (31-60%)', 'F59E0B'), HCol('GOOD (61-80%)', '3B82F6'), HCol('BEST (>=81%)', '10B981'),
+      '', '', '', '', '', ''
+    ]);
+    branches.forEach(([br, d], idx) => {
+      const bBg = idx % 2 === 0 ? 'F9FAFB' : 'FFFFFF';
+      summaryAOA.push([
+        CD(br, bBg, '1F2937', true),
+        CD(d.total, bBg, '1F2937', true),
+        CD(d.poor, bBg, d.poor > 0 ? 'DC2626' : '9CA3AF', d.poor > 0),
+        CD(d.avg, bBg, d.avg > 0 ? 'D97706' : '9CA3AF', d.avg > 0),
+        CD(d.good, bBg, d.good > 0 ? '2563EB' : '9CA3AF', d.good > 0),
+        CD(d.best, bBg, d.best > 0 ? '059669' : '9CA3AF', d.best > 0),
+        '', '', '', '', '', ''
+      ]);
+    });
+
+    const summaryWs = XLSX.utils.aoa_to_sheet(summaryAOA);
+    summaryWs['!merges'] = [
+      { s: { r: 0, c: 0 }, e: { r: 0, c: 11 } },
+      { s: { r: 1, c: 0 }, e: { r: 1, c: 11 } },
+      { s: { r: 2, c: 0 }, e: { r: 2, c: 4 } },
+      { s: { r: 2, c: 6 }, e: { r: 2, c: 11 } },
+      { s: { r: 7, c: 0 }, e: { r: 7, c: 4 } },
+      { s: { r: 10, c: 0 }, e: { r: 10, c: 3 } },
+      { s: { r: 15, c: 0 }, e: { r: 15, c: 3 } },
+      { s: { r: 15, c: 4 }, e: { r: 15, c: 7 } },
+      { s: { r: summaryAOA.length - branches.length - 2, c: 0 }, e: { r: summaryAOA.length - branches.length - 2, c: 5 } },
+    ];
+    summaryWs['!cols'] = [28, 28, 18, 16, 28, 28, 18, 16, 8, 8, 8, 8].map(wch => ({ wch }));
+
+    // ── Test Results Data Sheet ──
+    const codingSecDef = secs.find(s => /coding/i.test(s.name || s.sectionName));
+    const codingSecTotalMarks = codingSecDef?.totalMarks || codingSecDef?.maxScore || sample.totalMarks || 40;
+
+    const allCodingQs = new Map();
+    results.forEach(r => {
+      const cSubs = getCodingSubmissions(r);
+      cSubs.forEach((c, idx) => {
+        const qNum = c.questionNumber || idx + 1;
+        const qKey = `Q${qNum}`;
+        if (!allCodingQs.has(qKey)) {
+          allCodingQs.set(qKey, {
+            qNum,
+            qKey,
+            title: c.problemTitle || c.title || `Problem ${qNum}`,
+            explicitMax: (c.totalMarks && c.totalMarks < codingSecTotalMarks) ? c.totalMarks : ((c.maxMarks && c.maxMarks < codingSecTotalMarks) ? c.maxMarks : null),
+          });
+        }
       });
     });
-    const sectionData = Object.entries(sectionMap).map(([s, d]) => ({ label: s, value: parseFloat((d.sum / d.count).toFixed(1)), count: d.count }));
+    const codingQList = Array.from(allCodingQs.values()).sort((a, b) => a.qNum - b.qNum);
+    const defaultQMax = Math.max(1, Math.round(codingSecTotalMarks / Math.max(1, codingQList.length || 1)));
 
-    const totalCorrect = filteredResults.reduce((s, r) => s + (r.correctAnswers || 0), 0);
-    const totalQ = filteredResults.reduce((s, r) => s + (r.totalQuestions || 0), 0);
+    codingQList.forEach(cq => {
+      cq.maxMarks = cq.explicitMax || defaultQMax;
+    });
 
-    return { total, avgPct, highAchievers, topPerformers, needsAttention, deptData, testData, sectionData, totalCorrect, totalQ };
-  }, [filteredResults, assessmentResults]);
+    const baseHeaders1 = ['#', 'Roll Number', 'Candidate Name', 'Email', 'College', 'Department', 'Year',
+      'Start Time', 'End Time', 'Total Time Taken', 'Violations', 'Auto Submitted'];
+    const baseHeaders2 = ['#', 'Roll Number', 'Candidate Name', 'Email', 'College', 'Department', 'Year',
+      'Start Time', 'End Time', 'Total Time Taken', 'Violations', 'Auto Submitted'];
 
+    const sectionHeaders1 = [];
+    const sectionHeaders2 = [];
 
+    if (isSpoken) {
+      sectionHeaders1.push('Spoken English', '', '', '');
+      sectionHeaders2.push('CEFR Level', 'Accuracy (%)', 'Speaking Pace (WPM)', 'Fillers Count');
+    } else {
+      secs.forEach(sec => {
+        const sName = sec.name || sec.sectionName || 'Section';
+        const isSpokenSec = /spoken|speech|communication|sea/i.test(sName);
+        if (isSpokenSec) {
+          sectionHeaders1.push(sName, '', '', '', '', '');
+          sectionHeaders2.push('Marks Obtained', 'Total Marks', 'Section %', 'Time Taken', 'CEFR Level', 'WPM');
+        } else {
+          sectionHeaders1.push(sName, '', '', '');
+          sectionHeaders2.push('Marks Obtained', 'Total Marks', 'Section %', 'Time Taken');
+        }
+      });
+    }
 
+    const codingHeaders1 = [];
+    const codingHeaders2 = [];
+    codingQList.forEach(cq => {
+      codingHeaders1.push(`${cq.qKey} - ${cq.title}`, '', '', '');
+      codingHeaders2.push('Marks Obtained', 'Total Marks', 'Accuracy (%)', 'Time Taken');
+    });
 
-  // Export marks Excel
-  const exportMarks = () => {
-    const ws = XLSX.utils.json_to_sheet(filteredResults.map(r => ({
-      'Roll Number': r.rollNumber, 'Name': r.name, 'Email': r.email,
-      'Department': r.department, 'Year': r.year, 'Test Name': r.testName, 'Type': r.type,
-      'Score': r.score, 'Total Marks': r.totalMarks, 'Percentage (%)': r.percentage.toFixed(1),
-      'Correct': r.correctAnswers, 'Total Questions': r.totalQuestions,
-      'Time Taken': r.timeTaken, 'Violations': r.violationCount,
-      'Submitted At': new Date(r.submittedAt).toLocaleString(),
-    })));
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Marks Report');
-    XLSX.writeFile(wb, `${college}_Marks_${new Date().toISOString().slice(0, 10)}.xlsx`);
-  };
+    const overallHeaders1 = ['Overall', '', '', '', ''];
+    const overallHeaders2 = ['Score', 'Total Marks', 'Percentage', 'Status', 'Submitted Date'];
+    const perfHeaders1 = ['Performance', ''];
+    const perfHeaders2 = ['Insight', 'Category'];
 
-  const exportSection = () => {
-    const rows = [];
-    assessmentResults.forEach(r => {
-      (r.sections || []).forEach(sec => {
-        rows.push({ 'Name': r.name, 'Roll': r.rollNumber, 'Section': sec.name || 'Section', 'Score': sec.score || 0, 'Max': sec.totalMarks || 0, 'Pct%': sec.totalMarks ? ((sec.score / sec.totalMarks) * 100).toFixed(1) : 0, 'Status': (sec.score || 0) >= (sec.totalMarks || 1) * 0.5 ? 'Pass' : 'Fail' });
+    const row1Names = [...baseHeaders1, ...sectionHeaders1, ...codingHeaders1, ...overallHeaders1, ...perfHeaders1];
+    const row2Names = [...baseHeaders2, ...sectionHeaders2, ...codingHeaders2, ...overallHeaders2, ...perfHeaders2];
+
+    const row1Cells = row1Names.map((name, cIdx) => {
+      let bg = '0F172A', fg = 'FFFFFF';
+      if (cIdx < baseHeaders1.length) { bg = '0F172A'; fg = '38BDF8'; }
+      else if (cIdx < baseHeaders1.length + sectionHeaders1.length) { bg = '0F172A'; fg = 'F59E0B'; }
+      else if (cIdx < baseHeaders1.length + sectionHeaders1.length + codingHeaders1.length) { bg = '0F172A'; fg = '818CF8'; }
+      else if (cIdx < baseHeaders1.length + sectionHeaders1.length + codingHeaders1.length + overallHeaders1.length) { bg = '0F172A'; fg = '34D399'; }
+      else { bg = '0F172A'; fg = 'A78BFA'; }
+      return createExcelCell(name, { bg, fg, bold: true, fontSize: 11 });
+    });
+
+    const row2Cells = row2Names.map(name => createExcelCell(name, { bg: '1E293B', fg: 'FFFFFF', bold: true, fontSize: 10 }));
+
+    const dataRowCells = results.map((r, idx) => {
+      const rowBg = idx % 2 === 0 ? 'FFFFFF' : 'F8FAFC';
+      const base = [
+        idx + 1, r.rollNumber || 'N/A', r.name || 'N/A', r.email || 'N/A',
+        r.college || 'N/A', r.department || 'N/A', formatYear(r.year),
+        formatTime(r.startedAt || r.started_at), formatTime(r.submittedAt || r.submitted_at),
+        formatHrMinSec(r.timeTakenSeconds || r.timeTaken), r.violationCount || 0,
+        r.autoSubmitted ? 'Yes' : 'No',
+      ];
+      let secCells = [];
+      if (isSpoken) {
+        secCells = [r.cefrLevel || '—', typeof r.percentage === 'number' ? Math.round(r.percentage) + '%' : '—', r.wpm || '—', r.fillerCount !== undefined ? r.fillerCount : '—'];
+      } else {
+        secs.forEach(secDef => {
+          const sName = secDef.name || secDef.sectionName || 'Section';
+          const isSpokenSec = /spoken|speech|communication|sea/i.test(sName);
+          const secData = r.sections?.find(s => (s.name || s.sectionName) === sName) || r.sections?.[secs.indexOf(secDef)];
+          const score = secData?.score !== undefined ? secData.score : '—';
+          const max = secData?.totalMarks || secData?.maxScore || '—';
+          const pct = (typeof score === 'number' && typeof max === 'number' && max > 0) ? Math.round((score / max) * 100) + '%' : '—';
+          const timeTaken = formatHrMinSec(secData?.timeTaken || secData?.timeSpent);
+          if (isSpokenSec) { secCells.push(score, max, pct, timeTaken, secData?.cefrLevel || r.cefrLevel || '—', secData?.wpm || r.wpm || '—'); }
+          else { secCells.push(score, max, pct, timeTaken); }
+        });
+      }
+
+      let codingCells = [];
+      if (codingQList.length > 0) {
+        const cSubs = getCodingSubmissions(r);
+        codingQList.forEach(cq => {
+          const cSub = cSubs.find(c => (c.questionNumber || 0) === cq.qNum || (c.problemTitle && c.problemTitle === cq.title));
+          const isAttempted = !!(cSub && (cSub.submitted || cSub.code || cSub.testsPassed !== undefined || cSub.score !== undefined || cSub.timeTaken || cSub.timeSpent));
+          if (isAttempted) {
+            const max = (cSub.totalMarks && cSub.totalMarks < codingSecTotalMarks) ? cSub.totalMarks : ((cSub.maxMarks && cSub.maxMarks < codingSecTotalMarks) ? cSub.maxMarks : cq.maxMarks);
+            let score = 0;
+            if (cSub.testsPassed !== undefined && cSub.totalTests && cSub.totalTests > 0) {
+              score = Math.round((cSub.testsPassed / cSub.totalTests) * max);
+            } else if (typeof cSub.score === 'number') {
+              score = cSub.score > max ? max : cSub.score;
+            } else if (typeof cSub.marks === 'number') {
+              score = cSub.marks > max ? max : cSub.marks;
+            }
+
+            const pct = cSub.totalTests && cSub.totalTests > 0
+              ? `${Math.round(((cSub.testsPassed || 0) / cSub.totalTests) * 100)}%`
+              : `${Math.round((score / max) * 100)}%`;
+            const timeTaken = getQuestionTimeTaken(cSub);
+            codingCells.push(score, max, pct, timeTaken);
+          } else {
+            codingCells.push('Did Not Attempt', 'Did Not Attempt', 'Did Not Attempt', 'Did Not Attempt');
+          }
+        });
+      }
+
+      const pct = typeof r.percentage === 'number' ? Math.round(r.percentage * 10) / 10 : (r.percentage || 0);
+      const ic = getInsightCategory(pct);
+      const overall = [r.score !== undefined ? r.score : '—', r.totalMarks || '—', `${pct}%`, pct >= 50 ? 'PASS' : 'FAIL', formatDateDisplay(r.submittedAt)];
+      const perf = [ic.insight, ic.category];
+
+      const rawRowValues = [...base, ...secCells, ...codingCells, ...overall, ...perf];
+      return rawRowValues.map((val) => {
+        if (val === 'PASS') return createExcelCell(val, { bg: 'D1FAE5', fg: '065F46', bold: true });
+        if (val === 'FAIL') return createExcelCell(val, { bg: 'FEE2E2', fg: '991B1B', bold: true });
+        if (val === 'Did Not Attempt') return createExcelCell(val, { bg: 'FEF3C7', fg: '92400E', bold: false });
+        return createExcelCell(val, { bg: rowBg });
       });
     });
-    const ws = XLSX.utils.json_to_sheet(rows.length > 0 ? rows : [{ note: 'No section data' }]);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, 'Sections');
-    XLSX.writeFile(wb, `${college}_Sections_${new Date().toISOString().slice(0, 10)}.xlsx`);
-  };
 
-  const handlePDF = async (student) => {
-    try { setGeneratingPdf(true); await generateStudentPDF(student, assessmentResults); }
-    catch (e) { /* console.error('PDF error:', e) */ void 0; alert('PDF generation failed.'); }
-    finally { setGeneratingPdf(false); }
+    const dataAoa = [row1Cells, row2Cells, ...dataRowCells];
+    const ws = XLSX.utils.aoa_to_sheet(dataAoa);
+
+    const merges = [];
+    for (let c = 0; c < baseHeaders1.length; c++) {
+      merges.push({ s: { r: 0, c }, e: { r: 1, c } });
+    }
+
+    let colIdx = baseHeaders1.length;
+    if (isSpoken) {
+      merges.push({ s: { r: 0, c: colIdx }, e: { r: 0, c: colIdx + 3 } });
+      colIdx += 4;
+    } else {
+      secs.forEach(sec => {
+        const sName = sec.name || sec.sectionName || 'Section';
+        const isSpokenSec = /spoken|speech|communication|sea/i.test(sName);
+        const span = isSpokenSec ? 6 : 4;
+        merges.push({ s: { r: 0, c: colIdx }, e: { r: 0, c: colIdx + span - 1 } });
+        colIdx += span;
+      });
+    }
+    if (codingQList.length > 0) {
+      codingQList.forEach(() => {
+        merges.push({ s: { r: 0, c: colIdx }, e: { r: 0, c: colIdx + 3 } });
+        colIdx += 4;
+      });
+    }
+    merges.push({ s: { r: 0, c: colIdx }, e: { r: 0, c: colIdx + 4 } });
+    colIdx += 5;
+    merges.push({ s: { r: 0, c: colIdx }, e: { r: 0, c: colIdx + 1 } });
+    ws['!merges'] = merges;
+
+    const allColLens = row1Names.map((n, i) => Math.max(12, n.length + 2, row2Names[i]?.length + 2 || 12));
+    ws['!cols'] = allColLens.map(wch => ({ wch }));
+
+    const cleanTestName = (selectedGroup?.testName || (testFilter !== 'All' ? testFilter : 'Assessment')).replace(/[/\\?%*:|"<>]/g, '_');
+    const cleanCollege = (college || 'College').replace(/[/\\?%*:|"<>]/g, '_');
+    const cleanYear = (yearFilter !== 'All' ? yearFilter : 'All').replace(/[/\\?%*:|"<>]/g, '_');
+    const dateStr = new Date().toISOString().slice(0, 10);
+
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, summaryWs, 'Summary Report');
+    XLSX.utils.book_append_sheet(wb, ws, 'Test Results');
+    XLSX.writeFile(wb, `SEED-${cleanTestName}-${cleanCollege}-${cleanYear}-${dateStr}.xlsx`);
   };
 
   if (loading) {
@@ -724,504 +839,95 @@ const StaffDashboardComponent = () => {
           <Tab label="Test Creator" sx={{ fontWeight: 700 }} />
         </Tabs>
 
-        {/* ══ REPORTS TAB ══════════════════════════════════════════════════════ */}
+        {/* ══ REPORTS TAB (Exclusive Excel Result Option) ══════════════════════ */}
         {activeTab === 0 && (
           <Box sx={{ p: 3 }}>
-            {/* Report Type sub-tabs */}
-            <Paper variant="outlined" sx={{ mb: 3, borderRadius: 2, overflow: 'hidden' }}>
-              <Tabs value={reportTab} onChange={(_, v) => setReportTab(v)}
-                sx={{ bgcolor: '#f8fafc', '& .MuiTab-root': { fontSize: 12, fontWeight: 700 } }}>
-                <Tab icon={<BarChartIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Marks Report" />
-                <Tab icon={<AssessmentIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Section Analysis" />
-                <Tab icon={<PersonIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Student Analysis" />
-                <Tab icon={<AssessmentIcon sx={{ fontSize: 16 }} />} iconPosition="start" label="Spoken English Reports" />
-              </Tabs>
-            </Paper>
+            {/* Header Action Bar */}
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2.5 }}>
+              <Box>
+                <Typography variant="h6" fontWeight={800}>Assessment Reports & Excel Export</Typography>
+                <Typography variant="caption" color="text.secondary">Download full complete Excel results for {college}</Typography>
+              </Box>
+              <Button
+                variant="contained"
+                startIcon={<CloudDownloadIcon />}
+                onClick={() => exportCollegeExcel()}
+                sx={{ bgcolor: '#10b981', '&:hover': { bgcolor: '#059669' }, fontWeight: 700 }}
+              >
+                Download College Excel Report
+              </Button>
+            </Box>
 
             {/* Shared Filters */}
-            {reportTab < 2 && (
-              <Grid container spacing={1.5} sx={{ mb: 2.5 }}>
-                <Grid item xs={12} sm={4}>
-                  <TextField fullWidth size="small" label="Search" value={searchText} onChange={e => setSearchText(e.target.value)}
-                    InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }} />
-                </Grid>
-                <Grid item xs={6} sm={2}>
-                  <FormControl fullWidth size="small">
-                    <InputLabel>Year</InputLabel>
-                    <Select value={yearFilter} label="Year" onChange={e => setYearFilter(e.target.value)}>
-                      {years.map(y => <MenuItem key={y} value={y}>{y === 'All' ? 'All Years' : y}</MenuItem>)}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={6} sm={2.5}>
-                  <FormControl fullWidth size="small">
-                    <InputLabel>Department</InputLabel>
-                    <Select value={deptFilter} label="Department" onChange={e => setDeptFilter(e.target.value)}>
-                      {depts.map(d => <MenuItem key={d} value={d}>{d === 'All' ? 'All Depts' : d}</MenuItem>)}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={6} sm={2.5}>
-                  <FormControl fullWidth size="small">
-                    <InputLabel>Test</InputLabel>
-                    <Select value={testFilter} label="Test" onChange={e => setTestFilter(e.target.value)}>
-                      {tests.map(t => <MenuItem key={t} value={t}>{t === 'All' ? 'All Tests' : (t.length > 24 ? t.substring(0, 22) + '..' : t)}</MenuItem>)}
-                    </Select>
-                  </FormControl>
-                </Grid>
-                <Grid item xs={6} sm={1.5}>
-                  <FormControl fullWidth size="small">
-                    <InputLabel>Type</InputLabel>
-                    <Select value={typeFilter} label="Type" onChange={e => setTypeFilter(e.target.value)}>
-                      <MenuItem value="All">All</MenuItem>
-                      <MenuItem value="mcq">MCQ</MenuItem>
-                      <MenuItem value="coding">Coding</MenuItem>
-                    </Select>
-                  </FormControl>
-                </Grid>
-              </Grid>
-            )}
-
-            {/* Marks Report */}
-            {reportTab === 0 && (
-              <>
-                <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 1.5 }}>
-                  <Button variant="contained" startIcon={<CloudDownloadIcon />} onClick={exportMarks}
-                    size="small" sx={{ bgcolor: '#6366f1' }}>Export Excel</Button>
-                </Box>
-                <TableContainer sx={{ maxHeight: 540, borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
-                  <Table stickyHeader size="small">
-                    <TableHead>
-                      <TableRow sx={{ '& th': { bgcolor: '#f8fafc', fontWeight: 700, fontSize: 12 } }}>
-                        {['Roll No', 'Name', 'Dept', 'Year', 'Test', 'Type', '% Score', 'Correct/Total', 'Time', 'Violations'].map(h => <TableCell key={h}>{h}</TableCell>)}
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {filteredResults.length === 0 ? (
-                        <TableRow><TableCell colSpan={10} align="center" sx={{ py: 5, color: 'text.secondary' }}>No results found. Ensure Firebase has data for college "{college}".</TableCell></TableRow>
-                      ) : filteredResults.map((r, i) => (
-                        <TableRow key={i} hover>
-                          <TableCell sx={{ fontWeight: 600, fontSize: 12 }}>{r.rollNumber}</TableCell>
-                          <TableCell sx={{ fontSize: 12 }}>{r.name}</TableCell>
-                          <TableCell sx={{ fontSize: 11 }}>{r.department}</TableCell>
-                          <TableCell sx={{ fontSize: 11 }}>{r.year}</TableCell>
-                          <TableCell sx={{ fontSize: 11 }}><Tooltip title={r.testName}><span>{r.testName?.length > 18 ? r.testName.substring(0, 16) + '..' : r.testName}</span></Tooltip></TableCell>
-                          <TableCell><Chip label={r.type.toUpperCase()} size="small" sx={{ fontSize: 10, height: 20, bgcolor: r.type === 'coding' ? '#ede9fe' : (r.type === 'assessment' || r.type === 'multisection') ? '#fce7f3' : '#e0f2fe', color: r.type === 'coding' ? '#7c3aed' : (r.type === 'assessment' || r.type === 'multisection') ? '#be185d' : '#0369a1' }} /></TableCell>
-                          <TableCell>
-                            <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ fontWeight: 700, fontSize: 11, bgcolor: r.percentage >= 75 ? '#dcfce7' : r.percentage >= 40 ? '#ede9fe' : '#fee2e2', color: r.percentage >= 75 ? '#15803d' : r.percentage >= 40 ? '#6d28d9' : '#dc2626' }} />
-                          </TableCell>
-                          <TableCell sx={{ fontSize: 11 }}>{r.correctAnswers}/{r.totalQuestions}</TableCell>
-                          <TableCell sx={{ fontSize: 11 }}>{r.timeTaken}</TableCell>
-                          <TableCell>
-                            {(r.violationCount || 0) > 0
-                              ? <Chip label={r.violationCount} size="small" color="warning" sx={{ height: 20, fontSize: 10 }} />
-                              : <Chip label="Clear" size="small" color="success" variant="outlined" sx={{ height: 20, fontSize: 10 }} />
-                            }
-                          </TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </>
-            )}
-
-            {/* Section Analysis */}
-            {reportTab === 1 && (
-              <Grid container spacing={3}>
-                <Grid item xs={12} md={3}>
-                  <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, textAlign: 'center' }}>
-                    <Typography variant="subtitle2" fontWeight={700} mb={2}>Overall Accuracy</Typography>
-                    <DonutChart correct={stats.totalCorrect} total={stats.totalQ} />
-                    <Divider sx={{ my: 2 }} />
-                    <Stack spacing={1}>
-                      {[['Total Attempts', stats.total], ['Avg Score', `${stats.avgPct.toFixed(1)}%`], ['High Achievers', stats.highAchievers]].map(([l, v]) => (
-                        <Box key={l} sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <Typography variant="caption">{l}</Typography>
-                          <Typography variant="caption" fontWeight={700}>{v}</Typography>
-                        </Box>
-                      ))}
-                    </Stack>
-                    <Button variant="outlined" startIcon={<CloudDownloadIcon />} onClick={exportSection} size="small" fullWidth sx={{ mt: 2 }}>Export Sections</Button>
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={5}>
-                  <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
-                    <Typography variant="subtitle2" fontWeight={700} mb={2}>Department Performance</Typography>
-                    {stats.deptData.length === 0 ? <Box sx={{ py: 4, textAlign: 'center', color: 'text.secondary' }}>No data</Box> : (
-                      <Stack spacing={2}>
-                        {stats.deptData.map(d => (
-                          <Box key={d.label}>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                              <Typography variant="body2" fontWeight={600}>{d.label} <Typography component="span" variant="caption" color="text.secondary">({d.count})</Typography></Typography>
-                              <Typography variant="body2" fontWeight={700} color={d.value >= 70 ? 'success.main' : d.value >= 40 ? 'primary.main' : 'error.main'}>{d.value}%</Typography>
-                            </Box>
-                            <LinearProgress variant="determinate" value={Math.min(d.value, 100)}
-                              sx={{ height: 10, borderRadius: 5, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: d.value >= 70 ? '#22c55e' : d.value >= 40 ? '#6366f1' : '#ef4444', borderRadius: 5 } }} />
-                          </Box>
-                        ))}
-                      </Stack>
-                    )}
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={4}>
-                  <Paper variant="outlined" sx={{ p: 3, borderRadius: 3, height: '100%' }}>
-                    <Typography variant="subtitle2" fontWeight={700} mb={2}>Test Performance</Typography>
-                    {stats.testData.length === 0 ? <Box sx={{ py: 4, textAlign: 'center', color: 'text.secondary' }}>No test data</Box> : (
-                      <Stack spacing={1.5}>
-                        {stats.testData.slice(0, 8).map(d => (
-                          <Box key={d.label} sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                            <Box sx={{ flex: 1, minWidth: 0 }}>
-                              <Typography variant="caption" noWrap>{d.label}</Typography>
-                              <LinearProgress variant="determinate" value={Math.min(d.value, 100)}
-                                sx={{ height: 6, borderRadius: 3, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: '#ec4899', borderRadius: 3 } }} />
-                            </Box>
-                            <Typography variant="caption" fontWeight={700} sx={{ minWidth: 36 }}>{d.value}%</Typography>
-                          </Box>
-                        ))}
-                      </Stack>
-                    )}
-                  </Paper>
-                </Grid>
-
-                {stats.sectionData.length > 0 && (
-                  <Grid item xs={12}>
-                    <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-                      <Typography variant="subtitle2" fontWeight={700} mb={2}>Assessment Section Averages</Typography>
-                      <Grid container spacing={2}>
-                        {stats.sectionData.map(sec => (
-                          <Grid item xs={6} sm={4} md={3} key={sec.label}>
-                            <Card sx={{ p: 2, borderRadius: 2, bgcolor: sec.value >= 70 ? '#f0fdf4' : sec.value >= 40 ? '#eff6ff' : '#fef2f2', border: '1px solid', borderColor: sec.value >= 70 ? '#bbf7d0' : sec.value >= 40 ? '#bfdbfe' : '#fecaca' }}>
-                              <Typography variant="caption" fontWeight={600}>{sec.label}</Typography>
-                              <Typography variant="h5" fontWeight={800} color={sec.value >= 70 ? 'success.main' : sec.value >= 40 ? 'primary.main' : 'error.main'}>{sec.value}%</Typography>
-                              <Typography variant="caption" color="text.secondary">{sec.count} submissions</Typography>
-                            </Card>
-                          </Grid>
-                        ))}
-                      </Grid>
-                    </Paper>
-                  </Grid>
-                )}
-
-                {/* Top / Needs Attention */}
-                <Grid item xs={12} md={6}>
-                  <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
-                    <Box sx={{ px: 2, py: 1.5, bgcolor: '#f0fdf4', display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <EmojiEventsIcon sx={{ color: '#15803d' }} /><Typography fontWeight={700}>Top Performers</Typography>
-                    </Box>
-                    <Divider />
-                    {stats.topPerformers.map((r, i) => (
-                      <Box key={i} sx={{ px: 2, py: 1.5, display: 'flex', justifyContent: 'space-between', borderBottom: i < stats.topPerformers.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
-                        <Box>
-                          <Typography variant="body2" fontWeight={600}>{r.name}</Typography>
-                          <Typography variant="caption" color="text.secondary">{r.rollNumber} · {r.department} · {r.testName}</Typography>
-                        </Box>
-                        <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ bgcolor: '#dcfce7', color: '#15803d', fontWeight: 700 }} />
-                      </Box>
-                    ))}
-                  </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={6}>
-                  <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
-                    <Box sx={{ px: 2, py: 1.5, bgcolor: '#fef2f2', display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <WarningIcon sx={{ color: '#dc2626' }} /><Typography fontWeight={700}>Needs Support (&lt;40%)</Typography>
-                    </Box>
-                    <Divider />
-                    {stats.needsAttention.length === 0
-                      ? <Box sx={{ p: 3, textAlign: 'center', color: 'text.secondary' }}>No students below 40% — Great!</Box>
-                      : stats.needsAttention.slice(0, 8).map((r, i) => (
-                        <Box key={i} sx={{ px: 2, py: 1.5, display: 'flex', justifyContent: 'space-between', borderBottom: i < Math.min(stats.needsAttention.length, 8) - 1 ? '1px solid #f1f5f9' : 'none' }}>
-                          <Box>
-                            <Typography variant="body2" fontWeight={600}>{r.name}</Typography>
-                            <Typography variant="caption" color="text.secondary">{r.rollNumber} · {r.department}</Typography>
-                          </Box>
-                          <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ bgcolor: '#fee2e2', color: '#dc2626', fontWeight: 700 }} />
-                        </Box>
-                      ))
-                    }
-                  </Paper>
-                </Grid>
-              </Grid>
-            )}
-
-            {/* Student Analysis Tab */}
-            {reportTab === 2 && (
-              <Box>
-                {/* View: Full Analysis */}
-                {studentView === 'analysis' && drillStudent && (
-                  <StudentAnalysisView
-                    student={drillStudent}
-                    assessmentData={drillAssessmentData}
-                    allStudentResults={allResults}
-                    onBack={() => setStudentView('assessments')}
-                  />
-                )}
-
-                {/* View: Assessment list for student */}
-                {studentView === 'assessments' && drillStudent && (() => {
-                  const attempts = filteredResults.filter(
-                    r => r.email?.toLowerCase() === drillStudent.email?.toLowerCase() ||
-                         r.rollNumber === drillStudent.rollNumber
-                  );
-                  return (
-                    <Box>
-                      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
-                        <Button startIcon={<PersonIcon />} variant="outlined" size="small"
-                          onClick={() => { setStudentView('list'); setDrillStudent(null); }} sx={{ borderRadius: 2 }}>
-                          All Students
-                        </Button>
-                        <Box sx={{ flex: 1 }}>
-                          <Typography variant="h6" fontWeight={800}>{drillStudent.name}</Typography>
-                          <Typography variant="caption" color="text.secondary">{drillStudent.rollNumber} · {drillStudent.department}</Typography>
-                        </Box>
-                        <Chip label={`${attempts.length} Assessments`} sx={{ bgcolor: '#ede9fe', color: '#6d28d9', fontWeight: 700 }} />
-                      </Box>
-                      {attempts.length === 0
-                        ? <Box sx={{ py: 8, textAlign: 'center', color: 'text.secondary' }}><Typography>No assessment records found.</Typography></Box>
-                        : <Grid container spacing={2.5}>
-                            {attempts.map((attempt, i) => {
-                              const pct = attempt.percentage || 0;
-                              const cc = pct >= 75 ? '#22c55e' : pct >= 40 ? '#6366f1' : '#ef4444';
-                              const deepData = assessmentResults.find(
-                                d => (d.testID === attempt.testID || d.testName === attempt.testName) &&
-                                     (d.email?.toLowerCase() === attempt.email?.toLowerCase() || d.rollNumber === attempt.rollNumber)
-                              );
-                              return (
-                                <Grid item xs={12} sm={6} md={4} key={i}>
-                                  <Card sx={{ borderRadius: 3, border: '1px solid #e2e8f0', transition: 'all 0.2s', '&:hover': { boxShadow: '0 8px 24px rgba(99,102,241,0.15)', transform: 'translateY(-2px)' } }}>
-                                    <CardContent sx={{ p: 2.5 }}>
-                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
-                                        <Chip label={(attempt.type || 'MCQ').toUpperCase()} size="small"
-                                          sx={{ bgcolor: attempt.type === 'coding' ? '#ede9fe' : attempt.type === 'assessment' ? '#fce7f3' : '#e0f2fe', color: attempt.type === 'coding' ? '#6d28d9' : attempt.type === 'assessment' ? '#be185d' : '#0369a1', fontSize: 10, height: 20 }} />
-                                        <Chip label={`${Math.round(pct)}%`} sx={{ fontWeight: 700, bgcolor: cc + '18', color: cc, fontSize: 12, height: 24 }} />
-                                      </Box>
-                                      <Typography variant="subtitle2" fontWeight={700} noWrap sx={{ mb: 0.5 }}>{attempt.testName || 'Assessment'}</Typography>
-                                      <Typography variant="caption" color="text.secondary" display="block">{attempt.correctAnswers || 0}/{attempt.totalQuestions || 0} correct · {attempt.timeTaken || 'N/A'}</Typography>
-                                      {attempt.submittedAt && <Typography variant="caption" color="text.secondary" display="block">{new Date(attempt.submittedAt).toLocaleDateString('en-IN')}</Typography>}
-                                      <Box sx={{ mt: 1.5 }}>
-                                        <LinearProgress variant="determinate" value={Math.min(pct, 100)}
-                                          sx={{ height: 6, borderRadius: 3, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: cc, borderRadius: 3 } }} />
-                                      </Box>
-                                      {deepData && <Chip label="✓ Deep data" size="small" sx={{ mt: 1, bgcolor: '#f0fdf4', color: '#15803d', fontSize: 9, height: 18 }} />}
-                                      <Button fullWidth variant="contained" startIcon={<AssessmentIcon />}
-                                        onClick={() => { setDrillAssessmentData(deepData || null); setDrillStudent({ ...attempt }); setStudentView('analysis'); }}
-                                        sx={{ mt: 1.5, bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' }, borderRadius: 2, fontSize: 12 }}>
-                                        Generate Analysis
-                                      </Button>
-                                    </CardContent>
-                                  </Card>
-                                </Grid>
-                              );
-                            })}
-                          </Grid>
-                      }
-                    </Box>
-                  );
-                })()}
-
-                {/* View: Student list */}
-                {studentView === 'list' && (() => {
-                  const seen = new Set();
-                  const unique = [];
-                  [...filteredResults].sort((a, b) => (a.name || '').localeCompare(b.name || '')).forEach(r => {
-                    const key = (r.email || r.rollNumber || '').toLowerCase();
-                    if (key && !seen.has(key)) { seen.add(key); unique.push(r); }
-                  });
-                  const q = studentSearch.toLowerCase();
-                  const filtered = unique.filter(s => !q || (s.name || '').toLowerCase().includes(q) || (s.rollNumber || '').toLowerCase().includes(q));
-
-                  return (
-                    <Box>
-                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3, flexWrap: 'wrap', gap: 2 }}>
-                        <Box>
-                          <Typography variant="h6" fontWeight={700}>Student Analysis</Typography>
-                          <Typography variant="caption" color="text.secondary">{unique.length} students · Click "Analysis" to view assessments</Typography>
-                        </Box>
-                        <TextField size="small" placeholder="Search name or roll no…" value={studentSearch} onChange={e => setStudentSearch(e.target.value)}
-                          InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }} sx={{ width: 280 }} />
-                      </Box>
-                      {filtered.length === 0
-                        ? <Box sx={{ py: 8, textAlign: 'center', color: 'text.secondary' }}><PersonIcon sx={{ fontSize: 56, mb: 1, opacity: 0.3 }} /><Typography>No students found</Typography></Box>
-                        : <Grid container spacing={2}>
-                            {filtered.map((student, i) => {
-                              const pct = student.percentage || 0;
-                              const category = pct >= 85 ? 'Elite' : pct >= 70 ? 'Placement Ready' : pct >= 55 ? 'Near Ready' : pct >= 40 ? 'Developing' : 'Needs Support';
-                              const catColor = pct >= 85 ? '#6366f1' : pct >= 70 ? '#22c55e' : pct >= 55 ? '#f59e0b' : pct >= 40 ? '#f97316' : '#ef4444';
-                              const attempts = allResults.filter(r => r.email?.toLowerCase() === student.email?.toLowerCase() || r.rollNumber === student.rollNumber);
-                              return (
-                                <Grid item xs={12} sm={6} md={4} key={i}>
-                                  <Card sx={{ borderRadius: 3, border: '1px solid #e2e8f0', transition: 'all 0.2s', '&:hover': { boxShadow: '0 8px 24px rgba(99,102,241,0.12)', transform: 'translateY(-2px)' } }}>
-                                    <CardContent sx={{ p: 2 }}>
-                                      <Box sx={{ display: 'flex', gap: 1.5, mb: 1.5, alignItems: 'center' }}>
-                                        <Avatar sx={{ bgcolor: catColor + '20', color: catColor, fontWeight: 800, width: 40, height: 40 }}>{(student.name || 'S')[0].toUpperCase()}</Avatar>
-                                        <Box sx={{ flex: 1, minWidth: 0 }}>
-                                          <Typography variant="subtitle2" fontWeight={700} noWrap>{student.name}</Typography>
-                                          <Typography variant="caption" color="text.secondary" noWrap>{student.rollNumber}</Typography>
-                                        </Box>
-                                      </Box>
-                                      <Typography variant="caption" color="text.secondary" display="block" noWrap sx={{ mb: 0.5 }}>{student.department} · {student.year}</Typography>
-                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                                        <Chip label={category} size="small" sx={{ bgcolor: catColor + '15', color: catColor, fontWeight: 700, fontSize: 10, height: 20 }} />
-                                        <Typography variant="caption" fontWeight={700} sx={{ color: catColor }}>{Math.round(pct)}%</Typography>
-                                      </Box>
-                                      <LinearProgress variant="determinate" value={Math.min(pct, 100)}
-                                        sx={{ height: 5, borderRadius: 3, mb: 1.5, bgcolor: '#f1f5f9', '& .MuiLinearProgress-bar': { bgcolor: catColor, borderRadius: 3 } }} />
-                                      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                        <Typography variant="caption" color="text.secondary">{attempts.length} assessment{attempts.length !== 1 ? 's' : ''}</Typography>
-                                        <Button size="small" variant="contained"
-                                          onClick={() => { setDrillStudent(student); setStudentView('assessments'); }}
-                                          sx={{ bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' }, borderRadius: 1.5, fontSize: 11, py: 0.4, px: 1.5 }}>
-                                          Analysis
-                                        </Button>
-                                      </Box>
-                                    </CardContent>
-                                  </Card>
-                                </Grid>
-                              );
-                            })}
-                          </Grid>
-                      }
-                    </Box>
-                  );
-                })()}
-              </Box>
-            )}
-
-            {/* Spoken English Reports Tab */}
-            {reportTab === 3 && (
-              <Box>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                  <Typography variant="h6" fontWeight={700}>
-                    Spoken English & Communication Reports
-                  </Typography>
-                  <Button
-                    variant="contained"
-                    startIcon={<CloudDownloadIcon />}
-                    onClick={() => {
-                      const rows = allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).map(r => ({
-                        'Roll Number': r.rollNumber || 'N/A',
-                        'Student Name': r.studentName || r.name || 'N/A',
-                        'Email': r.email || 'N/A',
-                        'College': r.college || 'N/A',
-                        'Department': r.department || 'N/A',
-                        'Year': r.year || 'N/A',
-                        'Test Name': r.testName || 'Spoken English Assessment',
-                        'CEFR Level': r.cefrLevel || 'N/A',
-                        'CEFR Rating': r.cefrName || 'N/A',
-                        'Accuracy (%)': r.percentage || r.score || 0,
-                        'Speaking Pace (WPM)': r.wpm || 0,
-                        'Fillers Used': r.fillerCount || 0,
-                      }));
-                      const ws = XLSX.utils.json_to_sheet(rows.length > 0 ? rows : [{ note: 'No spoken English data' }]);
-                      const wb = XLSX.utils.book_new();
-                      XLSX.utils.book_append_sheet(wb, ws, 'Spoken English Reports');
-                      XLSX.writeFile(wb, `SEEDIT_Spoken_English_Report_${new Date().toISOString().slice(0, 10)}.xlsx`);
-                    }}
-                    sx={{ bgcolor: '#6366f1', '&:hover': { bgcolor: '#4f46e5' } }}
-                  >
-                    Export Spoken English Excel
-                  </Button>
-                </Box>
-
-                <TableContainer sx={{ maxHeight: 550, borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
-                  <Table stickyHeader size="small">
-                    <TableHead>
-                      <TableRow sx={{ '& th': { bgcolor: '#0f172a', color: '#38bdf8', fontWeight: 800, fontSize: 11 } }}>
-                        <TableCell>#</TableCell>
-                        <TableCell>Roll Number</TableCell>
-                        <TableCell>Student Name</TableCell>
-                        <TableCell>Department</TableCell>
-                        <TableCell>Year</TableCell>
-                        <TableCell align="center">CEFR Level</TableCell>
-                        <TableCell align="center">Accuracy Score</TableCell>
-                        <TableCell align="center">Speaking Pace</TableCell>
-                        <TableCell align="center">Fillers Count</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).length === 0 ? (
-                        <TableRow>
-                          <TableCell colSpan={9} align="center" sx={{ py: 4, color: 'text.secondary' }}>
-                            No spoken English assessment records found for this cohort.
-                          </TableCell>
-                        </TableRow>
-                      ) : (
-                        allResults.filter(r => r.testType === 'spoken_english' || r.cefrLevel).map((row, idx) => {
-                          const cefrColor = row.cefrLevel === 'C2' ? '#10b981' : row.cefrLevel === 'C1' ? '#3b82f6' : row.cefrLevel === 'B2' ? '#8b5cf6' : row.cefrLevel === 'B1' ? '#f59e0b' : '#ef4444';
-                          return (
-                            <TableRow key={idx} hover sx={{ '&:nth-of-type(even)': { bgcolor: '#f8fafc' } }}>
-                              <TableCell sx={{ fontSize: 12, fontWeight: 600 }}>{idx + 1}</TableCell>
-                              <TableCell sx={{ fontSize: 12, fontWeight: 700, fontFamily: 'monospace' }}>{row.rollNumber || 'N/A'}</TableCell>
-                              <TableCell sx={{ fontSize: 12, fontWeight: 700 }}>{row.studentName || row.name || 'N/A'}</TableCell>
-                              <TableCell sx={{ fontSize: 12 }}>{row.department || 'N/A'}</TableCell>
-                              <TableCell sx={{ fontSize: 12 }}>{row.year || 'N/A'}</TableCell>
-                              <TableCell align="center">
-                                <Chip label={`${row.cefrLevel || 'B2'} (${row.cefrName || 'Upper Inter'})`} size="small" sx={{ bgcolor: cefrColor + '20', color: cefrColor, fontWeight: 900, fontSize: 11 }} />
-                              </TableCell>
-                              <TableCell align="center" sx={{ fontSize: 12, fontWeight: 800, color: '#0284c7' }}>{row.percentage || row.score || 0}%</TableCell>
-                              <TableCell align="center" sx={{ fontSize: 12, fontWeight: 700 }}>{row.wpm || 0} WPM</TableCell>
-                              <TableCell align="center">
-                                <Chip label={`${row.fillerCount || 0} fillers`} size="small" sx={{ bgcolor: (row.fillerCount || 0) > 3 ? '#fef3c7' : '#dcfce7', color: (row.fillerCount || 0) > 3 ? '#b45309' : '#15803d', fontWeight: 800, fontSize: 10 }} />
-                              </TableCell>
-                            </TableRow>
-                          );
-                        })
-                      )}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
-              </Box>
-            )}
-          </Box>
-        )}
-
-        {/* ══ STUDENT DIRECTORY ════════════════════════════════════════════════ */}
-        {activeTab === 1 && (
-          <Box sx={{ p: 3 }}>
             <Grid container spacing={1.5} sx={{ mb: 2.5 }}>
-              <Grid item xs={12} sm={5}>
-                <TextField fullWidth size="small" label="Search Student" value={dirSearch} onChange={e => setDirSearch(e.target.value)}
+              <Grid item xs={12} sm={4}>
+                <TextField fullWidth size="small" label="Search Candidate" value={searchText} onChange={e => setSearchText(e.target.value)}
                   InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }} />
               </Grid>
-              <Grid item xs={6} sm={3}>
-                <FormControl fullWidth size="small"><InputLabel>Year</InputLabel>
-                  <Select value={dirYear} label="Year" onChange={e => setDirYear(e.target.value)}>
-                    {dirYears.map(y => <MenuItem key={y} value={y}>{y === 'All' ? 'All Years' : y}</MenuItem>)}
+              <Grid item xs={6} sm={2}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Year</InputLabel>
+                  <Select value={yearFilter} label="Year" onChange={e => setYearFilter(e.target.value)}>
+                    {years.map(y => <MenuItem key={y} value={y}>{y === 'All' ? 'All Years' : y}</MenuItem>)}
                   </Select>
                 </FormControl>
               </Grid>
-              <Grid item xs={6} sm={4}>
-                <FormControl fullWidth size="small"><InputLabel>Department</InputLabel>
-                  <Select value={dirDept} label="Department" onChange={e => setDirDept(e.target.value)}>
-                    {dirDepts.map(d => <MenuItem key={d} value={d}>{d === 'All' ? 'All Depts' : d}</MenuItem>)}
+              <Grid item xs={6} sm={2.5}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Department</InputLabel>
+                  <Select value={deptFilter} label="Department" onChange={e => setDeptFilter(e.target.value)}>
+                    {depts.map(d => <MenuItem key={d} value={d}>{d === 'All' ? 'All Depts' : d}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sm={2.5}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Test</InputLabel>
+                  <Select value={testFilter} label="Test" onChange={e => setTestFilter(e.target.value)}>
+                    {tests.map(t => <MenuItem key={t} value={t}>{t === 'All' ? 'All Tests' : (t.length > 24 ? t.substring(0, 22) + '..' : t)}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sm={1.5}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Type</InputLabel>
+                  <Select value={typeFilter} label="Type" onChange={e => setTypeFilter(e.target.value)}>
+                    <MenuItem value="All">All</MenuItem>
+                    <MenuItem value="mcq">MCQ</MenuItem>
+                    <MenuItem value="coding">Coding</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
             </Grid>
+
+            {/* Candidate Results Table */}
             <TableContainer sx={{ maxHeight: 540, borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
               <Table stickyHeader size="small">
                 <TableHead>
                   <TableRow sx={{ '& th': { bgcolor: '#f8fafc', fontWeight: 700, fontSize: 12 } }}>
-                    {['Roll Number', 'Name', 'Email', 'Department', 'Year', 'Premium'].map(h => <TableCell key={h}>{h}</TableCell>)}
+                    {['Roll No', 'Name', 'Dept', 'Year', 'Test Name', 'Type', '% Score', 'Correct/Total', 'Time Taken', 'Violations'].map(h => <TableCell key={h}>{h}</TableCell>)}
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {filteredStudents.length === 0 ? (
-                    <TableRow><TableCell colSpan={6} align="center" sx={{ py: 5, color: 'text.secondary' }}>No students found</TableCell></TableRow>
-                  ) : filteredStudents.map((s, i) => (
+                  {filteredResults.length === 0 ? (
+                    <TableRow><TableCell colSpan={10} align="center" sx={{ py: 5, color: 'text.secondary' }}>No results found for college "{college}".</TableCell></TableRow>
+                  ) : filteredResults.map((r, i) => (
                     <TableRow key={i} hover>
-                      <TableCell sx={{ fontWeight: 600, fontSize: 12 }}>{s['Roll Number'] || 'N/A'}</TableCell>
-                      <TableCell sx={{ fontSize: 12 }}>{s.Name || 'N/A'}</TableCell>
-                      <TableCell sx={{ fontSize: 11 }}>{s.Email || 'N/A'}</TableCell>
-                      <TableCell sx={{ fontSize: 11 }}>{s.Department || 'N/A'}</TableCell>
-                      <TableCell sx={{ fontSize: 11 }}>{s.Year || 'N/A'}</TableCell>
+                      <TableCell sx={{ fontWeight: 600, fontSize: 12 }}>{r.rollNumber}</TableCell>
+                      <TableCell sx={{ fontSize: 12 }}>{r.name}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{r.department}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{r.year}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}><Tooltip title={r.testName}><span>{r.testName?.length > 22 ? r.testName.substring(0, 20) + '..' : r.testName}</span></Tooltip></TableCell>
+                      <TableCell><Chip label={r.type.toUpperCase()} size="small" sx={{ fontSize: 10, height: 20, bgcolor: r.type === 'coding' ? '#ede9fe' : '#e0f2fe', color: r.type === 'coding' ? '#7c3aed' : '#0369a1' }} /></TableCell>
                       <TableCell>
-                        {s.Premium === true || s.Premium === 'true' || s.Premium === 'Yes'
-                          ? <Chip label="Premium" color="secondary" size="small" sx={{ fontWeight: 700, height: 20, fontSize: 10 }} />
-                          : <Chip label="Free" size="small" variant="outlined" sx={{ height: 20, fontSize: 10 }} />
+                        <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ fontWeight: 700, fontSize: 11, bgcolor: r.percentage >= 75 ? '#dcfce7' : r.percentage >= 40 ? '#ede9fe' : '#fee2e2', color: r.percentage >= 75 ? '#15803d' : r.percentage >= 40 ? '#6d28d9' : '#dc2626' }} />
+                      </TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{r.correctAnswers}/{r.totalQuestions}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{r.timeTaken}</TableCell>
+                      <TableCell>
+                        {(r.violationCount || 0) > 0
+                          ? <Chip label={r.violationCount} size="small" color="warning" sx={{ height: 20, fontSize: 10 }} />
+                          : <Chip label="Clear" size="small" color="success" variant="outlined" sx={{ height: 20, fontSize: 10 }} />
                         }
                       </TableCell>
                     </TableRow>
@@ -1232,38 +938,111 @@ const StaffDashboardComponent = () => {
           </Box>
         )}
 
-        {/* ══ PERFORMANCE INSIGHTS ═════════════════════════════════════════════ */}
+        {/* ══ STUDENT DIRECTORY TAB ═════════════════════════════════════════════ */}
+        {activeTab === 1 && (
+          <Box sx={{ p: 3 }}>
+            <Grid container spacing={1.5} sx={{ mb: 2.5 }}>
+              <Grid item xs={12} sm={6}>
+                <TextField fullWidth size="small" label="Search Student Directory" value={dirSearch} onChange={e => setDirSearch(e.target.value)}
+                  InputProps={{ startAdornment: <SearchIcon sx={{ mr: 1, fontSize: 18, color: 'action.active' }} /> }} />
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Year</InputLabel>
+                  <Select value={dirYear} label="Year" onChange={e => setDirYear(e.target.value)}>
+                    {dirYears.map(y => <MenuItem key={y} value={y}>{y === 'All' ? 'All Years' : y}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} sm={3}>
+                <FormControl fullWidth size="small">
+                  <InputLabel>Department</InputLabel>
+                  <Select value={dirDept} label="Department" onChange={e => setDirDept(e.target.value)}>
+                    {dirDepts.map(d => <MenuItem key={d} value={d}>{d === 'All' ? 'All Depts' : d}</MenuItem>)}
+                  </Select>
+                </FormControl>
+              </Grid>
+            </Grid>
+
+            <TableContainer sx={{ maxHeight: 540, borderRadius: 2, border: '1px solid', borderColor: 'divider' }}>
+              <Table stickyHeader size="small">
+                <TableHead>
+                  <TableRow sx={{ '& th': { bgcolor: '#f8fafc', fontWeight: 700, fontSize: 12 } }}>
+                    {['#', 'Roll Number', 'Student Name', 'Department', 'Year', 'Email'].map(h => <TableCell key={h}>{h}</TableCell>)}
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {filteredStudents.length === 0 ? (
+                    <TableRow><TableCell colSpan={6} align="center" sx={{ py: 5, color: 'text.secondary' }}>No student profiles found for {college}.</TableCell></TableRow>
+                  ) : filteredStudents.map((s, i) => (
+                    <TableRow key={i} hover>
+                      <TableCell sx={{ fontSize: 11, color: 'text.secondary' }}>{i + 1}</TableCell>
+                      <TableCell sx={{ fontWeight: 600, fontSize: 12 }}>{s['Roll Number'] || s.rollNumber || 'N/A'}</TableCell>
+                      <TableCell sx={{ fontWeight: 600, fontSize: 12 }}>{s.Name || s.name || 'N/A'}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{s.Department || s.department || 'N/A'}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{s.Year || s.year || 'N/A'}</TableCell>
+                      <TableCell sx={{ fontSize: 11 }}>{s.Email || s.email || 'N/A'}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </Box>
+        )}
+
+        {/* ══ PERFORMANCE INSIGHTS TAB ═════════════════════════════════════════ */}
         {activeTab === 2 && (
           <Box sx={{ p: 3 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
-                  <Box sx={{ px: 2.5, py: 2, bgcolor: '#fdf4ff', display: 'flex', gap: 1, alignItems: 'center' }}>
-                    <EmojiEventsIcon sx={{ color: '#9333ea' }} /><Typography fontWeight={700}>High Performers (≥80%)</Typography>
+                  <Box sx={{ px: 2, py: 1.5, bgcolor: '#f0fdf4', display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <EmojiEventsIcon sx={{ color: '#15803d' }} /><Typography fontWeight={700}>Top Performers</Typography>
                   </Box>
                   <Divider />
-                  {stats.topPerformers.filter(r => r.percentage >= 80).length === 0 ? (
-                    <Box sx={{ p: 3, textAlign: 'center', color: 'text.secondary' }}>No high performers yet</Box>
-                  ) : stats.topPerformers.filter(r => r.percentage >= 80).map((r, i) => (
-                    <Box key={i} sx={{ px: 2.5, py: 1.5, display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #f1f5f9' }}>
+                  {stats.topPerformers.length === 0 ? (
+                    <Box sx={{ p: 3, textAlign: 'center', color: 'text.secondary' }}>No results available</Box>
+                  ) : stats.topPerformers.map((r, i) => (
+                    <Box key={i} sx={{ px: 2, py: 1.5, display: 'flex', justifyContent: 'space-between', borderBottom: i < stats.topPerformers.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
                       <Box>
                         <Typography variant="body2" fontWeight={600}>{r.name}</Typography>
-                        <Typography variant="caption" color="text.secondary">{r.rollNumber} | {r.department} | {r.testName}</Typography>
+                        <Typography variant="caption" color="text.secondary">{r.rollNumber} · {r.department} · {r.testName}</Typography>
                       </Box>
-                      <Chip label={`${r.percentage.toFixed(0)}%`} size="small" color="success" sx={{ fontWeight: 700 }} />
+                      <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ bgcolor: '#dcfce7', color: '#15803d', fontWeight: 700 }} />
                     </Box>
                   ))}
                 </Paper>
               </Grid>
+
               <Grid item xs={12} md={6}>
+                <Paper variant="outlined" sx={{ borderRadius: 3, overflow: 'hidden' }}>
+                  <Box sx={{ px: 2, py: 1.5, bgcolor: '#fef2f2', display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <WarningIcon sx={{ color: '#dc2626' }} /><Typography fontWeight={700}>Needs Support (&lt;40%)</Typography>
+                  </Box>
+                  <Divider />
+                  {stats.needsAttention.length === 0 ? (
+                    <Box sx={{ p: 3, textAlign: 'center', color: 'text.secondary' }}>No students below 40% — Great!</Box>
+                  ) : stats.needsAttention.slice(0, 8).map((r, i) => (
+                    <Box key={i} sx={{ px: 2, py: 1.5, display: 'flex', justifyContent: 'space-between', borderBottom: i < Math.min(stats.needsAttention.length, 8) - 1 ? '1px solid #f1f5f9' : 'none' }}>
+                      <Box>
+                        <Typography variant="body2" fontWeight={600}>{r.name}</Typography>
+                        <Typography variant="caption" color="text.secondary">{r.rollNumber} · {r.department}</Typography>
+                      </Box>
+                      <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ bgcolor: '#fee2e2', color: '#dc2626', fontWeight: 700 }} />
+                    </Box>
+                  ))}
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12}>
                 <Paper variant="outlined" sx={{ p: 3, borderRadius: 3 }}>
-                  <Typography variant="subtitle2" fontWeight={700} mb={2}>Department Avg Performance</Typography>
-                  {stats.deptData.length === 0 ? <Box sx={{ py: 4, textAlign: 'center', color: 'text.secondary' }}>No data</Box> : (
+                  <Typography variant="subtitle2" fontWeight={700} mb={2}>Department Performance Breakdown</Typography>
+                  {stats.deptData.length === 0 ? <Box sx={{ py: 4, textAlign: 'center', color: 'text.secondary' }}>No department data</Box> : (
                     <Stack spacing={2}>
                       {stats.deptData.map(d => (
                         <Box key={d.label}>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                            <Typography variant="body2" fontWeight={600}>{d.label} <Typography component="span" variant="caption" color="text.secondary">({d.count})</Typography></Typography>
+                            <Typography variant="body2" fontWeight={600}>{d.label} <Typography component="span" variant="caption" color="text.secondary">({d.count} candidates)</Typography></Typography>
                             <Typography variant="body2" fontWeight={700} color={d.value >= 70 ? 'success.main' : d.value >= 40 ? 'primary.main' : 'error.main'}>{d.value}%</Typography>
                           </Box>
                           <LinearProgress variant="determinate" value={Math.min(d.value, 100)}
@@ -1277,31 +1056,23 @@ const StaffDashboardComponent = () => {
             </Grid>
           </Box>
         )}
-        
-        {/* ══ TEST CREATOR TAB ══════════════════════════════════════════════════ */}
+
+        {/* ══ TEST CREATOR TAB ═════════════════════════════════════════════════ */}
         {activeTab === 3 && (
-          <Box sx={{ p: 1 }}>
-            <TestCreator college={college} />
+          <Box sx={{ p: 3 }}>
+            <TestCreator />
           </Box>
         )}
       </Paper>
-
-      {/* Logout overlay */}
-      {showLogout && (
-        <Box sx={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', bgcolor: 'rgba(15,23,42,0.75)', zIndex: 9999, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', color: '#fff', backdropFilter: 'blur(5px)' }}>
-          <Typography variant="h5" fontWeight="bold" mb={1}>Goodbye, {user?.Name || 'Staff'}!</Typography>
-          <Typography>Logging you out…</Typography>
-        </Box>
-      )}
     </Box>
   );
 };
 
-const StaffDashboard = () => (
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <StaffDashboardComponent />
-  </ThemeProvider>
-);
-
-export default StaffDashboard;
+export default function StaffDashboard() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <StaffDashboardComponent />
+    </ThemeProvider>
+  );
+}
