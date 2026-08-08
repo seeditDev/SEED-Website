@@ -502,9 +502,56 @@ const generateStudentPDF = async (student, assessmentResults) => {
 const fetchFirestoreForCollege = async (college) => {
   const mcqResults = [], codingResults = [], assessmentResults = [];
   try {
-    const { collectionGroup, getDocs, query, where } = await import('firebase/firestore');
+    const { collectionGroup, getDocs, query } = await import('firebase/firestore');
 
-    // MCQ Results
+    // 1. Full Assessment Results (students subcollection under AssessmentResults)
+    try {
+      const q = query(collectionGroup(db, 'students'));
+      const snap = await getDocs(q);
+      snap.forEach(d => {
+        const r = d.data();
+        if (!r) return;
+        const studentCollege = (r.college || r.College || '').toUpperCase().trim();
+        const targetCollege = (college || '').toUpperCase().trim();
+        if (targetCollege && studentCollege && studentCollege !== targetCollege) return;
+
+        // Skip non-submitted / in-progress docs unless completed or submitted flag is set
+        const isStartedOnly = (r.status === 'started' || r.status === 'in_progress') && !r.completed && !r.submitted;
+        if (isStartedOnly) return;
+
+        const type = r.type || r.testType || 'multisection';
+        const pct = r.percentage !== undefined
+          ? (r.percentage > 1 ? r.percentage : (r.percentage || 0) * 100)
+          : (r.score && r.totalMarks ? (r.score / r.totalMarks) * 100 : 0);
+
+        const normalizedDoc = {
+          ...r,
+          id: d.id,
+          type,
+          percentage: isNaN(pct) ? 0 : pct,
+          testName: r.testName || r.assessmentName || r.test_name || 'Assessment',
+          testID: r.testID || r.assessmentID || r.assessmentId || r.test_id || d.id,
+          startedAt: r.startedAt || r.timeStartedISO || r.started_at,
+          submittedAt: r.submittedAt || r.submittedAtISO || r.submitted_at,
+          sections: Array.isArray(r.sectionsArray) && r.sectionsArray.length > 0
+            ? r.sectionsArray
+            : (Array.isArray(r.sections)
+              ? r.sections
+              : (r.sections && typeof r.sections === 'object' ? Object.values(r.sections) : []))
+        };
+
+        assessmentResults.push(normalizedDoc);
+        if (type === 'coding') {
+          codingResults.push(normalizedDoc);
+        } else {
+          mcqResults.push(normalizedDoc);
+        }
+      });
+    } catch (err) {
+      /* console.warn('Error querying AssessmentResults (students):', err) */ void 0;
+    }
+
+    // 2. MCQ Results (legacy fallback)
     try {
       let snap;
       try {
@@ -520,7 +567,7 @@ const fetchFirestoreForCollege = async (college) => {
       });
     } catch (e) { /* console.warn('MCQ fetch error:', e) */ void 0; }
 
-    // Coding Results
+    // 3. Coding Results (legacy fallback)
     try {
       let snap;
       try {
@@ -536,7 +583,7 @@ const fetchFirestoreForCollege = async (college) => {
       });
     } catch (e) { /* console.warn('Coding fetch error:', e) */ void 0; }
 
-    // Assessment_Results
+    // 4. Assessment_Results (legacy fallback)
     try {
       const snap = await getDocs(query(collectionGroup(db, 'Assessments')));
       snap.forEach(d => {
@@ -552,26 +599,35 @@ const fetchFirestoreForCollege = async (college) => {
 
 // ─── Normalize result to unified format ─────────────────────────────────────────
 const normalize = (r, college) => {
-  const pct = r.percentage !== undefined ? (r.percentage > 1 ? r.percentage : r.percentage * 100) : 0;
+  const scoreVal = typeof r.score === 'number' ? r.score : (Number(r.score) || 0);
+  const totalMarks = r.totalMarks !== undefined ? Number(r.totalMarks) : (r.totalQuestions !== undefined ? Number(r.totalQuestions) : 100);
+  const pct = r.percentage !== undefined
+    ? (r.percentage > 1 ? r.percentage : r.percentage * 100)
+    : (totalMarks > 0 ? (scoreVal / totalMarks) * 100 : 0);
+
   return {
-    rollNumber: r.rollNumber || r.roll_number || 'N/A',
+    ...r,
+    rollNumber: r.rollNumber || r.roll_number || r['Roll Number'] || 'N/A',
     name: r.name || r.Name || 'Student',
     email: r.email || r.Email || '',
-    year: r.year || r.Year || 'N/A',
+    year: formatYear(r.year || r.Year || 'N/A'),
     department: r.department || r.Department || 'N/A',
     college: r.college || r.College || college,
-    testName: r.testName || r.test_name || 'Test',
-    testID: r.testID || r.test_id || '',
-    type: r.type || 'mcq',
-    score: r.score || 0,
-    totalMarks: r.totalMarks || r.totalQuestions || 100,
-    percentage: pct,
-    correctAnswers: r.correctAnswers || r.correct_answers || 0,
-    totalQuestions: r.totalQuestions || r.total_questions || 10,
-    timeTaken: r.timeTakenFormatted || r.time_taken_formatted || (r.timeTaken ? `${r.timeTaken}s` : 'N/A'),
+    testName: r.testName || r.assessmentName || r.test_name || r['Test Name'] || 'Test',
+    testID: r.testID || r.assessmentID || r.test_id || '',
+    type: r.type || r.testType || 'mcq',
+    score: scoreVal,
+    totalMarks: totalMarks,
+    percentage: isNaN(pct) ? 0 : Math.min(100, Math.max(0, Math.round(pct * 100) / 100)),
+    correctAnswers: typeof r.correctAnswers === 'number' ? r.correctAnswers : (typeof r.correct_answers === 'number' ? r.correct_answers : scoreVal),
+    totalQuestions: r.totalQuestions || r.total_questions || totalMarks,
+    timeTaken: r.timeTakenFormatted || r.time_taken_formatted || (r.timeTakenSeconds ? `${r.timeTakenSeconds}s` : (r.timeTaken ? `${r.timeTaken}s` : 'N/A')),
     submittedAt: r.submittedAt || r.submitted_at || new Date().toISOString(),
     autoSubmitted: r.autoSubmitted || false,
     violationCount: r.violationCount || r.violation_count || 0,
+    sections: Array.isArray(r.sectionsArray) && r.sectionsArray.length > 0 ? r.sectionsArray : (Array.isArray(r.sections) ? r.sections : []),
+    questions: Array.isArray(r.questions) ? r.questions : (Array.isArray(r.answers) ? r.answers : []),
+    codingSubmissions: Array.isArray(r.codingSubmissions) ? r.codingSubmissions : (Array.isArray(r.coding) ? r.coding : []),
   };
 };
 
@@ -1114,7 +1170,7 @@ const StaffDashboardComponent = () => {
                   <Table stickyHeader size="small">
                     <TableHead>
                       <TableRow sx={{ '& th': { bgcolor: '#f8fafc', fontWeight: 700, fontSize: 12 } }}>
-                        {['Roll No', 'Name', 'Dept', 'Year', 'Test', 'Type', '% Score', 'Correct/Total', 'Time', 'Violations', 'Actions'].map(h => <TableCell key={h} align={h === 'Actions' ? 'center' : 'left'}>{h}</TableCell>)}
+                        {['Roll No', 'Name', 'Dept', 'Year', 'Test', 'Type', '% Score', 'Total Marks', 'Time', 'Violations', 'Actions'].map(h => <TableCell key={h} align={h === 'Actions' ? 'center' : 'left'}>{h}</TableCell>)}
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -1131,7 +1187,7 @@ const StaffDashboardComponent = () => {
                           <TableCell>
                             <Chip label={`${r.percentage.toFixed(0)}%`} size="small" sx={{ fontWeight: 700, fontSize: 11, bgcolor: r.percentage >= 75 ? '#dcfce7' : r.percentage >= 40 ? '#ede9fe' : '#fee2e2', color: r.percentage >= 75 ? '#15803d' : r.percentage >= 40 ? '#6d28d9' : '#dc2626' }} />
                           </TableCell>
-                          <TableCell sx={{ fontSize: 11 }}>{r.correctAnswers}/{r.totalQuestions}</TableCell>
+                          <TableCell sx={{ fontSize: 11, fontWeight: 600 }}>{r.score !== undefined && r.totalMarks ? `${r.score} / ${r.totalMarks}` : `${r.correctAnswers}/${r.totalQuestions}`}</TableCell>
                           <TableCell sx={{ fontSize: 11 }}>{r.timeTaken}</TableCell>
                           <TableCell>
                             {(r.violationCount || 0) > 0
