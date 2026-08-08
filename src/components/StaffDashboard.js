@@ -502,7 +502,7 @@ const generateStudentPDF = async (student, assessmentResults) => {
 const fetchFirestoreForCollege = async (college) => {
   const mcqResults = [], codingResults = [], assessmentResults = [];
   try {
-    const { collectionGroup, getDocs, query } = await import('firebase/firestore');
+    const { collectionGroup, getDocs, query, where } = await import('firebase/firestore');
 
     // 1. Full Assessment Results (students subcollection under AssessmentResults)
     try {
