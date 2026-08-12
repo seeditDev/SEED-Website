@@ -2,8 +2,9 @@ import { API_ENDPOINTS, CACHE_CONFIG, FILE_TYPES } from '../config/constants';
 import { cacheManager } from '../utils/cacheManager';
 import timeService from './timeService';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, collectionGroup, getDocs } from 'firebase/firestore';
 import { auth, db } from '../firebase-config';
+
 
 class DataService {
     static async fetchWithCache(url, cacheKey) {
@@ -223,30 +224,59 @@ class DataService {
 
     static async getUserScores(email, college) {
         try {
-            // Get current auth_data to get the year
+            // Check Firestore first
             const authData = JSON.parse(localStorage.getItem("auth_data") || "{}");
-            const year = authData.Year; // Get year from auth_data
+            const uid = authData.uid || authData.UID;
             
-            const scores = await this.getCollegeData(college, FILE_TYPES.SCORES, year);
-            const userScores = scores.find(s => s["Hackerrank Mail"] === email) || null;
-            
-            if (userScores) {
-                // Update auth_data with scores
-                const updatedAuthData = {
-                    ...authData,
-                    scores: userScores
-                };
-                
-                // Store updated auth_data
-                localStorage.setItem("auth_data", JSON.stringify(updatedAuthData));
+            if (uid) {
+                try {
+                    const snap = await getDocs(collectionGroup(db, 'students'));
+                    let found = null;
+                    snap.docs.forEach(d => {
+                        if (!d.ref.path.startsWith('assessmentResults/')) return;
+                        const data = d.data();
+                        if (data.userId === uid || data.email === email || d.id === uid) {
+                            found = { id: d.id, ...data };
+                        }
+                    });
+                    if (found) return found;
+                } catch (_) {}
             }
-            
-            return userScores;
+
+            const year = authData.Year || authData.year;
+            if (college && year) {
+                const scores = await this.getCollegeData(college, FILE_TYPES.SCORES, year);
+                return scores.find(s => s["Hackerrank Mail"] === email || s.email === email) || null;
+            }
+            return null;
         } catch (error) {
             /* console.error('Error fetching scores:', error) */ void 0;
             return null;
         }
     }
+
+    /**
+     * Fetch student results for a college directly from Firestore ('assessmentResults' collectionGroup).
+     */
+    static async getCollegeResultsFromFirestore(college) {
+        try {
+            const snap = await getDocs(collectionGroup(db, 'students'));
+            const results = [];
+            snap.docs.forEach((d) => {
+                if (!d.ref.path.startsWith('assessmentResults/')) return;
+                const data = d.data();
+                const studentCollege = (data.college || data.College || data.tenantId || '').trim().toUpperCase();
+                if (!college || college === 'SEEDIT' || studentCollege === college.trim().toUpperCase()) {
+                    results.push({ id: d.id, path: d.ref.path, ...data });
+                }
+            });
+            return results;
+        } catch (err) {
+            console.warn('[DataService] Error fetching Firestore results:', err);
+            return [];
+        }
+    }
+
 
     static async getAccessControl() {
         try {
