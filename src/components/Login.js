@@ -153,28 +153,15 @@ const Login = () => {
     e.preventDefault();
 
     if (!username || !password) {
-      setError("Please fill in username and password");
+      setError("Please fill in username/email and password");
       return;
-    }
-
-    if (role === 'student') {
-      if (!college) {
-        if (searchTerm.trim()) {
-          setError("Please select a college from the dropdown");
-        } else {
-          setError("Please select a college");
-        }
-        return;
-      }
-      if (!year) {
-        setError("Please select your batch year");
-        return;
-      }
     }
 
     try {
       setLoading(true);
-      const userData = await DataService.validateCredentials(username, password, role, college, year);
+      setError("");
+
+      const userData = await DataService.validateCredentials(username.trim(), password, role, college, year);
 
       if (userData) {
         // Clear all college_ prefixed caches from localStorage
@@ -184,14 +171,16 @@ const Login = () => {
           }
         });
 
+        const effectiveRole = (userData.role || userData.Role || role || 'student').toLowerCase();
+
         if (rememberMe) {
           // SECURITY FIX (Part 15): Store only non-sensitive metadata (username, role, college, year) — NEVER store password
           localStorage.setItem(
             "rememberedUser",
             JSON.stringify({
               username,
-              role,
-              ...(role === 'student' && { college, year })
+              role: effectiveRole,
+              ...(effectiveRole === 'student' && { college: userData.college || college, year: userData.year || year })
             })
           );
         } else {
@@ -201,31 +190,31 @@ const Login = () => {
         // Store authenticated user's profile data (Normalized Part 16 + Legacy backward compat)
         const authData = {
           uid: userData.uid || userData.UID || userData.Email || '',
-          email: userData.Email || userData.email || '',
+          email: userData.Email || userData.email || username,
           name: userData.Name || userData.name || '',
-          role: (userData.Role || userData.role || role || '').toLowerCase(),
-          tenantId: userData.College || userData.college || userData.tenantId || '',
-          college: userData.College || userData.college || '',
+          role: effectiveRole,
+          tenantId: userData.College || userData.college || college || '',
+          college: userData.College || userData.college || college || '',
           department: userData.Department || userData.department || '',
-          year: userData.Year || userData.year || '',
+          year: userData.Year || userData.year || year || '',
           rollNumber: userData["Roll Number"] || userData.rollNumber || '',
           // Legacy capitalized keys for backward compatibility:
-          Email: userData.Email || userData.email,
-          Name: userData.Name || userData.name,
-          Role: userData.Role || role,
-          College: userData.College || userData.college,
-          Premium: userData.Premium !== undefined ? userData.Premium : (userData.premium !== undefined ? userData.premium : 0),
-          ...(role === 'student' && {
-            Department: userData.Department || userData.department,
-            Year: userData.Year || userData.year,
-            "Roll Number": userData["Roll Number"] || userData.rollNumber,
+          Email: userData.Email || userData.email || username,
+          Name: userData.Name || userData.name || '',
+          Role: effectiveRole,
+          College: userData.College || userData.college || college || '',
+          Department: userData.Department || userData.department || '',
+          Year: userData.Year || userData.year || year || '',
+          "Roll Number": userData["Roll Number"] || userData.rollNumber || '',
+          Premium: userData.Premium !== undefined ? userData.Premium : (userData.premium !== undefined ? userData.premium : 1),
+          ...(effectiveRole === 'student' && {
             "Hackerrank Mail": userData["Hackerrank Mail"],
             "Hackerrank ID": userData["Hackerrank ID"]
           })
         };
 
         localStorage.setItem("auth_data", JSON.stringify(authData));
-        localStorage.setItem("role", role);
+        localStorage.setItem("role", effectiveRole);
 
         // Sync PyQt session if desktop bridge is available
         try {
@@ -247,18 +236,20 @@ const Login = () => {
 
         setTimeout(() => {
           setShowSuccess(false);
-          navigate(DASHBOARD_PATHS[role]);
-        }, 2000);
+          const targetPath = DASHBOARD_PATHS[effectiveRole] || DASHBOARD_PATHS.student;
+          navigate(targetPath);
+        }, 1500);
       } else {
-        setError("Invalid credentials");
+        setError("Invalid email or password. Please try again.");
       }
     } catch (error) {
-      /* console.error("Login error:", error) */ void 0;
-      setError(error.message || "Login failed. Please try again.");
+      console.error("Login error:", error);
+      setError(error.message || "Login failed. Please check your credentials and try again.");
     } finally {
       setLoading(false);
     }
   };
+
 
   const clearForm = () => {
     setUsername("");

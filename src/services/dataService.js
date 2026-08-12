@@ -1,6 +1,9 @@
 import { API_ENDPOINTS, CACHE_CONFIG, FILE_TYPES } from '../config/constants';
 import { cacheManager } from '../utils/cacheManager';
 import timeService from './timeService';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '../firebase-config';
 
 class DataService {
     static async fetchWithCache(url, cacheKey) {
@@ -123,76 +126,99 @@ class DataService {
         return await this.fetchWithFallback(url, githubApiUrl, githubUrl, cacheKey);
     }
 
-    static async validateCredentials(email, password, role, college, year) {
+    /**
+     * SEED-SEB Canonical Login Method: Firebase Auth + Firestore profile resolution.
+     */
+    static async validateCredentials(email, password, role = 'student', college = '', year = '') {
+        // 1. Firebase Auth Sign-In (SEED-SEB canonical login method)
         try {
-            /* console.log(`[DataService] Validating credentials for:`, {
-                email,
-                role,
-                college: college || 'N/A',
-                year: year || 'N/A'
-            }) */ void 0;
+            const credential = await signInWithEmailAndPassword(auth, email, password);
+            const firebaseUser = credential.user;
 
-            if (role.toLowerCase() === 'staff') {
-                /* console.log(`[DataService] Staff login - Fetching from backend API`) */ void 0;
+            let profile = null;
+            try {
+                const snap = await getDoc(doc(db, 'users', firebaseUser.uid));
+                if (snap?.exists()) {
+                    profile = snap.data();
+                }
+            } catch (_) {}
+
+            const userRole = (profile?.role || profile?.Role || role || 'student').toLowerCase();
+            const userCollege = profile?.college || profile?.College || college || '';
+            const userDepartment = profile?.department || profile?.Department || '';
+            const userYear = profile?.year || profile?.Year || year || '';
+            const userRoll = profile?.rollNumber || profile?.['Roll Number'] || '';
+            const userName = profile?.name || profile?.Name || firebaseUser.displayName || email.split('@')[0];
+
+            const authData = {
+                uid: firebaseUser.uid,
+                email: firebaseUser.email || email,
+                name: userName,
+                role: userRole,
+                tenantId: userCollege,
+                college: userCollege,
+                department: userDepartment,
+                year: userYear,
+                rollNumber: userRoll,
+                // Legacy capitalized properties for backward compatibility
+                Email: firebaseUser.email || email,
+                Name: userName,
+                Role: userRole,
+                College: userCollege,
+                Department: userDepartment,
+                Year: userYear,
+                'Roll Number': userRoll,
+                Premium: profile?.premium !== undefined ? profile.premium : 1,
+                isAuthenticated: true
+            };
+
+            return authData;
+        } catch (fbErr) {
+            console.warn('[DataService] Firebase Auth sign-in failed, trying fallback validation:', fbErr?.code || fbErr);
+        }
+
+        // 2. Fallback validation (for legacy static JSON profiles)
+        try {
+            if (role && role.toLowerCase() === 'staff') {
                 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
-                
                 const response = await fetch(`${API_URL}/api/auth/login`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username: email, password })
                 });
-                
                 if (response.ok) {
                     const data = await response.json();
-                    /* console.log(`[DataService] Staff backend login successful:`, data) */ void 0;
-                    
-                    if (data.token) {
-                        localStorage.setItem('token', data.token);
-                        localStorage.setItem('isAuthenticated', 'true');
-                        const expirationTime = new Date().getTime() + 24 * 60 * 60 * 1000;
-                        localStorage.setItem('authExpiration', expirationTime.toString());
-                    }
-
                     return {
+                        uid: data.user.id || data.user.email,
+                        email: data.user.email || data.user.Email,
+                        name: data.user.name || data.user.Name,
+                        role: (data.user.role || data.user.Role || 'staff').toLowerCase(),
+                        college: data.user.college || data.user.College || '',
                         Email: data.user.email || data.user.Email,
                         Name: data.user.name || data.user.Name,
-                        Role: data.user.role || data.user.Role,
-                        College: data.user.college || data.user.College,
-                        Department: data.user.department || data.user.Department || null,
+                        Role: data.user.role || data.user.Role || 'staff',
+                        College: data.user.college || data.user.College || '',
                         isAuthenticated: true
                     };
-                } else {
-                    const errData = await response.json().catch(() => ({}));
-                    throw new Error(errData.detail || 'Invalid credentials');
                 }
-            } else {
-                /* console.log(`[DataService] Student login - Fetching profiles for college: ${college}, year: ${year}`) */ void 0;
+            } else if (college && year) {
                 const profiles = await this.getCollegeData(college, FILE_TYPES.PROFILES, year);
-                /* console.log(`[DataService] Profiles received:`, profiles) */ void 0;
-                
-                const userProfile = profiles.find(p => p.Email === email);
-                /* console.log(`[DataService] Student profile found:`, userProfile ? 'Yes' : 'No') */ void 0;
-                
-                if (!userProfile || userProfile.Password !== password) {
-                    /* console.log(`[DataService] Student validation failed:`, {
-                        profileFound: !!userProfile,
-                        passwordMatch: userProfile ? userProfile.Password === password : false
-                    }) */ void 0;
-                    return null;
+                const userProfile = profiles.find(p => p.Email === email || p.email === email);
+                if (userProfile && (userProfile.Password === password || userProfile.password === password)) {
+                    return {
+                        uid: userProfile.uid || userProfile.Email,
+                        email: userProfile.Email || userProfile.email,
+                        name: userProfile.Name || userProfile.name,
+                        role: (userProfile.Role || userProfile.role || 'student').toLowerCase(),
+                        college: userProfile.College || userProfile.college || college,
+                        ...userProfile,
+                        isAuthenticated: true
+                    };
                 }
-
-                /* console.log(`[DataService] Student validation successful for: ${email}`) */ void 0;
-                return {
-                    ...userProfile,
-                    isAuthenticated: true
-                };
             }
-        } catch (error) {
-            /* console.error('Validation error:', error) */ void 0;
-            throw error;
-        }
+        } catch (_) {}
+
+        return null;
     }
 
     static async getUserScores(email, college) {
