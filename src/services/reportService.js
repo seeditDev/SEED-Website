@@ -3,6 +3,8 @@ import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { collectionGroup, getDocs } from 'firebase/firestore';
+import { db } from '../firebase-config';
 
 /**
  * ReportService — Canonical Report Calculation & Export Engine for SEED Platform.
@@ -10,10 +12,51 @@ import 'jspdf-autotable';
  */
 class ReportService {
   /**
+   * Fetch all student attempt results directly from canonical Firestore path:
+   * assessmentResults/{assessmentId}/students/{firebaseUid}
+   */
+  static async fetchFirestoreResults() {
+    try {
+      const snap = await getDocs(collectionGroup(db, 'students'));
+      const results = [];
+      snap.forEach((docSnap) => {
+        const data = docSnap.data();
+        results.push({
+          id: docSnap.id,
+          ...data,
+          name: data.name || data.Name || data.email?.split('@')[0] || 'Student',
+          Name: data.name || data.Name || data.email?.split('@')[0] || 'Student',
+          email: data.email || data.Email || '',
+          Email: data.email || data.Email || '',
+          college: data.college || data.College || data.tenantId || '',
+          College: data.college || data.College || data.tenantId || '',
+          department: data.department || data.Department || '',
+          Department: data.department || data.Department || '',
+          year: data.year || data.Year || '',
+          Year: data.year || data.Year || '',
+          rollNumber: data.rollNumber || data['Roll Number'] || '',
+          'Roll Number': data.rollNumber || data['Roll Number'] || '',
+          testName: data.testName || data.assessmentTitle || data.assessmentId || 'Assessment',
+          score: data.totalScore !== undefined ? data.totalScore : (data.score || 0),
+          totalMarks: data.maxScore !== undefined ? data.maxScore : (data.totalMarks || 100),
+          percentage: data.percentage !== undefined ? data.percentage : Math.round(((data.totalScore || 0) / (data.maxScore || 100)) * 100),
+          violationCount: data.violationCount || (Array.isArray(data.proctorSummary?.violations) ? data.proctorSummary.violations.length : 0),
+          submittedAt: data.submittedAt || data.submittedAtISO || ''
+        });
+      });
+      return results;
+    } catch (err) {
+      console.warn('[ReportService] Error fetching collectionGroup results from Firestore:', err);
+      return [];
+    }
+  }
+
+  /**
    * Filter results by tenant/college and role authorization.
    * If staff has a specific tenantId/College, filter ONLY to their tenant (Part 22 security rule).
    */
   static filterByTenant(results, staffAuthData) {
+
     if (!Array.isArray(results)) return [];
     if (!staffAuthData) return results;
 
