@@ -432,160 +432,20 @@ const Login = () => {
           <p className="subtitle">Login to your account</p>
 
           <form onSubmit={handleLogin} className="login-form-wrapper">
-            <div className="role-selection">
-              <button
-                type="button"
-                className={role === "student" ? "role-btn selected" : "role-btn"}
-                onClick={() => handleRoleChange("student")}
-              >
-                Student
-              </button>
-              <button
-                type="button"
-                className={role === "staff" ? "role-btn selected" : "role-btn"}
-                onClick={() => handleRoleChange("staff")}
-              >
-                Staff
-              </button>
-            </div>
-
-            {role === 'student' && (
-              <>
-                {/* College Search Autocomplete Input */}
-                <div className="input-group animate-fade-in">
-                  <div className="search-container login-search-wrapper" style={{ position: 'relative' }}>
-                    <FaLaptop className="input-icon" />
-                    <input
-                      type="text"
-                      className="login-search-box"
-                      placeholder="Search college name"
-                      value={searchTerm}
-                      onChange={handleSearch}
-                      onClick={handleInputClick}
-                      onFocus={handleInputFocus}
-                      required={role === 'student'}
-                    />
-
-                    {/* Arrow indicator */}
-                    <div style={{
-                      position: 'absolute',
-                      right: '12px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      width: 0,
-                      height: 0,
-                      borderLeft: '5px solid transparent',
-                      borderRight: '5px solid transparent',
-                      borderTop: '5px solid #a78bfa',
-                      pointerEvents: 'none'
-                    }}></div>
-
-                    <div className="suggestions" style={{ display: showDropdown ? 'block' : 'none' }}>
-                      {filteredColleges.map(([key, name]) => (
-                        <div
-                          key={key}
-                          className="suggestion-item"
-                          onClick={() => handleCollegeSelect(key)}
-                          style={{
-                            backgroundColor: key === college ? 'rgba(124, 58, 237, 0.15)' : 'transparent',
-                            color: key === college ? '#c084fc' : '#d1d5db',
-                            fontWeight: key === college ? 'bold' : 'normal'
-                          }}
-                        >
-                          {name}
-                        </div>
-                      ))}
-
-                      {filteredColleges.length === 0 && (
-                        <div style={{
-                          padding: '10px',
-                          textAlign: 'center',
-                          color: '#6b7280',
-                          fontStyle: 'italic',
-                          fontSize: '0.85rem'
-                        }}>
-                          No matches found
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Batch Year Search Autocomplete Input */}
-                <div className="input-group animate-fade-in">
-                  <div className="search-container year-search-container" style={{ position: 'relative' }}>
-                    <FaCheckCircle className="input-icon" />
-                    <input
-                      type="text"
-                      className="login-search-box"
-                      placeholder="Search batch year"
-                      value={yearSearchTerm}
-                      onChange={handleYearSearch}
-                      onClick={handleYearInputClick}
-                      onFocus={handleYearInputFocus}
-                      required={role === 'student'}
-                    />
-
-                    {/* Arrow indicator */}
-                    <div style={{
-                      position: 'absolute',
-                      right: '12px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      width: 0,
-                      height: 0,
-                      borderLeft: '5px solid transparent',
-                      borderRight: '5px solid transparent',
-                      borderTop: '5px solid #a78bfa',
-                      pointerEvents: 'none'
-                    }}></div>
-
-                    <div className="suggestions" style={{ display: showYearDropdown ? 'block' : 'none' }}>
-                      {filteredYears.map(([key, name]) => (
-                        <div
-                          key={key}
-                          className="suggestion-item"
-                          onClick={() => handleYearSelect(key)}
-                          style={{
-                            backgroundColor: key === year ? 'rgba(124, 58, 237, 0.15)' : 'transparent',
-                            color: key === year ? '#c084fc' : '#d1d5db',
-                            fontWeight: key === year ? 'bold' : 'normal'
-                          }}
-                        >
-                          {name}
-                        </div>
-                      ))}
-
-                      {filteredYears.length === 0 && (
-                        <div style={{
-                          padding: '10px',
-                          textAlign: 'center',
-                          color: '#6b7280',
-                          fontStyle: 'italic',
-                          fontSize: '0.85rem'
-                        }}>
-                          No matches found
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {/* Email/Username input */}
+            {/* Email Address input */}
             <div className="input-group">
               <div className="input-with-icon">
                 <FaUser className="input-icon" />
                 <input
-                  type="text"
+                  type="email"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  placeholder={role === 'staff' ? "Username" : "Email"}
+                  placeholder="Email address"
                   required
                 />
               </div>
             </div>
+
 
             {/* Password input */}
             <div className="input-group">
