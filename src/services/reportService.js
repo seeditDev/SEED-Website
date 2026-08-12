@@ -30,7 +30,8 @@ class ReportService {
         const maxScore = Number(data.totalMarks ?? data.maxScore ?? 100);
         const pct = Math.round(data.percentage ?? (maxScore > 0 ? (score / maxScore) * 100 : 0));
         const email = String(data.email ?? data.Email ?? "");
-        const userId = String(data.userId ?? email || docSnap.id);
+        const userId = String(data.userId ?? (email || docSnap.id));
+
         const assessmentId = String(data.assessmentId ?? data.testID ?? docSnap.ref.path.split("/")[1] ?? "");
 
         rawRows.push({
