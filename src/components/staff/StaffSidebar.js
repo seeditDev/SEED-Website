@@ -7,6 +7,7 @@ import {
 import {
   Dashboard as DashboardIcon,
   Assessment as ReportsIcon,
+  Book as CoursesIcon,
   Quiz as McqIcon,
   Code as CodingIcon,
   AssignmentTurnedIn as AssessmentsIcon,
@@ -22,12 +23,14 @@ const DRAWER_WIDTH = 260;
 const MENU_ITEMS = [
   { text: 'Dashboard', path: '/staff/dashboard', icon: <DashboardIcon /> },
   { text: 'Reports', path: '/staff/reports', icon: <ReportsIcon /> },
+  { text: 'Courses & Series', path: '/staff/courses', icon: <CoursesIcon /> },
   { text: 'MCQ Creator', path: '/staff/mcq-creator', icon: <McqIcon /> },
   { text: 'Coding Creator', path: '/staff/coding-creator', icon: <CodingIcon /> },
   { text: 'Assessments', path: '/staff/assessments', icon: <AssessmentsIcon /> },
   { text: 'Students', path: '/staff/students', icon: <StudentsIcon /> },
   { text: 'Student Analysis', path: '/staff/students/analysis', icon: <AnalysisIcon /> }
 ];
+
 
 const StaffSidebar = ({ user, mobileOpen, handleDrawerToggle }) => {
   const location = useLocation();

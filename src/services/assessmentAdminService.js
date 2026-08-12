@@ -42,6 +42,43 @@ class AssessmentAdminService {
   }
 
   /**
+   * List Courses & Series from Firestore ('courses' collection)
+   */
+  static async listCourses() {
+    try {
+      const snap = await getDocs(collection(db, 'courses'));
+      const list = [];
+      for (const d of snap.docs) {
+        const cData = d.data();
+        const seriesSnap = await getDocs(collection(db, 'courses', d.id, 'series')).catch(() => ({ docs: [] }));
+        const seriesList = [];
+        for (const sDoc of seriesSnap.docs) {
+          const sData = sDoc.data();
+          const testsSnap = await getDocs(collection(db, 'courses', d.id, 'series', sDoc.id, 'tests')).catch(() => ({ docs: [] }));
+          const testsList = testsSnap.docs.map(tDoc => ({ id: tDoc.id, ...tDoc.data() }));
+          seriesList.push({
+            id: sDoc.id,
+            ...sData,
+            title: sData.title || sData.name || sDoc.id,
+            tests: testsList
+          });
+        }
+        list.push({
+          id: d.id,
+          ...cData,
+          title: cData.title || cData.name || d.id,
+          series: seriesList
+        });
+      }
+      return list;
+    } catch (err) {
+      console.error('[AssessmentAdminService] Error listing courses:', err);
+      return [];
+    }
+  }
+
+
+  /**
    * Fetch single assessment by ID
    */
   static async getAssessment(assessmentId) {

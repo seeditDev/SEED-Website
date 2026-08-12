@@ -14,42 +14,77 @@ class ReportService {
   /**
    * Fetch all student attempt results directly from canonical Firestore path:
    * assessmentResults/{assessmentId}/students/{firebaseUid}
+   * Strictly reads from Firestore — NO GitHub fetch or static JSON fallback used.
    */
-  static async fetchFirestoreResults() {
+  static async fetchFirestoreResults(staffAuth = null) {
     try {
       const snap = await getDocs(collectionGroup(db, 'students'));
-      const results = [];
-      snap.forEach((docSnap) => {
+      const rawRows = [];
+
+      snap.docs.forEach((docSnap) => {
+        if (!docSnap.ref.path.startsWith("assessmentResults/")) return;
+
         const data = docSnap.data();
-        results.push({
+        const proctor = data.proctorSummary || {};
+        const score = Number(data.score ?? data.totalScore ?? 0);
+        const maxScore = Number(data.totalMarks ?? data.maxScore ?? 100);
+        const pct = Math.round(data.percentage ?? (maxScore > 0 ? (score / maxScore) * 100 : 0));
+        const email = String(data.email ?? data.Email ?? "");
+        const userId = String(data.userId ?? email || docSnap.id);
+        const assessmentId = String(data.assessmentId ?? data.testID ?? docSnap.ref.path.split("/")[1] ?? "");
+
+        rawRows.push({
           id: docSnap.id,
-          ...data,
-          name: data.name || data.Name || data.email?.split('@')[0] || 'Student',
-          Name: data.name || data.Name || data.email?.split('@')[0] || 'Student',
-          email: data.email || data.Email || '',
-          Email: data.email || data.Email || '',
-          college: data.college || data.College || data.tenantId || '',
-          College: data.college || data.College || data.tenantId || '',
-          department: data.department || data.Department || '',
-          Department: data.department || data.Department || '',
-          year: data.year || data.Year || '',
-          Year: data.year || data.Year || '',
-          rollNumber: data.rollNumber || data['Roll Number'] || '',
-          'Roll Number': data.rollNumber || data['Roll Number'] || '',
-          testName: data.testName || data.assessmentTitle || data.assessmentId || 'Assessment',
-          score: data.totalScore !== undefined ? data.totalScore : (data.score || 0),
-          totalMarks: data.maxScore !== undefined ? data.maxScore : (data.totalMarks || 100),
-          percentage: data.percentage !== undefined ? data.percentage : Math.round(((data.totalScore || 0) / (data.maxScore || 100)) * 100),
-          violationCount: data.violationCount || (Array.isArray(data.proctorSummary?.violations) ? data.proctorSummary.violations.length : 0),
+          path: docSnap.ref.path,
+          userId,
+          assessmentId,
+          name: String(data.name ?? data.Name ?? data.displayName ?? email.split('@')[0] ?? "Student"),
+          Name: String(data.name ?? data.Name ?? data.displayName ?? email.split('@')[0] ?? "Student"),
+          email,
+          Email: email,
+          college: String(data.college ?? data.College ?? data.tenantId ?? ""),
+          College: String(data.college ?? data.College ?? data.tenantId ?? ""),
+          tenantId: String(data.college ?? data.College ?? data.tenantId ?? ""),
+          department: String(data.department ?? data.Department ?? "General"),
+          Department: String(data.department ?? data.Department ?? "General"),
+          year: String(data.year ?? data.Year ?? data.cohortId ?? ""),
+          Year: String(data.year ?? data.Year ?? data.cohortId ?? ""),
+          rollNumber: String(data.rollNumber ?? data['Roll Number'] ?? ""),
+          'Roll Number': String(data.rollNumber ?? data['Roll Number'] ?? ""),
+          testName: String(data.assessmentName ?? data.testName ?? data.assessmentTitle ?? assessmentId),
+          assessmentTitle: String(data.assessmentName ?? data.testName ?? data.assessmentTitle ?? assessmentId),
+          type: String(data.type ?? data.assessmentType ?? "mcq"),
+          score,
+          totalMarks: maxScore,
+          percentage: pct,
+          passed: pct >= Number(data.passPercentage ?? 40),
+          violationCount: Number(proctor.totalViolations ?? data.violationCount ?? (Array.isArray(proctor.violations) ? proctor.violations.length : 0)),
           submittedAt: data.submittedAt || data.submittedAtISO || ''
         });
       });
-      return results;
+
+      // Deduplicate: keep latest submission per userId + assessmentId
+      const dedupeMap = new Map();
+      for (const row of rawRows) {
+        const key = `${row.userId}::${row.assessmentId}`;
+        const existing = dedupeMap.get(key);
+        if (!existing) {
+          dedupeMap.set(key, row);
+        } else {
+          const tExisting = new Date(existing.submittedAt || 0).getTime();
+          const tRow = new Date(row.submittedAt || 0).getTime();
+          if (tRow > tExisting) dedupeMap.set(key, row);
+        }
+      }
+
+      const deduplicated = Array.from(dedupeMap.values());
+      return this.filterByTenant(deduplicated, staffAuth);
     } catch (err) {
       console.warn('[ReportService] Error fetching collectionGroup results from Firestore:', err);
       return [];
     }
   }
+
 
   /**
    * Filter results by tenant/college and role authorization.

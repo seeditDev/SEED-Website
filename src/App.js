@@ -13,6 +13,8 @@ import StaffCodingCreator from "./components/staff/StaffCodingCreator";
 import StaffAssessments from "./components/staff/StaffAssessments";
 import StaffStudents from "./components/staff/StaffStudents";
 import StaffStudentAnalysis from "./components/staff/StaffStudentAnalysis";
+import StaffCourses from "./components/staff/StaffCourses";
+
 import Registration from "./components/Registration";
 import ChallengeSubmission from "./components/ChallengeSubmission";
 import AdminQuestionBank from "./components/AdminQuestionBank";
@@ -282,7 +284,9 @@ const App = () => {
           <Route path="/staff" element={<Navigate to="/staff/dashboard" replace />} />
           <Route path="/staff/dashboard" element={<ProtectedStaffRoute><StaffLayout><StaffDashboardHome /></StaffLayout></ProtectedStaffRoute>} />
           <Route path="/staff/reports" element={<ProtectedStaffRoute><StaffLayout><StaffReports /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/courses" element={<ProtectedStaffRoute><StaffLayout><StaffCourses /></StaffLayout></ProtectedStaffRoute>} />
           <Route path="/staff/mcq-creator" element={<ProtectedStaffRoute><StaffLayout><StaffMcqCreator /></StaffLayout></ProtectedStaffRoute>} />
+
           <Route path="/staff/coding-creator" element={<ProtectedStaffRoute><StaffLayout><StaffCodingCreator /></StaffLayout></ProtectedStaffRoute>} />
           <Route path="/staff/assessments" element={<ProtectedStaffRoute><StaffLayout><StaffAssessments /></StaffLayout></ProtectedStaffRoute>} />
           <Route path="/staff/students" element={<ProtectedStaffRoute><StaffLayout><StaffStudents /></StaffLayout></ProtectedStaffRoute>} />

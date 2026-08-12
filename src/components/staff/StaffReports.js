@@ -50,30 +50,17 @@ const StaffReports = () => {
   const fetchReportData = async () => {
     setLoading(true);
     try {
-      const collegeToFetch = selectedCollege !== 'All' ? selectedCollege : 'SEEDIT';
-      const yearToFetch = selectedYear !== 'All' ? selectedYear : '2K26';
-
-      // 1. Primary: Fetch from Firestore collectionGroup(db, 'students') at assessmentResults/{assessmentId}/students/{userId}
-      let firestoreResults = await ReportService.fetchFirestoreResults();
-
-      // 2. Secondary fallback: Load static legacy JSON scores if Firestore has no entries yet
-      let legacyData = [];
-      try {
-        const scores = await DataService.getCollegeData(collegeToFetch, 'scores', yearToFetch);
-        legacyData = Array.isArray(scores) ? scores : (scores.students || scores.data || []);
-      } catch (_) {}
-
-      const combinedData = firestoreResults.length > 0 ? firestoreResults : legacyData;
-
-      // Apply tenant restriction security filter (Part 22)
-      const tenantFiltered = ReportService.filterByTenant(combinedData, staffAuth);
-      setRawResults(tenantFiltered);
+      // Fetch strictly from Firestore collectionGroup(db, 'students') at assessmentResults/{assessmentId}/students/{userId}
+      // NO GitHub fetch or static JSON fallback used.
+      const firestoreResults = await ReportService.fetchFirestoreResults(staffAuth);
+      setRawResults(firestoreResults);
     } catch (err) {
-      console.error('[StaffReports] Error fetching report data:', err);
+      console.error('[StaffReports] Error fetching report data from Firestore:', err);
     } finally {
       setLoading(false);
     }
   };
+
 
 
   useEffect(() => {

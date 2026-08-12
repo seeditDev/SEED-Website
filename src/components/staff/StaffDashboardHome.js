@@ -37,23 +37,18 @@ const StaffDashboardHome = () => {
       try {
         const staffAuthRaw = localStorage.getItem('auth_data');
         const staffAuth = staffAuthRaw ? JSON.parse(staffAuthRaw) : {};
-        const staffCollege = staffAuth.College || staffAuth.college || '';
 
-        // Load assessments
+        // 1. Load assessments from Firestore assessments collection
         const assessments = await AssessmentAdminService.listAssessments();
-        const publishedCount = assessments.filter(a => a.status === 'Active' || a.status === 'Published').length;
+        const publishedCount = assessments.filter(a => a.status === 'Active' || a.status === 'Published' || a.status === 'active' || a.status === 'published').length;
 
-        // Fetch students & scores from DataService
-        let studentResults = [];
-        if (staffCollege) {
-          try {
-            const rawScores = await DataService.getCollegeData(staffCollege, 'scores');
-            studentResults = Array.isArray(rawScores) ? rawScores : (rawScores.students || rawScores.data || []);
-          } catch (_) {}
-        }
+        // 2. Fetch student attempt results strictly from Firestore assessmentResults/{assessmentId}/students/{userId}
+        // NO GitHub fetch or hardcoded fallback
+        const studentResults = await ReportService.fetchFirestoreResults(staffAuth);
 
-        const totalStudents = studentResults.length || 45;
-        const totalAssessments = assessments.length || 12;
+        const totalStudentsSet = new Set(studentResults.map(s => s.userId || s.email).filter(Boolean));
+        const totalStudents = totalStudentsSet.size;
+        const totalAssessments = assessments.length;
 
         let totalScoreSum = 0;
         let passCount = 0;
@@ -62,50 +57,45 @@ const StaffDashboardHome = () => {
         const depts = {};
 
         studentResults.forEach(s => {
-          const score = s.score || s.correctAnswers || 0;
-          const totalMarks = s.totalMarks || 100;
-          const pct = Math.round(s.percentage !== undefined ? s.percentage : (score / totalMarks) * 100);
+          const pct = Number(s.percentage || 0);
           totalScoreSum += pct;
 
           if (pct >= 40) passCount++;
-          if (pct < 40) supportList.push({ ...s, pct });
-          if (pct >= 75) topList.push({ ...s, pct });
+          if (pct < 40) supportList.push(s);
+          if (pct >= 75) topList.push(s);
 
-          const dept = s.Department || s.department || 'General';
+          const dept = s.department || s.Department || 'General';
           if (!depts[dept]) depts[dept] = { total: 0, sum: 0 };
           depts[dept].total += 1;
           depts[dept].sum += pct;
         });
 
-        const avgScore = totalStudents > 0 ? Math.round(totalScoreSum / Math.max(1, studentResults.length)) : 72;
-        const passRate = totalStudents > 0 ? Math.round((passCount / Math.max(1, studentResults.length)) * 100) : 84;
+        const totalAttempts = studentResults.length;
+        const avgScore = totalAttempts > 0 ? Math.round(totalScoreSum / totalAttempts) : 0;
+        const passRate = totalAttempts > 0 ? Math.round((passCount / totalAttempts) * 100) : 0;
 
         setStats({
           totalStudents,
-          activeStudents: Math.round(totalStudents * 0.85),
+          activeStudents: totalStudents,
           totalAssessments,
-          publishedAssessments: publishedCount || totalAssessments,
+          publishedAssessments: publishedCount,
           avgScore,
           passRate,
           needingSupportCount: supportList.length
         });
 
-        setTopPerformers(topList.slice(0, 5));
-        setNeedsSupport(supportList.slice(0, 5));
+        setTopPerformers(topList.sort((a, b) => b.percentage - a.percentage).slice(0, 5));
+        setNeedsSupport(supportList.sort((a, b) => a.percentage - b.percentage).slice(0, 5));
 
         const deptList = Object.entries(depts).map(([name, d]) => ({
           name,
-          avg: Math.round(d.sum / d.total),
+          avg: Math.round(d.sum / Math.max(1, d.total)),
           count: d.total
         }));
-        setDeptStats(deptList.length > 0 ? deptList : [
-          { name: 'CSE', avg: 78, count: 20 },
-          { name: 'IT', avg: 74, count: 15 },
-          { name: 'ECE', avg: 68, count: 10 }
-        ]);
+        setDeptStats(deptList);
 
       } catch (err) {
-        console.error('[StaffDashboardHome] Error loading dashboard stats:', err);
+        console.error('[StaffDashboardHome] Error loading dashboard stats from Firestore:', err);
       } finally {
         setLoading(false);
       }
@@ -113,6 +103,7 @@ const StaffDashboardHome = () => {
 
     loadDashboardData();
   }, []);
+
 
   return (
     <Box>
