@@ -10,20 +10,6 @@ export const ACADEMIC_YEARS = {
     '2K29': '2029 Batch'
 };
 
-// GitHub token parts (encoded for security)
-export const TOKEN_PARTS = {
-    _0x5f: 'Z2l0aHViX3Bh',  // Part 1
-    _0x4e: 'dF8xMUJDT1FG',  // Part 2
-    _0x3d: 'Q0EwYU1RcHVi',  // Part 3
-    _0x2c: 'SmZ0dk9xX3Nv',  // Part 4
-    _0x1b: 'S0lDWlVyNVY4',  // Part 5
-    _0xa0: 'ZHN5ckZsTDVa',  // Part 6
-    _0xb1: 'SW5IZWNXYjYw',  // Part 7
-    _0xc2: 'd1ZEdEpsR1dY',  // Part 8
-    _0xd3: 'dG56bWZDUUZK',  // Part 9
-    _0xe4: 'UU9KTjJBZDhocEZO'  // Part 10
-};
-
 export const COLLEGES = {
 
     'SEEDIT': 'SEED Innovating Technologies and Educational Services (SEED-IT)',

@@ -62,17 +62,18 @@ const Login = () => {
   useEffect(() => {
     const savedUser = JSON.parse(localStorage.getItem("rememberedUser"));
     if (savedUser) {
-      setUsername(savedUser.username);
-      setPassword(savedUser.password);
-      setRole(savedUser.role);
+      setUsername(savedUser.username || "");
+      // SECURITY FIX (Part 15): Plaintext passwords must NEVER be remembered or populated from storage
+      setPassword("");
+      setRole(savedUser.role || "student");
       if (savedUser.role === 'student') {
-        setCollege(savedUser.college);
+        setCollege(savedUser.college || "");
         if (savedUser.college) {
-          setSearchTerm(COLLEGES[savedUser.college]);
+          setSearchTerm(COLLEGES[savedUser.college] || savedUser.college);
         }
-        setYear(savedUser.year);
+        setYear(savedUser.year || "");
         if (savedUser.year) {
-          setYearSearchTerm(ACADEMIC_YEARS[savedUser.year]);
+          setYearSearchTerm(ACADEMIC_YEARS[savedUser.year] || savedUser.year);
         }
       }
       setRememberMe(true);
@@ -184,28 +185,40 @@ const Login = () => {
         });
 
         if (rememberMe) {
+          // SECURITY FIX (Part 15): Store only non-sensitive metadata (username, role, college, year) — NEVER store password
           localStorage.setItem(
             "rememberedUser",
             JSON.stringify({
               username,
-              password,
               role,
               ...(role === 'student' && { college, year })
             })
           );
+        } else {
+          localStorage.removeItem("rememberedUser");
         }
 
-        // Store only the authenticated user's profile data
+        // Store authenticated user's profile data (Normalized Part 16 + Legacy backward compat)
         const authData = {
-          Email: userData.Email,
-          Name: userData.Name,
-          Role: userData.Role,
-          College: userData.College,
+          uid: userData.uid || userData.UID || userData.Email || '',
+          email: userData.Email || userData.email || '',
+          name: userData.Name || userData.name || '',
+          role: (userData.Role || userData.role || role || '').toLowerCase(),
+          tenantId: userData.College || userData.college || userData.tenantId || '',
+          college: userData.College || userData.college || '',
+          department: userData.Department || userData.department || '',
+          year: userData.Year || userData.year || '',
+          rollNumber: userData["Roll Number"] || userData.rollNumber || '',
+          // Legacy capitalized keys for backward compatibility:
+          Email: userData.Email || userData.email,
+          Name: userData.Name || userData.name,
+          Role: userData.Role || role,
+          College: userData.College || userData.college,
           Premium: userData.Premium !== undefined ? userData.Premium : (userData.premium !== undefined ? userData.premium : 0),
           ...(role === 'student' && {
-            Department: userData.Department,
-            Year: userData.Year,
-            "Roll Number": userData["Roll Number"],
+            Department: userData.Department || userData.department,
+            Year: userData.Year || userData.year,
+            "Roll Number": userData["Roll Number"] || userData.rollNumber,
             "Hackerrank Mail": userData["Hackerrank Mail"],
             "Hackerrank ID": userData["Hackerrank ID"]
           })

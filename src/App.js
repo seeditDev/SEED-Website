@@ -4,7 +4,15 @@ import Cookies from 'js-cookie';
 import HomePage from "./components/HomePage";
 import Login from "./components/Login";
 import StudentDashboard from "./components/StudentDashboard";
-import StaffDashboard from "./components/StaffDashboard";
+import ProtectedStaffRoute from "./components/staff/ProtectedStaffRoute";
+import StaffLayout from "./components/staff/StaffLayout";
+import StaffDashboardHome from "./components/staff/StaffDashboardHome";
+import StaffReports from "./components/staff/StaffReports";
+import StaffMcqCreator from "./components/staff/StaffMcqCreator";
+import StaffCodingCreator from "./components/staff/StaffCodingCreator";
+import StaffAssessments from "./components/staff/StaffAssessments";
+import StaffStudents from "./components/staff/StaffStudents";
+import StaffStudentAnalysis from "./components/staff/StaffStudentAnalysis";
 import Registration from "./components/Registration";
 import ChallengeSubmission from "./components/ChallengeSubmission";
 import AdminQuestionBank from "./components/AdminQuestionBank";
@@ -18,8 +26,11 @@ import "./styles/HomePage.css";
 import "./styles/PDFViewer.css";
 import "./styles/SeedSeb.css";
 
+
 // Get version from package.json
 export const APP_VERSION = '1.0.1';
+
+
 
 // Make cacheManager available globally for the logout process
 window.cacheManager = cacheManager;
@@ -265,9 +276,20 @@ const App = () => {
           <Route path="/trainer" element={<TrainerRoute><ChallengeSubmission /></TrainerRoute>} />
           <Route path="/student/dashboard" element={<StudentDashboard />} />
           <Route path="/admin" element={<AdminQuestionBank />} />
-          <Route path="/staff/dashboard" element={<StaffDashboard />} />
           <Route path="/seed-seb" element={<SeedSeb />} />
+
+          {/* Protected Staff Workspace Routes */}
+          <Route path="/staff" element={<Navigate to="/staff/dashboard" replace />} />
+          <Route path="/staff/dashboard" element={<ProtectedStaffRoute><StaffLayout><StaffDashboardHome /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/reports" element={<ProtectedStaffRoute><StaffLayout><StaffReports /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/mcq-creator" element={<ProtectedStaffRoute><StaffLayout><StaffMcqCreator /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/coding-creator" element={<ProtectedStaffRoute><StaffLayout><StaffCodingCreator /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/assessments" element={<ProtectedStaffRoute><StaffLayout><StaffAssessments /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/students" element={<ProtectedStaffRoute><StaffLayout><StaffStudents /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/students/analysis" element={<ProtectedStaffRoute><StaffLayout><StaffStudentAnalysis /></StaffLayout></ProtectedStaffRoute>} />
+          <Route path="/staff/students/:studentId" element={<ProtectedStaffRoute><StaffLayout><StaffStudentAnalysis /></StaffLayout></ProtectedStaffRoute>} />
         </Routes>
+
       </Router>
     </ErrorBoundary>
   );

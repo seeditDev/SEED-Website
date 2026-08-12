@@ -1,4 +1,4 @@
-import { API_ENDPOINTS, CACHE_CONFIG, FILE_TYPES, TOKEN_PARTS } from '../config/constants';
+import { API_ENDPOINTS, CACHE_CONFIG, FILE_TYPES } from '../config/constants';
 import { cacheManager } from '../utils/cacheManager';
 import timeService from './timeService';
 
@@ -51,22 +51,19 @@ class DataService {
                 /* console.log('[DataService] Local fetch error:', localError) */ void 0;
             }
 
-            // Try GitHub API with token
+            // Try GitHub API
             try {
                 /* console.log('[DataService] Attempting GitHub API fetch') */ void 0;
-                const token = atob(Object.values(TOKEN_PARTS).join(''));
-                
                 const apiResponse = await fetch(githubApiUrl, {
                     headers: {
-                        'Accept': 'application/vnd.github.v3+json',
-                        'Authorization': `token ${token}`
+                        'Accept': 'application/vnd.github.v3+json'
                     }
                 });
 
                 if (apiResponse.ok) {
                     const data = await apiResponse.json();
                     /* console.log('[DataService] GitHub API fetch successful') */ void 0;
-                    const parsedData = JSON.parse(atob(data.content));
+                    const parsedData = typeof data.content === 'string' ? JSON.parse(atob(data.content)) : data;
                     cacheManager.setLocalCache(cacheKey, parsedData);
                     return parsedData;
                 }

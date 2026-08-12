@@ -20,8 +20,8 @@ import {
 } from '@mui/icons-material';
 
 // ─── GitHub API Configuration ────────────────────────────────────────────────
-const GITHUB_TOKEN = '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';
 const SEED_CONTENTS_API_URL = 'https://api.github.com/repos/seeditDev/seed-contents/contents';
+
 
 const safeBtoa = (str) => btoa(unescape(encodeURIComponent(str)));
 const safeAtob = (str) => decodeURIComponent(escape(atob(str)));
